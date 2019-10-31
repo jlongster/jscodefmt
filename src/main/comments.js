@@ -1,5 +1,9 @@
 "use strict";
 
+/**
+ * @typedef {import("../doc/doc-builders").Doc} Doc
+ */
+
 const assert = require("assert");
 const {
   concat,
@@ -449,6 +453,13 @@ function printTrailingComment(commentPath, print, options) {
   ]);
 }
 
+/**
+ * @param {Doc} path
+ * @param {Object} options
+ * @param {boolean} [sameIndent]
+ * @param {(comment: Doc) => Doc} [filter]
+ * @returns Doc
+ */
 function printDanglingComments(path, options, sameIndent, filter) {
   const parts = [];
   const node = path.getValue();

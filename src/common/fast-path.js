@@ -2,6 +2,9 @@
 
 const assert = require("assert");
 
+/**
+ * @constructor
+ */
 function FastPath(value) {
   assert.ok(this instanceof FastPath);
   this.stack = [value];

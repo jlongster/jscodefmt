@@ -1,5 +1,10 @@
 "use strict";
 
+/**
+ * @typedef {import("estree").TemplateLiteral} TemplateLiteral
+ * @typedef {import("../doc/doc-builders").Doc} Doc
+ */
+
 const {
   getLast,
   hasNewline,
@@ -90,6 +95,11 @@ function getLeftSide(node) {
   );
 }
 
+/**
+ * @param {Doc} path
+ * @param {Object} node - [TODO better definition needed]
+ * @returns string[]
+ */
 function getLeftSidePathName(path, node) {
   if (node.expressions) {
     return ["expressions", 0];
@@ -406,7 +416,10 @@ function isNgForOf(node, index, parentNode) {
   );
 }
 
-/** @param node {import("estree").TemplateLiteral} */
+/**
+ * @param {TemplateLiteral} node
+ * @returns boolean
+ */
 function isSimpleTemplateLiteral(node) {
   if (node.expressions.length === 0) {
     return false;

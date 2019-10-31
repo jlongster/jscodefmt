@@ -1,5 +1,11 @@
 "use strict";
 
+/**
+ * @typedef {import("../doc/doc-builders").Doc} Doc
+ * @typedef {import("../common/fast-path")} FastPath
+ * @typedef {Object} Options - [TODO: better definition needed]
+ */
+
 const assert = require("assert");
 
 // TODO(azz): anything that imports from main shouldn't be in a `language-*` dir.
@@ -220,7 +226,9 @@ function genericPrint(path, options, printPath, args) {
     needsParens = pathNeedsParens(path, options);
   }
 
+  /** @type Doc[] */
   const parts = [];
+
   if (needsParens) {
     parts.unshift("(");
   }
@@ -437,7 +445,9 @@ function printPathNoParens(path, options, print, args) {
     return htmlBinding;
   }
 
+  /** @type Doc[] */
   let parts = [];
+
   switch (n.type) {
     case "JsExpressionRoot":
       return path.call(print, "node");
@@ -4030,7 +4040,9 @@ function printArgumentsList(path, options, print) {
           shouldGroupFirst
             ? concat([
                 "(",
+                // @ts-ignore [TODO: ensure printedExpanded is defined]
                 group(printedExpanded[0], { shouldBreak: true }),
+                // @ts-ignore [TODO: ensure printedExpanded is defined]
                 concat(printedExpanded.slice(1)),
                 ")"
               ])
@@ -4340,9 +4352,16 @@ function printReturnType(path, print, options) {
   return concat(parts);
 }
 
+/**
+ * @param {Doc} path
+ * @param {Options} options
+ * @param {any} print - [TODO use correct type]
+ * @returns Doc
+ */
 function printExportDeclaration(path, options, print) {
   const decl = path.getValue();
   const semi = options.semi ? ";" : "";
+  /** @type {Doc[]} */
   const parts = ["export "];
 
   const isDefault = decl["default"] || decl.type === "ExportDefaultDeclaration";
@@ -4401,6 +4420,7 @@ function printExportDeclaration(path, options, print) {
         defaultSpecifiers.length > 0 ||
         (decl.specifiers && decl.specifiers.some(node => node.comments));
 
+      /** @type {Doc} */
       let printed = "";
       if (specifiers.length !== 0) {
         if (canBreak) {
@@ -4709,6 +4729,7 @@ function printMemberChain(path, options, print) {
       return isNextLineEmptyAfterIndex(
         originalText,
         nextCharIndex + 1,
+        // @ts-ignore [TODO: support or remove options]
         options
       );
     }
@@ -5692,6 +5713,10 @@ function printRegex(node) {
   return `/${node.pattern}/${flags}`;
 }
 
+/**
+ * @param {Doc} path
+ * @param {Options} options
+ */
 function exprNeedsASIProtection(path, options) {
   const node = path.getValue();
 
@@ -5725,6 +5750,7 @@ function exprNeedsASIProtection(path, options) {
   return path.call.apply(
     path,
     [childPath => exprNeedsASIProtection(childPath, options)].concat(
+      // @ts-ignore [TODO: resolve the checkJs error here]
       getLeftSidePathName(path, node)
     )
   );

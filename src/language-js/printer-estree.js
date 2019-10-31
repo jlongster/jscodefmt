@@ -1,5 +1,9 @@
 "use strict";
 
+/**
+ * @typedef {import("../doc").Doc} Doc
+ */
+
 const assert = require("assert");
 
 // TODO(azz): anything that imports from main shouldn't be in a `language-*` dir.
@@ -149,6 +153,7 @@ function genericPrint(path, options, printPath, args) {
   }
 
   const parentExportDecl = getParentExportDeclaration(path);
+  /** @type {Doc[]} */
   const decorators = [];
   if (
     node.type === "ClassMethod" ||
@@ -220,7 +225,9 @@ function genericPrint(path, options, printPath, args) {
     needsParens = pathNeedsParens(path, options);
   }
 
+  /** @type Doc[] */
   const parts = [];
+
   if (needsParens) {
     parts.unshift("(");
   }
@@ -437,7 +444,9 @@ function printPathNoParens(path, options, print, args) {
     return htmlBinding;
   }
 
+  /** @type Doc[] */
   let parts = [];
+
   switch (n.type) {
     case "JsExpressionRoot":
       return path.call(print, "node");
@@ -4343,6 +4352,7 @@ function printReturnType(path, print, options) {
 function printExportDeclaration(path, options, print) {
   const decl = path.getValue();
   const semi = options.semi ? ";" : "";
+  /** @type {Doc[]} */
   const parts = ["export "];
 
   const isDefault = decl["default"] || decl.type === "ExportDefaultDeclaration";
@@ -4401,6 +4411,7 @@ function printExportDeclaration(path, options, print) {
         defaultSpecifiers.length > 0 ||
         (decl.specifiers && decl.specifiers.some(node => node.comments));
 
+      /** @type {Doc} */
       let printed = "";
       if (specifiers.length !== 0) {
         if (canBreak) {

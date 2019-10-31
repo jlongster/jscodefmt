@@ -1,5 +1,17 @@
 "use strict";
 
+/**
+ * @typedef {Object} DocObject
+ * @property {string} type
+ * @property {boolean} [hard]
+ * @property {boolean} [literal]
+ *
+ * @typedef {string | DocObject} Doc
+ */
+
+/**
+ * @param {Doc} val
+ */
 function assertDoc(val) {
   /* istanbul ignore if */
   if (
@@ -11,6 +23,10 @@ function assertDoc(val) {
   }
 }
 
+/**
+ * @param {Doc[]} parts
+ * @returns Doc
+ */
 function concat(parts) {
   if (process.env.NODE_ENV !== "production") {
     parts.forEach(assertDoc);
@@ -25,6 +41,10 @@ function concat(parts) {
   return { type: "concat", parts };
 }
 
+/**
+ * @param {Doc} contents
+ * @returns Doc
+ */
 function indent(contents) {
   if (process.env.NODE_ENV !== "production") {
     assertDoc(contents);
@@ -33,6 +53,10 @@ function indent(contents) {
   return { type: "indent", contents };
 }
 
+/**
+ * @param {number} n
+ * @param {Doc} contents
+ */
 function align(n, contents) {
   if (process.env.NODE_ENV !== "production") {
     assertDoc(contents);
@@ -41,6 +65,11 @@ function align(n, contents) {
   return { type: "align", contents, n };
 }
 
+/**
+ * @param {Doc} contents
+ * @param {Object} [opts] - TBD ???
+ * @returns Doc
+ */
 function group(contents, opts) {
   opts = opts || {};
 
@@ -57,18 +86,36 @@ function group(contents, opts) {
   };
 }
 
+/**
+ * @param {Doc} contents
+ * @returns Doc
+ */
 function dedentToRoot(contents) {
   return align(-Infinity, contents);
 }
 
+/**
+ * @param {Doc} contents
+ * @returns Doc
+ */
 function markAsRoot(contents) {
+  // @ts-ignore - TBD ???:
   return align({ type: "root" }, contents);
 }
 
+/**
+ * @param {Doc} contents
+ * @returns Doc
+ */
 function dedent(contents) {
   return align(-1, contents);
 }
 
+/**
+ * @param {Doc[]} states
+ * @param {Object} [opts] - TBD ???
+ * @returns Doc
+ */
 function conditionalGroup(states, opts) {
   return group(
     states[0],
@@ -76,6 +123,10 @@ function conditionalGroup(states, opts) {
   );
 }
 
+/**
+ * @param {Doc[]} parts
+ * @returns Doc
+ */
 function fill(parts) {
   if (process.env.NODE_ENV !== "production") {
     parts.forEach(assertDoc);
@@ -84,6 +135,12 @@ function fill(parts) {
   return { type: "fill", parts };
 }
 
+/**
+ * @param {Doc} [breakContents]
+ * @param {Doc} [flatContents]
+ * @param {Object} [opts] - TBD ???
+ * @returns Doc
+ */
 function ifBreak(breakContents, flatContents, opts) {
   opts = opts || {};
 
@@ -104,6 +161,10 @@ function ifBreak(breakContents, flatContents, opts) {
   };
 }
 
+/**
+ * @param {Doc} contents
+ * @returns Doc
+ */
 function lineSuffix(contents) {
   if (process.env.NODE_ENV !== "production") {
     assertDoc(contents);
@@ -123,6 +184,10 @@ const literalline = concat([
 ]);
 const cursor = { type: "cursor", placeholder: Symbol("cursor") };
 
+/**
+ * @param {Doc} sep
+ * @param {Doc[]} arr
+ */
 function join(sep, arr) {
   const res = [];
 
@@ -137,6 +202,11 @@ function join(sep, arr) {
   return concat(res);
 }
 
+/**
+ * @param {Doc} doc
+ * @param {number} size
+ * @param {number} tabWidth
+ */
 function addAlignmentToDoc(doc, size, tabWidth) {
   let aligned = doc;
   if (size > 0) {

@@ -2,7 +2,7 @@
 
 exports[`libA.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -16,7 +16,7 @@ declare function foo(x: number): void;
 
 exports[`libB.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -30,7 +30,7 @@ declare function bar(x: string): void;
 
 exports[`libtest.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

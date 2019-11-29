@@ -2,7 +2,7 @@
 
 exports[`destructuring.ts 1`] = `
 ====================================options=====================================
-parsers: ["typescript"]
+parsers: ["babel", "babel-flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

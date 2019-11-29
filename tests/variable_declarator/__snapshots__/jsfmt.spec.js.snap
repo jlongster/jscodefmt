@@ -2,7 +2,7 @@
 
 exports[`multiple.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -61,7 +61,7 @@ var templateTagsMapping = {
 
 exports[`string.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

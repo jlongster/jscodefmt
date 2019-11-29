@@ -2,7 +2,7 @@
 
 exports[`chain.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -82,7 +82,7 @@ B._sProperty = "B._sProperty string";
 
 exports[`commonjs_export.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -108,7 +108,7 @@ module.exports = new C();
 
 exports[`commonjs_import.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

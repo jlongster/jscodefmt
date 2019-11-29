@@ -2,7 +2,7 @@
 
 exports[`class.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -274,7 +274,7 @@ for (var x of examples.delegate_yield_iterable([])) {
 
 exports[`class_failure.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -328,7 +328,7 @@ if (typeof infer_stmt_next === "undefined") {
 
 exports[`generators.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -600,7 +600,7 @@ if (multiple_return_result.done) {
 
 exports[`refi.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -674,7 +674,7 @@ function* d(x: void | string): Generator<void, void, void> {
 
 exports[`return.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -728,7 +728,7 @@ if (refuse_return_result.done) {
 
 exports[`throw.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -790,7 +790,7 @@ if (yield_return_value !== undefined) {
 
 exports[`variance.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

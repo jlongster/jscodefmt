@@ -2,7 +2,7 @@
 
 exports[`interface_types.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

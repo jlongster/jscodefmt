@@ -2,7 +2,7 @@
 
 exports[`param.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -18,7 +18,7 @@ function g({}: Foo) {}
 
 exports[`param.js 2`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth

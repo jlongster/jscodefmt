@@ -2,7 +2,7 @@
 
 exports[`Bar.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -53,7 +53,7 @@ module.exports = Bar;
 
 exports[`Foo.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -116,7 +116,7 @@ module.exports = Foo;
 
 exports[`Qux.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

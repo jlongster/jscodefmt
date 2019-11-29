@@ -2,7 +2,7 @@
 
 exports[`unary.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -52,7 +52,7 @@ function x4(y: string): boolean {
 
 exports[`update.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

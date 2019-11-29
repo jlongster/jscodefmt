@@ -2,7 +2,7 @@
 
 exports[`anyAsConstructor.ts 1`] = `
 ====================================options=====================================
-parsers: ["typescript"]
+parsers: ["babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -34,7 +34,7 @@ var d = new x<any>(x); // no error
 
 exports[`anyAsFunctionCall.ts 1`] = `
 ====================================options=====================================
-parsers: ["typescript"]
+parsers: ["babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -60,7 +60,7 @@ var c = x(x);
 
 exports[`anyAsGenericFunctionCall.ts 1`] = `
 ====================================options=====================================
-parsers: ["typescript"]
+parsers: ["babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -96,7 +96,7 @@ var d = x<any>(x);
 
 exports[`anyPropertyAccess.ts 1`] = `
 ====================================options=====================================
-parsers: ["typescript"]
+parsers: ["babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

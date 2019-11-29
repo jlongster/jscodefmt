@@ -2,7 +2,7 @@
 
 exports[`advanced_arrows.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -36,7 +36,7 @@ var ident = <T>(x: T): T => x;
 
 exports[`arrows.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

@@ -3,7 +3,7 @@
 exports[`module-with-late-docblock.js 1`] = `
 ====================================options=====================================
 insertPragma: true
-parsers: ["flow", "babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -35,7 +35,7 @@ const fruit = "tomatoes";
 exports[`module-with-multiple-same-pragma.js 1`] = `
 ====================================options=====================================
 insertPragma: true
-parsers: ["flow", "babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -57,7 +57,7 @@ printWidth: 80
 exports[`module-with-pragma.js 1`] = `
 ====================================options=====================================
 insertPragma: true
-parsers: ["flow", "babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -90,7 +90,7 @@ function foo(bar) {
 exports[`module-without-docblock.js 1`] = `
 ====================================options=====================================
 insertPragma: true
-parsers: ["flow", "babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -111,7 +111,7 @@ function foo(bar) {
 exports[`module-without-pragma.js 1`] = `
 ====================================options=====================================
 insertPragma: true
-parsers: ["flow", "babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -143,7 +143,7 @@ function foo(bar) {
 exports[`trailing-spaces-first-line.js 1`] = `
 ====================================options=====================================
 insertPragma: true
-parsers: ["flow", "babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

@@ -2,7 +2,7 @@
 
 exports[`arrow.js 1`] = `
 ====================================options=====================================
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -24,7 +24,7 @@ function* f() {
 
 exports[`conditional.js 1`] = `
 ====================================options=====================================
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

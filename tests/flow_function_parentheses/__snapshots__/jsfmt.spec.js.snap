@@ -2,7 +2,7 @@
 
 exports[`single.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -26,7 +26,7 @@ const selectorByPath: Path => SomethingSelector<
 
 exports[`single.js 2`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth
@@ -52,7 +52,7 @@ const selectorByPath: Path => SomethingSelector<
 exports[`single.js 3`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -76,7 +76,7 @@ const selectorByPath: (Path) => SomethingSelector<
 
 exports[`test.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -212,7 +212,7 @@ type T8 = ??(() => A) | B;
 
 exports[`test.js 2`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth
@@ -350,7 +350,7 @@ type T8 = ??(() => A) | B;
 exports[`test.js 3`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

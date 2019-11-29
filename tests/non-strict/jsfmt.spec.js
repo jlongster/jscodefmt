@@ -1,1 +1,1 @@
-run_spec(__dirname, ["babel", "typescript"]);
+run_spec(__dirname, ["js-all"]);

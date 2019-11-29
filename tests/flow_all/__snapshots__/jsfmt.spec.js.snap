@@ -2,7 +2,7 @@
 
 exports[`generic.js 1`] = `
 ====================================options=====================================
-parsers: ["babel-flow", "flow"]
+parsers: ["babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

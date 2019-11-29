@@ -2,7 +2,7 @@
 
 exports[`non_maybe_type.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -39,7 +39,7 @@ function foo(x: ?string): $NonMaybeType<?string> {
 
 exports[`property_type.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -73,7 +73,7 @@ function foo(o: Obj): $PropertyType<Obj, "x"> {
 
 exports[`union.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

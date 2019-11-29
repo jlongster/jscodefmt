@@ -2,7 +2,7 @@
 
 exports[`exec.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -46,7 +46,7 @@ exec("ls", { maxBuffer: 100 }, function(error, stdout, stderr) {
 
 exports[`execFile.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -112,7 +112,7 @@ execFile("ls", ["-l"], { timeout: 250 }, function(error, stdout, stderr) {
 
 exports[`execSync.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -144,7 +144,7 @@ execSync("ls", { stdio: ["inherit"] }); // error, no signatures match
 
 exports[`spawn.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

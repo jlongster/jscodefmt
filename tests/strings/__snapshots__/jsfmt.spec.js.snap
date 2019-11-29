@@ -2,7 +2,7 @@
 
 exports[`strings.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -64,7 +64,7 @@ printWidth: 80
 
 exports[`strings.js 2`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth
@@ -127,7 +127,7 @@ trailingComma: "all"
 
 exports[`template-literals.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -310,7 +310,7 @@ const Bar = styled.div\`
 
 exports[`template-literals.js 2`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth

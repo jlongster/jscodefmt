@@ -23,7 +23,7 @@ const radioSelectedAttr =
 
 exports[`logical_expression_operators.js 1`] = `
 ====================================options=====================================
-parsers: ["babel", "flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

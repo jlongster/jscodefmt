@@ -2,7 +2,7 @@
 
 exports[`test.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
 trailingComma: "es5"
                                                                                 | printWidth

@@ -2,7 +2,7 @@
 
 exports[`functions.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -24,7 +24,7 @@ function b(object, key) {
 
 exports[`functions.js 2`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
 singleQuote: true
                                                                                 | printWidth
@@ -47,7 +47,7 @@ function b(object, key) {
 
 exports[`objects.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -69,7 +69,7 @@ const obj = {
 
 exports[`objects.js 2`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
 singleQuote: true
                                                                                 | printWidth
@@ -92,7 +92,7 @@ const obj = {
 
 exports[`strings.js 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -304,7 +304,7 @@ printWidth: 80
 
 exports[`strings.js 2`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
 singleQuote: true
                                                                                 | printWidth

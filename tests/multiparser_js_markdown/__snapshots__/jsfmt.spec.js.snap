@@ -2,7 +2,7 @@
 
 exports[`0-indent.js 1`] = `
 ====================================options=====================================
-parsers: ["babel"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 proseWrap: "always"
                                                                                 | printWidth
@@ -56,7 +56,7 @@ text3
 
 exports[`codeblock.js 1`] = `
 ====================================options=====================================
-parsers: ["babel"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 proseWrap: "always"
                                                                                 | printWidth
@@ -87,7 +87,7 @@ markdown\\\`
 
 exports[`escape.js 1`] = `
 ====================================options=====================================
-parsers: ["babel"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 proseWrap: "always"
                                                                                 | printWidth
@@ -126,7 +126,7 @@ markdown\`
 
 exports[`issue-5021.js 1`] = `
 ====================================options=====================================
-parsers: ["babel"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 proseWrap: "always"
                                                                                 | printWidth
@@ -210,7 +210,7 @@ text3
 
 exports[`markdown.js 1`] = `
 ====================================options=====================================
-parsers: ["babel"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 proseWrap: "always"
                                                                                 | printWidth
@@ -271,7 +271,7 @@ export default function ReadMe() {
 
 exports[`single-line.js 1`] = `
 ====================================options=====================================
-parsers: ["babel"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 proseWrap: "always"
                                                                                 | printWidth

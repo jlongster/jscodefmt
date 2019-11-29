@@ -2,7 +2,7 @@
 
 exports[`rest.ts 1`] = `
 ====================================options=====================================
-parsers: ["typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

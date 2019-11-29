@@ -2,7 +2,7 @@
 
 exports[`import_meta.js 1`] = `
 ====================================options=====================================
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

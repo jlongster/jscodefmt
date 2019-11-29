@@ -1,2 +1,2 @@
-run_spec(__dirname, ["flow"]);
-run_spec(__dirname, ["flow"], { singleQuote: true });
+run_spec(__dirname, ["babel-all", "flow"]);
+run_spec(__dirname, ["babel-all", "flow"], { singleQuote: true });

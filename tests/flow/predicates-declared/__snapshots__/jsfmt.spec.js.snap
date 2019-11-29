@@ -2,7 +2,7 @@
 
 exports[`function-bind.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -95,7 +95,7 @@ if (m.bind(this)(x)) {
 
 exports[`function-union.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -142,7 +142,7 @@ function foo(x: number | string | Array<string>): number {
 
 exports[`is-string-decl.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -190,7 +190,7 @@ function foo(x: string | Array<string>): string {
 
 exports[`logical-or.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -248,7 +248,7 @@ Number(dollars) || 0;
 
 exports[`object-invariant.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -307,7 +307,7 @@ function f(_this: { m: ?Meeting }): string {
 
 exports[`orig-string-tag-check.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -342,7 +342,7 @@ function foo(x: string | Array<string>): string {
 
 exports[`sanity-fall-through.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -380,7 +380,7 @@ function foo(s: Array<string>): string {
 
 exports[`sanity-invalid-calls.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -429,7 +429,7 @@ function foo(s: Array<string>): string {
 
 exports[`sanity-is-string-bug.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -471,7 +471,7 @@ function bar(x: string | Array<string>): string {
 
 exports[`sanity-parameter-mismatch.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -503,7 +503,7 @@ foo(3, 3);
 
 exports[`sanity-pred-with-body.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -546,7 +546,7 @@ function foo(x: string | Array<string>): string {
 
 exports[`sanity-return-type.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["babel", "babel-flow", "flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

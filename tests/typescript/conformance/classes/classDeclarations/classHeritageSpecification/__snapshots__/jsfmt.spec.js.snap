@@ -2,7 +2,7 @@
 
 exports[`classAppearsToHaveMembersOfObject.ts 1`] = `
 ====================================options=====================================
-parsers: ["typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -30,7 +30,7 @@ var o2: {} = c;
 
 exports[`classExtendingClass.ts 1`] = `
 ====================================options=====================================
-parsers: ["typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -103,7 +103,7 @@ var r8 = D2.other(1);
 
 exports[`classExtendsItselfIndirectly.ts 1`] = `
 ====================================options=====================================
-parsers: ["typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -148,7 +148,7 @@ class E2<T> extends D2<T> {
 
 exports[`classIsSubtypeOfBaseType.ts 1`] = `
 ====================================options=====================================
-parsers: ["typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

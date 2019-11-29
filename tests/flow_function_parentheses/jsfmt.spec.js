@@ -1,3 +1,3 @@
-run_spec(__dirname, ["flow", "babel"]);
-run_spec(__dirname, ["flow", "babel"], { trailingComma: "all" });
-run_spec(__dirname, ["flow", "babel"], { arrowParens: "always" });
+run_spec(__dirname, ["babel-all", "flow"]);
+run_spec(__dirname, ["babel-all", "flow"], { trailingComma: "all" });
+run_spec(__dirname, ["babel-all", "flow"], { arrowParens: "always" });

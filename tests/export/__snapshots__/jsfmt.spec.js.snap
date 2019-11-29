@@ -2,7 +2,7 @@
 
 exports[`bracket.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -37,7 +37,7 @@ export { fitsIn, oneLine };
 exports[`bracket.js 2`] = `
 ====================================options=====================================
 bracketSpacing: false
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -71,7 +71,7 @@ export {fitsIn, oneLine};
 
 exports[`empty.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -88,7 +88,7 @@ export {} from ".";
 exports[`empty.js 2`] = `
 ====================================options=====================================
 bracketSpacing: false
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

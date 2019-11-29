@@ -1,1 +1,1 @@
-run_spec(__dirname /*, null, ["typescript"]*/, ["flow"]);
+run_spec(__dirname, ["js-all"]);

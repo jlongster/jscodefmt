@@ -2,7 +2,7 @@
 
 exports[`arrow_call.js 1`] = `
 ====================================options=====================================
-parsers: ["babel", "flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -112,7 +112,7 @@ promise.then(result =>
 
 exports[`arrow_call.js 2`] = `
 ====================================options=====================================
-parsers: ["babel", "flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth
@@ -224,7 +224,7 @@ promise.then(result =>
 exports[`arrow_call.js 3`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

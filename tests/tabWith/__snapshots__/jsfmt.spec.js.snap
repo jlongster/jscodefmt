@@ -2,7 +2,7 @@
 
 exports[`class.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -34,7 +34,7 @@ class A {
 
 exports[`class.js 2`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 tabWidth: 4
                                                                                 | printWidth
@@ -67,7 +67,7 @@ class A {
 
 exports[`nested-functions.spec.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -101,7 +101,7 @@ function a() {
 
 exports[`nested-functions.spec.js 2`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
 tabWidth: 4
                                                                                 | printWidth

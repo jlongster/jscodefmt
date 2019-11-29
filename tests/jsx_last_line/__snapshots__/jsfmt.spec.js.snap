@@ -3,7 +3,7 @@
 exports[`last_line.js 1`] = `
 ====================================options=====================================
 jsxBracketSameLine: true
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -35,7 +35,7 @@ printWidth: 80
 exports[`last_line.js 2`] = `
 ====================================options=====================================
 jsxBracketSameLine: false
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -68,7 +68,7 @@ printWidth: 80
 exports[`single_prop_multiline_string.js 1`] = `
 ====================================options=====================================
 jsxBracketSameLine: true
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -98,7 +98,7 @@ printWidth: 80
 exports[`single_prop_multiline_string.js 2`] = `
 ====================================options=====================================
 jsxBracketSameLine: false
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

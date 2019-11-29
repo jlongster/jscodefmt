@@ -3,7 +3,7 @@
 exports[`arrow_function_expression.js 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -87,7 +87,7 @@ a = b => {
 exports[`arrow_function_expression.js 2`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -171,7 +171,7 @@ a = (b) => {
 exports[`block_like.js 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -186,7 +186,7 @@ a = () => ({} = this);
 exports[`block_like.js 2`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -201,7 +201,7 @@ a = () => ({} = this);
 exports[`call.js 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -998,7 +998,7 @@ foo(
 exports[`call.js 2`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -1795,7 +1795,7 @@ foo(
 exports[`comment.js 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -1868,7 +1868,7 @@ export const bem = block =>
 exports[`comment.js 2`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -1941,7 +1941,7 @@ export const bem = (block) =>
 exports[`currying.js 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -1988,7 +1988,7 @@ const middleware = options => (req, res, next) => {
 exports[`currying.js 2`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -2035,7 +2035,7 @@ const middleware = (options) => (req, res, next) => {
 exports[`long-call-no-args.js 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -2053,7 +2053,7 @@ veryLongCall(
 exports[`long-call-no-args.js 2`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -2071,7 +2071,7 @@ veryLongCall(
 exports[`long-contents.js 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -2095,7 +2095,7 @@ const foo = () => {
 exports[`long-contents.js 2`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -2119,7 +2119,7 @@ const foo = () => {
 exports[`parens.js 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -2170,7 +2170,7 @@ foo(a => b, d);
 exports[`parens.js 2`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -2221,7 +2221,7 @@ foo((a) => b, d);
 exports[`short_body.js 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -2246,7 +2246,7 @@ const initializeSnapshotState = (
 exports[`short_body.js 2`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -2271,7 +2271,7 @@ const initializeSnapshotState = (
 exports[`type_params.js 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -2286,7 +2286,7 @@ printWidth: 80
 exports[`type_params.js 2`] = `
 ====================================options=====================================
 arrowParens: "always"
-parsers: ["babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

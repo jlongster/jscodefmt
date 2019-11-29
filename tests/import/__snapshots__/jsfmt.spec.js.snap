@@ -2,7 +2,7 @@
 
 exports[`brackets.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -37,7 +37,7 @@ import { fitsIn, oneLine } from ".";
 exports[`brackets.js 2`] = `
 ====================================options=====================================
 bracketSpacing: false
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -71,7 +71,7 @@ import {fitsIn, oneLine} from ".";
 
 exports[`comments.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -176,7 +176,7 @@ import x, {
 exports[`comments.js 2`] = `
 ====================================options=====================================
 bracketSpacing: false
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -280,7 +280,7 @@ import x, {
 
 exports[`empty-import.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -295,7 +295,7 @@ import {} from "@types/googlemaps";
 exports[`empty-import.js 2`] = `
 ====================================options=====================================
 bracketSpacing: false
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -309,7 +309,7 @@ import {} from "@types/googlemaps";
 
 exports[`inline.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -335,7 +335,7 @@ import {
 exports[`inline.js 2`] = `
 ====================================options=====================================
 bracketSpacing: false
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -360,7 +360,7 @@ import {
 
 exports[`long-line.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -375,7 +375,7 @@ import someCoolUtilWithARatherLongName from "../../../../utils/someCoolUtilWithA
 exports[`long-line.js 2`] = `
 ====================================options=====================================
 bracketSpacing: false
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -389,7 +389,7 @@ import someCoolUtilWithARatherLongName from "../../../../utils/someCoolUtilWithA
 
 exports[`multiple_standalones.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -404,7 +404,7 @@ import a, * as b from "a";
 exports[`multiple_standalones.js 2`] = `
 ====================================options=====================================
 bracketSpacing: false
-parsers: ["flow", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

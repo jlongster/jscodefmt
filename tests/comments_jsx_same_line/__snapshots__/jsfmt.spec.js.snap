@@ -3,7 +3,7 @@
 exports[`jsx_same_line.js 1`] = `
 ====================================options=====================================
 jsxBracketSameLine: true
-parsers: ["flow", "babel", "typescript"]
+parsers: ["babel", "babel-flow", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

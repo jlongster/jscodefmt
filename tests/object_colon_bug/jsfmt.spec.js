@@ -1,1 +1,1 @@
-run_spec(__dirname, ["flow", "typescript"], { printWidth: 35 });
+run_spec(__dirname, ["js-all"], { printWidth: 35 });

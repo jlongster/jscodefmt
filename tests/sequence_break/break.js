@@ -11,3 +11,14 @@ for (aLongIdentifierName = 0, aLongIdentifierName = 0, aLongIdentifierName = 0, 
   (a = b ? c : function() { return 0; }),
   (a = b ? c : function() { return 0; }),
   (a = b ? c : function() { return 0; });
+if (aLongIdentifierName, aLongIdentifierName, aLongIdentifierName, aLongIdentifierName) {}
+while (aLongIdentifierName, aLongIdentifierName, aLongIdentifierName, aLongIdentifierName) {}
+switch (aLongIdentifierName, aLongIdentifierName, aLongIdentifierName, aLongIdentifierName) {}
+with (aLongIdentifierName, aLongIdentifierName, aLongIdentifierName, aLongIdentifierName) console.log(aLongIdentifierName);
+(function(){
+  throw aLongIdentifierName, aLongIdentifierName, aLongIdentifierName, aLongIdentifierName;
+});
+`${aLongIdentifierName, aLongIdentifierName, aLongIdentifierName, aLongIdentifierName, aLongIdentifierName}`;
+(function(){
+  return aLongIdentifierName, aLongIdentifierName, aLongIdentifierName, aLongIdentifierName;
+});

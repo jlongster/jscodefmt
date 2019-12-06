@@ -386,31 +386,8 @@ function needsParens(path, options) {
       }
 
     case "SequenceExpression":
-      switch (parent.type) {
-        case "ReturnStatement":
-          return false;
-
-        case "ForStatement":
-          // Although parentheses wouldn't hurt around sequence
-          // expressions in the head of for loops, traditional style
-          // dictates that e.g. i++, j++ should not be wrapped with
-          // parentheses.
-          return false;
-
-        case "ExpressionStatement":
-          return name !== "expression";
-
-        case "ArrowFunctionExpression":
-          // We do need parentheses, but SequenceExpressions are handled
-          // specially when printing bodies of arrow functions.
-          return name !== "body";
-
-        default:
-          // Otherwise err on the side of overparenthesization, adding
-          // explicit exceptions above if this proves overzealous.
-          return true;
-      }
-
+      // Add parentheses to draw attention to the unusual operator
+      return true;
     case "YieldExpression":
       if (
         parent.type === "UnaryExpression" ||

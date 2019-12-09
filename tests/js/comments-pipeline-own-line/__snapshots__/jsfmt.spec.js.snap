@@ -91,17 +91,17 @@ bifornCringerMoshedPerplexSawder(
   |> glimseGlyphsHazardNoopsTieTie;
 
 bifornCringerMoshedPerplexSawder[
-  askTrovenaBeenaDependsRowans +
-    glimseGlyphsHazardNoopsTieTie +
-    averredBathersBoxroomBuggyNurl
+  askTrovenaBeenaDependsRowans
+    + glimseGlyphsHazardNoopsTieTie
+    + averredBathersBoxroomBuggyNurl
 ] // comment
   |> kochabCooieGameOnOboleUnweave
   |> glimseGlyphsHazardNoopsTieTie;
 
 bifornCringerMoshedPerplexSawder[
-  askTrovenaBeenaDependsRowans +
-    glimseGlyphsHazardNoopsTieTie +
-    averredBathersBoxroomBuggyNurl
+  askTrovenaBeenaDependsRowans
+    + glimseGlyphsHazardNoopsTieTie
+    + averredBathersBoxroomBuggyNurl
 ]
   |> foo // comment
   |> kochabCooieGameOnOboleUnweave

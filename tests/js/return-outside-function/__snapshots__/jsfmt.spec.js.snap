@@ -10,10 +10,10 @@ return someVeryLongStringA && someVeryLongStringB && someVeryLongStringC && some
 
 =====================================output=====================================
 return (
-  someVeryLongStringA &&
-  someVeryLongStringB &&
-  someVeryLongStringC &&
-  someVeryLongStringD
+  someVeryLongStringA
+  && someVeryLongStringB
+  && someVeryLongStringC
+  && someVeryLongStringD
 );
 
 ================================================================================

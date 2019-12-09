@@ -108,17 +108,17 @@ type DuplexStreamOptions = ReadableStreamOptions &
 
 function hasObjectMode_bad(options: DuplexStreamOptions): boolean {
   return (
-    options.objectMode ||
-    options.readableObjectMode ||
-    options.writableObjectMode
+    options.objectMode
+    || options.readableObjectMode
+    || options.writableObjectMode
   ); // error, undefined ~> boolean
 }
 
 function hasObjectMode_ok(options: DuplexStreamOptions): boolean {
   return !!(
-    options.objectMode ||
-    options.readableObjectMode ||
-    options.writableObjectMode
+    options.objectMode
+    || options.readableObjectMode
+    || options.writableObjectMode
   );
 }
 

@@ -500,48 +500,48 @@ a = b /** Comment */ || c
 a = b /** Comment */ || c
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ ||
-  c
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  || c
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ ||
-  c
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  || c
 
 a =
-  b ||
-  /** TODO this is a very very very very long comment that makes it go > 80 columns */ c
+  b
+  || /** TODO this is a very very very very long comment that makes it go > 80 columns */ c
 
 a = b /** Comment */ && c
 
 a = b /** Comment */ && c
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ &&
-  c
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  && c
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ &&
-  c
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  && c
 
 a =
-  b &&
-  /** TODO this is a very very very very long comment that makes it go > 80 columns */ c
+  b
+  && /** TODO this is a very very very very long comment that makes it go > 80 columns */ c
 
 a = b /** Comment */ + c
 
 a = b /** Comment */ + c
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ +
-  c
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  + c
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ +
-  c
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  + c
 
 a =
-  b +
-  /** TODO this is a very very very very long comment that makes it go > 80 columns */ c
+  b
+  + /** TODO this is a very very very very long comment that makes it go > 80 columns */ c
 
 ================================================================================
 `;
@@ -599,48 +599,48 @@ a = b /** Comment */ || c;
 a = b /** Comment */ || c;
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ ||
-  c;
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  || c;
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ ||
-  c;
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  || c;
 
 a =
-  b ||
-  /** TODO this is a very very very very long comment that makes it go > 80 columns */ c;
+  b
+  || /** TODO this is a very very very very long comment that makes it go > 80 columns */ c;
 
 a = b /** Comment */ && c;
 
 a = b /** Comment */ && c;
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ &&
-  c;
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  && c;
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ &&
-  c;
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  && c;
 
 a =
-  b &&
-  /** TODO this is a very very very very long comment that makes it go > 80 columns */ c;
+  b
+  && /** TODO this is a very very very very long comment that makes it go > 80 columns */ c;
 
 a = b /** Comment */ + c;
 
 a = b /** Comment */ + c;
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ +
-  c;
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  + c;
 
 a =
-  b /** TODO this is a very very very very long comment that makes it go > 80 columns */ +
-  c;
+  b /** TODO this is a very very very very long comment that makes it go > 80 columns */
+  + c;
 
 a =
-  b +
-  /** TODO this is a very very very very long comment that makes it go > 80 columns */ c;
+  b
+  + /** TODO this is a very very very very long comment that makes it go > 80 columns */ c;
 
 ================================================================================
 `;
@@ -668,9 +668,9 @@ Math.min(
   /* $FlowFixMe(>=0.38.0 site=www) - Flow error detected during the
    * deployment of v0.38.0. To see the error, remove this comment and
    * run flow */
-  document.body.scrollHeight -
-    (window.scrollY + window.innerHeight) -
-    devsite_footer_height,
+  document.body.scrollHeight
+    - (window.scrollY + window.innerHeight)
+    - devsite_footer_height,
   0
 )
 
@@ -699,9 +699,9 @@ Math.min(
   /* $FlowFixMe(>=0.38.0 site=www) - Flow error detected during the
    * deployment of v0.38.0. To see the error, remove this comment and
    * run flow */
-  document.body.scrollHeight -
-    (window.scrollY + window.innerHeight) -
-    devsite_footer_height,
+  document.body.scrollHeight
+    - (window.scrollY + window.innerHeight)
+    - devsite_footer_height,
   0
 );
 
@@ -734,28 +734,28 @@ a = b + // TODO this is a very very very very long comment that makes it go > 80
 c;
 =====================================output=====================================
 a =
-  b || // Comment
-  c
+  b // Comment
+  || c
 
 a =
-  b || // TODO this is a very very very very long comment that makes it go > 80 columns
-  c
+  b // TODO this is a very very very very long comment that makes it go > 80 columns
+  || c
 
 a =
-  b && // Comment
-  c
+  b // Comment
+  && c
 
 a =
-  b && // TODO this is a very very very very long comment that makes it go > 80 columns
-  c
+  b // TODO this is a very very very very long comment that makes it go > 80 columns
+  && c
 
 a =
-  b + // Comment
-  c
+  b // Comment
+  + c
 
 a =
-  b + // TODO this is a very very very very long comment that makes it go > 80 columns
-  c
+  b // TODO this is a very very very very long comment that makes it go > 80 columns
+  + c
 
 ================================================================================
 `;
@@ -785,28 +785,28 @@ a = b + // TODO this is a very very very very long comment that makes it go > 80
 c;
 =====================================output=====================================
 a =
-  b || // Comment
-  c;
+  b // Comment
+  || c;
 
 a =
-  b || // TODO this is a very very very very long comment that makes it go > 80 columns
-  c;
+  b // TODO this is a very very very very long comment that makes it go > 80 columns
+  || c;
 
 a =
-  b && // Comment
-  c;
+  b // Comment
+  && c;
 
 a =
-  b && // TODO this is a very very very very long comment that makes it go > 80 columns
-  c;
+  b // TODO this is a very very very very long comment that makes it go > 80 columns
+  && c;
 
 a =
-  b + // Comment
-  c;
+  b // Comment
+  + c;
 
 a =
-  b + // TODO this is a very very very very long comment that makes it go > 80 columns
-  c;
+  b // TODO this is a very very very very long comment that makes it go > 80 columns
+  + c;
 
 ================================================================================
 `;
@@ -2253,12 +2253,12 @@ const rootEpic = (actions, store) =>
 
 // optional trailing comma gets moved all the way to the beginning
 const regex = new RegExp(
-  "^\\\\s*" + // beginning of the line
-    "name\\\\s*=\\\\s*" + // name =
-    "['\\"]" + // opening quotation mark
-    escapeStringRegExp(target.name) + // target name
-    "['\\"]" + // closing quotation mark
-    ",?$" // optional trailing comma
+  "^\\\\s*" // beginning of the line
+    + "name\\\\s*=\\\\s*" // name =
+    + "['\\"]" // opening quotation mark
+    + escapeStringRegExp(target.name) // target name
+    + "['\\"]" // closing quotation mark
+    + ",?$" // optional trailing comma
 )
 
 // The comment is moved and doesn't trigger the eslint rule anymore
@@ -2404,12 +2404,12 @@ const rootEpic = (actions, store) =>
 
 // optional trailing comma gets moved all the way to the beginning
 const regex = new RegExp(
-  "^\\\\s*" + // beginning of the line
-    "name\\\\s*=\\\\s*" + // name =
-    "['\\"]" + // opening quotation mark
-    escapeStringRegExp(target.name) + // target name
-    "['\\"]" + // closing quotation mark
-    ",?$" // optional trailing comma
+  "^\\\\s*" // beginning of the line
+    + "name\\\\s*=\\\\s*" // name =
+    + "['\\"]" // opening quotation mark
+    + escapeStringRegExp(target.name) // target name
+    + "['\\"]" // closing quotation mark
+    + ",?$" // optional trailing comma
 );
 
 // The comment is moved and doesn't trigger the eslint rule anymore
@@ -3615,17 +3615,17 @@ function binary() {
 function binaryInBinaryLeft() {
   return (
     // Reason for 42
-    42 *
-      84 +
-    2
+    42
+      * 84
+    + 2
   )
 }
 
 function binaryInBinaryRight() {
   return (
     // Reason for 42
-    42 +
-    84 * 2
+    42
+    + 84 * 2
   )
 }
 
@@ -3877,17 +3877,17 @@ function binary() {
 function binaryInBinaryLeft() {
   return (
     // Reason for 42
-    42 *
-      84 +
-    2
+    42
+      * 84
+    + 2
   );
 }
 
 function binaryInBinaryRight() {
   return (
     // Reason for 42
-    42 +
-    84 * 2
+    42
+    + 84 * 2
   );
 }
 
@@ -5117,8 +5117,8 @@ while (true) {
 }
 
 while (
-  true && // Comment
   true // Comment
+  && true // Comment
 ) {}
 
 while (true) {} // comment
@@ -5179,8 +5179,8 @@ while (true) {
 }
 
 while (
-  true && // Comment
   true // Comment
+  && true // Comment
 ) {}
 
 while (true) {} // comment

@@ -154,9 +154,9 @@ a?.[b ? c : d];
 (() => f)?.x;
 (a?.(x)).x;
 (
-  aaaaaaaaaaaaaaaaaaaaaaaa &&
-  aaaaaaaaaaaaaaaaaaaaaaaa &&
   aaaaaaaaaaaaaaaaaaaaaaaa
+  && aaaaaaaaaaaaaaaaaaaaaaaa
+  && aaaaaaaaaaaaaaaaaaaaaaaa
 )?.();
 
 let f = () => ({}?.());

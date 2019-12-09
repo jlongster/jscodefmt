@@ -127,9 +127,9 @@ printWidth: 80
 (veryLongVeryLongVeryLong || e).prop;
 
 (
-  veryLongVeryLongVeryLong ||
-  anotherVeryLongVeryLongVeryLong ||
-  veryVeryVeryLongError
+  veryLongVeryLongVeryLong
+  || anotherVeryLongVeryLongVeryLong
+  || veryVeryVeryLongError
 ).prop;
 
 ================================================================================

@@ -1,7 +1,7 @@
 "use strict";
 
 const { getLast } = require("../common/util");
-const { composeLoc, locEnd } = require("./loc");
+const { composeLoc, locStart, locEnd } = require("./loc");
 
 function postprocess(ast, options) {
   visitNode(ast, node => {
@@ -35,30 +35,51 @@ function postprocess(ast, options) {
           });
         }
         break;
+      case "BreakStatement":
+      case "ContinueStatement":
+        if (node.label) {
+          overrideLocEnd(node, node.label);
+        } else {
+          overrideLocEndWithOffset(
+            node,
+            node.type === "BreakStatement" ? "break".length : "continue".length
+          );
+        }
+        break;
     }
   });
 
   return ast;
 
   /**
-   * - `toOverrideNode` must be the last thing in `toBeOverriddenNode`
-   * - do nothing if there's a semicolon on `toOverrideNode.end` (no need to fix)
+   * - `override` must be the last thing in `overridden`
+   * - do nothing if there's a semicolon on `override.end` (no need to fix)
    */
-  function overrideLocEnd(toBeOverriddenNode, toOverrideNode) {
-    if (options.originalText[locEnd(toOverrideNode)] === ";") {
+  function overrideLocEnd(overridden, override) {
+    if (options.originalText[locEnd(override)] === ";") {
       return;
     }
-    if (Array.isArray(toBeOverriddenNode.range)) {
-      toBeOverriddenNode.range = [
-        toBeOverriddenNode.range[0],
-        toOverrideNode.range[1]
-      ];
-    } else {
-      toBeOverriddenNode.end = toOverrideNode.end;
+    Object.assign(overridden, composeLoc(overridden, override));
+  }
+
+  function overrideLocEndWithOffset(overridden, offset) {
+    const end = locStart(overridden) + offset;
+    if (options.originalText[end] === ";") {
+      return;
     }
-    toBeOverriddenNode.loc = Object.assign({}, toBeOverriddenNode.loc, {
-      end: toBeOverriddenNode.loc.end
-    });
+    Object.assign(
+      overridden,
+      composeLoc(overridden, {
+        end,
+        range: [0, end],
+        loc: {
+          end: {
+            line: overridden.loc.start.line,
+            column: overridden.loc.start.column + offset
+          }
+        }
+      })
+    );
   }
 }
 

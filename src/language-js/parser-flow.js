@@ -13,6 +13,7 @@ function parse(text, parsers, opts) {
   const flowParser = require("flow-parser");
 
   const ast = flowParser.parse(text, {
+    tokens: true,
     enums: true,
     esproposal_class_instance_fields: true,
     esproposal_class_static_fields: true,

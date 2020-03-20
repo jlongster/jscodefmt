@@ -41,6 +41,7 @@ function tryParseTypeScript(text, jsx) {
     range: true,
     comment: true,
     useJSXTextNode: true,
+    tokens: true,
     jsx
   });
 }

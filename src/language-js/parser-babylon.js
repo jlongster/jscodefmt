@@ -18,6 +18,7 @@ function babelOptions(extraOptions, extraPlugins = []) {
       allowSuperOutsideMethod: true,
       allowUndeclaredExports: true,
       errorRecovery: true,
+      tokens: true,
       plugins: [
         "jsx",
         "doExpressions",
@@ -70,7 +71,6 @@ function createParse(parseMethod, extraPlugins) {
         }
       );
     }
-    delete ast.tokens;
     return postprocess(ast, Object.assign({}, opts, { originalText: text }));
   };
 }

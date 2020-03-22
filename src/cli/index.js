@@ -1,6 +1,6 @@
 "use strict";
 
-const prettier = require("../../index");
+const prettier = require("../index");
 const stringify = require("json-stable-stringify");
 const util = require("./util");
 

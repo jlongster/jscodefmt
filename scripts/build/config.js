@@ -132,7 +132,7 @@ const parsers = [
 /** @type {Bundle[]} */
 const coreBundles = [
   {
-    input: "index.js",
+    input: "src/index.js",
     type: "core",
     target: "node",
     externals: [path.resolve("src/common/third-party.js")],
@@ -149,7 +149,7 @@ const coreBundles = [
     target: "universal",
   },
   {
-    input: "standalone.js",
+    input: "src/standalone.js",
     name: "prettier",
     type: "core",
     target: "universal",

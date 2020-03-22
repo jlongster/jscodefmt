@@ -14,7 +14,7 @@ const groupBy = require("lodash/groupBy");
 const flat = require("lodash/flatten");
 
 const minimist = require("./minimist");
-const prettier = require("../../index");
+const prettier = require("../index");
 const createIgnorer = require("../common/create-ignorer");
 const expandPatterns = require("./expand-patterns");
 const errors = require("../common/errors");

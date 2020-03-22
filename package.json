@@ -7,7 +7,7 @@
   "homepage": "https://prettier.io",
   "author": "James Long",
   "license": "MIT",
-  "main": "./index.js",
+  "main": "./src/index.js",
   "engines": {
     "node": ">=10.13.0"
   },

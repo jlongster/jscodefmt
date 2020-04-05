@@ -16,9 +16,7 @@
 
 6. Change ```jsx to your language. For example, ```yaml.
 
-7. Change the `// Input` and `// Prettier` comments to the comment syntax of your language. For example, `# Input`.
-
-8. Choose some nice input example code. Paste it along with the output before and after your PR.
+7. Choose some nice input example code. Paste it along with the output before and after your PR.
 
 -->
 
@@ -26,14 +24,23 @@
 
 Optional description if it makes sense.
 
+Input:
+
 <!-- prettier-ignore -->
 ```jsx
-// Input
 (foo ?? baz) || baz;
+```
 
-// Prettier stable
+Prettier stable:
+
+<!-- prettier-ignore -->
+```jsx
 foo ?? baz || baz;
+```
 
-// Prettier master
+Prettier master:
+
+<!-- prettier-ignore -->
+```jsx
 (foo ?? baz) || baz;
 ```

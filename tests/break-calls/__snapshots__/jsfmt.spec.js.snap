@@ -2,7 +2,7 @@
 
 exports[`break.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["flow", "typescript", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -104,7 +104,7 @@ expect(
 
 exports[`parent.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["flow", "typescript", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -134,7 +134,7 @@ runtimeAgent.getProperties(
 
 exports[`react.js 1`] = `
 ====================================options=====================================
-parsers: ["flow", "typescript"]
+parsers: ["flow", "typescript", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -228,26 +228,6 @@ function MyComponent(props) {
 
   return null;
 }
-
-================================================================================
-`;
-
-exports[`type_args.js 1`] = `
-====================================options=====================================
-parsers: ["flow", "typescript"]
-printWidth: 80
-                                                                                | printWidth
-=====================================input======================================
-const response = something.$http.get<ThingamabobService.DetailsData>(
-  \`api/foo.ashx/foo-details/\${myId}\`,
-  { cache: quux.httpCache, timeout }
-);
-
-=====================================output=====================================
-const response = something.$http.get<ThingamabobService.DetailsData>(
-  \`api/foo.ashx/foo-details/\${myId}\`,
-  { cache: quux.httpCache, timeout }
-);
 
 ================================================================================
 `;

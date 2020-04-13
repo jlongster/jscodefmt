@@ -3,6 +3,38 @@ for (;;) {
   continue /* comment */;
 }
 
+for (;;) {
+  break // comment
+  ;
+  continue // comment
+  ;
+}
+
+for (;;) {
+  break
+  // comment
+  ;
+  continue
+  // comment
+  ;
+}
+
+for (;;) {
+  break /* comment */
+  ;
+  continue /* comment */
+  ;
+}
+
+for (;;) {
+  break
+  /* comment */
+  ;
+  continue
+  /* comment */
+  ;
+}
+
 loop: for (;;) {
   break /* comment */ loop;
   break loop /* comment */;

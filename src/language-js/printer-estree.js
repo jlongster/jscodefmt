@@ -66,6 +66,7 @@ const {
   isJestEachTemplateLiteral,
   isJSXNode,
   isJSXWhitespaceExpression,
+  isLastCommentLine,
   isLastStatement,
   isLiteral,
   isLongCurriedCallExpression,
@@ -1989,25 +1990,15 @@ function printPathNoParens(path, options, print, args) {
     case "DoExpression":
       return concat(["do ", path.call(print, "body")]);
     case "BreakStatement":
-      parts.push("break");
-
-      if (n.label) {
-        parts.push(" ", path.call(print, "label"));
-      }
-
-      parts.push(semi);
-
-      return concat(parts);
+      return concat([
+        "break",
+        printContinueAndBreakLabel(path, print, options)
+      ]);
     case "ContinueStatement":
-      parts.push("continue");
-
-      if (n.label) {
-        parts.push(" ", path.call(print, "label"));
-      }
-
-      parts.push(semi);
-
-      return concat(parts);
+      return concat([
+        "continue",
+        printContinueAndBreakLabel(path, print, options)
+      ]);
     case "LabeledStatement":
       if (n.body.type === "EmptyStatement") {
         return concat([path.call(print, "label"), ":;"]);
@@ -6043,9 +6034,26 @@ function printArrayItems(path, options, printPath, print) {
   return concat(printedElements);
 }
 
-function printReturnAndThrowArgument(path, options, print) {
+function printSemiWithDanglingComments(path, options) {
   const node = path.getValue();
   const semi = options.semi ? ";" : "";
+  const parts = [];
+  if (hasDanglingComments(node)) {
+    const shouldPrintSemiBeforeDanglingComment = isLastCommentLine(node);
+    parts.push(
+      shouldPrintSemiBeforeDanglingComment ? semi : "",
+      " ",
+      comments.printDanglingComments(path, options, /* sameIndent */ true),
+      shouldPrintSemiBeforeDanglingComment ? "" : semi
+    );
+  } else {
+    parts.push(semi);
+  }
+  return concat(parts);
+}
+
+function printReturnAndThrowArgument(path, options, print) {
+  const node = path.getValue();
   const parts = [];
 
   if (node.argument) {
@@ -6077,26 +6085,20 @@ function printReturnAndThrowArgument(path, options, print) {
     }
   }
 
-  const lastComment =
-    Array.isArray(node.comments) && node.comments[node.comments.length - 1];
-  const isLastCommentLine =
-    lastComment &&
-    (lastComment.type === "CommentLine" || lastComment.type === "Line");
+  parts.push(printSemiWithDanglingComments(path, options));
 
-  if (isLastCommentLine) {
-    parts.push(semi);
+  return concat(parts);
+}
+
+function printContinueAndBreakLabel(path, print, options) {
+  const node = path.getValue();
+  const parts = [];
+
+  if (node.label) {
+    parts.push(" ", path.call(print, "label"));
   }
 
-  if (hasDanglingComments(node)) {
-    parts.push(
-      " ",
-      comments.printDanglingComments(path, options, /* sameIndent */ true)
-    );
-  }
-
-  if (!isLastCommentLine) {
-    parts.push(semi);
-  }
+  parts.push(printSemiWithDanglingComments(path, options));
 
   return concat(parts);
 }

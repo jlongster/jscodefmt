@@ -1002,6 +1002,18 @@ function isTSXFile(options) {
   return options.filepath && /\.tsx$/i.test(options.filepath);
 }
 
+function isLastCommentLine(node) {
+  const lastComment =
+    node &&
+    Array.isArray(node.comments) &&
+    node.comments[node.comments.length - 1];
+
+  return (
+    lastComment &&
+    (lastComment.type === "CommentLine" || lastComment.type === "Line")
+  );
+}
+
 module.exports = {
   classChildNeedsASIProtection,
   classPropMayCauseASIProblems,
@@ -1034,6 +1046,7 @@ module.exports = {
   isJestEachTemplateLiteral,
   isJSXNode,
   isJSXWhitespaceExpression,
+  isLastCommentLine,
   isLastStatement,
   isLiteral,
   isLongCurriedCallExpression,

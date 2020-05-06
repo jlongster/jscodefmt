@@ -8,6 +8,7 @@ const { UndefinedParserError } = require("../common/errors");
 const { getSupportInfo } = require("../main/support");
 const normalizer = require("./options-normalizer");
 const { resolveParser } = require("./parser");
+const normalizePath = require("../utils/normalize-path");
 
 const hiddenDefaults = {
   astFormat: "estree",
@@ -50,7 +51,9 @@ function normalize(options, opts) {
       rawOptions.parser = inferParser(rawOptions.filepath, rawOptions.plugins);
       if (!rawOptions.parser) {
         throw new UndefinedParserError(
-          `No parser could be inferred for file: ${rawOptions.filepath}`
+          `No parser could be inferred for file: ${normalizePath(
+            rawOptions.filepath
+          )}`
         );
       }
     }

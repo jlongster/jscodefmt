@@ -4,6 +4,7 @@ const path = require("path");
 const fs = require("fs");
 const fastGlob = require("fast-glob");
 const flat = require("lodash/flatten");
+const normalizePath = require("../utils/normalize-path");
 
 /** @typedef {import('./util').Context} Context */
 
@@ -199,8 +200,6 @@ function escapePathForGlob(path) {
     .replace(/\0/g, "@(\\\\)"); // Workaround for fast-glob#262 (part 2)
 }
 
-const isWindows = path.sep === "\\";
-
 /**
  * Using backslashes in globs is probably not okay, but not accepting
  * backslashes as path separators on Windows is even more not okay.
@@ -209,10 +208,7 @@ const isWindows = path.sep === "\\";
  * @param {string} pattern
  */
 function fixWindowsSlashes(pattern) {
-  return isWindows ? pattern.replace(/\\/g, "/") : pattern;
+  return normalizePath(pattern);
 }
 
-module.exports = {
-  expandPatterns,
-  fixWindowsSlashes,
-};
+module.exports = expandPatterns;

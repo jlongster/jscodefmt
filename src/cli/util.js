@@ -16,7 +16,7 @@ const flat = require("lodash/flatten");
 const minimist = require("./minimist");
 const prettier = require("../../index");
 const createIgnorer = require("../common/create-ignorer");
-const { expandPatterns, fixWindowsSlashes } = require("./expand-patterns");
+const expandPatterns = require("./expand-patterns");
 const errors = require("../common/errors");
 const constant = require("./constant");
 const coreOptions = require("../main/core-options");
@@ -25,6 +25,7 @@ const optionsNormalizer = require("../main/options-normalizer");
 const thirdParty = require("../common/third-party");
 const arrayify = require("../utils/arrayify");
 const isTTY = require("../utils/is-tty");
+const normalizePath = require("../utils/normalize-path");
 
 const OPTION_USAGE_THRESHOLD = 25;
 const CHOICE_USAGE_MARGIN = 3;
@@ -100,7 +101,7 @@ function logResolvedConfigPathOrDie(context) {
     context.argv["find-config-path"]
   );
   if (configFile) {
-    context.logger.log(path.relative(process.cwd(), configFile));
+    context.logger.log(normalizePath(path.relative(process.cwd(), configFile)));
   } else {
     process.exit(1);
   }
@@ -124,7 +125,9 @@ function logFileInfoOrDie(context) {
 function writeOutput(context, result, options) {
   // Don't use `console.log` here since it adds an extra newline at the end.
   process.stdout.write(
-    context.argv["debug-check"] ? result.filepath : result.formatted
+    context.argv["debug-check"]
+      ? normalizePath(result.filepath)
+      : result.formatted
   );
 
   if (options && options.cursorOffset >= 0) {
@@ -145,7 +148,7 @@ function listDifferent(context, input, options, filename) {
     }
     if (!prettier.check(input, options)) {
       if (!context.argv.write) {
-        context.logger.log(filename);
+        context.logger.log(normalizePath(filename));
         process.exitCode = 1;
       }
     }
@@ -287,7 +290,8 @@ function getOptionsOrDie(context, filePath) {
     return options;
   } catch (error) {
     context.logger.error(
-      `Invalid configuration file \`${filePath}\`: ` + error.message
+      `Invalid configuration file \`${normalizePath(filePath)}\`: ` +
+        error.message
     );
     process.exit(2);
   }
@@ -376,7 +380,7 @@ function formatStdin(context) {
     .then((input) => {
       if (
         relativeFilepath &&
-        ignorer.ignores(fixWindowsSlashes(relativeFilepath))
+        ignorer.ignores(normalizePath(relativeFilepath))
       ) {
         writeOutput(context, { formatted: input });
         return;
@@ -433,7 +437,7 @@ function formatFiles(context) {
       ? path.relative(path.dirname(context.argv["ignore-path"]), filename)
       : filename;
 
-    const fileIgnored = ignorer.ignores(fixWindowsSlashes(ignoreFilename));
+    const fileIgnored = ignorer.ignores(normalizePath(ignoreFilename));
     if (
       fileIgnored &&
       (context.argv["debug-check"] ||
@@ -461,7 +465,7 @@ function formatFiles(context) {
       context.logger.log("");
 
       context.logger.error(
-        `Unable to read file: ${filename}\n${error.message}`
+        `Unable to read file: ${normalizePath(filename)}\n${error.message}`
       );
       // Don't exit the process if one file failed
       process.exitCode = 2;
@@ -499,24 +503,28 @@ function formatFiles(context) {
       // mtime based caches.
       if (isDifferent) {
         if (!context.argv.check && !context.argv["list-different"]) {
-          context.logger.log(`${filename} ${Date.now() - start}ms`);
+          context.logger.log(
+            `${normalizePath(filename)} ${Date.now() - start}ms`
+          );
         }
 
         try {
           fs.writeFileSync(filename, output, "utf8");
         } catch (error) {
           context.logger.error(
-            `Unable to write file: ${filename}\n${error.message}`
+            `Unable to write file: ${normalizePath(filename)}\n${error.message}`
           );
           // Don't exit the process if one file failed
           process.exitCode = 2;
         }
       } else if (!context.argv.check && !context.argv["list-different"]) {
-        context.logger.log(`${chalk.grey(filename)} ${Date.now() - start}ms`);
+        context.logger.log(
+          `${chalk.grey(normalizePath(filename))} ${Date.now() - start}ms`
+        );
       }
     } else if (context.argv["debug-check"]) {
       if (result.filepath) {
-        context.logger.log(result.filepath);
+        context.logger.log(normalizePath(result.filepath));
       } else {
         process.exitCode = 2;
       }
@@ -525,7 +533,7 @@ function formatFiles(context) {
     }
 
     if ((context.argv.check || context.argv["list-different"]) && isDifferent) {
-      context.logger.log(filename);
+      context.logger.log(normalizePath(filename));
       numberOfUnformattedFilesFound += 1;
     }
   }

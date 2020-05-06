@@ -1,6 +1,7 @@
 "use strict";
 
 const fs = require("fs");
+const normalizePath = require("./normalize-path");
 
 /**
  * @param {string} filename
@@ -34,7 +35,9 @@ getFileContentOrNull.sync = function (filename) {
 };
 
 function createError(filename, error) {
-  return new Error(`Unable to read ${filename}: ${error.message}`);
+  return new Error(
+    `Unable to read ${normalizePath(filename)}: ${error.message}`
+  );
 }
 
 module.exports = getFileContentOrNull;

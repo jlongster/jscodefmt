@@ -4,7 +4,7 @@ const {
   getLast,
   getNextNonSpaceNonCommentCharacter,
 } = require("../common/util");
-const { composeLoc, locEnd } = require("./loc");
+const { composeLoc, locEnd, locStart } = require("./loc");
 const { isTypeCastComment } = require("./comments");
 
 function postprocess(ast, options) {
@@ -99,10 +99,33 @@ function postprocess(ast, options) {
           node.optional = true;
         }
         break;
+      case "ExpressionStatement":
+        fixExpressionStatementEnd(node);
+        break;
     }
   });
-
   return ast;
+
+  function fixExpressionStatementEnd(node) {
+    const text = options.originalText.slice(locStart(node), locEnd(node));
+    if (!text.endsWith(";")) {
+      return;
+    }
+
+    const fixed = text.slice(0, -1).trimEnd();
+
+    const offset = fixed.length - text.trimEnd().length;
+
+    if (Array.isArray(node.range)) {
+      node.range = [node.range[0], node.range[1] + offset];
+    } else {
+      node.end = node.end + offset;
+    }
+    node.loc = {
+      ...node.loc,
+      end: node.loc.end + offset,
+    };
+  }
 
   /**
    * - `toOverrideNode` must be the last thing in `toBeOverriddenNode`
@@ -112,6 +135,7 @@ function postprocess(ast, options) {
     if (options.originalText[locEnd(toOverrideNode)] === ";") {
       return;
     }
+
     if (Array.isArray(toBeOverriddenNode.range)) {
       toBeOverriddenNode.range = [
         toBeOverriddenNode.range[0],

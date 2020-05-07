@@ -38,8 +38,16 @@ function hasFlowShorthandAnnotationComment(node) {
   );
 }
 
+function isEmptyFlowAnnotationComment(comment) {
+  return comment.trim() === "::";
+}
+
 function hasFlowAnnotationComment(comments) {
-  return comments && comments[0].value.match(FLOW_ANNOTATION);
+  return (
+    comments &&
+    !isEmptyFlowAnnotationComment(comments[0].value) &&
+    FLOW_ANNOTATION.test(comments[0].value)
+  );
 }
 
 function hasNode(node, fn) {

@@ -29,11 +29,14 @@ const FLOW_ANNOTATION = new RegExp(`^${NON_LINE_TERMINATING_WHITE_SPACE}*::`);
 function hasFlowShorthandAnnotationComment(node) {
   // https://flow.org/en/docs/types/comments/
   // Syntax example: const r = new (window.Request /*: Class<Request> */)("");
-
   return (
     node.extra &&
     node.extra.parenthesized &&
     node.trailingComments &&
+    // To avoid reprinting the same comment
+    !node.trailingComments[0].printed &&
+    // Flow annotations are always block comments
+    node.trailingComments[0].type === "CommentBlock" &&
     node.trailingComments[0].value.match(FLOW_SHORTHAND_ANNOTATION)
   );
 }

@@ -59,3 +59,8 @@ function foo4() {
   // this is a function
   return 42;
 }
+
+btnActions[1] = () => (
+  <button> test </button>
+  // :testC
+)

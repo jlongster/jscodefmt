@@ -747,6 +747,10 @@ function hasIgnoreComment(path) {
   return hasNodeIgnoreComment(node);
 }
 
+/**
+ * @typedef {{printed?: boolean, leading?: boolean, trailing?: boolean}} Comment
+ */
+
 function hasNodeIgnoreComment(node) {
   return (
     node &&
@@ -763,6 +767,10 @@ function isNodeIgnoreComment(comment) {
   return comment.value.trim() === "prettier-ignore";
 }
 
+/**
+ * @param {{type: string, comments?: Comment[]}} node
+ * @param {Comment} comment
+ */
 function addCommentHelper(node, comment) {
   const comments = node.comments || (node.comments = []);
   comments.push(comment);
@@ -776,18 +784,30 @@ function addCommentHelper(node, comment) {
   }
 }
 
+/**
+ * @param {{type: string, comments?: Comment[]}} node
+ * @param {Comment} comment
+ */
 function addLeadingComment(node, comment) {
   comment.leading = true;
   comment.trailing = false;
   addCommentHelper(node, comment);
 }
 
+/**
+ * @param {{type: string, comments?: Comment[]}} node
+ * @param {Comment} comment
+ */
 function addDanglingComment(node, comment) {
   comment.leading = false;
   comment.trailing = false;
   addCommentHelper(node, comment);
 }
 
+/**
+ * @param {{type: string, comments?: Comment[]}} node
+ * @param {Comment} comment
+ */
 function addTrailingComment(node, comment) {
   comment.leading = false;
   comment.trailing = true;

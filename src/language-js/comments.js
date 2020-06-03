@@ -835,6 +835,15 @@ function handleImportDeclarationComments(
   options
 ) {
   if (
+    !precedingNode &&
+    enclosingNode &&
+    enclosingNode.type === "ImportDeclaration" &&
+    (!enclosingNode.specifiers || enclosingNode.specifiers.length === 0)
+  ) {
+    addDanglingComment(enclosingNode, comment);
+    return true;
+  }
+  if (
     precedingNode &&
     precedingNode.type === "ImportSpecifier" &&
     enclosingNode &&

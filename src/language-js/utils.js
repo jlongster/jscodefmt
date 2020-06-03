@@ -7,6 +7,8 @@ const {
   hasIgnoreComment,
   hasNodeIgnoreComment,
   skipWhitespace,
+  skipInlineComment,
+  skipTrailingComment,
 } = require("../common/util");
 const isIdentifierName = require("esutils").keyword.isIdentifierNameES5;
 const handleComments = require("./comments");
@@ -1046,6 +1048,35 @@ function shouldPrintComma(options, level) {
   }
 }
 
+/**
+ * @param {string} text
+ * @param {number} idx
+ * @returns {number | false}
+ */
+function getNextNonCommentCharacterIndexWithStartIndex(text, idx) {
+  /** @type {number | false} */
+  let oldIdx = null;
+  /** @type {number | false} */
+  let nextIdx = idx;
+  while (nextIdx !== oldIdx) {
+    oldIdx = nextIdx;
+    nextIdx = skipInlineComment(text, nextIdx);
+    nextIdx = skipTrailingComment(text, nextIdx);
+  }
+  return nextIdx;
+}
+
+function stripComments(text) {
+  let result = "";
+  let index = 0;
+  while (index < text.length) {
+    index = getNextNonCommentCharacterIndexWithStartIndex(text, index);
+    result += text.charAt(index);
+    index++;
+  }
+  return result;
+}
+
 module.exports = {
   classChildNeedsASIProtection,
   classPropMayCauseASIProblems,
@@ -1104,4 +1135,5 @@ module.exports = {
   rawText,
   returnArgumentHasLeadingComment,
   shouldPrintComma,
+  stripComments,
 };

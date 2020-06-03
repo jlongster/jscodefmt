@@ -83,6 +83,7 @@ const {
   rawText,
   returnArgumentHasLeadingComment,
   shouldPrintComma,
+  stripComments,
 } = require("./utils");
 
 const printMemberChain = require("./print/member-chain");
@@ -1011,13 +1012,24 @@ function printPathNoParens(path, options, print, args) {
         (n.importKind && n.importKind === "type") ||
         // import {} from 'x'
         /{\s*}/.test(
-          options.originalText.slice(
-            options.locStart(n),
-            options.locStart(n.source)
+          stripComments(
+            options.originalText.slice(
+              options.locStart(n),
+              options.locStart(n.source)
+            )
           )
         )
       ) {
-        parts.push(" {}", printModuleSource(path, options, print));
+        const dangling = comments.printDanglingComments(
+          path,
+          options,
+          /* sameLine */ false
+        );
+        parts.push(" {");
+        const printedComments = dangling ? concat([dangling, softline]) : "";
+        parts.push(printedComments);
+        parts.push("}");
+        parts.push(printModuleSource(path, options, print));
       } else {
         parts.push(" ", path.call(print, "source"));
       }

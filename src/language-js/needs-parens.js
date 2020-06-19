@@ -1,7 +1,5 @@
 "use strict";
 
-const assert = require("assert");
-
 const util = require("../common/util");
 const {
   getLeftSidePathName,
@@ -299,7 +297,10 @@ function needsParens(path, options) {
           }
 
           if (pp === np && name === "right") {
-            assert.strictEqual(parent.right, node);
+            /* istanbul ignore next */
+            if (parent.right !== node) {
+              throw new Error("Unexpected node.");
+            }
             return true;
           }
 

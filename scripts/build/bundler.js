@@ -20,7 +20,6 @@ const externals = require("./rollup-plugins/externals");
 const PROJECT_ROOT = path.resolve(__dirname, "../..");
 
 const EXTERNALS = [
-  "assert",
   "buffer",
   "constants",
   "crypto",

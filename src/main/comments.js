@@ -1,6 +1,5 @@
 "use strict";
 
-const assert = require("assert");
 const {
   concat,
   line,
@@ -322,8 +321,13 @@ function breakTies(tiesToBreak, text, options) {
     --indexOfFirstLeadingComment
   ) {
     const comment = tiesToBreak[indexOfFirstLeadingComment - 1];
-    assert.strictEqual(comment.precedingNode, precedingNode);
-    assert.strictEqual(comment.followingNode, followingNode);
+    /* istanbul ignore next */
+    if (
+      comment.precedingNode !== precedingNode ||
+      comment.followingNode !== followingNode
+    ) {
+      throw new TypeError("Unexpected comment.");
+    }
 
     const gap = text.slice(options.locEnd(comment), gapEndPos);
 

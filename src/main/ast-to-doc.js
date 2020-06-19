@@ -1,6 +1,5 @@
 "use strict";
 
-const assert = require("assert");
 const comments = require("./comments");
 const FastPath = require("../common/fast-path");
 const multiparser = require("./multiparser");
@@ -90,7 +89,10 @@ function printAstToDoc(ast, options, alignmentSize = 0) {
 }
 
 function callPluginPrintFunction(path, options, printPath, args) {
-  assert.ok(path instanceof FastPath);
+  /* istanbul ignore next */
+  if (!(path instanceof FastPath)) {
+    throw new TypeError("path should be FastPath instance.");
+  }
 
   const node = path.getValue();
   const { printer } = options;

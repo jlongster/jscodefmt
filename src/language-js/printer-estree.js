@@ -1,7 +1,5 @@
 "use strict";
 
-const assert = require("assert");
-
 // TODO(azz): anything that imports from main shouldn't be in a `language-*` dir.
 const comments = require("../main/comments");
 const {
@@ -2978,7 +2976,12 @@ function printPathNoParens(path, options, print, args) {
     case "StringLiteralTypeAnnotation":
       return nodeStr(n, options);
     case "NumberLiteralTypeAnnotation":
-      assert.strictEqual(typeof n.value, "number");
+      /* istanbul ignore next */
+      if (typeof n.value !== "number") {
+        throw new Error(
+          "value of `NumberLiteralTypeAnnotation` should be a number."
+        );
+      }
 
       if (n.extra != null) {
         return printNumber(n.extra.raw);
@@ -3817,7 +3820,10 @@ function printMethod(path, options, print) {
       parts.push("*");
     }
   } else {
-    assert.ok(kind === "get" || kind === "set");
+    /* istanbul ignore next */
+    if (kind !== "get" && kind !== "set") {
+      throw new Error("Unexpected kind.");
+    }
 
     parts.push(kind, " ");
   }
@@ -4255,7 +4261,10 @@ function printFlowDeclaration(path, parts) {
   const parentExportDecl = getParentExportDeclaration(path);
 
   if (parentExportDecl) {
-    assert.strictEqual(parentExportDecl.type, "DeclareExportDeclaration");
+    /* istanbul ignore next */
+    if (parentExportDecl.type !== "DeclareExportDeclaration") {
+      throw new Error("Unexpected type.");
+    }
   } else {
     // If the parent node has type DeclareExportDeclaration, then it
     // will be responsible for printing the "declare" token. Otherwise

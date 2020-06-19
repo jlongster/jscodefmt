@@ -43,7 +43,6 @@ const {
 } = require("./utils");
 const { replaceEndOfLineWith } = require("../common/util");
 const preprocess = require("./preprocess");
-const assert = require("assert");
 const { insertPragma } = require("./pragma");
 const {
   printVueFor,
@@ -928,7 +927,10 @@ function printOpeningTagStartMarker(node) {
 }
 
 function printOpeningTagEndMarker(node) {
-  assert(!node.isSelfClosing);
+  /* istanbul ignore next */
+  if (node.isSelfClosing) {
+    throw new Error("node.isSelfClosing should be false");
+  }
   switch (node.type) {
     case "ieConditionalComment":
       return "]>";
@@ -943,7 +945,10 @@ function printOpeningTagEndMarker(node) {
 }
 
 function printClosingTagStartMarker(node, options) {
-  assert(!node.isSelfClosing);
+  /* istanbul ignore next */
+  if (node.isSelfClosing) {
+    throw new Error("node.isSelfClosing should be false");
+  }
   if (shouldNotPrintClosingTag(node, options)) {
     return "";
   }

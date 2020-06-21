@@ -1,0 +1,330 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`interface.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+# https://github.com/graphql/graphql-spec/blob/master/spec/Section%203%20--%20Type%20System.md#interfaces
+
+interface Actor {
+  id: ID
+  name: String
+}
+
+interface Resource implements Node
+{
+  id: ID!
+  url: String
+}
+
+interface Resource implements
+Node {
+  id: ID!
+  url: String
+}
+
+interface Image implements Resource
+& Node {
+  id: ID!
+  url: String
+  thumbnail: String
+}
+
+interface Node implements Named &
+Node {
+  id: ID!
+  name: String
+}
+
+interface Named implements
+Node & Named {
+  id: ID!
+  name: String
+}
+
+# \`InterfaceTypeExtension\`
+extend interface Bar implements
+A, B & C {
+  two(argument: InputType!): Type
+}
+
+=====================================output=====================================
+# https://github.com/graphql/graphql-spec/blob/master/spec/Section%203%20--%20Type%20System.md#interfaces
+
+interface Actor {
+  id: ID
+  name: String
+}
+
+interface Resource implements Node {
+  id: ID!
+  url: String
+}
+
+interface Resource implements Node {
+  id: ID!
+  url: String
+}
+
+interface Image implements Resource & Node {
+  id: ID!
+  url: String
+  thumbnail: String
+}
+
+interface Node implements Named & Node {
+  id: ID!
+  name: String
+}
+
+interface Named implements Node & Named {
+  id: ID!
+  name: String
+}
+
+# \`InterfaceTypeExtension\`
+extend interface Bar implements A, B & C {
+  two(argument: InputType!): Type
+}
+
+================================================================================
+`;
+
+exports[`object_type_def.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type Artist implements Node & Entity {
+  # The ID of an object
+  id: ID!
+
+  # The MBID of the entity.
+  mbid: MBID!
+
+  # A list of recordings linked to this entity.
+  recordings(after: String, first: Int): RecordingConnection
+
+  # A list of releases linked to this entity.
+  releases(
+    # Filter by one or more release group types.
+    type: [ReleaseGroupType]
+
+    # Filter by one or more release statuses.
+    status: [ReleaseStatus]
+    after: String
+    first: Int
+  ): ReleaseConnection
+
+}
+
+=====================================output=====================================
+type Artist implements Node & Entity {
+  # The ID of an object
+  id: ID!
+
+  # The MBID of the entity.
+  mbid: MBID!
+
+  # A list of recordings linked to this entity.
+  recordings(after: String, first: Int): RecordingConnection
+
+  # A list of releases linked to this entity.
+  releases(
+    # Filter by one or more release group types.
+    type: [ReleaseGroupType]
+
+    # Filter by one or more release statuses.
+    status: [ReleaseStatus]
+    after: String
+    first: Int
+  ): ReleaseConnection
+}
+
+================================================================================
+`;
+
+exports[`object_type_def_mixed_syntax.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type MixedArtist implements Node, Entity & Releasable {
+  # The ID of an object
+  id: ID!
+
+  # The MBID of the entity.
+  mbid: MBID!
+
+  # A list of recordings linked to this entity.
+  recordings(after: String, first: Int): RecordingConnection
+
+  # A list of releases linked to this entity.
+  releases(
+    # Filter by one or more release group types.
+    type: [ReleaseGroupType]
+
+    # Filter by one or more release statuses.
+    status: [ReleaseStatus]
+    after: String
+    first: Int
+  ): ReleaseConnection
+
+}
+
+=====================================output=====================================
+type MixedArtist implements Node, Entity & Releasable {
+  # The ID of an object
+  id: ID!
+
+  # The MBID of the entity.
+  mbid: MBID!
+
+  # A list of recordings linked to this entity.
+  recordings(after: String, first: Int): RecordingConnection
+
+  # A list of releases linked to this entity.
+  releases(
+    # Filter by one or more release group types.
+    type: [ReleaseGroupType]
+
+    # Filter by one or more release statuses.
+    status: [ReleaseStatus]
+    after: String
+    first: Int
+  ): ReleaseConnection
+}
+
+================================================================================
+`;
+
+exports[`object_type_def_old_syntax.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type OldArtist implements Node, Entity {
+  # The ID of an object
+  id: ID!
+
+  # The MBID of the entity.
+  mbid: MBID!
+
+  # A list of recordings linked to this entity.
+  recordings(after: String, first: Int): RecordingConnection
+
+  # A list of releases linked to this entity.
+  releases(
+    # Filter by one or more release group types.
+    type: [ReleaseGroupType]
+
+    # Filter by one or more release statuses.
+    status: [ReleaseStatus]
+    after: String
+    first: Int
+  ): ReleaseConnection
+
+}
+
+=====================================output=====================================
+type OldArtist implements Node, Entity {
+  # The ID of an object
+  id: ID!
+
+  # The MBID of the entity.
+  mbid: MBID!
+
+  # A list of recordings linked to this entity.
+  recordings(after: String, first: Int): RecordingConnection
+
+  # A list of releases linked to this entity.
+  releases(
+    # Filter by one or more release group types.
+    type: [ReleaseGroupType]
+
+    # Filter by one or more release statuses.
+    status: [ReleaseStatus]
+    after: String
+    first: Int
+  ): ReleaseConnection
+}
+
+================================================================================
+`;
+
+exports[`separator-detection.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type Type1 implements A, B, C, D
+# {&&&&&&&&
+# Should separate by \`,\` not \`&\`
+{a: a}
+
+type Type2 implements A, B, C, D
+# &&&&{}&&&&
+# Should separate by \`,\` not \`&\`
+{a: a}
+
+type Type3 implements A, 
+# &&&&&&&& comment line 1
+   # &&&&&&&& comment line 2
+B& C, D
+{a: a}
+
+type Type4 implements A
+# &&&&&&&& comment line 1
+, 
+   # &&&&&&&& comment line 2
+B& C, D
+{a: a}
+
+type Type5 implements A 
+# &&&&&&&& comment line 1
+   # &&&&&&&& comment line 2
+,B& C, D
+{a: a}
+
+=====================================output=====================================
+type Type1 implements A, B, C, D {
+  # {&&&&&&&&
+  # Should separate by \`,\` not \`&\`
+  a: a
+}
+
+type Type2 implements A, B, C, D {
+  # &&&&{}&&&&
+  # Should separate by \`,\` not \`&\`
+  a: a
+}
+
+type Type3 implements A,
+# &&&&&&&& comment line 1
+# &&&&&&&& comment line 2
+B & C, D {
+  a: a
+}
+
+type Type4 implements A,
+# &&&&&&&& comment line 1
+# &&&&&&&& comment line 2
+B & C, D {
+  a: a
+}
+
+type Type5 implements A,
+# &&&&&&&& comment line 1
+# &&&&&&&& comment line 2
+B & C, D {
+  a: a
+}
+
+================================================================================
+`;

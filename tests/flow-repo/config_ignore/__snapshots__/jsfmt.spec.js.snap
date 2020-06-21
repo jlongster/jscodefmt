@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`foo.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+// No error, this file is ignored
+var x: number = "string";
+
+=====================================output=====================================
+/* @flow */
+
+// No error, this file is ignored
+var x: number = "string";
+
+================================================================================
+`;

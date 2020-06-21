@@ -1,15 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`directories and patterns (stderr) 1`] = `""`;
-
-exports[`directories and patterns (stdout) 1`] = `
-"other-directory/file.js
-other-directory/nested-directory/nested-directory-file.js
-"
-`;
-
-exports[`directories and patterns (write) 1`] = `Array []`;
-
 exports[`multiple patterns (stderr) 1`] = `""`;
 
 exports[`multiple patterns (stdout) 1`] = `
@@ -71,7 +61,10 @@ regular-module.js
 
 exports[`multiple patterns with ignore nested directories pattern (write) 1`] = `Array []`;
 
-exports[`multiple patterns with non exists pattern (stderr) 1`] = `""`;
+exports[`multiple patterns with non exists pattern (stderr) 1`] = `
+"[error] No files matching the pattern were found: \\"non-existent.js\\".
+"
+`;
 
 exports[`multiple patterns with non exists pattern (stdout) 1`] = `
 "directory/file.js
@@ -82,7 +75,8 @@ directory/nested-directory/nested-directory-file.js
 exports[`multiple patterns with non exists pattern (write) 1`] = `Array []`;
 
 exports[`multiple patterns, throw error and exit with non zero code on non existing files (stderr) 1`] = `
-"[error] No matching files. Patterns tried: non-existent.js other-non-existent.js !**/node_modules/** !./node_modules/** !**/.{git,svn,hg}/** !./.{git,svn,hg}/**
+"[error] No files matching the pattern were found: \\"non-existent.js\\".
+[error] No files matching the pattern were found: \\"other-non-existent.js\\".
 "
 `;
 
@@ -95,21 +89,3 @@ exports[`no errors on empty patterns (stderr) 1`] = `""`;
 exports[`no errors on empty patterns (stdout) 1`] = `""`;
 
 exports[`no errors on empty patterns (write) 1`] = `Array []`;
-
-exports[`should not expand directories (stderr) 1`] = `
-"[error] No matching files. Patterns tried: directory other-directory !**/node_modules/** !./node_modules/** !**/.{git,svn,hg}/** !./.{git,svn,hg}/**
-"
-`;
-
-exports[`should not expand directories (stdout) 1`] = `""`;
-
-exports[`should not expand directories (write) 1`] = `Array []`;
-
-exports[`should not support dot pattern (stderr) 1`] = `
-"[error] No matching files. Patterns tried: . !**/node_modules/** !./node_modules/** !**/.{git,svn,hg}/** !./.{git,svn,hg}/**
-"
-`;
-
-exports[`should not support dot pattern (stdout) 1`] = `""`;
-
-exports[`should not support dot pattern (write) 1`] = `Array []`;

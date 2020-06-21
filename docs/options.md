@@ -129,7 +129,7 @@ Valid options:
 - `true` - Example:
 
 <!-- prettier-ignore -->
-```
+```jsx
 <button
   className="prettier-class"
   id="prettier-id"
@@ -141,7 +141,7 @@ Valid options:
 - `false` - Example:
 
 <!-- prettier-ignore -->
-```
+```jsx
 <button
   className="prettier-class"
   id="prettier-id"
@@ -240,11 +240,13 @@ For example, the following will use the CSS parser:
 cat foo | prettier --stdin-filepath foo.css
 ```
 
+This option is only useful in the CLI and API. It doesn't make sense to use it in a configuration file.
+
 | Default | CLI Override                | API Override           |
 | ------- | --------------------------- | ---------------------- |
 | None    | `--stdin-filepath <string>` | `filepath: "<string>"` |
 
-## Require pragma
+## Require Pragma
 
 _First available in v1.7.0_
 
@@ -346,7 +348,7 @@ If you want to make sure that your entire git repository only contains Linux-sty
 
 1. Ensure Prettier’s `endOfLine` option is set to `lf` (this is a default value since v2.0.0)
 1. Configure [a pre-commit hook](precommit.md) that will run Prettier
-1. Configure Prettier to run in your CI pipeline using [`--check` flag](cli.md#check)
+1. Configure Prettier to run in your CI pipeline using [`--check` flag](cli.md#--check). If you use Travis CI, set [the `autocrlf` option](https://docs.travis-ci.com/user/customizing-the-build#git-end-of-line-conversion-control) to `input` in `.travis.yml`.
 1. Add `* text=auto eol=lf` to the repo's `.gitattributes` file.
    You may need to ask Windows users to re-clone your repo after this change to ensure git has not converted `LF` to `CRLF` on checkout.
 
@@ -364,3 +366,22 @@ Valid options:
 | Default | CLI Override                                                | API Override                                               |
 | ------- | ----------------------------------------------------------- | ---------------------------------------------------------- |
 | `"lf"`  | <code>--end-of-line <lf&#124;crlf&#124;cr&#124;auto></code> | <code>endOfLine: "<lf&#124;crlf&#124;cr&#124;auto>"</code> |
+
+## Embedded Language Formatting
+
+_First available in v2.1.0_
+
+Control whether Prettier formats quoted code embedded in the file.
+
+When Prettier identifies cases where it looks like you've placed some code it knows how to format within a string in another file, like in a tagged template in JavaScript with a tag named `html` or in code blocks in Markdown, it will by default try to format that code.
+
+Sometimes this behavior is undesirable, particularly in cases where you might not have intended the string to be interpreted as code. This option allows you to switch between the default behavior (`auto`) and disabling this feature entirely (`off`).
+
+Valid options:
+
+- `"auto"` – Format embedded code if Prettier can automatically identify it.
+- `"off"` - Never automatically format embedded code.
+
+| Default  | CLI Override                         | API Override                        |
+| -------- | ------------------------------------ | ----------------------------------- |
+| `"auto"` | `--embedded-language-formatting=off` | `embeddedLanguageFormatting: "off"` |

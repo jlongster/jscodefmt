@@ -28,12 +28,12 @@ const parser = {
   astFormat: "yaml",
   parse,
   hasPragma,
-  locStart: node => node.position.start.offset,
-  locEnd: node => node.position.end.offset
+  locStart: (node) => node.position.start.offset,
+  locEnd: (node) => node.position.end.offset,
 };
 
 module.exports = {
   parsers: {
-    yaml: parser
-  }
+    yaml: parser,
+  },
 };

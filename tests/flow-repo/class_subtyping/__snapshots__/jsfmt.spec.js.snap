@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+class A {}
+class B {}
+
+module.exports = { A, B };
+
+=====================================output=====================================
+/* @flow */
+class A {}
+class B {}
+
+module.exports = { A, B };
+
+================================================================================
+`;
+
+exports[`test2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+var I = require("./test.js");
+
+class C extends I.A {}
+
+var x: I.A = new C();
+var y: I.B = new C();
+
+=====================================output=====================================
+/* @flow */
+var I = require("./test.js");
+
+class C extends I.A {}
+
+var x: I.A = new C();
+var y: I.B = new C();
+
+================================================================================
+`;
+
+exports[`test3.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class A<X, Y, Z> {}
+class B extends A<string, number, bool> {}
+class C<X, Y, Z> extends B {}
+
+var c: C<number, string, Array<bool>> = new C; // none of the type args matter
+var a: A<string, number, Array<bool>> = c; // the third type arg is incorrect
+
+=====================================output=====================================
+class A<X, Y, Z> {}
+class B extends A<string, number, boolean> {}
+class C<X, Y, Z> extends B {}
+
+var c: C<number, string, Array<boolean>> = new C(); // none of the type args matter
+var a: A<string, number, Array<boolean>> = c; // the third type arg is incorrect
+
+================================================================================
+`;
+
+exports[`test4.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class C<X> { x: X; }
+
+function foo<X>(c: C<X>, x: X) { }
+
+type O = { f: number };
+
+foo((new C: C<O>), { f_: 0 });
+
+class D extends C<O> {
+  bar() { this.x; }
+}
+
+foo(new D, { f_: 0 });
+
+=====================================output=====================================
+class C<X> {
+  x: X;
+}
+
+function foo<X>(c: C<X>, x: X) {}
+
+type O = { f: number };
+
+foo((new C(): C<O>), { f_: 0 });
+
+class D extends C<O> {
+  bar() {
+    this.x;
+  }
+}
+
+foo(new D(), { f_: 0 });
+
+================================================================================
+`;

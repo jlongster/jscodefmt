@@ -6,7 +6,7 @@
 node ./scripts/release/release.js --version NEW_VERSION
 ```
 
-The script its own `package.json` so we can reinstall the root's `node_modules/` while making the release.
+The script has its own `package.json` so we can reinstall the root's `node_modules/` while making the release.
 
 ## Credits
 

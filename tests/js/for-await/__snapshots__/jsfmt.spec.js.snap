@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`for-await.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+async function foo() {
+  for await (num of asyncIterable) {
+    console.log(num);
+  }
+  for await (num of asyncGeneratorFunc()) {
+    console.log(num);
+  }
+}
+
+(async () => {
+  for await (num of asyncIterable) {
+    console.log(num);
+  }
+  for await (const x of delegate_yield()) {
+    x;
+  }
+})();
+
+=====================================output=====================================
+async function foo() {
+  for await (num of asyncIterable) {
+    console.log(num);
+  }
+  for await (num of asyncGeneratorFunc()) {
+    console.log(num);
+  }
+}
+
+(async () => {
+  for await (num of asyncIterable) {
+    console.log(num);
+  }
+  for await (const x of delegate_yield()) {
+    x;
+  }
+})();
+
+================================================================================
+`;

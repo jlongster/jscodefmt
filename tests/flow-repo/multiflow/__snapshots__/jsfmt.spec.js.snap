@@ -1,0 +1,325 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`apply.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function apply<Args: $ReadOnlyArray<mixed>, Ret>(
+  fn: (...Args) => Ret,
+  args: Args,
+): Ret {
+  return fn(...args);
+}
+
+function noRest(x: 'hi', y: 123): true { return true; }
+apply(noRest, ['hi', 123]); // No error
+apply(noRest, ['hi', 456]); // Error - 456 ~> 123
+apply(noRest, ['hi']); // Error - too few args
+apply(noRest, ['hi', 123, false]); // No error - too many args is fine
+
+// withRest behaves the same as noRest except you can't pass too many args in
+function withRest(...rest: ['hi', 123]): true { return true; }
+apply(withRest, ['hi', 123]); // No error
+apply(withRest, ['hi', 456]); // Error - 456 ~> 123
+apply(withRest, ['hi']); // Error - too few args
+apply(withRest, ['hi', 123, false]); // Error - too many args
+
+// Same thing, but with types instead of functions
+declare var applyType: <Args: $ReadOnlyArray<mixed>, Ret>(
+  fn: (...Args) => Ret,
+  args: Args,
+) => Ret;
+
+function noRest(x: 'hi', y: 123): true { return true; }
+applyType(noRest, ['hi', 123]); // No error
+applyType(noRest, ['hi', 456]); // Error - 456 ~> 123
+applyType(noRest, ['hi']); // Error - too few args
+applyType(noRest, ['hi', 123, false]); // No error - too many args is fine
+
+// withRest behaves the same as noRest except you can't pass too many args in
+function withRest(...rest: ['hi', 123]): true { return true; }
+applyType(withRest, ['hi', 123]); // No error
+applyType(withRest, ['hi', 456]); // Error - 456 ~> 123
+applyType(withRest, ['hi']); // Error - too few args
+applyType(withRest, ['hi', 123, false]); // Error - too many args
+
+=====================================output=====================================
+// @flow
+
+function apply<Args: $ReadOnlyArray<mixed>, Ret>(
+  fn: (...Args) => Ret,
+  args: Args
+): Ret {
+  return fn(...args);
+}
+
+function noRest(x: "hi", y: 123): true {
+  return true;
+}
+apply(noRest, ["hi", 123]); // No error
+apply(noRest, ["hi", 456]); // Error - 456 ~> 123
+apply(noRest, ["hi"]); // Error - too few args
+apply(noRest, ["hi", 123, false]); // No error - too many args is fine
+
+// withRest behaves the same as noRest except you can't pass too many args in
+function withRest(...rest: ["hi", 123]): true {
+  return true;
+}
+apply(withRest, ["hi", 123]); // No error
+apply(withRest, ["hi", 456]); // Error - 456 ~> 123
+apply(withRest, ["hi"]); // Error - too few args
+apply(withRest, ["hi", 123, false]); // Error - too many args
+
+// Same thing, but with types instead of functions
+declare var applyType: <Args: $ReadOnlyArray<mixed>, Ret>(
+  fn: (...Args) => Ret,
+  args: Args
+) => Ret;
+
+function noRest(x: "hi", y: 123): true {
+  return true;
+}
+applyType(noRest, ["hi", 123]); // No error
+applyType(noRest, ["hi", 456]); // Error - 456 ~> 123
+applyType(noRest, ["hi"]); // Error - too few args
+applyType(noRest, ["hi", 123, false]); // No error - too many args is fine
+
+// withRest behaves the same as noRest except you can't pass too many args in
+function withRest(...rest: ["hi", 123]): true {
+  return true;
+}
+applyType(withRest, ["hi", 123]); // No error
+applyType(withRest, ["hi", 456]); // Error - 456 ~> 123
+applyType(withRest, ["hi"]); // Error - too few args
+applyType(withRest, ["hi", 123, false]); // Error - too many args
+
+================================================================================
+`;
+
+exports[`issue3443.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Adapted from https://github.com/facebook/flow/issues/3443
+
+class A {
+    f(...args: any[]) {}
+}
+
+class B extends A {
+    f(...args) {
+      this.f(...args);
+    }
+}
+
+function foo(...args) {
+  foo(1, ...args);
+}
+foo(123);
+
+=====================================output=====================================
+// @flow
+
+// Adapted from https://github.com/facebook/flow/issues/3443
+
+class A {
+  f(...args: any[]) {}
+}
+
+class B extends A {
+  f(...args) {
+    this.f(...args);
+  }
+}
+
+function foo(...args) {
+  foo(1, ...args);
+}
+foo(123);
+
+================================================================================
+`;
+
+exports[`jsx.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @jsx JSX
+ * @flow
+ */
+
+// This one for when there are no JSX attributes
+declare function JSX<
+  Children: $ReadOnlyArray<mixed>,
+  Elem,
+  C: (props: {}, children: Children) => Elem
+>(
+  component: C,
+  props: null,
+  ...children: Children
+): Elem;
+
+// This one for when there are JSX attributes.
+declare function JSX<
+  Children: $ReadOnlyArray<mixed>,
+  Elem,
+  Props: Object,
+  C: (props: Props, children: Children) => Elem
+>(
+  component: C,
+  props: Props,
+  ...children: Children
+): Elem;
+
+declare function AcceptsWhatever(props: {} | null, children: any): string;
+(<AcceptsWhatever />: number); // Error string ~> number
+(<AcceptsWhatever name="hi">Text</AcceptsWhatever>: number); // Error string ~> number
+
+declare function ExpectsProps(props: { name: string }, children: any): string;
+(<ExpectsProps />); // Error - missing prop
+(<ExpectsProps name="hi">Text</ExpectsProps>: number); // Error string ~> number
+
+declare function ExpectsChildrenTuple(props: any, children: [string]): string;
+(<ExpectsChildrenTuple />); // Error - mising child
+(<ExpectsChildrenTuple>Hi</ExpectsChildrenTuple>); // No error
+(<ExpectsChildrenTuple>{123}</ExpectsChildrenTuple>); // Error: number ~> string
+(<ExpectsChildrenTuple>Hi {"there"}</ExpectsChildrenTuple>); // Error: too many children
+
+declare function ExpectsChildrenArray(props: any, children: Array<string>): string;
+(<ExpectsChildrenArray />); // No error - 0 children is fine
+(<ExpectsChildrenArray>Hi</ExpectsChildrenArray>); // No error - 1 child is fine
+(<ExpectsChildrenArray>{123}</ExpectsChildrenArray>); // Error: number ~> string
+(<ExpectsChildrenArray>Hi {"there"}</ExpectsChildrenArray>); // No error - 2 children is fine
+
+=====================================output=====================================
+/**
+ * @jsx JSX
+ * @flow
+ */
+
+// This one for when there are no JSX attributes
+declare function JSX<
+  Children: $ReadOnlyArray<mixed>,
+  Elem,
+  C: (props: {}, children: Children) => Elem
+>(
+  component: C,
+  props: null,
+  ...children: Children
+): Elem;
+
+// This one for when there are JSX attributes.
+declare function JSX<
+  Children: $ReadOnlyArray<mixed>,
+  Elem,
+  Props: Object,
+  C: (props: Props, children: Children) => Elem
+>(
+  component: C,
+  props: Props,
+  ...children: Children
+): Elem;
+
+declare function AcceptsWhatever(props: {} | null, children: any): string;
+(<AcceptsWhatever />: number); // Error string ~> number
+(<AcceptsWhatever name="hi">Text</AcceptsWhatever>: number); // Error string ~> number
+
+declare function ExpectsProps(props: { name: string }, children: any): string;
+<ExpectsProps />; // Error - missing prop
+(<ExpectsProps name="hi">Text</ExpectsProps>: number); // Error string ~> number
+
+declare function ExpectsChildrenTuple(props: any, children: [string]): string;
+<ExpectsChildrenTuple />; // Error - mising child
+<ExpectsChildrenTuple>Hi</ExpectsChildrenTuple>; // No error
+<ExpectsChildrenTuple>{123}</ExpectsChildrenTuple>; // Error: number ~> string
+<ExpectsChildrenTuple>Hi {"there"}</ExpectsChildrenTuple>; // Error: too many children
+
+declare function ExpectsChildrenArray(
+  props: any,
+  children: Array<string>
+): string;
+<ExpectsChildrenArray />; // No error - 0 children is fine
+<ExpectsChildrenArray>Hi</ExpectsChildrenArray>; // No error - 1 child is fine
+<ExpectsChildrenArray>{123}</ExpectsChildrenArray>; // Error: number ~> string
+<ExpectsChildrenArray>Hi {"there"}</ExpectsChildrenArray>; // No error - 2 children is fine
+
+================================================================================
+`;
+
+exports[`spread.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function fun(x: 'hi', y: 123) {}
+fun(...['hi', 123]); // No error
+fun(...['hi'], ...[123]); // No error
+fun(...['hi'], ...[], ...[123]); // No error
+fun(...['hi'], ...[], ...[123], ...[true]); // Error - true is unused
+fun(...['hi'], ...[true], ...[123]); // Error: true ~> 123 and 123 is unused
+
+declare var arrOf123: Array<123>;
+fun('hi', ...arrOf123); // No error - ignore the fact arrOf123 could be empty
+
+
+function funWithRestArray(x: 'hi', y: 123, ...rest: Array<number>) {}
+funWithRestArray(...['hi', 123]); // No error
+funWithRestArray(...['hi'], ...[123]); // No error
+funWithRestArray(...['hi'], ...[], ...[123]); // No error
+funWithRestArray(...['hi'], ...[], ...[123], ...[456, 789]); // No error
+funWithRestArray(...['hi'], ...[true], ...[123]); // Error: true ~> 123
+
+funWithRestArray('hi', 123, ...arrOf123); // Ok
+funWithRestArray('hi', ...arrOf123); // No error - ignore the fact arrOf123 could be empty
+funWithRestArray('hi', ...arrOf123, ...arrOf123); // No error - ignore the fact arrOf123 could be empty
+
+// 2 errors
+// 1. 'bye' ~> 123 in case the first spread is empty
+// 2. 'bye' ~> number in case the first spread is not empty
+funWithRestArray('hi', ...arrOf123, 'bye', ...arrOf123);
+
+=====================================output=====================================
+// @flow
+
+function fun(x: "hi", y: 123) {}
+fun(...["hi", 123]); // No error
+fun(...["hi"], ...[123]); // No error
+fun(...["hi"], ...[], ...[123]); // No error
+fun(...["hi"], ...[], ...[123], ...[true]); // Error - true is unused
+fun(...["hi"], ...[true], ...[123]); // Error: true ~> 123 and 123 is unused
+
+declare var arrOf123: Array<123>;
+fun("hi", ...arrOf123); // No error - ignore the fact arrOf123 could be empty
+
+function funWithRestArray(x: "hi", y: 123, ...rest: Array<number>) {}
+funWithRestArray(...["hi", 123]); // No error
+funWithRestArray(...["hi"], ...[123]); // No error
+funWithRestArray(...["hi"], ...[], ...[123]); // No error
+funWithRestArray(...["hi"], ...[], ...[123], ...[456, 789]); // No error
+funWithRestArray(...["hi"], ...[true], ...[123]); // Error: true ~> 123
+
+funWithRestArray("hi", 123, ...arrOf123); // Ok
+funWithRestArray("hi", ...arrOf123); // No error - ignore the fact arrOf123 could be empty
+funWithRestArray("hi", ...arrOf123, ...arrOf123); // No error - ignore the fact arrOf123 could be empty
+
+// 2 errors
+// 1. 'bye' ~> 123 in case the first spread is empty
+// 2. 'bye' ~> number in case the first spread is not empty
+funWithRestArray("hi", ...arrOf123, "bye", ...arrOf123);
+
+================================================================================
+`;

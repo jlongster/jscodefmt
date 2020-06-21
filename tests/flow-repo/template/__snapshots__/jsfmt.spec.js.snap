@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`template.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+(\`foo\`: string); // ok
+(\`bar\`: 'bar'); // ok
+(\`baz\`: number); // error
+
+\`foo \${123} bar\`; // ok, number can be appended to string
+\`foo \${{bar: 123}} baz\`; // error, object can't be appended
+
+let tests = [
+  function(x: string) {
+    \`foo \${x}\`; // ok
+    \`\${x} bar\`; // ok
+    \`foo \${'bar'} \${x}\`; // ok
+  },
+  function(x: number) {
+    \`foo \${x}\`; // ok
+    \`\${x} bar\`; // ok
+    \`foo \${'bar'} \${x}\`; // ok
+  },
+  function(x: boolean) {
+    \`foo \${x}\`; // error
+    \`\${x} bar\`; // error
+    \`foo \${'bar'} \${x}\`; // error
+  },
+  function(x: mixed) {
+    \`foo \${x}\`; // error
+    \`\${x} bar\`; // error
+    \`foo \${'bar'} \${x}\`; // error
+  },
+];
+
+=====================================output=====================================
+/* @flow */
+
+(\`foo\`: string); // ok
+(\`bar\`: "bar"); // ok
+(\`baz\`: number); // error
+
+\`foo \${123} bar\`; // ok, number can be appended to string
+\`foo \${{ bar: 123 }} baz\`; // error, object can't be appended
+
+let tests = [
+  function (x: string) {
+    \`foo \${x}\`; // ok
+    \`\${x} bar\`; // ok
+    \`foo \${"bar"} \${x}\`; // ok
+  },
+  function (x: number) {
+    \`foo \${x}\`; // ok
+    \`\${x} bar\`; // ok
+    \`foo \${"bar"} \${x}\`; // ok
+  },
+  function (x: boolean) {
+    \`foo \${x}\`; // error
+    \`\${x} bar\`; // error
+    \`foo \${"bar"} \${x}\`; // error
+  },
+  function (x: mixed) {
+    \`foo \${x}\`; // error
+    \`\${x} bar\`; // error
+    \`foo \${"bar"} \${x}\`; // error
+  },
+];
+
+================================================================================
+`;

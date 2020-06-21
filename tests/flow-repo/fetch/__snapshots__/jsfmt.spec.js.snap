@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetch.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+// most of the details are tested in the separate file
+// here I test the basic usage
+
+const myRequest = new Request('http://google.com');
+
+const a: Promise<string> =
+  fetch(myRequest)
+  .then(response => response.text());
+
+const b: Promise<string> = fetch(myRequest); // incorrect
+
+var myInit = { method: 'GET',
+               headers: {
+                   'Content-Type': 'image/jpeg'
+               },
+               mode: 'cors',
+               cache: 'default' };
+
+const c: Promise<Blob> =
+  fetch('image.png')
+  .then(response => response.blob()); // correct
+
+const d: Promise<Blob> = fetch('image.png'); // incorrect
+
+=====================================output=====================================
+/* @flow */
+
+// most of the details are tested in the separate file
+// here I test the basic usage
+
+const myRequest = new Request("http://google.com");
+
+const a: Promise<string> = fetch(myRequest).then((response) => response.text());
+
+const b: Promise<string> = fetch(myRequest); // incorrect
+
+var myInit = {
+  method: "GET",
+  headers: {
+    "Content-Type": "image/jpeg",
+  },
+  mode: "cors",
+  cache: "default",
+};
+
+const c: Promise<Blob> = fetch("image.png").then((response) => response.blob()); // correct
+
+const d: Promise<Blob> = fetch("image.png"); // incorrect
+
+================================================================================
+`;
+
+exports[`headers.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+const a = new Headers("'Content-Type': 'image/jpeg'"); // not correct
+const b = new Headers(['Content-Type', 'image/jpeg']); // not correct
+const c = new Headers({'Content-Type': 'image/jpeg'}); // correct
+const d = new Headers(c); // correct
+const e: Headers = new Headers(); // correct
+e.append('Content-Type', 'image/jpeg'); // correct
+e.append('Content-Type'); // not correct
+e.append({'Content-Type': 'image/jpeg'}); // not correct
+e.set('Content-Type', 'image/jpeg'); // correct
+e.set('Content-Type'); // not correct
+e.set({'Content-Type': 'image/jpeg'}); // not correct
+
+const f: Headers = e.append('Content-Type', 'image/jpeg'); // not correct
+
+const g: string = e.get('Content-Type'); // correct
+const h: number = e.get('Content-Type'); // not correct
+
+for (let v of e) {
+  const [i, j]: [string, string] = v; // correct
+}
+
+for (let v of e.entries()) {
+  const [i, j]: [string, string] = v; // correct
+}
+
+e.getAll('content-type'); // incorrect
+e.forEach((val: string) => val); // correct
+e.forEach((val: string, key: string) => \`\${key}: \${val}\`); // correct
+e.forEach((val: string, key: string, o: Headers) => {}); // correct
+e.forEach(() => {}, {}); // correct
+
+=====================================output=====================================
+/* @flow */
+
+const a = new Headers("'Content-Type': 'image/jpeg'"); // not correct
+const b = new Headers(["Content-Type", "image/jpeg"]); // not correct
+const c = new Headers({ "Content-Type": "image/jpeg" }); // correct
+const d = new Headers(c); // correct
+const e: Headers = new Headers(); // correct
+e.append("Content-Type", "image/jpeg"); // correct
+e.append("Content-Type"); // not correct
+e.append({ "Content-Type": "image/jpeg" }); // not correct
+e.set("Content-Type", "image/jpeg"); // correct
+e.set("Content-Type"); // not correct
+e.set({ "Content-Type": "image/jpeg" }); // not correct
+
+const f: Headers = e.append("Content-Type", "image/jpeg"); // not correct
+
+const g: string = e.get("Content-Type"); // correct
+const h: number = e.get("Content-Type"); // not correct
+
+for (let v of e) {
+  const [i, j]: [string, string] = v; // correct
+}
+
+for (let v of e.entries()) {
+  const [i, j]: [string, string] = v; // correct
+}
+
+e.getAll("content-type"); // incorrect
+e.forEach((val: string) => val); // correct
+e.forEach((val: string, key: string) => \`\${key}: \${val}\`); // correct
+e.forEach((val: string, key: string, o: Headers) => {}); // correct
+e.forEach(() => {}, {}); // correct
+
+================================================================================
+`;
+
+exports[`request.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+const a: Request = new Request(); // incorrect
+const b: Request = new Request('http://example.org'); // correct
+const c: Request = new Request(b); // correct
+const d: Request = new Request(c.clone()); // correct (doesn't make much sense though)
+const e: Request = new Request(b, c); // incorrect
+
+const f: Request = new Request({}) // incorrect
+const g: Request = new Request('http://example.org', {}) // correct
+new Request(new URL('http://example.org')); // correct
+
+const h: Request = new Request('http://example.org', {
+  method: 'GET',
+  headers: {
+    'Content-Type': 'image/jpeg'
+  },
+  mode: 'cors',
+  cache: 'default'
+}) // correct
+
+var bodyUsed: boolean = h.bodyUsed;
+
+h.text().then((t: string) => t); // correct
+h.text().then((t: Buffer) => t); // incorrect
+h.arrayBuffer().then((ab: ArrayBuffer) => ab); // correct
+h.arrayBuffer().then((ab: Buffer) => ab); // incorrect
+
+const i: Request = new Request('http://example.org', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/octet-stream'
+  },
+  body: new ArrayBuffer(10),
+}); // correct
+
+const j: Request = new Request('http://example.org', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/octet-stream'
+  },
+  body: new Uint8Array(10),
+}); // correct
+
+const k: Request = new Request('http://example.org', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'image/jpeg'
+  },
+  body: new URLSearchParams("key=value"),
+  mode: 'cors',
+  cache: 'default'
+}) // correct
+
+const l: Request = new Request('http://example.org', {
+  method: 'GET',
+  headers: 'Content-Type: image/jpeg',
+  mode: 'cors',
+  cache: 'default'
+}) // incorrect - headers is string
+
+new Request('/', { method: 'post' }); // correct
+new Request('/', { method: 'hello' }); // correct
+new Request('/', { method: null }); // incorrect
+
+=====================================output=====================================
+/* @flow */
+const a: Request = new Request(); // incorrect
+const b: Request = new Request("http://example.org"); // correct
+const c: Request = new Request(b); // correct
+const d: Request = new Request(c.clone()); // correct (doesn't make much sense though)
+const e: Request = new Request(b, c); // incorrect
+
+const f: Request = new Request({}); // incorrect
+const g: Request = new Request("http://example.org", {}); // correct
+new Request(new URL("http://example.org")); // correct
+
+const h: Request = new Request("http://example.org", {
+  method: "GET",
+  headers: {
+    "Content-Type": "image/jpeg",
+  },
+  mode: "cors",
+  cache: "default",
+}); // correct
+
+var bodyUsed: boolean = h.bodyUsed;
+
+h.text().then((t: string) => t); // correct
+h.text().then((t: Buffer) => t); // incorrect
+h.arrayBuffer().then((ab: ArrayBuffer) => ab); // correct
+h.arrayBuffer().then((ab: Buffer) => ab); // incorrect
+
+const i: Request = new Request("http://example.org", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/octet-stream",
+  },
+  body: new ArrayBuffer(10),
+}); // correct
+
+const j: Request = new Request("http://example.org", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/octet-stream",
+  },
+  body: new Uint8Array(10),
+}); // correct
+
+const k: Request = new Request("http://example.org", {
+  method: "POST",
+  headers: {
+    "Content-Type": "image/jpeg",
+  },
+  body: new URLSearchParams("key=value"),
+  mode: "cors",
+  cache: "default",
+}); // correct
+
+const l: Request = new Request("http://example.org", {
+  method: "GET",
+  headers: "Content-Type: image/jpeg",
+  mode: "cors",
+  cache: "default",
+}); // incorrect - headers is string
+
+new Request("/", { method: "post" }); // correct
+new Request("/", { method: "hello" }); // correct
+new Request("/", { method: null }); // incorrect
+
+================================================================================
+`;
+
+exports[`response.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+const a: Response = new Response(); // correct
+const b: Response = new Response(new Blob()); // correct
+const c: Response = new Response(new FormData()); // correct
+
+new Response("", { status: 404 }); // correct
+new Response(null, { status: 204 }); // correct
+new Response("", { status: "404" }); // incorrect
+new Response("", { status: null }); // incorrect
+
+const f: Response = new Response("responsebody", {
+    status: 404,
+    headers: "'Content-Type': 'image/jpeg'"
+}); // incorrect
+
+const g: Response = new Response("responsebody", {
+    status: 404,
+    headers: {
+        'Content-Type': 'image/jpeg'
+    }
+}); // correct
+
+const h: Response = new Response("responsebody", {
+    status: 404,
+    headers: new Headers({
+        'Content-Type': 'image/jpeg'
+    })
+}); // correct, if verbose
+
+const i: Response = new Response({
+    status: 404,
+    headers: new Headers({
+        'Content-Type': 'image/jpeg'
+    })
+}); // incorrect
+
+const ok: boolean = h.ok;
+const redirected: boolean = h.redirected;
+const status: number = h.status;
+
+h.text().then((t: string) => t); // correct
+h.text().then((t: Buffer) => t); // incorrect
+h.arrayBuffer().then((ab: ArrayBuffer) => ab); // correct
+h.arrayBuffer().then((ab: Buffer) => ab); // incorrect
+
+=====================================output=====================================
+/* @flow */
+const a: Response = new Response(); // correct
+const b: Response = new Response(new Blob()); // correct
+const c: Response = new Response(new FormData()); // correct
+
+new Response("", { status: 404 }); // correct
+new Response(null, { status: 204 }); // correct
+new Response("", { status: "404" }); // incorrect
+new Response("", { status: null }); // incorrect
+
+const f: Response = new Response("responsebody", {
+  status: 404,
+  headers: "'Content-Type': 'image/jpeg'",
+}); // incorrect
+
+const g: Response = new Response("responsebody", {
+  status: 404,
+  headers: {
+    "Content-Type": "image/jpeg",
+  },
+}); // correct
+
+const h: Response = new Response("responsebody", {
+  status: 404,
+  headers: new Headers({
+    "Content-Type": "image/jpeg",
+  }),
+}); // correct, if verbose
+
+const i: Response = new Response({
+  status: 404,
+  headers: new Headers({
+    "Content-Type": "image/jpeg",
+  }),
+}); // incorrect
+
+const ok: boolean = h.ok;
+const redirected: boolean = h.redirected;
+const status: number = h.status;
+
+h.text().then((t: string) => t); // correct
+h.text().then((t: Buffer) => t); // incorrect
+h.arrayBuffer().then((ab: ArrayBuffer) => ab); // correct
+h.arrayBuffer().then((ab: Buffer) => ab); // incorrect
+
+================================================================================
+`;
+
+exports[`urlsearchparams.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+const a = new URLSearchParams("key1=value1"); // correct
+const b = new URLSearchParams(['key1', 'value1']); // not correct
+const c = new URLSearchParams({'key1': 'value1'}); // not correct
+const d = new URLSearchParams(c); // correct
+const e: URLSearchParams = new URLSearchParams(); // correct
+e.append('key1', 'value1'); // correct
+e.append('key1'); // not correct
+e.append({'key1': 'value1'}); // not correct
+e.set('key1', 'value1'); // correct
+e.set('key1'); // not correct
+e.set({'key1': 'value1'}); // not correct
+
+const f: URLSearchParams = e.append('key1', 'value1'); // not correct
+
+const g: string = e.get('key1'); // correct
+const h: number = e.get('key1'); // not correct
+
+for (let v of e) {
+  const [i, j]: [string, string] = v; // correct
+}
+
+for (let v of e.entries()) {
+  const [i, j]: [string, string] = v; // correct
+}
+
+e.getAll('key1').forEach((v: string) => {}); // correct
+
+e.forEach((val: string) => val); // correct
+e.forEach((val: string, key: string) => \`\${key}: \${val}\`); // correct
+e.forEach((val: string, key: string, o: URLSearchParams) => {}); // correct
+e.forEach(() => {}, {}); // correct
+
+=====================================output=====================================
+/* @flow */
+
+const a = new URLSearchParams("key1=value1"); // correct
+const b = new URLSearchParams(["key1", "value1"]); // not correct
+const c = new URLSearchParams({ key1: "value1" }); // not correct
+const d = new URLSearchParams(c); // correct
+const e: URLSearchParams = new URLSearchParams(); // correct
+e.append("key1", "value1"); // correct
+e.append("key1"); // not correct
+e.append({ key1: "value1" }); // not correct
+e.set("key1", "value1"); // correct
+e.set("key1"); // not correct
+e.set({ key1: "value1" }); // not correct
+
+const f: URLSearchParams = e.append("key1", "value1"); // not correct
+
+const g: string = e.get("key1"); // correct
+const h: number = e.get("key1"); // not correct
+
+for (let v of e) {
+  const [i, j]: [string, string] = v; // correct
+}
+
+for (let v of e.entries()) {
+  const [i, j]: [string, string] = v; // correct
+}
+
+e.getAll("key1").forEach((v: string) => {}); // correct
+
+e.forEach((val: string) => val); // correct
+e.forEach((val: string, key: string) => \`\${key}: \${val}\`); // correct
+e.forEach((val: string, key: string, o: URLSearchParams) => {}); // correct
+e.forEach(() => {}, {}); // correct
+
+================================================================================
+`;

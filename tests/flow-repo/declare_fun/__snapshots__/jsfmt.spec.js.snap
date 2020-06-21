@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare function foo(x: number): string;
+declare function foo(x: string): number;
+declare function foo<X>(x: X): X;
+
+(foo(0): string); // OK
+(foo("hello"): number); // OK
+(foo(false): void); // error, boolean ~/~ undefined
+
+=====================================output=====================================
+declare function foo(x: number): string;
+declare function foo(x: string): number;
+declare function foo<X>(x: X): X;
+
+(foo(0): string); // OK
+(foo("hello"): number); // OK
+(foo(false): void); // error, boolean ~/~ undefined
+
+================================================================================
+`;

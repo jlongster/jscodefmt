@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`symbol.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function test(abc: Map<symbol, string>) {}
+
+=====================================output=====================================
+function test(abc: Map<symbol, string>) {}
+
+================================================================================
+`;

@@ -1,12 +1,12 @@
 "use strict";
 
-const replaceCWD = text => {
+const replaceCWD = (text) => {
   const cwd = process.cwd();
 
   const variants = /^[a-z]:\\/i.test(cwd)
     ? [
         cwd.charAt(0).toLowerCase() + cwd.slice(1),
-        cwd.charAt(0).toUpperCase() + cwd.slice(1)
+        cwd.charAt(0).toUpperCase() + cwd.slice(1),
       ]
     : [cwd];
 
@@ -20,9 +20,9 @@ const replaceCWD = text => {
 };
 
 module.exports = {
-  test: value =>
+  test: (value) =>
     typeof value === "string" &&
     (value.includes("\\") || value.includes(process.cwd())),
   print: (value, serializer) =>
-    serializer(replaceCWD(value).replace(/\\/g, "/"))
+    serializer(replaceCWD(value).replace(/\\/g, "/")),
 };

@@ -3,7 +3,7 @@
 const chalk = require("chalk");
 const semver = require("semver");
 
-module.exports = async function({ version, previousVersion }) {
+module.exports = async function ({ version, previousVersion }) {
   if (!semver.valid(version)) {
     throw new Error("Invalid version specified");
   }

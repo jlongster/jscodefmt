@@ -1,0 +1,338 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class A {
+  foo(x:number):void { }
+}
+
+module.exports = A;
+
+=====================================output=====================================
+class A {
+  foo(x: number): void {}
+}
+
+module.exports = A;
+
+================================================================================
+`;
+
+exports[`B.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var A = require('./A');
+
+class B extends A { }
+
+let b = new B();
+(b.foo: number); // error, number !~> function
+
+module.exports = B;
+
+=====================================output=====================================
+var A = require("./A");
+
+class B extends A {}
+
+let b = new B();
+(b.foo: number); // error, number !~> function
+
+module.exports = B;
+
+================================================================================
+`;
+
+exports[`C.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var B = require('./B');
+
+class C extends B {
+  foo(x:string):void { }
+}
+
+let c = new C();
+(c.foo: number); // error, number !~> function
+
+module.exports = C;
+
+=====================================output=====================================
+var B = require("./B");
+
+class C extends B {
+  foo(x: string): void {}
+}
+
+let c = new C();
+(c.foo: number); // error, number !~> function
+
+module.exports = C;
+
+================================================================================
+`;
+
+exports[`D.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class D { }
+class E { }
+new E().x
+
+=====================================output=====================================
+class D {}
+class E {}
+new E().x;
+
+================================================================================
+`;
+
+exports[`class_shapes.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+type Foo = {
+  a: string;    // exists in TestClass
+  b: string;    // doesn't exist
+  c?: ?string;  // exists in TestClass, optional
+  d?: number;   // doesn't exist
+}
+
+class TestClass {
+  a: string;
+  c: ?string;
+}
+
+var x = new TestClass();
+
+x.a; // ok
+x.b; // error, TestClass has no b
+x.c; // ok
+x.d; // error, TestClass has no d
+
+var y : Foo = x;
+y.b; // error, doesn't exist in TestClass
+y.d; // ok, it's optional
+
+class Test2Superclass {
+  a: number;  // conflicts with cast to Foo
+  c: ?number; // conflicts with cast to Foo
+}
+class Test2Class extends Test2Superclass {
+  b: number;  // conflicts with cast to Foo
+}
+
+var z = new Test2Class();
+var w : Foo = z;
+
+=====================================output=====================================
+/* @flow */
+
+type Foo = {
+  a: string, // exists in TestClass
+  b: string, // doesn't exist
+  c?: ?string, // exists in TestClass, optional
+  d?: number, // doesn't exist
+};
+
+class TestClass {
+  a: string;
+  c: ?string;
+}
+
+var x = new TestClass();
+
+x.a; // ok
+x.b; // error, TestClass has no b
+x.c; // ok
+x.d; // error, TestClass has no d
+
+var y: Foo = x;
+y.b; // error, doesn't exist in TestClass
+y.d; // ok, it's optional
+
+class Test2Superclass {
+  a: number; // conflicts with cast to Foo
+  c: ?number; // conflicts with cast to Foo
+}
+class Test2Class extends Test2Superclass {
+  b: number; // conflicts with cast to Foo
+}
+
+var z = new Test2Class();
+var w: Foo = z;
+
+================================================================================
+`;
+
+exports[`expr.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var Bar = class Foo {
+  static factory(): Foo { // OK: Foo is a type in this scope
+    return new Foo()      // OK: Foo is a runtime binding in this scope
+  }
+};
+
+var bar1: Bar = new Bar() // OK
+var bar2: Bar = Bar.factory() // OK
+
+// NB: Don't write expected errors using Foo to avoid error collapse hiding an
+// unexpected failure in the above code.
+
+var B = class Baz { }
+var b = new Baz(); // error: Baz is not a runtime binding in this scope
+
+var C = class Qux { }
+var c: Qux = new C(); // error: Qux is not a type in this scope
+
+// OK: anon classes create no binding, but can be bound manually
+var Anon = class { }
+var anon: Anon = new Anon();
+
+class Alias { }
+var _Alias = class Alias {
+  static factory(): Alias {
+    return new Alias();
+  }
+}
+var alias1: Alias = new _Alias(); // error: bad pun
+var alias2: Alias = _Alias.factory(); // error: bad pun
+
+=====================================output=====================================
+var Bar = class Foo {
+  static factory(): Foo {
+    // OK: Foo is a type in this scope
+    return new Foo(); // OK: Foo is a runtime binding in this scope
+  }
+};
+
+var bar1: Bar = new Bar(); // OK
+var bar2: Bar = Bar.factory(); // OK
+
+// NB: Don't write expected errors using Foo to avoid error collapse hiding an
+// unexpected failure in the above code.
+
+var B = class Baz {};
+var b = new Baz(); // error: Baz is not a runtime binding in this scope
+
+var C = class Qux {};
+var c: Qux = new C(); // error: Qux is not a type in this scope
+
+// OK: anon classes create no binding, but can be bound manually
+var Anon = class {};
+var anon: Anon = new Anon();
+
+class Alias {}
+var _Alias = class Alias {
+  static factory(): Alias {
+    return new Alias();
+  }
+};
+var alias1: Alias = new _Alias(); // error: bad pun
+var alias2: Alias = _Alias.factory(); // error: bad pun
+
+================================================================================
+`;
+
+exports[`extends_any.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const Base: any = class {}
+class Derived1 extends Base {}
+class Derived2 extends Derived1 {
+    m() {}
+}
+
+=====================================output=====================================
+const Base: any = class {};
+class Derived1 extends Base {}
+class Derived2 extends Derived1 {
+  m() {}
+}
+
+================================================================================
+`;
+
+exports[`loc.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+type Foo = number
+
+class Foo {} // error, shadows type Foo
+
+=====================================output=====================================
+/* @flow */
+
+type Foo = number;
+
+class Foo {} // error, shadows type Foo
+
+================================================================================
+`;
+
+exports[`statics.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+class C {
+  static p: string;
+}
+C.p = "hi";
+
+// Class static fields are compatible with object types
+(C: {p:string}); // ok
+(C: {p:number}); // errors, string ~> number & vice versa (unify)
+
+declare var o: {p:number};
+(o: Class<C>); // error, object type incompatible with class type
+
+=====================================output=====================================
+/* @flow */
+
+class C {
+  static p: string;
+}
+C.p = "hi";
+
+// Class static fields are compatible with object types
+(C: { p: string }); // ok
+(C: { p: number }); // errors, string ~> number & vice versa (unify)
+
+declare var o: { p: number };
+(o: Class<C>); // error, object type incompatible with class type
+
+================================================================================
+`;

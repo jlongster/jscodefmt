@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`in_object_type.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const example1 = (): ({ p: string => string }) => (0: any);
+const example2 = (): ({ p: { p: string => string } }) => (0: any);
+const example3 = (): ({ p: { p: { p: string => string } } }) => (0: any);
+const example4 = (): ({ p: { p: ?{ p: string => string } } }) => (0: any);
+const example5 = (): ({ p: { p: { p: string => string } | string } }) =>
+  (0: any);
+const example6 = (): ({ p: { p: { p: string => string } & string } }) =>
+  (0: any);
+const example7 = (): ({ p: { p: { p: [(string) => string, string] } } }) =>
+  (0: any);
+function example8(): { p: string => string } {
+  return (0: any);
+}
+function example9(): { p: { p: string => string } } {
+  return (0: any);
+}
+function example10(): { p: { p: { p: string => string } } } {
+  return (0: any);
+}
+const example11 = (): ({ p: string => string } & string) => (0: any);
+const example12 = (): ({ p: string => string } | string) => (0: any);
+const example13 = (): ([{ p: string => string }, string]) => (0: any);
+const example14 = (): ({ p: string => string }[]) => (0: any);
+const example15 = (): ({ p: { p: { p: (string => string) & string } } }) =>
+  (0: any);
+const example16 = (): ({ p: { p: { p: (string => string) | string } } }) =>
+  (0: any);
+const example17 = (): (?{ p: string => string }) => (0: any);
+
+=====================================output=====================================
+const example1 = (): ({ p: (string) => string }) => (0: any);
+const example2 = (): ({ p: { p: (string) => string } }) => (0: any);
+const example3 = (): ({ p: { p: { p: (string) => string } } }) => (0: any);
+const example4 = (): ({ p: { p: ?{ p: (string) => string } } }) => (0: any);
+const example5 = (): ({ p: { p: { p: (string) => string } | string } }) =>
+  (0: any);
+const example6 = (): ({ p: { p: { p: (string) => string } & string } }) =>
+  (0: any);
+const example7 = (): ({ p: { p: { p: [(string) => string, string] } } }) =>
+  (0: any);
+function example8(): { p: (string) => string } {
+  return (0: any);
+}
+function example9(): { p: { p: (string) => string } } {
+  return (0: any);
+}
+function example10(): { p: { p: { p: (string) => string } } } {
+  return (0: any);
+}
+const example11 = (): ({ p: (string) => string } & string) => (0: any);
+const example12 = (): ({ p: (string) => string } | string) => (0: any);
+const example13 = (): ([{ p: (string) => string }, string]) => (0: any);
+const example14 = (): ({ p: (string) => string }[]) => (0: any);
+const example15 = (): ({ p: { p: { p: ((string) => string) & string } } }) =>
+  (0: any);
+const example16 = (): ({ p: { p: { p: ((string) => string) | string } } }) =>
+  (0: any);
+const example17 = (): (?{ p: (string) => string }) => (0: any);
+
+================================================================================
+`;
+
+exports[`issue-1249.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type Bar = ( number | string ) => number;
+type X = (?(number, number) => number) => void;
+type X = ?((number, number) => number) => void;
+type X = ?(number, number) => number => void;
+type X = 1234 => void;
+type X = 'abc' => void;
+type X = true => void;
+type X = false => void;
+type X = boolean => void;
+type X = number => void;
+type X = void => void;
+type X = null => void;
+type X = any => void;
+type X = empty => void;
+type X = mixed => void;
+type X = string => void;
+type X = abc => void;
+type X = a | b => void;
+type X = (a | b) => void;
+type X = a & b => void;
+type X = (a & b) => void;
+
+=====================================output=====================================
+type Bar = (number | string) => number;
+type X = (?(number, number) => number) => void;
+type X = ?((number, number) => number) => void;
+type X = ?(number, number) => (number) => void;
+type X = (1234) => void;
+type X = ("abc") => void;
+type X = (true) => void;
+type X = (false) => void;
+type X = (boolean) => void;
+type X = (number) => void;
+type X = (void) => void;
+type X = (null) => void;
+type X = (any) => void;
+type X = (empty) => void;
+type X = (mixed) => void;
+type X = (string) => void;
+type X = (abc) => void;
+type X = a | ((b) => void);
+type X = (a | b) => void;
+type X = a & ((b) => void);
+type X = (a & b) => void;
+
+================================================================================
+`;
+
+exports[`parens.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const f1 = (): (string => string) => {};
+const f2 = (): ?(y => {a: b => c}) => (0: any);
+const f3 = (): (a | string => string) => {};
+const f4 = (): (a & string => string) => {};
+function f5(): string => string {}
+
+=====================================output=====================================
+const f1 = (): ((string) => string) => {};
+const f2 = (): (?(y) => { a: (b) => c }) => (0: any);
+const f3 = (): a | ((string) => string) => {};
+const f4 = (): a & ((string) => string) => {};
+function f5(): (string) => string {}
+
+================================================================================
+`;

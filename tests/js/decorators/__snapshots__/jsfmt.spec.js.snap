@@ -1,0 +1,380 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`classes.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@deco class Foo {}
+
+@deco export class Bar {}
+
+@deco export default class Baz {}
+
+const foo = @deco class {
+  //
+};
+
+const bar =
+  @deco
+  class {
+    //
+  };
+
+=====================================output=====================================
+@deco
+class Foo {}
+
+@deco
+export class Bar {}
+
+@deco
+export default class Baz {}
+
+const foo =
+  @deco
+  class {
+    //
+  };
+
+const bar =
+  @deco
+  class {
+    //
+  };
+
+================================================================================
+`;
+
+exports[`comments.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var x = 100
+
+@Hello({
+  a: 'a', // Comment is in the wrong place
+  // test
+  b: '2'
+})
+class X {
+
+}
+
+
+@NgModule({
+  // Imports.
+  imports: [
+    // Angular modules.
+    BrowserModule,
+
+    // App modules.
+    CoreModule,
+    SharedModule,
+  ],
+})
+export class AppModule {}
+
+// A
+@Foo()
+// B
+@Bar()
+// C
+export class Bar{}
+
+=====================================output=====================================
+var x = 100;
+
+@Hello({
+  a: "a", // Comment is in the wrong place
+  // test
+  b: "2",
+})
+class X {}
+
+@NgModule({
+  // Imports.
+  imports: [
+    // Angular modules.
+    BrowserModule,
+
+    // App modules.
+    CoreModule,
+    SharedModule,
+  ],
+})
+export class AppModule {}
+
+// A
+@Foo()
+// B
+@Bar()
+// C
+export class Bar {}
+
+================================================================================
+`;
+
+exports[`methods.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+class Yo {
+  @foo("hello")
+  async plop() {}
+
+  @anotherDecoratorWithALongName("and a very long string as a first argument")
+  async plip() {}
+
+  @anotherDecoratorWithALongName("another very long string, but now inline") async plip() {}
+}
+
+=====================================output=====================================
+class Yo {
+  @foo("hello")
+  async plop() {}
+
+  @anotherDecoratorWithALongName("and a very long string as a first argument")
+  async plip() {}
+
+  @anotherDecoratorWithALongName("another very long string, but now inline")
+  async plip() {}
+}
+
+================================================================================
+`;
+
+exports[`mixed.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// https://github.com/prettier/prettier/issues/6747
+
+@foo
+export default class MyComponent {
+  @task
+  *foo() {
+  }
+}
+=====================================output=====================================
+// https://github.com/prettier/prettier/issues/6747
+
+@foo
+export default class MyComponent {
+  @task
+  *foo() {}
+}
+
+================================================================================
+`;
+
+exports[`mobx.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import {observable} from "mobx";
+
+@observer class OrderLine {
+  @observable price:number = 0;
+  @observable amount:number = 1;
+
+  constructor(price) {
+    this.price = price;
+  }
+
+  @computed get total() {
+    return this.price * this.amount;
+  }
+
+  @action.bound setPrice(price) {
+    this.price = price;
+  }
+
+  @computed
+  get total() {
+    return this.price * this.amount;
+  }
+
+  @action.bound
+  setPrice(price) {
+    this.price = price;
+  }
+  
+  @computed @computed @computed @computed @computed @computed @computed get total() {
+    return this.price * this.amount;
+  }
+
+  @action handleDecrease = (event: React.ChangeEvent<HTMLInputElement>) => this.count--;
+  
+  @action handleSomething = (event: React.ChangeEvent<HTMLInputElement>) => doSomething();
+}
+
+=====================================output=====================================
+import { observable } from "mobx";
+
+@observer
+class OrderLine {
+  @observable price: number = 0;
+  @observable amount: number = 1;
+
+  constructor(price) {
+    this.price = price;
+  }
+
+  @computed get total() {
+    return this.price * this.amount;
+  }
+
+  @action.bound setPrice(price) {
+    this.price = price;
+  }
+
+  @computed
+  get total() {
+    return this.price * this.amount;
+  }
+
+  @action.bound
+  setPrice(price) {
+    this.price = price;
+  }
+
+  @computed
+  @computed
+  @computed
+  @computed
+  @computed
+  @computed
+  @computed
+  get total() {
+    return this.price * this.amount;
+  }
+
+  @action handleDecrease = (event: React.ChangeEvent<HTMLInputElement>) =>
+    this.count--;
+
+  @action handleSomething = (event: React.ChangeEvent<HTMLInputElement>) =>
+    doSomething();
+}
+
+================================================================================
+`;
+
+exports[`multiline.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class Foo {
+  @deco([
+    foo,
+    bar
+  ]) prop = value;
+}
+
+=====================================output=====================================
+class Foo {
+  @deco([foo, bar])
+  prop = value;
+}
+
+================================================================================
+`;
+
+exports[`multiple.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const dog = {
+  @readonly
+  @nonenumerable
+  @doubledValue
+  legs: 4,
+
+  @readonly
+  @nonenumerable
+  @doubledValue
+  eyes: 2
+};
+
+const foo = {
+  @multipleDecorators @inline @theyWontAllFitInOneline aVeryLongPropName: "A very long string as value"
+};
+
+=====================================output=====================================
+const dog = {
+  @readonly
+  @nonenumerable
+  @doubledValue
+  legs: 4,
+
+  @readonly
+  @nonenumerable
+  @doubledValue
+  eyes: 2,
+};
+
+const foo = {
+  @multipleDecorators
+  @inline
+  @theyWontAllFitInOneline
+  aVeryLongPropName: "A very long string as value",
+};
+
+================================================================================
+`;
+
+exports[`parens.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class X {
+  @(computed().volatile())
+  x
+}
+
+=====================================output=====================================
+class X {
+  @(computed().volatile())
+  x;
+}
+
+================================================================================
+`;
+
+exports[`redux.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@connect(mapStateToProps, mapDispatchToProps)
+export class MyApp extends React.Component {}
+
+@connect(state => ({ todos: state.todos }))
+export class Home extends React.Component {}
+
+=====================================output=====================================
+@connect(mapStateToProps, mapDispatchToProps)
+export class MyApp extends React.Component {}
+
+@connect((state) => ({ todos: state.todos }))
+export class Home extends React.Component {}
+
+================================================================================
+`;

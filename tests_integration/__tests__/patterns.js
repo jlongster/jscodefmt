@@ -8,9 +8,9 @@ describe("multiple patterns", () => {
   runPrettier("cli/patterns", [
     "directory/**/*.js",
     "other-directory/**/*.js",
-    "-l"
+    "-l",
   ]).test({
-    status: 1
+    status: 1,
   });
 });
 
@@ -18,9 +18,9 @@ describe("multiple patterns with non exists pattern", () => {
   runPrettier("cli/patterns", [
     "directory/**/*.js",
     "non-existent.js",
-    "-l"
+    "-l",
   ]).test({
-    status: 1
+    status: 2,
   });
 });
 
@@ -28,21 +28,21 @@ describe("multiple patterns with ignore nested directories pattern", () => {
   runPrettier("cli/patterns", [
     "**/*.js",
     "!**/nested-directory/**",
-    "-l"
+    "-l",
   ]).test({
-    status: 1
+    status: 1,
   });
 });
 
 describe("multiple patterns by with ignore pattern, ignores node_modules by default", () => {
   runPrettier("cli/patterns", ["**/*.js", "!directory/**", "-l"]).test({
-    status: 1
+    status: 1,
   });
 });
 
 describe("multiple patterns by with ignore pattern, ignores node_modules by with ./**/*.js", () => {
   runPrettier("cli/patterns", ["./**/*.js", "!./directory/**", "-l"]).test({
-    status: 1
+    status: 1,
   });
 });
 
@@ -51,16 +51,16 @@ describe("multiple patterns by with ignore pattern, doesn't ignore node_modules 
     "**/*.js",
     "!directory/**",
     "-l",
-    "--with-node-modules"
+    "--with-node-modules",
   ]).test({
-    status: 1
+    status: 1,
   });
 });
 
 describe("no errors on empty patterns", () => {
   // --parser is mandatory if no filepath is passed
   runPrettier("cli/patterns", ["--parser", "babel"]).test({
-    status: 0
+    status: 0,
   });
 });
 
@@ -68,29 +68,8 @@ describe("multiple patterns, throw error and exit with non zero code on non exis
   runPrettier("cli/patterns", [
     "non-existent.js",
     "other-non-existent.js",
-    "-l"
+    "-l",
   ]).test({
-    status: 2
-  });
-});
-
-// the following 3 tests make sure we don't support broken
-// `dot pattern` and `expand directories` implementation
-// see https://github.com/prettier/prettier/pull/6639#issuecomment-548949954
-describe("should not support dot pattern", () => {
-  runPrettier("cli/patterns", [".", "-l"]).test({
-    status: 2
-  });
-});
-
-describe("should not expand directories", () => {
-  runPrettier("cli/patterns", ["directory", "other-directory", "-l"]).test({
-    status: 2
-  });
-});
-
-describe("directories and patterns", () => {
-  runPrettier("cli/patterns", ["directory", "other-directory/**", "-l"]).test({
-    status: 1
+    status: 2,
   });
 });

@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`computed.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const key = "a";
+assert(#{ [key]: 1 } === #{ a: 1 })
+assert(#{ [key.toUpperCase()]: 1 } === #{ A: 1 })
+
+assert(#{ [true]: 1 } === #{ true: 1 })
+assert(#{ [true]: 1 } === #{ ["true"]: 1 })
+
+assert(#{ [1 + 1]: "two" } === #{ 2: "two" })
+assert(#{ [9 + 1]: "ten" } === #{ ["10"]: "ten" })
+
+=====================================output=====================================
+const key = "a";
+assert(#{ [key]: 1 } === #{ a: 1 });
+assert(#{ [key.toUpperCase()]: 1 } === #{ A: 1 });
+
+assert(#{ [true]: 1 } === #{ true: 1 });
+assert(#{ [true]: 1 } === #{ ["true"]: 1 });
+
+assert(#{ [1 + 1]: "two" } === #{ 2: "two" });
+assert(#{ [9 + 1]: "ten" } === #{ ["10"]: "ten" });
+
+================================================================================
+`;
+
+exports[`destructuring.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const { a, b } = #{ a: 1, b: 2 };
+assert(a === 1);
+assert(b === 2);
+
+const { a, ...rest } = #{ a: 1, b: 2, c: 3 };
+assert(a === 1);
+assert(typeof rest === "object");
+assert(rest.b === 2);
+assert(rest.c === 3);
+
+=====================================output=====================================
+const { a, b } = #{ a: 1, b: 2 };
+assert(a === 1);
+assert(b === 2);
+
+const { a, ...rest } = #{ a: 1, b: 2, c: 3 };
+assert(a === 1);
+assert(typeof rest === "object");
+assert(rest.b === 2);
+assert(rest.c === 3);
+
+================================================================================
+`;
+
+exports[`record.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const record1 = #{
+    a: 1,
+    b: 2,
+    c: 3,
+};
+
+const record2 = #{...record1, b: 5};
+
+assert(record1.a === 1);
+assert(record1["a"] === 1);
+assert(record1 !== record2);
+assert(record2 === #{ a: 1, c: 3, b: 5 });
+assert(record1?.a === 1);
+assert(record1?.d === undefined);
+assert(record1?.d ?? 5 === 5);
+assert(record1.d?.a === undefined);
+
+=====================================output=====================================
+const record1 = #{
+  a: 1,
+  b: 2,
+  c: 3,
+};
+
+const record2 = #{ ...record1, b: 5 };
+
+assert(record1.a === 1);
+assert(record1["a"] === 1);
+assert(record1 !== record2);
+assert(record2 === #{ a: 1, c: 3, b: 5 });
+assert(record1?.a === 1);
+assert(record1?.d === undefined);
+assert(record1?.d ?? 5 === 5);
+assert(record1.d?.a === undefined);
+
+================================================================================
+`;
+
+exports[`shorthand.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const url = "https://github.com/tc39/proposal-record-tuple";
+const record = #{ url }
+console.log(record.url) // https://github.com/tc39/proposal-record-tuple
+
+=====================================output=====================================
+const url = "https://github.com/tc39/proposal-record-tuple";
+const record = #{ url };
+console.log(record.url); // https://github.com/tc39/proposal-record-tuple
+
+================================================================================
+`;
+
+exports[`spread.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const formData = #{ title: "Implement all the things" }
+const taskNow = #{ id: 42, status: "WIP", ...formData }
+const taskLater = #{ ...taskNow, status: "DONE" }
+
+// A reminder: The ordering of keys in record literals does not affect equality (and is not retained)
+assert(taskLater === #{ status: "DONE", title: formData.title, id: 42 })
+
+=====================================output=====================================
+const formData = #{ title: "Implement all the things" };
+const taskNow = #{ id: 42, status: "WIP", ...formData };
+const taskLater = #{ ...taskNow, status: "DONE" };
+
+// A reminder: The ordering of keys in record literals does not affect equality (and is not retained)
+assert(taskLater === #{ status: "DONE", title: formData.title, id: 42 });
+
+================================================================================
+`;
+
+exports[`syntax.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+#{}
+#{ a: 1, b: 2 }
+#{ a: 1, b: #[2, 3, #{ c: 4 }] }
+
+=====================================output=====================================
+#{};
+#{ a: 1, b: 2 };
+#{ a: 1, b: #[2, 3, #{ c: 4 }] };
+
+================================================================================
+`;

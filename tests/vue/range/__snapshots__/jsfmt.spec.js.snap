@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+      |                                                                                | printWidth
+=====================================input======================================
+   1 | <template>
+   2 |   <p>Templates are formatted as well...
+   3 |     </p>
+   4 | </template>
+   5 | 
+>  6 | <script>
+     | ^^^^^^^^
+>  7 | let Prettier        = format => { your.js('though') }
+     | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>  8 | </script>
+     | ^^^^^^^^^
+   9 | 
+  10 | <style>
+  11 | .and { css: too !important }
+  12 | </style>
+  13 | 
+=====================================output=====================================
+<template>
+  <p>Templates are formatted as well...</p>
+</template>
+
+<script>
+let Prettier = (format) => {
+  your.js("though");
+};
+</script>
+
+<style>
+.and {
+  css: too !important;
+}
+</style>
+================================================================================
+`;

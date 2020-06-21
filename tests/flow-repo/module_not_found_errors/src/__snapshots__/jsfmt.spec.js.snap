@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+require('module_completely_absent');
+
+// node_modules/module_outside_of_root/ sits outside of the Flow project root.
+// Flow should give a descriptive error about this
+require('module_outside_of_root');
+
+=====================================output=====================================
+// @flow
+
+require("module_completely_absent");
+
+// node_modules/module_outside_of_root/ sits outside of the Flow project root.
+// Flow should give a descriptive error about this
+require("module_outside_of_root");
+
+================================================================================
+`;

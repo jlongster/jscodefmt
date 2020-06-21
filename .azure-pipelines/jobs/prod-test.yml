@@ -1,8 +1,0 @@
-steps:
-  - template: ../steps/download-dist.yml
-  - template: ../steps/install-nodejs.yml
-  - template: ../steps/install-dependencies.yml
-  - script: yarn test:dist
-    displayName: "Run tests on dist"
-  - template: ../steps/publish-test-results.yml
-  - template: ../steps/publish-code-coverage.yml

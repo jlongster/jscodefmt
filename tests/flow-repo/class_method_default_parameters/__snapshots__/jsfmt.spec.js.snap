@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class_method_default_parameters.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class A {
+
+    b: string;
+
+    c(d = this.b) { // ok - can use \`this\` in function default parameter values
+
+    }
+
+    e() {
+        return this.b;
+    }
+
+    f(g = this.e()) { // ok - can use \`this\` in function default parameter values
+
+    }
+
+    h(i: number = this.b) { // error
+
+    }
+
+}
+
+=====================================output=====================================
+class A {
+  b: string;
+
+  c(d = this.b) {
+    // ok - can use \`this\` in function default parameter values
+  }
+
+  e() {
+    return this.b;
+  }
+
+  f(g = this.e()) {
+    // ok - can use \`this\` in function default parameter values
+  }
+
+  h(i: number = this.b) {
+    // error
+  }
+}
+
+================================================================================
+`;

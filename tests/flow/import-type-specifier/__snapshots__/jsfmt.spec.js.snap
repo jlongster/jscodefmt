@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ */
+
+import { Foo, type Baz } from "../module";
+import type {} from 'foo';
+
+import type {somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
+import type {a, somethingSuperLongsomethingSuperLong} from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
+
+import transformRouterContext, { type TransformedContextRouter } from '../../helpers/transformRouterContext';
+
+=====================================output=====================================
+/**
+ * @flow
+ */
+
+import { Foo, type Baz } from "../module";
+import type {} from "foo";
+
+import type { somethingSuperLongsomethingSuperLong } from "somethingSuperLongsomethingSuperLongsomethingSuperLong";
+import type {
+  a,
+  somethingSuperLongsomethingSuperLong,
+} from "somethingSuperLongsomethingSuperLongsomethingSuperLong";
+
+import transformRouterContext, {
+  type TransformedContextRouter,
+} from "../../helpers/transformRouterContext";
+
+================================================================================
+`;

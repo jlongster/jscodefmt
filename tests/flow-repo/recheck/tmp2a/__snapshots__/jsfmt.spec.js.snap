@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a1.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function foo(x: number): number { return 5; }
+
+foo("");
+
+module.exports = foo;
+
+=====================================output=====================================
+// @flow
+
+function foo(x: number): number {
+  return 5;
+}
+
+foo("");
+
+module.exports = foo;
+
+================================================================================
+`;

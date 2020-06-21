@@ -1,5 +1,23 @@
 "use strict";
 
+// http://w3c.github.io/html/single-page.html#void-elements
+const voidTags = new Set([
+  "area",
+  "base",
+  "br",
+  "col",
+  "embed",
+  "hr",
+  "img",
+  "input",
+  "link",
+  "meta",
+  "param",
+  "source",
+  "track",
+  "wbr",
+]);
+
 function isUppercase(string) {
   return string.toUpperCase() === string;
 }
@@ -12,12 +30,21 @@ function isGlimmerComponent(node) {
   );
 }
 
+function isVoid(node) {
+  return (
+    (isGlimmerComponent(node) &&
+      (node.children === 0 ||
+        node.children.every((n) => isWhitespaceNode(n)))) ||
+    voidTags.has(node.tag)
+  );
+}
+
 function isWhitespaceNode(node) {
   return isNodeOfSomeType(node, ["TextNode"]) && !/\S/.test(node.chars);
 }
 
 function isNodeOfSomeType(node, types) {
-  return node && types.some(type => node.type === type);
+  return node && types.some((type) => node.type === type);
 }
 
 function isParentOfSomeType(path, types) {
@@ -38,7 +65,8 @@ function isNextNodeOfSomeType(path, types) {
 function getSiblingNode(path, offset) {
   const node = path.getValue();
   const parentNode = path.getParentNode(0) || {};
-  const children = parentNode.children || parentNode.body || [];
+  const children =
+    parentNode.children || parentNode.body || parentNode.parts || [];
   const index = children.indexOf(node);
   return index !== -1 && children[index + offset];
 }
@@ -71,10 +99,10 @@ module.exports = {
   getNextNode,
   getPreviousNode,
   hasPrettierIgnore,
-  isGlimmerComponent,
   isNextNodeOfSomeType,
   isNodeOfSomeType,
   isParentOfSomeType,
   isPreviousNodeOfSomeType,
-  isWhitespaceNode
+  isVoid,
+  isWhitespaceNode,
 };

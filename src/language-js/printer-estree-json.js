@@ -16,11 +16,11 @@ function genericPrint(path, options, print) {
             indent(
               concat([
                 hardline,
-                join(concat([",", hardline]), path.map(print, "elements"))
+                join(concat([",", hardline]), path.map(print, "elements")),
               ])
             ),
             hardline,
-            "]"
+            "]",
           ]);
     case "ObjectExpression":
       return node.properties.length === 0
@@ -30,18 +30,18 @@ function genericPrint(path, options, print) {
             indent(
               concat([
                 hardline,
-                join(concat([",", hardline]), path.map(print, "properties"))
+                join(concat([",", hardline]), path.map(print, "properties")),
               ])
             ),
             hardline,
-            "}"
+            "}",
           ]);
     case "ObjectProperty":
       return concat([path.call(print, "key"), ": ", path.call(print, "value")]);
     case "UnaryExpression":
       return concat([
         node.operator === "+" ? "" : node.operator,
-        path.call(print, "argument")
+        path.call(print, "argument"),
       ]);
     case "NullLiteral":
       return "null";
@@ -77,5 +77,5 @@ function clean(node, newNode /*, parent*/) {
 module.exports = {
   preprocess,
   print: genericPrint,
-  massageAstNode: clean
+  massageAstNode: clean,
 };

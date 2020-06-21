@@ -1,0 +1,189 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`concat-statement.hbs - {"singleQuote":true} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 80
+singleQuote: true
+                                                                                | printWidth
+=====================================input======================================
+<div class="hello {{if goodbye true}}">
+  Hello
+</div>
+
+<div class="hello {{if goodbye true}} {{if goodbye false}} {{if goodbye true}} {{if goodbye false}} {{if goodbye true}}">
+  Hello
+</div>
+
+<a href="/{{url}}/{{url}}"></a>
+
+<div class="  class-a{{myClass}}"></div>
+<div class=" class-b {{myClass}}"></div>
+<div class="    {{myClass}}class-c"></div>
+<div class="  {{myClass}}   class-d"></div>
+<div class=" class-e{{myClass}}    class-f"></div>
+<div class="     class-g{{myClass}}class-h    "></div>
+<div class=" class-i       {{myClass}}class-j"></div>
+<div class="class-k {{myClass}}   class-l"></div>
+<div class="  class-m   {{myClass}}     class-n {{myClass}}class-o   "></div>
+<div class="  class-p  class-q"></div>
+=====================================output=====================================
+<div class='hello {{if goodbye true}}'>
+  Hello
+</div>
+
+<div
+  class='hello {{if goodbye true}} {{if goodbye false}} {{if goodbye true}} {{
+    if goodbye false
+  }} {{if goodbye true}}'
+>
+  Hello
+</div>
+
+<a href='/{{url}}/{{url}}'></a>
+
+<div class='class-a{{myClass}}'></div>
+<div class='class-b {{myClass}}'></div>
+<div class='{{myClass}}class-c'></div>
+<div class='{{myClass}} class-d'></div>
+<div class='class-e{{myClass}} class-f'></div>
+<div class='class-g{{myClass}}class-h'></div>
+<div class='class-i {{myClass}}class-j'></div>
+<div class='class-k {{myClass}} class-l'></div>
+<div class='class-m {{myClass}} class-n {{myClass}}class-o'></div>
+<div class='class-p  class-q'></div>
+================================================================================
+`;
+
+exports[`concat-statement.hbs format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div class="hello {{if goodbye true}}">
+  Hello
+</div>
+
+<div class="hello {{if goodbye true}} {{if goodbye false}} {{if goodbye true}} {{if goodbye false}} {{if goodbye true}}">
+  Hello
+</div>
+
+<a href="/{{url}}/{{url}}"></a>
+
+<div class="  class-a{{myClass}}"></div>
+<div class=" class-b {{myClass}}"></div>
+<div class="    {{myClass}}class-c"></div>
+<div class="  {{myClass}}   class-d"></div>
+<div class=" class-e{{myClass}}    class-f"></div>
+<div class="     class-g{{myClass}}class-h    "></div>
+<div class=" class-i       {{myClass}}class-j"></div>
+<div class="class-k {{myClass}}   class-l"></div>
+<div class="  class-m   {{myClass}}     class-n {{myClass}}class-o   "></div>
+<div class="  class-p  class-q"></div>
+=====================================output=====================================
+<div class="hello {{if goodbye true}}">
+  Hello
+</div>
+
+<div
+  class="hello {{if goodbye true}} {{if goodbye false}} {{if goodbye true}} {{
+    if goodbye false
+  }} {{if goodbye true}}"
+>
+  Hello
+</div>
+
+<a href="/{{url}}/{{url}}"></a>
+
+<div class="class-a{{myClass}}"></div>
+<div class="class-b {{myClass}}"></div>
+<div class="{{myClass}}class-c"></div>
+<div class="{{myClass}} class-d"></div>
+<div class="class-e{{myClass}} class-f"></div>
+<div class="class-g{{myClass}}class-h"></div>
+<div class="class-i {{myClass}}class-j"></div>
+<div class="class-k {{myClass}} class-l"></div>
+<div class="class-m {{myClass}} class-n {{myClass}}class-o"></div>
+<div class="class-p  class-q"></div>
+================================================================================
+`;
+
+exports[`in-attr-node.hbs - {"singleQuote":true} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 80
+singleQuote: true
+                                                                                | printWidth
+=====================================input======================================
+<div class="a very long list of classes that exceeds {{eighty}} chars with emtpy spaces">hey</div>
+<a href="a-very-long-href-from-a-third-party-marketing-platform{{id}}longer-than-eighty-chars">Link</a>
+<button
+  class="uk-padding-remove uk-button uk-button-default uk-button-small uk-width-1-{{intl.locales.length}} {{if (contains locale intl.locale) "uk-button-primary"}}"
+>
+  test
+</button>
+
+=====================================output=====================================
+<div
+  class='a very long list of classes that exceeds {{
+    eighty
+  }} chars with emtpy spaces'
+>
+  hey
+</div>
+<a
+  href='a-very-long-href-from-a-third-party-marketing-platform{{
+    id
+  }}longer-than-eighty-chars'
+>
+  Link
+</a>
+<button
+  class='uk-padding-remove uk-button uk-button-default uk-button-small uk-width-1-{{
+    intl.locales.length
+  }} {{if (contains locale intl.locale) 'uk-button-primary'}}'
+>
+  test
+</button>
+================================================================================
+`;
+
+exports[`in-attr-node.hbs format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div class="a very long list of classes that exceeds {{eighty}} chars with emtpy spaces">hey</div>
+<a href="a-very-long-href-from-a-third-party-marketing-platform{{id}}longer-than-eighty-chars">Link</a>
+<button
+  class="uk-padding-remove uk-button uk-button-default uk-button-small uk-width-1-{{intl.locales.length}} {{if (contains locale intl.locale) "uk-button-primary"}}"
+>
+  test
+</button>
+
+=====================================output=====================================
+<div
+  class="a very long list of classes that exceeds {{
+    eighty
+  }} chars with emtpy spaces"
+>
+  hey
+</div>
+<a
+  href="a-very-long-href-from-a-third-party-marketing-platform{{
+    id
+  }}longer-than-eighty-chars"
+>
+  Link
+</a>
+<button
+  class="uk-padding-remove uk-button uk-button-default uk-button-small uk-width-1-{{
+    intl.locales.length
+  }} {{if (contains locale intl.locale) "uk-button-primary"}}"
+>
+  test
+</button>
+================================================================================
+`;

@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom-block-lang.vue - {"embeddedLanguageFormatting":"off"} format 1`] = `
+====================================options=====================================
+embeddedLanguageFormatting: "off"
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<custom lang="uppercase-rocks">
+hello,
+world!
+</custom>
+
+=====================================output=====================================
+<custom lang="uppercase-rocks">
+hello,
+world!
+</custom>
+
+================================================================================
+`;
+
+exports[`custom-block-lang.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<custom lang="uppercase-rocks">
+hello,
+world!
+</custom>
+
+=====================================output=====================================
+<custom lang="uppercase-rocks">
+HELLO,
+WORLD!
+</custom>
+
+================================================================================
+`;
+
+exports[`inline.vue - {"embeddedLanguageFormatting":"off"} format 1`] = `
+====================================options=====================================
+embeddedLanguageFormatting: "off"
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<custom lang="uppercase-rocks">hello, world!</custom>
+
+=====================================output=====================================
+<custom lang="uppercase-rocks">hello, world!</custom>
+
+================================================================================
+`;
+
+exports[`inline.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<custom lang="uppercase-rocks">hello, world!</custom>
+
+=====================================output=====================================
+<custom lang="uppercase-rocks">
+HELLO, WORLD!
+</custom>
+
+================================================================================
+`;
+
+exports[`script-lang.vue - {"embeddedLanguageFormatting":"off"} format 1`] = `
+====================================options=====================================
+embeddedLanguageFormatting: "off"
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script lang="uppercase-rocks">
+hello,
+world!
+</script>
+
+=====================================output=====================================
+<script lang="uppercase-rocks">
+hello,
+world!
+</script>
+
+================================================================================
+`;
+
+exports[`script-lang.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script lang="uppercase-rocks">
+hello,
+world!
+</script>
+
+=====================================output=====================================
+<script lang="uppercase-rocks">
+hello,
+world!
+</script>
+
+================================================================================
+`;
+
+exports[`style-lang.vue - {"embeddedLanguageFormatting":"off"} format 1`] = `
+====================================options=====================================
+embeddedLanguageFormatting: "off"
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<style lang="uppercase-rocks">
+hello,
+world!
+</style>
+
+=====================================output=====================================
+<style lang="uppercase-rocks">
+hello,
+world!
+</style>
+
+================================================================================
+`;
+
+exports[`style-lang.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<style lang="uppercase-rocks">
+hello,
+world!
+</style>
+
+=====================================output=====================================
+<style lang="uppercase-rocks">
+hello,
+world!
+</style>
+
+================================================================================
+`;
+
+exports[`template-lang.vue - {"embeddedLanguageFormatting":"off"} format 1`] = `
+====================================options=====================================
+embeddedLanguageFormatting: "off"
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<template lang="uppercase-rocks">
+hello,
+world!
+</template>
+
+=====================================output=====================================
+<template lang="uppercase-rocks">
+hello,
+world!
+</template>
+
+================================================================================
+`;
+
+exports[`template-lang.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<template lang="uppercase-rocks">
+hello,
+world!
+</template>
+
+=====================================output=====================================
+<template lang="uppercase-rocks">
+HELLO,
+WORLD!
+</template>
+
+================================================================================
+`;
+
+exports[`whitspace.vue - {"embeddedLanguageFormatting":"off"} format 1`] = `
+====================================options=====================================
+embeddedLanguageFormatting: "off"
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<custom lang="uppercase-rocks">
+  hello,
+  world!
+</custom>
+
+=====================================output=====================================
+<custom lang="uppercase-rocks">
+  hello,
+  world!
+</custom>
+
+================================================================================
+`;
+
+exports[`whitspace.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<custom lang="uppercase-rocks">
+  hello,
+  world!
+</custom>
+
+=====================================output=====================================
+<custom lang="uppercase-rocks">
+  HELLO,
+  WORLD!
+</custom>
+
+================================================================================
+`;

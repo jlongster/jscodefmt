@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var m1 = require('1DoesntExist');
+import {numVal as numVal1} from '1DoesntExist';
+var a_1: number = m1.numVal;
+var a_2: number = numVal1;
+
+// Error: 'Exists2' is not a valid module name
+//
+// This tests that, for haste, the first name_mapper regexp that happens to
+// match the given module name string is picked.
+var m2 = require('2DoesntExist'); // Error
+import {numVal as numVal2} from '3DoesntExist'; // Error
+
+=====================================output=====================================
+/* @flow */
+
+var m1 = require("1DoesntExist");
+import { numVal as numVal1 } from "1DoesntExist";
+var a_1: number = m1.numVal;
+var a_2: number = numVal1;
+
+// Error: 'Exists2' is not a valid module name
+//
+// This tests that, for haste, the first name_mapper regexp that happens to
+// match the given module name string is picked.
+var m2 = require("2DoesntExist"); // Error
+import { numVal as numVal2 } from "3DoesntExist"; // Error
+
+================================================================================
+`;
+
+exports[`Exists.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @providesModule Exists
+ * @flow
+ */
+
+module.exports = {
+  numVal: 42
+};
+
+=====================================output=====================================
+/**
+ * @providesModule Exists
+ * @flow
+ */
+
+module.exports = {
+  numVal: 42,
+};
+
+================================================================================
+`;

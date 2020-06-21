@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`e1.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+export type Action =
+  | { type: 'QUX' }
+  | { type: 'BAR' }
+;
+
+export const LIFE = 42;
+
+=====================================output=====================================
+// @flow
+
+export type Action = { type: "QUX" } | { type: "BAR" };
+
+export const LIFE = 42;
+
+================================================================================
+`;

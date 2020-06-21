@@ -3,7 +3,7 @@
 const fs = require("fs");
 const path = require("path");
 
-module.exports = function() {
+module.exports = function () {
   let banner;
   let entry;
   let file;
@@ -44,6 +44,6 @@ module.exports = function() {
       if (banner && file) {
         fs.chmodSync(file, 0o755 & ~process.umask());
       }
-    }
+    },
   };
 };

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`loose.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+div {height: calc(-0.5 * var(ei-table-cell-padding));
+  width: -webkit-calc
+(100% + 20px);
+  margin: -moz-calc(
+100%
+-
+320px
+);
+  background: url(
+    var( audience-network-checkbox-image)
+    ) center no-repeat;
+  background-image: url(
+    )
+    center center
+    no-repeat
+    black;}
+
+=====================================output=====================================
+div {
+  height: calc(-0.5 * var(ei-table-cell-padding));
+  width: -webkit-calc (100% + 20px);
+  margin: -moz-calc(100% - 320px);
+  background: url(var(audience-network-checkbox-image)) center no-repeat;
+  background-image: url() center center no-repeat black;
+}
+
+================================================================================
+`;

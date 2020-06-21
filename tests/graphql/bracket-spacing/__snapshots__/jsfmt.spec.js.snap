@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`bracket_spacing.graphql - {"bracketSpacing":false} format 1`] = `
+====================================options=====================================
+bracketSpacing: false
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+fragment Visit on HighlightedVisit
+  @argumentDefinitions(
+    count: {type: "Int", defaultValue: 20}
+  ) {
+  name
+}
+
+=====================================output=====================================
+fragment Visit on HighlightedVisit
+@argumentDefinitions(count: {type: "Int", defaultValue: 20}) {
+  name
+}
+
+================================================================================
+`;
+
+exports[`bracket_spacing.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+fragment Visit on HighlightedVisit
+  @argumentDefinitions(
+    count: {type: "Int", defaultValue: 20}
+  ) {
+  name
+}
+
+=====================================output=====================================
+fragment Visit on HighlightedVisit
+@argumentDefinitions(count: { type: "Int", defaultValue: 20 }) {
+  name
+}
+
+================================================================================
+`;

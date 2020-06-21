@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example.md - {"proseWrap":"always","useTabs":true} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+useTabs: true
+                                                                                | printWidth
+=====================================input======================================
+- Top level list item 1 
+- Top level list item 2
+  - Nested List item 1
+  - Nested List item 2
+    - Sub-Nested List item 1
+    - Sub-Nested List item 2
+
+=====================================output=====================================
+- Top level list item 1
+- Top level list item 2
+  - Nested List item 1
+  - Nested List item 2
+    - Sub-Nested List item 1
+    - Sub-Nested List item 2
+
+================================================================================
+`;

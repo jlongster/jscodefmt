@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`core.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class Array<T> {
+    @@iterator(): Iterator<T>;
+    map<U>(callbackfn: (value: T, index: number, array: Array<T>) => U, thisArg?: any): Array<U>;
+}
+
+type IteratorResult<Yield,Return> =
+  | { done: true, value?: Return }
+  | { done: false, value: Yield };
+
+interface $Iterator<+Yield,+Return,-Next> {
+    @@iterator(): $Iterator<Yield,Return,Next>;
+    next(value?: Next): IteratorResult<Yield,Return>;
+}
+type Iterator<+T> = $Iterator<T,void,void>;
+
+interface $Iterable<+Yield,+Return,-Next> {
+    @@iterator(): $Iterator<Yield,Return,Next>;
+}
+type Iterable<+T> = $Iterable<T,void,void>;
+
+declare class Map<K, V> {
+    @@iterator(): Iterator<[K, V]>;
+    constructor(iterable: ?Iterable<[K, V]>): void;
+    set(key: K, value: V): Map<K, V>;
+}
+
+=====================================output=====================================
+declare class Array<T> {
+  @@iterator(): Iterator<T>;
+  map<U>(
+    callbackfn: (value: T, index: number, array: Array<T>) => U,
+    thisArg?: any
+  ): Array<U>;
+}
+
+type IteratorResult<Yield, Return> =
+  | { done: true, value?: Return }
+  | { done: false, value: Yield };
+
+interface $Iterator<+Yield, +Return, -Next> {
+  @@iterator(): $Iterator<Yield, Return, Next>;
+  next(value?: Next): IteratorResult<Yield, Return>;
+}
+type Iterator<+T> = $Iterator<T, void, void>;
+
+interface $Iterable<+Yield, +Return, -Next> {
+  @@iterator(): $Iterator<Yield, Return, Next>;
+}
+type Iterable<+T> = $Iterable<T, void, void>;
+
+declare class Map<K, V> {
+  @@iterator(): Iterator<[K, V]>;
+  constructor(iterable: ?Iterable<[K, V]>): void;
+  set(key: K, value: V): Map<K, V>;
+}
+
+================================================================================
+`;
+
+exports[`immutable.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare module "immutable" {
+  declare class Map<K,V> {
+    static <K,V>(iter: Iterator<[K,V]>): Map<K,V>;
+    static <K:string,V>(object: {+[k:K]:V}): Map<K,V>;
+
+    set(key: K, value: V): this;
+  }
+}
+
+=====================================output=====================================
+declare module "immutable" {
+  declare class Map<K, V> {
+    static <K, V>(iter: Iterator<[K, V]>): Map<K, V>;
+    static <K: string, V>(object: { +[k: K]: V }): Map<K, V>;
+
+    set(key: K, value: V): this;
+  }
+}
+
+================================================================================
+`;

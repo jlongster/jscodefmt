@@ -7,9 +7,9 @@ describe("boolean flags do not swallow the next argument", () => {
     "--end-of-line",
     "lf",
     "--single-quote",
-    "file.js"
+    "file.js",
   ]).test({
-    status: 0
+    status: 0,
   });
 });
 
@@ -18,9 +18,9 @@ describe("negated options work", () => {
     "--end-of-line",
     "lf",
     "--no-semi",
-    "file.js"
+    "file.js",
   ]).test({
-    status: 0
+    status: 0,
   });
 });
 
@@ -29,9 +29,9 @@ describe("unknown options are warned", () => {
     "--end-of-line",
     "lf",
     "file.js",
-    "--unknown"
+    "--unknown",
   ]).test({
-    status: 0
+    status: 0,
   });
 });
 
@@ -40,31 +40,9 @@ describe("unknown negated options are warned", () => {
     "--end-of-line",
     "lf",
     "file.js",
-    "--no-unknown"
+    "--no-unknown",
   ]).test({
-    status: 0
-  });
-});
-
-describe("deprecated options are warned", () => {
-  runPrettier("cli/arg-parsing", [
-    "--end-of-line",
-    "lf",
-    "file.js",
-    "--flow-parser"
-  ]).test({
-    status: 0
-  });
-});
-
-describe("deprecated option values are warned", () => {
-  runPrettier("cli/arg-parsing", [
-    "--end-of-line",
-    "lf",
-    "file.js",
-    "--trailing-comma"
-  ]).test({
-    status: 0
+    status: 0,
   });
 });
 
@@ -75,6 +53,6 @@ describe("allow overriding flags", () => {
     { input: "function a() { b }" }
   ).test({
     stdout: "function a() {\n   b;\n}\n",
-    status: 0
+    status: 0,
   });
 });

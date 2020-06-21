@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`jsx.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare var $React: $Exports<'react'>; // fake import
+type $JSXIntrinsic<T> = Class<$React.Component<void,T,mixed>>;
+
+type $JSXIntrinsics = {
+  div: $JSXIntrinsic<{id: string}>,
+  span: $JSXIntrinsic<{id: string, class: string}>,
+};
+
+=====================================output=====================================
+declare var $React: $Exports<"react">; // fake import
+type $JSXIntrinsic<T> = Class<$React.Component<void, T, mixed>>;
+
+type $JSXIntrinsics = {
+  div: $JSXIntrinsic<{ id: string }>,
+  span: $JSXIntrinsic<{ id: string, class: string }>,
+};
+
+================================================================================
+`;

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+var React = require('react');
+(<fbt />: React.Element<*>);
+(<fbt />: number); // Error: ReactElement ~> number
+
+=====================================output=====================================
+// @flow
+var React = require("react");
+(<fbt />: React.Element<*>);
+(<fbt />: number); // Error: ReactElement ~> number
+
+================================================================================
+`;

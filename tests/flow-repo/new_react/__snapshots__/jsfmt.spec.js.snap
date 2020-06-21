@@ -1,0 +1,1125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeedUFI.react.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Copyright 2004-present Facebook. All Rights Reserved.
+ *
+ * @providesModule FeedUFI.react
+ * @flow
+ */
+
+'use strict';
+
+var UFILikeCount = require('UFILikeCount.react');
+var React = require('react');
+
+var FeedUFI = React.createClass({
+  _renderLikeCount: function(
+      feedback: any
+  ) {
+    var props = {
+      className: "",
+      key: "",
+      feedback: {feedback},
+      permalink: "",
+    };
+    var ignored = <UFILikeCount {...props} />;
+    return (
+      <UFILikeCount
+        className=""
+        key=""
+        feedback={feedback}
+        permalink=""
+      />
+    );
+  },
+
+  render: function(): ?React.Element<any> {
+    return (
+      <div/>
+    );
+  }
+
+});
+
+module.exports = FeedUFI;
+
+=====================================output=====================================
+/**
+ * Copyright 2004-present Facebook. All Rights Reserved.
+ *
+ * @providesModule FeedUFI.react
+ * @flow
+ */
+
+"use strict";
+
+var UFILikeCount = require("UFILikeCount.react");
+var React = require("react");
+
+var FeedUFI = React.createClass({
+  _renderLikeCount: function (feedback: any) {
+    var props = {
+      className: "",
+      key: "",
+      feedback: { feedback },
+      permalink: "",
+    };
+    var ignored = <UFILikeCount {...props} />;
+    return (
+      <UFILikeCount className="" key="" feedback={feedback} permalink="" />
+    );
+  },
+
+  render: function (): ?React.Element<any> {
+    return <div />;
+  },
+});
+
+module.exports = FeedUFI;
+
+================================================================================
+`;
+
+exports[`Mixin.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @providesModule Mixin */
+module.exports = {
+    success: function() { }
+};
+
+=====================================output=====================================
+/* @providesModule Mixin */
+module.exports = {
+  success: function () {},
+};
+
+================================================================================
+`;
+
+exports[`UFILikeCount.react.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Copyright 2004-present Facebook. All Rights Reserved.
+ *
+ * @providesModule UFILikeCount.react
+ * @flow
+ */
+
+'use strict';
+
+var React = require('react');
+
+var UFILikeCount = React.createClass({
+  propTypes: {
+    permalink: React.PropTypes.string,
+    feedback: React.PropTypes.object.isRequired
+  },
+
+  render: function(): ?React.Element<any> {
+    return <div/>;
+  }
+});
+
+module.exports = UFILikeCount;
+
+=====================================output=====================================
+/**
+ * Copyright 2004-present Facebook. All Rights Reserved.
+ *
+ * @providesModule UFILikeCount.react
+ * @flow
+ */
+
+"use strict";
+
+var React = require("react");
+
+var UFILikeCount = React.createClass({
+  propTypes: {
+    permalink: React.PropTypes.string,
+    feedback: React.PropTypes.object.isRequired,
+  },
+
+  render: function (): ?React.Element<any> {
+    return <div />;
+  },
+});
+
+module.exports = UFILikeCount;
+
+================================================================================
+`;
+
+exports[`bad_default_props.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('React');
+
+type T1 = { }
+type T2 = { x: number }
+type T3 = { x: number, y: number }
+
+class C1 extends React.Component<T1, T2, any> { // error
+}
+
+class C2 extends React.Component<void, T2, any> { // OK
+}
+
+// no need to add type arguments to React.Component
+class C3 extends React.Component { // OK
+  static defaultProps: T1;
+  props: T2;
+}
+
+class C4 extends React.Component { // OK, recommended
+  // no need to declare defaultProps unless necessary
+  props: T2;
+}
+
+class C5 extends React.Component<T2, T3, any> { // error
+}
+
+class C6 extends React.Component { // OK, recommended
+  static defaultProps: T2;
+  props: T3;
+}
+
+=====================================output=====================================
+var React = require("React");
+
+type T1 = {};
+type T2 = { x: number };
+type T3 = { x: number, y: number };
+
+class C1 extends React.Component<T1, T2, any> {
+  // error
+}
+
+class C2 extends React.Component<void, T2, any> {
+  // OK
+}
+
+// no need to add type arguments to React.Component
+class C3 extends React.Component {
+  // OK
+  static defaultProps: T1;
+  props: T2;
+}
+
+class C4 extends React.Component {
+  // OK, recommended
+  // no need to declare defaultProps unless necessary
+  props: T2;
+}
+
+class C5 extends React.Component<T2, T3, any> {
+  // error
+}
+
+class C6 extends React.Component {
+  // OK, recommended
+  static defaultProps: T2;
+  props: T3;
+}
+
+================================================================================
+`;
+
+exports[`classes.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('React');
+
+type DefaultProps = { };
+type Props = { x: number };
+type State = { y: number };
+
+class Foo extends React.Component {
+  props: Props;
+  state: State;
+  static defaultProps: DefaultProps;
+
+  is_mounted: boolean;
+
+  static bar(): void {}
+
+  qux(): void {
+    var _: string = this.props.x;
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { y: "" };
+  }
+
+  setState(o: { y_: string }): void { }
+
+  componentDidMount(): void {
+    this.is_mounted = true;
+  }
+
+  componentWillReceiveProps(
+    nextProps: Object,
+    nextContext: any
+  ): void {
+    this.qux();
+  }
+
+}
+
+Foo.defaultProps = 0;
+var foo: $jsx<number> = <Foo/>;
+
+Foo.bar();
+
+var FooLegacy = React.createClass({
+  is_mounted: (undefined: ?boolean),
+
+  propTypes: {
+    x: React.PropTypes.number.isRequired
+  },
+
+  getDefaultProps(): DefaultProps { return {} },
+
+  statics: {
+    bar(): void {}
+  },
+
+  qux(): void {
+    var _: string = this.props.x;
+  },
+
+  getInitialState(): { y: string } {
+    return { y: "" };
+  },
+
+  setState(o: { y_: string }): void { },
+
+  componentDidMount(): void {
+    this.is_mounted = true;
+  },
+
+  componentWillReceiveProps(
+    nextProps: Object,
+    nextContext: any
+  ): void {
+    this.qux();
+  },
+});
+
+FooLegacy.defaultProps = 0;
+var foo_legacy: $jsx<number> = <FooLegacy/>;
+
+FooLegacy.bar();
+
+=====================================output=====================================
+var React = require("React");
+
+type DefaultProps = {};
+type Props = { x: number };
+type State = { y: number };
+
+class Foo extends React.Component {
+  props: Props;
+  state: State;
+  static defaultProps: DefaultProps;
+
+  is_mounted: boolean;
+
+  static bar(): void {}
+
+  qux(): void {
+    var _: string = this.props.x;
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { y: "" };
+  }
+
+  setState(o: { y_: string }): void {}
+
+  componentDidMount(): void {
+    this.is_mounted = true;
+  }
+
+  componentWillReceiveProps(nextProps: Object, nextContext: any): void {
+    this.qux();
+  }
+}
+
+Foo.defaultProps = 0;
+var foo: $jsx<number> = <Foo />;
+
+Foo.bar();
+
+var FooLegacy = React.createClass({
+  is_mounted: (undefined: ?boolean),
+
+  propTypes: {
+    x: React.PropTypes.number.isRequired,
+  },
+
+  getDefaultProps(): DefaultProps {
+    return {};
+  },
+
+  statics: {
+    bar(): void {},
+  },
+
+  qux(): void {
+    var _: string = this.props.x;
+  },
+
+  getInitialState(): { y: string } {
+    return { y: "" };
+  },
+
+  setState(o: { y_: string }): void {},
+
+  componentDidMount(): void {
+    this.is_mounted = true;
+  },
+
+  componentWillReceiveProps(nextProps: Object, nextContext: any): void {
+    this.qux();
+  },
+});
+
+FooLegacy.defaultProps = 0;
+var foo_legacy: $jsx<number> = <FooLegacy />;
+
+FooLegacy.bar();
+
+================================================================================
+`;
+
+exports[`import-react.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+// Testing local binding of React in all kinds of ways. The only reason this
+// might even be an issue is that internally, the use of JSX triggers an
+// implicit require('react'), so any bugs in (1) interop of CJS require and ES6
+// import (2) module re-export, as used to redirect the module name 'React' to
+// 'react' might show up here.
+
+import React from "react";
+//import React from "React";
+//var React = require("react");
+//var React = require("React");
+
+class HelloMessage extends React.Component {
+  props: { name: string };
+}
+
+<HelloMessage name={007} />; // number ~/~> string error
+<HelloMessage name="Bond" />; // ok
+
+=====================================output=====================================
+/* @flow */
+
+// Testing local binding of React in all kinds of ways. The only reason this
+// might even be an issue is that internally, the use of JSX triggers an
+// implicit require('react'), so any bugs in (1) interop of CJS require and ES6
+// import (2) module re-export, as used to redirect the module name 'React' to
+// 'react' might show up here.
+
+import React from "react";
+//import React from "React";
+//var React = require("react");
+//var React = require("React");
+
+class HelloMessage extends React.Component {
+  props: { name: string };
+}
+
+<HelloMessage name={007} />; // number ~/~> string error
+<HelloMessage name="Bond" />; // ok
+
+================================================================================
+`;
+
+exports[`new_react.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('react');
+var Mixin = require('Mixin');
+var C = React.createClass({
+    mixins: [Mixin],
+    propTypes: {
+        x: React.PropTypes.string.isRequired,
+        y: React.PropTypes.array,
+        z: React.PropTypes.number
+    },
+    replaceProps(props: { }) { },
+
+    getDefaultProps(): { z: number } {
+        return { z: 0 };
+    },
+    getInitialState() { return null; },
+    render() {
+        var foo: string = this.state;
+        var bar: string = this.props;
+        var qux: string = this.props.z;
+        var w:number = this.props.x;
+        this.props.y[0];
+        var len:number = this.props.x.length;
+        this.success();
+        return <div/>;
+    }
+
+})
+
+var element = <C x = {0}/>;
+var element_ = <C/>;
+
+var x: number = C.displayName;
+
+=====================================output=====================================
+var React = require("react");
+var Mixin = require("Mixin");
+var C = React.createClass({
+  mixins: [Mixin],
+  propTypes: {
+    x: React.PropTypes.string.isRequired,
+    y: React.PropTypes.array,
+    z: React.PropTypes.number,
+  },
+  replaceProps(props: {}) {},
+
+  getDefaultProps(): { z: number } {
+    return { z: 0 };
+  },
+  getInitialState() {
+    return null;
+  },
+  render() {
+    var foo: string = this.state;
+    var bar: string = this.props;
+    var qux: string = this.props.z;
+    var w: number = this.props.x;
+    this.props.y[0];
+    var len: number = this.props.x.length;
+    this.success();
+    return <div />;
+  },
+});
+
+var element = <C x={0} />;
+var element_ = <C />;
+
+var x: number = C.displayName;
+
+================================================================================
+`;
+
+exports[`propTypes.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('react');
+var PropTypes = React.PropTypes;
+
+var C = React.createClass({
+  propTypes: {
+    statistics: PropTypes.arrayOf(PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.number,
+    })).isRequired,
+  }
+});
+
+<C statistics={[
+  {},
+  {label:"",value:undefined},
+]}/>; // error (label is required, value not required)
+
+var props: Array<{label: string, value?: number}> = [
+  {},
+  {label:"",value:undefined},
+]; // error (same as ^)
+
+=====================================output=====================================
+var React = require("react");
+var PropTypes = React.PropTypes;
+
+var C = React.createClass({
+  propTypes: {
+    statistics: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.number,
+      })
+    ).isRequired,
+  },
+});
+
+<C statistics={[{}, { label: "", value: undefined }]} />; // error (label is required, value not required)
+
+var props: Array<{ label: string, value?: number }> = [
+  {},
+  { label: "", value: undefined },
+]; // error (same as ^)
+
+================================================================================
+`;
+
+exports[`props.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('react');
+var TestProps = React.createClass({
+
+    propTypes: {
+        x: React.PropTypes.string,
+        z: React.PropTypes.number
+    },
+
+    getDefaultProps: function() {
+        return {x: '', y: 0}
+    },
+
+    test: function() {
+        var a: number = this.props.x; // error
+        var b: string = this.props.y; // error
+        var c: string = this.props.z; // error
+    }
+});
+
+var element = <TestProps x={false} y={false} z={false} />; // 3 errors
+
+(element: $jsx<*>);
+(element: $jsx<TestProps>);
+var FooProps = React.createClass({
+    propTypes: { w: React.PropTypes.string.isRequired }
+});
+(element: $jsx<FooProps>);
+
+=====================================output=====================================
+var React = require("react");
+var TestProps = React.createClass({
+  propTypes: {
+    x: React.PropTypes.string,
+    z: React.PropTypes.number,
+  },
+
+  getDefaultProps: function () {
+    return { x: "", y: 0 };
+  },
+
+  test: function () {
+    var a: number = this.props.x; // error
+    var b: string = this.props.y; // error
+    var c: string = this.props.z; // error
+  },
+});
+
+var element = <TestProps x={false} y={false} z={false} />; // 3 errors
+
+(element: $jsx<*>);
+(element: $jsx<TestProps>);
+var FooProps = React.createClass({
+  propTypes: { w: React.PropTypes.string.isRequired },
+});
+(element: $jsx<FooProps>);
+
+================================================================================
+`;
+
+exports[`props2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('react');
+var C = React.createClass({
+    propTypes: {
+        foo: React.PropTypes.string.isRequired,
+        bar: React.PropTypes.string.isRequired,
+    }
+});
+var D = React.createClass({
+    getInitialState: function(): { bar: number } {
+        return { bar: 0 };
+    },
+    render: function() {
+        var obj = { bar: 0 };
+        var s: string = this.state.bar;
+        return <C {...this.state} foo = {0} />;
+    }
+});
+
+=====================================output=====================================
+var React = require("react");
+var C = React.createClass({
+  propTypes: {
+    foo: React.PropTypes.string.isRequired,
+    bar: React.PropTypes.string.isRequired,
+  },
+});
+var D = React.createClass({
+  getInitialState: function (): { bar: number } {
+    return { bar: 0 };
+  },
+  render: function () {
+    var obj = { bar: 0 };
+    var s: string = this.state.bar;
+    return <C {...this.state} foo={0} />;
+  },
+});
+
+================================================================================
+`;
+
+exports[`props3.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('react');
+var TestProps = React.createClass({
+    // Do something illegal inside of propTypes and make sure Flow notices
+    propTypes: {
+      arr: React.PropTypes.array,
+      arr_rec: React.PropTypes.array.isRequired,
+      bool: React.PropTypes.bool,
+      bool_rec: React.PropTypes.bool.isRequired,
+      func: React.PropTypes.func,
+      func_rec: React.PropTypes.func.isRequired,
+      number: React.PropTypes.number,
+      number_rec: React.PropTypes.number.isRequired,
+      object: React.PropTypes.object,
+      object_rec: React.PropTypes.object.isRequired,
+      string: React.PropTypes.string,
+      string_rec: React.PropTypes.string.isRequired,
+
+      any: React.PropTypes.any,
+      any_rec: React.PropTypes.any.isRequired,
+      element: React.PropTypes.element,
+      element_rec: React.PropTypes.element.isRequired,
+      node: React.PropTypes.node,
+      node_rec: React.PropTypes.node.isRequired,
+
+      arrayOf: React.PropTypes.arrayOf(React.PropTypes.string),
+      arrayOf_rec: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+      instanceOf: React.PropTypes.instanceOf(Object),
+      instanceOf_rec: React.PropTypes.instanceOf(Object).isRequired,
+      objectOf: React.PropTypes.objectOf(React.PropTypes.string),
+      objectOf_rec: React.PropTypes.objectOf(React.PropTypes.string).isRequired,
+      oneOf: React.PropTypes.oneOf(["yes", "no"]),
+      oneOf_rec: React.PropTypes.oneOf(["yes", "no"]).isRequired,
+      oneOfType: React.PropTypes.oneOfType(
+        [React.PropTypes.string, React.PropTypes.number]
+      ),
+      oneOfType_rec: React.PropTypes.oneOfType(
+        [React.PropTypes.string, React.PropTypes.number]
+      ).isRequired,
+      shape: React.PropTypes.shape({
+        foo: React.PropTypes.string,
+        bar: React.PropTypes.number,
+      }),
+      shape_rec: React.PropTypes.shape({
+        foo: React.PropTypes.string,
+        bar: React.PropTypes.number,
+      }).isRequired,
+
+      // And do something bad here
+      bad_one: React.PropTypes.imaginaryType,
+      bad_two: React.PropTypes.string.inRequired,
+    },
+});
+
+=====================================output=====================================
+var React = require("react");
+var TestProps = React.createClass({
+  // Do something illegal inside of propTypes and make sure Flow notices
+  propTypes: {
+    arr: React.PropTypes.array,
+    arr_rec: React.PropTypes.array.isRequired,
+    bool: React.PropTypes.bool,
+    bool_rec: React.PropTypes.bool.isRequired,
+    func: React.PropTypes.func,
+    func_rec: React.PropTypes.func.isRequired,
+    number: React.PropTypes.number,
+    number_rec: React.PropTypes.number.isRequired,
+    object: React.PropTypes.object,
+    object_rec: React.PropTypes.object.isRequired,
+    string: React.PropTypes.string,
+    string_rec: React.PropTypes.string.isRequired,
+
+    any: React.PropTypes.any,
+    any_rec: React.PropTypes.any.isRequired,
+    element: React.PropTypes.element,
+    element_rec: React.PropTypes.element.isRequired,
+    node: React.PropTypes.node,
+    node_rec: React.PropTypes.node.isRequired,
+
+    arrayOf: React.PropTypes.arrayOf(React.PropTypes.string),
+    arrayOf_rec: React.PropTypes.arrayOf(React.PropTypes.string).isRequired,
+    instanceOf: React.PropTypes.instanceOf(Object),
+    instanceOf_rec: React.PropTypes.instanceOf(Object).isRequired,
+    objectOf: React.PropTypes.objectOf(React.PropTypes.string),
+    objectOf_rec: React.PropTypes.objectOf(React.PropTypes.string).isRequired,
+    oneOf: React.PropTypes.oneOf(["yes", "no"]),
+    oneOf_rec: React.PropTypes.oneOf(["yes", "no"]).isRequired,
+    oneOfType: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]),
+    oneOfType_rec: React.PropTypes.oneOfType([
+      React.PropTypes.string,
+      React.PropTypes.number,
+    ]).isRequired,
+    shape: React.PropTypes.shape({
+      foo: React.PropTypes.string,
+      bar: React.PropTypes.number,
+    }),
+    shape_rec: React.PropTypes.shape({
+      foo: React.PropTypes.string,
+      bar: React.PropTypes.number,
+    }).isRequired,
+
+    // And do something bad here
+    bad_one: React.PropTypes.imaginaryType,
+    bad_two: React.PropTypes.string.inRequired,
+  },
+});
+
+================================================================================
+`;
+
+exports[`props4.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+import React from "React";
+
+class JDiv extends React.Component {
+  // static defaultProps: { };
+  props: {
+    id: string
+  };
+}
+
+// Should be a type error ('id' takes a string, not a number..)
+<JDiv id={42} />;
+
+class Example extends React.Component {
+  props: { bar: string };
+
+  render() {
+    return <div>{this.props.bar}</div>
+  }
+}
+
+React.render(
+  <Example foo="foo" />,
+  document.body
+);
+
+=====================================output=====================================
+// @flow
+
+import React from "React";
+
+class JDiv extends React.Component {
+  // static defaultProps: { };
+  props: {
+    id: string,
+  };
+}
+
+// Should be a type error ('id' takes a string, not a number..)
+<JDiv id={42} />;
+
+class Example extends React.Component {
+  props: { bar: string };
+
+  render() {
+    return <div>{this.props.bar}</div>;
+  }
+}
+
+React.render(<Example foo="foo" />, document.body);
+
+================================================================================
+`;
+
+exports[`props5.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('React');
+
+var C = React.createClass({
+  getDefaultProps: function() {
+    return { x: 0 };
+  }
+});
+
+module.exports = C;
+
+=====================================output=====================================
+var React = require("React");
+
+var C = React.createClass({
+  getDefaultProps: function () {
+    return { x: 0 };
+  },
+});
+
+module.exports = C;
+
+================================================================================
+`;
+
+exports[`state.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var React = require('react');
+
+type State = {
+    bar: ?{ qux: string; };
+};
+
+var ReactClass = React.createClass({
+    getInitialState: function():State {
+        return { bar: null };
+    },
+
+    render: function(): any {
+        // Any state access here seems to make state any
+        this.state;
+        return (
+        <div>
+                {this.state.bar.qux}
+        </div>
+        );
+    }
+});
+
+=====================================output=====================================
+/* @flow */
+
+var React = require("react");
+
+type State = {
+  bar: ?{ qux: string },
+};
+
+var ReactClass = React.createClass({
+  getInitialState: function (): State {
+    return { bar: null };
+  },
+
+  render: function (): any {
+    // Any state access here seems to make state any
+    this.state;
+    return <div>{this.state.bar.qux}</div>;
+  },
+});
+
+================================================================================
+`;
+
+exports[`state2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+var React = require('react');
+
+type FooState = {
+    key: ?Object;
+};
+
+var Comp = React.createClass({
+    getInitialState: function(): FooState {
+        return {
+            key: null, // this used to cause a missing annotation error
+        };
+    }
+});
+
+module.exports = Comp;
+
+=====================================output=====================================
+// @flow
+
+var React = require("react");
+
+type FooState = {
+  key: ?Object,
+};
+
+var Comp = React.createClass({
+  getInitialState: function (): FooState {
+    return {
+      key: null, // this used to cause a missing annotation error
+    };
+  },
+});
+
+module.exports = Comp;
+
+================================================================================
+`;
+
+exports[`state3.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('react');
+var TestState = React.createClass({
+
+    getInitialState: function(): { x: string; } {
+        return {
+            x: ''
+        }
+    },
+
+    test: function() {
+        var a: number = this.state.x; // error
+
+        this.setState({
+            x: false // error
+        })
+    }
+
+});
+
+=====================================output=====================================
+var React = require("react");
+var TestState = React.createClass({
+  getInitialState: function (): { x: string } {
+    return {
+      x: "",
+    };
+  },
+
+  test: function () {
+    var a: number = this.state.x; // error
+
+    this.setState({
+      x: false, // error
+    });
+  },
+});
+
+================================================================================
+`;
+
+exports[`state4.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('React');
+
+var C = React.createClass({
+  getInitialState: function(): { x: number } {
+    return { x: 0 };
+  },
+
+  render() {
+    this.setState({ y: 0 });
+    return <div>{this.state.z}</div>
+  }
+
+});
+
+=====================================output=====================================
+var React = require("React");
+
+var C = React.createClass({
+  getInitialState: function (): { x: number } {
+    return { x: 0 };
+  },
+
+  render() {
+    this.setState({ y: 0 });
+    return <div>{this.state.z}</div>;
+  },
+});
+
+================================================================================
+`;
+
+exports[`state5.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('React');
+
+class C extends React.Component {
+  foo(): number {
+    return this.state.x; // error: need to declare type of state
+  }
+}
+
+=====================================output=====================================
+var React = require("React");
+
+class C extends React.Component {
+  foo(): number {
+    return this.state.x; // error: need to declare type of state
+  }
+}
+
+================================================================================
+`;

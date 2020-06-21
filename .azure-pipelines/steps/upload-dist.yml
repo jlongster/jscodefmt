@@ -1,6 +1,0 @@
-steps:
-  - task: PublishPipelineArtifact@0
-    inputs:
-      artifactName: "dist"
-      targetPath: dist
-    displayName: "Upload dist"

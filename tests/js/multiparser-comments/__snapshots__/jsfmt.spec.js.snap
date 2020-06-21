@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comments.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+graphql.experimental\`
+  # required by createPaginationContainer
+  fragment MobileHomeDiffsSearchList_search on DifferentialRevisionSearch {
+    # required by createPaginationContainer
+    name
+  }
+\`;
+
+=====================================output=====================================
+graphql.experimental\`
+  # required by createPaginationContainer
+  fragment MobileHomeDiffsSearchList_search on DifferentialRevisionSearch {
+    # required by createPaginationContainer
+    name
+  }
+\`;
+
+================================================================================
+`;

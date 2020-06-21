@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`text.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+a = {
+  viewer: graphql\`
+    fragment x on Viewer {
+      y(named: [
+        "projects_feedback_ids" # PROJECTS_FEEDBACK_IDS
+      ]) {
+        name
+      }
+    }
+  \`,
+}
+
+=====================================output=====================================
+a = {
+  viewer: graphql\`
+    fragment x on Viewer {
+      y(
+        named: [
+          "projects_feedback_ids" # PROJECTS_FEEDBACK_IDS
+        ]
+      ) {
+        name
+      }
+    }
+  \`,
+};
+
+================================================================================
+`;

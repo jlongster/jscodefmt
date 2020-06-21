@@ -3,23 +3,43 @@ id: cli
 title: CLI
 ---
 
-Run Prettier through the CLI with this script. Run it without any arguments to see the [options](options.md).
+Use the `prettier` command to run Prettier from the command line. Run it without any arguments to see the [options](options.md).
 
 To format a file in-place, use `--write`. You may want to consider committing your code before doing that, just in case.
 
 ```bash
-prettier [opts] [filename ...]
+prettier [options] [file/dir/glob ...]
 ```
 
 In practice, this may look something like:
 
 ```bash
-prettier --single-quote --trailing-comma es5 --write "{app,__{tests,mocks}__}/**/*.js"
+prettier --write .
 ```
 
-Don't forget the quotes around the globs! The quotes make sure that Prettier expands the globs rather than your shell, for cross-platform usage. The [glob syntax from the glob module](https://github.com/isaacs/node-glob/blob/master/README.md#glob-primer) is used.
+This command formats all files supported by Prettier in the current directory and its subdirectories.
 
-Prettier CLI will ignore files located in `node_modules` directory. To opt-out from this behavior use `--with-node-modules` flag.
+A more complicated example:
+
+```bash
+prettier --single-quote --trailing-comma all --write docs package.json "{app,__{tests,mocks}__}/**/*.js"
+```
+
+> Don't forget the **quotes** around the globs! The quotes make sure that Prettier CLI expands the globs rather than your shell, which is important for cross-platform usage.
+
+> It's usually better to use a [configuration file](configuration.md) for formatting options like `--single-quote` and `--trailing-comma` instead of passing them as CLI flags. This allows sharing those settings across different ways to run Prettier (CLI, [editor integrations](editors.md), etc.).
+
+Given a list of paths/patterns, Prettier CLI first treats every entry in it as a literal path.
+
+- If the path points to an existing file, Prettier CLI proceeds with that file and doesn't resolve the path as a glob pattern.
+
+- If the path points to an existing directory, Prettier CLI recursively finds supported files in that directory. This resolution process is based on file extensions and well-known file names that Prettier and its [plugins](plugins.md) associate with supported languages.
+
+- Otherwise, the entry is resolved as a glob pattern using the [glob syntax from the `fast-glob` module](https://github.com/mrmlnc/fast-glob#pattern-syntax).
+
+Prettier CLI will ignore files located in `node_modules` directory. To opt out from this behavior use `--with-node-modules` flag.
+
+To escape special characters in globs, one of the two escaping syntaxes can be used: `prettier "\[my-dir]/*.js"` or `prettier "[[]my-dir]/*.js"`. Both match all JS files in a directory named `[my-dir]`, however the latter syntax is preferable as the former doesn't work on Windows, where backslashes are treated as path separators.
 
 ## `--check`
 
@@ -32,14 +52,14 @@ prettier --check "src/**/*.js"
 
 Console output if all files are formatted:
 
-```
+```console
 Checking formatting...
 All matched files use Prettier code style!
 ```
 
 Console output if some of the files require re-formatting:
 
-```
+```console
 Checking formatting...
 src/fileA.js
 src/fileB.js
@@ -172,7 +192,7 @@ _abc.css_
 
 _shell_
 
-```bash
+```console
 $ cat abc.css | prettier --stdin-filepath abc.css
 .name {
   display: none;

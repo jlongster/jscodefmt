@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`issue-518.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function doSomethingAsync(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    resolve(); // OK to leave out arg, same as resolve(undefined)
+
+    var anotherVoidPromise: Promise<void> = Promise.resolve();
+    resolve(anotherVoidPromise);
+  });
+}
+
+// simpler repro to show that too few args are fine when expecting void
+function foo(x: void) { }
+foo();
+
+=====================================output=====================================
+function doSomethingAsync(): Promise<void> {
+  return new Promise((resolve, reject) => {
+    resolve(); // OK to leave out arg, same as resolve(undefined)
+
+    var anotherVoidPromise: Promise<void> = Promise.resolve();
+    resolve(anotherVoidPromise);
+  });
+}
+
+// simpler repro to show that too few args are fine when expecting void
+function foo(x: void) {}
+foo();
+
+================================================================================
+`;
+
+exports[`undefined.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo() {
+    var x;
+    x.foo();
+}
+
+function bar() {
+    var x:?{ bar():void; };
+    if (x) x.bar();
+}
+
+function qux(x?: number, y:string = "", z) { }
+
+=====================================output=====================================
+function foo() {
+  var x;
+  x.foo();
+}
+
+function bar() {
+  var x: ?{ bar(): void };
+  if (x) x.bar();
+}
+
+function qux(x?: number, y: string = "", z) {}
+
+================================================================================
+`;
+
+exports[`undefined2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  function(x: number) {
+    var id;
+    var name = id ? 'John' : undefined;
+    (name: boolean); // error, string or void
+
+    const bar = [
+      undefined,
+      'bar',
+    ];
+    (bar[x]: boolean); // error, string or void
+  },
+
+  function(x: number) {
+    var undefined = 'foo';
+    (undefined: string); // ok
+
+    var x;
+    if (x !== undefined) {
+      x[0]; // should error, could be void
+    }
+
+    const bar = [
+      undefined,
+      'bar',
+    ];
+    (bar[x]: boolean); // error, string only
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  function (x: number) {
+    var id;
+    var name = id ? "John" : undefined;
+    (name: boolean); // error, string or void
+
+    const bar = [undefined, "bar"];
+    (bar[x]: boolean); // error, string or void
+  },
+
+  function (x: number) {
+    var undefined = "foo";
+    (undefined: string); // ok
+
+    var x;
+    if (x !== undefined) {
+      x[0]; // should error, could be void
+    }
+
+    const bar = [undefined, "bar"];
+    (bar[x]: boolean); // error, string only
+  },
+];
+
+================================================================================
+`;

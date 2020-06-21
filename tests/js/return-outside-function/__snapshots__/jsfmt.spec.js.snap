@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`return-outside-function.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+return someVeryLongStringA && someVeryLongStringB && someVeryLongStringC && someVeryLongStringD
+
+=====================================output=====================================
+return (
+  someVeryLongStringA &&
+  someVeryLongStringB &&
+  someVeryLongStringC &&
+  someVeryLongStringD
+);
+
+================================================================================
+`;

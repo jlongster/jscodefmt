@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare module 'autoprefixer';
+
+=====================================output=====================================
+declare module "autoprefixer";
+
+================================================================================
+`;
+
+exports[`global.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+namespace global {}
+module global {}
+global {}
+declare global {}
+
+=====================================output=====================================
+namespace global {}
+module global {}
+global {}
+declare global {}
+
+================================================================================
+`;
+
+exports[`keyword.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+module X {}
+
+module X {
+  const x = 1;
+}
+
+module X {
+  module X {}
+}
+
+module X {
+  module X {
+    const x = 1;
+  }
+}
+
+namespace X {}
+
+namespace X {
+  const x = 1;
+}
+
+namespace X {
+  namespace X {}
+}
+
+namespace X {
+  namespace X {
+    const x = 1;
+  }
+}
+
+=====================================output=====================================
+module X {}
+
+module X {
+  const x = 1;
+}
+
+module X {
+  module X {}
+}
+
+module X {
+  module X {
+    const x = 1;
+  }
+}
+
+namespace X {}
+
+namespace X {
+  const x = 1;
+}
+
+namespace X {
+  namespace X {}
+}
+
+namespace X {
+  namespace X {
+    const x = 1;
+  }
+}
+
+================================================================================
+`;
+
+exports[`namespace_function.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+namespace X {
+    declare function f();
+}
+
+=====================================output=====================================
+namespace X {
+  declare function f();
+}
+
+================================================================================
+`;

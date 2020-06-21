@@ -1,0 +1,48 @@
+name: Dev_Package_Test
+
+on:
+  schedule:
+    - cron: "0 0 * * 1"
+  pull_request:
+    paths:
+      - "package.json"
+      - ".github/workflows/dev-package-test.yml"
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - "ubuntu-latest"
+        node:
+          - "10"
+        NPM_CLIENT:
+          - "yarn"
+          - "npm"
+          - "pnpm"
+    env:
+      INSTALL_PACKAGE: true
+      NPM_CLIENT: ${{ matrix.NPM_CLIENT }}
+    name: Test with ${{ matrix.NPM_CLIENT }}
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.0.0
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Install Client Package
+        if: matrix.NPM_CLIENT == 'pnpm'
+        run: npm install --global ${{ matrix.NPM_CLIENT }}
+
+      - name: Run Tests
+        run: yarn test:dev-package --maxWorkers=2

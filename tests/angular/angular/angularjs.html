@@ -1,0 +1,10 @@
+<div ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading">Warning!</div>
+
+<div
+	class="common--error-message"
+	test-hook="upper-error-message"
+	ng-if="!$ctrl.showsFormBelowPlain() && !!$ctrl.error.message && !($ctrl.error.kind === 'validator' && $ctrl.form.$valid && $ctrl.error.form === $ctrl.form)"
+>
+	<div ng-if="$ctrl.error.html" ng-bind-html="$ctrl.error.message"></div>
+	<div ng-if="!$ctrl.error.html" ng-bind="$ctrl.error.message"></div>
+</div>

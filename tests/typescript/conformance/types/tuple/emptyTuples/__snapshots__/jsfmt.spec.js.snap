@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`emptyTuplesTypeAssertion02.ts 1`] = `
+exports[`emptyTuplesTypeAssertion02.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

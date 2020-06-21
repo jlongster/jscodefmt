@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`schema.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+schema {
+  query: Root
+  mutation: Mutation
+  subscription: Subscription
+}
+
+=====================================output=====================================
+schema {
+  query: Root
+  mutation: Mutation
+  subscription: Subscription
+}
+
+================================================================================
+`;

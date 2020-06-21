@@ -2,10 +2,10 @@
   "private": true,
   "dependencies": {
     "chalk": "2.4.1",
-    "dedent": "0.7.0",
     "execa": "0.10.0",
-    "minimist": "1.2.0",
+    "minimist": "1.2.3",
     "node-fetch": "2.1.2",
+    "outdent": "0.7.1",
     "semver": "5.5.0",
     "string-width": "2.1.1"
   }

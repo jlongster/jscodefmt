@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`imp.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var imp = require('./obj_annot');
+imp({ name: "imp" });
+
+=====================================output=====================================
+/* @flow */
+
+var imp = require("./obj_annot");
+imp({ name: "imp" });
+
+================================================================================
+`;
+
+exports[`obj_annot.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function foo(param: { name: string; }): number {
+    return param.id;
+}
+
+foo({ name: "test" });
+
+module.exports = foo;
+
+=====================================output=====================================
+/* @flow */
+
+function foo(param: { name: string }): number {
+  return param.id;
+}
+
+foo({ name: "test" });
+
+module.exports = foo;
+
+================================================================================
+`;

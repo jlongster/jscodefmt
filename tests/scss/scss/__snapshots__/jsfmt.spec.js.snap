@@ -1,0 +1,4736 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arbitrary-arguments.scss - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+body {
+  test: foo(return-list($list)...);
+}
+body {
+  test: foo(bar($list)...);
+}
+body {
+  test: foo($list...);
+}
+@mixin syntax-colors($args...) {
+  @debug meta.keywords($args);
+  // (string: #080, comment: #800, variable: $60b)
+
+  @each $name, $color in meta.keywords($args) {
+    pre span.stx-#{$name} {
+      color: $color;
+    }
+  }
+}
+$form-selectors: "input.name", "input.address", "input.zip" !default;
+@include order(150px, $form-selectors...);
+@mixin linear-gradient($direction, $gradients...) {
+  background-color: nth($gradients, 1);
+  background-image: linear-gradient($direction, $gradients...);
+}
+$parameters: (
+  'c': 'kittens',
+  'a': true,
+  'b': 42
+);
+$value: dummy($parameters...);
+
+body {
+  background-color: rgba(50, 50, 50, 50);
+  background-color: rgba(50 50 50 50...);
+  background-color: rgba(50 50 .50 50...);
+  background-color: rgba(50 50 50. .50...);
+  // Input is not technically valid ( output is ), but still nice to know that the \`.\` gets dropped as it would for \`50.\`
+  background-color: rgba(50 50 50 50....);
+  width: min(50px 20px 30px...);
+}
+
+=====================================output=====================================
+body {
+  test: foo(return-list($list)...);
+}
+body {
+  test: foo(bar($list)...);
+}
+body {
+  test: foo($list...);
+}
+@mixin syntax-colors($args...) {
+  @debug meta.keywords($args);
+  // (string: #080, comment: #800, variable: $60b)
+
+  @each $name, $color in meta.keywords($args) {
+    pre span.stx-#{$name} {
+      color: $color;
+    }
+  }
+}
+$form-selectors: "input.name", "input.address", "input.zip" !default;
+@include order(150px, $form-selectors...);
+@mixin linear-gradient($direction, $gradients...) {
+  background-color: nth($gradients, 1);
+  background-image: linear-gradient($direction, $gradients...);
+}
+$parameters: (
+  "c": "kittens",
+  "a": true,
+  "b": 42
+);
+$value: dummy($parameters...);
+
+body {
+  background-color: rgba(50, 50, 50, 50);
+  background-color: rgba(50 50 50 50...);
+  background-color: rgba(50 50 0.5 50...);
+  background-color: rgba(50 50 50 0.5...);
+  // Input is not technically valid ( output is ), but still nice to know that the \`.\` gets dropped as it would for \`50.\`
+  background-color: rgba(50 50 50 50...);
+  width: min(50px 20px 30px...);
+}
+
+================================================================================
+`;
+
+exports[`arbitrary-arguments.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+body {
+  test: foo(return-list($list)...);
+}
+body {
+  test: foo(bar($list)...);
+}
+body {
+  test: foo($list...);
+}
+@mixin syntax-colors($args...) {
+  @debug meta.keywords($args);
+  // (string: #080, comment: #800, variable: $60b)
+
+  @each $name, $color in meta.keywords($args) {
+    pre span.stx-#{$name} {
+      color: $color;
+    }
+  }
+}
+$form-selectors: "input.name", "input.address", "input.zip" !default;
+@include order(150px, $form-selectors...);
+@mixin linear-gradient($direction, $gradients...) {
+  background-color: nth($gradients, 1);
+  background-image: linear-gradient($direction, $gradients...);
+}
+$parameters: (
+  'c': 'kittens',
+  'a': true,
+  'b': 42
+);
+$value: dummy($parameters...);
+
+body {
+  background-color: rgba(50, 50, 50, 50);
+  background-color: rgba(50 50 50 50...);
+  background-color: rgba(50 50 .50 50...);
+  background-color: rgba(50 50 50. .50...);
+  // Input is not technically valid ( output is ), but still nice to know that the \`.\` gets dropped as it would for \`50.\`
+  background-color: rgba(50 50 50 50....);
+  width: min(50px 20px 30px...);
+}
+
+=====================================output=====================================
+body {
+  test: foo(return-list($list)...);
+}
+body {
+  test: foo(bar($list)...);
+}
+body {
+  test: foo($list...);
+}
+@mixin syntax-colors($args...) {
+  @debug meta.keywords($args);
+  // (string: #080, comment: #800, variable: $60b)
+
+  @each $name, $color in meta.keywords($args) {
+    pre span.stx-#{$name} {
+      color: $color;
+    }
+  }
+}
+$form-selectors: "input.name", "input.address", "input.zip" !default;
+@include order(150px, $form-selectors...);
+@mixin linear-gradient($direction, $gradients...) {
+  background-color: nth($gradients, 1);
+  background-image: linear-gradient($direction, $gradients...);
+}
+$parameters: (
+  "c": "kittens",
+  "a": true,
+  "b": 42,
+);
+$value: dummy($parameters...);
+
+body {
+  background-color: rgba(50, 50, 50, 50);
+  background-color: rgba(50 50 50 50...);
+  background-color: rgba(50 50 0.5 50...);
+  background-color: rgba(50 50 50 0.5...);
+  // Input is not technically valid ( output is ), but still nice to know that the \`.\` gets dropped as it would for \`50.\`
+  background-color: rgba(50 50 50 50...);
+  width: min(50px 20px 30px...);
+}
+
+================================================================================
+`;
+
+exports[`comments.scss - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+// This comment won't be included in the CSS. 
+//This comment won't be included in the CSS.
+//     This comment won't be included in the CSS.     
+
+/* But this comment will, except in compressed mode. */
+/*     But this comment will, except in compressed mode.     */
+/*But this comment will, except in compressed mode.*/
+
+/*! This comment will be included even in compressed mode. */
+
+/// Computes an exponent.
+///// Computes an exponent.
+
+=====================================output=====================================
+// This comment won't be included in the CSS.
+//This comment won't be included in the CSS.
+//     This comment won't be included in the CSS.
+
+/* But this comment will, except in compressed mode. */
+/*     But this comment will, except in compressed mode.     */
+/*But this comment will, except in compressed mode.*/
+
+/*! This comment will be included even in compressed mode. */
+
+/// Computes an exponent.
+///// Computes an exponent.
+
+================================================================================
+`;
+
+exports[`comments.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// This comment won't be included in the CSS. 
+//This comment won't be included in the CSS.
+//     This comment won't be included in the CSS.     
+
+/* But this comment will, except in compressed mode. */
+/*     But this comment will, except in compressed mode.     */
+/*But this comment will, except in compressed mode.*/
+
+/*! This comment will be included even in compressed mode. */
+
+/// Computes an exponent.
+///// Computes an exponent.
+
+=====================================output=====================================
+// This comment won't be included in the CSS.
+//This comment won't be included in the CSS.
+//     This comment won't be included in the CSS.
+
+/* But this comment will, except in compressed mode. */
+/*     But this comment will, except in compressed mode.     */
+/*But this comment will, except in compressed mode.*/
+
+/*! This comment will be included even in compressed mode. */
+
+/// Computes an exponent.
+///// Computes an exponent.
+
+================================================================================
+`;
+
+exports[`directives.scss - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+@qux .foo
+// .bar 
+
+{}
+
+=====================================output=====================================
+@qux .foo
+// .bar
+{
+}
+
+================================================================================
+`;
+
+exports[`directives.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@qux .foo
+// .bar 
+
+{}
+
+=====================================output=====================================
+@qux .foo
+// .bar
+{
+}
+
+================================================================================
+`;
+
+exports[`function-in-url.scss - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+@function concat($strings...) {
+  $result: '';
+  @each $string in $strings {
+    $sum: $result + $string;
+  }
+  @return $result;
+}
+
+a {
+ backround: url(concat('http://', 'example.com', '/image.png'));
+}
+
+=====================================output=====================================
+@function concat($strings...) {
+  $result: "";
+  @each $string in $strings {
+    $sum: $result + $string;
+  }
+  @return $result;
+}
+
+a {
+  backround: url(concat("http://", "example.com", "/image.png"));
+}
+
+================================================================================
+`;
+
+exports[`function-in-url.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@function concat($strings...) {
+  $result: '';
+  @each $string in $strings {
+    $sum: $result + $string;
+  }
+  @return $result;
+}
+
+a {
+ backround: url(concat('http://', 'example.com', '/image.png'));
+}
+
+=====================================output=====================================
+@function concat($strings...) {
+  $result: "";
+  @each $string in $strings {
+    $sum: $result + $string;
+  }
+  @return $result;
+}
+
+a {
+  backround: url(concat("http://", "example.com", "/image.png"));
+}
+
+================================================================================
+`;
+
+exports[`import_comma.scss - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+@import "rounded-corners", "text-shadow";
+
+=====================================output=====================================
+@import "rounded-corners", "text-shadow";
+
+================================================================================
+`;
+
+exports[`import_comma.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@import "rounded-corners", "text-shadow";
+
+=====================================output=====================================
+@import "rounded-corners", "text-shadow";
+
+================================================================================
+`;
+
+exports[`scss.scss - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+@media #{$g-breakpoint-tiny} {}
+.#{$fa-css-prefix}-glass:before { content: $fa-var-glass; }
+a {height: calc(#{$foo} + 1);}
+div {
+  background: {
+      size: auto 60%;
+      position: bottom 2px left;
+  }
+}
+a { margin: 0 { left: 10px; } }
+
+$default: #111111 !default;
+$default: #111111   !default;
+$default: #111111
+!default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value" !default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value"   !default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value"
+!default;
+
+$global: #111111 !global;
+$global: #111111   !global;
+$global: #111111
+!global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value" !global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value"   !global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value"
+!global;
+
+$map: (key: value, other-key: other-value);
+$map: (key: value, other-key: other-value) !default;
+$map: (key: value, other-key: other-value)  !default;
+$map: (key: value, other-key: other-value)
+!default;
+$map:
+(key: value, other-key: other-value)
+!default;
+$map: ( key : value , other-key : other-value);
+$map: (  key  :  value  ,  other-key  :  other-value  );
+$map: (
+  key: value,
+  other-key: other-value
+);
+$map: (
+key: value,
+other-key: other-value
+);
+$map: (
+key
+:
+value,
+other-key
+:
+other-value
+);
+$map: (
+key
+:
+value
+,
+other-key
+:
+other-value
+);
+$map: (very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value, very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value);
+$map: ( very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key : very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value , very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key : very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value );
+$map: (  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key  :  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value  ,  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value  );
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map: (
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map:
+(
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key
+:
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value
+,
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key
+:
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map: (
+  key: (#d82d2d, #666),
+  other-key: (#52bf4a, #fff),
+  other-other-key: (#c23435, #fff)
+);
+$map: (
+key: (#d82d2d, #666),
+other-key: (#52bf4a, #fff),
+other-other-key: (#c23435, #fff)
+);
+$map: (
+  key : ( #d82d2d , #666 ),
+  other-key : ( #52bf4a , #fff ),
+  other-other-key : ( #c23435 , #fff )
+);
+$map: (
+  key  : (  #d82d2d  ,  #666  )  ,
+  other-key  :  (  #52bf4a  ,  #fff  ),
+  other-other-key  :  (  #c23435  ,  #fff  )
+);
+$map: (
+key
+:
+(
+#d82d2d,
+#666
+)
+,
+other-key
+:
+(
+#52bf4a,
+#fff
+)
+,
+other-other-key
+:
+(
+#c23435
+,
+#fff
+)
+);
+$map: map-merge($map, ($key: $value));
+$map: map-merge( $map , ( $key : $value ) );
+$map: map-merge(  $map  ,  (  $key  :  $value  )  );
+$map: map-merge(
+  $map,
+  ($key:  $value)
+);
+$map: map-merge(
+$map,
+($key:  $value)
+);
+$map:
+map-merge(
+$map
+,
+(
+$key
+:
+$value
+)
+);
+
+$longVariable: (
+(mobile $mobile) (tablet $tablet) (desktop $desktop) (wide $wide)
+);
+
+$list-space: "item-1" "item-2" "item-3";
+$list-space:"item-1""item-2""item-3";
+$list-space:  "item-1"  "item-2"  "item-3"  ;
+$list-space: "item-1"
+  "item-2"
+  "item-3";
+$list-space
+:
+"item-1"
+"item-2"
+"item-3"
+;
+$list-space
+
+:
+
+"item-1"
+
+"item-2"
+
+"item-3"
+
+;
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma:"item-1","item-2","item-3";
+$list-comma:  "item-1"  ,  "item-2"  ,  "item-3"  ;
+$list-comma: "item-1",
+  "item-2",
+  "item-3";
+$list-comma
+:
+"item-1"
+,
+"item-2"
+,
+"item-3"
+;
+$list-comma
+
+:
+
+"item-1"
+
+,
+
+"item-2"
+
+,
+
+"item-3"
+
+;
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3", "item-3.1" "item-3.2" "item-3.3";
+$list:"item-1.1""item-1.2""item-1.3","item-2.1""item-2.2""item-2.3","item-3.1""item-3.2""item-3.3";
+$list:  "item-1.1"  "item-1.2"  "item-1.3"  ,  "item-2.1"  "item-2.2"  "item-2.3"  ,  "item-3.1"  "item-3.2"  "item-3.3"  ;
+$list: "item-1.1" "item-1.2" "item-1.3",
+  "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list
+:
+"item-1.1"
+"item-1.2"
+"item-1.3"
+,
+"item-2.1"
+"item-2.2"
+"item-2.3"
+,
+"item-3.1"
+"item-3.2"
+"item-3.3"
+;
+$list
+
+:
+
+"item-1.1"
+
+"item-1.2"
+
+"item-1.3"
+
+,
+
+"item-2.1"
+
+"item-2.2"
+
+"item-2.3"
+
+,
+
+"item-3.1"
+
+"item-3.2"
+
+"item-3.3"
+
+;
+$list: (("item-1.1", "item-1.2", "item-1.3"), ("item-2.1", "item-2.2", "item-2.3"), ("item-3.1", "item-3.2", "item-3.3"));
+$list:(("item-1.1","item-1.2","item-1.3"),("item-2.1","item-2.2","item-2.3"),("item-3.1","item-3.2","item-3.3"));
+$list:  (  (  "item-1.1"  ,  "item-1.2"  ,  "item-1.3"  )  ,  (  "item-2.1"  ,  "item-2.2"  ,  "item-2.3"  )  ,  (  "item-3.1"  ,  "item-3.2"  ,  "item-3.3"  )  )  ;
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list
+:
+(
+(
+"item-1.1"
+,
+"item-1.2"
+,
+"item-1.3"
+)
+,
+(
+"item-2.1"
+,
+"item-2.2"
+,
+"item-2.3"
+)
+,
+(
+"item-3.1"
+,
+"item-3.2"
+,
+"item-3.3"
+)
+)
+;
+$list
+
+:
+
+(
+
+(
+
+"item-1.1"
+
+,
+
+"item-1.2"
+
+,
+
+"item-1.3"
+
+)
+
+,
+
+(
+
+"item-2.1"
+
+,
+
+"item-2.2"
+
+,
+
+"item-2.3"
+
+)
+
+,
+
+(
+
+"item-3.1"
+
+,
+
+"item-3.2"
+
+,
+
+"item-3.3"
+
+)
+
+)
+
+;
+
+$var: (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0);
+$space-scale: (0, "0") (0.25, "0-25") (0.5, "0-5") (0.75, "0-75") (1, "1") (1.25, "1-25") (1.5, "1-5") (1.75, "1-75") (2, "2") (2.25, "2-25") (2.5, "2-5") (2.75, "2-75") (3, "3") (3.25, "3-25") (3.5, "3-5") (3.75, "3-75") (4, "4");
+
+.card-column-simple {
+  @include breakpoint( getBp( md ) ) {
+    padding: $spacing_content-sm $spacing_content-md;
+  }
+
+  @include breakpoint (getBp(md)) {
+    &:nth-child(2n + 3) {
+      clear: both;
+    }
+  }
+
+  @include breakpoint (getBp(xl)) {
+    &:nth-child(2n + 3) {
+      clear: none;
+    }
+    &:nth-child(3n + 4) {
+      clear: both;
+    }
+  }
+}
+
+@warn "Warn (#{$message}).";
+@warn  "Warn (#{$message}).";
+@warn   "Warn (#{$message}).";
+@warn #{$message};
+@warn "Very long long long long long long long long long long long long long line (#{$message}).";
+@warn
+  "Very long long long long long long long long long long long long long line (#{$message}).";
+@error "Error (#{$message}).";
+@error  "Error (#{$message}).";
+@error   "Error (#{$message}).";
+@error #{$message};
+@error "Very long long long long long long long long long long long long long line Error (#{$message}).";
+@error
+  "Very long long long long long long long long long long long long long line Error (#{$message}).";
+
+$buttonConfig: "save" 50px, 'cancel' 50px, "help" 100PX;
+
+$locale: "en_us";
+html[lang=#{$locale}] {
+  font-size: 10px;
+}
+$alertClass: "error";
+p.message-#{$alertClass} {
+  color: red;
+}
+$mediumBreakpoint: 768px;
+@media (max-width: #{$mediumBreakpoint}) {
+  a {
+    font-size: 18px;
+  }
+}
+
+p {
+  @media (max-width: 768px) {
+    font-size: 150%;
+
+    @media (orientation: landscape) {
+        line-height: 75%;
+    }
+  }
+}
+
+.popularAnimal {
+    background: gray;
+}
+.GoodBoy {
+    color: green;
+}
+.dog {
+  @extend .popularAnimal;
+  @extend .GoodBoy;
+  color: white;
+}
+
+%animal {
+  background: gray;
+}
+.cat {
+  @extend %animal;
+  color: white;
+}
+.dog {
+  @extend %animal;
+  color: black;
+}
+
+%mfw-standing-out {
+  font-size: 150%;
+  font-style: italic;
+  padding: 25px;
+}
+%mfwSlightlyShadowed {
+  @include box-shadow(black 2px 2px 10px); // from Compass
+}
+%MFWRounded {
+  @include border-radius(25px); // from Compass
+}
+#join-button {
+  @extend %mfw-standing-out;
+  @extend %mfwSlightlyShadowed;
+  @extend %MFWRounded;
+  background: green;
+  color: white;
+}
+
+a {
+  &:hover {
+    color: red;
+  }
+}
+p {
+  body.no-touch & {
+    display: none;
+  }
+}
+.foo.bar .baz.bang, .bip.qux {
+  $selector: &;
+}
+@mixin does-parent-exist {
+  @if & {
+    &:hover {
+      color: red;
+    }
+  } @else {
+    a {
+      color: red;
+    }
+  }
+}
+
+p {
+  @if 1 + 1 == 2 {
+    border: 1px solid;
+  }
+  @if 5 < 3 {
+    border: 2px dotted;
+  }
+  @if null {
+    border: 3px double;
+  }
+}
+
+$mosterType: monster;
+p {
+  @if $mosterType == ocean {
+    color: blue;
+  } @else if $mosterType == matador {
+    color: red;
+  } @else if $mosterType == monster {
+    color: green;
+  } @else if $mosterType == nightKing {
+    color: green;
+  } @else if $mosterType == VeryWickedWolf {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    width: 2em * $i;
+  }
+}
+
+@each $animal in puma, sea-slug, cheerfulDog, BigSalamander, "string", 'another-string', "camelCaseString", "PascalCaseString" {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+  }
+}
+
+$i: 6;
+@while $i > 0 {
+  .item-#{$i} {
+    width: 2em * $i;
+  }
+  $i: $i - 2;
+}
+
+@mixin cool-border($width: 10px, $coolStyle: 'solid', $AwesomeColor: "black") {
+  border: $width $coolStyle $AwesomeColor;
+}
+
+p {
+  @include cool-border(1px, "solid", $fff);
+}
+p {
+  @include cool-border($width: 1px, $coolStyle: 'solid', $AwesomeColor: #fff);
+}
+p {
+  @include coolBorder();
+}
+
+@mixin coolBorder() {
+  border: 10px solid #fff;
+}
+p {
+  @include coolBorder(1px, "solid", $fff);
+}
+
+@mixin CoolBorder() {
+  border: 10px solid #fff;
+}
+p {
+  @include CoolBorder(1px, "solid", $fff);
+}
+
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+.shadows {
+  @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+}
+
+@mixin apply-to-ie6-only {
+  * html {
+    @content;
+  }
+}
+@include apply-to-ie6-only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin applyToIe6Only {
+  * html {
+    @content;
+  }
+}
+@include applyToIe6Only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin ApplyToIe6Only {
+  * html {
+    @content;
+  }
+}
+@include ApplyToIe6Only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin config-icon-colors($prefix, $colors...) {
+  @each $i in $colors {
+    .#{$prefix}#{nth($i, 1)} {
+      color: nth($i, 2);
+    }
+  }
+}
+@include config-icon-colors(
+  "icon-",
+  "save" green,
+  "cancel" gray,
+  "delete" red,
+  'wait' blue
+);
+
+@function my-calculation-function($some-number, $anotherNumber, $BigNumber){
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function myCalculationFunction($some-number, $anotherNumber, $BigNumber){
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function AnotherMyCalculationFunction($some-number, $anotherNumber, $BigNumber: 100px){
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function border($borders...) {
+  @return $borders;
+}
+.foo {
+  padding: my-calculation-function(10px, 5px, 100px);
+  margin: myCalculationFunction($some-number: 10px, $anotherNumber: 5px, $BigNumber: 100px);
+  width: AnotherMyCalculationFunction(10px, 5px);
+  border: border(25px, 35px);
+}
+
+$sm-only: '(min-width: 768px) and (max-width: 991px)';
+$lg-and-up: '(min-width: 1200px)';
+
+@media screen and #{$sm-only, $lg-and-up} {
+  color: #000;
+}
+
+.class-#{$var} {
+  #{$var}: #7b3d66;
+  #{$attr}-color: blue;
+  #{$prop}-#{$side}: $value;
+  background-#{$var}: #7b3d66;
+  animation-name: #{var};
+  line-height: #{strip-unit($line-height)}em;
+  height: 1#{$var};
+  width: calc(100% - #{$sidebar-width});
+  max-width: calc(#{$m*100}vw #{$sign} #{$b});
+  font: #{$font-size}/#{$line-height};
+  content: "I have #{8 + 2} books on SASS!";
+  border: #{$var} #{$var} #{$var};
+  filter: #{$var}#{$var}#{$var};
+  prop:  #{  $var  +  $var  }  #{  $var  +  $var  }  #{  $var  +  $var  };
+  prop2:
+      #{
+      $var
+      +
+      $var
+      }
+
+      #{
+      $var
+      +
+      $var
+      }
+
+      #{
+      $var
+      +
+      $var
+      }
+      ;
+  prop3:
+
+      #{
+
+      $var
+
+      +
+
+      $var
+
+      }
+
+      #{
+
+      $var
+
+      +
+
+      $var
+
+      }
+
+      #{
+
+      $var
+
+      +
+
+      $var
+
+      }
+      ;
+  prop4: -#{$loader-icon-duration};
+  prop5: +#{$loader-icon-duration};
+  prop6: calc(-#{$loader-icon-duration} + 10);
+  prop7: calc(10 + -#{$loader-icon-duration});
+}
+
+/* Framework version for the generated CSS is #{$version}. */
+
+.selector {
+  foo: bar;
+  #{$active} {
+    baz: qux;
+  }
+}
+
+.el:nth-of-type(#{$i}) {}
+
+@media #{$value} {}
+
+$foundation-dir: 'foundation';
+@import url('#{$foundation-dir}/components/grid');
+@import url(#{$foundation-dir}/components/grid);
+@import url($foundation-dir/components/grid);
+@import url($foundation-dir+"/components/grid");
+
+@function get-font-family($family) {
+  @return $family;
+}
+@import url("//fonts.googleapis.com/css?family=#{ get-font-family('Roboto') }:100,300,500,700,900&display=swap");
+@import url(//fonts.googleapis.com/css?family=#{ get-font-family('Roboto') }:100,300,500,700,900&display=swap);
+
+
+@keyframes loader {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  #{50% - $loader-icon-duration} {
+    transform: translate3d(0, $bounce-height, 0);
+  }
+
+  50% {
+    transform: translate3d(0, $bounce-height, 0) scale($loader-bounce-horizontal-expansion, $loader-bounce-vertical-compression);
+  }
+}
+
+$icons: wifi "\\600", wifi-hotspot "\\601", weather "\\602";
+
+@each $icon in $icons {
+  .icon-#{nth($icon, 1)}, %icon-#{nth($icon, 1)} {
+    content: "#{nth($icon, 2)}";
+  }
+}
+
+.foo {
+  prop: -($grid-gutter-width / 2);
+  prop1: -(  $grid-gutter-width  /  2  );
+  prop2: -$grid-gutter-width / 2;
+  prop3: +($grid-gutter-width / 2);
+  prop4: 10px/8px; /* Plain CSS, no division */
+  prop5: $width / 2; /* Uses a variable, does division */
+  prop6: round(1.5) / 2; /* Uses a function, does division */
+  prop7: (500px / 2); /* Uses parentheses, does division */
+  prop8: 5px + 8px / 2px; //* Uses +, does division */
+  prop9: (italic bold 10px/8px); /* In a list, parentheses don't count */
+  prop10: #010203 + #040506;
+  prop11: #010203 * 2;
+  prop12: rgba(255, 0, 0, 0.75) + rgba(0, 255, 0, 0.75);
+  prop13: progid:DXImageTransform.Microsoft.gradient(enabled='false', startColorstr='#{ie-hex-str($green)}', endColorstr='#{ie-hex-str($translucent-red)}');
+  prop14: e + -resize;
+  prop15: sans- + "serif";
+  prop16: 1em + (2em * 3);
+  prop17: rotate(-2deg);
+  prop18:  rotate(  -2deg  )  ;
+  _:_;
+  prop19: 10 - ($grid-gutter-width / 2);
+  prop20: 10 + -($grid-gutter-width / 2);
+  prop21:  10  +  -  (  $grid-gutter-width  /  2  )  ;
+  prop22: - ( $grid-gutter-width / 2 ) ;
+  prop23:  -  (  $grid-gutter-width  /  2  )  ;
+  prop24: -$grid-gutter-width;
+  prop25: + ( $grid-gutter-width / 2 ) ;
+  prop26:  +  (  $grid-gutter-width  /  2  )  ;
+  prop27: +$grid-gutter-width;
+  prop28: --($grid-gutter-width / 2);
+  prop28: ++($grid-gutter-width / 2);
+  prop29:  rotate(  -  2deg  )  ;
+}
+
+$last:nth($juggler,length($juggler));
+$x:if($last%2==0,1/2,3/2);
+$new:pow($last,$x);
+$sequence:1,1 1,2 1,1 2 1 1, 1 1 1 2 2 1;
+$new-entry:();
+$new-entry : ( ) ;
+$new-entry  :  (  )  ;
+$new-entry
+:
+(
+)
+;
+
+body:before {
+  content: quote(to-string(fibonacci(100), ' \\A '));
+  white-space: pre-wrap;
+}
+
+width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+width
+:
+(
+(
+100%
+-
+(
+(
+$numPerRow
+-
+1
+)
+*
+$margin
+)
+)
+/
+$numPerRow
+)
+;
+
+a:nth-child(#{$numPerRow}n) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+@function em($pixels, $context: $browser-context) {
+  @return #{ $pixels / $context }em
+}
+
+.navigation {
+  @extend %updated-#{$flag};
+  @extend .selected-#{$flag};
+  @extend %#{$item};
+}
+
+.icon-#{$icon-name} {
+  background-image: '/images/#{$icon-name}.svg';
+}
+
+$extmods:(eot:"?",svg:"#" + str-replace($name," ","_"));
+
+@mixin keyframes {@-moz-keyframes{@content;}@-webkit-keyframes{@content;}}
+
+@function gcd($a,$b){
+  // From: http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
+  @if ($b != 0) {
+    @return gcd($b,$a % $b);
+  }@else{
+    @return abs($a);
+  }
+}
+
+$colors: (
+primary: (
+base: #00abc9,
+light: #daf1f6,
+dark: #12799a
+),
+secondary: (
+base: #424d55,
+light: #ccc,
+lightest: #efefef,
+dark: #404247
+),
+success: (
+base: #bbd33e,
+light: #eaf0c6
+)
+);
+
+@function color($color, $tone: "base") {
+@return map-get(map-get($colors, $color), $tone);
+}
+
+@media only screen and (max-width: 767px) {
+  @include widths(2 3 4, \\@small);
+}
+
+$widths-breakpoint-separator: \\@small;
+
+a {
+  transition-timing-function: func1(
+      func2(
+          func3(
+              "veryVeryVeryVeryVeryLongValue",
+              "veryVeryVeryVeryVeryLongValue",
+              "veryVeryVeryVeryVeryLongValue",
+              "veryVeryVeryVeryVeryLongValue",
+          ),
+          "veryVeryVeryVeryVeryLongValue",
+          "veryVeryVeryVeryVeryLongValue",
+          "veryVeryVeryVeryVeryLongValue",
+      ),
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue",
+      func3(
+          "veryVeryVeryVeryVeryLongValue",
+          "veryVeryVeryVeryVeryLongValue",
+          "veryVeryVeryVeryVeryLongValue",
+          "veryVeryVeryVeryVeryLongValue"
+      )
+  );
+}
+
+$empty-map: ();
+$empty-nested-map: (
+nested-key: (empty-key: (color: red)),
+empty-key: (),
+empty-key: (),
+empty-key: ()
+);
+
+$o-grid-default-config: (
+columns: 12,
+gutter: 10px,
+min-width: 240px,
+max-width: 1330px,
+layouts: (
+S:  370px,
+M:  610px,
+L:  850px,
+XL: 1090px
+),
+fluid: true,
+debug: false,
+fixed-layout: M,
+enhanced-experience: true
+);
+
+$a: ();
+$b: unquote('');
+$c: null;
+$d: (null);
+
+$threads-properties: map-merge($threads-properties,  ($border-label: ()));
+$o-grid-default-config: (layouts: (S:  370px));
+
+$map: (
+key: (value),
+other-key: (key: other-other-value)
+);
+
+a {
+  content: "#{".5"}";
+  content: my-fn("_");
+  content: "#{my-fn("_")}";
+  content: my-fn("-");
+  content: "#{my-fn("-")}";
+  content: my-fn("-a");
+  content: "#{my-fn("-a")}";
+  content: my-fn("a-");
+  content: "#{my-fn("a-")}";
+  content: my-fn("foo");
+  content: "#{my-fn("foo")}";
+  content: 1 "#{my-fn("foo")}" 2;
+  content: foo "#{my-fn("foo")}" bar;
+  content: "foo #{$description} bar";
+
+  content: "#{my-fn("foo","bar")}";
+  content: "#{my-fn( "foo" , "bar" )}";
+  content: "#{my-fn(  "foo"  ,  "bar"  )}";
+
+  content: '#{my-fn("foo")}';
+  content: '#{my-fn('foo')}';
+  content: "#{my-fn('foo')}";
+  content: "#{my-fn("foo")}";
+}
+
+@mixin theme($css-property, $css-value, $theme-classes: t) {
+  @each $selector in & {
+    @each $class in $theme-classes {
+      @each $theme, $theme-properties in c(themes) {
+      $value: $css-value;
+
+        @each $theme-name, $theme-value in $theme-properties {
+          $rgba-value: "rgba(#{red($theme-value)}, #{green($theme-value)}, #{blue($theme-value)}";
+          $value: str-replace($value, "rgba(\${#{$theme-name}}", $rgba-value);
+          $value: str-replace($value, "\${#{$theme-name}}", $theme-value);
+        }
+
+        @at-root .#{$class}-#{join($theme, $selector)} {
+          #{$css-property}: unquote($value);
+        }
+      }
+    }
+  }
+}
+
+.foo,
+// Comment
+.bar {
+  // Comment
+  color: red; // Comment
+}
+
+$my-list:
+  'foo', // Comment
+  'bar'; // Comment
+
+$my-map: (
+  'foo': 1, // Comment
+  'bar': 2, // Comment
+  'buz': calc(1 + 2), // Buz
+  'baz': 4, // Baz
+);
+
+[href]:hover &, // Comment
+[href]:focus &, // Comment
+[href]:active & {
+  .tooltip {
+    opacity: 1;
+  }
+}
+
+@import
+  // Comment
+  'mixins',
+  'variables',
+  // Comment
+  'reset',
+  'scaffolding',
+  'type',
+  // Comment
+  'bar',
+  'tabs';
+
+@mixin placeholder {
+  &::placeholder {@content}
+}
+
+.container {
+  @include placeholder {
+    color: $color-silver;
+  }
+}
+
+.something {
+  grid-template-columns: 1 2fr (3 + 4);
+}
+
+// Ignore escape "\\" in SCSS mixins
+@mixin margin-bottom-1\\/3 {
+  margin-bottom: 0.8rem;
+}
+
+label {
+  @include margin-bottom-1\\/3;
+}
+
+@function someVeryLongFunctionNameForJustAPow($base, $exponent) {
+  $result: 1;
+  @for $_ from 1 through $exponent {
+    $result: $result * $base;
+  }
+  @return $result;
+}
+
+@function pow($base, $exponent){
+  @return someVeryLongFunctionNameForJustAPow($base,$exponent);
+}
+
+.foo{
+  width: someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2,
+  // This next pow is really powerful
+  someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, 2))))))))))))
+}
+
+.bar{
+  width: pow(2, pow(2, pow(2,
+  // This next pow is really powerful
+  pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, 2))))))))))))
+}
+
+=====================================output=====================================
+@media #{$g-breakpoint-tiny} {
+}
+.#{$fa-css-prefix}-glass:before {
+  content: $fa-var-glass;
+}
+a {
+  height: calc(#{$foo} + 1);
+}
+div {
+  background: {
+    size: auto 60%;
+    position: bottom 2px left;
+  }
+}
+a {
+  margin: 0 {
+    left: 10px;
+  }
+}
+
+$default: #111111 !default;
+$default: #111111 !default;
+$default: #111111 !default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value" !default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value" !default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value" !default;
+
+$global: #111111 !global;
+$global: #111111 !global;
+$global: #111111 !global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value" !global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value" !global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value" !global;
+
+$map: (
+  key: value,
+  other-key: other-value
+);
+$map: (
+  key: value,
+  other-key: other-value
+) !default;
+$map: (
+  key: value,
+  other-key: other-value
+) !default;
+$map: (
+  key: value,
+  other-key: other-value
+) !default;
+$map: (
+  key: value,
+  other-key: other-value
+) !default;
+$map: (
+  key: value,
+  other-key: other-value
+);
+$map: (
+  key: value,
+  other-key: other-value
+);
+$map: (
+  key: value,
+  other-key: other-value
+);
+$map: (
+  key: value,
+  other-key: other-value
+);
+$map: (
+  key: value,
+  other-key: other-value
+);
+$map: (
+  key: value,
+  other-key: other-value
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map: (
+  key: (
+    #d82d2d,
+    #666
+  ),
+  other-key: (
+    #52bf4a,
+    #fff
+  ),
+  other-other-key: (
+    #c23435,
+    #fff
+  )
+);
+$map: (
+  key: (
+    #d82d2d,
+    #666
+  ),
+  other-key: (
+    #52bf4a,
+    #fff
+  ),
+  other-other-key: (
+    #c23435,
+    #fff
+  )
+);
+$map: (
+  key: (
+    #d82d2d,
+    #666
+  ),
+  other-key: (
+    #52bf4a,
+    #fff
+  ),
+  other-other-key: (
+    #c23435,
+    #fff
+  )
+);
+$map: (
+  key: (
+    #d82d2d,
+    #666
+  ),
+  other-key: (
+    #52bf4a,
+    #fff
+  ),
+  other-other-key: (
+    #c23435,
+    #fff
+  )
+);
+$map: (
+  key: (
+    #d82d2d,
+    #666
+  ),
+  other-key: (
+    #52bf4a,
+    #fff
+  ),
+  other-other-key: (
+    #c23435,
+    #fff
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value
+  )
+);
+
+$longVariable: (
+  (mobile $mobile) (tablet $tablet) (desktop $desktop) (wide $wide)
+);
+
+$list-space: "item-1" "item-2" "item-3";
+$list-space: "item-1" "item-2" "item-3";
+$list-space: "item-1" "item-2" "item-3";
+$list-space: "item-1" "item-2" "item-3";
+$list-space: "item-1" "item-2" "item-3";
+$list-space: "item-1" "item-2" "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+
+$var: (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0)
+  (0 0) (0 0);
+$space-scale: (0, "0") (0.25, "0-25") (0.5, "0-5") (0.75, "0-75") (1, "1")
+  (1.25, "1-25") (1.5, "1-5") (1.75, "1-75") (2, "2") (2.25, "2-25")
+  (2.5, "2-5") (2.75, "2-75") (3, "3") (3.25, "3-25") (3.5, "3-5")
+  (3.75, "3-75") (4, "4");
+
+.card-column-simple {
+  @include breakpoint(getBp(md)) {
+    padding: $spacing_content-sm $spacing_content-md;
+  }
+
+  @include breakpoint(getBp(md)) {
+    &:nth-child(2n + 3) {
+      clear: both;
+    }
+  }
+
+  @include breakpoint(getBp(xl)) {
+    &:nth-child(2n + 3) {
+      clear: none;
+    }
+    &:nth-child(3n + 4) {
+      clear: both;
+    }
+  }
+}
+
+@warn "Warn (#{$message}).";
+@warn "Warn (#{$message}).";
+@warn "Warn (#{$message}).";
+@warn #{$message};
+@warn "Very long long long long long long long long long long long long long line (#{$message}).";
+@warn "Very long long long long long long long long long long long long long line (#{$message}).";
+@error "Error (#{$message}).";
+@error "Error (#{$message}).";
+@error "Error (#{$message}).";
+@error #{$message};
+@error "Very long long long long long long long long long long long long long line Error (#{$message}).";
+@error "Very long long long long long long long long long long long long long line Error (#{$message}).";
+
+$buttonConfig: "save" 50px, "cancel" 50px, "help" 100px;
+
+$locale: "en_us";
+html[lang="#{$locale}"] {
+  font-size: 10px;
+}
+$alertClass: "error";
+p.message-#{$alertClass} {
+  color: red;
+}
+$mediumBreakpoint: 768px;
+@media (max-width: #{$mediumBreakpoint}) {
+  a {
+    font-size: 18px;
+  }
+}
+
+p {
+  @media (max-width: 768px) {
+    font-size: 150%;
+
+    @media (orientation: landscape) {
+      line-height: 75%;
+    }
+  }
+}
+
+.popularAnimal {
+  background: gray;
+}
+.GoodBoy {
+  color: green;
+}
+.dog {
+  @extend .popularAnimal;
+  @extend .GoodBoy;
+  color: white;
+}
+
+%animal {
+  background: gray;
+}
+.cat {
+  @extend %animal;
+  color: white;
+}
+.dog {
+  @extend %animal;
+  color: black;
+}
+
+%mfw-standing-out {
+  font-size: 150%;
+  font-style: italic;
+  padding: 25px;
+}
+%mfwSlightlyShadowed {
+  @include box-shadow(black 2px 2px 10px); // from Compass
+}
+%MFWRounded {
+  @include border-radius(25px); // from Compass
+}
+#join-button {
+  @extend %mfw-standing-out;
+  @extend %mfwSlightlyShadowed;
+  @extend %MFWRounded;
+  background: green;
+  color: white;
+}
+
+a {
+  &:hover {
+    color: red;
+  }
+}
+p {
+  body.no-touch & {
+    display: none;
+  }
+}
+.foo.bar .baz.bang,
+.bip.qux {
+  $selector: &;
+}
+@mixin does-parent-exist {
+  @if & {
+    &:hover {
+      color: red;
+    }
+  } @else {
+    a {
+      color: red;
+    }
+  }
+}
+
+p {
+  @if 1 + 1 == 2 {
+    border: 1px solid;
+  }
+  @if 5 < 3 {
+    border: 2px dotted;
+  }
+  @if null {
+    border: 3px double;
+  }
+}
+
+$mosterType: monster;
+p {
+  @if $mosterType == ocean {
+    color: blue;
+  } @else if $mosterType == matador {
+    color: red;
+  } @else if $mosterType == monster {
+    color: green;
+  } @else if $mosterType == nightKing {
+    color: green;
+  } @else if $mosterType == VeryWickedWolf {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    width: 2em * $i;
+  }
+}
+
+@each $animal in puma, sea-slug, cheerfulDog, BigSalamander, "string",
+  "another-string", "camelCaseString", "PascalCaseString"
+{
+  .#{$animal}-icon {
+    background-image: url("/images/#{$animal}.png");
+  }
+}
+
+$i: 6;
+@while $i > 0 {
+  .item-#{$i} {
+    width: 2em * $i;
+  }
+  $i: $i - 2;
+}
+
+@mixin cool-border($width: 10px, $coolStyle: "solid", $AwesomeColor: "black") {
+  border: $width $coolStyle $AwesomeColor;
+}
+
+p {
+  @include cool-border(1px, "solid", $fff);
+}
+p {
+  @include cool-border($width: 1px, $coolStyle: "solid", $AwesomeColor: #fff);
+}
+p {
+  @include coolBorder();
+}
+
+@mixin coolBorder() {
+  border: 10px solid #fff;
+}
+p {
+  @include coolBorder(1px, "solid", $fff);
+}
+
+@mixin CoolBorder() {
+  border: 10px solid #fff;
+}
+p {
+  @include CoolBorder(1px, "solid", $fff);
+}
+
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+.shadows {
+  @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+}
+
+@mixin apply-to-ie6-only {
+  * html {
+    @content;
+  }
+}
+@include apply-to-ie6-only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin applyToIe6Only {
+  * html {
+    @content;
+  }
+}
+@include applyToIe6Only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin ApplyToIe6Only {
+  * html {
+    @content;
+  }
+}
+@include ApplyToIe6Only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin config-icon-colors($prefix, $colors...) {
+  @each $i in $colors {
+    .#{$prefix}#{nth($i, 1)} {
+      color: nth($i, 2);
+    }
+  }
+}
+@include config-icon-colors(
+  "icon-",
+  "save" green,
+  "cancel" gray,
+  "delete" red,
+  "wait" blue
+);
+
+@function my-calculation-function($some-number, $anotherNumber, $BigNumber) {
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function myCalculationFunction($some-number, $anotherNumber, $BigNumber) {
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function AnotherMyCalculationFunction(
+  $some-number,
+  $anotherNumber,
+  $BigNumber: 100px
+) {
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function border($borders...) {
+  @return $borders;
+}
+.foo {
+  padding: my-calculation-function(10px, 5px, 100px);
+  margin: myCalculationFunction(
+    $some-number: 10px,
+    $anotherNumber: 5px,
+    $BigNumber: 100px
+  );
+  width: AnotherMyCalculationFunction(10px, 5px);
+  border: border(25px, 35px);
+}
+
+$sm-only: "(min-width: 768px) and (max-width: 991px)";
+$lg-and-up: "(min-width: 1200px)";
+
+@media screen and #{$sm-only, $lg-and-up} {
+  color: #000;
+}
+
+.class-#{$var} {
+  #{$var}: #7b3d66;
+  #{$attr}-color: blue;
+  #{$prop}-#{$side}: $value;
+  background-#{$var}: #7b3d66;
+  animation-name: #{var};
+  line-height: #{strip-unit($line-height)}em;
+  height: 1#{$var};
+  width: calc(100% - #{$sidebar-width});
+  max-width: calc(#{$m * 100}vw #{$sign} #{$b});
+  font: #{$font-size}/#{$line-height};
+  content: "I have #{8 + 2} books on SASS!";
+  border: #{$var} #{$var} #{$var};
+  filter: #{$var}#{$var}#{$var};
+  prop: #{$var + $var} #{$var + $var} #{$var + $var};
+  prop2: #{$var + $var} #{$var + $var} #{$var + $var};
+  prop3: #{$var + $var} #{$var + $var} #{$var + $var};
+  prop4: -#{$loader-icon-duration};
+  prop5: +#{$loader-icon-duration};
+  prop6: calc(-#{$loader-icon-duration} + 10);
+  prop7: calc(10 + -#{$loader-icon-duration});
+}
+
+/* Framework version for the generated CSS is #{$version}. */
+
+.selector {
+  foo: bar;
+  #{$active} {
+    baz: qux;
+  }
+}
+
+.el:nth-of-type(#{$i}) {
+}
+
+@media #{$value} {
+}
+
+$foundation-dir: "foundation";
+@import url("#{$foundation-dir}/components/grid");
+@import url(#{$foundation-dir}/components/grid);
+@import url($foundation-dir/components/grid);
+@import url($foundation-dir + "/components/grid");
+
+@function get-font-family($family) {
+  @return $family;
+}
+@import url("//fonts.googleapis.com/css?family=#{ get-font-family('Roboto') }:100,300,500,700,900&display=swap");
+@import url(//fonts.googleapis.com/css?family=#{ get-font-family('Roboto') }:100,300,500,700,900&display=swap);
+
+@keyframes loader {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  #{50% - $loader-icon-duration} {
+    transform: translate3d(0, $bounce-height, 0);
+  }
+
+  50% {
+    transform: translate3d(0, $bounce-height, 0)
+      scale(
+        $loader-bounce-horizontal-expansion,
+        $loader-bounce-vertical-compression
+      );
+  }
+}
+
+$icons: wifi "\\600", wifi-hotspot "\\601", weather "\\602";
+
+@each $icon in $icons {
+  .icon-#{nth($icon, 1)},
+  %icon-#{nth($icon, 1)} {
+    content: "#{nth($icon, 2)}";
+  }
+}
+
+.foo {
+  prop: -($grid-gutter-width / 2);
+  prop1: -($grid-gutter-width / 2);
+  prop2: -$grid-gutter-width / 2;
+  prop3: +($grid-gutter-width / 2);
+  prop4: 10px/8px; /* Plain CSS, no division */
+  prop5: $width / 2; /* Uses a variable, does division */
+  prop6: round(1.5) / 2; /* Uses a function, does division */
+  prop7: (500px / 2); /* Uses parentheses, does division */
+  prop8: 5px + 8px / 2px; //* Uses +, does division */
+  prop9: (italic bold 10px/8px); /* In a list, parentheses don't count */
+  prop10: #010203 + #040506;
+  prop11: #010203 * 2;
+  prop12: rgba(255, 0, 0, 0.75) + rgba(0, 255, 0, 0.75);
+  prop13: progid:DXImageTransform.Microsoft.gradient(enabled='false', startColorstr='#{ie-hex-str($green)}', endColorstr='#{ie-hex-str($translucent-red)}');
+  prop14: e + -resize;
+  prop15: sans- + "serif";
+  prop16: 1em + (2em * 3);
+  prop17: rotate(-2deg);
+  prop18: rotate(-2deg);
+  _: _;
+  prop19: 10 - ($grid-gutter-width / 2);
+  prop20: 10 + -($grid-gutter-width / 2);
+  prop21: 10 + -($grid-gutter-width / 2);
+  prop22: -($grid-gutter-width / 2);
+  prop23: -($grid-gutter-width / 2);
+  prop24: -$grid-gutter-width;
+  prop25: +($grid-gutter-width / 2);
+  prop26: +($grid-gutter-width / 2);
+  prop27: +$grid-gutter-width;
+  prop28: --($grid-gutter-width / 2);
+  prop28: ++($grid-gutter-width / 2);
+  prop29: rotate(-2deg);
+}
+
+$last: nth($juggler, length($juggler));
+$x: if($last%2==0, 1/2, 3/2);
+$new: pow($last, $x);
+$sequence: 1, 1 1, 2 1, 1 2 1 1, 1 1 1 2 2 1;
+$new-entry: ();
+$new-entry: ();
+$new-entry: ();
+$new-entry: ();
+
+body:before {
+  content: quote(to-string(fibonacci(100), " \\A "));
+  white-space: pre-wrap;
+}
+
+width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+
+a:nth-child(#{$numPerRow}n) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels / $context}em;
+}
+
+.navigation {
+  @extend %updated-#{$flag};
+  @extend .selected-#{$flag};
+  @extend %#{$item};
+}
+
+.icon-#{$icon-name} {
+  background-image: "/images/#{$icon-name}.svg";
+}
+
+$extmods: (
+  eot: "?",
+  svg: "#" + str-replace($name, " ", "_")
+);
+
+@mixin keyframes {
+  @-moz-keyframes {
+    @content;
+  }
+  @-webkit-keyframes {
+    @content;
+  }
+}
+
+@function gcd($a, $b) {
+  // From: http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
+  @if ($b != 0) {
+    @return gcd($b, $a % $b);
+  } @else {
+    @return abs($a);
+  }
+}
+
+$colors: (
+  primary: (
+    base: #00abc9,
+    light: #daf1f6,
+    dark: #12799a
+  ),
+  secondary: (
+    base: #424d55,
+    light: #ccc,
+    lightest: #efefef,
+    dark: #404247
+  ),
+  success: (
+    base: #bbd33e,
+    light: #eaf0c6
+  )
+);
+
+@function color($color, $tone: "base") {
+  @return map-get(map-get($colors, $color), $tone);
+}
+
+@media only screen and (max-width: 767px) {
+  @include widths(2 3 4, \\@small);
+}
+
+$widths-breakpoint-separator: \\@small;
+
+a {
+  transition-timing-function: func1(
+    func2(
+      func3(
+        "veryVeryVeryVeryVeryLongValue",
+        "veryVeryVeryVeryVeryLongValue",
+        "veryVeryVeryVeryVeryLongValue",
+        "veryVeryVeryVeryVeryLongValue"
+      ),
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue"
+    ),
+    "veryVeryVeryVeryVeryLongValue",
+    "veryVeryVeryVeryVeryLongValue",
+    func3(
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue"
+    )
+  );
+}
+
+$empty-map: ();
+$empty-nested-map: (
+  nested-key: (
+    empty-key: (
+      color: red
+    )
+  ),
+  empty-key: (),
+  empty-key: (),
+  empty-key: ()
+);
+
+$o-grid-default-config: (
+  columns: 12,
+  gutter: 10px,
+  min-width: 240px,
+  max-width: 1330px,
+  layouts: (
+    S: 370px,
+    M: 610px,
+    L: 850px,
+    XL: 1090px
+  ),
+  fluid: true,
+  debug: false,
+  fixed-layout: M,
+  enhanced-experience: true
+);
+
+$a: ();
+$b: unquote("");
+$c: null;
+$d: (null);
+
+$threads-properties: map-merge(
+  $threads-properties,
+  (
+    $border-label: ()
+  )
+);
+$o-grid-default-config: (
+  layouts: (
+    S: 370px
+  )
+);
+
+$map: (
+  key: (
+    value
+  ),
+  other-key: (
+    key: other-other-value
+  )
+);
+
+a {
+  content: "#{"0.5"}";
+  content: my-fn("_");
+  content: "#{my-fn("_")}";
+  content: my-fn("-");
+  content: "#{my-fn("-")}";
+  content: my-fn("-a");
+  content: "#{my-fn("-a")}";
+  content: my-fn("a-");
+  content: "#{my-fn("a-")}";
+  content: my-fn("foo");
+  content: "#{my-fn("foo")}";
+  content: 1 "#{my-fn("foo")}" 2;
+  content: foo "#{my-fn("foo")}" bar;
+  content: "foo #{$description} bar";
+
+  content: "#{my-fn("foo","bar")}";
+  content: "#{my-fn( "foo" , "bar" )}";
+  content: "#{my-fn(  "foo"  ,  "bar"  )}";
+
+  content: '#{my-fn("foo")}';
+  content: "#{my-fn("foo")}";
+  content: "#{my-fn('foo')}";
+  content: "#{my-fn("foo")}";
+}
+
+@mixin theme($css-property, $css-value, $theme-classes: t) {
+  @each $selector in & {
+    @each $class in $theme-classes {
+      @each $theme, $theme-properties in c(themes) {
+        $value: $css-value;
+
+        @each $theme-name, $theme-value in $theme-properties {
+          $rgba-value: "rgba(#{red($theme-value)}, #{green($theme-value)}, #{blue($theme-value)}";
+          $value: str-replace($value, "rgba(\${#{$theme-name}}", $rgba-value);
+          $value: str-replace($value, "\${#{$theme-name}}", $theme-value);
+        }
+
+        @at-root .#{$class}-#{join($theme, $selector)} {
+          #{$css-property}: unquote($value);
+        }
+      }
+    }
+  }
+}
+
+.foo,
+// Comment
+.bar {
+  // Comment
+  color: red; // Comment
+}
+
+$my-list: "foo",
+  // Comment
+  "bar"; // Comment
+
+$my-map: (
+  "foo": 1,
+  // Comment
+  "bar": 2,
+  // Comment
+  "buz": calc(1 + 2),
+  // Buz
+  "baz": 4,
+  // Baz
+);
+
+[href]:hover &, // Comment
+[href]:focus &, // Comment
+[href]:active & {
+  .tooltip {
+    opacity: 1;
+  }
+}
+
+@import // Comment
+  "mixins",
+  "variables",
+  // Comment
+  "reset",
+  "scaffolding", "type",
+  // Comment
+  "bar",
+  "tabs";
+
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+}
+
+.container {
+  @include placeholder {
+    color: $color-silver;
+  }
+}
+
+.something {
+  grid-template-columns: 1 2fr (3 + 4);
+}
+
+// Ignore escape "\\" in SCSS mixins
+@mixin margin-bottom-1\\/3 {
+  margin-bottom: 0.8rem;
+}
+
+label {
+  @include margin-bottom-1\\/3;
+}
+
+@function someVeryLongFunctionNameForJustAPow($base, $exponent) {
+  $result: 1;
+  @for $_ from 1 through $exponent {
+    $result: $result * $base;
+  }
+  @return $result;
+}
+
+@function pow($base, $exponent) {
+  @return someVeryLongFunctionNameForJustAPow($base, $exponent);
+}
+
+.foo {
+  width: someVeryLongFunctionNameForJustAPow(
+    2,
+    someVeryLongFunctionNameForJustAPow(
+      2,
+      someVeryLongFunctionNameForJustAPow(
+        2,
+        // This next pow is really powerful
+        someVeryLongFunctionNameForJustAPow(
+            2,
+            someVeryLongFunctionNameForJustAPow(
+              2,
+              someVeryLongFunctionNameForJustAPow(
+                2,
+                someVeryLongFunctionNameForJustAPow(
+                  2,
+                  someVeryLongFunctionNameForJustAPow(
+                    2,
+                    someVeryLongFunctionNameForJustAPow(
+                      2,
+                      someVeryLongFunctionNameForJustAPow(
+                        2,
+                        someVeryLongFunctionNameForJustAPow(
+                          2,
+                          someVeryLongFunctionNameForJustAPow(2, 2)
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+      )
+    )
+  );
+}
+
+.bar {
+  width: pow(
+    2,
+    pow(
+      2,
+      pow(
+        2,
+        // This next pow is really powerful
+        pow(
+            2,
+            pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, 2))))))))
+          )
+      )
+    )
+  );
+}
+
+================================================================================
+`;
+
+exports[`scss.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@media #{$g-breakpoint-tiny} {}
+.#{$fa-css-prefix}-glass:before { content: $fa-var-glass; }
+a {height: calc(#{$foo} + 1);}
+div {
+  background: {
+      size: auto 60%;
+      position: bottom 2px left;
+  }
+}
+a { margin: 0 { left: 10px; } }
+
+$default: #111111 !default;
+$default: #111111   !default;
+$default: #111111
+!default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value" !default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value"   !default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value"
+!default;
+
+$global: #111111 !global;
+$global: #111111   !global;
+$global: #111111
+!global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value" !global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value"   !global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value"
+!global;
+
+$map: (key: value, other-key: other-value);
+$map: (key: value, other-key: other-value) !default;
+$map: (key: value, other-key: other-value)  !default;
+$map: (key: value, other-key: other-value)
+!default;
+$map:
+(key: value, other-key: other-value)
+!default;
+$map: ( key : value , other-key : other-value);
+$map: (  key  :  value  ,  other-key  :  other-value  );
+$map: (
+  key: value,
+  other-key: other-value
+);
+$map: (
+key: value,
+other-key: other-value
+);
+$map: (
+key
+:
+value,
+other-key
+:
+other-value
+);
+$map: (
+key
+:
+value
+,
+other-key
+:
+other-value
+);
+$map: (very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value, very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value);
+$map: ( very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key : very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value , very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key : very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value );
+$map: (  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key  :  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value  ,  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value  );
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map: (
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key: very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map:
+(
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key
+:
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value
+,
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key
+:
+very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value
+);
+$map: (
+  key: (#d82d2d, #666),
+  other-key: (#52bf4a, #fff),
+  other-other-key: (#c23435, #fff)
+);
+$map: (
+key: (#d82d2d, #666),
+other-key: (#52bf4a, #fff),
+other-other-key: (#c23435, #fff)
+);
+$map: (
+  key : ( #d82d2d , #666 ),
+  other-key : ( #52bf4a , #fff ),
+  other-other-key : ( #c23435 , #fff )
+);
+$map: (
+  key  : (  #d82d2d  ,  #666  )  ,
+  other-key  :  (  #52bf4a  ,  #fff  ),
+  other-other-key  :  (  #c23435  ,  #fff  )
+);
+$map: (
+key
+:
+(
+#d82d2d,
+#666
+)
+,
+other-key
+:
+(
+#52bf4a,
+#fff
+)
+,
+other-other-key
+:
+(
+#c23435
+,
+#fff
+)
+);
+$map: map-merge($map, ($key: $value));
+$map: map-merge( $map , ( $key : $value ) );
+$map: map-merge(  $map  ,  (  $key  :  $value  )  );
+$map: map-merge(
+  $map,
+  ($key:  $value)
+);
+$map: map-merge(
+$map,
+($key:  $value)
+);
+$map:
+map-merge(
+$map
+,
+(
+$key
+:
+$value
+)
+);
+
+$longVariable: (
+(mobile $mobile) (tablet $tablet) (desktop $desktop) (wide $wide)
+);
+
+$list-space: "item-1" "item-2" "item-3";
+$list-space:"item-1""item-2""item-3";
+$list-space:  "item-1"  "item-2"  "item-3"  ;
+$list-space: "item-1"
+  "item-2"
+  "item-3";
+$list-space
+:
+"item-1"
+"item-2"
+"item-3"
+;
+$list-space
+
+:
+
+"item-1"
+
+"item-2"
+
+"item-3"
+
+;
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma:"item-1","item-2","item-3";
+$list-comma:  "item-1"  ,  "item-2"  ,  "item-3"  ;
+$list-comma: "item-1",
+  "item-2",
+  "item-3";
+$list-comma
+:
+"item-1"
+,
+"item-2"
+,
+"item-3"
+;
+$list-comma
+
+:
+
+"item-1"
+
+,
+
+"item-2"
+
+,
+
+"item-3"
+
+;
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3", "item-3.1" "item-3.2" "item-3.3";
+$list:"item-1.1""item-1.2""item-1.3","item-2.1""item-2.2""item-2.3","item-3.1""item-3.2""item-3.3";
+$list:  "item-1.1"  "item-1.2"  "item-1.3"  ,  "item-2.1"  "item-2.2"  "item-2.3"  ,  "item-3.1"  "item-3.2"  "item-3.3"  ;
+$list: "item-1.1" "item-1.2" "item-1.3",
+  "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list
+:
+"item-1.1"
+"item-1.2"
+"item-1.3"
+,
+"item-2.1"
+"item-2.2"
+"item-2.3"
+,
+"item-3.1"
+"item-3.2"
+"item-3.3"
+;
+$list
+
+:
+
+"item-1.1"
+
+"item-1.2"
+
+"item-1.3"
+
+,
+
+"item-2.1"
+
+"item-2.2"
+
+"item-2.3"
+
+,
+
+"item-3.1"
+
+"item-3.2"
+
+"item-3.3"
+
+;
+$list: (("item-1.1", "item-1.2", "item-1.3"), ("item-2.1", "item-2.2", "item-2.3"), ("item-3.1", "item-3.2", "item-3.3"));
+$list:(("item-1.1","item-1.2","item-1.3"),("item-2.1","item-2.2","item-2.3"),("item-3.1","item-3.2","item-3.3"));
+$list:  (  (  "item-1.1"  ,  "item-1.2"  ,  "item-1.3"  )  ,  (  "item-2.1"  ,  "item-2.2"  ,  "item-2.3"  )  ,  (  "item-3.1"  ,  "item-3.2"  ,  "item-3.3"  )  )  ;
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list
+:
+(
+(
+"item-1.1"
+,
+"item-1.2"
+,
+"item-1.3"
+)
+,
+(
+"item-2.1"
+,
+"item-2.2"
+,
+"item-2.3"
+)
+,
+(
+"item-3.1"
+,
+"item-3.2"
+,
+"item-3.3"
+)
+)
+;
+$list
+
+:
+
+(
+
+(
+
+"item-1.1"
+
+,
+
+"item-1.2"
+
+,
+
+"item-1.3"
+
+)
+
+,
+
+(
+
+"item-2.1"
+
+,
+
+"item-2.2"
+
+,
+
+"item-2.3"
+
+)
+
+,
+
+(
+
+"item-3.1"
+
+,
+
+"item-3.2"
+
+,
+
+"item-3.3"
+
+)
+
+)
+
+;
+
+$var: (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0);
+$space-scale: (0, "0") (0.25, "0-25") (0.5, "0-5") (0.75, "0-75") (1, "1") (1.25, "1-25") (1.5, "1-5") (1.75, "1-75") (2, "2") (2.25, "2-25") (2.5, "2-5") (2.75, "2-75") (3, "3") (3.25, "3-25") (3.5, "3-5") (3.75, "3-75") (4, "4");
+
+.card-column-simple {
+  @include breakpoint( getBp( md ) ) {
+    padding: $spacing_content-sm $spacing_content-md;
+  }
+
+  @include breakpoint (getBp(md)) {
+    &:nth-child(2n + 3) {
+      clear: both;
+    }
+  }
+
+  @include breakpoint (getBp(xl)) {
+    &:nth-child(2n + 3) {
+      clear: none;
+    }
+    &:nth-child(3n + 4) {
+      clear: both;
+    }
+  }
+}
+
+@warn "Warn (#{$message}).";
+@warn  "Warn (#{$message}).";
+@warn   "Warn (#{$message}).";
+@warn #{$message};
+@warn "Very long long long long long long long long long long long long long line (#{$message}).";
+@warn
+  "Very long long long long long long long long long long long long long line (#{$message}).";
+@error "Error (#{$message}).";
+@error  "Error (#{$message}).";
+@error   "Error (#{$message}).";
+@error #{$message};
+@error "Very long long long long long long long long long long long long long line Error (#{$message}).";
+@error
+  "Very long long long long long long long long long long long long long line Error (#{$message}).";
+
+$buttonConfig: "save" 50px, 'cancel' 50px, "help" 100PX;
+
+$locale: "en_us";
+html[lang=#{$locale}] {
+  font-size: 10px;
+}
+$alertClass: "error";
+p.message-#{$alertClass} {
+  color: red;
+}
+$mediumBreakpoint: 768px;
+@media (max-width: #{$mediumBreakpoint}) {
+  a {
+    font-size: 18px;
+  }
+}
+
+p {
+  @media (max-width: 768px) {
+    font-size: 150%;
+
+    @media (orientation: landscape) {
+        line-height: 75%;
+    }
+  }
+}
+
+.popularAnimal {
+    background: gray;
+}
+.GoodBoy {
+    color: green;
+}
+.dog {
+  @extend .popularAnimal;
+  @extend .GoodBoy;
+  color: white;
+}
+
+%animal {
+  background: gray;
+}
+.cat {
+  @extend %animal;
+  color: white;
+}
+.dog {
+  @extend %animal;
+  color: black;
+}
+
+%mfw-standing-out {
+  font-size: 150%;
+  font-style: italic;
+  padding: 25px;
+}
+%mfwSlightlyShadowed {
+  @include box-shadow(black 2px 2px 10px); // from Compass
+}
+%MFWRounded {
+  @include border-radius(25px); // from Compass
+}
+#join-button {
+  @extend %mfw-standing-out;
+  @extend %mfwSlightlyShadowed;
+  @extend %MFWRounded;
+  background: green;
+  color: white;
+}
+
+a {
+  &:hover {
+    color: red;
+  }
+}
+p {
+  body.no-touch & {
+    display: none;
+  }
+}
+.foo.bar .baz.bang, .bip.qux {
+  $selector: &;
+}
+@mixin does-parent-exist {
+  @if & {
+    &:hover {
+      color: red;
+    }
+  } @else {
+    a {
+      color: red;
+    }
+  }
+}
+
+p {
+  @if 1 + 1 == 2 {
+    border: 1px solid;
+  }
+  @if 5 < 3 {
+    border: 2px dotted;
+  }
+  @if null {
+    border: 3px double;
+  }
+}
+
+$mosterType: monster;
+p {
+  @if $mosterType == ocean {
+    color: blue;
+  } @else if $mosterType == matador {
+    color: red;
+  } @else if $mosterType == monster {
+    color: green;
+  } @else if $mosterType == nightKing {
+    color: green;
+  } @else if $mosterType == VeryWickedWolf {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    width: 2em * $i;
+  }
+}
+
+@each $animal in puma, sea-slug, cheerfulDog, BigSalamander, "string", 'another-string', "camelCaseString", "PascalCaseString" {
+  .#{$animal}-icon {
+    background-image: url('/images/#{$animal}.png');
+  }
+}
+
+$i: 6;
+@while $i > 0 {
+  .item-#{$i} {
+    width: 2em * $i;
+  }
+  $i: $i - 2;
+}
+
+@mixin cool-border($width: 10px, $coolStyle: 'solid', $AwesomeColor: "black") {
+  border: $width $coolStyle $AwesomeColor;
+}
+
+p {
+  @include cool-border(1px, "solid", $fff);
+}
+p {
+  @include cool-border($width: 1px, $coolStyle: 'solid', $AwesomeColor: #fff);
+}
+p {
+  @include coolBorder();
+}
+
+@mixin coolBorder() {
+  border: 10px solid #fff;
+}
+p {
+  @include coolBorder(1px, "solid", $fff);
+}
+
+@mixin CoolBorder() {
+  border: 10px solid #fff;
+}
+p {
+  @include CoolBorder(1px, "solid", $fff);
+}
+
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+.shadows {
+  @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+}
+
+@mixin apply-to-ie6-only {
+  * html {
+    @content;
+  }
+}
+@include apply-to-ie6-only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin applyToIe6Only {
+  * html {
+    @content;
+  }
+}
+@include applyToIe6Only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin ApplyToIe6Only {
+  * html {
+    @content;
+  }
+}
+@include ApplyToIe6Only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin config-icon-colors($prefix, $colors...) {
+  @each $i in $colors {
+    .#{$prefix}#{nth($i, 1)} {
+      color: nth($i, 2);
+    }
+  }
+}
+@include config-icon-colors(
+  "icon-",
+  "save" green,
+  "cancel" gray,
+  "delete" red,
+  'wait' blue
+);
+
+@function my-calculation-function($some-number, $anotherNumber, $BigNumber){
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function myCalculationFunction($some-number, $anotherNumber, $BigNumber){
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function AnotherMyCalculationFunction($some-number, $anotherNumber, $BigNumber: 100px){
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function border($borders...) {
+  @return $borders;
+}
+.foo {
+  padding: my-calculation-function(10px, 5px, 100px);
+  margin: myCalculationFunction($some-number: 10px, $anotherNumber: 5px, $BigNumber: 100px);
+  width: AnotherMyCalculationFunction(10px, 5px);
+  border: border(25px, 35px);
+}
+
+$sm-only: '(min-width: 768px) and (max-width: 991px)';
+$lg-and-up: '(min-width: 1200px)';
+
+@media screen and #{$sm-only, $lg-and-up} {
+  color: #000;
+}
+
+.class-#{$var} {
+  #{$var}: #7b3d66;
+  #{$attr}-color: blue;
+  #{$prop}-#{$side}: $value;
+  background-#{$var}: #7b3d66;
+  animation-name: #{var};
+  line-height: #{strip-unit($line-height)}em;
+  height: 1#{$var};
+  width: calc(100% - #{$sidebar-width});
+  max-width: calc(#{$m*100}vw #{$sign} #{$b});
+  font: #{$font-size}/#{$line-height};
+  content: "I have #{8 + 2} books on SASS!";
+  border: #{$var} #{$var} #{$var};
+  filter: #{$var}#{$var}#{$var};
+  prop:  #{  $var  +  $var  }  #{  $var  +  $var  }  #{  $var  +  $var  };
+  prop2:
+      #{
+      $var
+      +
+      $var
+      }
+
+      #{
+      $var
+      +
+      $var
+      }
+
+      #{
+      $var
+      +
+      $var
+      }
+      ;
+  prop3:
+
+      #{
+
+      $var
+
+      +
+
+      $var
+
+      }
+
+      #{
+
+      $var
+
+      +
+
+      $var
+
+      }
+
+      #{
+
+      $var
+
+      +
+
+      $var
+
+      }
+      ;
+  prop4: -#{$loader-icon-duration};
+  prop5: +#{$loader-icon-duration};
+  prop6: calc(-#{$loader-icon-duration} + 10);
+  prop7: calc(10 + -#{$loader-icon-duration});
+}
+
+/* Framework version for the generated CSS is #{$version}. */
+
+.selector {
+  foo: bar;
+  #{$active} {
+    baz: qux;
+  }
+}
+
+.el:nth-of-type(#{$i}) {}
+
+@media #{$value} {}
+
+$foundation-dir: 'foundation';
+@import url('#{$foundation-dir}/components/grid');
+@import url(#{$foundation-dir}/components/grid);
+@import url($foundation-dir/components/grid);
+@import url($foundation-dir+"/components/grid");
+
+@function get-font-family($family) {
+  @return $family;
+}
+@import url("//fonts.googleapis.com/css?family=#{ get-font-family('Roboto') }:100,300,500,700,900&display=swap");
+@import url(//fonts.googleapis.com/css?family=#{ get-font-family('Roboto') }:100,300,500,700,900&display=swap);
+
+
+@keyframes loader {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  #{50% - $loader-icon-duration} {
+    transform: translate3d(0, $bounce-height, 0);
+  }
+
+  50% {
+    transform: translate3d(0, $bounce-height, 0) scale($loader-bounce-horizontal-expansion, $loader-bounce-vertical-compression);
+  }
+}
+
+$icons: wifi "\\600", wifi-hotspot "\\601", weather "\\602";
+
+@each $icon in $icons {
+  .icon-#{nth($icon, 1)}, %icon-#{nth($icon, 1)} {
+    content: "#{nth($icon, 2)}";
+  }
+}
+
+.foo {
+  prop: -($grid-gutter-width / 2);
+  prop1: -(  $grid-gutter-width  /  2  );
+  prop2: -$grid-gutter-width / 2;
+  prop3: +($grid-gutter-width / 2);
+  prop4: 10px/8px; /* Plain CSS, no division */
+  prop5: $width / 2; /* Uses a variable, does division */
+  prop6: round(1.5) / 2; /* Uses a function, does division */
+  prop7: (500px / 2); /* Uses parentheses, does division */
+  prop8: 5px + 8px / 2px; //* Uses +, does division */
+  prop9: (italic bold 10px/8px); /* In a list, parentheses don't count */
+  prop10: #010203 + #040506;
+  prop11: #010203 * 2;
+  prop12: rgba(255, 0, 0, 0.75) + rgba(0, 255, 0, 0.75);
+  prop13: progid:DXImageTransform.Microsoft.gradient(enabled='false', startColorstr='#{ie-hex-str($green)}', endColorstr='#{ie-hex-str($translucent-red)}');
+  prop14: e + -resize;
+  prop15: sans- + "serif";
+  prop16: 1em + (2em * 3);
+  prop17: rotate(-2deg);
+  prop18:  rotate(  -2deg  )  ;
+  _:_;
+  prop19: 10 - ($grid-gutter-width / 2);
+  prop20: 10 + -($grid-gutter-width / 2);
+  prop21:  10  +  -  (  $grid-gutter-width  /  2  )  ;
+  prop22: - ( $grid-gutter-width / 2 ) ;
+  prop23:  -  (  $grid-gutter-width  /  2  )  ;
+  prop24: -$grid-gutter-width;
+  prop25: + ( $grid-gutter-width / 2 ) ;
+  prop26:  +  (  $grid-gutter-width  /  2  )  ;
+  prop27: +$grid-gutter-width;
+  prop28: --($grid-gutter-width / 2);
+  prop28: ++($grid-gutter-width / 2);
+  prop29:  rotate(  -  2deg  )  ;
+}
+
+$last:nth($juggler,length($juggler));
+$x:if($last%2==0,1/2,3/2);
+$new:pow($last,$x);
+$sequence:1,1 1,2 1,1 2 1 1, 1 1 1 2 2 1;
+$new-entry:();
+$new-entry : ( ) ;
+$new-entry  :  (  )  ;
+$new-entry
+:
+(
+)
+;
+
+body:before {
+  content: quote(to-string(fibonacci(100), ' \\A '));
+  white-space: pre-wrap;
+}
+
+width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+width
+:
+(
+(
+100%
+-
+(
+(
+$numPerRow
+-
+1
+)
+*
+$margin
+)
+)
+/
+$numPerRow
+)
+;
+
+a:nth-child(#{$numPerRow}n) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+@function em($pixels, $context: $browser-context) {
+  @return #{ $pixels / $context }em
+}
+
+.navigation {
+  @extend %updated-#{$flag};
+  @extend .selected-#{$flag};
+  @extend %#{$item};
+}
+
+.icon-#{$icon-name} {
+  background-image: '/images/#{$icon-name}.svg';
+}
+
+$extmods:(eot:"?",svg:"#" + str-replace($name," ","_"));
+
+@mixin keyframes {@-moz-keyframes{@content;}@-webkit-keyframes{@content;}}
+
+@function gcd($a,$b){
+  // From: http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
+  @if ($b != 0) {
+    @return gcd($b,$a % $b);
+  }@else{
+    @return abs($a);
+  }
+}
+
+$colors: (
+primary: (
+base: #00abc9,
+light: #daf1f6,
+dark: #12799a
+),
+secondary: (
+base: #424d55,
+light: #ccc,
+lightest: #efefef,
+dark: #404247
+),
+success: (
+base: #bbd33e,
+light: #eaf0c6
+)
+);
+
+@function color($color, $tone: "base") {
+@return map-get(map-get($colors, $color), $tone);
+}
+
+@media only screen and (max-width: 767px) {
+  @include widths(2 3 4, \\@small);
+}
+
+$widths-breakpoint-separator: \\@small;
+
+a {
+  transition-timing-function: func1(
+      func2(
+          func3(
+              "veryVeryVeryVeryVeryLongValue",
+              "veryVeryVeryVeryVeryLongValue",
+              "veryVeryVeryVeryVeryLongValue",
+              "veryVeryVeryVeryVeryLongValue",
+          ),
+          "veryVeryVeryVeryVeryLongValue",
+          "veryVeryVeryVeryVeryLongValue",
+          "veryVeryVeryVeryVeryLongValue",
+      ),
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue",
+      func3(
+          "veryVeryVeryVeryVeryLongValue",
+          "veryVeryVeryVeryVeryLongValue",
+          "veryVeryVeryVeryVeryLongValue",
+          "veryVeryVeryVeryVeryLongValue"
+      )
+  );
+}
+
+$empty-map: ();
+$empty-nested-map: (
+nested-key: (empty-key: (color: red)),
+empty-key: (),
+empty-key: (),
+empty-key: ()
+);
+
+$o-grid-default-config: (
+columns: 12,
+gutter: 10px,
+min-width: 240px,
+max-width: 1330px,
+layouts: (
+S:  370px,
+M:  610px,
+L:  850px,
+XL: 1090px
+),
+fluid: true,
+debug: false,
+fixed-layout: M,
+enhanced-experience: true
+);
+
+$a: ();
+$b: unquote('');
+$c: null;
+$d: (null);
+
+$threads-properties: map-merge($threads-properties,  ($border-label: ()));
+$o-grid-default-config: (layouts: (S:  370px));
+
+$map: (
+key: (value),
+other-key: (key: other-other-value)
+);
+
+a {
+  content: "#{".5"}";
+  content: my-fn("_");
+  content: "#{my-fn("_")}";
+  content: my-fn("-");
+  content: "#{my-fn("-")}";
+  content: my-fn("-a");
+  content: "#{my-fn("-a")}";
+  content: my-fn("a-");
+  content: "#{my-fn("a-")}";
+  content: my-fn("foo");
+  content: "#{my-fn("foo")}";
+  content: 1 "#{my-fn("foo")}" 2;
+  content: foo "#{my-fn("foo")}" bar;
+  content: "foo #{$description} bar";
+
+  content: "#{my-fn("foo","bar")}";
+  content: "#{my-fn( "foo" , "bar" )}";
+  content: "#{my-fn(  "foo"  ,  "bar"  )}";
+
+  content: '#{my-fn("foo")}';
+  content: '#{my-fn('foo')}';
+  content: "#{my-fn('foo')}";
+  content: "#{my-fn("foo")}";
+}
+
+@mixin theme($css-property, $css-value, $theme-classes: t) {
+  @each $selector in & {
+    @each $class in $theme-classes {
+      @each $theme, $theme-properties in c(themes) {
+      $value: $css-value;
+
+        @each $theme-name, $theme-value in $theme-properties {
+          $rgba-value: "rgba(#{red($theme-value)}, #{green($theme-value)}, #{blue($theme-value)}";
+          $value: str-replace($value, "rgba(\${#{$theme-name}}", $rgba-value);
+          $value: str-replace($value, "\${#{$theme-name}}", $theme-value);
+        }
+
+        @at-root .#{$class}-#{join($theme, $selector)} {
+          #{$css-property}: unquote($value);
+        }
+      }
+    }
+  }
+}
+
+.foo,
+// Comment
+.bar {
+  // Comment
+  color: red; // Comment
+}
+
+$my-list:
+  'foo', // Comment
+  'bar'; // Comment
+
+$my-map: (
+  'foo': 1, // Comment
+  'bar': 2, // Comment
+  'buz': calc(1 + 2), // Buz
+  'baz': 4, // Baz
+);
+
+[href]:hover &, // Comment
+[href]:focus &, // Comment
+[href]:active & {
+  .tooltip {
+    opacity: 1;
+  }
+}
+
+@import
+  // Comment
+  'mixins',
+  'variables',
+  // Comment
+  'reset',
+  'scaffolding',
+  'type',
+  // Comment
+  'bar',
+  'tabs';
+
+@mixin placeholder {
+  &::placeholder {@content}
+}
+
+.container {
+  @include placeholder {
+    color: $color-silver;
+  }
+}
+
+.something {
+  grid-template-columns: 1 2fr (3 + 4);
+}
+
+// Ignore escape "\\" in SCSS mixins
+@mixin margin-bottom-1\\/3 {
+  margin-bottom: 0.8rem;
+}
+
+label {
+  @include margin-bottom-1\\/3;
+}
+
+@function someVeryLongFunctionNameForJustAPow($base, $exponent) {
+  $result: 1;
+  @for $_ from 1 through $exponent {
+    $result: $result * $base;
+  }
+  @return $result;
+}
+
+@function pow($base, $exponent){
+  @return someVeryLongFunctionNameForJustAPow($base,$exponent);
+}
+
+.foo{
+  width: someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2,
+  // This next pow is really powerful
+  someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, someVeryLongFunctionNameForJustAPow(2, 2))))))))))))
+}
+
+.bar{
+  width: pow(2, pow(2, pow(2,
+  // This next pow is really powerful
+  pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, 2))))))))))))
+}
+
+=====================================output=====================================
+@media #{$g-breakpoint-tiny} {
+}
+.#{$fa-css-prefix}-glass:before {
+  content: $fa-var-glass;
+}
+a {
+  height: calc(#{$foo} + 1);
+}
+div {
+  background: {
+    size: auto 60%;
+    position: bottom 2px left;
+  }
+}
+a {
+  margin: 0 {
+    left: 10px;
+  }
+}
+
+$default: #111111 !default;
+$default: #111111 !default;
+$default: #111111 !default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value" !default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value" !default;
+$default: "very-long-long-long-long-long-long-long-long-long-long-long-value" !default;
+
+$global: #111111 !global;
+$global: #111111 !global;
+$global: #111111 !global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value" !global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value" !global;
+$global: "very-long-long-long-long-long-long-long-long-long-long-long-value" !global;
+
+$map: (
+  key: value,
+  other-key: other-value,
+);
+$map: (
+  key: value,
+  other-key: other-value,
+) !default;
+$map: (
+  key: value,
+  other-key: other-value,
+) !default;
+$map: (
+  key: value,
+  other-key: other-value,
+) !default;
+$map: (
+  key: value,
+  other-key: other-value,
+) !default;
+$map: (
+  key: value,
+  other-key: other-value,
+);
+$map: (
+  key: value,
+  other-key: other-value,
+);
+$map: (
+  key: value,
+  other-key: other-value,
+);
+$map: (
+  key: value,
+  other-key: other-value,
+);
+$map: (
+  key: value,
+  other-key: other-value,
+);
+$map: (
+  key: value,
+  other-key: other-value,
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value,
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value,
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value,
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value,
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value,
+);
+$map: (
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-value,
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-key:
+    very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-verylong-other-value,
+);
+$map: (
+  key: (
+    #d82d2d,
+    #666,
+  ),
+  other-key: (
+    #52bf4a,
+    #fff,
+  ),
+  other-other-key: (
+    #c23435,
+    #fff,
+  ),
+);
+$map: (
+  key: (
+    #d82d2d,
+    #666,
+  ),
+  other-key: (
+    #52bf4a,
+    #fff,
+  ),
+  other-other-key: (
+    #c23435,
+    #fff,
+  ),
+);
+$map: (
+  key: (
+    #d82d2d,
+    #666,
+  ),
+  other-key: (
+    #52bf4a,
+    #fff,
+  ),
+  other-other-key: (
+    #c23435,
+    #fff,
+  ),
+);
+$map: (
+  key: (
+    #d82d2d,
+    #666,
+  ),
+  other-key: (
+    #52bf4a,
+    #fff,
+  ),
+  other-other-key: (
+    #c23435,
+    #fff,
+  ),
+);
+$map: (
+  key: (
+    #d82d2d,
+    #666,
+  ),
+  other-key: (
+    #52bf4a,
+    #fff,
+  ),
+  other-other-key: (
+    #c23435,
+    #fff,
+  ),
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value,
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value,
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value,
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value,
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value,
+  )
+);
+$map: map-merge(
+  $map,
+  (
+    $key: $value,
+  )
+);
+
+$longVariable: (
+  (mobile $mobile) (tablet $tablet) (desktop $desktop) (wide $wide)
+);
+
+$list-space: "item-1" "item-2" "item-3";
+$list-space: "item-1" "item-2" "item-3";
+$list-space: "item-1" "item-2" "item-3";
+$list-space: "item-1" "item-2" "item-3";
+$list-space: "item-1" "item-2" "item-3";
+$list-space: "item-1" "item-2" "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list-comma: "item-1", "item-2", "item-3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: "item-1.1" "item-1.2" "item-1.3", "item-2.1" "item-2.2" "item-2.3",
+  "item-3.1" "item-3.2" "item-3.3";
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+$list: (
+  ("item-1.1", "item-1.2", "item-1.3"),
+  ("item-2.1", "item-2.2", "item-2.3"),
+  ("item-3.1", "item-3.2", "item-3.3")
+);
+
+$var: (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0) (0 0)
+  (0 0) (0 0);
+$space-scale: (0, "0") (0.25, "0-25") (0.5, "0-5") (0.75, "0-75") (1, "1")
+  (1.25, "1-25") (1.5, "1-5") (1.75, "1-75") (2, "2") (2.25, "2-25")
+  (2.5, "2-5") (2.75, "2-75") (3, "3") (3.25, "3-25") (3.5, "3-5")
+  (3.75, "3-75") (4, "4");
+
+.card-column-simple {
+  @include breakpoint(getBp(md)) {
+    padding: $spacing_content-sm $spacing_content-md;
+  }
+
+  @include breakpoint(getBp(md)) {
+    &:nth-child(2n + 3) {
+      clear: both;
+    }
+  }
+
+  @include breakpoint(getBp(xl)) {
+    &:nth-child(2n + 3) {
+      clear: none;
+    }
+    &:nth-child(3n + 4) {
+      clear: both;
+    }
+  }
+}
+
+@warn "Warn (#{$message}).";
+@warn "Warn (#{$message}).";
+@warn "Warn (#{$message}).";
+@warn #{$message};
+@warn "Very long long long long long long long long long long long long long line (#{$message}).";
+@warn "Very long long long long long long long long long long long long long line (#{$message}).";
+@error "Error (#{$message}).";
+@error "Error (#{$message}).";
+@error "Error (#{$message}).";
+@error #{$message};
+@error "Very long long long long long long long long long long long long long line Error (#{$message}).";
+@error "Very long long long long long long long long long long long long long line Error (#{$message}).";
+
+$buttonConfig: "save" 50px, "cancel" 50px, "help" 100px;
+
+$locale: "en_us";
+html[lang="#{$locale}"] {
+  font-size: 10px;
+}
+$alertClass: "error";
+p.message-#{$alertClass} {
+  color: red;
+}
+$mediumBreakpoint: 768px;
+@media (max-width: #{$mediumBreakpoint}) {
+  a {
+    font-size: 18px;
+  }
+}
+
+p {
+  @media (max-width: 768px) {
+    font-size: 150%;
+
+    @media (orientation: landscape) {
+      line-height: 75%;
+    }
+  }
+}
+
+.popularAnimal {
+  background: gray;
+}
+.GoodBoy {
+  color: green;
+}
+.dog {
+  @extend .popularAnimal;
+  @extend .GoodBoy;
+  color: white;
+}
+
+%animal {
+  background: gray;
+}
+.cat {
+  @extend %animal;
+  color: white;
+}
+.dog {
+  @extend %animal;
+  color: black;
+}
+
+%mfw-standing-out {
+  font-size: 150%;
+  font-style: italic;
+  padding: 25px;
+}
+%mfwSlightlyShadowed {
+  @include box-shadow(black 2px 2px 10px); // from Compass
+}
+%MFWRounded {
+  @include border-radius(25px); // from Compass
+}
+#join-button {
+  @extend %mfw-standing-out;
+  @extend %mfwSlightlyShadowed;
+  @extend %MFWRounded;
+  background: green;
+  color: white;
+}
+
+a {
+  &:hover {
+    color: red;
+  }
+}
+p {
+  body.no-touch & {
+    display: none;
+  }
+}
+.foo.bar .baz.bang,
+.bip.qux {
+  $selector: &;
+}
+@mixin does-parent-exist {
+  @if & {
+    &:hover {
+      color: red;
+    }
+  } @else {
+    a {
+      color: red;
+    }
+  }
+}
+
+p {
+  @if 1 + 1 == 2 {
+    border: 1px solid;
+  }
+  @if 5 < 3 {
+    border: 2px dotted;
+  }
+  @if null {
+    border: 3px double;
+  }
+}
+
+$mosterType: monster;
+p {
+  @if $mosterType == ocean {
+    color: blue;
+  } @else if $mosterType == matador {
+    color: red;
+  } @else if $mosterType == monster {
+    color: green;
+  } @else if $mosterType == nightKing {
+    color: green;
+  } @else if $mosterType == VeryWickedWolf {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+@for $i from 1 through 3 {
+  .item-#{$i} {
+    width: 2em * $i;
+  }
+}
+
+@each $animal in puma, sea-slug, cheerfulDog, BigSalamander, "string",
+  "another-string", "camelCaseString", "PascalCaseString"
+{
+  .#{$animal}-icon {
+    background-image: url("/images/#{$animal}.png");
+  }
+}
+
+$i: 6;
+@while $i > 0 {
+  .item-#{$i} {
+    width: 2em * $i;
+  }
+  $i: $i - 2;
+}
+
+@mixin cool-border($width: 10px, $coolStyle: "solid", $AwesomeColor: "black") {
+  border: $width $coolStyle $AwesomeColor;
+}
+
+p {
+  @include cool-border(1px, "solid", $fff);
+}
+p {
+  @include cool-border($width: 1px, $coolStyle: "solid", $AwesomeColor: #fff);
+}
+p {
+  @include coolBorder();
+}
+
+@mixin coolBorder() {
+  border: 10px solid #fff;
+}
+p {
+  @include coolBorder(1px, "solid", $fff);
+}
+
+@mixin CoolBorder() {
+  border: 10px solid #fff;
+}
+p {
+  @include CoolBorder(1px, "solid", $fff);
+}
+
+@mixin box-shadow($shadows...) {
+  -moz-box-shadow: $shadows;
+  -webkit-box-shadow: $shadows;
+  box-shadow: $shadows;
+}
+.shadows {
+  @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);
+}
+
+@mixin apply-to-ie6-only {
+  * html {
+    @content;
+  }
+}
+@include apply-to-ie6-only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin applyToIe6Only {
+  * html {
+    @content;
+  }
+}
+@include applyToIe6Only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin ApplyToIe6Only {
+  * html {
+    @content;
+  }
+}
+@include ApplyToIe6Only {
+  #logo {
+    background-image: url(/logo.gif);
+  }
+}
+
+@mixin config-icon-colors($prefix, $colors...) {
+  @each $i in $colors {
+    .#{$prefix}#{nth($i, 1)} {
+      color: nth($i, 2);
+    }
+  }
+}
+@include config-icon-colors(
+  "icon-",
+  "save" green,
+  "cancel" gray,
+  "delete" red,
+  "wait" blue
+);
+
+@function my-calculation-function($some-number, $anotherNumber, $BigNumber) {
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function myCalculationFunction($some-number, $anotherNumber, $BigNumber) {
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function AnotherMyCalculationFunction(
+  $some-number,
+  $anotherNumber,
+  $BigNumber: 100px
+) {
+  @return $some-number + $anotherNumber + $BigNumber;
+}
+@function border($borders...) {
+  @return $borders;
+}
+.foo {
+  padding: my-calculation-function(10px, 5px, 100px);
+  margin: myCalculationFunction(
+    $some-number: 10px,
+    $anotherNumber: 5px,
+    $BigNumber: 100px
+  );
+  width: AnotherMyCalculationFunction(10px, 5px);
+  border: border(25px, 35px);
+}
+
+$sm-only: "(min-width: 768px) and (max-width: 991px)";
+$lg-and-up: "(min-width: 1200px)";
+
+@media screen and #{$sm-only, $lg-and-up} {
+  color: #000;
+}
+
+.class-#{$var} {
+  #{$var}: #7b3d66;
+  #{$attr}-color: blue;
+  #{$prop}-#{$side}: $value;
+  background-#{$var}: #7b3d66;
+  animation-name: #{var};
+  line-height: #{strip-unit($line-height)}em;
+  height: 1#{$var};
+  width: calc(100% - #{$sidebar-width});
+  max-width: calc(#{$m * 100}vw #{$sign} #{$b});
+  font: #{$font-size}/#{$line-height};
+  content: "I have #{8 + 2} books on SASS!";
+  border: #{$var} #{$var} #{$var};
+  filter: #{$var}#{$var}#{$var};
+  prop: #{$var + $var} #{$var + $var} #{$var + $var};
+  prop2: #{$var + $var} #{$var + $var} #{$var + $var};
+  prop3: #{$var + $var} #{$var + $var} #{$var + $var};
+  prop4: -#{$loader-icon-duration};
+  prop5: +#{$loader-icon-duration};
+  prop6: calc(-#{$loader-icon-duration} + 10);
+  prop7: calc(10 + -#{$loader-icon-duration});
+}
+
+/* Framework version for the generated CSS is #{$version}. */
+
+.selector {
+  foo: bar;
+  #{$active} {
+    baz: qux;
+  }
+}
+
+.el:nth-of-type(#{$i}) {
+}
+
+@media #{$value} {
+}
+
+$foundation-dir: "foundation";
+@import url("#{$foundation-dir}/components/grid");
+@import url(#{$foundation-dir}/components/grid);
+@import url($foundation-dir/components/grid);
+@import url($foundation-dir + "/components/grid");
+
+@function get-font-family($family) {
+  @return $family;
+}
+@import url("//fonts.googleapis.com/css?family=#{ get-font-family('Roboto') }:100,300,500,700,900&display=swap");
+@import url(//fonts.googleapis.com/css?family=#{ get-font-family('Roboto') }:100,300,500,700,900&display=swap);
+
+@keyframes loader {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  #{50% - $loader-icon-duration} {
+    transform: translate3d(0, $bounce-height, 0);
+  }
+
+  50% {
+    transform: translate3d(0, $bounce-height, 0)
+      scale(
+        $loader-bounce-horizontal-expansion,
+        $loader-bounce-vertical-compression
+      );
+  }
+}
+
+$icons: wifi "\\600", wifi-hotspot "\\601", weather "\\602";
+
+@each $icon in $icons {
+  .icon-#{nth($icon, 1)},
+  %icon-#{nth($icon, 1)} {
+    content: "#{nth($icon, 2)}";
+  }
+}
+
+.foo {
+  prop: -($grid-gutter-width / 2);
+  prop1: -($grid-gutter-width / 2);
+  prop2: -$grid-gutter-width / 2;
+  prop3: +($grid-gutter-width / 2);
+  prop4: 10px/8px; /* Plain CSS, no division */
+  prop5: $width / 2; /* Uses a variable, does division */
+  prop6: round(1.5) / 2; /* Uses a function, does division */
+  prop7: (500px / 2); /* Uses parentheses, does division */
+  prop8: 5px + 8px / 2px; //* Uses +, does division */
+  prop9: (italic bold 10px/8px); /* In a list, parentheses don't count */
+  prop10: #010203 + #040506;
+  prop11: #010203 * 2;
+  prop12: rgba(255, 0, 0, 0.75) + rgba(0, 255, 0, 0.75);
+  prop13: progid:DXImageTransform.Microsoft.gradient(enabled='false', startColorstr='#{ie-hex-str($green)}', endColorstr='#{ie-hex-str($translucent-red)}');
+  prop14: e + -resize;
+  prop15: sans- + "serif";
+  prop16: 1em + (2em * 3);
+  prop17: rotate(-2deg);
+  prop18: rotate(-2deg);
+  _: _;
+  prop19: 10 - ($grid-gutter-width / 2);
+  prop20: 10 + -($grid-gutter-width / 2);
+  prop21: 10 + -($grid-gutter-width / 2);
+  prop22: -($grid-gutter-width / 2);
+  prop23: -($grid-gutter-width / 2);
+  prop24: -$grid-gutter-width;
+  prop25: +($grid-gutter-width / 2);
+  prop26: +($grid-gutter-width / 2);
+  prop27: +$grid-gutter-width;
+  prop28: --($grid-gutter-width / 2);
+  prop28: ++($grid-gutter-width / 2);
+  prop29: rotate(-2deg);
+}
+
+$last: nth($juggler, length($juggler));
+$x: if($last%2==0, 1/2, 3/2);
+$new: pow($last, $x);
+$sequence: 1, 1 1, 2 1, 1 2 1 1, 1 1 1 2 2 1;
+$new-entry: ();
+$new-entry: ();
+$new-entry: ();
+$new-entry: ();
+
+body:before {
+  content: quote(to-string(fibonacci(100), " \\A "));
+  white-space: pre-wrap;
+}
+
+width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+
+a:nth-child(#{$numPerRow}n) {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels / $context}em;
+}
+
+.navigation {
+  @extend %updated-#{$flag};
+  @extend .selected-#{$flag};
+  @extend %#{$item};
+}
+
+.icon-#{$icon-name} {
+  background-image: "/images/#{$icon-name}.svg";
+}
+
+$extmods: (
+  eot: "?",
+  svg: "#" + str-replace($name, " ", "_"),
+);
+
+@mixin keyframes {
+  @-moz-keyframes {
+    @content;
+  }
+  @-webkit-keyframes {
+    @content;
+  }
+}
+
+@function gcd($a, $b) {
+  // From: http://rosettacode.org/wiki/Greatest_common_divisor#JavaScript
+  @if ($b != 0) {
+    @return gcd($b, $a % $b);
+  } @else {
+    @return abs($a);
+  }
+}
+
+$colors: (
+  primary: (
+    base: #00abc9,
+    light: #daf1f6,
+    dark: #12799a,
+  ),
+  secondary: (
+    base: #424d55,
+    light: #ccc,
+    lightest: #efefef,
+    dark: #404247,
+  ),
+  success: (
+    base: #bbd33e,
+    light: #eaf0c6,
+  ),
+);
+
+@function color($color, $tone: "base") {
+  @return map-get(map-get($colors, $color), $tone);
+}
+
+@media only screen and (max-width: 767px) {
+  @include widths(2 3 4, \\@small);
+}
+
+$widths-breakpoint-separator: \\@small;
+
+a {
+  transition-timing-function: func1(
+    func2(
+      func3(
+        "veryVeryVeryVeryVeryLongValue",
+        "veryVeryVeryVeryVeryLongValue",
+        "veryVeryVeryVeryVeryLongValue",
+        "veryVeryVeryVeryVeryLongValue"
+      ),
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue"
+    ),
+    "veryVeryVeryVeryVeryLongValue",
+    "veryVeryVeryVeryVeryLongValue",
+    func3(
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue",
+      "veryVeryVeryVeryVeryLongValue"
+    )
+  );
+}
+
+$empty-map: ();
+$empty-nested-map: (
+  nested-key: (
+    empty-key: (
+      color: red,
+    ),
+  ),
+  empty-key: (),
+  empty-key: (),
+  empty-key: (),
+);
+
+$o-grid-default-config: (
+  columns: 12,
+  gutter: 10px,
+  min-width: 240px,
+  max-width: 1330px,
+  layouts: (
+    S: 370px,
+    M: 610px,
+    L: 850px,
+    XL: 1090px,
+  ),
+  fluid: true,
+  debug: false,
+  fixed-layout: M,
+  enhanced-experience: true,
+);
+
+$a: ();
+$b: unquote("");
+$c: null;
+$d: (null);
+
+$threads-properties: map-merge(
+  $threads-properties,
+  (
+    $border-label: (),
+  )
+);
+$o-grid-default-config: (
+  layouts: (
+    S: 370px,
+  ),
+);
+
+$map: (
+  key: (
+    value,
+  ),
+  other-key: (
+    key: other-other-value,
+  ),
+);
+
+a {
+  content: "#{"0.5"}";
+  content: my-fn("_");
+  content: "#{my-fn("_")}";
+  content: my-fn("-");
+  content: "#{my-fn("-")}";
+  content: my-fn("-a");
+  content: "#{my-fn("-a")}";
+  content: my-fn("a-");
+  content: "#{my-fn("a-")}";
+  content: my-fn("foo");
+  content: "#{my-fn("foo")}";
+  content: 1 "#{my-fn("foo")}" 2;
+  content: foo "#{my-fn("foo")}" bar;
+  content: "foo #{$description} bar";
+
+  content: "#{my-fn("foo","bar")}";
+  content: "#{my-fn( "foo" , "bar" )}";
+  content: "#{my-fn(  "foo"  ,  "bar"  )}";
+
+  content: '#{my-fn("foo")}';
+  content: "#{my-fn("foo")}";
+  content: "#{my-fn('foo')}";
+  content: "#{my-fn("foo")}";
+}
+
+@mixin theme($css-property, $css-value, $theme-classes: t) {
+  @each $selector in & {
+    @each $class in $theme-classes {
+      @each $theme, $theme-properties in c(themes) {
+        $value: $css-value;
+
+        @each $theme-name, $theme-value in $theme-properties {
+          $rgba-value: "rgba(#{red($theme-value)}, #{green($theme-value)}, #{blue($theme-value)}";
+          $value: str-replace($value, "rgba(\${#{$theme-name}}", $rgba-value);
+          $value: str-replace($value, "\${#{$theme-name}}", $theme-value);
+        }
+
+        @at-root .#{$class}-#{join($theme, $selector)} {
+          #{$css-property}: unquote($value);
+        }
+      }
+    }
+  }
+}
+
+.foo,
+// Comment
+.bar {
+  // Comment
+  color: red; // Comment
+}
+
+$my-list: "foo",
+  // Comment
+  "bar"; // Comment
+
+$my-map: (
+  "foo": 1,
+  // Comment
+  "bar": 2,
+  // Comment
+  "buz": calc(1 + 2),
+  // Buz
+  "baz": 4,
+  // Baz
+);
+
+[href]:hover &, // Comment
+[href]:focus &, // Comment
+[href]:active & {
+  .tooltip {
+    opacity: 1;
+  }
+}
+
+@import // Comment
+  "mixins",
+  "variables",
+  // Comment
+  "reset",
+  "scaffolding", "type",
+  // Comment
+  "bar",
+  "tabs";
+
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+}
+
+.container {
+  @include placeholder {
+    color: $color-silver;
+  }
+}
+
+.something {
+  grid-template-columns: 1 2fr (3 + 4);
+}
+
+// Ignore escape "\\" in SCSS mixins
+@mixin margin-bottom-1\\/3 {
+  margin-bottom: 0.8rem;
+}
+
+label {
+  @include margin-bottom-1\\/3;
+}
+
+@function someVeryLongFunctionNameForJustAPow($base, $exponent) {
+  $result: 1;
+  @for $_ from 1 through $exponent {
+    $result: $result * $base;
+  }
+  @return $result;
+}
+
+@function pow($base, $exponent) {
+  @return someVeryLongFunctionNameForJustAPow($base, $exponent);
+}
+
+.foo {
+  width: someVeryLongFunctionNameForJustAPow(
+    2,
+    someVeryLongFunctionNameForJustAPow(
+      2,
+      someVeryLongFunctionNameForJustAPow(
+        2,
+        // This next pow is really powerful
+        someVeryLongFunctionNameForJustAPow(
+            2,
+            someVeryLongFunctionNameForJustAPow(
+              2,
+              someVeryLongFunctionNameForJustAPow(
+                2,
+                someVeryLongFunctionNameForJustAPow(
+                  2,
+                  someVeryLongFunctionNameForJustAPow(
+                    2,
+                    someVeryLongFunctionNameForJustAPow(
+                      2,
+                      someVeryLongFunctionNameForJustAPow(
+                        2,
+                        someVeryLongFunctionNameForJustAPow(
+                          2,
+                          someVeryLongFunctionNameForJustAPow(2, 2)
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+      )
+    )
+  );
+}
+
+.bar {
+  width: pow(
+    2,
+    pow(
+      2,
+      pow(
+        2,
+        // This next pow is really powerful
+        pow(
+            2,
+            pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, pow(2, 2))))))))
+          )
+      )
+    )
+  );
+}
+
+================================================================================
+`;
+
+exports[`string-concatanation.scss - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+a {
+  background-image: url($test-path + $test-path);
+  background-image: url($test-path + 'static/test.jpg');
+  background-image: url('../test/' + $test-path);
+  background-image: url('../test/' + 'static/test.jpg');
+  background-image: url($test-path+$test-path);
+}
+
+=====================================output=====================================
+a {
+  background-image: url($test-path + $test-path);
+  background-image: url($test-path + "static/test.jpg");
+  background-image: url("../test/" + $test-path);
+  background-image: url("../test/" + "static/test.jpg");
+  background-image: url($test-path + $test-path);
+}
+
+================================================================================
+`;
+
+exports[`string-concatanation.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+a {
+  background-image: url($test-path + $test-path);
+  background-image: url($test-path + 'static/test.jpg');
+  background-image: url('../test/' + $test-path);
+  background-image: url('../test/' + 'static/test.jpg');
+  background-image: url($test-path+$test-path);
+}
+
+=====================================output=====================================
+a {
+  background-image: url($test-path + $test-path);
+  background-image: url($test-path + "static/test.jpg");
+  background-image: url("../test/" + $test-path);
+  background-image: url("../test/" + "static/test.jpg");
+  background-image: url($test-path + $test-path);
+}
+
+================================================================================
+`;

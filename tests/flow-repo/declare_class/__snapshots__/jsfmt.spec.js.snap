@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`declare_class.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class C {
+    static x: number;
+    static foo(x: number): void;
+
+    constructor(x: string): void;
+}
+
+C.x = "";
+C.foo("");
+
+(C.name: string);
+(C.name: number); // error, it's a string
+
+declare class D extends C { }
+new D(123); // error, number ~> string
+
+=====================================output=====================================
+declare class C {
+  static x: number;
+  static foo(x: number): void;
+
+  constructor(x: string): void;
+}
+
+C.x = "";
+C.foo("");
+
+(C.name: string);
+(C.name: number); // error, it's a string
+
+declare class D extends C {}
+new D(123); // error, number ~> string
+
+================================================================================
+`;

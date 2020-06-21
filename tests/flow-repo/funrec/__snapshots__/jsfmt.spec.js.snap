@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`funrec.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function bar(x) { return x; }
+function foo() {
+    return function bound() {
+        return bar(bound);
+    };
+}
+
+=====================================output=====================================
+function bar(x) {
+  return x;
+}
+function foo() {
+  return function bound() {
+    return bar(bound);
+  };
+}
+
+================================================================================
+`;

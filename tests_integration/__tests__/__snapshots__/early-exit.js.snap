@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`node version error (stderr) 1`] = `
+"prettier requires at least version 10.13.0 of Node, please upgrade
+"
+`;
+
+exports[`node version error (stdout) 1`] = `""`;
+
+exports[`node version error (write) 1`] = `Array []`;
+
 exports[`show detailed usage with --help l (alias) (stderr) 1`] = `""`;
 
 exports[`show detailed usage with --help l (alias) (stdout) 1`] = `
@@ -44,7 +53,7 @@ exports[`show detailed usage with plugin options (manual resolution) (write) 1`]
 exports[`show usage with --help (stderr) 1`] = `""`;
 
 exports[`show usage with --help (stdout) 1`] = `
-"Usage: prettier [options] [file/glob ...]
+"Usage: prettier [options] [file/dir/glob ...]
 
 By default, output is written to stdout.
 Stdin is read if it is piped to Prettier and no files are given.
@@ -62,6 +71,9 @@ Format options:
                            Include parentheses around a sole arrow function parameter.
                            Defaults to always.
   --no-bracket-spacing     Do not print spaces between brackets.
+  --embedded-language-formatting <auto|off>
+                           Control how Prettier formats quoted code embedded in the file.
+                           Defaults to auto.
   --end-of-line <lf|crlf|cr|auto>
                            Which end of line characters to apply.
                            Defaults to lf.
@@ -147,7 +159,6 @@ Other options:
   --require-pragma         Require either '@prettier' or '@format' to be present in the file's first docblock comment
                            in order for it to be formatted.
                            Defaults to false.
-  --stdin                  Force reading input from stdin.
   --stdin-filepath <path>  Path to the file to pretend that stdin comes from.
   --support-info           Print support information as JSON.
   -v, --version            Print Prettier version.
@@ -201,7 +212,7 @@ exports[`show warning with --help not-found (typo) (write) 1`] = `Array []`;
 exports[`throw error and show usage with something unexpected (stderr) 1`] = `""`;
 
 exports[`throw error and show usage with something unexpected (stdout) 1`] = `
-"Usage: prettier [options] [file/glob ...]
+"Usage: prettier [options] [file/dir/glob ...]
 
 By default, output is written to stdout.
 Stdin is read if it is piped to Prettier and no files are given.
@@ -219,6 +230,9 @@ Format options:
                            Include parentheses around a sole arrow function parameter.
                            Defaults to always.
   --no-bracket-spacing     Do not print spaces between brackets.
+  --embedded-language-formatting <auto|off>
+                           Control how Prettier formats quoted code embedded in the file.
+                           Defaults to auto.
   --end-of-line <lf|crlf|cr|auto>
                            Which end of line characters to apply.
                            Defaults to lf.
@@ -304,7 +318,6 @@ Other options:
   --require-pragma         Require either '@prettier' or '@format' to be present in the file's first docblock comment
                            in order for it to be formatted.
                            Defaults to false.
-  --stdin                  Force reading input from stdin.
   --stdin-filepath <path>  Path to the file to pretend that stdin comes from.
   --support-info           Print support information as JSON.
   -v, --version            Print Prettier version.

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cli.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var f = require('./lib');
+
+var y:number = f(0);
+
+=====================================output=====================================
+/* @flow */
+
+var f = require("./lib");
+
+var y: number = f(0);
+
+================================================================================
+`;
+
+exports[`cli2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var f = require('./lib');
+
+f("...");
+
+=====================================output=====================================
+/* @flow */
+
+var f = require("./lib");
+
+f("...");
+
+================================================================================
+`;
+
+exports[`lib.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function g(x:string) { }
+
+//function f(x) { g(x); return x; }
+//function f(x:number) { g(x); return x; }
+function f(x:number):number { g(x); return x; }
+
+module.exports = f;
+
+=====================================output=====================================
+/* @flow */
+
+function g(x: string) {}
+
+//function f(x) { g(x); return x; }
+//function f(x:number) { g(x); return x; }
+function f(x: number): number {
+  g(x);
+  return x;
+}
+
+module.exports = f;
+
+================================================================================
+`;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`callAndConstructSignatureLong.ts 1`] = `
+exports[`callAndConstructSignatureLong.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -38,7 +38,7 @@ interface Interface {
 ================================================================================
 `;
 
-exports[`functionTypeLong.ts 1`] = `
+exports[`functionTypeLong.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -68,7 +68,7 @@ type AwkwardlyLongFunctionTypeDefinition = <
 ================================================================================
 `;
 
-exports[`interfaceParamsLong.ts 1`] = `
+exports[`interfaceParamsLong.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -90,7 +90,7 @@ interface ReallyReallyLongName<
 ================================================================================
 `;
 
-exports[`typeParametersLong.ts 1`] = `
+exports[`typeParametersLong.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -109,7 +109,7 @@ type ReallyReallyReallyLongName<
 ================================================================================
 `;
 
-exports[`variables.ts 1`] = `
+exports[`variables.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

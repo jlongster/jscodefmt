@@ -1,7 +1,7 @@
 "use strict";
 
 function hasPragma(text) {
-  return /^\s*#[^\n\S]*@(format|prettier)\s*(\n|$)/.test(text);
+  return /^\s*#[^\S\n]*@(format|prettier)\s*(\n|$)/.test(text);
 }
 
 function insertPragma(text) {
@@ -10,5 +10,5 @@ function insertPragma(text) {
 
 module.exports = {
   hasPragma,
-  insertPragma
+  insertPragma,
 };

@@ -1,0 +1,495 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`client_optional.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var qux = require('./optional');
+
+qux(0);
+
+=====================================output=====================================
+var qux = require("./optional");
+
+qux(0);
+
+================================================================================
+`;
+
+exports[`default.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function f<T>(foo, bar = foo): [T, T] {
+  return [foo, bar];
+}
+
+=====================================output=====================================
+function f<T>(foo, bar = foo): [T, T] {
+  return [foo, bar];
+}
+
+================================================================================
+`;
+
+exports[`generic.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function x<T>(x: T = 0) {}
+
+class C {
+  x<T>(x: T = 0) {}
+}
+
+=====================================output=====================================
+function x<T>(x: T = 0) {}
+
+class C {
+  x<T>(x: T = 0) {}
+}
+
+================================================================================
+`;
+
+exports[`loop.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* Regression test. Improper handling of OptionalT repositioning can cause
+ * reasons to grow "optional x" -> "optional optional x" -> "optional optional
+ * optional x", which thwarts reason-based caches that prevent nontermination.
+ */
+function f<T:*>(x:T,y?:T) { x = y }
+
+=====================================output=====================================
+/* Regression test. Improper handling of OptionalT repositioning can cause
+ * reasons to grow "optional x" -> "optional optional x" -> "optional optional
+ * optional x", which thwarts reason-based caches that prevent nontermination.
+ */
+function f<T: *>(x: T, y?: T) {
+  x = y;
+}
+
+================================================================================
+`;
+
+exports[`maybe.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo(x?: string): ?string {
+    return x;
+}
+
+=====================================output=====================================
+function foo(x?: string): ?string {
+  return x;
+}
+
+================================================================================
+`;
+
+exports[`nullable.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function optionalNullable1(x: {y?: ?number}) {
+  if (x.y !== null && x.y !== undefined) {
+    x.y++;
+  }
+}
+
+function optionalNullable2(x: {y?: ?number}) {
+  if (x.y !== undefined && x.y !== null) {
+    x.y++;
+  }
+}
+
+function optionalNullable3(x: {y?: ?number}) {
+  if (!(x.y !== null && x.y !== undefined)) {
+    x.y++; // should error
+  }
+}
+
+function optionalNullable4(x: {y?: ?number}) {
+  if (!(x.y !== undefined && x.y !== null)) {
+    x.y++; // should error
+  }
+}
+
+function optionalNullable5(x: {y?: ?number}) {
+  if (x.y === null || x.y === undefined) {
+    x.y++; // should error
+  }
+}
+
+function optionalNullable6(x: {y?: ?number}) {
+  if (x.y === undefined || x.y === null) {
+    x.y++; // should error
+  }
+}
+
+function optionalNullable7(x: {y?: ?number}) {
+  if (!(x.y === null || x.y === undefined)) {
+    x.y++;
+  }
+}
+
+function optionalNullable8(x: {y?: ?number}) {
+  if (!(x.y === undefined || x.y === null)) {
+    x.y++;
+  }
+}
+
+=====================================output=====================================
+/* @flow */
+
+function optionalNullable1(x: { y?: ?number }) {
+  if (x.y !== null && x.y !== undefined) {
+    x.y++;
+  }
+}
+
+function optionalNullable2(x: { y?: ?number }) {
+  if (x.y !== undefined && x.y !== null) {
+    x.y++;
+  }
+}
+
+function optionalNullable3(x: { y?: ?number }) {
+  if (!(x.y !== null && x.y !== undefined)) {
+    x.y++; // should error
+  }
+}
+
+function optionalNullable4(x: { y?: ?number }) {
+  if (!(x.y !== undefined && x.y !== null)) {
+    x.y++; // should error
+  }
+}
+
+function optionalNullable5(x: { y?: ?number }) {
+  if (x.y === null || x.y === undefined) {
+    x.y++; // should error
+  }
+}
+
+function optionalNullable6(x: { y?: ?number }) {
+  if (x.y === undefined || x.y === null) {
+    x.y++; // should error
+  }
+}
+
+function optionalNullable7(x: { y?: ?number }) {
+  if (!(x.y === null || x.y === undefined)) {
+    x.y++;
+  }
+}
+
+function optionalNullable8(x: { y?: ?number }) {
+  if (!(x.y === undefined || x.y === null)) {
+    x.y++;
+  }
+}
+
+================================================================================
+`;
+
+exports[`optional.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function bar(x?,y?) { x * 0; }
+bar(0);
+
+var foo:(x?:number)=>void = bar;
+foo();
+
+function qux(x="hello",...y):string { foo(x); return y[0]; }
+
+qux(0,0); // Error, number ~> string
+qux(0,...[42, ""]); // Error, number ~> string
+qux(0,...["",42]); // No error
+
+module.exports = qux;
+
+=====================================output=====================================
+function bar(x?, y?) {
+  x * 0;
+}
+bar(0);
+
+var foo: (x?: number) => void = bar;
+foo();
+
+function qux(x = "hello", ...y): string {
+  foo(x);
+  return y[0];
+}
+
+qux(0, 0); // Error, number ~> string
+qux(0, ...[42, ""]); // Error, number ~> string
+qux(0, ...["", 42]); // No error
+
+module.exports = qux;
+
+================================================================================
+`;
+
+exports[`optional_param.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+function foo(x?: string): string {
+    if (x == null) { return 'foo'; }
+    return x;
+}
+
+function bar(obj: {x?: string}): string {
+    if (obj.x == null) { return 'foo'; }
+    return obj.x;
+}
+
+function baz(bar?) {
+    if (!bar) { return 1; }
+    return bar.duck
+}
+
+function testOptionalNullable(x?: ?string): string {
+    if (x == null) { return 'foo'; }
+    return x;
+}
+
+function testOptionalNullableDefault(x?: ?string = "hi"): string {
+    if (x == null) { return 'foo'; }
+    return x;
+}
+
+function testOptionalNullableProperty(obj: {x?: ?string}): string {
+    if (obj.x == null) { return 'foo'; }
+    return obj.x;
+}
+
+function testOptionalNullableFlowingToNullable(x?: ?string): ?string {
+  var f = function(y: ?string) {};
+  f(x);
+}
+
+=====================================output=====================================
+/* @flow */
+function foo(x?: string): string {
+  if (x == null) {
+    return "foo";
+  }
+  return x;
+}
+
+function bar(obj: { x?: string }): string {
+  if (obj.x == null) {
+    return "foo";
+  }
+  return obj.x;
+}
+
+function baz(bar?) {
+  if (!bar) {
+    return 1;
+  }
+  return bar.duck;
+}
+
+function testOptionalNullable(x?: ?string): string {
+  if (x == null) {
+    return "foo";
+  }
+  return x;
+}
+
+function testOptionalNullableDefault(x?: ?string = "hi"): string {
+  if (x == null) {
+    return "foo";
+  }
+  return x;
+}
+
+function testOptionalNullableProperty(obj: { x?: ?string }): string {
+  if (obj.x == null) {
+    return "foo";
+  }
+  return obj.x;
+}
+
+function testOptionalNullableFlowingToNullable(x?: ?string): ?string {
+  var f = function (y: ?string) {};
+  f(x);
+}
+
+================================================================================
+`;
+
+exports[`optional_param2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class I<V> {
+    map<M>(
+        mapper: (value?: V) => M
+    ): I<M>;
+}
+var i:I<number> = new I();
+var j:I<number> = i.map(id => id);
+
+=====================================output=====================================
+declare class I<V> {
+  map<M>(mapper: (value?: V) => M): I<M>;
+}
+var i: I<number> = new I();
+var j: I<number> = i.map((id) => id);
+
+================================================================================
+`;
+
+exports[`optional_param3.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo(x?: number) {}
+foo(undefined); // ok
+
+function bar(x = "bar"): string {
+  return x;
+}
+bar(undefined); // ok
+
+=====================================output=====================================
+function foo(x?: number) {}
+foo(undefined); // ok
+
+function bar(x = "bar"): string {
+  return x;
+}
+bar(undefined); // ok
+
+================================================================================
+`;
+
+exports[`optional_param4.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function foo(x?: number, ...y: Array<string>): [?number, Array<string>] {
+  return [x, y];
+}
+
+foo(); // OK
+foo(123), // OK
+foo(123, 'hello'); // OK
+
+
+foo(true); // ERROR boolean ~> number
+foo(123, true); // ERROR boolean ~> string
+
+=====================================output=====================================
+/* @flow */
+
+function foo(x?: number, ...y: Array<string>): [?number, Array<string>] {
+  return [x, y];
+}
+
+foo(); // OK
+foo(123), // OK
+  foo(123, "hello"); // OK
+
+foo(true); // ERROR boolean ~> number
+foo(123, true); // ERROR boolean ~> string
+
+================================================================================
+`;
+
+exports[`undefined.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var x;
+
+function foo(bar? = undefined) {
+    x = bar;
+}
+
+function bar() {
+    return x.duck;
+}
+
+=====================================output=====================================
+var x;
+
+function foo(bar? = undefined) {
+  x = bar;
+}
+
+function bar() {
+  return x.duck;
+}
+
+================================================================================
+`;
+
+exports[`undefined2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var x;
+
+function foo(bar?) {
+    x = bar;
+}
+
+function bar() {
+    return x.duck;
+}
+
+=====================================output=====================================
+var x;
+
+function foo(bar?) {
+  x = bar;
+}
+
+function bar() {
+  return x.duck;
+}
+
+================================================================================
+`;

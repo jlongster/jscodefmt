@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class_static.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class B {
+    static foo(): string { return ""; }
+}
+
+class C extends B {
+    static bar(): string { return ""; }
+}
+
+var x: number = C.bar();
+var y: number = C.foo();
+
+=====================================output=====================================
+class B {
+  static foo(): string {
+    return "";
+  }
+}
+
+class C extends B {
+  static bar(): string {
+    return "";
+  }
+}
+
+var x: number = C.bar();
+var y: number = C.foo();
+
+================================================================================
+`;

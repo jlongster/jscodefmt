@@ -1,0 +1,17 @@
+<script type="module">
+import prettier from "prettier/standalone";
+import parserGraphql from "prettier/parser-graphql";
+
+prettier.format("query { }", {
+                      parser: "graphql",
+  plugins: [
+parserGraphql],
+});
+</script>
+
+<script type="module">
+async function foo() {
+  let x=10;while(x-->0)console.log(x)
+  await(import('mod'))
+}
+</script>

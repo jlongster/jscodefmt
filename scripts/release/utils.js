@@ -23,11 +23,11 @@ function logPromise(name, promise) {
   process.stdout.write(fitTerminal(name));
 
   return promise
-    .then(result => {
+    .then((result) => {
       process.stdout.write(`${OK}\n`);
       return result;
     })
-    .catch(err => {
+    .catch((err) => {
       process.stdout.write(`${FAIL}\n`);
       throw err;
     });
@@ -37,7 +37,7 @@ function runYarn(script) {
   if (typeof script === "string") {
     script = [script];
   }
-  return execa("yarn", ["--silent"].concat(script)).catch(error => {
+  return execa("yarn", ["--silent"].concat(script)).catch((error) => {
     throw new Error(`\`yarn ${script}\` failed\n${error.stdout}`);
   });
 }
@@ -81,5 +81,5 @@ module.exports = {
   processFile,
   readJson,
   writeJson,
-  waitForEnter
+  waitForEnter,
 };

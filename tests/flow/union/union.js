@@ -1,21 +1,26 @@
-function bar(x: Document | string): void { }
-bar(0);
-
-class C { }
-class D { }
-function CD(b) {
-  var E = b? C: D;
-  var c:C = new E(); // error, since E could be D, and D is not a subtype of C
-  function qux(e: E) { } // this annotation is an error: is it C, or is it D?
-  function qux2(e: C | D) { } // OK
-  qux2(new C);
+interface RelayProps {
+  articles: Array<{
+    __id: string,
+  } | null> | null | void | 1,
 }
 
-declare class F {
-    foo(x: number):void;
-    foo(x: string):void;
+interface RelayProps2 {
+  articles: Array<{
+    __id: string,
+  } | null> | null | void,
 }
-function corge(b) {
-    var x = b ? "" : 0;
-    new F().foo(x);
-}
+
+export function aPrettyLongFunction(aRatherLongParamName: string | null): string {}
+
+export function aPrettyLongFunctionA(aRatherLongParameterName: {} | null): string[] {}
+export function aPrettyLongFunctionB(aRatherLongParameterName: Function | null): string[] {}
+export interface MyInterface {}
+export function aPrettyLongFunctionC(aRatherLongParameterName: MyInterface | null): string[] {}
+export type MyType = MyInterface
+export function aPrettyLongFunctionD(aRatherLongParameterName: MyType | null): string[] {}
+
+export function aShortFn(aShortParmName: MyType | null): string[] {}
+
+export function aPrettyLongFunctionE(aRatherLongParameterName: Array<{
+  __id: string,
+} | null> | null | void): string[] {}

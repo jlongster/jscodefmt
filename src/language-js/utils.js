@@ -6,7 +6,7 @@ const {
   hasNewlineInRange,
   hasIgnoreComment,
   hasNodeIgnoreComment,
-  skipWhitespace
+  skipWhitespace,
 } = require("../common/util");
 const isIdentifierName = require("esutils").keyword.isIdentifierNameES5;
 const handleComments = require("./comments");
@@ -47,12 +47,12 @@ function hasNode(node, fn) {
     return false;
   }
   if (Array.isArray(node)) {
-    return node.some(value => hasNode(value, fn));
+    return node.some((value) => hasNode(value, fn));
   }
   const result = fn(node);
   return typeof result === "boolean"
     ? result
-    : Object.keys(node).some(key => hasNode(node[key], fn));
+    : Object.keys(node).some((key) => hasNode(node[key], fn));
 }
 
 function hasNakedLeftSide(node) {
@@ -123,7 +123,7 @@ const exportDeclarationTypes = new Set([
   "ExportDefaultSpecifier",
   "DeclareExportDeclaration",
   "ExportNamedDeclaration",
-  "ExportAllDeclaration"
+  "ExportAllDeclaration",
 ]);
 function isExportDeclaration(node) {
   return node && exportDeclarationTypes.has(node.type);
@@ -145,11 +145,30 @@ function isLiteral(node) {
     node.type === "Literal" ||
     node.type === "NullLiteral" ||
     node.type === "NumericLiteral" ||
+    node.type === "BigIntLiteral" ||
     node.type === "RegExpLiteral" ||
     node.type === "StringLiteral" ||
     node.type === "TemplateLiteral" ||
     node.type === "TSTypeLiteral" ||
     node.type === "JSXText"
+  );
+}
+
+function isLiteralLikeValue(node) {
+  return (
+    isLiteral(node) ||
+    (node.type === "Identifier" && /^[A-Z_]+$/.test(node.name)) ||
+    (node.type === "ArrayExpression" &&
+      node.elements.every(
+        (element) => element !== null && isLiteralLikeValue(element)
+      )) ||
+    (node.type === "ObjectExpression" &&
+      node.properties.every(
+        (property) =>
+          !property.computed &&
+          property.value &&
+          isLiteralLikeValue(property.value)
+      ))
   );
 }
 
@@ -285,12 +304,13 @@ function isTypeAnnotationAFunction(node, options) {
   );
 }
 
+const binaryishNodeTypes = new Set([
+  "BinaryExpression",
+  "LogicalExpression",
+  "NGPipeExpression",
+]);
 function isBinaryish(node) {
-  return (
-    node.type === "BinaryExpression" ||
-    node.type === "LogicalExpression" ||
-    node.type === "NGPipeExpression"
-  );
+  return binaryishNodeTypes.has(node.type);
 }
 
 function isMemberish(node) {
@@ -301,24 +321,23 @@ function isMemberish(node) {
   );
 }
 
+const flowTypeAnnotations = new Set([
+  "AnyTypeAnnotation",
+  "NullLiteralTypeAnnotation",
+  "GenericTypeAnnotation",
+  "ThisTypeAnnotation",
+  "NumberTypeAnnotation",
+  "VoidTypeAnnotation",
+  "EmptyTypeAnnotation",
+  "MixedTypeAnnotation",
+  "BooleanTypeAnnotation",
+  "BooleanLiteralTypeAnnotation",
+  "StringTypeAnnotation",
+]);
 function isSimpleFlowType(node) {
-  const flowTypeAnnotations = [
-    "AnyTypeAnnotation",
-    "NullLiteralTypeAnnotation",
-    "GenericTypeAnnotation",
-    "ThisTypeAnnotation",
-    "NumberTypeAnnotation",
-    "VoidTypeAnnotation",
-    "EmptyTypeAnnotation",
-    "MixedTypeAnnotation",
-    "BooleanTypeAnnotation",
-    "BooleanLiteralTypeAnnotation",
-    "StringTypeAnnotation"
-  ];
-
   return (
     node &&
-    flowTypeAnnotations.includes(node.type) &&
+    flowTypeAnnotations.has(node.type) &&
     !(node.type === "GenericTypeAnnotation" && node.typeParameters)
   );
 }
@@ -382,11 +401,20 @@ function isTestCall(n, parent) {
 }
 
 function hasLeadingComment(node) {
-  return node.comments && node.comments.some(comment => comment.leading);
+  return node.comments && node.comments.some((comment) => comment.leading);
 }
 
 function hasTrailingComment(node) {
-  return node.comments && node.comments.some(comment => comment.trailing);
+  return node.comments && node.comments.some((comment) => comment.trailing);
+}
+
+function hasTrailingLineComment(node) {
+  return (
+    node.comments &&
+    node.comments.some(
+      (comment) => comment.trailing && !handleComments.isBlockComment(comment)
+    )
+  );
 }
 
 function isCallOrOptionalCallExpression(node) {
@@ -398,13 +426,13 @@ function isCallOrOptionalCallExpression(node) {
 function hasDanglingComments(node) {
   return (
     node.comments &&
-    node.comments.some(comment => !comment.leading && !comment.trailing)
+    node.comments.some((comment) => !comment.leading && !comment.trailing)
   );
 }
 
 /** identify if an angular expression seems to have side effects */
 function hasNgSideEffect(path) {
-  return hasNode(path.getValue(), node => {
+  return hasNode(path.getValue(), (node) => {
     switch (node.type) {
       case undefined:
         return false;
@@ -432,7 +460,7 @@ function isSimpleTemplateLiteral(node) {
     return false;
   }
 
-  return node.expressions.every(expr => {
+  return node.expressions.every((expr) => {
     // Disallow comments since printDocToString can't print them here
     if (expr.comments) {
       return false;
@@ -627,7 +655,7 @@ function hasJsxIgnoreComment(path) {
     prevSibling.expression.type === "JSXEmptyExpression" &&
     prevSibling.expression.comments &&
     prevSibling.expression.comments.find(
-      comment => comment.value.trim() === "prettier-ignore"
+      (comment) => comment.value.trim() === "prettier-ignore"
     )
   );
 }
@@ -657,7 +685,7 @@ function isLastStatement(path) {
   }
   const node = path.getValue();
   const body = (parent.body || parent.consequent).filter(
-    stmt => stmt.type !== "EmptyStatement"
+    (stmt) => stmt.type !== "EmptyStatement"
   );
   return body && body[body.length - 1] === node;
 }
@@ -678,7 +706,7 @@ function hasLeadingOwnLineComment(text, node, options) {
   const res =
     node.comments &&
     node.comments.some(
-      comment => comment.leading && hasNewline(text, options.locEnd(comment))
+      (comment) => comment.leading && hasNewline(text, options.locEnd(comment))
     );
   return res;
 }
@@ -706,18 +734,53 @@ function returnArgumentHasLeadingComment(options, argument) {
   return false;
 }
 
-function isStringPropSafeToCoerceToIdentifier(node, options) {
+// Note: Quoting/unquoting numbers in TypeScript is not safe.
+//
+// let a = { 1: 1, 2: 2 }
+// let b = { '1': 1, '2': 2 }
+//
+// declare let aa: keyof typeof a;
+// declare let bb: keyof typeof b;
+//
+// aa = bb;
+// ^^
+// Type '"1" | "2"' is not assignable to type '1 | 2'.
+//   Type '"1"' is not assignable to type '1 | 2'.(2322)
+//
+// And in Flow, you get:
+//
+// const x = {
+//   0: 1
+//   ^ Non-string literal property keys not supported. [unsupported-syntax]
+// }
+//
+// Angular does not support unquoted numbers in expressions.
+//
+// So we play it safe and only unquote numbers for the "babel" parser.
+// (Vue supports unquoted numbers in expressions, but let’s keep it simple.)
+//
+// Identifiers can be unquoted in more circumstances, though.
+function isStringPropSafeToUnquote(node, options) {
   return (
-    isStringLiteral(node.key) &&
-    isIdentifierName(node.key.value) &&
     options.parser !== "json" &&
-    // With `--strictPropertyInitialization`, TS treats properties with quoted names differently than unquoted ones.
-    // See https://github.com/microsoft/TypeScript/pull/20075
-    !(
-      (options.parser === "typescript" || options.parser === "babel-ts") &&
-      node.type === "ClassProperty"
-    )
+    isStringLiteral(node.key) &&
+    rawText(node.key).slice(1, -1) === node.key.value &&
+    ((isIdentifierName(node.key.value) &&
+      // With `--strictPropertyInitialization`, TS treats properties with quoted names differently than unquoted ones.
+      // See https://github.com/microsoft/TypeScript/pull/20075
+      !(
+        (options.parser === "typescript" || options.parser === "babel-ts") &&
+        node.type === "ClassProperty"
+      )) ||
+      (isSimpleNumber(node.key.value) &&
+        String(Number(node.key.value)) === node.key.value &&
+        options.parser === "babel"))
   );
+}
+
+// Matches “simple” numbers like `123` and `2.5` but not `1_000`, `1e+100` or `0b10`.
+function isSimpleNumber(numberString) {
+  return /^(\d+|\d+\.\d+)$/.test(numberString);
 }
 
 function isJestEachTemplateLiteral(node, parentNode) {
@@ -731,7 +794,7 @@ function isJestEachTemplateLiteral(node, parentNode) {
    *
    * Ref: https://github.com/facebook/jest/pull/6102
    */
-  const jestEachTriggerRegex = /^[xf]?(describe|it|test)$/;
+  const jestEachTriggerRegex = /^[fx]?(describe|it|test)$/;
   return (
     parentNode.type === "TaggedTemplateExpression" &&
     parentNode.quasi === node &&
@@ -750,7 +813,7 @@ function isJestEachTemplateLiteral(node, parentNode) {
 }
 
 function templateLiteralHasNewLines(template) {
-  return template.quasis.some(quasi => quasi.value.raw.includes("\n"));
+  return template.quasis.some((quasi) => quasi.value.raw.includes("\n"));
 }
 
 function isTemplateOnItsOwnLine(n, text, options) {
@@ -767,7 +830,7 @@ function needsHardlineAfterDanglingComment(node) {
     return false;
   }
   const lastDanglingComment = getLast(
-    node.comments.filter(comment => !comment.leading && !comment.trailing)
+    node.comments.filter((comment) => !comment.leading && !comment.trailing)
   );
   return (
     lastDanglingComment && !handleComments.isBlockComment(lastDanglingComment)
@@ -918,10 +981,12 @@ function isLongCurriedCallExpression(path) {
  * @returns {boolean}
  */
 function isSimpleCallArgument(node, depth) {
-  if (depth >= 2) {
+  if (depth >= 3) {
     return false;
   }
-  const isChildSimple = child => isSimpleCallArgument(child, depth + 1);
+
+  const plusOne = (node) => isSimpleCallArgument(node, depth + 1);
+  const plusTwo = (node) => isSimpleCallArgument(node, depth + 2);
 
   const regexpPattern =
     (node.type === "Literal" && node.regex && node.regex.pattern) ||
@@ -933,60 +998,66 @@ function isSimpleCallArgument(node, depth) {
 
   if (
     node.type === "Literal" ||
+    node.type === "BigIntLiteral" ||
     node.type === "BooleanLiteral" ||
     node.type === "NullLiteral" ||
     node.type === "NumericLiteral" ||
+    node.type === "RegExpLiteral" ||
     node.type === "StringLiteral" ||
     node.type === "Identifier" ||
     node.type === "ThisExpression" ||
     node.type === "Super" ||
-    node.type === "BigIntLiteral" ||
     node.type === "PrivateName" ||
     node.type === "ArgumentPlaceholder" ||
-    node.type === "RegExpLiteral" ||
     node.type === "Import"
   ) {
     return true;
   }
+
   if (node.type === "TemplateLiteral") {
-    return node.expressions.every(isChildSimple);
+    return node.expressions.every(plusTwo);
   }
+
   if (node.type === "ObjectExpression") {
     return node.properties.every(
-      p => !p.computed && (p.shorthand || (p.value && isChildSimple(p.value)))
+      (p) => !p.computed && (p.shorthand || (p.value && plusTwo(p.value)))
     );
   }
+
   if (node.type === "ArrayExpression") {
-    return node.elements.every(isChildSimple);
+    return node.elements.every((x) => x === null || plusTwo(x));
   }
+
+  if (node.type === "ImportExpression") {
+    return plusTwo(node.source, depth);
+  }
+
   if (
     node.type === "CallExpression" ||
     node.type === "OptionalCallExpression" ||
     node.type === "NewExpression"
   ) {
-    return (
-      isSimpleCallArgument(node.callee, depth) &&
-      node.arguments.every(isChildSimple)
-    );
+    return plusOne(node.callee, depth) && node.arguments.every(plusTwo);
   }
+
   if (
     node.type === "MemberExpression" ||
     node.type === "OptionalMemberExpression"
   ) {
-    return (
-      isSimpleCallArgument(node.object, depth) &&
-      isSimpleCallArgument(node.property, depth)
-    );
+    return plusOne(node.object, depth) && plusOne(node.property, depth);
   }
+
   if (
     node.type === "UnaryExpression" &&
     (node.operator === "!" || node.operator === "-")
   ) {
-    return isSimpleCallArgument(node.argument, depth);
+    return plusOne(node.argument, depth);
   }
+
   if (node.type === "TSNonNullExpression") {
-    return isSimpleCallArgument(node.expression, depth);
+    return plusOne(node.expression, depth);
   }
+
   return false;
 }
 
@@ -1000,6 +1071,26 @@ function identity(x) {
 
 function isTSXFile(options) {
   return options.filepath && /\.tsx$/i.test(options.filepath);
+}
+
+function shouldPrintComma(options, level) {
+  level = level || "es5";
+
+  switch (options.trailingComma) {
+    case "all":
+      if (level === "all") {
+        return true;
+      }
+    // fallthrough
+    case "es5":
+      if (level === "es5") {
+        return true;
+      }
+    // fallthrough
+    case "none":
+    default:
+      return false;
+  }
 }
 
 module.exports = {
@@ -1021,6 +1112,7 @@ module.exports = {
   hasNode,
   hasPrettierIgnore,
   hasTrailingComment,
+  hasTrailingLineComment,
   identity,
   isBinaryish,
   isCallOrOptionalCallExpression,
@@ -1036,6 +1128,7 @@ module.exports = {
   isJSXWhitespaceExpression,
   isLastStatement,
   isLiteral,
+  isLiteralLikeValue,
   isLongCurriedCallExpression,
   isSimpleCallArgument,
   isMeaningfulJSXText,
@@ -1046,9 +1139,10 @@ module.exports = {
   isObjectType,
   isObjectTypePropertyAFunction,
   isSimpleFlowType,
+  isSimpleNumber,
   isSimpleTemplateLiteral,
   isStringLiteral,
-  isStringPropSafeToCoerceToIdentifier,
+  isStringPropSafeToUnquote,
   isTemplateOnItsOwnLine,
   isTestCall,
   isTheOnlyJSXElementInMarkdown,
@@ -1057,5 +1151,6 @@ module.exports = {
   matchJsxWhitespaceRegex,
   needsHardlineAfterDanglingComment,
   rawText,
-  returnArgumentHasLeadingComment
+  returnArgumentHasLeadingComment,
+  shouldPrintComma,
 };

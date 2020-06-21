@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dest.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+import {source} from "./test";
+
+var a: number = source.num;
+var b: string = source.num; // Error: num ~> string
+
+var c: string = source.str;
+var d: number = source.str; // Error: num ~> string
+
+=====================================output=====================================
+// @flow
+
+import { source } from "./test";
+
+var a: number = source.num;
+var b: string = source.num; // Error: num ~> string
+
+var c: string = source.str;
+var d: number = source.str; // Error: num ~> string
+
+================================================================================
+`;
+
+exports[`source.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+export var str = 'asdf';
+export var num = 42;
+
+=====================================output=====================================
+// @flow
+
+export var str = "asdf";
+export var num = 42;
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+export * as source from "./source";
+
+=====================================output=====================================
+// @flow
+
+export * as source from "./source";
+
+================================================================================
+`;

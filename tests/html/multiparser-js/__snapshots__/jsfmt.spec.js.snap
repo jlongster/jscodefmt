@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`html-with-js-script.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript">
+    hello( 'world'
+    )
+    </script>
+</head>
+<body></body>
+</html>
+
+
+=====================================output=====================================
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/javascript">
+      hello("world");
+    </script>
+  </head>
+  <body></body>
+</html>
+
+================================================================================
+`;
+
+exports[`script-tag-escaping.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script>
+  document.write(/* HTML */ \`
+    <script>
+      document.write(/* HTML */ \\\`
+        <!-- foo1 -->
+        <script>
+          document.write(/* HTML */ \\\\\\\`<!-- bar1 --> bar <!-- bar2 -->\\\\\\\`);
+        <\\\\/script>
+        <!-- foo2 -->
+      \\\`);
+    <\\/script>
+  \`);
+</script>
+
+=====================================output=====================================
+<script>
+  document.write(/* HTML */ \`
+    <script>
+      document.write(/* HTML */ \\\`
+        <!-- foo1 -->
+        <script>
+          document.write(
+            /* HTML */ \\\\\\\`<!-- bar1 -->
+              bar
+              <!-- bar2 -->\\\\\\\`
+          );
+        <\\\\/script>
+        <!-- foo2 -->
+      \\\`);
+    <\\/script>
+  \`);
+</script>
+
+================================================================================
+`;

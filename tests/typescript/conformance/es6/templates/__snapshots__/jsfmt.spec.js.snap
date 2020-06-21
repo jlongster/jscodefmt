@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`templateStringWithEmbeddedTypeAssertionOnAdditionES6.ts 1`] = `
+exports[`templateStringWithEmbeddedTypeAssertionOnAdditionES6.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

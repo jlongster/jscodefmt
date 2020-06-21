@@ -1,12 +1,10 @@
 root: true
 env:
-  es6: true
+  es2020: true
   node: true
 extends:
   - eslint:recommended
   - plugin:prettier/recommended
-parserOptions:
-  ecmaVersion: 2018
 plugins:
   - import
   - unicorn
@@ -56,7 +54,9 @@ rules:
     - error
     - never
     - exceptRange: true
+  unicorn/better-regex: error
   unicorn/new-for-builtins: error
+  unicorn/no-useless-undefined: error
   unicorn/prefer-includes: error
   unicorn/prefer-string-slice: error
 overrides:
@@ -64,6 +64,10 @@ overrides:
       - scripts/**/*.js
     rules:
       no-console: off
+  - files:
+      - scripts/build/shims/*.js
+    parserOptions:
+      sourceType: module
   - files:
       - "{tests,tests_config,tests_integration}/**/*.js"
     env:
@@ -74,3 +78,10 @@ overrides:
       strict: off
     globals:
       run_spec: false
+  - files:
+      - src/cli/**/*.js
+    rules:
+      no-restricted-modules:
+        - error
+        - patterns:
+            - ".."

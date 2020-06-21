@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`baz.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var x: number = "not a number" // Error string ~> number
+
+=====================================output=====================================
+/* @flow */
+
+var x: number = "not a number"; // Error string ~> number
+
+================================================================================
+`;

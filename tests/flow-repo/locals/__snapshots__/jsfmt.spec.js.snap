@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lex.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function switch_scope(x: mixed) {
+  let a = "";
+  let b = "";
+  switch (x) {
+    case "foo":
+      let a;
+      a = 0; // doesn't add lower bound to outer a
+      b = 0;
+  }
+  (a : string); // OK
+  (b : string); // error: number ~> string
+}
+
+function try_scope_finally() {
+  let a;
+  let b;
+  try {
+    a = "";
+    b = "";
+  } finally {
+    let a;
+    a = 0; // doesn't add lower bound to outer a
+    b = 0;
+  }
+  (a : string); // ok
+  (b : string); // error: number ~> string
+}
+
+function for_scope() {
+  let a = "";
+  let b = "";
+  for (let a;;) {
+    a = 0; // doesn't add lower bound to outer a
+    b = 0;
+  }
+  (a : string);
+  (b : string); // error: number ~> string
+}
+
+function for_in_scope(o: Object) {
+  let a = 0;
+  let b = 0;
+  for (let a in o) {
+    a = ""; // doesn't add lower bound to outer a
+    b = "";
+  }
+  (a : number);
+  (b : number); // error: string ~> number
+}
+
+function for_of_scope(xs: number[]) {
+  let a = "";
+  let b = "";
+  for (let a of xs) {
+    a = 0; // doesn't add lower bound to outer a
+    b = 0;
+  }
+  (a : string);
+  (b : string); // error: number ~> string
+}
+
+=====================================output=====================================
+function switch_scope(x: mixed) {
+  let a = "";
+  let b = "";
+  switch (x) {
+    case "foo":
+      let a;
+      a = 0; // doesn't add lower bound to outer a
+      b = 0;
+  }
+  (a: string); // OK
+  (b: string); // error: number ~> string
+}
+
+function try_scope_finally() {
+  let a;
+  let b;
+  try {
+    a = "";
+    b = "";
+  } finally {
+    let a;
+    a = 0; // doesn't add lower bound to outer a
+    b = 0;
+  }
+  (a: string); // ok
+  (b: string); // error: number ~> string
+}
+
+function for_scope() {
+  let a = "";
+  let b = "";
+  for (let a; ; ) {
+    a = 0; // doesn't add lower bound to outer a
+    b = 0;
+  }
+  (a: string);
+  (b: string); // error: number ~> string
+}
+
+function for_in_scope(o: Object) {
+  let a = 0;
+  let b = 0;
+  for (let a in o) {
+    a = ""; // doesn't add lower bound to outer a
+    b = "";
+  }
+  (a: number);
+  (b: number); // error: string ~> number
+}
+
+function for_of_scope(xs: number[]) {
+  let a = "";
+  let b = "";
+  for (let a of xs) {
+    a = 0; // doesn't add lower bound to outer a
+    b = 0;
+  }
+  (a: string);
+  (b: string); // error: number ~> string
+}
+
+================================================================================
+`;
+
+exports[`locals.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var x:string = 0;
+var x:number = 1;
+
+//declare var T: $Type<number | Array<T>>;
+
+function foo(p: bool) {}
+
+function sorry(really: bool) {
+    if (really) {
+        var x: number | string = 1337;
+    } else {
+        var x: bool = true;
+    }
+    foo(x);
+}
+
+function foo0(b: bool): number {
+  var x = 0;
+  if (b) {
+    var x = ""; // error: string ~> number
+  }
+  return x;
+}
+
+=====================================output=====================================
+var x: string = 0;
+var x: number = 1;
+
+//declare var T: $Type<number | Array<T>>;
+
+function foo(p: boolean) {}
+
+function sorry(really: boolean) {
+  if (really) {
+    var x: number | string = 1337;
+  } else {
+    var x: boolean = true;
+  }
+  foo(x);
+}
+
+function foo0(b: boolean): number {
+  var x = 0;
+  if (b) {
+    var x = ""; // error: string ~> number
+  }
+  return x;
+}
+
+================================================================================
+`;

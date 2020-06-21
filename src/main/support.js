@@ -3,38 +3,44 @@
 const semver = {
   compare: require("semver/functions/compare"),
   lt: require("semver/functions/lt"),
-  gte: require("semver/functions/gte")
+  gte: require("semver/functions/gte"),
 };
 const arrayify = require("../utils/arrayify");
 const currentVersion = require("../../package.json").version;
 const coreOptions = require("./core-options").options;
 
-function getSupportInfo(version, opts) {
-  opts = {
-    plugins: [],
-    showUnreleased: false,
-    showDeprecated: false,
-    showInternal: false,
-    ...opts
-  };
+/**
+ * Strings in `plugins` and `pluginSearchDirs` are handled by a wrapped version
+ * of this function created by `withPlugins`. Don't pass them here directly.
+ * @param {object} param0
+ * @param {(string | object)[]=} param0.plugins Strings are resolved by `withPlugins`.
+ * @param {string[]=} param0.pluginSearchDirs Added by `withPlugins`.
+ * @param {boolean=} param0.showUnreleased
+ * @param {boolean=} param0.showDeprecated
+ * @param {boolean=} param0.showInternal
+ */
+function getSupportInfo({
+  plugins = [],
+  showUnreleased = false,
+  showDeprecated = false,
+  showInternal = false,
+} = {}) {
+  // pre-release version is smaller than the normal version in semver,
+  // we need to treat it as the normal one so as to test new features.
+  const version = currentVersion.split("-", 1)[0];
 
-  if (!version) {
-    // pre-release version is smaller than the normal version in semver,
-    // we need to treat it as the normal one so as to test new features.
-    version = currentVersion.split("-", 1)[0];
-  }
-
-  const { plugins } = opts;
+  const languages = plugins
+    .reduce((all, plugin) => all.concat(plugin.languages || []), [])
+    .filter(filterSince);
 
   const options = arrayify(
     Object.assign({}, ...plugins.map(({ options }) => options), coreOptions),
     "name"
   )
-    .filter(option => filterSince(option) && filterDeprecated(option))
+    .filter((option) => filterSince(option) && filterDeprecated(option))
     .sort((a, b) => (a.name === b.name ? 0 : a.name < b.name ? -1 : 1))
-    .map(mapDeprecated)
     .map(mapInternal)
-    .map(option => {
+    .map((option) => {
       option = { ...option };
 
       if (Array.isArray(option.default)) {
@@ -49,74 +55,49 @@ function getSupportInfo(version, opts) {
       }
 
       if (Array.isArray(option.choices)) {
-        option.choices = option.choices
-          .filter(option => filterSince(option) && filterDeprecated(option))
-          .map(mapDeprecated);
-      }
-
-      const filteredPlugins = plugins.filter(
-        plugin =>
-          plugin.defaultOptions &&
-          plugin.defaultOptions[option.name] !== undefined
-      );
-      const pluginDefaults = filteredPlugins.reduce((reduced, plugin) => {
-        reduced[plugin.name] = plugin.defaultOptions[option.name];
-        return reduced;
-      }, {});
-      return { ...option, pluginDefaults };
-    });
-
-  const usePostCssParser = semver.lt(version, "1.7.1");
-  const useBabylonParser = semver.lt(version, "1.16.0");
-
-  const languages = plugins
-    .reduce((all, plugin) => all.concat(plugin.languages || []), [])
-    .filter(filterSince)
-    .map(language => {
-      let parsers;
-      // Prevent breaking changes
-      if (language.name === "Markdown") {
-        parsers = ["markdown"];
-        // "babylon" was renamed to "babel" in 1.16.0
-      } else if (useBabylonParser && language.parsers.includes("babel")) {
-        parsers = language.parsers.map(parser =>
-          parser === "babel" ? "babylon" : parser
+        option.choices = option.choices.filter(
+          (option) => filterSince(option) && filterDeprecated(option)
         );
-      } else if (
-        usePostCssParser &&
-        (language.name === "CSS" || language.group === "CSS")
-      ) {
-        parsers = ["postcss"];
+
+        if (option.name === "parser") {
+          collectParsersFromLanguages(option, languages, plugins);
+        }
       }
-      return parsers ? { ...language, parsers } : language;
+
+      const pluginDefaults = plugins
+        .filter(
+          (plugin) =>
+            plugin.defaultOptions &&
+            plugin.defaultOptions[option.name] !== undefined
+        )
+        .reduce((reduced, plugin) => {
+          reduced[plugin.name] = plugin.defaultOptions[option.name];
+          return reduced;
+        }, {});
+
+      return { ...option, pluginDefaults };
     });
 
   return { languages, options };
 
   function filterSince(object) {
     return (
-      opts.showUnreleased ||
+      showUnreleased ||
       !("since" in object) ||
       (object.since && semver.gte(version, object.since))
     );
   }
+
   function filterDeprecated(object) {
     return (
-      opts.showDeprecated ||
+      showDeprecated ||
       !("deprecated" in object) ||
       (object.deprecated && semver.lt(version, object.deprecated))
     );
   }
-  function mapDeprecated(object) {
-    if (!object.deprecated || opts.showDeprecated) {
-      return object;
-    }
 
-    const { deprecated, redirect, ...newObject } = object;
-    return newObject;
-  }
   function mapInternal(object) {
-    if (opts.showInternal) {
+    if (showInternal) {
       return object;
     }
     const { cliName, cliCategory, cliDescription, ...newObject } = object;
@@ -124,6 +105,27 @@ function getSupportInfo(version, opts) {
   }
 }
 
+function collectParsersFromLanguages(option, languages, plugins) {
+  const existingValues = new Set(option.choices.map((choice) => choice.value));
+  for (const language of languages) {
+    if (language.parsers) {
+      for (const value of language.parsers) {
+        if (!existingValues.has(value)) {
+          existingValues.add(value);
+          const plugin = plugins.find(
+            (plugin) => plugin.parsers && plugin.parsers[value]
+          );
+          let description = language.name;
+          if (plugin && plugin.name) {
+            description += ` (plugin: ${plugin.name})`;
+          }
+          option.choices.push({ value, description });
+        }
+      }
+    }
+  }
+}
+
 module.exports = {
-  getSupportInfo
+  getSupportInfo,
 };

@@ -2,7 +2,7 @@
 
 const path = require("path");
 
-module.exports = function(modules = []) {
+module.exports = function (modules = []) {
   const requires = modules.reduce((obj, mod) => {
     obj[mod] = path.basename(mod).replace(/\.js$/, "");
     return obj;
@@ -13,8 +13,8 @@ module.exports = function(modules = []) {
 
     load(importee) {
       if (requires[importee]) {
-        return `export default eval("require")("./${requires[importee]}");`;
+        return `module.exports = eval("require")("./${requires[importee]}");`;
       }
-    }
+    },
   };
 };

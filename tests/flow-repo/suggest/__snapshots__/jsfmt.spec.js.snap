@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function bar(w: number): number { return w; }
+
+module.exports = bar;
+
+=====================================output=====================================
+/* @flow */
+
+function bar(w: number): number {
+  return w;
+}
+
+module.exports = bar;
+
+================================================================================
+`;
+
+exports[`suggest.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var bar = require('./lib');
+
+function foo(z: number) { return bar(z); }
+
+var array = ["foo", "bar"];
+array;
+
+module.exports = {foo:foo};
+
+=====================================output=====================================
+/* @flow */
+
+var bar = require("./lib");
+
+function foo(z: number) {
+  return bar(z);
+}
+
+var array = ["foo", "bar"];
+array;
+
+module.exports = { foo: foo };
+
+================================================================================
+`;

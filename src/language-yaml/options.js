@@ -6,5 +6,5 @@ const commonOptions = require("../common/common-options");
 module.exports = {
   bracketSpacing: commonOptions.bracketSpacing,
   singleQuote: commonOptions.singleQuote,
-  proseWrap: commonOptions.proseWrap
+  proseWrap: commonOptions.proseWrap,
 };

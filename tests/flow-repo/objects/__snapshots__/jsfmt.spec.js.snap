@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compatibility.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+let tests = [
+  function(x: { x: { foo: string } }, y: { x: { bar: number } }) {
+    x = y; // 2 errors: \`foo\` not found in y.x; \`bar\` not found in x.x
+  },
+
+  function(x: { foo: string }, y: { foo: number }) {
+    x = y; // 2 errors: string !~> number; number !~> string
+  },
+
+  function(x: { x: { foo: string } }, y: { x: { foo: number } }) {
+    x = y; // 2 errors: string !~> number; number !~> string
+  },
+
+  function(x: { +foo: string }, y: { +foo: number }) {
+    x = y; // 1 error: number !~> string
+  },
+
+  function(x: { x: { +foo: string } }, y: { x: { +foo: number } }) {
+    x = y; // 2 errors: string !~> number; number !~> string
+  },
+
+  function(x: { -foo: string }, y: { -foo: number }) {
+    x = y; // 1 error: string !~> number
+  },
+
+  function(x: { x: { -foo: string } }, y: { x: { -foo: number } }) {
+    x = y; // 2 errors: string !~> number; number !~> string
+  },
+];
+
+=====================================output=====================================
+let tests = [
+  function (x: { x: { foo: string } }, y: { x: { bar: number } }) {
+    x = y; // 2 errors: \`foo\` not found in y.x; \`bar\` not found in x.x
+  },
+
+  function (x: { foo: string }, y: { foo: number }) {
+    x = y; // 2 errors: string !~> number; number !~> string
+  },
+
+  function (x: { x: { foo: string } }, y: { x: { foo: number } }) {
+    x = y; // 2 errors: string !~> number; number !~> string
+  },
+
+  function (x: { +foo: string }, y: { +foo: number }) {
+    x = y; // 1 error: number !~> string
+  },
+
+  function (x: { x: { +foo: string } }, y: { x: { +foo: number } }) {
+    x = y; // 2 errors: string !~> number; number !~> string
+  },
+
+  function (x: { -foo: string }, y: { -foo: number }) {
+    x = y; // 1 error: string !~> number
+  },
+
+  function (x: { x: { -foo: string } }, y: { x: { -foo: number } }) {
+    x = y; // 2 errors: string !~> number; number !~> string
+  },
+];
+
+================================================================================
+`;
+
+exports[`conversion.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+(Object({foo: 'bar'}): {foo: string});
+(Object("123"): String);
+(Object(123): Number);
+(Object(true): Boolean);
+(Object(null): {});
+(Object(undefined): {});
+(Object(void(0)): {});
+(Object(undefined): Number); // error
+
+var x = Object(null);
+x.foo = "bar";
+
+var y = Object("123");
+(y.charAt(0): string);
+
+var z = Object(123); // error (next line makes this not match any signatures)
+(z.charAt(0): string);
+
+=====================================output=====================================
+/* @flow */
+
+(Object({ foo: "bar" }): { foo: string });
+(Object("123"): String);
+(Object(123): Number);
+(Object(true): Boolean);
+(Object(null): {});
+(Object(undefined): {});
+(Object(void 0): {});
+(Object(undefined): Number); // error
+
+var x = Object(null);
+x.foo = "bar";
+
+var y = Object("123");
+(y.charAt(0): string);
+
+var z = Object(123); // error (next line makes this not match any signatures)
+(z.charAt(0): string);
+
+================================================================================
+`;
+
+exports[`objects.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var x : {'123': string, bar: string} = {'123': 'val', bar: 'bar'};
+(x.foo : string);     // error, key doesn't exist
+(x['foo'] : string);  // error, key doesn't exist
+(x[123] : boolean);   // TODO: use the number's value to error here
+(x.bar: boolean);     // error, string !~> boolean
+(x['123'] : boolean); // error, string !~> boolean
+x['123'] = false;     // error, boolean !~> string
+x[123] = false;       // TODO: use the number's value to error here
+x['foo'+'bar'] = 'derp'; // ok since we can't tell
+(x[\`foo\`]: string);   // error, key doesn't exist
+
+var y : {foo: string} = {foo: 'bar'};
+y['foo'] = 123; // error, number !~> string
+y['bar'] = 'abc'; // error, property not found
+
+(y['hasOwnProperty']: string); // error, prototype method is not a string
+
+=====================================output=====================================
+/* @flow */
+
+var x: { "123": string, bar: string } = { "123": "val", bar: "bar" };
+(x.foo: string); // error, key doesn't exist
+(x["foo"]: string); // error, key doesn't exist
+(x[123]: boolean); // TODO: use the number's value to error here
+(x.bar: boolean); // error, string !~> boolean
+(x["123"]: boolean); // error, string !~> boolean
+x["123"] = false; // error, boolean !~> string
+x[123] = false; // TODO: use the number's value to error here
+x["foo" + "bar"] = "derp"; // ok since we can't tell
+(x[\`foo\`]: string); // error, key doesn't exist
+
+var y: { foo: string } = { foo: "bar" };
+y["foo"] = 123; // error, number !~> string
+y["bar"] = "abc"; // error, property not found
+
+(y["hasOwnProperty"]: string); // error, prototype method is not a string
+
+================================================================================
+`;
+
+exports[`unaliased_assign.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * test handling of unaliased value assignment.
+ *
+ * An unaliased object rvalue may be assigned to a supertype lvalue,
+ * because later widening mutations on the rvalue can't break assumptions
+ * made by other lvalues.
+ *
+ * However, upon assignment the rvalue must take on the type of the
+ * lvalue, to avoid both false positives and false negatives
+ * (unsoundness), as shown below.
+ *
+ * @flow
+ */
+
+var glob: { x: string } = { x: "hey" };
+
+function assign_then_alias() {
+  var obj: { x: string | number };
+  obj = { x: "hey" };
+  glob = obj;    // error: subsequent assignment might make glob.x a number
+}
+
+function assign_then_widen() {
+  var obj: { x: string | number };
+  obj = { x: "hey" };
+  obj.x = 10;  // ok, by lvalue's given type
+}
+
+=====================================output=====================================
+/**
+ * test handling of unaliased value assignment.
+ *
+ * An unaliased object rvalue may be assigned to a supertype lvalue,
+ * because later widening mutations on the rvalue can't break assumptions
+ * made by other lvalues.
+ *
+ * However, upon assignment the rvalue must take on the type of the
+ * lvalue, to avoid both false positives and false negatives
+ * (unsoundness), as shown below.
+ *
+ * @flow
+ */
+
+var glob: { x: string } = { x: "hey" };
+
+function assign_then_alias() {
+  var obj: { x: string | number };
+  obj = { x: "hey" };
+  glob = obj; // error: subsequent assignment might make glob.x a number
+}
+
+function assign_then_widen() {
+  var obj: { x: string | number };
+  obj = { x: "hey" };
+  obj.x = 10; // ok, by lvalue's given type
+}
+
+================================================================================
+`;

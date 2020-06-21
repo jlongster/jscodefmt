@@ -12,7 +12,7 @@ function preprocess(ast, options) {
         type: options.parser.startsWith("__") ? "JsExpressionRoot" : "JsonRoot",
         node: ast,
         comments: [],
-        rootMarker: options.rootMarker
+        rootMarker: options.rootMarker,
       };
     default:
       return ast;

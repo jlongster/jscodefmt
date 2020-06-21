@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`client_object.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var o = require('./object');
+
+var a:number = o.w.z.y;
+
+=====================================output=====================================
+var o = require("./object");
+
+var a: number = o.w.z.y;
+
+================================================================================
+`;
+
+exports[`object.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var o1 = { x: 0, y: "" };
+var o2 = { z: o1 }
+
+var o3 = {};
+o3.w = o2;
+
+//declare var exports: { w: any };
+
+module.exports = o3;
+
+=====================================output=====================================
+var o1 = { x: 0, y: "" };
+var o2 = { z: o1 };
+
+var o3 = {};
+o3.w = o2;
+
+//declare var exports: { w: any };
+
+module.exports = o3;
+
+================================================================================
+`;
+
+exports[`proto.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function Foo() { this.x = 0; }
+Foo.prototype.m = function() { }
+
+var o1: { x: number; m(): void } = new Foo();
+
+var o2: Foo = new Foo();
+
+=====================================output=====================================
+function Foo() {
+  this.x = 0;
+}
+Foo.prototype.m = function () {};
+
+var o1: { x: number, m(): void } = new Foo();
+
+var o2: Foo = new Foo();
+
+================================================================================
+`;
+
+exports[`super.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class C { m() { } }
+class D extends C { }
+
+var d: { +m: () => void } = new D();
+
+=====================================output=====================================
+class C {
+  m() {}
+}
+class D extends C {}
+
+var d: { +m: () => void } = new D();
+
+================================================================================
+`;

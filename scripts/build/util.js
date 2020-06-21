@@ -26,5 +26,5 @@ module.exports = {
   writeJson,
   copyFile,
   readFile,
-  writeFile
+  writeFile,
 };

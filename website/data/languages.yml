@@ -42,6 +42,7 @@
   showName: true
   image: /images/languages/tools_wip.svg
   variants:
+    - "[Apex](https://github.com/dangmai/prettier-plugin-apex)"
     - "[Elm](https://github.com/gicentre/prettier-plugin-elm) (via [`elm-format`](https://github.com/avh4/elm-format))"
     - "[Java](https://github.com/jhipster/prettier-java)"
     - "[PHP](https://github.com/prettier/plugin-php)"

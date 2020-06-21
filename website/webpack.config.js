@@ -2,11 +2,11 @@
 
 module.exports = {
   entry: {
-    playground: "./playground/index.js"
+    playground: "./playground/index.js",
   },
   output: {
     filename: "[name].js",
-    path: __dirname + "/static/"
+    path: __dirname + "/static/",
   },
   module: {
     rules: [
@@ -15,15 +15,15 @@ module.exports = {
         exclude: /node_modules/,
         loader: "babel-loader",
         options: {
-          presets: ["@babel/env", "@babel/react"]
-        }
-      }
-    ]
+          presets: ["@babel/env", "@babel/react"],
+        },
+      },
+    ],
   },
   externals: {
     clipboard: "ClipboardJS",
     codemirror: "CodeMirror",
     react: "React",
-    "react-dom": "ReactDOM"
-  }
+    "react-dom": "ReactDOM",
+  },
 };

@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty.mjml format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<mjml></mjml>
+=====================================output=====================================
+<mjml></mjml>
+
+================================================================================
+`;
+
+exports[`head.mjml format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<mjml>
+  <mj-head>
+    <mj-title>
+    
+    
+    The green fix eats mango.
+    
+    
+    </mj-title>
+    <mj-breakpoint width="600px" />
+    <mj-preview>Do 
+    
+    you like cheese? We do!</mj-preview>
+    <mj-attributes>
+      <mj-text 
+      
+      
+      
+      align="left" color="#000"
+      
+      
+         font-family="-apple-system,BlinkMacSystemFont,Helvetica,sans-serif" />
+    </mj-attributes>
+  </mj-head>
+</mjml>
+
+=====================================output=====================================
+<mjml>
+  <mj-head>
+    <mj-title>
+      The green fix eats mango.
+    </mj-title>
+    <mj-breakpoint width="600px" />
+    <mj-preview>Do you like cheese? We do!</mj-preview>
+    <mj-attributes>
+      <mj-text
+        align="left"
+        color="#000"
+        font-family="-apple-system,BlinkMacSystemFont,Helvetica,sans-serif"
+      />
+    </mj-attributes>
+  </mj-head>
+</mjml>
+
+================================================================================
+`;

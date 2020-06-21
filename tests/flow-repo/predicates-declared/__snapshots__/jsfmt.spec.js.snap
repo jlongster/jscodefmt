@@ -1,0 +1,563 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`function-bind.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Sanity checks:
+//  - use of bind in a position of a function predicate.
+//    (This case should fall through, as method calls
+//    are currently not supported.) The original behavior
+//    (including \`havoc\`) should be retained.
+
+class C {
+  m() {
+    return true;
+  }
+  a: 1;
+
+  n() {
+    if(this.m.bind(this)) {
+      this.a;
+    }
+  }
+}
+
+declare var m: Function;
+const o = { a: 1 };
+
+if (m.bind(o)) {
+  o.a;
+}
+
+
+class D {
+  m: Function;
+
+  n() {
+    if(this.m({})) { }
+  }
+}
+
+declare var m: Function;
+const x = "";
+if (m.bind(this)(x)) { }
+
+=====================================output=====================================
+// @flow
+
+// Sanity checks:
+//  - use of bind in a position of a function predicate.
+//    (This case should fall through, as method calls
+//    are currently not supported.) The original behavior
+//    (including \`havoc\`) should be retained.
+
+class C {
+  m() {
+    return true;
+  }
+  a: 1;
+
+  n() {
+    if (this.m.bind(this)) {
+      this.a;
+    }
+  }
+}
+
+declare var m: Function;
+const o = { a: 1 };
+
+if (m.bind(o)) {
+  o.a;
+}
+
+class D {
+  m: Function;
+
+  n() {
+    if (this.m({})) {
+    }
+  }
+}
+
+declare var m: Function;
+const x = "";
+if (m.bind(this)(x)) {
+}
+
+================================================================================
+`;
+
+exports[`function-union.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare function f1(x: mixed): boolean %checks(typeof x === "string");
+declare function f2(x: mixed): boolean %checks(Array.isArray(x));
+
+declare var cond: boolean;
+
+// Feature check:
+function foo(x: number | string | Array<string>): number {
+
+  var f = (cond) ? f1 : f2;
+
+  if (f(x)) {
+    return x.length;
+  } else {
+    return 1;
+  }
+}
+
+=====================================output=====================================
+// @flow
+
+declare function f1(x: mixed): boolean %checks(typeof x === "string");
+declare function f2(x: mixed): boolean %checks(Array.isArray(x));
+
+declare var cond: boolean;
+
+// Feature check:
+function foo(x: number | string | Array<string>): number {
+  var f = cond ? f1 : f2;
+
+  if (f(x)) {
+    return x.length;
+  } else {
+    return 1;
+  }
+}
+
+================================================================================
+`;
+
+exports[`is-string-decl.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare function is_string(x: mixed): boolean %checks(typeof x === "string");
+declare function is_number(x: mixed): boolean %checks(typeof x === "number");
+
+// Feature check:
+function foo(x: string | Array<string>): string {
+  if (is_string(x)) {
+    // The use of \`is_string\` as a conditional check
+    // should guarantee the narrowing of the type of \`x\`
+    // to string.
+    return x;
+  } else {
+    // Accordingly the negation of the above check
+    // guarantees that \`x\` here is an Array<string>
+    return x.join();
+  }
+}
+
+=====================================output=====================================
+// @flow
+
+declare function is_string(x: mixed): boolean %checks(typeof x === "string");
+declare function is_number(x: mixed): boolean %checks(typeof x === "number");
+
+// Feature check:
+function foo(x: string | Array<string>): string {
+  if (is_string(x)) {
+    // The use of \`is_string\` as a conditional check
+    // should guarantee the narrowing of the type of \`x\`
+    // to string.
+    return x;
+  } else {
+    // Accordingly the negation of the above check
+    // guarantees that \`x\` here is an Array<string>
+    return x.join();
+  }
+}
+
+================================================================================
+`;
+
+exports[`logical-or.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Sanity check:
+// - conditional functions do not affect behavior of conditional
+//   expressions (e.g. \`||\`)
+
+declare function r(x: string): number;
+var s = 'a';
+var n = r(s) || 1;
+(n: number);
+
+var x = "";
+if (x = r(s) || 1) {
+  (x: number);
+}
+
+declare var dollars: mixed;
+
+function foo(x: mixed) { return 1; }
+(foo(dollars) || 0);
+
+(Number(dollars) || 0);
+
+=====================================output=====================================
+// @flow
+
+// Sanity check:
+// - conditional functions do not affect behavior of conditional
+//   expressions (e.g. \`||\`)
+
+declare function r(x: string): number;
+var s = "a";
+var n = r(s) || 1;
+(n: number);
+
+var x = "";
+if ((x = r(s) || 1)) {
+  (x: number);
+}
+
+declare var dollars: mixed;
+
+function foo(x: mixed) {
+  return 1;
+}
+foo(dollars) || 0;
+
+Number(dollars) || 0;
+
+================================================================================
+`;
+
+exports[`object-invariant.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Sanity check:
+// - preserving \`havoc\` semantics
+
+type Meeting = {
+  organizer: ?Invitee,
+  es: Array<Invitee>
+}
+
+type Invitee = {
+  fbid: number
+}
+
+function f(_this: { m: ?Meeting }): string {
+  if (!_this.m) {
+    return "0";
+  }
+
+  if (_this.m.es.some((a) => a.fbid === 0)) {
+
+  }
+  return "3";
+}
+
+=====================================output=====================================
+// @flow
+
+// Sanity check:
+// - preserving \`havoc\` semantics
+
+type Meeting = {
+  organizer: ?Invitee,
+  es: Array<Invitee>,
+};
+
+type Invitee = {
+  fbid: number,
+};
+
+function f(_this: { m: ?Meeting }): string {
+  if (!_this.m) {
+    return "0";
+  }
+
+  if (_this.m.es.some((a) => a.fbid === 0)) {
+  }
+  return "3";
+}
+
+================================================================================
+`;
+
+exports[`orig-string-tag-check.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// The original first-order case
+
+function foo(x: string | Array<string>): string {
+  if (typeof x === "string") {
+    return x; // [ERROR] x: Array<string> doesn't match return type
+  }
+  else {
+    return x.join(); // [ERROR] x: string doesn't have .join method
+  }
+}
+
+=====================================output=====================================
+// @flow
+
+// The original first-order case
+
+function foo(x: string | Array<string>): string {
+  if (typeof x === "string") {
+    return x; // [ERROR] x: Array<string> doesn't match return type
+  } else {
+    return x.join(); // [ERROR] x: string doesn't have .join method
+  }
+}
+
+================================================================================
+`;
+
+exports[`sanity-fall-through.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Sanity check:
+// - we should still be getting an error at the second return statement
+
+declare function pred<T>(x: T): boolean;
+
+function foo(s: Array<string>): string {
+  if (pred(s)) {
+    return "1";
+  }
+  return 1;
+}
+
+=====================================output=====================================
+// @flow
+
+// Sanity check:
+// - we should still be getting an error at the second return statement
+
+declare function pred<T>(x: T): boolean;
+
+function foo(s: Array<string>): string {
+  if (pred(s)) {
+    return "1";
+  }
+  return 1;
+}
+
+================================================================================
+`;
+
+exports[`sanity-invalid-calls.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Sanity check:
+// - invalid calls at predicate positions
+
+declare function pred<T>(x: T): boolean;
+
+function foo(s: Array<string>): string {
+
+  if ((1)(s)) {
+    return "1";
+  }
+
+  if ((pred + 1)("s")) {
+    return "1";
+  }
+
+  return "1"
+}
+
+=====================================output=====================================
+// @flow
+
+// Sanity check:
+// - invalid calls at predicate positions
+
+declare function pred<T>(x: T): boolean;
+
+function foo(s: Array<string>): string {
+  if (1(s)) {
+    return "1";
+  }
+
+  if ((pred + 1)("s")) {
+    return "1";
+  }
+
+  return "1";
+}
+
+================================================================================
+`;
+
+exports[`sanity-is-string-bug.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare function is_string(x: mixed): boolean %checks(typeof x === "string");
+declare function is_number(x: mixed): boolean %checks(typeof x === "number");
+
+// Sanity check:
+// - Erroneous logic
+
+function bar(x: string | Array<string>): string {
+  if (is_number(x)) {
+    return x;
+  } else {
+    return x.join();    // error: both string and Array<string> can flow to x
+  }
+}
+
+=====================================output=====================================
+// @flow
+
+declare function is_string(x: mixed): boolean %checks(typeof x === "string");
+declare function is_number(x: mixed): boolean %checks(typeof x === "number");
+
+// Sanity check:
+// - Erroneous logic
+
+function bar(x: string | Array<string>): string {
+  if (is_number(x)) {
+    return x;
+  } else {
+    return x.join(); // error: both string and Array<string> can flow to x
+  }
+}
+
+================================================================================
+`;
+
+exports[`sanity-parameter-mismatch.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Sanity check: make sure the parameters are checked as usual
+
+declare function foo(
+  input: mixed,
+  types: string | Array<string>
+): boolean %checks(typeof input === "string" || Array.isArray(input));
+
+foo(3, 3);
+
+=====================================output=====================================
+// @flow
+
+// Sanity check: make sure the parameters are checked as usual
+
+declare function foo(
+  input: mixed,
+  types: string | Array<string>
+): boolean %checks(typeof input === "string" || Array.isArray(input));
+
+foo(3, 3);
+
+================================================================================
+`;
+
+exports[`sanity-pred-with-body.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Sanity check:
+// - predicate functions cannot have bodies (can only be declarations)
+
+function pred(x: mixed): boolean %checks(typeof x === "string") { // error: cannot use pred type here
+  return typeof x === "string";
+}
+
+function foo(x: string | Array<string>): string {
+  if (pred(x)) {
+    return x;
+  }
+  return "1"
+}
+
+=====================================output=====================================
+// @flow
+
+// Sanity check:
+// - predicate functions cannot have bodies (can only be declarations)
+
+function pred(x: mixed): boolean %checks(typeof x === "string") {
+  // error: cannot use pred type here
+  return typeof x === "string";
+}
+
+function foo(x: string | Array<string>): string {
+  if (pred(x)) {
+    return x;
+  }
+  return "1";
+}
+
+================================================================================
+`;
+
+exports[`sanity-return-type.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare function f2(x: mixed): string %checks(Array.isArray(x));
+
+=====================================output=====================================
+// @flow
+
+declare function f2(x: mixed): string %checks(Array.isArray(x));
+
+================================================================================
+`;

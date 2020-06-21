@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`foo.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/** @flow */
+/* this require routes to nothing, because
+   our node_modules/underscore directory
+   has been excluded. If package.json files
+   are being excluded properly, we'll get
+   'Required module not found'.
+ */
+var _ = require('underscore');
+
+function foo(): string {
+  return _.foo();
+}
+
+module.exports = foo;
+
+=====================================output=====================================
+/** @flow */
+/* this require routes to nothing, because
+   our node_modules/underscore directory
+   has been excluded. If package.json files
+   are being excluded properly, we'll get
+   'Required module not found'.
+ */
+var _ = require("underscore");
+
+function foo(): string {
+  return _.foo();
+}
+
+module.exports = foo;
+
+================================================================================
+`;

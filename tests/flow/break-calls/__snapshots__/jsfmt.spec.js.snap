@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`type_args.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const response = something.$http.get<ThingamabobService.DetailsData>(
+  \`api/foo.ashx/foo-details/\${myId}\`,
+  { cache: quux.httpCache, timeout }
+);
+
+=====================================output=====================================
+const response = something.$http.get<ThingamabobService.DetailsData>(
+  \`api/foo.ashx/foo-details/\${myId}\`,
+  { cache: quux.httpCache, timeout }
+);
+
+================================================================================
+`;

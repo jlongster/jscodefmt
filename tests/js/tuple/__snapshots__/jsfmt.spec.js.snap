@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`destructuring.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const [a, b] = #[1, 2];
+assert(a === 1);
+assert(b === 2);
+
+const [a, ...rest] = #[1, 2, 3];
+assert(a === 1);
+assert(Array.isArray(rest));
+assert(rest[0] === 2);
+assert(rest[1] === 3);
+
+=====================================output=====================================
+const [a, b] = #[1, 2];
+assert(a === 1);
+assert(b === 2);
+
+const [a, ...rest] = #[1, 2, 3];
+assert(a === 1);
+assert(Array.isArray(rest));
+assert(rest[0] === 2);
+assert(rest[1] === 3);
+
+================================================================================
+`;
+
+exports[`syntax.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+#[]
+#[1, 2]
+#[1, 2, #{ a: 3 }]
+
+=====================================output=====================================
+#[];
+#[1, 2];
+#[1, 2, #{ a: 3 }];
+
+================================================================================
+`;
+
+exports[`tuple.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const tuple1 = #[1, 2, 3];
+
+assert(tuple1[0] === 1);
+
+const tuple2 = tuple1.with(0, 2);
+assert(tuple1 !== tuple2);
+assert(tuple2 === #[2, 2, 3]);
+
+const tuple3 = #[1, ...tuple2];
+assert(tuple3 === #[1, 2, 2, 3]);
+
+const tuple4 = tuple3.pushed(4);
+assert(tuple4 === #[1, 2, 2, 3, 4]);
+
+assert(tuple4.first() === 1);
+const tuple5 = tuple4.popped();
+assert(tuple5 === #[2, 2, 3, 4]);
+
+=====================================output=====================================
+const tuple1 = #[1, 2, 3];
+
+assert(tuple1[0] === 1);
+
+const tuple2 = tuple1.with(0, 2);
+assert(tuple1 !== tuple2);
+assert(tuple2 === #[2, 2, 3]);
+
+const tuple3 = #[1, ...tuple2];
+assert(tuple3 === #[1, 2, 2, 3]);
+
+const tuple4 = tuple3.pushed(4);
+assert(tuple4 === #[1, 2, 2, 3, 4]);
+
+assert(tuple4.first() === 1);
+const tuple5 = tuple4.popped();
+assert(tuple5 === #[2, 2, 3, 4]);
+
+================================================================================
+`;

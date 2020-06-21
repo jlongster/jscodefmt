@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+class A {
+  b: number;
+  c: string;
+}
+
+module.exports = A;
+
+=====================================output=====================================
+// @flow
+
+class A {
+  b: number;
+  c: string;
+}
+
+module.exports = A;
+
+================================================================================
+`;
+
+exports[`B.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+var A = require ('./A');
+import type C from './C';
+
+class B extends A {
+  c: C;
+}
+
+module.exports = B;
+
+=====================================output=====================================
+// @flow
+var A = require("./A");
+import type C from "./C";
+
+class B extends A {
+  c: C;
+}
+
+module.exports = B;
+
+================================================================================
+`;
+
+exports[`C.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+var A = require ('./A');
+import type B from './B';
+
+class C extends A {
+  b: B;
+}
+
+module.exports = C;
+
+=====================================output=====================================
+// @flow
+var A = require("./A");
+import type B from "./B";
+
+class C extends A {
+  b: B;
+}
+
+module.exports = C;
+
+================================================================================
+`;

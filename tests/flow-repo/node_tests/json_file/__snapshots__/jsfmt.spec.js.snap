@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let data = require('./package/index.json');
+(data.foo: void); // error, should be object literal
+(data.foo.bar: void); // error, should be boolean
+(data.abc: boolean); // error, should be ?string
+
+let data2 = require('./package');
+(data2.baz: void); // error, should be string
+
+let data3 = require('./package2');
+(data3.foo: void); // error, should be number (not string! index.js wins)
+
+let data4 = require('./json_array');
+(data4: Array<number>);
+(data4: void); // error, should be Array<number>
+
+(require('./json_string'): void); // error, should be string
+(require('./json_number'): void); // error, should be number
+(require('./json_true'): void); // error, should be true
+(require('./json_false'): void); // error, should be false
+(require('./json_null'): void); // error, should be null
+(require('./json_negative_number'): -1); // ok
+
+=====================================output=====================================
+// @flow
+
+let data = require("./package/index.json");
+(data.foo: void); // error, should be object literal
+(data.foo.bar: void); // error, should be boolean
+(data.abc: boolean); // error, should be ?string
+
+let data2 = require("./package");
+(data2.baz: void); // error, should be string
+
+let data3 = require("./package2");
+(data3.foo: void); // error, should be number (not string! index.js wins)
+
+let data4 = require("./json_array");
+(data4: Array<number>);
+(data4: void); // error, should be Array<number>
+
+(require("./json_string"): void); // error, should be string
+(require("./json_number"): void); // error, should be number
+(require("./json_true"): void); // error, should be true
+(require("./json_false"): void); // error, should be false
+(require("./json_null"): void); // error, should be null
+(require("./json_negative_number"): -1); // ok
+
+================================================================================
+`;

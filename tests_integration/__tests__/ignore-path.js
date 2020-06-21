@@ -7,28 +7,28 @@ describe("ignore path", () => {
     "**/*.js",
     "--ignore-path",
     ".gitignore",
-    "-l"
+    "-l",
   ]).test({
-    status: 1
+    status: 1,
   });
 });
 
 describe("support .prettierignore", () => {
   runPrettier("cli/ignore-path", ["**/*.js", "-l"]).test({
-    status: 1
+    status: 1,
   });
 });
 
 describe("ignore file when using --debug-check", () => {
   runPrettier("cli/ignore-path", ["**/*.js", "--debug-check"]).test({
-    status: 0
+    status: 0,
   });
 });
 
 describe("outputs files as-is if no --write", () => {
   runPrettier("cli/ignore-path", ["regular-module.js"], {
-    ignoreLineEndings: true
+    ignoreLineEndings: true,
   }).test({
-    status: 0
+    status: 0,
   });
 });

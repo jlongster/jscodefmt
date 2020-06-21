@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+  <div id="app">
+    <!-- when vue parse use for html, Input should not treat as component -->
+    <Input>{{value}}</Input>
+  </div>
+</body>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: function() {
+        return { value: '1' }
+      }
+    })
+  </script>
+</html>

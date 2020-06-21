@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`display.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+    <!-- display: inline -->
+    <p>Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long</p>
+</div>
+
+=====================================output=====================================
+<div>
+  <!-- display: inline -->
+  <p
+    >Long Long Long Long Long Long Long Long Long Long Long Long Long Long Long
+    Long Long Long</p
+  >
+</div>
+
+================================================================================
+`;

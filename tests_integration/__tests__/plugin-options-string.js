@@ -8,7 +8,7 @@ describe("show external options with `--help`", () => {
     .stdout;
   const pluggedStdout = runPrettier("plugins/options-string", [
     "--help",
-    "--plugin=./plugin"
+    "--plugin=./plugin",
   ]).stdout;
   expect(snapshotDiff(originalStdout, pluggedStdout)).toMatchSnapshot();
 });
@@ -17,9 +17,9 @@ describe("show detailed external option with `--help foo-string`", () => {
   runPrettier("plugins/options-string", [
     "--plugin=./plugin",
     "--help",
-    "foo-string"
+    "foo-string",
   ]).test({
-    status: 0
+    status: 0,
   });
 });
 
@@ -31,14 +31,14 @@ describe("external options from CLI should work", () => {
       "--stdin-filepath",
       "example.foo",
       "--foo-string",
-      "baz"
+      "baz",
     ],
     { input: "hello-world" }
   ).test({
     stdout: "foo:baz",
     stderr: "",
     status: 0,
-    write: []
+    write: [],
   });
 });
 
@@ -51,6 +51,6 @@ describe("external options from config file should work", () => {
     stdout: "foo:baz",
     stderr: "",
     status: 0,
-    write: []
+    write: [],
   });
 });

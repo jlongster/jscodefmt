@@ -1,0 +1,312 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`API.react.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+var app = require('JSX');
+
+app.setProps({y:42}); // error, y:number but foo expects string in App.react
+app.setState({z:42}); // error, z:number but foo expects string in App.react
+
+function bar(x:number) { }
+bar(app.props.children); // No error, App doesn't specify propTypes so anything goes
+
+=====================================output=====================================
+var app = require("JSX");
+
+app.setProps({ y: 42 }); // error, y:number but foo expects string in App.react
+app.setState({ z: 42 }); // error, z:number but foo expects string in App.react
+
+function bar(x: number) {}
+bar(app.props.children); // No error, App doesn't specify propTypes so anything goes
+
+================================================================================
+`;
+
+exports[`App.react.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+/**
+ * @providesModule App.react
+ * @jsx React.DOM
+ */
+
+var React = require('react');
+
+// expect args to be strings
+function foo(p:string,q:string):string { return p+q; }
+
+var App = React.createClass({
+
+  getDefaultProps: function(): { y: string } {
+    return {y:""}; // infer props.y: string
+  },
+
+  getInitialState: function() {
+    return {z:0}; // infer state.z: number
+  },
+
+  handler: function() {
+    this.setState({z:42}); // ok
+  },
+
+  render: function() {
+    var x = this.props.x;
+    var y = this.props.y;
+    var z = this.state.z;
+
+    //this.state;
+
+    return (
+      <div>
+        {foo(x,y)}
+        {foo(z,x)} // error, since z: number
+      </div>
+    );
+  }
+
+});
+
+module.exports = App;
+
+=====================================output=====================================
+/**
+ * @providesModule App.react
+ * @jsx React.DOM
+ */
+
+var React = require("react");
+
+// expect args to be strings
+function foo(p: string, q: string): string {
+  return p + q;
+}
+
+var App = React.createClass({
+  getDefaultProps: function (): { y: string } {
+    return { y: "" }; // infer props.y: string
+  },
+
+  getInitialState: function () {
+    return { z: 0 }; // infer state.z: number
+  },
+
+  handler: function () {
+    this.setState({ z: 42 }); // ok
+  },
+
+  render: function () {
+    var x = this.props.x;
+    var y = this.props.y;
+    var z = this.state.z;
+
+    //this.state;
+
+    return (
+      <div>
+        {foo(x, y)}
+        {foo(z, x)} // error, since z: number
+      </div>
+    );
+  },
+});
+
+module.exports = App;
+
+================================================================================
+`;
+
+exports[`InitializedFields.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @providesModule InitializedFields.react
+ */
+
+var React = require('react');
+
+/** This is a regression test for a bug where we forgot to mark the fields of
+ * react classes as initialized, when the class was created with createClass().
+ * This would manifest as complaining that metric requires an annotation */
+var App = React.createClass({
+  metrics: [1,2,3],
+});
+
+module.exports = App;
+
+=====================================output=====================================
+/**
+ * @providesModule InitializedFields.react
+ */
+
+var React = require("react");
+
+/** This is a regression test for a bug where we forgot to mark the fields of
+ * react classes as initialized, when the class was created with createClass().
+ * This would manifest as complaining that metric requires an annotation */
+var App = React.createClass({
+  metrics: [1, 2, 3],
+});
+
+module.exports = App;
+
+================================================================================
+`;
+
+exports[`JSX.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+/* @providesModule JSX */
+
+var React = require('react');
+var App = require('App.react');
+
+var app =
+  <App y={42}> // error, y: number but foo expects string in App.react
+    Some text.
+  </App>;
+
+module.exports = app;
+
+=====================================output=====================================
+/* @providesModule JSX */
+
+var React = require("react");
+var App = require("App.react");
+
+var app = (
+  <App y={42}>
+    {" "}
+    // error, y: number but foo expects string in App.react Some text.
+  </App>
+);
+
+module.exports = app;
+
+================================================================================
+`;
+
+exports[`checkPropTypes.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+import { PropTypes, checkPropTypes } from "react";
+
+checkPropTypes({ foo: PropTypes.string }, { foo: 'foo' }, 'value', 'TestComponent'); // OK
+
+checkPropTypes({ foo: PropTypes.string }, { foo: 'foo' }); // error: missing arguments
+checkPropTypes({ foo: PropTypes.string }, { foo: 'foo' }, 'value'); // error: missing argument
+
+checkPropTypes({ bar: PropTypes.string }, { foo: 'foo' }, 'value', 'TestComponent'); // error: property not found
+
+checkPropTypes({ foo: PropTypes.string }, { foo: 'foo' }, 'value', 'TestComponent', () => 123); // error: number ~> string
+checkPropTypes({ foo: PropTypes.string }, { foo: 'foo' }, 'value', 'TestComponent', () => null); // OK
+checkPropTypes({ foo: PropTypes.string }, { foo: 'foo' }, 'value', 'TestComponent', () => undefined); // OK
+
+=====================================output=====================================
+/* @flow */
+
+import { PropTypes, checkPropTypes } from "react";
+
+checkPropTypes(
+  { foo: PropTypes.string },
+  { foo: "foo" },
+  "value",
+  "TestComponent"
+); // OK
+
+checkPropTypes({ foo: PropTypes.string }, { foo: "foo" }); // error: missing arguments
+checkPropTypes({ foo: PropTypes.string }, { foo: "foo" }, "value"); // error: missing argument
+
+checkPropTypes(
+  { bar: PropTypes.string },
+  { foo: "foo" },
+  "value",
+  "TestComponent"
+); // error: property not found
+
+checkPropTypes(
+  { foo: PropTypes.string },
+  { foo: "foo" },
+  "value",
+  "TestComponent",
+  () => 123
+); // error: number ~> string
+checkPropTypes(
+  { foo: PropTypes.string },
+  { foo: "foo" },
+  "value",
+  "TestComponent",
+  () => null
+); // OK
+checkPropTypes(
+  { foo: PropTypes.string },
+  { foo: "foo" },
+  "value",
+  "TestComponent",
+  () => undefined
+); // OK
+
+================================================================================
+`;
+
+exports[`propTypes.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('React');
+
+var C = React.createClass({
+  propTypes: {
+    title: React.PropTypes.string.isRequired,
+  }
+});
+var D = React.createClass({
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    ...C.propTypes,
+  }
+});
+
+<D />; // errors: properties \`name\` and \`title\` not found
+
+=====================================output=====================================
+var React = require("React");
+
+var C = React.createClass({
+  propTypes: {
+    title: React.PropTypes.string.isRequired,
+  },
+});
+var D = React.createClass({
+  propTypes: {
+    name: React.PropTypes.string.isRequired,
+    ...C.propTypes,
+  },
+});
+
+<D />; // errors: properties \`name\` and \`title\` not found
+
+================================================================================
+`;

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`declareModifier.d.ts 1`] = `
+exports[`declareModifier.d.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

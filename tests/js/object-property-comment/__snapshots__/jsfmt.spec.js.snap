@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`after-key.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+let a = {
+   a /* comment */: () => 1
+};
+
+let b = {
+   "a" /* comment */: () => 1
+};
+
+=====================================output=====================================
+let a = {
+  a /* comment */: () => 1,
+};
+
+let b = {
+  a /* comment */: () => 1,
+};
+
+================================================================================
+`;
+
+exports[`comment.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+o = {
+  name:
+    // Comment A
+    // Comment B
+    (({id: type}: any): CreativeConcept),
+};
+
+o = {
+  name: // Comment A
+  // Comment B
+  (({ id: type }: any): CreativeConcept)
+};
+
+o = {
+  name: // Comment B // Comment A
+  (({ id: type }: any): CreativeConcept)
+};
+
+=====================================output=====================================
+o = {
+  name:
+    // Comment A
+    // Comment B
+    (({ id: type }: any): CreativeConcept),
+};
+
+o = {
+  // Comment A
+  name:
+    // Comment B
+    (({ id: type }: any): CreativeConcept),
+};
+
+o = {
+  // Comment B // Comment A
+  name: (({ id: type }: any): CreativeConcept),
+};
+
+================================================================================
+`;

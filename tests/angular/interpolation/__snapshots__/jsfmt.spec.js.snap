@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`logical-expression.ng - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["__ng_interpolation"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+[
+    advancedSearchService.patientInformationFieldsRow2 && advancedSearchService.patientInformationFieldsRow2.indexOf(advancedSearchService.formElementData.customFieldList[i].customFieldType) !== -1
+]
+
+=====================================output=====================================
+[
+  advancedSearchService.patientInformationFieldsRow2 &&
+    advancedSearchService.patientInformationFieldsRow2.indexOf(
+      advancedSearchService.formElementData.customFieldList[i].customFieldType
+    ) !== -1
+]
+================================================================================
+`;
+
+exports[`optional-chaining.ng - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["__ng_interpolation"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+[  a?.b[c], (a?.b)[c]  ]
+
+=====================================output=====================================
+[a?.b[c], (a?.b)[c]]
+================================================================================
+`;
+
+exports[`pipe-expression.ng - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["__ng_interpolation"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+[
+    a ? (b | c : d) : (e | f : g),
+    a | b | c | d,
+    ((a | b) | c) | d,
+    a | b:(c | d),
+    { a: b | c },
+    (a + b) | c,
+    (a | b) + c,
+    fn(a | b),
+    a?.b(c | d),
+    a[b | c],
+    ($students | async).items,
+    ($students | async)(),
+    myData | myPipe:'arg1':'arg2':'arg3',
+    value
+      | pipeA: {
+        keyA: reallySuperLongValue,
+        keyB: shortValue | pipeB | pipeC: valueToPipeC
+      } : {
+        keyA: reallySuperLongValue,
+        keyB: shortValue | pipeB | pipeC: valueToPipeC
+      }
+      | aaa,
+   (hideLinqPanel ? "ReportSelection.HideShowLabel_Show.String" : "ReportSelection.HideShowLabel_Hide.String") | localize:(localizationSection) 
+]
+
+=====================================output=====================================
+[
+  a ? (b | c: d) : (e | f: g),
+  a | b | c | d,
+  a | b | c | d,
+  a | b: (c | d),
+  { a: b | c },
+  a + b | c,
+  (a | b) + c,
+  fn(a | b),
+  a?.b(c | d),
+  a[b | c],
+  ($students | async).items,
+  ($students | async)(),
+  myData | myPipe: "arg1":"arg2":"arg3",
+  value
+    | pipeA
+      : {
+          keyA: reallySuperLongValue,
+          keyB: shortValue | pipeB | pipeC: valueToPipeC
+        }
+      : {
+          keyA: reallySuperLongValue,
+          keyB: shortValue | pipeB | pipeC: valueToPipeC
+        }
+    | aaa,
+  (hideLinqPanel
+    ? "ReportSelection.HideShowLabel_Show.String"
+    : "ReportSelection.HideShowLabel_Hide.String"
+  ) | localize: localizationSection
+]
+================================================================================
+`;
+
+exports[`pipe-in-object.ng - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["__ng_interpolation"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+[{ AngularJS: '1.x', 'color': ('#222' | darken)}]
+
+=====================================output=====================================
+[{ AngularJS: "1.x", color: ("#222" | darken) }]
+================================================================================
+`;

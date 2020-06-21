@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`break-continue.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo() {
+    while(true) { break; }
+}
+
+function bar() {
+    L: do { continue L; } while(false)
+}
+
+=====================================output=====================================
+function foo() {
+  while (true) {
+    break;
+  }
+}
+
+function bar() {
+  L: do {
+    continue L;
+  } while (false);
+}
+
+================================================================================
+`;
+
+exports[`return.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function bar(x:number) { }
+function foo() {
+    var x = null;
+    if (x == null) return;
+    bar(x);
+}
+
+=====================================output=====================================
+function bar(x: number) {}
+function foo() {
+  var x = null;
+  if (x == null) return;
+  bar(x);
+}
+
+================================================================================
+`;
+
+exports[`toplevel_throw.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+throw new Error('foo'); // no error
+
+=====================================output=====================================
+// @flow
+
+throw new Error("foo"); // no error
+
+================================================================================
+`;

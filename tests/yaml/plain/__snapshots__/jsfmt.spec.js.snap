@@ -1,0 +1,436 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`force-singleline-in-mapping-value.yml - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+
+whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
+
+literal-newline: longlonglonglonglonglonglonglonglonglonglong
+  longlonglonglonglonglonglonglonglonglonglong
+
+newline: longlonglonglonglonglonglonglonglonglonglong
+
+  longlonglonglonglonglonglonglonglonglonglong
+
+=====================================output=====================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+
+whitespace:
+  longlonglonglonglonglonglonglonglonglonglong
+  longlonglonglonglonglonglonglonglonglonglong
+
+literal-newline:
+  longlonglonglonglonglonglonglonglonglonglong
+  longlonglonglonglonglonglonglonglonglonglong
+
+newline: longlonglonglonglonglonglonglonglonglonglong
+
+  longlonglonglonglonglonglonglonglonglonglong
+
+================================================================================
+`;
+
+exports[`force-singleline-in-mapping-value.yml - {"proseWrap":"never"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+
+whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
+
+literal-newline: longlonglonglonglonglonglonglonglonglonglong
+  longlonglonglonglonglonglonglonglonglonglong
+
+newline: longlonglonglonglonglonglonglonglonglonglong
+
+  longlonglonglonglonglonglonglonglonglonglong
+
+=====================================output=====================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+
+whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
+
+literal-newline: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
+
+newline: longlonglonglonglonglonglonglonglonglonglong
+
+  longlonglonglonglonglonglonglonglonglonglong
+
+================================================================================
+`;
+
+exports[`force-singleline-in-mapping-value.yml format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+
+whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
+
+literal-newline: longlonglonglonglonglonglonglonglonglonglong
+  longlonglonglonglonglonglonglonglonglonglong
+
+newline: longlonglonglonglonglonglonglonglonglonglong
+
+  longlonglonglonglonglonglonglonglonglonglong
+
+=====================================output=====================================
+no-whitesapce: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
+
+whitespace: longlonglonglonglonglonglonglonglonglonglong longlonglonglonglonglonglonglonglonglonglong
+
+literal-newline: longlonglonglonglonglonglonglonglonglonglong
+  longlonglonglonglonglonglonglonglonglonglong
+
+newline: longlonglonglonglonglonglonglonglonglonglong
+
+  longlonglonglonglonglonglonglonglonglonglong
+
+================================================================================
+`;
+
+exports[`middle-comment.yml - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment
+hello
+
+=====================================output=====================================
+!!str # comment
+hello
+
+================================================================================
+`;
+
+exports[`middle-comment.yml - {"proseWrap":"never"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment
+hello
+
+=====================================output=====================================
+!!str # comment
+hello
+
+================================================================================
+`;
+
+exports[`middle-comment.yml format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment
+hello
+
+=====================================output=====================================
+!!str # comment
+hello
+
+================================================================================
+`;
+
+exports[`middle-comments.yml - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment 1
+# comment 2
+hello
+
+=====================================output=====================================
+!!str
+# comment 1
+# comment 2
+hello
+
+================================================================================
+`;
+
+exports[`middle-comments.yml - {"proseWrap":"never"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment 1
+# comment 2
+hello
+
+=====================================output=====================================
+!!str
+# comment 1
+# comment 2
+hello
+
+================================================================================
+`;
+
+exports[`middle-comments.yml format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!!str # comment 1
+# comment 2
+hello
+
+=====================================output=====================================
+!!str
+# comment 1
+# comment 2
+hello
+
+================================================================================
+`;
+
+exports[`multiline.yml - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+b:    
+  123123123123123123123123123   
+       123123123123123123123123123   
+         123123123123123123123123123				
+    123123123123123123123123123   
+      123123123123123123123123123   
+  123123123123123123123123123   
+            123123123123123123123123123				
+         
+         123123123123123123123123123   
+         
+         
+         123123123123123123123123123      
+         
+         
+         
+         
+         123123123123123123123123123  
+    
+
+=====================================output=====================================
+b: 123123123123123123123123123 123123123123123123123123123
+  123123123123123123123123123 123123123123123123123123123
+  123123123123123123123123123 123123123123123123123123123
+  123123123123123123123123123
+
+  123123123123123123123123123
+
+
+  123123123123123123123123123
+
+
+
+
+  123123123123123123123123123
+
+================================================================================
+`;
+
+exports[`multiline.yml - {"proseWrap":"never"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+b:    
+  123123123123123123123123123   
+       123123123123123123123123123   
+         123123123123123123123123123				
+    123123123123123123123123123   
+      123123123123123123123123123   
+  123123123123123123123123123   
+            123123123123123123123123123				
+         
+         123123123123123123123123123   
+         
+         
+         123123123123123123123123123      
+         
+         
+         
+         
+         123123123123123123123123123  
+    
+
+=====================================output=====================================
+b:
+  123123123123123123123123123 123123123123123123123123123 123123123123123123123123123 123123123123123123123123123 123123123123123123123123123 123123123123123123123123123 123123123123123123123123123
+
+  123123123123123123123123123
+
+
+  123123123123123123123123123
+
+
+
+
+  123123123123123123123123123
+
+================================================================================
+`;
+
+exports[`multiline.yml format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+b:    
+  123123123123123123123123123   
+       123123123123123123123123123   
+         123123123123123123123123123				
+    123123123123123123123123123   
+      123123123123123123123123123   
+  123123123123123123123123123   
+            123123123123123123123123123				
+         
+         123123123123123123123123123   
+         
+         
+         123123123123123123123123123      
+         
+         
+         
+         
+         123123123123123123123123123  
+    
+
+=====================================output=====================================
+b: 123123123123123123123123123
+  123123123123123123123123123
+  123123123123123123123123123
+  123123123123123123123123123
+  123123123123123123123123123
+  123123123123123123123123123
+  123123123123123123123123123
+
+  123123123123123123123123123
+
+
+  123123123123123123123123123
+
+
+
+
+  123123123123123123123123123
+
+================================================================================
+`;
+
+exports[`true.yml - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+hello
+
+=====================================output=====================================
+hello
+
+================================================================================
+`;
+
+exports[`true.yml - {"proseWrap":"never"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+hello
+
+=====================================output=====================================
+hello
+
+================================================================================
+`;
+
+exports[`true.yml format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+hello
+
+=====================================output=====================================
+hello
+
+================================================================================
+`;
+
+exports[`verbatim.yml - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+!<hello> hello
+
+=====================================output=====================================
+!<hello> hello
+
+================================================================================
+`;
+
+exports[`verbatim.yml - {"proseWrap":"never"} format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+proseWrap: "never"
+                                                                                | printWidth
+=====================================input======================================
+!<hello> hello
+
+=====================================output=====================================
+!<hello> hello
+
+================================================================================
+`;
+
+exports[`verbatim.yml format 1`] = `
+====================================options=====================================
+parsers: ["yaml"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+!<hello> hello
+
+=====================================output=====================================
+!<hello> hello
+
+================================================================================
+`;

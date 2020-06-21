@@ -1,0 +1,413 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sanity.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Sanity check: shouldn't be allowed to declare a predicate AND use \`chekcs\`
+
+function check(y): %checks(typeof y === "string") {
+  return typeof y === "number";
+}
+
+declare var y: number | boolean;
+
+if (check(y)) {
+  (y: number);
+}
+
+// Sanity: disallowed body
+function indirect_is_number(y): %checks {
+  var y = 1;
+  return typeof y === "number";
+}
+
+function bak(z: string | number): number {
+  if (indirect_is_number(z)) {
+    return z;
+  } else {
+    return z.length;
+  }
+}
+
+=====================================output=====================================
+// @flow
+
+// Sanity check: shouldn't be allowed to declare a predicate AND use \`chekcs\`
+
+function check(y): %checks(typeof y === "string") {
+  return typeof y === "number";
+}
+
+declare var y: number | boolean;
+
+if (check(y)) {
+  (y: number);
+}
+
+// Sanity: disallowed body
+function indirect_is_number(y): %checks {
+  var y = 1;
+  return typeof y === "number";
+}
+
+function bak(z: string | number): number {
+  if (indirect_is_number(z)) {
+    return z;
+  } else {
+    return z.length;
+  }
+}
+
+================================================================================
+`;
+
+exports[`sanity-multi-params.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Feature: multi params
+function multi_param(w,x,y,z): %checks {
+  return typeof z === "string";
+}
+
+function foo(x: string | Array<string>): string {
+  if (multi_param("1", "2", x, "3")) {
+    return x;
+  } else {
+    return x.join();
+  }
+}
+
+=====================================output=====================================
+// @flow
+
+// Feature: multi params
+function multi_param(w, x, y, z): %checks {
+  return typeof z === "string";
+}
+
+function foo(x: string | Array<string>): string {
+  if (multi_param("1", "2", x, "3")) {
+    return x;
+  } else {
+    return x.join();
+  }
+}
+
+================================================================================
+`;
+
+exports[`sanity-ordering.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare var key: string;
+declare var obj: { page: ?Object; };
+
+if (dotAccess(obj)) {
+  (obj.page: Object);
+}
+
+function dotAccess(head, create) {
+  const path = 'path.location';
+  const stack = path.split('.');
+  do {
+    const key = stack.shift();
+    head = head[key] || create && (head[key] = {});
+  } while (stack.length && head);
+  return head;
+}
+
+=====================================output=====================================
+// @flow
+
+declare var key: string;
+declare var obj: { page: ?Object };
+
+if (dotAccess(obj)) {
+  (obj.page: Object);
+}
+
+function dotAccess(head, create) {
+  const path = "path.location";
+  const stack = path.split(".");
+  do {
+    const key = stack.shift();
+    head = head[key] || (create && (head[key] = {}));
+  } while (stack.length && head);
+  return head;
+}
+
+================================================================================
+`;
+
+exports[`sanity-unbound-var.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare var y: mixed;
+
+// Sanity check: this should fail, because the preficate function
+// checks \`y\` instead of \`x\`.
+function err(x): %checks {
+  return typeof y === "string";
+}
+
+function foo(x: string | Array<string>): string {
+  if (err(x)) {
+    return x;
+  } else {
+    return x.join();
+  }
+}
+
+=====================================output=====================================
+// @flow
+
+declare var y: mixed;
+
+// Sanity check: this should fail, because the preficate function
+// checks \`y\` instead of \`x\`.
+function err(x): %checks {
+  return typeof y === "string";
+}
+
+function foo(x: string | Array<string>): string {
+  if (err(x)) {
+    return x;
+  } else {
+    return x.join();
+  }
+}
+
+================================================================================
+`;
+
+exports[`simple-predicate-func.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function is_string(y): %checks {
+  return typeof y === "string";
+}
+
+function is_bool(y): %checks {
+  return typeof y === "boolean";
+}
+
+function is_number(y): %checks {
+  return typeof y === "number";
+}
+
+// Feature check:
+function foo(x: string | Array<string>): string {
+  if (is_string(x)) {
+    // The use of \`is_string\` as a conditional check
+    // should guarantee the narrowing of the type of \`x\`
+    // to string.
+    return x;
+  } else {
+    // Accordingly the negation of the above check
+    // guarantees that \`x\` here is an Array<string>
+    return x.join();
+  }
+}
+
+// Same as above but refining an offset
+function bar(z: { f: string | Array<string>}): string {
+  if (is_string(z.f)) {
+    return z.f;
+  } else {
+    return z.f.join();
+  }
+}
+
+function is_number_or_bool(y): %checks {
+  return is_number(y) || is_bool(y);
+}
+
+function baz(z: string | number): number {
+  if (is_number_or_bool(z)) {
+    return z;
+  } else {
+    return z.length;
+  }
+}
+
+// Feature: multi params
+function multi_param(w,x,y,z): %checks {
+  return typeof z === "string";
+}
+
+function foo(x: string | Array<string>): string {
+  if (multi_param("1", "2", "3", x)) {
+    return x;
+  } else {
+    return x.join();
+  }
+}
+
+function foo(a, b) {
+  if (two_strings(a, b)) {
+    from_two_strings(a, b);
+  }
+}
+
+function two_strings(x,y): %checks {
+  return is_string(x) && is_string(y) ;
+}
+
+declare function from_two_strings(x: string, y: string): void;
+
+=====================================output=====================================
+// @flow
+
+function is_string(y): %checks {
+  return typeof y === "string";
+}
+
+function is_bool(y): %checks {
+  return typeof y === "boolean";
+}
+
+function is_number(y): %checks {
+  return typeof y === "number";
+}
+
+// Feature check:
+function foo(x: string | Array<string>): string {
+  if (is_string(x)) {
+    // The use of \`is_string\` as a conditional check
+    // should guarantee the narrowing of the type of \`x\`
+    // to string.
+    return x;
+  } else {
+    // Accordingly the negation of the above check
+    // guarantees that \`x\` here is an Array<string>
+    return x.join();
+  }
+}
+
+// Same as above but refining an offset
+function bar(z: { f: string | Array<string> }): string {
+  if (is_string(z.f)) {
+    return z.f;
+  } else {
+    return z.f.join();
+  }
+}
+
+function is_number_or_bool(y): %checks {
+  return is_number(y) || is_bool(y);
+}
+
+function baz(z: string | number): number {
+  if (is_number_or_bool(z)) {
+    return z;
+  } else {
+    return z.length;
+  }
+}
+
+// Feature: multi params
+function multi_param(w, x, y, z): %checks {
+  return typeof z === "string";
+}
+
+function foo(x: string | Array<string>): string {
+  if (multi_param("1", "2", "3", x)) {
+    return x;
+  } else {
+    return x.join();
+  }
+}
+
+function foo(a, b) {
+  if (two_strings(a, b)) {
+    from_two_strings(a, b);
+  }
+}
+
+function two_strings(x, y): %checks {
+  return is_string(x) && is_string(y);
+}
+
+declare function from_two_strings(x: string, y: string): void;
+
+================================================================================
+`;
+
+exports[`simple-predicate-func-post.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Feature check:
+// The predicate function is defined after the conditional check
+
+function foo(x: string | Array<string>): string {
+  if (is_string(x)) {
+    // The use of \`is_string\` as a conditional check
+    // should guarantee the narrowing of the type of \`x\`
+    // to string.
+    return x;
+  } else {
+    // Accordingly the negation of the above check
+    // guarantees that \`x\` here is an Array<string>
+    return x.join();
+  }
+}
+
+function is_string(x): %checks {
+  return typeof x === "string";
+}
+
+=====================================output=====================================
+// @flow
+
+// Feature check:
+// The predicate function is defined after the conditional check
+
+function foo(x: string | Array<string>): string {
+  if (is_string(x)) {
+    // The use of \`is_string\` as a conditional check
+    // should guarantee the narrowing of the type of \`x\`
+    // to string.
+    return x;
+  } else {
+    // Accordingly the negation of the above check
+    // guarantees that \`x\` here is an Array<string>
+    return x.join();
+  }
+}
+
+function is_string(x): %checks {
+  return typeof x === "string";
+}
+
+================================================================================
+`;

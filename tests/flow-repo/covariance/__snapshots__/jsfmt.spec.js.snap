@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type CovArrayVerbose<X,Y:X> = Array<Y>;
+var b: CovArrayVerbose<number,*> = [];
+var y: CovArrayVerbose<mixed,*> = b;
+y[0] = ""; // error
+
+class NVerbose<E,I:E> {
+    x: CovArrayVerbose<E,I>;
+    foo(): CovArrayVerbose<mixed,I> { return this.x; }
+}
+
+var nv: NVerbose<number,*> = new NVerbose;
+nv.x = [0];
+(nv.x[0]: string); // error
+(nv.foo()[0]: string); // error
+
+/* TODO: use existentials for non-verbose covariance?
+
+type CovArray<X> = Array<*:X>;
+var c: CovArray<number> = [0];
+var z: CovArray<string> = c; // error
+
+var d: CovArray<number> = [];
+var w: CovArray<mixed> = d;
+w[0] = ""; // error
+
+type P<X> = CovArray<X>;
+var p: P<mixed> = [];
+(p[0]: number); // not an error!
+p[0] = ""; // error
+
+class M {
+    x: CovArray<number>;
+    foo(): CovArray<mixed> { return this.x; }
+    bar(x: string) { this.foo()[0] = x; } // error
+}
+
+class N<E> {
+    x: CovArray<E>;
+    foo(): CovArray<mixed> { return this.x; }
+    bar(e: string) { this.foo()[0] = e; } // error
+    qux(e: E) { this.foo()[0] = e; }
+}
+
+var n: N<number> = new N;
+n.x = [0];
+(n.x[0]: string); // error
+(n.foo()[0]: string); // not an error!
+
+*/
+
+=====================================output=====================================
+type CovArrayVerbose<X, Y: X> = Array<Y>;
+var b: CovArrayVerbose<number, *> = [];
+var y: CovArrayVerbose<mixed, *> = b;
+y[0] = ""; // error
+
+class NVerbose<E, I: E> {
+  x: CovArrayVerbose<E, I>;
+  foo(): CovArrayVerbose<mixed, I> {
+    return this.x;
+  }
+}
+
+var nv: NVerbose<number, *> = new NVerbose();
+nv.x = [0];
+(nv.x[0]: string); // error
+(nv.foo()[0]: string); // error
+
+/* TODO: use existentials for non-verbose covariance?
+
+type CovArray<X> = Array<*:X>;
+var c: CovArray<number> = [0];
+var z: CovArray<string> = c; // error
+
+var d: CovArray<number> = [];
+var w: CovArray<mixed> = d;
+w[0] = ""; // error
+
+type P<X> = CovArray<X>;
+var p: P<mixed> = [];
+(p[0]: number); // not an error!
+p[0] = ""; // error
+
+class M {
+    x: CovArray<number>;
+    foo(): CovArray<mixed> { return this.x; }
+    bar(x: string) { this.foo()[0] = x; } // error
+}
+
+class N<E> {
+    x: CovArray<E>;
+    foo(): CovArray<mixed> { return this.x; }
+    bar(e: string) { this.foo()[0] = e; } // error
+    qux(e: E) { this.foo()[0] = e; }
+}
+
+var n: N<number> = new N;
+n.x = [0];
+(n.x[0]: string); // error
+(n.foo()[0]: string); // not an error!
+
+*/
+
+================================================================================
+`;

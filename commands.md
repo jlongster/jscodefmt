@@ -35,10 +35,10 @@ However, if any of the items inside the array have a hard break, the array will 
 ```js
 [
   1,
-  function() {
+  function () {
     return 2;
   },
-  3
+  3,
 ];
 ```
 
@@ -229,7 +229,7 @@ declare function markAsRoot(doc: Doc): Doc;
 
 This marks the current indentation as root for `dedentToRoot` and `literalline`s.
 
-#### dedentToRoot
+### dedentToRoot
 
 ```ts
 declare function dedentToRoot(doc: Doc): Doc;

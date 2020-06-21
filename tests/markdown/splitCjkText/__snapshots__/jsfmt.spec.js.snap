@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`chinese-japanese.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+這是一段很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長的段落
+
+全　　形　空白全　　形　空白全　　形　空白全　　形　空白全　　形　空白全　　形　空白全　　形　空白
+
+空白全形空白全形空白全形空白　空白全形空白全形空白全形空白　空白全形空白全形空白全形空白　空白全形空白全形空白全形空白
+
+何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+
+カ゚キ゚ク゚ケ゚コ゚でガギグゴ
+
+かつてはワ行のワ、ヰ、ヱ、ヲに濁点を付して [v] 音を表現すること（ワ゛、ヰ゛、ヱ゛、ヲ゛）も行われたが、一般的にはならなかった。
+=====================================output=====================================
+這是一段很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長
+很長的段落
+
+全　　形　空白全　　形　空白全　　形　空白全　　形　空白全　　形　空白
+全　　形　空白全　　形　空白
+
+空白全形空白全形空白全形空白　空白全形空白全形空白全形空白　空白全形空白全形空白
+全形空白　空白全形空白全形空白全形空白
+
+何でも薄暗いじめじめした所でニャーニャー泣いていた事だけは記憶している。
+
+カ゚キ゚ク゚ケ゚コ゚でガギグゴ
+
+かつてはワ行のワ、ヰ、ヱ、ヲに濁点を付して [v] 音を表現すること（ワ゛、ヰ゛、ヱ
+゛、ヲ゛）も行われたが、一般的にはならなかった。
+
+================================================================================
+`;
+
+exports[`korean.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+예문Latin예문Latin 예문Latin예문 Latin예문Latin 예문 Latin 예문
+
+=====================================output=====================================
+예문Latin예문Latin 예문Latin예문 Latin예문Latin 예문 Latin 예문
+
+================================================================================
+`;
+
+exports[`link.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+[這是一段很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長的段落][]
+
+=====================================output=====================================
+[這是一段很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長的段落][]
+
+================================================================================
+`;
+
+exports[`mixed.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！這是一個English混合著中文的一段Paragraph！
+
+=====================================output=====================================
+這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段
+Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著
+中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個
+English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段
+Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著
+中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個
+English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段
+Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著
+中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個
+English 混合著中文的一段 Paragraph！
+
+================================================================================
+`;
+
+exports[`space.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！
+
+=====================================output=====================================
+這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段
+Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著
+中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個
+English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段
+Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著
+中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個
+English 混合著中文的一段 Paragraph！這是一個 English 混合著中文的一段
+Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個 English 混合著
+中文的一段 Paragraph！這是一個 English 混合著中文的一段 Paragraph！這是一個
+English 混合著中文的一段 Paragraph！
+
+================================================================================
+`;

@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`variables.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+.foo {
+  --#{$prop}: 10px;
+  #{$prop}: 10px;
+  prop1: var(--#{$var});
+  prop2: var(#{$var}, --my-#{$var}, pink);
+  prop3: calc(var(--#{$var}) * 1px);
+}
+
+@supports (--#{$prop}: green) {
+  body {
+    color: var(--#{$var});
+  }
+}
+
+=====================================output=====================================
+.foo {
+  --#{$prop}: 10px;
+  #{$prop}: 10px;
+  prop1: var(--#{$var});
+  prop2: var(#{$var}, --my-#{$var}, pink);
+  prop3: calc(var(--#{$var}) * 1px);
+}
+
+@supports (--#{$prop}: green) {
+  body {
+    color: var(--#{$var});
+  }
+}
+
+================================================================================
+`;

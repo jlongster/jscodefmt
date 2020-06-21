@@ -1,0 +1,428 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`more_switch.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function foo(x): number {
+    switch (x) {
+      case 0:
+      case 1: return 1;
+      default: throw new Error('hi');
+    }
+}
+
+function bar(x) {
+    switch (x) {
+      case 0: break;
+      default: return;
+    }
+    1;
+}
+
+function baz(x): number {
+  switch (x) {
+    case 0: break;
+    case 1: return 1;
+    default: throw new Error('hi');
+  }
+  return 2;
+}
+
+=====================================output=====================================
+/* @flow */
+
+function foo(x): number {
+  switch (x) {
+    case 0:
+    case 1:
+      return 1;
+    default:
+      throw new Error("hi");
+  }
+}
+
+function bar(x) {
+  switch (x) {
+    case 0:
+      break;
+    default:
+      return;
+  }
+  1;
+}
+
+function baz(x): number {
+  switch (x) {
+    case 0:
+      break;
+    case 1:
+      return 1;
+    default:
+      throw new Error("hi");
+  }
+  return 2;
+}
+
+================================================================================
+`;
+
+exports[`switch.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ */
+function foo(
+): number {
+    switch ('foo') {
+    case 'foo':
+        return 1;
+    }
+    return 2;
+}
+
+function bar() {
+    switch ('bar') {
+    case 'bar':
+        break;
+    default:
+        break;
+    }
+}
+
+function qux(b) {
+    var x = b? 0: "";
+    switch('qux') {
+    case '':
+        x = 0;
+    case 'qux':
+        x = x*x;
+    }
+}
+
+=====================================output=====================================
+/**
+ * @flow
+ */
+function foo(): number {
+  switch ("foo") {
+    case "foo":
+      return 1;
+  }
+  return 2;
+}
+
+function bar() {
+  switch ("bar") {
+    case "bar":
+      break;
+    default:
+      break;
+  }
+}
+
+function qux(b) {
+  var x = b ? 0 : "";
+  switch ("qux") {
+    case "":
+      x = 0;
+    case "qux":
+      x = x * x;
+  }
+}
+
+================================================================================
+`;
+
+exports[`switch_default_fallthrough.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ */
+function foo(x : mixed): string {
+    var a = "";
+    var b = "";
+
+    switch (x) {
+      case "foo":
+        a = 0;
+      default:
+        b = 0;
+    }
+
+    // a is now string | number
+    (a : string); // error, string | number ~/> string
+    (a : number); // error, string | number ~/> number
+
+    // b is now number
+    (b : number); // ok
+    return b; // error, number ~/> string
+}
+
+function baz(x: mixed): number {
+    var a = "";
+    var b = "";
+
+    switch (x) {
+      case "baz":
+        a = 0;
+        break;
+      case "bar":
+        a = "";
+      default:
+        b = 0;
+    }
+
+    // a is now string | number
+    (a : string); // error, string | number ~/> string
+    (a : number); // error, string | number ~/> number
+
+    // b is now string | number
+    (b : string); // error, string | number ~/> string
+    (b : number); // error, string | number ~/> number
+
+    return a+b; // error, string ~/> number
+}
+
+=====================================output=====================================
+/**
+ * @flow
+ */
+function foo(x: mixed): string {
+  var a = "";
+  var b = "";
+
+  switch (x) {
+    case "foo":
+      a = 0;
+    default:
+      b = 0;
+  }
+
+  // a is now string | number
+  (a: string); // error, string | number ~/> string
+  (a: number); // error, string | number ~/> number
+
+  // b is now number
+  (b: number); // ok
+  return b; // error, number ~/> string
+}
+
+function baz(x: mixed): number {
+  var a = "";
+  var b = "";
+
+  switch (x) {
+    case "baz":
+      a = 0;
+      break;
+    case "bar":
+      a = "";
+    default:
+      b = 0;
+  }
+
+  // a is now string | number
+  (a: string); // error, string | number ~/> string
+  (a: number); // error, string | number ~/> number
+
+  // b is now string | number
+  (b: string); // error, string | number ~/> string
+  (b: number); // error, string | number ~/> number
+
+  return a + b; // error, string ~/> number
+}
+
+================================================================================
+`;
+
+exports[`trailing_cases.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * trailing cases are allowed - spot checks that we handle them as usual
+ * @flow
+ */
+function f1(i) {
+  var x;
+
+  switch (i) {
+  case 0:
+    x = 0;
+    break;
+  case 1:
+    x = 1;
+    break;
+  default:
+    x = -1;
+    break;
+  case 2:
+    x = "2";
+    break;
+  }
+
+  var y:number = x; // error, number | string ~/> number
+}
+
+function f2(i) {
+  var x;
+
+  switch (i) {
+  case 0:
+  case 1:
+  default:
+    x = 1;
+    break;
+  case 2:
+    // does not fall through default
+  }
+
+  var y:number = x; // error, number | uninitialized ~/> number
+}
+
+function f3(i) {
+  var x;
+
+  switch (i) {
+  case 0:
+  case 1:
+  default:
+    // falls through to subsequent cases
+  case 2:
+    x = 1;
+  }
+
+  var y:number = x; // no error
+}
+
+function foo(x): number {
+    switch (x) {
+      case 0:
+      default: throw new Error('hi');
+      case 1: return 1;
+    }
+}
+
+function bar(x) {
+    switch (x) {
+      default: return;
+      case 0: break;
+    }
+    1;
+}
+
+function baz(x): number {
+  switch (x) {
+    case 0: break;
+    default: throw new Error('hi');
+    case 1: return 1;
+  }
+  return 2;
+}
+
+=====================================output=====================================
+/**
+ * trailing cases are allowed - spot checks that we handle them as usual
+ * @flow
+ */
+function f1(i) {
+  var x;
+
+  switch (i) {
+    case 0:
+      x = 0;
+      break;
+    case 1:
+      x = 1;
+      break;
+    default:
+      x = -1;
+      break;
+    case 2:
+      x = "2";
+      break;
+  }
+
+  var y: number = x; // error, number | string ~/> number
+}
+
+function f2(i) {
+  var x;
+
+  switch (i) {
+    case 0:
+    case 1:
+    default:
+      x = 1;
+      break;
+    case 2:
+    // does not fall through default
+  }
+
+  var y: number = x; // error, number | uninitialized ~/> number
+}
+
+function f3(i) {
+  var x;
+
+  switch (i) {
+    case 0:
+    case 1:
+    default:
+    // falls through to subsequent cases
+    case 2:
+      x = 1;
+  }
+
+  var y: number = x; // no error
+}
+
+function foo(x): number {
+  switch (x) {
+    case 0:
+    default:
+      throw new Error("hi");
+    case 1:
+      return 1;
+  }
+}
+
+function bar(x) {
+  switch (x) {
+    default:
+      return;
+    case 0:
+      break;
+  }
+  1;
+}
+
+function baz(x): number {
+  switch (x) {
+    case 0:
+      break;
+    default:
+      throw new Error("hi");
+    case 1:
+      return 1;
+  }
+  return 2;
+}
+
+================================================================================
+`;

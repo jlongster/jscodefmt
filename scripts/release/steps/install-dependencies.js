@@ -15,6 +15,6 @@ async function install() {
   }
 }
 
-module.exports = function() {
+module.exports = function () {
   return logPromise("Installing NPM dependencies", install());
 };

@@ -9,7 +9,7 @@ function startWithPragma(text) {
   const regex = new RegExp(
     [
       `<!--\\s*${pragma}\\s*-->`,
-      `<!--.*\r?\n[\\s\\S]*(^|\n)[^\\S\n]*${pragma}[^\\S\n]*($|\n)[\\s\\S]*\n.*-->`
+      `<!--.*\r?\n[\\s\\S]*(^|\n)[^\\S\n]*${pragma}[^\\S\n]*($|\n)[\\s\\S]*\n.*-->`,
     ].join("|"),
     "m"
   );
@@ -19,13 +19,13 @@ function startWithPragma(text) {
 
 module.exports = {
   startWithPragma,
-  hasPragma: text =>
+  hasPragma: (text) =>
     startWithPragma(parseFrontMatter(text).content.trimStart()),
-  insertPragma: text => {
+  insertPragma: (text) => {
     const extracted = parseFrontMatter(text);
     const pragma = `<!-- @${pragmas[0]} -->`;
     return extracted.frontMatter
       ? `${extracted.frontMatter.raw}\n\n${pragma}\n\n${extracted.content}`
       : `${pragma}\n\n${extracted.content}`;
-  }
+  },
 };

@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`B.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+var A = require ('./A');
+import type C from './C';
+
+export type B = string;
+
+=====================================output=====================================
+// @flow
+var A = require("./A");
+import type C from "./C";
+
+export type B = string;
+
+================================================================================
+`;
+
+exports[`C.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+var A = require ('./A');
+import type { B } from './B'
+
+class C extends A {
+  b: B;
+}
+
+module.exports = C;
+
+=====================================output=====================================
+// @flow
+var A = require("./A");
+import type { B } from "./B";
+
+class C extends A {
+  b: B;
+}
+
+module.exports = C;
+
+================================================================================
+`;

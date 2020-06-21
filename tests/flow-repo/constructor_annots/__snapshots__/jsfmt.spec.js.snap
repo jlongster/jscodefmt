@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`constructors.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// Foo is a class-like function
+function Foo() {
+  this.x = 0; // constructs objects with property x
+}
+Foo.y = 0; // has static property y
+Foo.prototype = { m() { return 0; } };
+
+// exporting Foo directly doesn't work
+// Foo's instance and static props are not picked up
+exports.Foo = Foo;
+
+// so you want to type Foo, by declaring it as a class
+interface IFooPrototype {
+  m: () => number;
+}
+interface IFoo extends IFooPrototype {
+  x: boolean; // error, should have declared x: number instead
+  static (): void;
+  constructor(): void;
+}
+exports.Foo2 = (Foo: Class<IFoo>);
+
+=====================================output=====================================
+// Foo is a class-like function
+function Foo() {
+  this.x = 0; // constructs objects with property x
+}
+Foo.y = 0; // has static property y
+Foo.prototype = {
+  m() {
+    return 0;
+  },
+};
+
+// exporting Foo directly doesn't work
+// Foo's instance and static props are not picked up
+exports.Foo = Foo;
+
+// so you want to type Foo, by declaring it as a class
+interface IFooPrototype {
+  m: () => number;
+}
+interface IFoo extends IFooPrototype {
+  x: boolean; // error, should have declared x: number instead
+  static(): void;
+  constructor(): void;
+}
+exports.Foo2 = (Foo: Class<IFoo>);
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var Foo = require('./constructors').Foo;
+var x: string = new Foo().x; // error, found number instead of string
+var y: string = Foo.y; // error, found number instead of string
+var z: string = new Foo().m();
+
+var Foo2 = require('./constructors').Foo2;
+var x2: string = new Foo2().x; // error, found boolean instead of string
+var y2: string = Foo2.y; // error, found boolean instead of string
+var z2: string = new Foo2().m();
+
+=====================================output=====================================
+var Foo = require("./constructors").Foo;
+var x: string = new Foo().x; // error, found number instead of string
+var y: string = Foo.y; // error, found number instead of string
+var z: string = new Foo().m();
+
+var Foo2 = require("./constructors").Foo2;
+var x2: string = new Foo2().x; // error, found boolean instead of string
+var y2: string = Foo2.y; // error, found boolean instead of string
+var z2: string = new Foo2().m();
+
+================================================================================
+`;

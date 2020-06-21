@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`annot.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var A = require('./unknown_class');
+
+class B extends A {
+  foo(x:A):A { return x; }
+  bar(x) { }
+  qux<X,Y>(x:X,y:Y):X { return x;}
+}
+
+module.exports = B;
+
+=====================================output=====================================
+var A = require("./unknown_class");
+
+class B extends A {
+  foo(x: A): A {
+    return x;
+  }
+  bar(x) {}
+  qux<X, Y>(x: X, y: Y): X {
+    return x;
+  }
+}
+
+module.exports = B;
+
+================================================================================
+`;
+
+exports[`fun.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ */
+
+// progressively annotate:
+
+//function f(x) { return x; }
+function f(x:number) { return x; }
+//function f(x:number):string { return x; }
+
+var x:string = f(0);
+
+module.exports = f;
+
+=====================================output=====================================
+/**
+ * @flow
+ */
+
+// progressively annotate:
+
+//function f(x) { return x; }
+function f(x: number) {
+  return x;
+}
+//function f(x:number):string { return x; }
+
+var x: string = f(0);
+
+module.exports = f;
+
+================================================================================
+`;
+
+exports[`obj.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ */
+
+// progressively annotate:
+
+var o = { x: 0 }
+//var o: {x: number;} = { x: 0 }
+
+var x:string = o.x;
+
+module.exports = o;
+
+=====================================output=====================================
+/**
+ * @flow
+ */
+
+// progressively annotate:
+
+var o = { x: 0 };
+//var o: {x: number;} = { x: 0 }
+
+var x: string = o.x;
+
+module.exports = o;
+
+================================================================================
+`;

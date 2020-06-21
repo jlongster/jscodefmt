@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`symbolProperty15.ts 1`] = `
+exports[`symbolProperty15.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

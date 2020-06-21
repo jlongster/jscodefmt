@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unique-symbol.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type A = unique symbol;
+type B = keyof something;
+
+=====================================output=====================================
+type A = unique symbol;
+type B = keyof something;
+
+================================================================================
+`;

@@ -1,0 +1,696 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CRLF.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+$nice-blue: #5B83AD;
+$light-blue: $nice-blue + #111;
+
+// Comment 1
+/*
+ * Comment 2
+ */
+#header {
+    // Comment 3
+    /*
+     * Comment 4
+     */
+    color: @light-blue;
+}
+
+@media only screen and (max-width: 600px) {
+    // Comment 1
+    /*
+     * Comment 5
+     */
+    body {
+        background-color: lightblue; // Comment 6
+        color: red; /* Comment 7 */
+    }
+}
+
+@mixin create-rules($padding) {
+    //
+    // Comment 8
+    //
+    .abc {
+        padding: $padding;
+    }
+    /**
+     * Comment 9
+     */
+    .def {
+        padding: $padding;
+    }
+}
+
+=====================================output=====================================
+$nice-blue: #5b83ad;
+$light-blue: $nice-blue + #111;
+
+// Comment 1
+/*
+ * Comment 2
+ */
+#header {
+  // Comment 3
+  /*
+     * Comment 4
+     */
+  color: @light-blue;
+}
+
+@media only screen and (max-width: 600px) {
+  // Comment 1
+  /*
+     * Comment 5
+     */
+  body {
+    background-color: lightblue; // Comment 6
+    color: red; /* Comment 7 */
+  }
+}
+
+@mixin create-rules($padding) {
+  //
+  // Comment 8
+  //
+  .abc {
+    padding: $padding;
+  }
+  /**
+     * Comment 9
+     */
+  .def {
+    padding: $padding;
+  }
+}
+
+================================================================================
+`;
+
+exports[`at-rule.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@at-root .foo
+// .bar
+{
+
+}
+
+@at-root
+// .bar
+.foo
+{
+
+}
+=====================================output=====================================
+@at-root .foo
+// .bar
+{
+}
+
+@at-root // .bar
+.foo {
+}
+
+================================================================================
+`;
+
+exports[`between-decl.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+selector {
+prop: // comment
+value;
+
+prop: /* block */ value;
+
+prop
+: value;
+}
+
+// #5603
+.grid {
+        grid-template-areas: //
+          "header header header" //
+          "sidebar content content" //
+          "footer footer footer";
+
+        grid-template-areas:
+          "header header header" //
+          "sidebar content content" //
+          "footer footer footer";
+ }
+
+// #8052
+$font-family-rich:
+  // custom
+  'Noto Sans TC', 'Noto Sans SC', 'Noto Sans JP',
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system, BlinkMacSystemFont,
+  // fallback
+  Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif,
+  // emoji
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol' !default;
+
+// #7109
+.test {
+    background:
+        /////// foo
+        // bar
+
+        radial-gradient(circle farthest-corner at 5% 10%, #000000, transparent 50%);
+}
+
+// TODO: make these pretty
+selector {
+prop:
+/* block */
+value;
+
+prop
+// inline
+:
+value;
+
+prop/* block */:
+value;
+
+prop
+/* block */
+:
+value;
+
+prop/* before */: // after
+value;
+
+
+prop/* before */: /* after*/
+value;
+}
+
+=====================================output=====================================
+selector {
+  prop: // comment
+    value;
+
+  prop: /* block */ value;
+
+  prop: value;
+}
+
+// #5603
+.grid {
+  grid-template-areas: //
+    "header header header" //
+    "sidebar content content" //
+    "footer footer footer";
+
+  grid-template-areas: "header header header" //
+    "sidebar content content" //
+    "footer footer footer";
+}
+
+// #8052
+$font-family-rich:
+  // custom
+  "Noto Sans TC", "Noto Sans SC", "Noto Sans JP",
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  BlinkMacSystemFont,
+  // fallback
+  Roboto,
+  "Helvetica Neue", Helvetica, Arial, sans-serif,
+  // emoji
+  "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol" !default;
+
+// #7109
+.test {
+  background:
+        /////// foo
+        // bar
+    radial-gradient(circle farthest-corner at 5% 10%, #000000, transparent 50%);
+}
+
+// TODO: make these pretty
+selector {
+  prop:
+/* block */ value;
+
+  prop // inline
+: value;
+
+  prop/* block */: value;
+
+  prop/* block */
+: value;
+
+  prop/* before */: // after
+    value;
+
+  prop/* before */: /* after*/ value;
+}
+
+================================================================================
+`;
+
+exports[`bug.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@font-face  {
+  src: url(if(
+    $bootstrap-sass-asset-helper,
+    twbs-font-path('#{$icon-font-path}#{$icon-font-name}.eot'),
+    '#{$icon-font-path}#{$icon-font-name}.eot'
+  ));
+}
+
+// Catchall baseclass
+/* Catchall baseclass */
+.glyphicon {
+}
+
+=====================================output=====================================
+@font-face {
+  src: url(if(
+    $bootstrap-sass-asset-helper,
+    twbs-font-path("#{$icon-font-path}#{$icon-font-name}.eot"),
+    "#{$icon-font-path}#{$icon-font-name}.eot"
+  ));
+}
+
+// Catchall baseclass
+/* Catchall baseclass */
+.glyphicon {
+}
+
+================================================================================
+`;
+
+exports[`if-eslit-at-rule-decloration.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@function _normalize-include($section) {
+// Check if $section is in the $include list.
+  @if index($_normalize-include, $section) {
+    @return true;
+  }
+// If $include is set to (all), make sure $section is not in $exclude.
+  @else if not index($_normalize-exclude, $section) and index($_normalize-include, all) {
+    @return true;
+  }
+  @return false;
+}
+
+=====================================output=====================================
+@function _normalize-include($section) {
+  // Check if $section is in the $include list.
+  @if index($_normalize-include, $section) {
+    @return true;
+  }
+  // If $include is set to (all), make sure $section is not in $exclude.
+  @else if not
+    index($_normalize-exclude, $section) and
+    index($_normalize-include, all)
+  {
+    @return true;
+  }
+  @return false;
+}
+
+================================================================================
+`;
+
+exports[`lists.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+$my-list:
+  'foo', // Foo
+  'bar'; // Bar
+
+$my-list2:
+  a // a
+  b
+  c;
+
+=====================================output=====================================
+$my-list: "foo",
+  // Foo
+  "bar"; // Bar
+
+$my-list2: a // a
+  b c;
+
+================================================================================
+`;
+
+exports[`maps.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+$my-map: (
+  'foo': 1, // Foo
+  'bar': 2, // Bar
+);
+
+=====================================output=====================================
+$my-map: (
+  "foo": 1,
+  // Foo
+  "bar": 2,
+  // Bar
+);
+
+================================================================================
+`;
+
+exports[`mixed.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+
+@import "a";
+
+// '/*' <-- this breaks formatting
+
+@import 'b';
+// another comment
+//no-space before
+
+=====================================output=====================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+
+@import "a";
+
+// '/*' <-- this breaks formatting
+
+@import "b";
+// another comment
+//no-space before
+
+================================================================================
+`;
+
+exports[`mixed-2.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+@import "a";
+//*
+@import 'b';
+/* block */
+/*no-space block*/
+
+=====================================output=====================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+@import "a";
+//*
+@import "b";
+/* block */
+/*no-space block*/
+
+================================================================================
+`;
+
+exports[`mixed-block.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+
+@import "a";
+
+// '/*' <-- this breaks formatting
+
+@import 'b';
+/* block */
+/*no-space block*/
+
+=====================================output=====================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+
+@import "a";
+
+// '/*' <-- this breaks formatting
+
+@import "b";
+/* block */
+/*no-space block*/
+
+================================================================================
+`;
+
+exports[`prettier-ignore.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+foo {
+  /* prettier-ignore */
+  thing:     foo;
+  -ms-thing: foo;
+}
+
+=====================================output=====================================
+foo {
+  /* prettier-ignore */
+  thing:     foo;
+  -ms-thing: foo;
+}
+
+================================================================================
+`;
+
+exports[`selectors.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+.powerPathNavigator .helm button.pressedButton, // comment 1
+.powerPathNavigator .helm button:active:not(.disabledButton),
+.powerPathNavigator table.powerPathInfo th:active,
+.powerPathNavigator table.powerPathInfo th:active + th:last-child {
+}
+
+// comment 2
+.powerPathNavigator .helm button.pressedButton,
+.powerPathNavigator .helm button:active:not(.disabledButton) {
+}
+
+.foo,
+// comment 3
+.bar {
+  display: block;
+}
+
+.field
+  {
+  &[data-field-id="1"], // comment 4
+  &[data-field-id="2"], // comment 5
+  &[data-field-id="3"], // comment 6
+  {
+    background: green;
+  }
+}
+
+// comment 7
+.field
+// comment 8
+{ // comment 9
+  // comment 10
+  &[data-field-id="1"], // comment 11
+  // comment 12
+  &[data-field-id="2"] // comment 13
+  // comment 14
+  , // comment 15
+  // comment 16
+  &[data-field-id="3"], // comment 17
+  // comment 18
+  { // comment 19
+    // comment 20
+    background: green;
+    // comment 21
+  } // comment 22
+  // comment 23
+}
+// comment 24
+
+.foo
+// comment 25
+.bar
+// comment 26
+{}
+
+.foo
+// comment 27
++
+// comment 28
+.bar
+// comment 29
+{}
+
+=====================================output=====================================
+.powerPathNavigator .helm button.pressedButton, // comment 1
+.powerPathNavigator .helm button:active:not(.disabledButton),
+.powerPathNavigator table.powerPathInfo th:active,
+.powerPathNavigator table.powerPathInfo th:active + th:last-child {
+}
+
+// comment 2
+.powerPathNavigator .helm button.pressedButton,
+.powerPathNavigator .helm button:active:not(.disabledButton) {
+}
+
+.foo,
+// comment 3
+.bar {
+  display: block;
+}
+
+.field {
+  &[data-field-id="1"], // comment 4
+  &[data-field-id="2"], // comment 5
+  &[data-field-id="3"], // comment 6
+  {
+    background: green;
+  }
+}
+
+// comment 7
+.field
+// comment 8
+{
+  // comment 9
+  // comment 10
+  &[data-field-id="1"], // comment 11
+  // comment 12
+  &[data-field-id="2"] // comment 13
+  // comment 14
+  , // comment 15
+  // comment 16
+  &[data-field-id="3"], // comment 17
+  // comment 18
+  {
+    // comment 19
+    // comment 20
+    background: green;
+    // comment 21
+  } // comment 22
+  // comment 23
+}
+// comment 24
+
+.foo
+// comment 25
+.bar
+// comment 26
+{
+}
+
+.foo
+// comment 27
++
+// comment 28
+.bar
+// comment 29
+{
+}
+
+================================================================================
+`;
+
+exports[`trailing_star_slash.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@media (max-width: 1) {}
+a {
+  // element.style */
+}
+
+=====================================output=====================================
+@media (max-width: 1) {
+}
+a {
+  // element.style */
+}
+
+================================================================================
+`;
+
+exports[`variable-declaration.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+$var: /* comment 1 */ all /* comment 2 */ !default /* comment 3 */ ; /* comment 4 */
+
+@mixin text-color {
+  /* comment 5 */
+  /* comment 6 */ $text-color /* comment 7 */ : /* comment 8 */ red /* comment 9 */ !default /* comment 10 */ ; /* comment 11 */
+  /* comment 12 */
+  color: $text-color;
+}
+
+.error {
+  /* comment 13 */
+  /* comment 14 */ $text-color /* comment 15 */ : /* comment 16 */ green /* comment 17 */ !global /* comment 18 */ ; /* comment 19 */
+  /* comment 20 */
+}
+
+=====================================output=====================================
+$var: /* comment 1 */ all /* comment 2 */ !default /* comment 3 */; /* comment 4 */
+
+@mixin text-color {
+  /* comment 5 */
+  /* comment 6 */
+  $text-color/* comment 7 */ : /* comment 8 */ red /* comment 9 */ !default /* comment 10 */; /* comment 11 */
+  /* comment 12 */
+  color: $text-color;
+}
+
+.error {
+  /* comment 13 */
+  /* comment 14 */
+  $text-color/* comment 15 */ : /* comment 16 */ green /* comment 17 */ !global /* comment 18 */; /* comment 19 */
+  /* comment 20 */
+}
+
+================================================================================
+`;

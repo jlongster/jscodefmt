@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ie-hacks.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+* html p {font-size: 5em; }
+.class {
+*zoom: 1;_width: 200px;
++color:red;
+*+color:red;
+color:red\\9;
+color:red\\0;
+color:red\\9\\0;
+}
+
+=====================================output=====================================
+* html p {
+  font-size: 5em;
+}
+.class {
+  *zoom: 1;
+  _width: 200px;
+  +color: red;
+  *+color: red;
+  color: red\\9;
+  color: red\\0;
+  color: red\\9\\0;
+}
+
+================================================================================
+`;

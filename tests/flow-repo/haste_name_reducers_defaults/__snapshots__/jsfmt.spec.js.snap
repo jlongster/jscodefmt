@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Module1.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var test = require('test');
+
+(test: boolean);
+
+module.exports = test;
+
+=====================================output=====================================
+/* @flow */
+
+var test = require("test");
+
+(test: boolean);
+
+module.exports = test;
+
+================================================================================
+`;
+
+exports[`index.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+(require('Module1'): boolean);
+(require('Module2').foo(): boolean);
+require('Module3');
+
+=====================================output=====================================
+/* @flow */
+
+(require("Module1"): boolean);
+(require("Module2").foo(): boolean);
+require("Module3");
+
+================================================================================
+`;

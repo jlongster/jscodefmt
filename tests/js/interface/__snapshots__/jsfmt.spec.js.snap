@@ -1,0 +1,299 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`break.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+export interface Environment1 extends GenericEnvironment<
+  SomeType,
+  AnotherType,
+  YetAnotherType,
+> {
+  m(): void;
+};
+export class Environment2 extends GenericEnvironment<
+  SomeType,
+  AnotherType,
+  YetAnotherType,
+  DifferentType1,
+  DifferentType2,
+  DifferentType3,
+  DifferentType4,
+> {
+  m() {};
+};
+
+// Declare Interface Break
+declare interface ExtendsOne extends ASingleInterface {
+  x: string;
+}
+
+declare interface ExtendsLarge extends ASingleInterfaceWithAReallyReallyReallyReallyLongName {
+  x: string;
+}
+
+declare interface ExtendsMany extends Interface1, Interface2, Interface3, Interface4, Interface5, Interface6, Interface7 {
+  x: string;
+}
+
+// Interface declaration break
+interface ExtendsOne extends ASingleInterface {
+  x: string;
+}
+
+interface ExtendsLarge extends ASingleInterfaceWithAReallyReallyReallyReallyLongName {
+  x: string;
+}
+
+interface ExtendsMany extends Interface1, Interface2, Interface3, Interface4, Interface5, Interface6, Interface7 {
+  s: string;
+}
+
+// Generic Types
+interface ExtendsOne extends ASingleInterface<string> {
+  x: string;
+}
+
+interface ExtendsLarge extends ASingleInterfaceWithAReallyReallyReallyReallyLongName<string> {
+  x: string;
+}
+
+interface ExtendsMany
+  extends ASingleGenericInterface<Interface1, Interface2, Interface3, Interface4, Interface5, Interface6, Interface7> {
+  x: string;
+}
+
+interface ExtendsManyWithGenerics
+  extends InterfaceOne, InterfaceTwo, ASingleGenericInterface<Interface1, Interface2, Interface3, Interface4, Interface5, Interface6, Interface7>, InterfaceThree {
+
+    x: string;
+  }
+
+export interface ExtendsLongOneWithGenerics extends Bar< SomeLongTypeSomeLongTypeSomeLongTypeSomeLongType,  ToBreakLineToBreakLineToBreakLine> {}
+
+=====================================output=====================================
+export interface Environment1
+  extends GenericEnvironment<SomeType, AnotherType, YetAnotherType> {
+  m(): void;
+}
+export class Environment2 extends GenericEnvironment<
+  SomeType,
+  AnotherType,
+  YetAnotherType,
+  DifferentType1,
+  DifferentType2,
+  DifferentType3,
+  DifferentType4
+> {
+  m() {}
+}
+
+// Declare Interface Break
+declare interface ExtendsOne extends ASingleInterface {
+  x: string;
+}
+
+declare interface ExtendsLarge
+  extends ASingleInterfaceWithAReallyReallyReallyReallyLongName {
+  x: string;
+}
+
+declare interface ExtendsMany
+  extends Interface1,
+    Interface2,
+    Interface3,
+    Interface4,
+    Interface5,
+    Interface6,
+    Interface7 {
+  x: string;
+}
+
+// Interface declaration break
+interface ExtendsOne extends ASingleInterface {
+  x: string;
+}
+
+interface ExtendsLarge
+  extends ASingleInterfaceWithAReallyReallyReallyReallyLongName {
+  x: string;
+}
+
+interface ExtendsMany
+  extends Interface1,
+    Interface2,
+    Interface3,
+    Interface4,
+    Interface5,
+    Interface6,
+    Interface7 {
+  s: string;
+}
+
+// Generic Types
+interface ExtendsOne extends ASingleInterface<string> {
+  x: string;
+}
+
+interface ExtendsLarge
+  extends ASingleInterfaceWithAReallyReallyReallyReallyLongName<string> {
+  x: string;
+}
+
+interface ExtendsMany
+  extends ASingleGenericInterface<
+    Interface1,
+    Interface2,
+    Interface3,
+    Interface4,
+    Interface5,
+    Interface6,
+    Interface7
+  > {
+  x: string;
+}
+
+interface ExtendsManyWithGenerics
+  extends InterfaceOne,
+    InterfaceTwo,
+    ASingleGenericInterface<
+      Interface1,
+      Interface2,
+      Interface3,
+      Interface4,
+      Interface5,
+      Interface6,
+      Interface7
+    >,
+    InterfaceThree {
+  x: string;
+}
+
+export interface ExtendsLongOneWithGenerics
+  extends Bar<
+    SomeLongTypeSomeLongTypeSomeLongTypeSomeLongType,
+    ToBreakLineToBreakLineToBreakLine
+  > {}
+
+================================================================================
+`;
+
+exports[`comments.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+interface A1  // comment
+{  foo(): bar;}
+
+interface A2  // comment
+extends Base
+{  foo(): bar;}
+
+interface A3  // comment1
+extends Base  // comment2
+{  foo(): bar;}
+
+interface A4  // comment1
+extends Base  // comment2
+              // comment3
+{  foo(): bar;}
+
+interface A5  // comment1
+extends Base  // comment2
+              // comment3
+{             // comment4
+foo(): bar;}
+
+interface A6  // comment1
+extends Base  // comment2
+              // comment3
+{
+// comment4
+foo(): bar;}
+
+=====================================output=====================================
+interface A1 {
+  // comment
+  foo(): bar;
+}
+
+interface A2 // comment
+  extends Base {
+  foo(): bar;
+}
+
+interface A3 // comment1
+  extends Base {
+  // comment2
+  foo(): bar;
+}
+
+interface A4 // comment1
+  extends Base {
+  // comment2
+  // comment3
+  foo(): bar;
+}
+
+interface A5 // comment1
+  extends Base {
+  // comment2
+  // comment3
+  // comment4
+  foo(): bar;
+}
+
+interface A6 // comment1
+  extends Base {
+  // comment2
+  // comment3
+  // comment4
+  foo(): bar;
+}
+
+================================================================================
+`;
+
+exports[`comments-declare.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare interface a // 1
+  extends b  // 2
+{  foo: boolean}
+
+=====================================output=====================================
+declare interface a // 1
+  extends b {
+  // 2
+  foo: boolean;
+}
+
+================================================================================
+`;
+
+exports[`module.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare module X {
+  declare interface Y { x: number; }
+}
+
+=====================================output=====================================
+declare module X {
+  declare interface Y {
+    x: number;
+  }
+}
+
+================================================================================
+`;

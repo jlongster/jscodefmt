@@ -573,3 +573,7 @@ a {
 .hljs-comment {
   color: #cda144;
 }
+
+.showcaseSection .logos img {
+  max-height: 64px;
+}

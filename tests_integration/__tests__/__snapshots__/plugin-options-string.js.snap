@@ -5,9 +5,9 @@ exports[` 1`] = `
 - First value
 + Second value
 
-@@ -17,10 +17,12 @@
-                             Defaults to always.
-    --no-bracket-spacing     Do not print spaces between brackets.
+@@ -20,18 +20,20 @@
+                             Control how Prettier formats quoted code embedded in the file.
+                             Defaults to auto.
     --end-of-line <lf|crlf|cr|auto>
                              Which end of line characters to apply.
                              Defaults to lf.
@@ -17,7 +17,16 @@ exports[` 1`] = `
                              How to handle whitespaces in HTML.
                              Defaults to css.
     --jsx-bracket-same-line  Put > on the last line instead of at a new line.
-                             Defaults to false."
+                             Defaults to false.
+    --jsx-single-quote       Use single quotes in JSX.
+                             Defaults to false.
+-   --parser <flow|babel|babel-flow|babel-ts|typescript|css|less|scss|json|json5|json-stringify|graphql|markdown|mdx|vue|yaml|html|angular|lwc>
++   --parser <flow|babel|babel-flow|babel-ts|typescript|css|less|scss|json|json5|json-stringify|graphql|markdown|mdx|vue|yaml|html|angular|lwc|foo-parser>
+                             Which parser to use.
+    --print-width <int>      The line length where Prettier will try wrap.
+                             Defaults to 80.
+    --prose-wrap <always|never|preserve>
+                             How to wrap prose."
 `;
 
 exports[`show detailed external option with \`--help foo-string\` (stderr) 1`] = `""`;

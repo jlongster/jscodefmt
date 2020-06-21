@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OpenGraphAction.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+var OpenGraphValueContainer = require('./OpenGraphValueContainer.js');
+
+=====================================output=====================================
+// @flow
+
+var OpenGraphValueContainer = require("./OpenGraphValueContainer.js");
+
+================================================================================
+`;
+
+exports[`OpenGraphObject.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+var OpenGraphValueContainer = require('./OpenGraphValueContainer.js');
+
+=====================================output=====================================
+// @flow
+
+var OpenGraphValueContainer = require("./OpenGraphValueContainer.js");
+
+================================================================================
+`;
+
+exports[`OpenGraphValueContainer.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+var OpenGraphObject = require('./OpenGraphObject.js');
+
+=====================================output=====================================
+// @flow
+
+var OpenGraphObject = require("./OpenGraphObject.js");
+
+================================================================================
+`;

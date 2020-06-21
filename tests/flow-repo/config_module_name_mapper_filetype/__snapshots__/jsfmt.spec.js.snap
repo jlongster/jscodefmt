@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+import {className} from "./SomeCSSFile.css";
+import {doesntExist} from "./SomeCSSFile.css"; // Error: \`doestExist\` isn't an export
+
+=====================================output=====================================
+// @flow
+
+import { className } from "./SomeCSSFile.css";
+import { doesntExist } from "./SomeCSSFile.css"; // Error: \`doestExist\` isn't an export
+
+================================================================================
+`;

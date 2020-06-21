@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`definite.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class MyComponent {
+ngModel!: ng.INgModelController;
+}
+
+const x!: string
+
+var y!: MyComponent
+
+=====================================output=====================================
+class MyComponent {
+  ngModel!: ng.INgModelController;
+}
+
+const x!: string;
+
+var y!: MyComponent;
+
+================================================================================
+`;

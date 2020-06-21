@@ -1,0 +1,229 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lang-jsx.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script lang="jsx">
+export default {
+  data: () => ({
+    message: 'hello with jsx'
+  }),
+  render(h) {
+
+
+
+    return <div>{this.message}</div>
+  }
+}
+</script>
+
+=====================================output=====================================
+<script lang="jsx">
+export default {
+  data: () => ({
+    message: "hello with jsx",
+  }),
+  render(h) {
+    return <div>{this.message}</div>;
+  },
+};
+</script>
+
+================================================================================
+`;
+
+exports[`lang-ts.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<template>
+  <div>{{foo}}</div>
+</template>
+
+<script lang="ts">
+export default {
+  computed: {  foo( ): string {  return "foo";  },  },
+}
+</script>
+
+
+=====================================output=====================================
+<template>
+  <div>{{ foo }}</div>
+</template>
+
+<script lang="ts">
+export default {
+  computed: {
+    foo(): string {
+      return "foo";
+    },
+  },
+};
+</script>
+
+================================================================================
+`;
+
+exports[`lang-tsx.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script lang="tsx">
+import {VNode} from "vue"
+export default {
+  computed: {  foo( ):string { return "foo" }, },
+  render(h):VNode {  return <div>{ this.foo }</div> },
+}
+</script>
+
+=====================================output=====================================
+<script lang="tsx">
+import { VNode } from "vue";
+export default {
+  computed: {
+    foo(): string {
+      return "foo";
+    },
+  },
+  render(h): VNode {
+    return <div>{this.foo}</div>;
+  },
+};
+</script>
+
+================================================================================
+`;
+
+exports[`template-bind.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<template>
+    <div v-bind:id=" 'list-'   +  id "></div>
+    <div v-bind:id=" &quot;list-&quot;   +  id "></div>
+    <div v-bind:id=" &apos;list-&apos;   +  id "></div>
+    <div v-bind:id=" &apos;&quot;&apos;   +  id "></div>
+    <div v-bind:id="  rawId | formatId "></div>
+    <div v-bind:id=" ok ? 'YES' : 'NO' "></div>
+    <button @click=" foo ( arg, 'string' ) "></button>
+</template>
+
+
+=====================================output=====================================
+<template>
+  <div v-bind:id="'list-' + id"></div>
+  <div v-bind:id="'list-' + id"></div>
+  <div v-bind:id="'list-' + id"></div>
+  <div v-bind:id="'&quot;' + id"></div>
+  <div v-bind:id="rawId | formatId"></div>
+  <div v-bind:id="ok ? 'YES' : 'NO'"></div>
+  <button @click="foo(arg, 'string')"></button>
+</template>
+
+================================================================================
+`;
+
+exports[`template-class.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<template>
+  <h2
+    class="title"
+    :class="{ 'issue-realtime-pre-pulse': preAnimation,
+ 'issue-realtime-trigger-pulse': pulseAnimation}"
+    v-html="titleHtml"
+  >
+  </h2>
+</template>
+
+=====================================output=====================================
+<template>
+  <h2
+    class="title"
+    :class="{
+      'issue-realtime-pre-pulse': preAnimation,
+      'issue-realtime-trigger-pulse': pulseAnimation,
+    }"
+    v-html="titleHtml"
+  ></h2>
+</template>
+
+================================================================================
+`;
+
+exports[`vue-component.vue format 1`] = `
+====================================options=====================================
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<template >
+  <h1 >{{greeting}}     world</h1 >
+  <script>kikoo ( ) </script>
+</template >
+
+<script>
+module  .  exports  =
+{data : function () {return {
+	greeting: "Hello"
+}}
+}
+</script>
+
+<style   scoped >
+p { font-size : 2em ; text-align : center ; }
+
+  </style >
+
+<style   lang="postcss" >
+p { font-size : 2em ; text-align : center ; }
+
+  </style >
+
+=====================================output=====================================
+<template>
+  <h1>{{ greeting }} world</h1>
+  <script>
+    kikoo();
+  </script>
+</template>
+
+<script>
+module.exports = {
+  data: function () {
+    return {
+      greeting: "Hello",
+    };
+  },
+};
+</script>
+
+<style scoped>
+p {
+  font-size: 2em;
+  text-align: center;
+}
+</style>
+
+<style lang="postcss">
+p {
+  font-size: 2em;
+  text-align: center;
+}
+</style>
+
+================================================================================
+`;

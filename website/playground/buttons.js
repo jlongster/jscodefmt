@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import ClipboardJS from "clipboard";
 
 export const Button = React.forwardRef((props, ref) => (
@@ -18,7 +18,7 @@ export class ClipboardButton extends React.Component {
       text: () => {
         const { copy } = this.props;
         return typeof copy === "function" ? copy() : copy;
-      }
+      },
     });
     this.clipboard.on("success", () => this.showTooltip("Copied!"));
     this.clipboard.on("error", () => this.showTooltip("Press ctrl+c to copy"));

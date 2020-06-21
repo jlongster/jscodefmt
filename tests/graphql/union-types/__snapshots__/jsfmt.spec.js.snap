@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`union_types.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+union myUnion = ATypeName | ASecondTypeName
+
+union tooLongNameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee = A | B
+
+union mySecondUnion = ATypeName | ASecondTypeName | AThirdTypeName
+
+union myThirdUnion = AVeryVeryVeryLongNamedTypeName | ASecondVeryVeryVeryLongedNameTypeName 
+
+union longUnion = A | B | C | D | E | F | G | H | I | J | K | L |  A | B | C | D | E | F | G | H | I | J | K | L
+
+# comment
+# comment2
+union union = B | C | D
+=====================================output=====================================
+union myUnion = ATypeName | ASecondTypeName
+
+union tooLongNameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee =
+    A
+  | B
+
+union mySecondUnion = ATypeName | ASecondTypeName | AThirdTypeName
+
+union myThirdUnion =
+    AVeryVeryVeryLongNamedTypeName
+  | ASecondVeryVeryVeryLongedNameTypeName
+
+union longUnion =
+    A
+  | B
+  | C
+  | D
+  | E
+  | F
+  | G
+  | H
+  | I
+  | J
+  | K
+  | L
+  | A
+  | B
+  | C
+  | D
+  | E
+  | F
+  | G
+  | H
+  | I
+  | J
+  | K
+  | L
+
+# comment
+# comment2
+union union = B | C | D
+
+================================================================================
+`;

@@ -1,0 +1,307 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Condition.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @providesModule Condition */
+
+function f(x:number) { }
+function g() { return (42 || "hello"); }
+
+var x = g();
+if (typeof x === "string") {
+  x = 0;
+}
+f(x);
+
+class A {}
+function h() { return (42 || new A()); }
+
+var y = h();
+if (y instanceof A) {
+  y = 0;
+}
+//f(y);
+
+function bar() { return true; }
+
+class C { qux() { } }
+
+function foo() {
+
+  var c = "...";
+  c = new C();
+  if (bar()) {
+    c.qux();
+  }
+
+}
+
+function goofy() {
+  var x = g();
+  if (typeof x == 'function') {
+    x();
+  } else { // if (typeof x == 'number') {
+    //f(x);
+  }
+}
+
+function goofy2() {
+  var o = {x : 0}
+  if (typeof o.x == 'function') {
+    o.x();
+  }
+  var y = o.x;
+  if (typeof y == 'function') {
+    y();
+  } else {
+    //f(y);
+  }
+}
+
+module.exports = true;
+
+=====================================output=====================================
+/* @providesModule Condition */
+
+function f(x: number) {}
+function g() {
+  return 42 || "hello";
+}
+
+var x = g();
+if (typeof x === "string") {
+  x = 0;
+}
+f(x);
+
+class A {}
+function h() {
+  return 42 || new A();
+}
+
+var y = h();
+if (y instanceof A) {
+  y = 0;
+}
+//f(y);
+
+function bar() {
+  return true;
+}
+
+class C {
+  qux() {}
+}
+
+function foo() {
+  var c = "...";
+  c = new C();
+  if (bar()) {
+    c.qux();
+  }
+}
+
+function goofy() {
+  var x = g();
+  if (typeof x == "function") {
+    x();
+  } else {
+    // if (typeof x == 'number') {
+    //f(x);
+  }
+}
+
+function goofy2() {
+  var o = { x: 0 };
+  if (typeof o.x == "function") {
+    o.x();
+  }
+  var y = o.x;
+  if (typeof y == "function") {
+    y();
+  } else {
+    //f(y);
+  }
+}
+
+module.exports = true;
+
+================================================================================
+`;
+
+exports[`FlowSA.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+/* @providesModule FlowSA */
+
+function check(x:string) { }
+
+function FlowSA() {
+  var x = 0;
+  x = "...";
+  check(x);
+}
+
+module.exports = FlowSA;
+
+=====================================output=====================================
+/* @providesModule FlowSA */
+
+function check(x: string) {}
+
+function FlowSA() {
+  var x = 0;
+  x = "...";
+  check(x);
+}
+
+module.exports = FlowSA;
+
+================================================================================
+`;
+
+exports[`Sigma.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+/* @providesModule Sigma */
+
+class A { a() {} }
+
+class B extends A { b() {} }
+
+class C extends B { c() {} }
+
+function bar(x:B) {
+  if (x instanceof A) {
+    x.a();
+    x.c(); // error
+  } else {
+    x++; // TODO no error? since unreachable (x: B implies x: A)
+  }
+}
+
+function foo(x:A) {
+  if (x instanceof C) {
+    x.a();
+    x.b();
+    x.c();
+    x.d(); // error
+  } else {
+    x.a();
+    x.c(); // error
+  }
+}
+
+
+class D { d() {} }
+
+function baz(x:D) {
+  if (x instanceof A) {
+    // unreachable, TODO: this shouldn't throw
+  }
+}
+
+module.exports = "sigma";
+
+=====================================output=====================================
+/* @providesModule Sigma */
+
+class A {
+  a() {}
+}
+
+class B extends A {
+  b() {}
+}
+
+class C extends B {
+  c() {}
+}
+
+function bar(x: B) {
+  if (x instanceof A) {
+    x.a();
+    x.c(); // error
+  } else {
+    x++; // TODO no error? since unreachable (x: B implies x: A)
+  }
+}
+
+function foo(x: A) {
+  if (x instanceof C) {
+    x.a();
+    x.b();
+    x.c();
+    x.d(); // error
+  } else {
+    x.a();
+    x.c(); // error
+  }
+}
+
+class D {
+  d() {}
+}
+
+function baz(x: D) {
+  if (x instanceof A) {
+    // unreachable, TODO: this shouldn't throw
+  }
+}
+
+module.exports = "sigma";
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class BaseClass {
+  baseProp: string;
+}
+
+class ChildClass extends BaseClass {
+  childProp: string;
+}
+
+function test(obj: BaseClass): string {
+  if (obj instanceof ChildClass) {
+    return obj.childProp_TYPO; // error (obj: ChildClass)
+  }
+  return obj.baseProp;
+}
+
+=====================================output=====================================
+class BaseClass {
+  baseProp: string;
+}
+
+class ChildClass extends BaseClass {
+  childProp: string;
+}
+
+function test(obj: BaseClass): string {
+  if (obj instanceof ChildClass) {
+    return obj.childProp_TYPO; // error (obj: ChildClass)
+  }
+  return obj.baseProp;
+}
+
+================================================================================
+`;

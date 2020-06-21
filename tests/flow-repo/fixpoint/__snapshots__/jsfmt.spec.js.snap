@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fun.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+/* @providesModule Fun */
+
+function eq(x:number,y:number) { return true };
+function sub(x:number,y:number) { return 0; }
+function mul(x:number,y:number) { return 0; }
+
+function fix(fold) {
+  var delta = function(delta) {
+    return fold(
+      function(x) { var eta = delta(delta); return eta(x); }
+    );
+  };
+  return delta(delta);
+}
+
+function mk_factorial() {
+  return fix(function(factorial) {
+    return function(n) {
+      if (eq (n, 1)) { return 1; }
+      return mul (factorial (sub (n, 1)), n);
+    };
+  });
+}
+
+
+var factorial = mk_factorial();
+factorial("...");
+
+module.exports = {fn: fix};
+
+=====================================output=====================================
+/* @providesModule Fun */
+
+function eq(x: number, y: number) {
+  return true;
+}
+function sub(x: number, y: number) {
+  return 0;
+}
+function mul(x: number, y: number) {
+  return 0;
+}
+
+function fix(fold) {
+  var delta = function (delta) {
+    return fold(function (x) {
+      var eta = delta(delta);
+      return eta(x);
+    });
+  };
+  return delta(delta);
+}
+
+function mk_factorial() {
+  return fix(function (factorial) {
+    return function (n) {
+      if (eq(n, 1)) {
+        return 1;
+      }
+      return mul(factorial(sub(n, 1)), n);
+    };
+  });
+}
+
+var factorial = mk_factorial();
+factorial("...");
+
+module.exports = { fn: fix };
+
+================================================================================
+`;
+
+exports[`Ycombinator.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+/* @providesModule Ycombinator */
+
+function Y(f) {
+  function g(x) { return f(x(x)); }
+  g(g);
+}
+
+function func1(f) {
+  function fix_f(x:number):number { return f(x); }
+  return fix_f;
+}
+function func2(f) {
+  function fix_f(x:string):string { return f(x); }
+  return fix_f;
+}
+
+Y(func1);
+Y(func2);
+
+module.exports = Y;
+
+=====================================output=====================================
+/* @providesModule Ycombinator */
+
+function Y(f) {
+  function g(x) {
+    return f(x(x));
+  }
+  g(g);
+}
+
+function func1(f) {
+  function fix_f(x: number): number {
+    return f(x);
+  }
+  return fix_f;
+}
+function func2(f) {
+  function fix_f(x: string): string {
+    return f(x);
+  }
+  return fix_f;
+}
+
+Y(func1);
+Y(func2);
+
+module.exports = Y;
+
+================================================================================
+`;

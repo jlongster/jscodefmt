@@ -1,0 +1,673 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`basics.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+{{!-- after --}}
+<span>
+    foo <span>bar</span>
+</span>
+
+{{!-- before --}}
+<span>
+  <span>bar</span> foo
+</span>
+
+{{!-- within --}}
+<span>
+  foo <span> bar </span>
+</span>
+
+{{!-- break components --}}
+<div>
+  <SuperSelect>
+    <p>foo<span>bar bar bar</span></p><h1><span><em>yep</em></span></h1>
+  </SuperSelect>
+  <h2>nope</h2>
+</div>
+
+<div>
+   hello <strong>hi</strong> <foo>sdkflsdfjk</foo>
+</div>;
+
+=====================================output=====================================
+{{! after }}
+<span>
+  foo
+  <span>
+    bar
+  </span>
+</span>
+
+{{! before }}
+<span>
+  <span>
+    bar
+  </span>
+  foo
+</span>
+
+{{! within }}
+<span>
+  foo
+  <span>
+    bar
+  </span>
+</span>
+
+{{! break components }}
+<div>
+  <SuperSelect>
+    <p>
+      foo
+      <span>
+        bar bar bar
+      </span>
+    </p>
+    <h1>
+      <span>
+        <em>
+          yep
+        </em>
+      </span>
+    </h1>
+  </SuperSelect>
+  <h2>
+    nope
+  </h2>
+</div>
+
+<div>
+  hello
+  <strong>
+    hi
+  </strong>
+
+  <foo>
+    sdkflsdfjk
+  </foo>
+</div>
+;
+================================================================================
+`;
+
+exports[`boss.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+<p>Hi  {{firstName}}  {{lastName}}   , welcome!</p>
+{{#component propA}}
+    for {{propB}}  do {{propC}} f
+{{/component}}
+{{#component propA}}
+    for {{propB}}  <span>name</span>do {{propC}} f
+{{/component}}
+{{propA}} {{propB}}
+{{propC}}{{propD}}
+<span>{{propE}} {{propF}}</span>
+<span>{{propG}}{{propH}}</span>
+
+  
+
+hey
+
+=====================================output=====================================
+<p>
+  Hi {{firstName}} {{
+    lastName
+  }} , welcome!
+</p>
+{{#component propA}}
+  for {{propB}} do {{propC}} f
+{{/component}}
+{{#component propA}}
+  for {{propB}}
+  <span>
+    name
+  </span>
+  do {{propC}} f
+{{/component}}
+{{propA}} {{propB}}
+{{propC}}{{propD}}
+<span>
+  {{propE}} {{propF}}
+</span>
+<span>
+  {{propG}}{{propH}}
+</span>
+
+hey
+================================================================================
+`;
+
+exports[`curly.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+<p>Your username is @{{name}}</p>
+<p>Hi {{firstName}} {{lastName}}</p>
+=====================================output=====================================
+<p>
+  Your username is @{{name}}
+</p>
+<p>
+  Hi {{firstName}} {{lastName}}
+</p>
+================================================================================
+`;
+
+exports[`display-inline-block.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+<button>Click here! Click here! Click here! Click here! Click here! Click here!</button>
+<button>
+Click here! Click here! Click here! Click here! Click here! Click here!
+</button>
+<div>
+<button>Click here! Click here! Click here! Click here! Click here! Click here!</button><button>Click here! Click here! Click here! Click here! Click here! Click here!</button>
+</div>
+<div>
+<button>Click here! Click here! Click here! Click here! Click here! Click here!</button>
+<button>Click here! Click here! Click here! Click here! Click here! Click here!</button>
+</div>
+<video src="brave.webm"></video>
+
+=====================================output=====================================
+<button>
+  Click here! Click here! Click here! Click here! Click here! Click here!
+</button>
+<button>
+  Click here! Click here! Click here! Click here! Click here! Click here!
+</button>
+<div>
+  <button>
+    Click here! Click here! Click here! Click here! Click here! Click here!
+  </button>
+  <button>
+    Click here! Click here! Click here! Click here! Click here! Click here!
+  </button>
+</div>
+<div>
+  <button>
+    Click here! Click here! Click here! Click here! Click here! Click here!
+  </button>
+  <button>
+    Click here! Click here! Click here! Click here! Click here! Click here!
+  </button>
+</div>
+<video src="brave.webm"></video>
+================================================================================
+`;
+
+exports[`display-none.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+{{!-- TO FIX --}}
+<HEAD><META CHARSET="utf-8" /><TITLE>My tITlE</TITLE><META NAME="description" content="My CoNtEnT" /></HEAD>
+
+=====================================output=====================================
+{{! TO FIX }}
+<HEAD>
+  <META CHARSET="utf-8" />
+  <TITLE>
+    My tITlE
+  </TITLE>
+  <META
+    NAME="description"
+    content="My CoNtEnT"
+  />
+</HEAD>
+================================================================================
+`;
+
+exports[`fill.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+<p>
+  <img
+    src="/images/pansies.jpg"
+    alt="about fedco bottom image"
+    style="float: left;"
+  /><strong>We are a cooperative</strong>, one of the few seed companies so organized
+  in the United States. Because we do not have an individual owner or beneficiary,
+  profit is not our primary goal. Consumers own 60% of the cooperative and worker
+  members 40%. Consumer and worker members share proportionately in the cooperative&#8217;s
+  profits through our annual patronage dividends.
+</p>
+
+=====================================output=====================================
+<p>
+  <img
+    src="/images/pansies.jpg"
+    alt="about fedco bottom image"
+    style="float: left;"
+  />
+  <strong>
+    We are a cooperative
+  </strong>
+  , one of the few seed companies so organized
+  in the United States. Because we do not have an individual owner or beneficiary,
+  profit is not our primary goal. Consumers own 60% of the cooperative and worker
+  members 40%. Consumer and worker members share proportionately in the cooperative’s
+  profits through our annual patronage dividends.
+</p>
+================================================================================
+`;
+
+exports[`inline-element.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+{{!-- TO FIX --}}
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus massa vel augue 
+vestibulum facilisis in porta turpis. Ut faucibus lectus sit amet urna consectetur dignissim.
+Sam vitae neque quis ex dapibus faucibus at sed ligula. Nulla sit amet aliquet nibh.
+Vestibulum at congue mi. Suspendisse vitae odio vitae massa hendrerit mattis sed eget dui.
+Sed eu scelerisque neque. Donec <b>maximus</b> rhoncus pellentesque. Aenean purus turpis, vehicula 
+euismod ante vel, ultricies eleifend dui. Class aptent taciti sociosqu ad litora torquent per 
+conubia nostra, per inceptos himenaeos. Donec in ornare velit.</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus massa vel augue 
+vestibulum facilisis in porta turpis. Ut faucibus lectus sit amet urna consectetur dignissim.
+Sam vitae neque quis ex dapibus faucibus at sed ligula. Nulla sit amet aliquet nibh.
+Vestibulum at congue mi. Suspendisse vitae odio vitae massa hendrerit mattis sed eget dui.
+Sed eu scelerisque neque. Donec <a href="#"><b>maximus</b></a> rhoncus pellentesque. Aenean purus turpis, vehicula 
+euismod ante vel, ultricies eleifend dui. Class aptent taciti sociosqu ad litora torquent per 
+conubia nostra, per inceptos himenaeos. Donec in ornare velit.</p>
+
+=====================================output=====================================
+{{! TO FIX }}
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus massa vel augue 
+vestibulum facilisis in porta turpis. Ut faucibus lectus sit amet urna consectetur dignissim.
+Sam vitae neque quis ex dapibus faucibus at sed ligula. Nulla sit amet aliquet nibh.
+Vestibulum at congue mi. Suspendisse vitae odio vitae massa hendrerit mattis sed eget dui.
+Sed eu scelerisque neque. Donec
+  <b>
+    maximus
+  </b>
+  rhoncus pellentesque. Aenean purus turpis, vehicula 
+euismod ante vel, ultricies eleifend dui. Class aptent taciti sociosqu ad litora torquent per 
+conubia nostra, per inceptos himenaeos. Donec in ornare velit.
+</p>
+
+<p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus massa vel augue 
+vestibulum facilisis in porta turpis. Ut faucibus lectus sit amet urna consectetur dignissim.
+Sam vitae neque quis ex dapibus faucibus at sed ligula. Nulla sit amet aliquet nibh.
+Vestibulum at congue mi. Suspendisse vitae odio vitae massa hendrerit mattis sed eget dui.
+Sed eu scelerisque neque. Donec
+  <a href="#">
+    <b>
+      maximus
+    </b>
+  </a>
+  rhoncus pellentesque. Aenean purus turpis, vehicula 
+euismod ante vel, ultricies eleifend dui. Class aptent taciti sociosqu ad litora torquent per 
+conubia nostra, per inceptos himenaeos. Donec in ornare velit.
+</p>
+================================================================================
+`;
+
+exports[`non-breaking-whitespace.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+<!-- normal whitespaces -->
+<span>Nihil aut odit omnis. Quam maxime est molestiae. Maxime dolorem dolores voluptas quaerat ut qui sunt vitae error.</span>
+<!-- non-breaking whitespaces -->
+<span>Nihil aut odit omnis. Quam maxime est molestiae. Maxime dolorem dolores voluptas quaerat ut qui sunt vitae error.</span>
+<!-- non-breaking narrow whitespaces -->
+<span>Prix : 32 €</span>
+
+=====================================output=====================================
+<!-- normal whitespaces -->
+<span>
+  Nihil aut odit omnis. Quam maxime est molestiae. Maxime dolorem dolores voluptas quaerat ut qui sunt vitae error.
+</span>
+<!-- non-breaking whitespaces -->
+<span>
+  Nihil aut odit omnis. Quam maxime est molestiae. Maxime dolorem dolores voluptas quaerat ut qui sunt vitae error.
+</span>
+<!-- non-breaking narrow whitespaces -->
+<span>
+  Prix : 32 €
+</span>
+================================================================================
+`;
+
+exports[`preserved-spaces-and-breaks.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+<SomeComponent />
+{{name}}
+
+
+
+Some sentence with  {{dynamic}}  expressions.
+
+sometimes{{nogaps}}areimportant<Hello></Hello>
+
+
+{{name}}  is your name
+
+
+{{#block}}
+{{/block}}
+
+
+{{#block}}
+  some {{text}}
+{{/block}}
+
+{{#block}}
+
+  some {{text}}
+{{/block}}
+
+<HelloWorld>
+</HelloWorld>
+
+<HelloWorld>
+  some {{text}}
+</HelloWorld>
+
+<HelloWorld>
+
+  some {{text}}
+</HelloWorld>
+
+<div class="a list of classes">
+</div>
+
+<div class="a list of classes">
+
+</div>
+
+=====================================output=====================================
+<SomeComponent />
+{{name}}
+
+Some sentence with {{dynamic
+}} expressions.
+
+sometimes{{nogaps
+}}areimportant
+<Hello />
+
+{{name}} is your name
+
+{{#block}}{{/block}}
+
+{{#block}}
+  some {{text}}
+{{/block}}
+
+{{#block}}
+  some {{text}}
+{{/block}}
+
+<HelloWorld />
+
+<HelloWorld>
+  some {{text}}
+</HelloWorld>
+
+<HelloWorld>
+  some {{text}}
+</HelloWorld>
+
+<div class="a list of classes">
+</div>
+
+<div class="a list of classes">
+</div>
+================================================================================
+`;
+
+exports[`punctuation.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+<span>This is your name: {{name}}.</span>
+<span>This is your name: {{name}} (employee)</span>
+<span>This is your name: {{name}} ({{role}})</span>
+
+=====================================output=====================================
+<span>
+  This is your name: {{name}}.
+</span>
+<span>
+  This is your name: {{name}} (employee)
+</span>
+<span>
+  This is your name: {{name}} ({{role}})
+</span>
+================================================================================
+`;
+
+exports[`surrounding-linebreak.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+<span>123</span>
+<span>
+123</span>
+<span>123
+</span>
+<span>
+123
+</span>
+
+<div>123</div>
+<div>
+123</div>
+<div>123
+</div>
+<div>
+123
+</div>
+
+=====================================output=====================================
+<span>
+  123
+</span>
+<span>
+  123
+</span>
+<span>
+  123
+</span>
+<span>
+  123
+</span>
+
+<div>
+  123
+</div>
+<div>
+  123
+</div>
+<div>
+  123
+</div>
+<div>
+  123
+</div>
+================================================================================
+`;
+
+exports[`table.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+<table>
+  <thead>
+    <tr>
+      <th>A</th>
+      <th>B</th>
+      <th>C</th>
+    </tr>
+  </thead>
+</table>
+
+<table><thead><tr><th>A</th><th>B</th><th>C</th></tr></thead></table>
+
+<table> <thead> <tr> <th> A </th> <th> B </th> <th> C </th> </tr> </thead> </table>
+
+<table>
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+</table>
+
+=====================================output=====================================
+<table>
+  <thead>
+    <tr>
+      <th>
+        A
+      </th>
+      <th>
+        B
+      </th>
+      <th>
+        C
+      </th>
+    </tr>
+  </thead>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        A
+      </th>
+      <th>
+        B
+      </th>
+      <th>
+        C
+      </th>
+    </tr>
+  </thead>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th>
+        A
+      </th>
+
+      <th>
+        B
+      </th>
+
+      <th>
+        C
+      </th>
+    </tr>
+  </thead>
+</table>
+
+<table>
+  <thead>
+    <tr>
+    </tr>
+  </thead>
+</table>
+================================================================================
+`;
+
+exports[`whitespace-control.hbs - {"printWidth":40} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 40
+                                        | printWidth
+=====================================input======================================
+{{~#if foo~}}
+  abc
+{{~/if~}}
+
+{{~#if foo}}
+  abc
+{{/if~}}
+
+{{foo~}}
+
+{{~foo abc}}
+
+{{~#if bar}}
+  if1
+{{~else~}}
+  else
+{{~/if~}}
+
+{{~#if bar}}
+  if1
+{{~else if foo~}}
+  else if foo
+{{else~}}
+  else
+{{/if~}}
+
+=====================================output=====================================
+{{~#if foo~}}
+  abc
+{{~/if~}}
+
+{{~#if foo}}
+  abc
+{{/if~}}
+
+{{foo~}}
+
+{{~foo abc}}
+
+{{~#if bar}}
+  if1
+{{~else~}}
+  else
+{{~/if~}}
+
+{{~#if bar}}
+  if1
+{{~else if foo~}}
+  else if foo
+{{else~}}
+  else
+{{/if~}}
+================================================================================
+`;

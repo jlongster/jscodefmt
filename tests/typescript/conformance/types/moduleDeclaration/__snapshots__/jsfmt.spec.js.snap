@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`moduleDeclaration.ts 1`] = `
+exports[`moduleDeclaration.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

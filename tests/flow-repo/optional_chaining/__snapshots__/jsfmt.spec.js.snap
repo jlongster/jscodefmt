@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`private_properties.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+class X {
+  #foo: number
+  constructor() {
+    (this?.#foo: empty);
+  }
+};
+
+class Y {
+  #bar: X
+  #baz: ?X
+  constructor() {
+    (this?.#bar: empty);
+    (this?.#baz: empty);
+  }
+};
+
+=====================================output=====================================
+// @flow
+
+class X {
+  #foo: number;
+  constructor() {
+    (this?.#foo: empty);
+  }
+}
+
+class Y {
+  #bar: X;
+  #baz: ?X;
+  constructor() {
+    (this?.#bar: empty);
+    (this?.#baz: empty);
+  }
+}
+
+================================================================================
+`;

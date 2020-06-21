@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lists.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{
+  shortWithList(list: [1, 2, 3])
+  longWithList(list: ["hello world this is a very long string!","hello world this is a very long string!", "hello world this is a very long string!"])
+}
+
+=====================================output=====================================
+{
+  shortWithList(list: [1, 2, 3])
+  longWithList(
+    list: [
+      "hello world this is a very long string!"
+      "hello world this is a very long string!"
+      "hello world this is a very long string!"
+    ]
+  )
+}
+
+================================================================================
+`;

@@ -4,7 +4,7 @@ To get up and running, install the dependencies and run the tests:
 
 ```bash
 yarn
-yarn lint
+yarn lint:eslint
 yarn test
 ```
 
@@ -12,12 +12,14 @@ Here's what you need to know about the tests:
 
 - The tests use [Jest snapshots](https://facebook.github.io/jest/docs/en/snapshot-testing.html).
 - You can make changes and run `jest -u` (or `yarn test -u`) to update the snapshots. Then run `git diff` to take a look at what changed. Always update the snapshots when opening a PR.
-- You can run `AST_COMPARE=1 jest` for a more robust test run. That formats each file, re-parses it, and compares the new AST with the original one and makes sure they are semantically equivalent.
+- You can run `AST_COMPARE=1 DEEP_COMPARE=1 jest` for a more robust test run.
+  - `AST_COMPARE` That formats each file, re-parses it, and compares the new AST with the original one and makes sure they are semantically equivalent.
+  - `DEEP_COMPARE` That formats each file, then formats the output again, and checks that the second output is the same as the first.
 - Each test folder has a `jsfmt.spec.js` that runs the tests. For JavaScript files, generally you can just put `run_spec(__dirname, ["babel", "flow", "typescript"]);` there. This will verify that the output using each parser is the same. You can also pass options as the third argument, like this: `run_spec(__dirname, ["babel"], { trailingComma: "es5" });`
-- `tests/flow/` contains the Flow test suite, and is not supposed to be edited by hand. To update it, clone the Flow repo next to the Prettier repo and run: `node scripts/sync-flow-tests.js ../flow/tests/`.
-- If you would like to debug prettier locally, you can either debug it in node or the browser. The easiest way to debug it in the browser is to run the interactive `docs` REPL locally. The easiest way to debug it in node, is to create a local test file with some example code you want formatted and either run it in an editor like VS Code or run it directly via `./bin/prettier.js <your_test_file>`.
+- `tests/flow-repo/` contains the Flow test suite, and is not supposed to be edited by hand. To update it, clone the Flow repo next to the Prettier repo and run: `node scripts/sync-flow-tests.js ../flow/tests/`.
+- If you would like to debug prettier locally, you can either debug it in Node or the browser. The easiest way to debug it in Node, is to create a local test file with some example code you want formatted and either run it in an editor like VS Code or run it directly via `./bin/prettier.js <your_test_file>`. The easiest way to debug it in the browser is to build Prettier's website locally (see `website/README.md`).
 
-Run `yarn lint --fix` to automatically format files.
+Run `yarn lint:eslint --fix` to automatically format files.
 
 If you can, take look at [commands.md](commands.md) and check out [Wadler's paper](http://homepages.inf.ed.ac.uk/wadler/papers/prettier/prettier.pdf) to understand how Prettier works.
 

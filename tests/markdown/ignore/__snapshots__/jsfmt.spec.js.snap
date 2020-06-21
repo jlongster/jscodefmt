@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`indented.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+- 123
+- 456
+- 789
+  <!-- prettier-ignore -->
+  - This is a long long
+    long long long long
+    long long paragraph.
+
+=====================================output=====================================
+- 123
+- 456
+- 789
+  <!-- prettier-ignore -->
+  - This is a long long
+    long long long long
+    long long paragraph.
+
+================================================================================
+`;
+
+exports[`simple.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+<!-- prettier-ignore -->
+This is a long long long long long long long long long long long long long long long paragraph.
+
+=====================================output=====================================
+<!-- prettier-ignore -->
+This is a long long long long long long long long long long long long long long long paragraph.
+
+================================================================================
+`;
+
+exports[`top-level-range.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+<!-- prettier-ignore-start -->
+<!-- some tool start (this should be ignored) -->
+
+| some | table |
+| - | - |
+| 1 | a |
+| 2 | b |
+
+<!-- some tool end -->
+<!-- prettier-ignore-end -->
+
+> <!-- prettier-ignore-start -->
+> <!-- some tool start (this shouldn't be ignored) -->
+>
+> | some | table |
+> | - | - |
+> | 1 | a |
+> | 2 | b |
+>
+> <!-- some tool end -->
+> <!-- prettier-ignore-end -->
+
+=====================================output=====================================
+<!-- prettier-ignore-start -->
+<!-- some tool start (this should be ignored) -->
+
+| some | table |
+| - | - |
+| 1 | a |
+| 2 | b |
+
+<!-- some tool end -->
+<!-- prettier-ignore-end -->
+
+> <!-- prettier-ignore-start -->
+> <!-- some tool start (this shouldn't be ignored) -->
+>
+> | some | table |
+> | ---- | ----- |
+> | 1    | a     |
+> | 2    | b     |
+>
+> <!-- some tool end -->
+> <!-- prettier-ignore-end -->
+
+================================================================================
+`;

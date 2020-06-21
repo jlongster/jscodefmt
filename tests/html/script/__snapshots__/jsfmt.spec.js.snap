@@ -1,0 +1,212 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`babel.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script type="text/babel" data-presets="react" data-type="module">
+import { h, 
+         render } from 'https://unpkg.com/preact?module';
+render(
+<h1>Hello World!</h1>,
+         document.body
+);
+</script>
+
+<script type="text/babel">
+<!--
+alert(1)
+-->
+</script>
+
+=====================================output=====================================
+<script type="text/babel" data-presets="react" data-type="module">
+  import { h, render } from "https://unpkg.com/preact?module";
+  render(<h1>Hello World!</h1>, document.body);
+</script>
+
+<script type="text/babel">
+  <!--
+  alert(1);
+  -->
+</script>
+
+================================================================================
+`;
+
+exports[`legacy.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+<script>
+<!--
+alert(1)
+-->
+</script>
+
+<script>
+<!--
+alert(2)
+//-->
+</script>
+
+=====================================output=====================================
+<script>
+  <!--
+  alert(1);
+  -->
+</script>
+
+<script>
+  <!--
+  alert(2);
+  //-->
+</script>
+
+================================================================================
+`;
+
+exports[`module.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script type="module">
+import prettier from "prettier/standalone";
+import parserGraphql from "prettier/parser-graphql";
+
+prettier.format("query { }", {
+                      parser: "graphql",
+  plugins: [
+parserGraphql],
+});
+</script>
+
+<script type="module">
+async function foo() {
+  let x=10;while(x-->0)console.log(x)
+  await(import('mod'))
+}
+</script>
+
+=====================================output=====================================
+<script type="module">
+  import prettier from "prettier/standalone";
+  import parserGraphql from "prettier/parser-graphql";
+
+  prettier.format("query { }", {
+    parser: "graphql",
+    plugins: [parserGraphql],
+  });
+</script>
+
+<script type="module">
+  async function foo() {
+    let x = 10;
+    while (x-- > 0) console.log(x);
+    await import("mod");
+  }
+</script>
+
+================================================================================
+`;
+
+exports[`module-attributes.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script src="foo.wasm" type="module" withtype="webassembly"></script>
+
+=====================================output=====================================
+<script src="foo.wasm" type="module" withtype="webassembly"></script>
+
+================================================================================
+`;
+
+exports[`script.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script type="application/ld+json">
+  {   "json": true }
+</script>
+<script type="application/json">
+  {   "json":true  }
+</script>
+<script type="importmap">
+  {   "json":true  }
+</script>
+<script type="systemjs-importmap">
+  {   "json":true  }
+</script><script type="invalid">
+  {   "json":false  }
+</script>
+<script type="text/html">
+  <div>
+  <p>foo</p>
+  </div>
+</script>
+
+<script
+  async=""
+  id=""
+  src="/_next/static/development/pages/_app.js?ts=1565732195968"
+></script><script></script>
+
+<!-- #8147 -->
+<script lang="vbscript">
+Function hello()
+End Function
+</script>
+
+<script lang="unknown">
+</script>
+=====================================output=====================================
+<script type="application/ld+json">
+  { "json": true }
+</script>
+<script type="application/json">
+  { "json": true }
+</script>
+<script type="importmap">
+  { "json": true }
+</script>
+<script type="systemjs-importmap">
+  { "json": true }
+</script>
+<script type="invalid">
+  {   "json":false  }
+</script>
+<script type="text/html">
+  <div>
+    <p>foo</p>
+  </div>
+</script>
+
+<script
+  async=""
+  id=""
+  src="/_next/static/development/pages/_app.js?ts=1565732195968"
+></script>
+<script></script>
+
+<!-- #8147 -->
+<script lang="vbscript">
+  Function hello()
+  End Function
+</script>
+
+<script lang="unknown"></script>
+
+================================================================================
+`;

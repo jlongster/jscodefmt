@@ -2,7 +2,7 @@
 
 const parse = require("@iarna/toml/parse-string");
 
-module.exports = function(filePath, content) {
+module.exports = function (filePath, content) {
   try {
     return parse(content);
   } catch (error) {

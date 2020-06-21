@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`empty.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+details[open] {
+}
+
+div {
+  box-sizing: border-box;;
+  color: red;
+}
+
+=====================================output=====================================
+details[open] {
+}
+
+div {
+  box-sizing: border-box;
+  color: red;
+}
+
+================================================================================
+`;

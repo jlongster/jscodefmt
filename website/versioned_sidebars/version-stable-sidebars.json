@@ -29,7 +29,8 @@
     ],
     "Misc": [
       "version-stable-technical-details",
-      "version-stable-related-projects"
+      "version-stable-related-projects",
+      "version-stable-for-enterprise"
     ]
   }
 }

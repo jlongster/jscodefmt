@@ -51,3 +51,42 @@ export function getCodemirrorMode(parser) {
       return "jsx";
   }
 }
+
+const astAutoFold = {
+  estree: /^\s*"(loc|start|end)":/,
+  postcss: /^\s*"(source|input|raws|file)":/,
+  html: /^\s*"(sourceSpan|valueSpan|nameSpan|startSourceSpan|endSourceSpan|tagDefinition)":/,
+  mdast: /^\s*"position":/,
+  yaml: /^\s*"position":/,
+  glimmer: /^\s*"loc":/,
+};
+
+export function getAstAutoFold(parser) {
+  switch (parser) {
+    case "flow":
+    case "babel":
+    case "babel-flow":
+    case "babel-ts":
+    case "typescript":
+    case "json":
+    case "json5":
+    case "json-stringify":
+      return astAutoFold.estree;
+    case "css":
+    case "less":
+    case "scss":
+      return astAutoFold.postcss;
+    case "html":
+    case "angular":
+    case "vue":
+    case "lwc":
+      return astAutoFold.html;
+    case "markdown":
+    case "mdx":
+      return astAutoFold.mdast;
+    case "yaml":
+      return astAutoFold.yaml;
+    case "glimmer":
+      return astAutoFold.glimmer;
+  }
+}

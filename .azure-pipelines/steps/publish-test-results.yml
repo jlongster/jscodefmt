@@ -1,7 +1,0 @@
-steps:
-  - task: PublishTestResults@2
-    inputs:
-      testResultsFormat: JUnit
-      testResultsFiles: $(System.DefaultWorkingDirectory)/junit.xml
-    displayName: "Publish test results"
-    condition: succeededOrFailed()

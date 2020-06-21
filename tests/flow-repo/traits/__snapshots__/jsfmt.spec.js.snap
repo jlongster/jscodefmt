@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class Foo extends Qux<string> mixins Bar<number> {
+  // KeyedCollection <: Collection
+  // ...KeyedIterable
+}
+declare class Bar<T> extends Baz<T> {
+  // KeyedIterable <: Iterable
+  y: T
+}
+declare class Qux<T> extends Baz<T> {
+  // Collection <: Iterable
+  y: T, z: T
+}
+declare class Baz<T> {
+  // Iterable
+  x: T
+}
+
+((new Foo).x: number); // error: Qux wins
+((new Foo).y: string); // error: Bar wins
+((new Foo).z: number); // error: Qux wins
+
+=====================================output=====================================
+declare class Foo extends Qux<string> mixins Bar<number> {
+  // KeyedCollection <: Collection
+  // ...KeyedIterable
+}
+declare class Bar<T> extends Baz<T> {
+  // KeyedIterable <: Iterable
+  y: T;
+}
+declare class Qux<T> extends Baz<T> {
+  // Collection <: Iterable
+  y: T;
+  z: T;
+}
+declare class Baz<T> {
+  // Iterable
+  x: T;
+}
+
+(new Foo().x: number); // error: Qux wins
+(new Foo().y: string); // error: Bar wins
+(new Foo().z: number); // error: Qux wins
+
+================================================================================
+`;
+
+exports[`test2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare interface I { }
+declare class C mixins I { }
+
+=====================================output=====================================
+declare interface I {}
+declare class C mixins I {}
+
+================================================================================
+`;

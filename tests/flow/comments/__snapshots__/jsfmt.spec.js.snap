@@ -1,0 +1,344 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arrow.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// Error
+const a = (data/*: Object */) => {}
+
+// OK
+const b = (data/*: Object */, secondData/*: Object */) => {}
+
+const c = (data/*: /* this is an object *-/ Object */) => {};
+
+const run = (cmd /*: string */) /*: Promise<void> */ => {}
+
+=====================================output=====================================
+// Error
+const a = (data /*: Object */) => {};
+
+// OK
+const b = (data /*: Object */, secondData /*: Object */) => {};
+
+const c = (data /*: /* this is an object *-/ Object */) => {};
+
+const run = (cmd /*: string */) /*: Promise<void> */ => {};
+
+================================================================================
+`;
+
+exports[`class.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class A {
+  x /*: string */;
+
+  method(a /*: T */, b /*: T */) /*: T */ {}
+}
+
+=====================================output=====================================
+class A {
+  x /*: string */;
+
+  method(a /*: T */, b /*: T */) /*: T */ {}
+}
+
+================================================================================
+`;
+
+exports[`functions.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo<T>(bar  /*: T[] */, baz  /*: T */) /*: S */ {}
+
+=====================================output=====================================
+function foo<T>(bar /*: T[] */, baz /*: T */) /*: S */ {}
+
+================================================================================
+`;
+
+exports[`generics.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const Component = branch/*::     <Props, ExternalProps> */(
+  ({ src }) => !src,
+  // $FlowFixMe
+  renderNothing,
+)(BaseComponent);
+
+const C = b/*:: <A> */(foo) + c/*:: <B> */(bar);
+
+foo/*::<bar>*/(baz);
+
+foo/*::<bar>*/();
+
+=====================================output=====================================
+const Component = branch/*:: <Props, ExternalProps> */(
+  ({ src }) => !src,
+  // $FlowFixMe
+  renderNothing
+)(BaseComponent);
+
+const C = b/*:: <A> */(foo) + c/*:: <B> */(bar);
+
+foo/*:: <bar> */(baz);
+
+foo/*:: <bar> */();
+
+================================================================================
+`;
+
+exports[`interface.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+interface Foo {
+  bar(
+    currentRequest: {a: number},
+    // TODO this is a very very very very long comment that makes it go > 80 columns
+  ): number;
+}
+
+=====================================output=====================================
+interface Foo {
+  bar(
+    currentRequest: { a: number }
+    // TODO this is a very very very very long comment that makes it go > 80 columns
+  ): number;
+}
+
+================================================================================
+`;
+
+exports[`issues.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// Adding a comment stops the pretty printing process and everything is
+// squished in a single line afterward
+export type BuckWebSocketMessage = {
+  // Not actually from Buck - this is to let the receiver know that the socket is connected.
+  type: 'SocketConnected',
+} | {
+  type: 'BuildProgressUpdated',
+  progressValue: number,
+} | {
+  type: 'BuildFinished',
+  exitCode: number,
+} | {
+  type: 'BuildStarted',
+} | {
+  type: 'ParseStarted',
+} | {
+  type: 'ParseFinished',
+} | {
+  type: 'RunStarted',
+} | {
+  type: 'RunComplete',
+};
+
+// Two extra levels of indentation because of the comment
+export type AsyncExecuteOptions = child_process$execFileOpts & {
+  // The contents to write to stdin.
+  stdin?: ?string,
+  dontLogInNuclide?: ?boolean,
+};
+
+=====================================output=====================================
+// Adding a comment stops the pretty printing process and everything is
+// squished in a single line afterward
+export type BuckWebSocketMessage =
+  | {
+      // Not actually from Buck - this is to let the receiver know that the socket is connected.
+      type: "SocketConnected",
+    }
+  | {
+      type: "BuildProgressUpdated",
+      progressValue: number,
+    }
+  | {
+      type: "BuildFinished",
+      exitCode: number,
+    }
+  | {
+      type: "BuildStarted",
+    }
+  | {
+      type: "ParseStarted",
+    }
+  | {
+      type: "ParseFinished",
+    }
+  | {
+      type: "RunStarted",
+    }
+  | {
+      type: "RunComplete",
+    };
+
+// Two extra levels of indentation because of the comment
+export type AsyncExecuteOptions = child_process$execFileOpts & {
+  // The contents to write to stdin.
+  stdin?: ?string,
+  dontLogInNuclide?: ?boolean,
+};
+
+================================================================================
+`;
+
+exports[`let.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+let foo /*: Groups<T> */;
+let bar /*: string */ = 'a';
+
+=====================================output=====================================
+let foo /*: Groups<T> */;
+let bar /*: string */ = "a";
+
+================================================================================
+`;
+
+exports[`object_type_annotation.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type Props1 = // (DispatchProps & StateProps); WHY DON'T YOU WORK FLOW!!!!!!!!!
+{
+  isPlaying: boolean,
+};
+
+type Props2 = { // (DispatchProps & StateProps); WHY DON'T YOU WORK FLOW!!!!!!!!!
+  isPlaying: boolean
+};
+
+type Props3 = {
+  // (DispatchProps & StateProps); WHY DON'T YOU WORK FLOW!!!!!!!!!
+  isPlaying: boolean
+};
+
+=====================================output=====================================
+// (DispatchProps & StateProps); WHY DON'T YOU WORK FLOW!!!!!!!!!
+type Props1 = {
+  isPlaying: boolean,
+};
+
+type Props2 = {
+  // (DispatchProps & StateProps); WHY DON'T YOU WORK FLOW!!!!!!!!!
+  isPlaying: boolean,
+};
+
+type Props3 = {
+  // (DispatchProps & StateProps); WHY DON'T YOU WORK FLOW!!!!!!!!!
+  isPlaying: boolean,
+};
+
+================================================================================
+`;
+
+exports[`type_annotations.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+new (window.Request/*: Class<Request> */)("");
+
+(this/*: any */).foo = 5;
+
+(this/*    : any */).foo = 5;
+
+// This next example illustrates that Prettier will not remove a line break
+// and unintentionally create a type annotation that was not there before.
+(this/*
+: any */).foo = 5;
+
+const x = (input /*: string */) /*: string */ => {};
+
+=====================================output=====================================
+new (window.Request /*: Class<Request> */)("");
+
+(this /*: any */).foo = 5;
+
+(this /*: any */).foo = 5;
+
+// This next example illustrates that Prettier will not remove a line break
+// and unintentionally create a type annotation that was not there before.
+this /*
+: any */.foo = 5;
+
+const x = (input /*: string */) /*: string */ => {};
+
+================================================================================
+`;
+
+exports[`union.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type UploadState<E, EM, D>
+  // The upload hasnt begun yet
+  = {type: "Not_begun"}
+  // The upload timed out
+  | {type: "Timed_out"}
+  // Failed somewhere on the line
+  | {type: "Failed", error: E, errorMsg: EM}
+  // Uploading to aws3 and CreatePostMutation succeeded
+  | {type: "Success", data: D};
+
+type UploadState2<E, EM, D>
+  // The upload hasnt begun yet
+  = A
+  // The upload timed out
+  | B
+  // Failed somewhere on the line
+  | C
+  // Uploading to aws3 and CreatePostMutation succeeded
+  | D;
+
+=====================================output=====================================
+type UploadState<E, EM, D> =
+  // The upload hasnt begun yet
+  | { type: "Not_begun" }
+  // The upload timed out
+  | { type: "Timed_out" }
+  // Failed somewhere on the line
+  | { type: "Failed", error: E, errorMsg: EM }
+  // Uploading to aws3 and CreatePostMutation succeeded
+  | { type: "Success", data: D };
+
+type UploadState2<E, EM, D> =
+  // The upload hasnt begun yet
+  | A
+  // The upload timed out
+  | B
+  // Failed somewhere on the line
+  | C
+  // Uploading to aws3 and CreatePostMutation succeeded
+  | D;
+
+================================================================================
+`;

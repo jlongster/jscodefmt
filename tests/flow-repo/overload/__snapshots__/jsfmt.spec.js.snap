@@ -1,0 +1,237 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`overload.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * tests of overload selection
+ *
+ * @flow
+ */
+
+var x1: number = "".match(0)[0];
+var x2: number = "".match(/pattern/)[0];
+var x3: string = "".replace(/pattern/,"...");
+var x4: number = "".split(/pattern/)[0];
+
+declare class C {
+    foo(x:number): number;
+    foo(x:string): string;
+
+    bar(x: { a: number }): number;
+    bar(x: { a: string }): string;
+}
+
+var a = new C();
+
+a.foo(0); // ok
+a.foo("hey"); // ok
+a.foo(true); // error, function cannot be called on intersection type
+
+a.bar({ a: 0 }); // ok
+a.bar({ a: "hey" }); // ok
+a.bar({ a: true }); // error, function cannot be called on intersection type
+
+declare var x: { a: boolean; } & { b: string };
+
+a.bar(x); // error with nested intersection info (outer for bar, inner for x)
+
+/********** tests **************
+interface Dummy<T> {
+    dumb(foo: (x:number) => number):number;
+    dumb(foo: (x:string) => string):string;
+
+    dumber<U>(bar: (x:T) => Array<U>):U;
+    dumber<U>(bar: (x:T) => U):Array<U>;
+}
+
+function foo(x:string):string { return x; }
+var y:number = new Dummy().dumb(foo);
+
+function bar1(x:number):Array<string> { return []; }
+var z1:number = new Dummy().dumber(bar1);
+
+function bar2(x:number):string { return "..."; }
+var z2:Array<string> = new Dummy().dumber(bar2);
+*/
+
+=====================================output=====================================
+/**
+ * tests of overload selection
+ *
+ * @flow
+ */
+
+var x1: number = "".match(0)[0];
+var x2: number = "".match(/pattern/)[0];
+var x3: string = "".replace(/pattern/, "...");
+var x4: number = "".split(/pattern/)[0];
+
+declare class C {
+  foo(x: number): number;
+  foo(x: string): string;
+
+  bar(x: { a: number }): number;
+  bar(x: { a: string }): string;
+}
+
+var a = new C();
+
+a.foo(0); // ok
+a.foo("hey"); // ok
+a.foo(true); // error, function cannot be called on intersection type
+
+a.bar({ a: 0 }); // ok
+a.bar({ a: "hey" }); // ok
+a.bar({ a: true }); // error, function cannot be called on intersection type
+
+declare var x: { a: boolean } & { b: string };
+
+a.bar(x); // error with nested intersection info (outer for bar, inner for x)
+
+/********** tests **************
+interface Dummy<T> {
+    dumb(foo: (x:number) => number):number;
+    dumb(foo: (x:string) => string):string;
+
+    dumber<U>(bar: (x:T) => Array<U>):U;
+    dumber<U>(bar: (x:T) => U):Array<U>;
+}
+
+function foo(x:string):string { return x; }
+var y:number = new Dummy().dumb(foo);
+
+function bar1(x:number):Array<string> { return []; }
+var z1:number = new Dummy().dumber(bar1);
+
+function bar2(x:number):string { return "..."; }
+var z2:Array<string> = new Dummy().dumber(bar2);
+*/
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo() {
+  var output = new FakeUint8Array();
+  output.set(new FakeUint8Array(), 0); // matches one of the overloads of set
+}
+
+=====================================output=====================================
+function foo() {
+  var output = new FakeUint8Array();
+  output.set(new FakeUint8Array(), 0); // matches one of the overloads of set
+}
+
+================================================================================
+`;
+
+exports[`test2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class Foo {
+  bar(x: 'hmm'): number;
+  bar(x: string): string;
+}
+var foo = new Foo;
+(foo.bar('hmm'): number); // OK
+(foo.bar('hmmm'): number); // error
+
+=====================================output=====================================
+declare class Foo {
+  bar(x: "hmm"): number;
+  bar(x: string): string;
+}
+var foo = new Foo();
+(foo.bar("hmm"): number); // OK
+(foo.bar("hmmm"): number); // error
+
+================================================================================
+`;
+
+exports[`test3.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// passing a union-like thing into an overload is ok
+// if overload handles each branch of union-like thing
+
+// unions
+declare function f(x: string): void;
+declare function f(x: number): void;
+declare var x_f: string | number;
+f(x_f); // ok
+
+// maybe
+declare function g(x: null): void;
+declare function g(x: void): void;
+declare function g(x: string): void;
+declare var x_g: ?string;
+g(x_g); // ok
+
+// optional
+declare function h(x: void): void;
+declare function h(x: string): void;
+declare var x_h: {p?: string};
+h(x_h.p); // ok
+
+=====================================output=====================================
+// passing a union-like thing into an overload is ok
+// if overload handles each branch of union-like thing
+
+// unions
+declare function f(x: string): void;
+declare function f(x: number): void;
+declare var x_f: string | number;
+f(x_f); // ok
+
+// maybe
+declare function g(x: null): void;
+declare function g(x: void): void;
+declare function g(x: string): void;
+declare var x_g: ?string;
+g(x_g); // ok
+
+// optional
+declare function h(x: void): void;
+declare function h(x: string): void;
+declare var x_h: { p?: string };
+h(x_h.p); // ok
+
+================================================================================
+`;
+
+exports[`union.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo<U> (x: $Either<Array<U>,U>): Array<U> { return []; }
+
+var x1:number = foo(0)[0];
+var x2:string = foo([""])[0];
+
+=====================================output=====================================
+function foo<U>(x: $Either<Array<U>, U>): Array<U> {
+  return [];
+}
+
+var x1: number = foo(0)[0];
+var x2: string = foo([""])[0];
+
+================================================================================
+`;

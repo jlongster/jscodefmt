@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`trailing.graphql - {"trailingComma":"all"} format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+trailingComma: "all"
+                                                                                | printWidth
+=====================================input======================================
+query Query(
+  $pageID: ID!
+  $scale: Float
+  $PROJECT_UNIT_PROFILE_PICTURE_SIZE: Int
+  $PROJECT_UNIT_CARD_SIZE: Int
+) @argumentDefinitions(
+    count: {type: "Int", defaultValue: 20, someSuperSuperSuperSuperLongType: 301}
+    test: [{type: "Int", defaultValue: 20, someSuperSuperSuperSuperLongType: 301}]
+  ) {
+  cover_photo {
+    image(
+      width: $PROJECT_UNIT_CARD_SIZE,
+      height: $PROJECT_UNIT_CARD_SIZE,
+      sizing: "cover-fill",
+      scale: $scale,
+    ) {
+      uri
+    }
+  }
+}
+
+=====================================output=====================================
+query Query(
+  $pageID: ID!
+  $scale: Float
+  $PROJECT_UNIT_PROFILE_PICTURE_SIZE: Int
+  $PROJECT_UNIT_CARD_SIZE: Int
+)
+@argumentDefinitions(
+  count: {
+    type: "Int"
+    defaultValue: 20
+    someSuperSuperSuperSuperLongType: 301
+  }
+  test: [
+    { type: "Int", defaultValue: 20, someSuperSuperSuperSuperLongType: 301 }
+  ]
+) {
+  cover_photo {
+    image(
+      width: $PROJECT_UNIT_CARD_SIZE
+      height: $PROJECT_UNIT_CARD_SIZE
+      sizing: "cover-fill"
+      scale: $scale
+    ) {
+      uri
+    }
+  }
+}
+
+================================================================================
+`;
+
+exports[`trailing.graphql - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+query Query(
+  $pageID: ID!
+  $scale: Float
+  $PROJECT_UNIT_PROFILE_PICTURE_SIZE: Int
+  $PROJECT_UNIT_CARD_SIZE: Int
+) @argumentDefinitions(
+    count: {type: "Int", defaultValue: 20, someSuperSuperSuperSuperLongType: 301}
+    test: [{type: "Int", defaultValue: 20, someSuperSuperSuperSuperLongType: 301}]
+  ) {
+  cover_photo {
+    image(
+      width: $PROJECT_UNIT_CARD_SIZE,
+      height: $PROJECT_UNIT_CARD_SIZE,
+      sizing: "cover-fill",
+      scale: $scale,
+    ) {
+      uri
+    }
+  }
+}
+
+=====================================output=====================================
+query Query(
+  $pageID: ID!
+  $scale: Float
+  $PROJECT_UNIT_PROFILE_PICTURE_SIZE: Int
+  $PROJECT_UNIT_CARD_SIZE: Int
+)
+@argumentDefinitions(
+  count: {
+    type: "Int"
+    defaultValue: 20
+    someSuperSuperSuperSuperLongType: 301
+  }
+  test: [
+    { type: "Int", defaultValue: 20, someSuperSuperSuperSuperLongType: 301 }
+  ]
+) {
+  cover_photo {
+    image(
+      width: $PROJECT_UNIT_CARD_SIZE
+      height: $PROJECT_UNIT_CARD_SIZE
+      sizing: "cover-fill"
+      scale: $scale
+    ) {
+      uri
+    }
+  }
+}
+
+================================================================================
+`;
+
+exports[`trailing.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+query Query(
+  $pageID: ID!
+  $scale: Float
+  $PROJECT_UNIT_PROFILE_PICTURE_SIZE: Int
+  $PROJECT_UNIT_CARD_SIZE: Int
+) @argumentDefinitions(
+    count: {type: "Int", defaultValue: 20, someSuperSuperSuperSuperLongType: 301}
+    test: [{type: "Int", defaultValue: 20, someSuperSuperSuperSuperLongType: 301}]
+  ) {
+  cover_photo {
+    image(
+      width: $PROJECT_UNIT_CARD_SIZE,
+      height: $PROJECT_UNIT_CARD_SIZE,
+      sizing: "cover-fill",
+      scale: $scale,
+    ) {
+      uri
+    }
+  }
+}
+
+=====================================output=====================================
+query Query(
+  $pageID: ID!
+  $scale: Float
+  $PROJECT_UNIT_PROFILE_PICTURE_SIZE: Int
+  $PROJECT_UNIT_CARD_SIZE: Int
+)
+@argumentDefinitions(
+  count: {
+    type: "Int"
+    defaultValue: 20
+    someSuperSuperSuperSuperLongType: 301
+  }
+  test: [
+    { type: "Int", defaultValue: 20, someSuperSuperSuperSuperLongType: 301 }
+  ]
+) {
+  cover_photo {
+    image(
+      width: $PROJECT_UNIT_CARD_SIZE
+      height: $PROJECT_UNIT_CARD_SIZE
+      sizing: "cover-fill"
+      scale: $scale
+    ) {
+      uri
+    }
+  }
+}
+
+================================================================================
+`;

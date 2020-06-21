@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`svg.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SVG</title>
+  </head>
+  <body>
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg>
+  </body>
+</html>
+
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+<defs /> <style >
+    polygon { fill: black }
+
+    div {
+  color: white;
+      font:18px serif;
+      height: 100%;
+      overflow: auto;
+    }
+  </style>
+
+ <g>
+  <g><polygon points="5,5 195,10 185,185 10,195" />
+      <text>    Text</text></g>
+  </g>
+
+  <!-- Common use case: embed HTML text into SVG -->
+  <foreignObject x="20" y="20" width="160" height="160">
+    <!--
+      In the context of SVG embeded into HTML, the XHTML namespace could be avoided, but it is mandatory in the context of an SVG document
+    -->
+    <div xmlns="http://www.w3.org/1999/xhtml">
+    <p>
+  123
+      </p>
+      <span>
+        123
+        </span>
+    </div>
+  </foreignObject>
+</svg>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <head>
+    <title>SVG</title>
+  </head>
+  <body>
+    <svg width="100" height="100">
+      <circle
+        cx="50"
+        cy="50"
+        r="40"
+        stroke="green"
+        stroke-width="4"
+        fill="yellow"
+      />
+    </svg>
+  </body>
+</html>
+
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs />
+  <style>
+    polygon {
+      fill: black;
+    }
+
+    div {
+      color: white;
+      font: 18px serif;
+      height: 100%;
+      overflow: auto;
+    }
+  </style>
+
+  <g>
+    <g>
+      <polygon points="5,5 195,10 185,185 10,195" />
+      <text>Text</text>
+    </g>
+  </g>
+
+  <!-- Common use case: embed HTML text into SVG -->
+  <foreignObject x="20" y="20" width="160" height="160">
+    <!--
+      In the context of SVG embeded into HTML, the XHTML namespace could be avoided, but it is mandatory in the context of an SVG document
+    -->
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        123
+      </p>
+      <span>
+        123
+      </span>
+    </div>
+  </foreignObject>
+</svg>
+
+================================================================================
+`;

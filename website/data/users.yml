@@ -47,6 +47,9 @@
   image: /images/users/zeit-200x100.png
   greyImage: /images/users/used_by_zeit.svg
   infoLink: https://zeit.co
+- caption: Spotify
+  image: /images/users/used_by_spotify.svg
+  infoLink: https://spotify.github.io
 - caption: PayPal
   image: /images/users/paypal-200x100.png
   infoLink: https://github.com/paypal/
@@ -236,3 +239,15 @@
 - caption: Estalee
   image: /images/users/estalee.svg
   infoLink: https://estalee.com/
+- caption: SwissDev DevOps Jobs
+  image: /images/users/swissdev-devops-jobs-200-100.png
+  infoLink: https://swissdevjobs.ch/jobs/Dev-Ops/All
+- caption: Tradie Training
+  image: /images/users/tradie-training.png
+  infoLink: https://tt.edu.au
+- caption: ChilliCream
+  image: /images/users/chillicream.svg
+  infoLink: https://chillicream.com/
+- caption: Toptal
+  image: /images/users/toptal.png
+  infoLink: https://www.toptal.com

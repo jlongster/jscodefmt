@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snippet: #0 error test 1`] = `
+"ObjectProperty with shorthand=true is not allowed in JSON. (1:2)
+> 1 | {foo}
+    |  ^"
+`;
+
+exports[`snippet: #1 error test 1`] = `
+"ObjectProperty with computed=true is not allowed in JSON. (1:2)
+> 1 | {[\\"foo\\"]:\\"bar\\"}
+    |  ^"
+`;
+
+exports[`snippet: #2 error test 1`] = `
+"UnaryExpression with operator=\\"~\\" is not allowed in JSON. (1:9)
+> 1 | {\\"foo\\": ~1}
+    |         ^"
+`;
+
+exports[`snippet: #3 error test 1`] = `
+"LogicalExpression is not allowed in JSON. (1:9)
+> 1 | {\\"foo\\": false || \\"bar\\"}
+    |         ^"
+`;
+
+exports[`snippet: #4 error test 1`] = `
+"Identifier is not allowed in JSON. (1:9)
+> 1 | {\\"foo\\": undefined}
+    |         ^"
+`;
+
+exports[`snippet: #5 error test 1`] = `
+"ArrowFunctionExpression is not allowed in JSON. (1:9)
+> 1 | {\\"foo\\": () => {}}
+    |         ^"
+`;

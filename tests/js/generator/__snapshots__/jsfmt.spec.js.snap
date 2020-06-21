@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`anonymous.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "typescript", "flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const f1 = function* () {
+  yield 0;
+};
+  
+const f2 = function * () {
+  yield 0;
+};
+
+const f3 = function* () {
+};
+  
+(function* () {
+  yield 0;
+});
+  
+(function * () {
+  yield 0;
+});
+
+(function* () {
+});
+  
+=====================================output=====================================
+const f1 = function* () {
+  yield 0;
+};
+
+const f2 = function* () {
+  yield 0;
+};
+
+const f3 = function* () {};
+
+(function* () {
+  yield 0;
+});
+
+(function* () {
+  yield 0;
+});
+
+(function* () {});
+
+================================================================================
+`;

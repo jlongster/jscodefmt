@@ -1,0 +1,291 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bar.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var Bar = { x: 0 };
+module.exports = Bar;
+
+=====================================output=====================================
+var Bar = { x: 0 };
+module.exports = Bar;
+
+================================================================================
+`;
+
+exports[`copyProperties.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // global
+  function() {
+    (copyProperties()); // error, unknown global
+  },
+
+  // annotation
+  function(copyProperties: Object$Assign) {
+    let result = {};
+    result.baz = false;
+    (copyProperties(
+      result,
+      { foo: 'a' },
+      { bar: 123 }
+    ): { foo: string, bar: number, baz: boolean });
+  },
+
+  // module from lib
+  function() {
+    const copyProperties = require('copyProperties');
+    let x = { foo: 'a' };
+    let y = { bar: 123 };
+    (copyProperties({}, x, y): { foo: string, bar: number });
+  },
+
+  // too few args
+  function(copyProperties: Object$Assign) {
+    copyProperties();
+    (copyProperties({ foo: 'a' }): { foo: number }); // err, num !~> string
+  },
+
+  // passed as a function
+  function(copyProperties: Object$Assign) {
+    function x(cb: Function) {}
+    x(copyProperties);
+  }
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // global
+  function () {
+    copyProperties(); // error, unknown global
+  },
+
+  // annotation
+  function (copyProperties: Object$Assign) {
+    let result = {};
+    result.baz = false;
+    (copyProperties(result, { foo: "a" }, { bar: 123 }): {
+      foo: string,
+      bar: number,
+      baz: boolean,
+    });
+  },
+
+  // module from lib
+  function () {
+    const copyProperties = require("copyProperties");
+    let x = { foo: "a" };
+    let y = { bar: 123 };
+    (copyProperties({}, x, y): { foo: string, bar: number });
+  },
+
+  // too few args
+  function (copyProperties: Object$Assign) {
+    copyProperties();
+    (copyProperties({ foo: "a" }): { foo: number }); // err, num !~> string
+  },
+
+  // passed as a function
+  function (copyProperties: Object$Assign) {
+    function x(cb: Function) {}
+    x(copyProperties);
+  },
+];
+
+================================================================================
+`;
+
+exports[`invariant.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+let tests = [
+  function() {
+    let x: ?string = null;
+    invariant(x, 'truthy only'); // error, forgot to require invariant
+  },
+
+  function(invariant: Function) {
+    let x: ?string = null;
+    invariant(x);
+    (x: string);
+  }
+]
+
+=====================================output=====================================
+/* @flow */
+
+let tests = [
+  function () {
+    let x: ?string = null;
+    invariant(x, "truthy only"); // error, forgot to require invariant
+  },
+
+  function (invariant: Function) {
+    let x: ?string = null;
+    invariant(x);
+    (x: string);
+  },
+];
+
+================================================================================
+`;
+
+exports[`lib.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare module "copyProperties" {
+  declare var exports: Object$Assign;
+}
+
+declare module "mergeInto" {
+  declare var exports: $Facebookism$MergeInto;
+}
+
+declare module "mixin" {
+  declare var exports: $Facebookism$Mixin;
+}
+
+=====================================output=====================================
+declare module "copyProperties" {
+  declare var exports: Object$Assign;
+}
+
+declare module "mergeInto" {
+  declare var exports: $Facebookism$MergeInto;
+}
+
+declare module "mixin" {
+  declare var exports: $Facebookism$Mixin;
+}
+
+================================================================================
+`;
+
+exports[`mergeInto.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // global
+  function() {
+    (mergeInto()); // error, unknown global
+  },
+
+  // annotation
+  function(mergeInto: $Facebookism$MergeInto) {
+    let result = {};
+    result.baz = false;
+    (mergeInto(result, { foo: 'a' }, { bar: 123 }): void);
+    (result: { foo: string, bar: number, baz: boolean });
+  },
+
+  // module from lib
+  function() {
+    const mergeInto = require('mergeInto');
+    let result: { foo?: string, bar?: number, baz: boolean } = { baz: false };
+    (mergeInto(result, { foo: 'a' }, { bar: 123 }): void);
+  },
+
+  // too few args
+  function(mergeInto: $Facebookism$MergeInto) {
+    mergeInto();
+  },
+
+  // passed as a function
+  function(mergeInto: $Facebookism$MergeInto) {
+    function x(cb: Function) {}
+    x(mergeInto);
+  }
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // global
+  function () {
+    mergeInto(); // error, unknown global
+  },
+
+  // annotation
+  function (mergeInto: $Facebookism$MergeInto) {
+    let result = {};
+    result.baz = false;
+    (mergeInto(result, { foo: "a" }, { bar: 123 }): void);
+    (result: { foo: string, bar: number, baz: boolean });
+  },
+
+  // module from lib
+  function () {
+    const mergeInto = require("mergeInto");
+    let result: { foo?: string, bar?: number, baz: boolean } = { baz: false };
+    (mergeInto(result, { foo: "a" }, { bar: 123 }): void);
+  },
+
+  // too few args
+  function (mergeInto: $Facebookism$MergeInto) {
+    mergeInto();
+  },
+
+  // passed as a function
+  function (mergeInto: $Facebookism$MergeInto) {
+    function x(cb: Function) {}
+    x(mergeInto);
+  },
+];
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var Bar = require('./Bar');
+var mixin = require('mixin');
+
+class Foo extends mixin(Bar) {
+  m() {
+    var x: string = this.x;
+    this.y = "";
+  }
+}
+
+=====================================output=====================================
+var Bar = require("./Bar");
+var mixin = require("mixin");
+
+class Foo extends mixin(Bar) {
+  m() {
+    var x: string = this.x;
+    this.y = "";
+  }
+}
+
+================================================================================
+`;

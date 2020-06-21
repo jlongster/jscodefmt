@@ -21,5 +21,5 @@ function convertEndOfLineToChars(value) {
 
 module.exports = {
   guessEndOfLine,
-  convertEndOfLineToChars
+  convertEndOfLineToChars,
 };

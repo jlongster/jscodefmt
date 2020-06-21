@@ -1,0 +1,175 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`id.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare function id<X>(_: X): X;
+
+module.exports = id;
+
+=====================================output=====================================
+declare function id<X>(_: X): X;
+
+module.exports = id;
+
+================================================================================
+`;
+
+exports[`subtype.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+interface Interface {
+  m(): void;
+}
+import type { ObjectType } from './test';
+
+function subtypeCheck(x: Interface): ObjectType { return x; }
+
+=====================================output=====================================
+interface Interface {
+  m(): void;
+}
+import type { ObjectType } from "./test";
+
+function subtypeCheck(x: Interface): ObjectType {
+  return x;
+}
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const id = require('./id');
+
+export type ObjectType = {
+  +m: () => void,
+};
+
+function methodCaller(x: ObjectType) {
+  x.m();
+};
+
+module.exports = id(
+  methodCaller
+);
+
+=====================================output=====================================
+const id = require("./id");
+
+export type ObjectType = {
+  +m: () => void,
+};
+
+function methodCaller(x: ObjectType) {
+  x.m();
+}
+
+module.exports = id(methodCaller);
+
+================================================================================
+`;
+
+exports[`test2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function f() {
+  return this.p;
+}
+
+var a = {
+  p: 0,
+  f
+}
+
+var b = {
+  f
+}
+
+a.f(); // okey-dokie
+b.f(); // error, property \`p\` not found
+
+=====================================output=====================================
+/* @flow */
+
+function f() {
+  return this.p;
+}
+
+var a = {
+  p: 0,
+  f,
+};
+
+var b = {
+  f,
+};
+
+a.f(); // okey-dokie
+b.f(); // error, property \`p\` not found
+
+================================================================================
+`;
+
+exports[`test3.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function foo() {
+  this.m();
+}
+
+function bar(f: () => void) {
+  f(); // passing global object as \`this\`
+  ({ f }).f(); // passing container object as \`this\`
+}
+
+bar(foo); // error, since \`this\` is used non-trivially in \`foo\`
+
+function qux(o: { f: () => void }) {
+  o.f(); // passing o as \`this\`
+}
+
+qux({ f: foo });  // error, since \`this\` is used non-trivially in \`foo\`
+
+=====================================output=====================================
+/* @flow */
+
+function foo() {
+  this.m();
+}
+
+function bar(f: () => void) {
+  f(); // passing global object as \`this\`
+  ({ f }.f()); // passing container object as \`this\`
+}
+
+bar(foo); // error, since \`this\` is used non-trivially in \`foo\`
+
+function qux(o: { f: () => void }) {
+  o.f(); // passing o as \`this\`
+}
+
+qux({ f: foo }); // error, since \`this\` is used non-trivially in \`foo\`
+
+================================================================================
+`;

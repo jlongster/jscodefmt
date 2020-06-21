@@ -73,13 +73,13 @@ function composeLoc(startNode, endNodeOrLength = startNode) {
       end:
         length !== -1
           ? { line: startLoc.line, column: startLoc.column + length }
-          : endNodeOrLength.loc.end
-    }
+          : endNodeOrLength.loc.end,
+    },
   };
 }
 
 module.exports = {
   locStart,
   locEnd,
-  composeLoc
+  composeLoc,
 };

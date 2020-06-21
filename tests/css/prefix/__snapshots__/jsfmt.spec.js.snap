@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`prefix.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+div {
+  margin-left: -@leftMargin;
+  transform: translateY(-@offset);
+}
+
+=====================================output=====================================
+div {
+  margin-left: -@leftMargin;
+  transform: translateY(-@offset);
+}
+
+================================================================================
+`;

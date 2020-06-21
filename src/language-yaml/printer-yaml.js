@@ -18,7 +18,7 @@ const {
   isNode,
   isEmptyNode,
   defineShortcut,
-  mapNode
+  mapNode,
 } = require("./utils");
 const docBuilders = require("../document").builders;
 const {
@@ -36,9 +36,9 @@ const {
   lineSuffix,
   literalline,
   markAsRoot,
-  softline
+  softline,
 } = docBuilders;
-const { replaceEndOfLineWith } = require("../common/util");
+const { replaceEndOfLineWith, isPreviousLineEmpty } = require("../common/util");
 
 function preprocess(ast) {
   return mapNode(ast, defineShortcuts);
@@ -80,7 +80,7 @@ function genericPrint(path, options, print) {
       "comment",
       "directive",
       "mappingItem",
-      "sequenceItem"
+      "sequenceItem",
     ]) && !isLastDescendantNode(path)
       ? printNextEmptyLine(path, options.originalText)
       : "";
@@ -101,16 +101,15 @@ function genericPrint(path, options, print) {
       ? concat([
           node.middleComments.length === 1 ? "" : hardline,
           join(hardline, path.map(print, "middleComments")),
-          hardline
+          hardline,
         ])
       : "",
     hasPrettierIgnore(path)
       ? concat(
           replaceEndOfLineWith(
-            options.originalText.slice(
-              node.position.start.offset,
-              node.position.end.offset
-            ),
+            options.originalText
+              .slice(node.position.start.offset, node.position.end.offset)
+              .trimEnd(),
             literalline
           )
         )
@@ -124,7 +123,7 @@ function genericPrint(path, options, print) {
             isInlineNode(node)
               ? ""
               : breakParent,
-            path.call(print, "trailingComment")
+            path.call(print, "trailingComment"),
           ])
         )
       : "",
@@ -132,9 +131,28 @@ function genericPrint(path, options, print) {
     hasEndComments(node) && !isNode(node, ["documentHead", "documentBody"])
       ? align(
           node.type === "sequenceItem" ? 2 : 0,
-          concat([hardline, join(hardline, path.map(print, "endComments"))])
+          concat([
+            hardline,
+            join(
+              hardline,
+              path.map(
+                (path) =>
+                  concat([
+                    isPreviousLineEmpty(
+                      options.originalText,
+                      path.getValue(),
+                      options.locStart
+                    )
+                      ? hardline
+                      : "",
+                    print(path),
+                  ]),
+                "endComments"
+              )
+            ),
+          ])
         )
-      : ""
+      : "",
   ]);
 }
 
@@ -155,20 +173,20 @@ function _print(node, parentNode, path, options, print) {
                     "...",
                     hasTrailingComment(document)
                       ? concat([" ", path.call(print, "trailingComment")])
-                      : ""
+                      : "",
                   ])
                 : !nextDocument || hasTrailingComment(nextDocument.head)
                 ? ""
-                : concat([hardline, "---"])
+                : concat([hardline, "---"]),
             ]);
           }, "children")
         ),
         node.children.length === 0 ||
-        (lastDescendantNode =>
+        ((lastDescendantNode) =>
           isNode(lastDescendantNode, ["blockLiteral", "blockFolded"]) &&
           lastDescendantNode.chomping === "keep")(getLastDescendantNode(node))
           ? ""
-          : hardline
+          : hardline,
       ]);
     case "document": {
       const nextDocument = parentNode.children[path.getName() + 1];
@@ -193,14 +211,14 @@ function _print(node, parentNode, path, options, print) {
                     hasTrailingComment(node.head)
                       ? concat([
                           " ",
-                          path.call(print, "head", "trailingComment")
+                          path.call(print, "head", "trailingComment"),
                         ])
-                      : ""
-                  ])
+                      : "",
+                  ]),
                 ].filter(Boolean)
               )
             : "",
-          shouldPrintDocumentBody(node) ? path.call(print, "body") : ""
+          shouldPrintDocumentBody(node) ? path.call(print, "body") : "",
         ].filter(Boolean)
       );
     }
@@ -215,7 +233,7 @@ function _print(node, parentNode, path, options, print) {
       const separator =
         children.length === 0 || endComments.length === 0
           ? ""
-          : (lastDescendantNode =>
+          : ((lastDescendantNode) =>
               isNode(lastDescendantNode, ["blockFolded", "blockLiteral"])
                 ? lastDescendantNode.chomping === "keep"
                   ? // there's already a newline printed at the end of blockValue (chomping=keep, lastDescendant=true)
@@ -268,7 +286,7 @@ function _print(node, parentNode, path, options, print) {
         return concat([
           originalQuote,
           printFlowScalarContent(node.type, raw, options),
-          originalQuote
+          originalQuote,
         ]);
       } else if (raw.includes(doubleQuote)) {
         return concat([
@@ -283,7 +301,7 @@ function _print(node, parentNode, path, options, print) {
               : raw,
             options
           ),
-          singleQuote
+          singleQuote,
         ]);
       }
 
@@ -298,7 +316,7 @@ function _print(node, parentNode, path, options, print) {
               : raw,
             options
           ),
-          doubleQuote
+          doubleQuote,
         ]);
       }
 
@@ -306,12 +324,12 @@ function _print(node, parentNode, path, options, print) {
       return concat([
         quote,
         printFlowScalarContent(node.type, raw, options),
-        quote
+        quote,
       ]);
     }
     case "blockFolded":
     case "blockLiteral": {
-      const parentIndent = getAncestorCount(path, ancestorNode =>
+      const parentIndent = getAncestorCount(path, (ancestorNode) =>
         isNode(ancestorNode, ["sequence", "mapping"])
       );
       const isLastDescendant = isLastDescendantNode(path);
@@ -331,7 +349,7 @@ function _print(node, parentNode, path, options, print) {
               getBlockValueLineContents(node, {
                 parentIndent,
                 isLastDescendant,
-                options
+                options,
               }).reduce(
                 (reduced, lineWords, index, lineContents) =>
                   reduced.concat(
@@ -351,7 +369,7 @@ function _print(node, parentNode, path, options, print) {
               )
             )
           )
-        )
+        ),
       ]);
     }
     case "sequence":
@@ -359,7 +377,7 @@ function _print(node, parentNode, path, options, print) {
     case "sequenceItem":
       return concat([
         "- ",
-        align(2, !node.content ? "" : path.call(print, "content"))
+        align(2, !node.content ? "" : path.call(print, "content")),
       ]);
     case "mappingKey":
       return !node.content ? "" : path.call(print, "content");
@@ -410,10 +428,10 @@ function _print(node, parentNode, path, options, print) {
               "",
               path
                 .map(print, "value", "leadingComments")
-                .map(comment => concat([comment, hardline]))
+                .map((comment) => concat([comment, hardline]))
             ),
             ": ",
-            align(2, value)
+            align(2, value),
           ])
         : // force singleline
         isSingleLineNode(node.key.content) &&
@@ -429,7 +447,7 @@ function _print(node, parentNode, path, options, print) {
             key,
             needsSpaceInFrontOfMappingValue(node) ? " " : "",
             ": ",
-            value
+            value,
           ])
         : conditionalGroup([
             concat([
@@ -456,12 +474,12 @@ function _print(node, parentNode, path, options, print) {
                       : !node.value.content
                       ? ""
                       : line,
-                    value
+                    value,
                   ])
                 ),
                 { groupId }
-              )
-            ])
+              ),
+            ]),
           ]);
     }
     case "flowMapping":
@@ -476,7 +494,7 @@ function _print(node, parentNode, path, options, print) {
           : softline;
       const isLastItemEmptyMappingItem =
         node.children.length !== 0 &&
-        (lastItem =>
+        ((lastItem) =>
           lastItem.type === "flowMappingItem" &&
           isEmptyNode(lastItem.key) &&
           isEmptyNode(lastItem.value))(getLast(node.children));
@@ -501,17 +519,17 @@ function _print(node, parentNode, path, options, print) {
                                 childPath,
                                 options.originalText
                               )
-                            : ""
-                        ])
+                            : "",
+                        ]),
                   ]),
                 "children"
               )
             ),
-            ifBreak(",", "")
+            ifBreak(",", ""),
           ])
         ),
         isLastItemEmptyMappingItem ? "" : bracketSpacing,
-        closeMarker
+        closeMarker,
       ]);
     }
     case "flowSequenceItem":
@@ -704,7 +722,7 @@ function printFlowScalarContent(nodeType, content, options) {
   const lineContents = getFlowScalarLineContents(nodeType, content, options);
   return join(
     hardline,
-    lineContents.map(lineContentWords =>
+    lineContents.map((lineContentWords) =>
       fill(join(line, lineContentWords).parts)
     )
   );
@@ -732,5 +750,5 @@ module.exports = {
   preprocess,
   print: genericPrint,
   massageAstNode: clean,
-  insertPragma
+  insertPragma,
 };

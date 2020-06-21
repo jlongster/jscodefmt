@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`contextualTypeWithTuple.ts 1`] = `
+exports[`contextualTypeWithTuple.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -62,7 +62,7 @@ numStrTuple = unionTuple3;
 ================================================================================
 `;
 
-exports[`indexerWithTuple.ts 1`] = `
+exports[`indexerWithTuple.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -138,7 +138,7 @@ var eleUnion26 = unionTuple2["1"]; // string | number
 ================================================================================
 `;
 
-exports[`tupleElementTypes1.ts 1`] = `
+exports[`tupleElementTypes1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -152,7 +152,7 @@ var [a, b]: [number, any] = [undefined, undefined];
 ================================================================================
 `;
 
-exports[`tupleElementTypes2.ts 1`] = `
+exports[`tupleElementTypes2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -166,7 +166,7 @@ function f([a, b]: [number, any]) {}
 ================================================================================
 `;
 
-exports[`tupleElementTypes3.ts 1`] = `
+exports[`tupleElementTypes3.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -180,7 +180,7 @@ var [a, b] = [0, undefined];
 ================================================================================
 `;
 
-exports[`tupleElementTypes4.ts 1`] = `
+exports[`tupleElementTypes4.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -194,7 +194,7 @@ function f([a, b] = [0, undefined]) {}
 ================================================================================
 `;
 
-exports[`typeInferenceWithTupleType.ts 1`] = `
+exports[`typeInferenceWithTupleType.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -253,7 +253,7 @@ var zipResultEleEle = zipResult[0][0]; // string
 ================================================================================
 `;
 
-exports[`wideningTuples1.ts 1`] = `
+exports[`wideningTuples1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -275,7 +275,7 @@ y = [""];
 ================================================================================
 `;
 
-exports[`wideningTuples2.ts 1`] = `
+exports[`wideningTuples2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -299,7 +299,7 @@ var foo: () => [any] = function bar() {
 ================================================================================
 `;
 
-exports[`wideningTuples3.ts 1`] = `
+exports[`wideningTuples3.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -319,7 +319,7 @@ var b = (a = [undefined, null]);
 ================================================================================
 `;
 
-exports[`wideningTuples4.ts 1`] = `
+exports[`wideningTuples4.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -339,7 +339,7 @@ b = ["", ""];
 ================================================================================
 `;
 
-exports[`wideningTuples5.ts 1`] = `
+exports[`wideningTuples5.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -355,7 +355,7 @@ var [a, b] = [undefined, null];
 ================================================================================
 `;
 
-exports[`wideningTuples6.ts 1`] = `
+exports[`wideningTuples6.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -373,7 +373,7 @@ b = "";
 ================================================================================
 `;
 
-exports[`wideningTuples7.ts 1`] = `
+exports[`wideningTuples7.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

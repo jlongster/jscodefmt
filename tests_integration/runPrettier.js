@@ -14,7 +14,7 @@ function runPrettier(dir, args, options) {
   let stdout = "";
   let stderr = "";
 
-  jest.spyOn(process, "exit").mockImplementation(exitCode => {
+  jest.spyOn(process, "exit").mockImplementation((exitCode) => {
     if (status === undefined) {
       status = exitCode || 0;
     }
@@ -22,23 +22,23 @@ function runPrettier(dir, args, options) {
 
   jest
     .spyOn(process.stdout, "write")
-    .mockImplementation(text => appendStdout(text));
+    .mockImplementation((text) => appendStdout(text));
 
   jest
     .spyOn(process.stderr, "write")
-    .mockImplementation(text => appendStderr(text));
+    .mockImplementation((text) => appendStderr(text));
 
   jest
     .spyOn(console, "log")
-    .mockImplementation(text => appendStdout(text + "\n"));
+    .mockImplementation((text) => appendStdout(text + "\n"));
 
   jest
     .spyOn(console, "warn")
-    .mockImplementation(text => appendStderr(text + "\n"));
+    .mockImplementation((text) => appendStderr(text + "\n"));
 
   jest
     .spyOn(console, "error")
-    .mockImplementation(text => appendStderr(text + "\n"));
+    .mockImplementation((text) => appendStderr(text + "\n"));
 
   jest.spyOn(Date, "now").mockImplementation(() => 0);
 
@@ -50,7 +50,7 @@ function runPrettier(dir, args, options) {
 
   const origStatSync = fs.statSync;
 
-  jest.spyOn(fs, "statSync").mockImplementation(filename => {
+  jest.spyOn(fs, "statSync").mockImplementation((filename) => {
     if (path.basename(filename) === "virtualDirectory") {
       return origStatSync(path.join(__dirname, __filename));
     }
@@ -62,13 +62,11 @@ function runPrettier(dir, args, options) {
   const originalExitCode = process.exitCode;
   const originalStdinIsTTY = process.stdin.isTTY;
   const originalStdoutIsTTY = process.stdout.isTTY;
-  const originalEnv = process.env;
 
   process.chdir(normalizeDir(dir));
   process.stdin.isTTY = !!options.isTTY;
   process.stdout.isTTY = !!options.stdoutIsTTY;
   process.argv = ["path/to/node", "path/to/prettier/bin"].concat(args);
-  process.env = { ...process.env, ...options.env };
 
   jest.resetModules();
 
@@ -80,13 +78,13 @@ function runPrettier(dir, args, options) {
     .mockImplementation(() => SynchronousPromise.resolve(options.input || ""));
   jest
     .spyOn(require(thirdParty), "isCI")
-    .mockImplementation(() => process.env.CI);
+    .mockImplementation(() => !!options.ci);
   jest
     .spyOn(require(thirdParty), "cosmiconfig")
     .mockImplementation((moduleName, options) =>
       require("cosmiconfig").cosmiconfig(moduleName, {
         ...options,
-        stopDir: __dirname
+        stopDir: __dirname,
       })
     );
   jest
@@ -94,7 +92,7 @@ function runPrettier(dir, args, options) {
     .mockImplementation((moduleName, options) =>
       require("cosmiconfig").cosmiconfigSync(moduleName, {
         ...options,
-        stopDir: __dirname
+        stopDir: __dirname,
       })
     );
   jest
@@ -113,16 +111,15 @@ function runPrettier(dir, args, options) {
     process.exitCode = originalExitCode;
     process.stdin.isTTY = originalStdinIsTTY;
     process.stdout.isTTY = originalStdoutIsTTY;
-    process.env = originalEnv;
     jest.restoreAllMocks();
   }
 
   const result = { status, stdout, stderr, write };
 
-  const testResult = testOptions => {
+  const testResult = (testOptions) => {
     testOptions = testOptions || {};
 
-    Object.keys(result).forEach(name => {
+    Object.keys(result).forEach((name) => {
       test(`(${name})`, () => {
         const value =
           // \r is trimmed from jest snapshots by default;

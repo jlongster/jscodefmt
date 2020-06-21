@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arrow_regression.ts - {"semi":false} format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+semi: false
+                                                                                | printWidth
+=====================================input======================================
+const bar = (...varargs:any[]) => {
+  console.log(varargs);
+};
+
+const foo = (x:string):void => (
+  bar(
+    x,
+    () => {},
+    () => {}
+  )
+);
+
+app.get("/", (req, res): void => {
+  res.send("Hello world");
+});
+
+=====================================output=====================================
+const bar = (...varargs: any[]) => {
+  console.log(varargs)
+}
+
+const foo = (x: string): void =>
+  bar(
+    x,
+    () => {},
+    () => {}
+  )
+
+app.get("/", (req, res): void => {
+  res.send("Hello world")
+})
+
+================================================================================
+`;
+
+exports[`arrow_regression.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const bar = (...varargs:any[]) => {
+  console.log(varargs);
+};
+
+const foo = (x:string):void => (
+  bar(
+    x,
+    () => {},
+    () => {}
+  )
+);
+
+app.get("/", (req, res): void => {
+  res.send("Hello world");
+});
+
+=====================================output=====================================
+const bar = (...varargs: any[]) => {
+  console.log(varargs);
+};
+
+const foo = (x: string): void =>
+  bar(
+    x,
+    () => {},
+    () => {}
+  );
+
+app.get("/", (req, res): void => {
+  res.send("Hello world");
+});
+
+================================================================================
+`;
+
+exports[`comments.ts - {"semi":false} format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+semi: false
+                                                                                | printWidth
+=====================================input======================================
+const fn1 = () => {
+  return;
+} /* foo */;
+
+const fn2 = () => {
+  return;
+}
+
+// foo
+;
+
+=====================================output=====================================
+const fn1 = () => {
+  return
+} /* foo */
+
+const fn2 = () => {
+  return
+}
+
+// foo
+
+================================================================================
+`;
+
+exports[`comments.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const fn1 = () => {
+  return;
+} /* foo */;
+
+const fn2 = () => {
+  return;
+}
+
+// foo
+;
+
+=====================================output=====================================
+const fn1 = () => {
+  return;
+}; /* foo */
+
+const fn2 = () => {
+  return;
+};
+
+// foo
+
+================================================================================
+`;

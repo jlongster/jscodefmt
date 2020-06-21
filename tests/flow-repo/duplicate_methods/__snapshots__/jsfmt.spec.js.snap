@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class C1 {
+  m() { }
+  m() { }
+}
+
+new C1().m();
+
+class C2 {
+  get m() { return 42; }
+  m() { }
+}
+
+new C2().m();
+
+class C3 {
+  set m(x) { }
+  m() { }
+}
+
+new C3().m();
+
+class C4 {
+  get m() { return 42; }
+  set m(x: number) { }
+}
+
+new C4().m = new C4().m - 42;
+
+class C5 {
+  m() { }
+  get m() { return 42; }
+  set m(x: number) { }
+}
+
+new C5().m = new C5().m - 42;
+
+=====================================output=====================================
+class C1 {
+  m() {}
+  m() {}
+}
+
+new C1().m();
+
+class C2 {
+  get m() {
+    return 42;
+  }
+  m() {}
+}
+
+new C2().m();
+
+class C3 {
+  set m(x) {}
+  m() {}
+}
+
+new C3().m();
+
+class C4 {
+  get m() {
+    return 42;
+  }
+  set m(x: number) {}
+}
+
+new C4().m = new C4().m - 42;
+
+class C5 {
+  m() {}
+  get m() {
+    return 42;
+  }
+  set m(x: number) {}
+}
+
+new C5().m = new C5().m - 42;
+
+================================================================================
+`;

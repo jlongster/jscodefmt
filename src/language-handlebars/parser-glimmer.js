@@ -11,7 +11,7 @@ function parse(text) {
     const matches = error.message.match(/on line (\d+)/);
     if (matches) {
       throw createError(error.message, {
-        start: { line: Number(matches[1]), column: 0 }
+        start: { line: Number(matches[1]), column: 0 },
       });
     } else {
       throw error;
@@ -33,7 +33,7 @@ module.exports = {
       },
       locEnd(node) {
         return node.loc && node.loc.end;
-      }
-    }
-  }
+      },
+    },
+  },
 };

@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`generic.js format 1`] = `
+====================================options=====================================
+parsers: ["babel-flow", "flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const Theme = React.createContext<"light" | "dark">("light");
+
+=====================================output=====================================
+const Theme = React.createContext<"light" | "dark">("light");
+
+================================================================================
+`;

@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`require.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+require(
+    [
+        'jquery',
+        'common/global.context',
+        'common/log.event',
+        'some_project/square',
+        'some_project/rectangle',
+        'some_project/triangle',
+        'some_project/circle',
+        'some_project/star',
+    ],
+    function($, Context, EventLogger, Square, Rectangle, Triangle, Circle, Star) {
+
+        console.log('some code')
+    }
+);
+
+define(
+    [
+        'jquery',
+        'common/global.context',
+        'common/log.event',
+        'some_project/square',
+        'some_project/rectangle',
+        'some_project/triangle',
+        'some_project/circle',
+        'some_project/star',
+    ],
+    function($, Context, EventLogger, Square, Rectangle, Triangle, Circle, Star) {
+
+        console.log('some code')
+    }
+);
+
+=====================================output=====================================
+require([
+  "jquery",
+  "common/global.context",
+  "common/log.event",
+  "some_project/square",
+  "some_project/rectangle",
+  "some_project/triangle",
+  "some_project/circle",
+  "some_project/star",
+], function (
+  $,
+  Context,
+  EventLogger,
+  Square,
+  Rectangle,
+  Triangle,
+  Circle,
+  Star
+) {
+  console.log("some code");
+});
+
+define([
+  "jquery",
+  "common/global.context",
+  "common/log.event",
+  "some_project/square",
+  "some_project/rectangle",
+  "some_project/triangle",
+  "some_project/circle",
+  "some_project/star",
+], function (
+  $,
+  Context,
+  EventLogger,
+  Square,
+  Rectangle,
+  Triangle,
+  Circle,
+  Star
+) {
+  console.log("some code");
+});
+
+================================================================================
+`;

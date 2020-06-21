@@ -3,7 +3,7 @@
 /scripts/release/node_modules
 *.log
 /errors
-/test.*
+/test*.*
 /.vscode
 /dist
 /website/node_modules
@@ -12,6 +12,6 @@
 /website/static/playground.js
 /website/static/lib
 .DS_Store
-coverage
+/coverage
 .idea
 package-lock.json

@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`html-with-markdown-script.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/markdown">
+        # hello
+        + **foo**
+        + __bar__
+    </script>
+</head>
+<body></body>
+</html>
+
+
+=====================================output=====================================
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="text/markdown">
+      # hello
+
+      - **foo**
+      - **bar**
+    </script>
+  </head>
+  <body></body>
+</html>
+
+================================================================================
+`;

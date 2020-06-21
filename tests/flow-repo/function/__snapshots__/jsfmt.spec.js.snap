@@ -1,0 +1,647 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`apply.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function test(a: string, b: number): number {
+  return this.length; // expect []/"" this
+}
+
+// tuples flow correctly into params
+test.apply("", ["", 0]);
+
+// wrong this is an error
+test.apply(0, ["", 0]); // error: lookup \`length\` on Number
+
+// not enough arguments is an error
+test.apply("", [""]); // error: void ~> number
+
+// mistyped arguments is an error
+test.apply("", ["", ""]); // error: string ~> number (2nd arg)
+test.apply("", [0, 0]); // error: number ~> string (1st arg)
+
+// resolve args array from tvar
+function f(args) { test.apply("", args) }
+f(["", 0]); // OK
+f(["", ""]); // error: string ~> number (2nd arg)
+f([0, 0]); // error: number ~> string (1st arg)
+
+// expect array
+test.apply("", "not array"); // error: expect array of args
+
+// expect 4 errors:
+// - lookup length on Number (because 0 is used as \`this\`)
+// - 123 is not a string
+// - 'foo' is not a number
+// - return type (number) is not void
+(test.call.apply(test, [0, 123, 'foo']): void);
+
+// expect 2 errors:
+// - lookup length on number (0 is used as \`this\`)
+// - 123 is not a string
+(test.bind.apply(test, [0, 123]): (b: number) => number);
+
+// args are optional
+function test2(): number { return 0; }
+(test2.apply(): number);
+(test2.apply(""): number);
+
+// callable objects
+function test3(x: { (a: string, b: string): void }) {
+  x.apply(x, ['foo', 'bar']); // ok
+  x.apply(x, ['foo', 123]); // error, number !~> string
+}
+
+=====================================output=====================================
+function test(a: string, b: number): number {
+  return this.length; // expect []/"" this
+}
+
+// tuples flow correctly into params
+test.apply("", ["", 0]);
+
+// wrong this is an error
+test.apply(0, ["", 0]); // error: lookup \`length\` on Number
+
+// not enough arguments is an error
+test.apply("", [""]); // error: void ~> number
+
+// mistyped arguments is an error
+test.apply("", ["", ""]); // error: string ~> number (2nd arg)
+test.apply("", [0, 0]); // error: number ~> string (1st arg)
+
+// resolve args array from tvar
+function f(args) {
+  test.apply("", args);
+}
+f(["", 0]); // OK
+f(["", ""]); // error: string ~> number (2nd arg)
+f([0, 0]); // error: number ~> string (1st arg)
+
+// expect array
+test.apply("", "not array"); // error: expect array of args
+
+// expect 4 errors:
+// - lookup length on Number (because 0 is used as \`this\`)
+// - 123 is not a string
+// - 'foo' is not a number
+// - return type (number) is not void
+(test.call.apply(test, [0, 123, "foo"]): void);
+
+// expect 2 errors:
+// - lookup length on number (0 is used as \`this\`)
+// - 123 is not a string
+(test.bind.apply(test, [0, 123]): (b: number) => number);
+
+// args are optional
+function test2(): number {
+  return 0;
+}
+(test2.apply(): number);
+(test2.apply(""): number);
+
+// callable objects
+function test3(x: { (a: string, b: string): void }) {
+  x.apply(x, ["foo", "bar"]); // ok
+  x.apply(x, ["foo", 123]); // error, number !~> string
+}
+
+================================================================================
+`;
+
+exports[`bind.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  function(x: (a: string, b: string) => void) {
+    let y = x.bind(x, 'foo');
+    y('bar'); // ok
+    y(123); // error, number !~> string
+  },
+
+  // callable objects
+  function(x: { (a: string, b: string): void }) {
+    let y = x.bind(x, 'foo');
+    y('bar'); // ok
+    y(123); // error, number !~> string
+  },
+
+  // non-callable objects
+  function(x: { a: string }) {
+    x.bind(x, 'foo'); // error
+  },
+
+  // callable objects with overridden \`bind\` method
+  function(x: {(a: string, b: string): void, bind(a: string): void}) {
+    (x.bind('foo'): void); // ok
+    (x.bind(123): void); // error, number !~> string
+  },
+
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  function (x: (a: string, b: string) => void) {
+    let y = x.bind(x, "foo");
+    y("bar"); // ok
+    y(123); // error, number !~> string
+  },
+
+  // callable objects
+  function (x: { (a: string, b: string): void }) {
+    let y = x.bind(x, "foo");
+    y("bar"); // ok
+    y(123); // error, number !~> string
+  },
+
+  // non-callable objects
+  function (x: { a: string }) {
+    x.bind(x, "foo"); // error
+  },
+
+  // callable objects with overridden \`bind\` method
+  function (x: { (a: string, b: string): void, bind(a: string): void }) {
+    (x.bind("foo"): void); // ok
+    (x.bind(123): void); // error, number !~> string
+  },
+];
+
+================================================================================
+`;
+
+exports[`call.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function test(a: string, b: number): number {
+  return this.length; // expect []/"" this
+}
+
+// args flow correctly into params
+test.call("", "", 0);
+
+// wrong this is an error
+test.call(0, "", 0); // error: lookup \`length\` on Number
+
+// not enough arguments is an error
+test.call("", ""); // error: void ~> number
+
+// mistyped arguments is an error
+test.call("", "", ""); // error: string ~> number (2nd arg)
+test.call("", 0, 0); // error: number ~> string (1st arg)
+
+// resolve args array from tvar
+function f(args) { test.call("", args[0], args[1]) }
+f(["", 0]); // OK
+f(["", ""]); // error: string ~> number (2nd arg)
+f([0, 0]); // error: number ~> string (1st arg)
+
+// expect 3 errors:
+// - lookup length on Number (0 used as \`this\`)
+// - number !~> string (param a)
+// - string !~> number (param b)
+(test.apply.call(test, 0, [0, 'foo']): number);
+
+// args are optional
+function test2(): number { return 0; }
+(test2.call(): number);
+(test2.call(""): number);
+
+// callable objects
+function test3(x: { (a: string, b: string): void }) {
+  x.call(x, 'foo', 'bar'); // ok
+  x.call(x, 'foo', 123); // error, number !~> string
+}
+
+=====================================output=====================================
+// @flow
+
+function test(a: string, b: number): number {
+  return this.length; // expect []/"" this
+}
+
+// args flow correctly into params
+test.call("", "", 0);
+
+// wrong this is an error
+test.call(0, "", 0); // error: lookup \`length\` on Number
+
+// not enough arguments is an error
+test.call("", ""); // error: void ~> number
+
+// mistyped arguments is an error
+test.call("", "", ""); // error: string ~> number (2nd arg)
+test.call("", 0, 0); // error: number ~> string (1st arg)
+
+// resolve args array from tvar
+function f(args) {
+  test.call("", args[0], args[1]);
+}
+f(["", 0]); // OK
+f(["", ""]); // error: string ~> number (2nd arg)
+f([0, 0]); // error: number ~> string (1st arg)
+
+// expect 3 errors:
+// - lookup length on Number (0 used as \`this\`)
+// - number !~> string (param a)
+// - string !~> number (param b)
+(test.apply.call(test, 0, [0, "foo"]): number);
+
+// args are optional
+function test2(): number {
+  return 0;
+}
+(test2.call(): number);
+(test2.call(""): number);
+
+// callable objects
+function test3(x: { (a: string, b: string): void }) {
+  x.call(x, "foo", "bar"); // ok
+  x.call(x, "foo", 123); // error, number !~> string
+}
+
+================================================================================
+`;
+
+exports[`function.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ */
+
+// Previously we represented Function as (...rest: any) => any
+// This means the following wouldn't pass, because that arrow function
+// can only be called with 3 arguments.
+var a: Function = (a, b, c) => 123;
+
+var b: Function = function(a: number, b: number): number { return a + b; };
+
+class C {}
+
+var c: Function = C;
+
+function good(x: Function, MyThing: Function): number {
+  var o: Object = x; // Function is an Object
+  x.foo = 123;
+  x['foo'] = 456;
+  x();
+  <MyThing />;
+  var {...something} = x;
+  Object.assign(x, {hi: 'there'});
+  Object.keys(x);
+  return x.bar + x['bar'] + x.lala();
+}
+
+function bad(x: Function, y: Object): void {
+  var a: number = x; // Error
+  var b: string = x; // Error
+  var c: Function = y; // Object is not a Function
+}
+
+let tests = [
+  function(y: () => void, z: Function) {
+    function x() {}
+    (x.length: void); // error, it's a number
+    (y.length: void); // error, it's a number
+    (z.length: void); // error, it's a number
+
+    (x.name: void); // error, it's a string
+    (y.name: void); // error, it's a string
+    (z.name: void); // error, it's a string
+  },
+
+  function(y: () => void, z: Function) {
+    function x() {}
+    x.length = 'foo'; // error, it's a number
+    y.length = 'foo'; // error, it's a number
+    z.length = 'foo'; // error, it's a number
+
+    x.name = 123; // error, it's a string
+    y.name = 123; // error, it's a string
+    z.name = 123; // error, it's a string
+
+    // Non-(Function.prototype) properties on a \`Function\` type should be \`any\`
+    (z.foo: number);
+    (z.foo: string);
+  },
+];
+
+// \`Function\` types can be bound (resulting in a \`Function\` type)
+var d: Function = () => 1;
+var e = (d.bind(1): Function)();
+(e: number);
+(e: string);
+
+=====================================output=====================================
+/**
+ * @flow
+ */
+
+// Previously we represented Function as (...rest: any) => any
+// This means the following wouldn't pass, because that arrow function
+// can only be called with 3 arguments.
+var a: Function = (a, b, c) => 123;
+
+var b: Function = function (a: number, b: number): number {
+  return a + b;
+};
+
+class C {}
+
+var c: Function = C;
+
+function good(x: Function, MyThing: Function): number {
+  var o: Object = x; // Function is an Object
+  x.foo = 123;
+  x["foo"] = 456;
+  x();
+  <MyThing />;
+  var { ...something } = x;
+  Object.assign(x, { hi: "there" });
+  Object.keys(x);
+  return x.bar + x["bar"] + x.lala();
+}
+
+function bad(x: Function, y: Object): void {
+  var a: number = x; // Error
+  var b: string = x; // Error
+  var c: Function = y; // Object is not a Function
+}
+
+let tests = [
+  function (y: () => void, z: Function) {
+    function x() {}
+    (x.length: void); // error, it's a number
+    (y.length: void); // error, it's a number
+    (z.length: void); // error, it's a number
+
+    (x.name: void); // error, it's a string
+    (y.name: void); // error, it's a string
+    (z.name: void); // error, it's a string
+  },
+
+  function (y: () => void, z: Function) {
+    function x() {}
+    x.length = "foo"; // error, it's a number
+    y.length = "foo"; // error, it's a number
+    z.length = "foo"; // error, it's a number
+
+    x.name = 123; // error, it's a string
+    y.name = 123; // error, it's a string
+    z.name = 123; // error, it's a string
+
+    // Non-(Function.prototype) properties on a \`Function\` type should be \`any\`
+    (z.foo: number);
+    (z.foo: string);
+  },
+];
+
+// \`Function\` types can be bound (resulting in a \`Function\` type)
+var d: Function = () => 1;
+var e = (d.bind(1): Function)();
+(e: number);
+(e: string);
+
+================================================================================
+`;
+
+exports[`rest.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* regression tests */
+
+function rest_array<T>(...xs: Array<T>): T { // Ok, arrays can be rest params
+  return xs[0];
+}
+
+function rest_tuple<T>(...xs: [T]): T { // Ok, tuples can be rest params
+  return xs[0];
+}
+
+function rest_ro_array<T>(...xs: $ReadOnlyArray<T>): T { // Ok
+  return xs[0];
+}
+
+function rest_any(...xs: any): any { // Ok, any can be a rest param
+  return xs[0];
+}
+
+function rest_t<U, T: Array<U>>(...xs: T): U { // Ok, bounded targ can be rest
+  return xs[0];
+}
+
+// These are ok bounds for the rest param
+function unbound_rest_t<T>(...xs: T): void {}
+function mixed_rest_t<T: mixed>(...xs: T): void {}
+function array_rest_t<T: Array<mixed>>(...xs: T): void {}
+function roarray_rest_t<T: $ReadOnlyArray<mixed>>(...xs: T): void {}
+function iterable_rest_t<T: Iterable<mixed>>(...xs: T): void {}
+function empty_rest_t<T: empty>(...xs: T): void {}
+function bounds_on_bounds<T>() {
+  return function<U: T>(...xs: T): void {}
+}
+
+// These are bad bounds for the rest param
+function bad_unbound_rest_t<T>(...xs: T): T {
+  return xs.pop(); // Error - no bound on T
+}
+function string_rest_t<T: string>(...xs: T): void {} // Error - rest param can't be a string
+function empty_rest_t<T: empty>(...xs: T): void {} // Error - rest param can't be empty
+
+type Rest = Array<string>;
+function rest_alias(...xs: Rest): void {} // Ok
+
+function rest_union(...xs: [1,2] | Array<number>): number { // OK
+  return xs[0];
+}
+
+function rest_intersection(...xs: { x: number } & [1,2]): number { // OK
+  return xs[0] + xs.x;
+}
+
+function empty_rest<T:Array<mixed>>(...xs: T): T { return xs; }
+(empty_rest(): empty); // Error Array ~> empty
+
+function return_rest_param<Args:Array<mixed>>(
+  f: (...args: Args) => void,
+): (...args: Args) => number {
+  return function(...args) {
+    return args; // Error: Array ~> number
+  }
+}
+
+function requires_first_param(x: number, ...rest: Array<number>): void {}
+requires_first_param(); // Error: missing first arg
+
+=====================================output=====================================
+/* regression tests */
+
+function rest_array<T>(...xs: Array<T>): T {
+  // Ok, arrays can be rest params
+  return xs[0];
+}
+
+function rest_tuple<T>(...xs: [T]): T {
+  // Ok, tuples can be rest params
+  return xs[0];
+}
+
+function rest_ro_array<T>(...xs: $ReadOnlyArray<T>): T {
+  // Ok
+  return xs[0];
+}
+
+function rest_any(...xs: any): any {
+  // Ok, any can be a rest param
+  return xs[0];
+}
+
+function rest_t<U, T: Array<U>>(...xs: T): U {
+  // Ok, bounded targ can be rest
+  return xs[0];
+}
+
+// These are ok bounds for the rest param
+function unbound_rest_t<T>(...xs: T): void {}
+function mixed_rest_t<T: mixed>(...xs: T): void {}
+function array_rest_t<T: Array<mixed>>(...xs: T): void {}
+function roarray_rest_t<T: $ReadOnlyArray<mixed>>(...xs: T): void {}
+function iterable_rest_t<T: Iterable<mixed>>(...xs: T): void {}
+function empty_rest_t<T: empty>(...xs: T): void {}
+function bounds_on_bounds<T>() {
+  return function <U: T>(...xs: T): void {};
+}
+
+// These are bad bounds for the rest param
+function bad_unbound_rest_t<T>(...xs: T): T {
+  return xs.pop(); // Error - no bound on T
+}
+function string_rest_t<T: string>(...xs: T): void {} // Error - rest param can't be a string
+function empty_rest_t<T: empty>(...xs: T): void {} // Error - rest param can't be empty
+
+type Rest = Array<string>;
+function rest_alias(...xs: Rest): void {} // Ok
+
+function rest_union(...xs: [1, 2] | Array<number>): number {
+  // OK
+  return xs[0];
+}
+
+function rest_intersection(...xs: { x: number } & [1, 2]): number {
+  // OK
+  return xs[0] + xs.x;
+}
+
+function empty_rest<T: Array<mixed>>(...xs: T): T {
+  return xs;
+}
+(empty_rest(): empty); // Error Array ~> empty
+
+function return_rest_param<Args: Array<mixed>>(
+  f: (...args: Args) => void
+): (...args: Args) => number {
+  return function (...args) {
+    return args; // Error: Array ~> number
+  };
+}
+
+function requires_first_param(x: number, ...rest: Array<number>): void {}
+requires_first_param(); // Error: missing first arg
+
+================================================================================
+`;
+
+exports[`rest_type.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* regression tests */
+
+type rest_array = <T>(...xs: Array<T>) => T; // Ok, arrays can be rest params
+
+type rest_tuple = <T>(...xs: [T]) => T; // Ok, tuples can be rest params
+
+type rest_ro_array = <T>(...xs: $ReadOnlyArray<T>) => T;  // Ok
+
+type rest_any = (...xs: any) => any; // Ok, any can be a rest param
+
+type rest_t = <U, T: Array<U>>(...xs: T) => U; // Ok, bounded targ can be rest
+
+type unbound_rest_t = <T>(...xs: T) => void; // Should be error but no way to check yet :(
+function test_unbound_rest(f: <T>(x: T, ...xs: T) => void) {
+  f(123); // Error - number ~> array - luckily this errors
+}
+
+type string_rest_t = (...xs: string) => void; // Should be error but no way to check yet :(
+function test_string_rest(f: string_rest_t) {
+  f('hello'); // Error - string ~> array - luckily this errors
+}
+
+type Rest = Array<string>;
+type rest_alias = (...xs: Rest) => void; // Ok
+
+type rest_union = (...xs: [1,2] | Array<number>) => number; // OK
+
+type rest_intersection = (...xs: { x: number } & [1,2]) => number; // OK
+
+type empty_rest = <T:Array<mixed>>(...xs: T) => T; // OK
+((f: empty_rest) => (f(): empty)); // Error Array ~> empty
+
+=====================================output=====================================
+/* regression tests */
+
+type rest_array = <T>(...xs: Array<T>) => T; // Ok, arrays can be rest params
+
+type rest_tuple = <T>(...xs: [T]) => T; // Ok, tuples can be rest params
+
+type rest_ro_array = <T>(...xs: $ReadOnlyArray<T>) => T; // Ok
+
+type rest_any = (...xs: any) => any; // Ok, any can be a rest param
+
+type rest_t = <U, T: Array<U>>(...xs: T) => U; // Ok, bounded targ can be rest
+
+type unbound_rest_t = <T>(...xs: T) => void; // Should be error but no way to check yet :(
+function test_unbound_rest(f: <T>(x: T, ...xs: T) => void) {
+  f(123); // Error - number ~> array - luckily this errors
+}
+
+type string_rest_t = (...xs: string) => void; // Should be error but no way to check yet :(
+function test_string_rest(f: string_rest_t) {
+  f("hello"); // Error - string ~> array - luckily this errors
+}
+
+type Rest = Array<string>;
+type rest_alias = (...xs: Rest) => void; // Ok
+
+type rest_union = (...xs: [1, 2] | Array<number>) => number; // OK
+
+type rest_intersection = (...xs: { x: number } & [1, 2]) => number; // OK
+
+type empty_rest = <T: Array<mixed>>(...xs: T) => T; // OK
+(f: empty_rest) => (f(): empty); // Error Array ~> empty
+
+================================================================================
+`;

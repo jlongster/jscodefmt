@@ -12,6 +12,8 @@ Prettier uses [cosmiconfig](https://github.com/davidtheclark/cosmiconfig) for co
 
 The configuration file will be resolved starting from the location of the file being formatted, and searching up the file tree until a config file is (or isn't) found.
 
+Prettier intentionally doesn't support any kind of global configuration. This is to make sure that when a project is copied to another computer, Prettier's behavior stays the same. Otherwise, Prettier wouldn't be able to guarantee that everybody in a team gets the same consistent results.
+
 The options to the configuration file are the same as the [API options](options.md).
 
 ## Basic Configuration
@@ -35,7 +37,7 @@ module.exports = {
   trailingComma: "es5",
   tabWidth: 4,
   semi: false,
-  singleQuote: true
+  singleQuote: true,
 };
 ```
 
@@ -129,7 +131,7 @@ An example configuration repository is available [here](https://github.com/azz/p
 > ```js
 > module.exports = {
 >   ...require("@company/prettier-config"),
->   semi: false
+>   semi: false,
 > };
 > ```
 

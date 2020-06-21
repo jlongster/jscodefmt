@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`import_meta.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const x = import.meta;
+const url = import.meta.url;
+import.meta;
+import.meta.url;
+import.meta.couldBeMutable = true;
+
+=====================================output=====================================
+const x = import.meta;
+const url = import.meta.url;
+import.meta;
+import.meta.url;
+import.meta.couldBeMutable = true;
+
+================================================================================
+`;

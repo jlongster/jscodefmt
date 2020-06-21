@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`boundary.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+\`\${
+a +  // a
+  a
+}
+
+\${a // comment
+}
+
+\${b /* comment */}
+
+\${/* comment */ c /* comment */}
+
+\${// comment
+d //comment
+}
+
+\${// $FlowFixMe found when converting React.createClass to ES6
+ExampleStory.getFragment('story')}
+\`;
+
+<div>
+{ExampleStory.getFragment('story') // $FlowFixMe found when converting React.createClass to ES6
+}
+</div>;
+
+=====================================output=====================================
+\`\${
+  a + // a
+  a
+}
+
+\${
+  a // comment
+}
+
+\${b /* comment */}
+
+\${/* comment */ c /* comment */}
+
+\${
+  // comment
+  d //comment
+}
+
+\${
+  // $FlowFixMe found when converting React.createClass to ES6
+  ExampleStory.getFragment("story")
+}
+\`;
+
+<div>
+  {
+    ExampleStory.getFragment("story") // $FlowFixMe found when converting React.createClass to ES6
+  }
+</div>;
+
+================================================================================
+`;

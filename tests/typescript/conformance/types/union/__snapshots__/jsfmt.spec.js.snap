@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`unionTypeCallSignatures.ts 1`] = `
+exports[`unionTypeCallSignatures.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -182,7 +182,7 @@ strOrNum = unionWithRestParameter4("hello", "world");
 ================================================================================
 `;
 
-exports[`unionTypeCallSignatures3.ts 1`] = `
+exports[`unionTypeCallSignatures3.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -223,7 +223,7 @@ fUnion(""); // All constituents can be called by passing a single string.
 ================================================================================
 `;
 
-exports[`unionTypeCallSignatures4.ts 1`] = `
+exports[`unionTypeCallSignatures4.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -285,7 +285,7 @@ f12345("a", "b", "c"); // error
 ================================================================================
 `;
 
-exports[`unionTypeConstructSignatures.ts 1`] = `
+exports[`unionTypeConstructSignatures.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -459,7 +459,7 @@ strOrNum = new unionWithRestParameter3(); // error no call signature
 ================================================================================
 `;
 
-exports[`unionTypeEquivalence.ts 1`] = `
+exports[`unionTypeEquivalence.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -509,7 +509,7 @@ var z1: string | typeof BC;
 ================================================================================
 `;
 
-exports[`unionTypeFromArrayLiteral.ts 1`] = `
+exports[`unionTypeFromArrayLiteral.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -575,7 +575,7 @@ var arr9 = [e, f]; // (E|F)[]
 ================================================================================
 `;
 
-exports[`unionTypeIndexSignature.ts 1`] = `
+exports[`unionTypeIndexSignature.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -639,7 +639,7 @@ anyVar = unionOfTypesWithAndWithoutStringSignature1[10]; // any
 ================================================================================
 `;
 
-exports[`unionTypePropertyAccessibility.ts 1`] = `
+exports[`unionTypePropertyAccessibility.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

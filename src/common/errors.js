@@ -7,5 +7,5 @@ class UndefinedParserError extends Error {}
 module.exports = {
   ConfigError,
   DebugError,
-  UndefinedParserError
+  UndefinedParserError,
 };

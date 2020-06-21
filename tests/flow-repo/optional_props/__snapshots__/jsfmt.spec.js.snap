@@ -1,0 +1,255 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var x: { } = { foo: 0 };
+var y: { foo?: string } = x; // OK in TypeScript, not OK in Flow
+
+var z: string = y.foo || "";
+
+var o = { };
+y = o; // OK; we know that narrowing could not have happened
+o.foo = 0; // future widening is constrained
+
+function bar(config: { foo?: number }) {}
+bar({});
+bar({foo: ""});
+
+=====================================output=====================================
+var x: {} = { foo: 0 };
+var y: { foo?: string } = x; // OK in TypeScript, not OK in Flow
+
+var z: string = y.foo || "";
+
+var o = {};
+y = o; // OK; we know that narrowing could not have happened
+o.foo = 0; // future widening is constrained
+
+function bar(config: { foo?: number }) {}
+bar({});
+bar({ foo: "" });
+
+================================================================================
+`;
+
+exports[`test2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var a: { foo?: string } = {};
+a.foo = undefined; // This is not an error
+a.foo = null; // But this is an error
+
+var b: { foo?: ?string } = {};
+b.foo = undefined; // This is fine
+b.foo = null; // Also fine
+
+var c: { foo?: string } = { foo: undefined }; // This is not an error
+var d: { foo?: string } = { foo: null }; // But this is an error
+
+var e: { foo?: ?string } = { foo: undefined }; // This is fine
+var f: { foo?: ?string } = { foo: null }; // Also fine
+
+=====================================output=====================================
+var a: { foo?: string } = {};
+a.foo = undefined; // This is not an error
+a.foo = null; // But this is an error
+
+var b: { foo?: ?string } = {};
+b.foo = undefined; // This is fine
+b.foo = null; // Also fine
+
+var c: { foo?: string } = { foo: undefined }; // This is not an error
+var d: { foo?: string } = { foo: null }; // But this is an error
+
+var e: { foo?: ?string } = { foo: undefined }; // This is fine
+var f: { foo?: ?string } = { foo: null }; // Also fine
+
+================================================================================
+`;
+
+exports[`test3.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+/*
+   object literals are sealed. this is simply a heuristic
+   decision: most of the time, the rule gives the 'right'
+   errors.
+
+   an exception is when a literal is used as an initializer
+   for an lvalue whose type specifies optional properties
+   missing from the literal, as below.
+
+   the problem becomes visible when a property assignment
+   is then used to (legitimately) extend the object with an
+   optional property - the variable's specific (path-
+   dependent) type has become that of the literal which.
+   without adjustment, will reject the property addition.
+
+   the solution in cases where a sealed object type (as from
+   an object literal) flows to an object type with optional
+   properties, is to have the sealed type acquire the optional
+   properties.
+ */
+
+// x has optional property b.
+// (note that the initializer here does not play into
+// the problem, it's just a placeholder. initializers
+// do not narrow the types of annotated variables as do
+// subsequent assignments.)
+//
+var x: { a: number, b?: number } = { a: 0 };
+
+// now assign an object literal lacking property b.
+// the literal's type is sealed and has only a at creation.
+// but it then flows, specific ~> general, to x's annotation
+// type. at that point, it acquires b as an optional property.
+//
+x = { a: 0 };
+
+// ...which allows this assignment to take place.
+x.b = 1;
+
+// T7810506
+class A {
+    x: { a: number, b?: string };
+    foo() {
+        // Something similar should happen here, but doesn't: the problem is
+        // made explicit by adding generics (see test3_failure.js introduced by
+        // D2747512). There is a race between writing b on the object literal
+        // type and adding b as an optional property to it, since in general we
+        // cannot guarantee that the flow from the object literal to the
+        // annotation will be processed before the flow involving the
+        // access. Here we lose the race and get an error on the write.
+        this.x = { a: 123 };
+        this.x.b = 'hello';
+    }
+}
+
+=====================================output=====================================
+// @flow
+
+/*
+   object literals are sealed. this is simply a heuristic
+   decision: most of the time, the rule gives the 'right'
+   errors.
+
+   an exception is when a literal is used as an initializer
+   for an lvalue whose type specifies optional properties
+   missing from the literal, as below.
+
+   the problem becomes visible when a property assignment
+   is then used to (legitimately) extend the object with an
+   optional property - the variable's specific (path-
+   dependent) type has become that of the literal which.
+   without adjustment, will reject the property addition.
+
+   the solution in cases where a sealed object type (as from
+   an object literal) flows to an object type with optional
+   properties, is to have the sealed type acquire the optional
+   properties.
+ */
+
+// x has optional property b.
+// (note that the initializer here does not play into
+// the problem, it's just a placeholder. initializers
+// do not narrow the types of annotated variables as do
+// subsequent assignments.)
+//
+var x: { a: number, b?: number } = { a: 0 };
+
+// now assign an object literal lacking property b.
+// the literal's type is sealed and has only a at creation.
+// but it then flows, specific ~> general, to x's annotation
+// type. at that point, it acquires b as an optional property.
+//
+x = { a: 0 };
+
+// ...which allows this assignment to take place.
+x.b = 1;
+
+// T7810506
+class A {
+  x: { a: number, b?: string };
+  foo() {
+    // Something similar should happen here, but doesn't: the problem is
+    // made explicit by adding generics (see test3_failure.js introduced by
+    // D2747512). There is a race between writing b on the object literal
+    // type and adding b as an optional property to it, since in general we
+    // cannot guarantee that the flow from the object literal to the
+    // annotation will be processed before the flow involving the
+    // access. Here we lose the race and get an error on the write.
+    this.x = { a: 123 };
+    this.x.b = "hello";
+  }
+}
+
+================================================================================
+`;
+
+exports[`test3_exact_annot.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* The logic that allows ({}: {p?:T}), described in test3.js, should _not_ also
+   fire for exact annotations. */
+
+const a: {| a: number |} = { a: 1 };
+const b: { a: number, b?: number } = a; // error: property \`b\` not found
+b.b = 0; // because subsequent writes would widen the exact object
+(a.b: number); // error: property \`b\` not found
+
+=====================================output=====================================
+/* The logic that allows ({}: {p?:T}), described in test3.js, should _not_ also
+   fire for exact annotations. */
+
+const a: {| a: number |} = { a: 1 };
+const b: { a: number, b?: number } = a; // error: property \`b\` not found
+b.b = 0; // because subsequent writes would widen the exact object
+(a.b: number); // error: property \`b\` not found
+
+================================================================================
+`;
+
+exports[`test3_failure.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// generalization of failure in test3.js
+
+class A<O: {x: { a: number, b?: string}}> {
+  o: O;
+  foo() {
+    this.o.x = { a: 123 };
+    this.o.x.b = 'hello'; // this is a spurious error (see test3.js for details)
+  }
+}
+
+=====================================output=====================================
+// generalization of failure in test3.js
+
+class A<O: { x: { a: number, b?: string } }> {
+  o: O;
+  foo() {
+    this.o.x = { a: 123 };
+    this.o.x.b = "hello"; // this is a spurious error (see test3.js for details)
+  }
+}
+
+================================================================================
+`;

@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Parent.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+var ParentFoo = {foo: 'bar'};
+module.exports = {ParentFoo};
+
+=====================================output=====================================
+// @flow
+
+var ParentFoo = { foo: "bar" };
+module.exports = { ParentFoo };
+
+================================================================================
+`;
+
+exports[`main.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+var Parent = require('./Parent');
+
+// Hops through destructuring
+let ParentFoo;
+({ParentFoo} = Parent);
+ParentFoo; // Points to lval in line above this
+
+// Follows assignment on simple/"non-destructuring" patterns
+let ParentFoo2;
+ParentFoo2 = Parent;
+ParentFoo2; // Points to LHS of line above this
+
+// Follows assignment with declaration
+let ParentFoo3 = Parent;
+ParentFoo3; // Points to LHS of line above this
+
+// Follows non-destructured property access of \`require('Parent')\`
+let foo = require('./Parent').ParentFoo.foo;
+foo;
+
+import type {Foo} from './types';
+function takesFoo(foo: Foo) { }
+
+=====================================output=====================================
+// @flow
+
+var Parent = require("./Parent");
+
+// Hops through destructuring
+let ParentFoo;
+({ ParentFoo } = Parent);
+ParentFoo; // Points to lval in line above this
+
+// Follows assignment on simple/"non-destructuring" patterns
+let ParentFoo2;
+ParentFoo2 = Parent;
+ParentFoo2; // Points to LHS of line above this
+
+// Follows assignment with declaration
+let ParentFoo3 = Parent;
+ParentFoo3; // Points to LHS of line above this
+
+// Follows non-destructured property access of \`require('Parent')\`
+let foo = require("./Parent").ParentFoo.foo;
+foo;
+
+import type { Foo } from "./types";
+function takesFoo(foo: Foo) {}
+
+================================================================================
+`;
+
+exports[`override.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+class C {
+  override() { }
+}
+
+class D extends C {
+  foo() { this.override() }
+  bar() { this.override }
+  override() { }
+}
+
+=====================================output=====================================
+// @flow
+
+class C {
+  override() {}
+}
+
+class D extends C {
+  foo() {
+    this.override();
+  }
+  bar() {
+    this.override;
+  }
+  override() {}
+}
+
+================================================================================
+`;
+
+exports[`react.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('react');
+
+class C extends React.Component {
+  props: { x: string };
+}
+
+let msg = "hello";
+
+(<C x={msg}/>);
+
+(<div id={msg}/>);
+
+=====================================output=====================================
+var React = require("react");
+
+class C extends React.Component {
+  props: { x: string };
+}
+
+let msg = "hello";
+
+<C x={msg} />;
+
+<div id={msg} />;
+
+================================================================================
+`;
+
+exports[`types.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+export type Foo = {};
+
+=====================================output=====================================
+// @flow
+
+export type Foo = {};
+
+================================================================================
+`;

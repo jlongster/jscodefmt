@@ -36,7 +36,7 @@ By default, Prettier’s printing algorithm prints expressions on a single line 
 ```js
 const user = {
   name: "John Doe",
-  age: 30
+  age: 30,
 };
 ```
 
@@ -68,7 +68,7 @@ const user = {
 ```js
 const user = {
   name: "John Doe",
-  age: 30
+  age: 30,
 };
 ```
 
@@ -84,7 +84,7 @@ Just like with objects, decorators are used for a lot of different things. Somet
 ```js
 @Component({
   selector: "hero-button",
-  template: `<button>{{label}}</button>`
+  template: `<button>{{ label }}</button>`,
 })
 class HeroButtonComponent {
   // These decorators were written inline and fit on the line so they stay
@@ -187,7 +187,7 @@ This practice is also common in [standard] which uses a semicolon-free style.
 
 The [`--print-width`](options.md#print-width) is more of a guideline to Prettier than a hard rule. It generally means “try to make lines this long, go shorter if needed and longer in special cases.”
 
-There are some edge cases, such as really long string literals, regexps, comments and variable names, which cannot be broken across lines (without using code transforms which [Prettier doesn’t do](#what-prettier-is-not-concerned-about)). Or if you nest your code 50 levels deep your lines are of course going to be mostly indentation :)
+There are some edge cases, such as really long string literals, regexps, comments and variable names, which cannot be broken across lines (without using code transforms which [Prettier doesn’t do](#what-prettier-is-_not_-concerned-about)). Or if you nest your code 50 levels deep your lines are of course going to be mostly indentation :)
 
 Apart from that, there are a few cases where Prettier intentionally exceeds the print width.
 
@@ -198,7 +198,7 @@ Prettier can break long `import` statements across several lines:
 ```js
 import {
   CollectionDashboard,
-  DashboardPlaceholder
+  DashboardPlaceholder,
 } from "../components/collections/collection-dashboard/main";
 ```
 
@@ -262,11 +262,11 @@ Secondly, [the alternate formatting makes it easier to edit the JSX](https://git
 
 ### Comments
 
-When it comes to the _contents_ of comments, Prettier can’t do much really. Comments can contain everything from prose to commented out code and ASCII diagrams. Since they can contain anything, Prettier can’t know how to format or wrap them. So they are left as-is. The only exception to this are JSDoc-style comments (block comments where every line starts with a `*`), which Prettier can fix the indentation of.
+When it comes to the _content_ of comments, Prettier can’t do much really. Comments can contain everything from prose to commented out code and ASCII diagrams. Since they can contain anything, Prettier can’t know how to format or wrap them. So they are left as-is. The only exception to this are JSDoc-style comments (block comments where every line starts with a `*`), which Prettier can fix the indentation of.
 
 Then there’s the question of _where_ to put the comments. Turns out this is a really difficult problem. Prettier tries its best to keep your comments roughly where they were, but it’s no easy task because comments can be placed almost anywhere.
 
-Generally, you get the best results when placing comments **on their own lines,** instead of at the end of lines. Prefer `// eslint-disable-next-line` over `// eslint-disable-line`.
+Generally, you get the best results when placing comments **on their own lines**, instead of at the end of lines. Prefer `// eslint-disable-next-line` over `// eslint-disable-line`.
 
 Note that “magic comments” such as `eslint-disable-next-line` and `$FlowFixMe` might sometimes need to be manually moved due to Prettier breaking an expression into multiple lines.
 
@@ -293,13 +293,15 @@ const result =
   safeToEval && settings.allowNativeEval ? eval(input) : fallback(input);
 ```
 
-Which means that the `eslint-disable` comment is no longer effective. In this case you need to move the comment:
+Which means that the `eslint-disable-next-line` comment is no longer effective. In this case you need to move the comment:
 
 ```js
 const result =
   // eslint-disable-next-line no-eval
   safeToEval && settings.allowNativeEval ? eval(input) : fallback(input);
 ```
+
+If possible, prefer comments that operate on line ranges (e.g. `eslint-disable` and `eslint-enable`) or on the statement level (e.g. `/* istanbul ignore next */`), they are even safer. It's possible to disallow using `eslint-disable-line` and `eslint-disable-next-line` comments using [`eslint-plugin-eslint-comments`](https://github.com/mysticatea/eslint-plugin-eslint-comments).
 
 ## What Prettier is _not_ concerned about
 

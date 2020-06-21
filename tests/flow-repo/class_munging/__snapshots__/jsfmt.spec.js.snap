@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`with_munging.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ */
+
+class Foo {
+  _method(): string {
+    return 'this is private';
+  }
+}
+
+class Bar extends Foo {
+  test() {
+    (this._method(): string); // error
+  }
+}
+
+=====================================output=====================================
+/**
+ * @flow
+ */
+
+class Foo {
+  _method(): string {
+    return "this is private";
+  }
+}
+
+class Bar extends Foo {
+  test() {
+    (this._method(): string); // error
+  }
+}
+
+================================================================================
+`;
+
+exports[`without_munging.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ * @preventMunge
+ */
+
+class Foo {
+  _method(): string {
+    return 'this is not private';
+  }
+}
+
+class Bar extends Foo {
+  test() {
+    (this._method(): string); // ok
+  }
+}
+
+=====================================output=====================================
+/**
+ * @flow
+ * @preventMunge
+ */
+
+class Foo {
+  _method(): string {
+    return "this is not private";
+  }
+}
+
+class Bar extends Foo {
+  test() {
+    (this._method(): string); // ok
+  }
+}
+
+================================================================================
+`;

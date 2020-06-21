@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function filterOutVoids<T> (arr: Array<?T>): Array<T> {
+  return arr.filter(Boolean)
+}
+
+function filterOutSmall (arr: Array<?number>): Array<?number> {
+  return arr.filter(num => num && num > 10)
+}
+
+=====================================output=====================================
+/* @flow */
+
+function filterOutVoids<T>(arr: Array<?T>): Array<T> {
+  return arr.filter(Boolean);
+}
+
+function filterOutSmall(arr: Array<?number>): Array<?number> {
+  return arr.filter((num) => num && num > 10);
+}
+
+================================================================================
+`;
+
+exports[`test2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function filterItems(items: Array<string|number>): Array<string|number> {
+  return items.map(item => {
+    if (typeof item === 'string') {
+      return item.length > 2 ? item : null;
+    } else {
+      return item*10;
+    }
+  }).filter(Boolean);
+}
+
+const filteredItems = filterItems(['foo', 'b', 1, 2]);
+
+console.log(filteredItems);
+
+=====================================output=====================================
+/* @flow */
+
+function filterItems(items: Array<string | number>): Array<string | number> {
+  return items
+    .map((item) => {
+      if (typeof item === "string") {
+        return item.length > 2 ? item : null;
+      } else {
+        return item * 10;
+      }
+    })
+    .filter(Boolean);
+}
+
+const filteredItems = filterItems(["foo", "b", 1, 2]);
+
+console.log(filteredItems);
+
+================================================================================
+`;

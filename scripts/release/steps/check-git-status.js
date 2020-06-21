@@ -2,7 +2,7 @@
 
 const execa = require("execa");
 
-module.exports = async function() {
+module.exports = async function () {
   const status = await execa.stdout("git", ["status", "--porcelain"]);
 
   if (status) {

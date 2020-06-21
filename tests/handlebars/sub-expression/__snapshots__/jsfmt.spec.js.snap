@@ -1,0 +1,198 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sub-expressions.hbs - {"singleQuote":true} format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 80
+singleQuote: true
+                                                                                | printWidth
+=====================================input======================================
+<div
+  {{mustache
+    (concat
+      (service)
+      (helper param hashPair=Value)
+      (largeNameHelper param param param param hashPair=value hashPair=value hashPair=Value)
+      hashPair=(helper param param param param param param hashPair=value hashPair=value hashPair=value)
+      hashPair=(does not need a line break due to being under 80 chars long)
+    )
+  }}
+></div>
+
+{{#block
+  (concat
+    (service)
+    (helper param hashPair=Value)
+    (largeNameHelper param param param param hashPair=value hashPair=value hashPair=Value)
+    hashPair=(helper param param param param param param hashPair=value hashPair=value hashPair=value)
+    hashPair=(does not need a line break due to being under 80 chars long)
+  )
+}}
+
+{{/block}}
+
+{{foobar-sub-component/foobar-foo 
+  hook="stringLiteral"
+  foo=
+    (t
+      (concat "stringLiteral" (get blockParam "stringLiteral") hash=hash hash=hash)
+      foo=(simple-helper (hash hashKey=blockParam.foo assignParam=blockParam.bar))
+    )
+}}
+
+=====================================output=====================================
+<div
+  {{mustache
+    (concat
+      (service)
+      (helper param hashPair=Value)
+      (largeNameHelper
+        param param param param hashPair=value hashPair=value hashPair=Value
+      )
+      hashPair=(helper
+        param
+        param
+        param
+        param
+        param
+        param
+        hashPair=value
+        hashPair=value
+        hashPair=value
+      )
+      hashPair=(does not need a line break due to being under 80 chars long)
+    )
+  }}
+></div>
+
+{{#block
+  (concat
+    (service)
+    (helper param hashPair=Value)
+    (largeNameHelper
+      param param param param hashPair=value hashPair=value hashPair=Value
+    )
+    hashPair=(helper
+      param
+      param
+      param
+      param
+      param
+      param
+      hashPair=value
+      hashPair=value
+      hashPair=value
+    )
+    hashPair=(does not need a line break due to being under 80 chars long)
+  )
+}}{{/block}}
+
+{{foobar-sub-component/foobar-foo
+  hook='stringLiteral'
+  foo=(t
+    (concat
+      'stringLiteral' (get blockParam 'stringLiteral') hash=hash hash=hash
+    )
+    foo=(simple-helper (hash hashKey=blockParam.foo assignParam=blockParam.bar))
+  )
+}}
+================================================================================
+`;
+
+exports[`sub-expressions.hbs format 1`] = `
+====================================options=====================================
+parsers: ["glimmer"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div
+  {{mustache
+    (concat
+      (service)
+      (helper param hashPair=Value)
+      (largeNameHelper param param param param hashPair=value hashPair=value hashPair=Value)
+      hashPair=(helper param param param param param param hashPair=value hashPair=value hashPair=value)
+      hashPair=(does not need a line break due to being under 80 chars long)
+    )
+  }}
+></div>
+
+{{#block
+  (concat
+    (service)
+    (helper param hashPair=Value)
+    (largeNameHelper param param param param hashPair=value hashPair=value hashPair=Value)
+    hashPair=(helper param param param param param param hashPair=value hashPair=value hashPair=value)
+    hashPair=(does not need a line break due to being under 80 chars long)
+  )
+}}
+
+{{/block}}
+
+{{foobar-sub-component/foobar-foo 
+  hook="stringLiteral"
+  foo=
+    (t
+      (concat "stringLiteral" (get blockParam "stringLiteral") hash=hash hash=hash)
+      foo=(simple-helper (hash hashKey=blockParam.foo assignParam=blockParam.bar))
+    )
+}}
+
+=====================================output=====================================
+<div
+  {{mustache
+    (concat
+      (service)
+      (helper param hashPair=Value)
+      (largeNameHelper
+        param param param param hashPair=value hashPair=value hashPair=Value
+      )
+      hashPair=(helper
+        param
+        param
+        param
+        param
+        param
+        param
+        hashPair=value
+        hashPair=value
+        hashPair=value
+      )
+      hashPair=(does not need a line break due to being under 80 chars long)
+    )
+  }}
+></div>
+
+{{#block
+  (concat
+    (service)
+    (helper param hashPair=Value)
+    (largeNameHelper
+      param param param param hashPair=value hashPair=value hashPair=Value
+    )
+    hashPair=(helper
+      param
+      param
+      param
+      param
+      param
+      param
+      hashPair=value
+      hashPair=value
+      hashPair=value
+    )
+    hashPair=(does not need a line break due to being under 80 chars long)
+  )
+}}{{/block}}
+
+{{foobar-sub-component/foobar-foo
+  hook="stringLiteral"
+  foo=(t
+    (concat
+      "stringLiteral" (get blockParam "stringLiteral") hash=hash hash=hash
+    )
+    foo=(simple-helper (hash hashKey=blockParam.foo assignParam=blockParam.bar))
+  )
+}}
+================================================================================
+`;

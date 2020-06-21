@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test23_lib.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class SomeLibClass { }
+
+=====================================output=====================================
+declare class SomeLibClass {}
+
+================================================================================
+`;
+
+exports[`test25_lib.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class Set<T> {
+    add(x: any): Set<T>;
+}
+
+declare class Row {
+    reduce_row(
+      callbackfn: (previousValue: number, currentValue: number) => number,
+      initialValue: void
+    ): number;
+    reduce_row<U>(
+      callbackfn: (previousValue: U, currentValue: number) => U,
+      initialValue: U
+    ): U;
+}
+
+declare class Rows {
+    reduce_rows<X>(
+      callbackfn: (previousValue: X, currentValue: Row) => X,
+      initialValue: X
+    ): X;
+}
+
+=====================================output=====================================
+declare class Set<T> {
+  add(x: any): Set<T>;
+}
+
+declare class Row {
+  reduce_row(
+    callbackfn: (previousValue: number, currentValue: number) => number,
+    initialValue: void
+  ): number;
+  reduce_row<U>(
+    callbackfn: (previousValue: U, currentValue: number) => U,
+    initialValue: U
+  ): U;
+}
+
+declare class Rows {
+  reduce_rows<X>(
+    callbackfn: (previousValue: X, currentValue: Row) => X,
+    initialValue: X
+  ): X;
+}
+
+================================================================================
+`;
+
+exports[`test32_lib.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type Indirect<T> = Array<T>;
+
+=====================================output=====================================
+type Indirect<T> = Array<T>;
+
+================================================================================
+`;

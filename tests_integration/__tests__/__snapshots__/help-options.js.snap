@@ -114,6 +114,24 @@ Default: true
 
 exports[`show detailed usage with --help editorconfig (write) 1`] = `Array []`;
 
+exports[`show detailed usage with --help embedded-language-formatting (stderr) 1`] = `""`;
+
+exports[`show detailed usage with --help embedded-language-formatting (stdout) 1`] = `
+"--embedded-language-formatting <auto|off>
+
+  Control how Prettier formats quoted code embedded in the file.
+
+Valid options:
+
+  auto   Format embedded code if Prettier can automatically identify it.
+  off    Never automatically format embedded code.
+
+Default: auto
+"
+`;
+
+exports[`show detailed usage with --help embedded-language-formatting (write) 1`] = `Array []`;
+
 exports[`show detailed usage with --help end-of-line (stderr) 1`] = `""`;
 
 exports[`show detailed usage with --help end-of-line (stdout) 1`] = `
@@ -510,17 +528,6 @@ Default: false
 `;
 
 exports[`show detailed usage with --help single-quote (write) 1`] = `Array []`;
-
-exports[`show detailed usage with --help stdin (stderr) 1`] = `""`;
-
-exports[`show detailed usage with --help stdin (stdout) 1`] = `
-"--stdin
-
-  Force reading input from stdin.
-"
-`;
-
-exports[`show detailed usage with --help stdin (write) 1`] = `Array []`;
 
 exports[`show detailed usage with --help stdin-filepath (stderr) 1`] = `""`;
 

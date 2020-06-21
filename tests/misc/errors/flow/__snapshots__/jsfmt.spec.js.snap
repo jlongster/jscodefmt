@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dynamic-import.js error test 1`] = `
+"Unexpected token \`,\`, expected the token \`)\` (1:24)
+> 1 | import('./prettier.mjs', {})
+    |                        ^
+  2 | "
+`;
+
+exports[`module-attributes-dynamic.js error test 1`] = `
+"Unexpected token \`,\`, expected the token \`)\` (1:18)
+> 1 | import(\\"foo.json\\", { with: { type: \\"json\\" } })
+    |                  ^
+  2 | "
+`;
+
+exports[`module-attributes-static.js error test 1`] = `
+"Unexpected token \`with\`, expected the token \`;\` (1:28)
+> 1 | import foo from \\"foo.json\\" with type: \\"json\\";
+    |                            ^^^^
+  2 | "
+`;

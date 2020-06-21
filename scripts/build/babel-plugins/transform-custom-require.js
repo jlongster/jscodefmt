@@ -12,7 +12,7 @@
 //   require.cache
 //
 
-module.exports = function(babel) {
+module.exports = function (babel) {
   const t = babel.types;
 
   return {
@@ -40,8 +40,8 @@ module.exports = function(babel) {
             )
           );
         }
-      }
-    }
+      },
+    },
   };
 
   function isEvalRequire(node) {

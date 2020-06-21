@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comment.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+export function match(): string /* the matching pattern */
+a
+
+=====================================output=====================================
+export function match(): string; /* the matching pattern */
+a;
+
+================================================================================
+`;
+
+exports[`default.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+export default interface Foo {
+  readonly bar?: string;
+}
+
+=====================================output=====================================
+export default interface Foo {
+  readonly bar?: string;
+}
+
+================================================================================
+`;
+
+exports[`export.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare module "hello" {
+    export default Hello;
+}
+
+declare module "hello" {
+    export = Hello;
+}
+
+=====================================output=====================================
+declare module "hello" {
+  export default Hello;
+}
+
+declare module "hello" {
+  export = Hello;
+}
+
+================================================================================
+`;
+
+exports[`export-as-ns.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+export * as utilities from "./utilities.js";
+
+=====================================output=====================================
+export * as utilities from "./utilities.js";
+
+================================================================================
+`;
+
+exports[`export-class.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+export class A {}
+export default class B {}
+export abstract class C {}
+export default abstract class D {}
+
+=====================================output=====================================
+export class A {}
+export default class B {}
+export abstract class C {}
+export default abstract class D {}
+
+================================================================================
+`;

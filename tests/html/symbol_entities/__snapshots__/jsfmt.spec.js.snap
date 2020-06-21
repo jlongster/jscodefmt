@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`symbol_entitites.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<p>I will display &euro;</p>
+<p>I will display &excl;</p>
+<p>I will display &#8364;</p>
+<p>I will display &#x20AC;</p>
+
+=====================================output=====================================
+<p>I will display &euro;</p>
+<p>I will display &excl;</p>
+<p>I will display &#8364;</p>
+<p>I will display &#x20AC;</p>
+
+================================================================================
+`;

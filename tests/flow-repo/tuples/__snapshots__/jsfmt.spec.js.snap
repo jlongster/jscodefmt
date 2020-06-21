@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`array.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function foo(x: Array<number>): [number, ?number] {
+  return x; // Error, can't enforce arity when flowing array to tuple
+}
+
+function foo(x: Array<number>): [number, ?number] {
+  return [x[0], x[1]]; // OK. This is unsound, but at least arity is enforced
+}
+
+=====================================output=====================================
+// @flow
+
+function foo(x: Array<number>): [number, ?number] {
+  return x; // Error, can't enforce arity when flowing array to tuple
+}
+
+function foo(x: Array<number>): [number, ?number] {
+  return [x[0], x[1]]; // OK. This is unsound, but at least arity is enforced
+}
+
+================================================================================
+`;
+
+exports[`optional.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+([0, undefined]: [number, ?string]); // Ok, correct arity
+([0]: [number, ?string]); // Error, arity is enforced
+
+([]: [?number, string]); // error, since second element is not marked optional
+
+=====================================output=====================================
+// @flow
+
+([0, undefined]: [number, ?string]); // Ok, correct arity
+([0]: [number, ?string]); // Error, arity is enforced
+
+([]: [?number, string]); // error, since second element is not marked optional
+
+================================================================================
+`;
+
+exports[`too-few.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function foo(a: [Object, Object]) {}
+
+foo([ {} ]); // error, too few elements in array passed to a tuple
+
+=====================================output=====================================
+/* @flow */
+
+function foo(a: [Object, Object]) {}
+
+foo([{}]); // error, too few elements in array passed to a tuple
+
+================================================================================
+`;
+
+exports[`tuples.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var a: [] = [];
+var b: [] = [123]; // Error - arity mismatch
+var c: [number] = []; // nope
+var d: [number, string] = [123,'duck'];
+var e: [number, string,] = [123,'duck'];
+var f: [number, string] = [123, 456];
+
+=====================================output=====================================
+var a: [] = [];
+var b: [] = [123]; // Error - arity mismatch
+var c: [number] = []; // nope
+var d: [number, string] = [123, "duck"];
+var e: [number, string] = [123, "duck"];
+var f: [number, string] = [123, 456];
+
+================================================================================
+`;

@@ -1,0 +1,25 @@
+{{~#if foo~}}
+  abc
+{{~/if~}}
+
+{{~#if foo}}
+  abc
+{{/if~}}
+
+{{foo~}}
+
+{{~foo abc}}
+
+{{~#if bar}}
+  if1
+{{~else~}}
+  else
+{{~/if~}}
+
+{{~#if bar}}
+  if1
+{{~else if foo~}}
+  else if foo
+{{else~}}
+  else
+{{/if~}}

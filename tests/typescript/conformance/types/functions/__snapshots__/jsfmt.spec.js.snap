@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`TSFunctionTypeNoUnnecessaryParentheses.ts 1`] = `
+exports[`TSFunctionTypeNoUnnecessaryParentheses.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -17,7 +17,7 @@ class Foo {
 ================================================================================
 `;
 
-exports[`functionImplementationErrors.ts 1`] = `
+exports[`functionImplementationErrors.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -184,7 +184,7 @@ var f13 = () => {
 ================================================================================
 `;
 
-exports[`functionImplementations.ts 1`] = `
+exports[`functionImplementations.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -532,7 +532,7 @@ var f12: (x: number) => any = (x) => {
 ================================================================================
 `;
 
-exports[`functionOverloadCompatibilityWithVoid01.ts 1`] = `
+exports[`functionOverloadCompatibilityWithVoid01.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -552,7 +552,7 @@ function f(x: string): void {
 ================================================================================
 `;
 
-exports[`functionOverloadCompatibilityWithVoid02.ts 1`] = `
+exports[`functionOverloadCompatibilityWithVoid02.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -572,7 +572,7 @@ function f(x: string): number {
 ================================================================================
 `;
 
-exports[`functionOverloadCompatibilityWithVoid03.ts 1`] = `
+exports[`functionOverloadCompatibilityWithVoid03.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -592,7 +592,7 @@ function f(x: string): void {
 ================================================================================
 `;
 
-exports[`functionOverloadErrorsSyntax.ts 1`] = `
+exports[`functionOverloadErrorsSyntax.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -624,7 +624,7 @@ function fn5() {}
 ================================================================================
 `;
 
-exports[`functionTypeTypeParameters.ts 1`] = `
+exports[`functionTypeTypeParameters.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -638,7 +638,7 @@ type FuncWithTypeParameter = <T, P>() => {};
 ================================================================================
 `;
 
-exports[`parameterInitializersForwardReferencing.ts 1`] = `
+exports[`parameterInitializersForwardReferencing.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

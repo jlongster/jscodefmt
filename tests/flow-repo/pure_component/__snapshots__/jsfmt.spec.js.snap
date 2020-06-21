@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var React = require('react');
+
+class C extends React.PureComponent {
+  props: { x: number };
+}
+(<C />); // error (\`x\` is a required prop)
+
+=====================================output=====================================
+var React = require("react");
+
+class C extends React.PureComponent {
+  props: { x: number };
+}
+<C />; // error (\`x\` is a required prop)
+
+================================================================================
+`;

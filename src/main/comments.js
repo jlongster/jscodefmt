@@ -3,22 +3,24 @@
 const assert = require("assert");
 const {
   concat,
+  line,
   hardline,
   breakParent,
   indent,
   lineSuffix,
   join,
-  cursor
+  cursor,
 } = require("../document").builders;
 const {
   hasNewline,
   skipNewline,
-  isPreviousLineEmpty
+  skipSpaces,
+  isPreviousLineEmpty,
 } = require("../common/util");
 const {
   addLeadingComment,
   addDanglingComment,
-  addTrailingComment
+  addTrailingComment,
 } = require("../common/util-shared");
 const childNodesCacheKey = Symbol("child-nodes");
 
@@ -55,12 +57,12 @@ function getSortedChildNodes(node, options, resultArray) {
     (typeof node === "object" &&
       Object.keys(node)
         .filter(
-          n =>
+          (n) =>
             n !== "enclosingNode" &&
             n !== "precedingNode" &&
             n !== "followingNode"
         )
-        .map(n => node[n]));
+        .map((n) => node[n]));
 
   if (!childNodes) {
     return;
@@ -69,11 +71,11 @@ function getSortedChildNodes(node, options, resultArray) {
   if (!resultArray) {
     Object.defineProperty(node, childNodesCacheKey, {
       value: (resultArray = []),
-      enumerable: false
+      enumerable: false,
     });
   }
 
-  childNodes.forEach(childNode => {
+  childNodes.forEach((childNode) => {
     getSortedChildNodes(childNode, options, resultArray);
   });
 
@@ -284,7 +286,7 @@ function attach(comments, ast, text, options) {
 
   breakTies(tiesToBreak, text, options);
 
-  comments.forEach(comment => {
+  comments.forEach((comment) => {
     // These node references were useful for breaking ties, but we
     // don't need them anymore, and they create cycles in the AST that
     // may lead to infinite recursion if we don't delete them here.
@@ -375,7 +377,7 @@ function getQuasiRange(expr) {
   return { start: expr.range[0], end: expr.range[1] };
 }
 
-function printLeadingComment(commentPath, print, options) {
+function printLeadingComment(commentPath, options) {
   const comment = commentPath.getValue();
   const contents = printComment(commentPath, options);
   if (!contents) {
@@ -387,40 +389,30 @@ function printLeadingComment(commentPath, print, options) {
   // Leading block comments should see if they need to stay on the
   // same line or not.
   if (isBlock) {
-    return concat([
-      contents,
-      hasNewline(options.originalText, options.locEnd(comment)) ? hardline : " "
-    ]);
+    const lineBreak = hasNewline(options.originalText, options.locEnd(comment))
+      ? hasNewline(options.originalText, options.locStart(comment), {
+          backwards: true,
+        })
+        ? hardline
+        : line
+      : " ";
+
+    return concat([contents, lineBreak]);
   }
 
   return concat([contents, hardline]);
 }
 
-function printTrailingComment(commentPath, print, options) {
+function printTrailingComment(commentPath, options) {
   const comment = commentPath.getValue();
   const contents = printComment(commentPath, options);
   if (!contents) {
     return "";
   }
-  const isBlock =
-    options.printer.isBlockComment && options.printer.isBlockComment(comment);
+  const { printer, originalText, locStart } = options;
+  const isBlock = printer.isBlockComment && printer.isBlockComment(comment);
 
-  // We don't want the line to break
-  // when the parentParentNode is a ClassDeclaration/-Expression
-  // And the parentNode is in the superClass property
-  const parentNode = commentPath.getNode(1);
-  const parentParentNode = commentPath.getNode(2);
-  const isParentSuperClass =
-    parentParentNode &&
-    (parentParentNode.type === "ClassDeclaration" ||
-      parentParentNode.type === "ClassExpression") &&
-    parentParentNode.superClass === parentNode;
-
-  if (
-    hasNewline(options.originalText, options.locStart(comment), {
-      backwards: true
-    })
-  ) {
+  if (hasNewline(originalText, locStart(comment), { backwards: true })) {
     // This allows comments at the end of nested structures:
     // {
     //   x: 1,
@@ -434,23 +426,24 @@ function printTrailingComment(commentPath, print, options) {
     // always at the end of another expression.
 
     const isLineBeforeEmpty = isPreviousLineEmpty(
-      options.originalText,
+      originalText,
       comment,
-      options.locStart
+      locStart
     );
 
     return lineSuffix(
       concat([hardline, isLineBeforeEmpty ? hardline : "", contents])
     );
-  } else if (isBlock || isParentSuperClass) {
-    // Trailing block comments never need a newline
-    return concat([" ", contents]);
   }
 
-  return concat([
-    lineSuffix(concat([" ", contents])),
-    !isBlock ? breakParent : ""
-  ]);
+  let printed = concat([" ", contents]);
+
+  // Trailing block comments never need a newline
+  if (!isBlock) {
+    printed = concat([lineSuffix(printed), breakParent]);
+  }
+
+  return printed;
 }
 
 function printDanglingComments(path, options, sameIndent, filter) {
@@ -461,7 +454,7 @@ function printDanglingComments(path, options, sameIndent, filter) {
     return "";
   }
 
-  path.each(commentPath => {
+  path.each((commentPath) => {
     const comment = commentPath.getValue();
     if (
       comment &&
@@ -502,24 +495,27 @@ function printComments(path, print, options, needsSemi) {
   const leadingParts = [];
   const trailingParts = [needsSemi ? ";" : "", printed];
 
-  path.each(commentPath => {
+  path.each((commentPath) => {
     const comment = commentPath.getValue();
     const { leading, trailing } = comment;
 
     if (leading) {
-      const contents = printLeadingComment(commentPath, print, options);
+      const contents = printLeadingComment(commentPath, options);
       if (!contents) {
         return;
       }
       leadingParts.push(contents);
 
       const text = options.originalText;
-      const index = skipNewline(text, options.locEnd(comment));
+      const index = skipNewline(
+        text,
+        skipSpaces(text, options.locEnd(comment))
+      );
       if (index !== false && hasNewline(text, index)) {
         leadingParts.push(hardline);
       }
     } else if (trailing) {
-      trailingParts.push(printTrailingComment(commentPath, print, options));
+      trailingParts.push(printTrailingComment(commentPath, options));
     }
   }, "comments");
 
@@ -534,5 +530,5 @@ module.exports = {
   attach,
   printComments,
   printDanglingComments,
-  getSortedChildNodes
+  getSortedChildNodes,
 };

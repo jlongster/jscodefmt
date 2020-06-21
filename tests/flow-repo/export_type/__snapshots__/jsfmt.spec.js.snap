@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cjs_with_types.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+export type talias4 = number;
+export interface IFoo { prop: number };
+
+module.exports = {}
+
+=====================================output=====================================
+/* @flow */
+
+export type talias4 = number;
+export interface IFoo {
+  prop: number;
+}
+
+module.exports = {};
+
+================================================================================
+`;
+
+exports[`importer.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+import type {
+  inlinedType1,
+  standaloneType1,
+  talias1,
+  talias3,
+} from "./types_only";
+
+var a: inlinedType1 = 42;
+var b: inlinedType1 = 'asdf'; // Error: string ~> number
+
+var c: standaloneType1 = 42;
+var d: standaloneType1 = 'asdf'; // Error: string ~> number
+
+var e: talias1 = 42;
+var f: talias1 = 'asdf'; // Error: string ~> number
+
+var g: talias3 = 42;
+var h: talias3 = 'asdf'; // Error: string ~> number
+
+import type {talias4} from "./cjs_with_types";
+var i: talias4 = 42;
+var j: talias4 = 'asdf'; // Error: string ~> number
+
+import {IFoo, IFoo2} from "./types_only";
+
+var k: IFoo = {prop: 42};
+var l: IFoo = {prop: 'asdf'}; // Error: {prop:string} ~> {prop:number}
+
+var m: IFoo2 = {prop: 'asdf'};
+var n: IFoo2 = {prop: 42}; // Error: {prop:number} ~> {prop:string}
+
+=====================================output=====================================
+/* @flow */
+
+import type {
+  inlinedType1,
+  standaloneType1,
+  talias1,
+  talias3,
+} from "./types_only";
+
+var a: inlinedType1 = 42;
+var b: inlinedType1 = "asdf"; // Error: string ~> number
+
+var c: standaloneType1 = 42;
+var d: standaloneType1 = "asdf"; // Error: string ~> number
+
+var e: talias1 = 42;
+var f: talias1 = "asdf"; // Error: string ~> number
+
+var g: talias3 = 42;
+var h: talias3 = "asdf"; // Error: string ~> number
+
+import type { talias4 } from "./cjs_with_types";
+var i: talias4 = 42;
+var j: talias4 = "asdf"; // Error: string ~> number
+
+import { IFoo, IFoo2 } from "./types_only";
+
+var k: IFoo = { prop: 42 };
+var l: IFoo = { prop: "asdf" }; // Error: {prop:string} ~> {prop:number}
+
+var m: IFoo2 = { prop: "asdf" };
+var n: IFoo2 = { prop: 42 }; // Error: {prop:number} ~> {prop:string}
+
+================================================================================
+`;
+
+exports[`types_only.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+export type inlinedType1 = number;
+var a: inlinedType1 = 42;
+var b: inlinedType1 = 'asdf'; // Error: string ~> number
+
+type standaloneType1 = number;
+export type {standaloneType1};
+
+type standaloneType2 = number;
+export {standaloneType2}; // Error: Missing \`type\` keyword
+
+export type {talias1, talias2 as talias3, IFoo2} from "./types_only2";
+
+export interface IFoo { prop: number };
+
+=====================================output=====================================
+/* @flow */
+
+export type inlinedType1 = number;
+var a: inlinedType1 = 42;
+var b: inlinedType1 = "asdf"; // Error: string ~> number
+
+type standaloneType1 = number;
+export type { standaloneType1 };
+
+type standaloneType2 = number;
+export { standaloneType2 }; // Error: Missing \`type\` keyword
+
+export type { talias1, talias2 as talias3, IFoo2 } from "./types_only2";
+
+export interface IFoo {
+  prop: number;
+}
+
+================================================================================
+`;
+
+exports[`types_only2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+export type talias1 = number;
+export type talias2 = number;
+export interface IFoo2 { prop: string };
+
+=====================================output=====================================
+/* @flow */
+
+export type talias1 = number;
+export type talias2 = number;
+export interface IFoo2 {
+  prop: string;
+}
+
+================================================================================
+`;

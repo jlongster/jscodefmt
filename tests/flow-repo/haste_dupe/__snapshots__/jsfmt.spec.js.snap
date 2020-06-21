@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dupe1.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Dupe provider 1/2
+ * @providesModule Dupe
+ * @flow
+ */
+module.exports = "dupe1";
+
+=====================================output=====================================
+/**
+ * Dupe provider 1/2
+ * @providesModule Dupe
+ * @flow
+ */
+module.exports = "dupe1";
+
+================================================================================
+`;
+
+exports[`dupe2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Dupe provider 2/2
+ * @providesModule Dupe
+ * @flow
+ */
+module.exports = "dupe2";
+
+=====================================output=====================================
+/**
+ * Dupe provider 2/2
+ * @providesModule Dupe
+ * @flow
+ */
+module.exports = "dupe2";
+
+================================================================================
+`;
+
+exports[`requires_dupe.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * depends on doubly-provided module
+ * @flow
+ */
+var dupe = require('Dupe');
+
+=====================================output=====================================
+/**
+ * depends on doubly-provided module
+ * @flow
+ */
+var dupe = require("Dupe");
+
+================================================================================
+`;

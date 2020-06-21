@@ -1,0 +1,640 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+module.exports = { a() {} };
+=====================================output=====================================
+/* @flow */
+
+module.exports = { a() {} };
+
+================================================================================
+`;
+
+exports[`b.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var a = require('./a');
+var b = Object.assign({ bar() {}, ...{} }, a);
+b.a(); // works here
+module.exports = b;
+
+=====================================output=====================================
+/* @flow */
+
+var a = require("./a");
+var b = Object.assign({ bar() {}, ...{} }, a);
+b.a(); // works here
+module.exports = b;
+
+================================================================================
+`;
+
+exports[`c.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var c = require('./b');
+c.a();
+c.foo();
+=====================================output=====================================
+/* @flow */
+
+var c = require("./b");
+c.a();
+c.foo();
+
+================================================================================
+`;
+
+exports[`object_assign.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var export_ = Object.assign({}, {
+    foo: function(param) { return param; }
+});
+
+var decl_export_: { foo: any; bar: any } = Object.assign({}, export_);
+
+let anyObj: Object = {};
+Object.assign(anyObj, anyObj); // makes sure this terminates
+
+module.exports = export_;
+
+=====================================output=====================================
+/* @flow */
+
+var export_ = Object.assign(
+  {},
+  {
+    foo: function (param) {
+      return param;
+    },
+  }
+);
+
+var decl_export_: { foo: any, bar: any } = Object.assign({}, export_);
+
+let anyObj: Object = {};
+Object.assign(anyObj, anyObj); // makes sure this terminates
+
+module.exports = export_;
+
+================================================================================
+`;
+
+exports[`object_create.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+class C { foo: string; }
+
+// OK, \`instanceof C\` would be true
+(Object.create(C.prototype): C);
+
+// OK, \`instanceof C\` would be true
+(Object.create(new C): C);
+
+// error, object literals don't structurally match instances
+({ foo: "foo" }: C);
+
+// error, object types don't structurally match instances
+type O = { foo: string; }
+declare var o: O;
+(o: C);
+
+=====================================output=====================================
+/* @flow */
+
+class C {
+  foo: string;
+}
+
+// OK, \`instanceof C\` would be true
+(Object.create(C.prototype): C);
+
+// OK, \`instanceof C\` would be true
+(Object.create(new C()): C);
+
+// error, object literals don't structurally match instances
+({ foo: "foo" }: C);
+
+// error, object types don't structurally match instances
+type O = { foo: string };
+declare var o: O;
+(o: C);
+
+================================================================================
+`;
+
+exports[`object_getprototypeof.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+class Foo {}
+class Bar extends Foo {}
+
+let tests = [
+  function() {
+    const x = new Bar();
+    (Object.getPrototypeOf(x): Foo);
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+class Foo {}
+class Bar extends Foo {}
+
+let tests = [
+  function () {
+    const x = new Bar();
+    (Object.getPrototypeOf(x): Foo);
+  },
+];
+
+================================================================================
+`;
+
+exports[`object_keys.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var sealed = {one: 'one', two: 'two'};
+(Object.keys(sealed): Array<'one'|'two'>);
+(Object.keys(sealed): void); // error, Array<string>
+
+var unsealed = {};
+Object.keys(unsealed).forEach(k => {
+  (k : number) // error: string ~> number
+});
+
+var dict: { [k: number]: string } = {};
+Object.keys(dict).forEach(k => {
+  (k : number) // error: string ~> number
+});
+
+var any: Object = {};
+(Object.keys(any): Array<number>); // error, Array<string>
+
+class Foo {
+  prop: string;
+  foo() {}
+}
+// constructor and foo not enumerable
+(Object.keys(new Foo()): Array<'error'>); // error: prop ~> error
+
+class Bar extends Foo {
+  bar_prop: string;
+  bar() {}
+}
+// only own enumerable props
+(Object.keys(new Bar()): Array<'error'>); // error: bar_prop ~> error
+
+=====================================output=====================================
+/* @flow */
+
+var sealed = { one: "one", two: "two" };
+(Object.keys(sealed): Array<"one" | "two">);
+(Object.keys(sealed): void); // error, Array<string>
+
+var unsealed = {};
+Object.keys(unsealed).forEach((k) => {
+  (k: number); // error: string ~> number
+});
+
+var dict: { [k: number]: string } = {};
+Object.keys(dict).forEach((k) => {
+  (k: number); // error: string ~> number
+});
+
+var any: Object = {};
+(Object.keys(any): Array<number>); // error, Array<string>
+
+class Foo {
+  prop: string;
+  foo() {}
+}
+// constructor and foo not enumerable
+(Object.keys(new Foo()): Array<"error">); // error: prop ~> error
+
+class Bar extends Foo {
+  bar_prop: string;
+  bar() {}
+}
+// only own enumerable props
+(Object.keys(new Bar()): Array<"error">); // error: bar_prop ~> error
+
+================================================================================
+`;
+
+exports[`object_missing.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  function() {
+    Object.doesNotExist();
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  function () {
+    Object.doesNotExist();
+  },
+];
+
+================================================================================
+`;
+
+exports[`object_prototype.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function takesABool(x: boolean) {}
+function takesAString(x: string) {}
+function takesANumber(x: number) {}
+function takesAnObject(x: Object) {}
+
+class Foo {}
+
+var a = { foo: 'bar' };
+var b = { foo: 'bar', ...{}};
+var c = { foo: 'bar', toString: function(): number { return 123; }};
+var d : { [key: string]: string } = { foo: 'bar' };
+var x = new Date();
+var y = new Foo();
+
+//
+// toString
+//
+
+// call
+takesAString(a.toString());
+d.toString(); // ok, even though dict specifies strings, this is a function
+
+// get
+var aToString : () => string = a.toString;
+var aToString2 = a.toString;
+takesAString(aToString2());
+
+// set
+b.toString = function(): string { return 'foo'; };
+c.toString = function(): number { return 123; };
+
+// override
+var cToString : () => number = c.toString;
+
+// ... on a built-in instance
+var xToString : number = x.toString; // error
+var xToString2 : () => number = x.toString; // error
+takesAString(x.toString());
+
+// ... on an instance
+var yToString : number = y.toString; // error
+takesAString(y.toString());
+
+// ... on a primitive
+(123).toString();
+(123).toString;
+(123).toString = function() {}; // error
+(123).toString(2);
+(123).toString('foo'); // error
+(123).toString(null); // error
+
+
+//
+// hasOwnProperty
+//
+
+// call
+takesABool(a.hasOwnProperty('foo'));
+
+// get
+var aHasOwnProperty : (prop: string) => boolean = a.hasOwnProperty;
+var aHasOwnProperty2 = a.hasOwnProperty;
+takesABool(aHasOwnProperty2('bar'));
+
+// set
+b.hasOwnProperty = function() { return false; };
+
+// ... on a built-in instance
+var xHasOwnProperty : number = x.hasOwnProperty; // error
+var xHasOwnProperty2 : (prop: string) => number = x.hasOwnProperty; // error
+takesABool(x.hasOwnProperty('foo'));
+
+// ... on an instance
+var yHasOwnProperty : number = y.hasOwnProperty; // error
+takesABool(y.hasOwnProperty('foo'));
+
+
+//
+// propertyIsEnumerable
+//
+
+// call
+takesABool(a.propertyIsEnumerable('foo'));
+
+// get
+var aPropertyIsEnumerable : (prop: string) => boolean = a.propertyIsEnumerable;
+var aPropertyIsEnumerable2 = a.propertyIsEnumerable;
+takesABool(aPropertyIsEnumerable2('bar'));
+
+// set
+b.propertyIsEnumerable = function() { return false; };
+
+// ... on a built-in instance
+var xPropertyIsEnumerable : number = x.propertyIsEnumerable; // error
+var xPropertyIsEnumerable2 : (prop: string) => number =
+  x.propertyIsEnumerable; // error
+takesABool(x.propertyIsEnumerable('foo'));
+
+// ... on an instance
+var yPropertyIsEnumerable : number = y.propertyIsEnumerable; // error
+takesABool(y.propertyIsEnumerable('foo'));
+
+
+//
+// valueOf
+//
+
+// call
+takesAnObject(a.valueOf());
+
+// get
+var aValueOf : () => Object = a.valueOf;
+var aValueOf2 = a.valueOf;
+takesAnObject(aValueOf2());
+
+// set
+b.valueOf = function() { return {}; };
+
+// ... on a built-in instance
+var xValueOf : number = x.valueOf; // error
+takesANumber(x.valueOf());
+
+// ... on an instance
+var yValueOf : number = y.valueOf; // error
+takesAnObject(y.valueOf());
+
+// ... on a literal
+var strValueOf : string = ("foo").valueOf();
+var numValueOf : number = (123).valueOf();
+var boolValueOf : boolean = (true).valueOf();
+
+//
+// toLocaleString
+//
+
+// call
+takesAString(a.toLocaleString());
+
+// get
+var aToLocaleString : () => string = a.toLocaleString;
+var aToLocaleString2 = a.toLocaleString;
+takesAString(aToLocaleString2());
+
+// set
+b.toLocaleString = function() { return 'derp'; };
+
+// ... on a built-in instance
+var xToLocaleString : number = x.toLocaleString; // error
+var xToLocaleString2 : () => number = x.toLocaleString; // error
+takesAString(x.toLocaleString());
+
+// ... on an instance
+var yToLocaleString : number = y.toLocaleString; // error
+takesAString(y.toLocaleString());
+
+
+//
+// constructor
+//
+
+var k : Object = a.constructor;
+(123).constructor;
+
+=====================================output=====================================
+/* @flow */
+
+function takesABool(x: boolean) {}
+function takesAString(x: string) {}
+function takesANumber(x: number) {}
+function takesAnObject(x: Object) {}
+
+class Foo {}
+
+var a = { foo: "bar" };
+var b = { foo: "bar", ...{} };
+var c = {
+  foo: "bar",
+  toString: function (): number {
+    return 123;
+  },
+};
+var d: { [key: string]: string } = { foo: "bar" };
+var x = new Date();
+var y = new Foo();
+
+//
+// toString
+//
+
+// call
+takesAString(a.toString());
+d.toString(); // ok, even though dict specifies strings, this is a function
+
+// get
+var aToString: () => string = a.toString;
+var aToString2 = a.toString;
+takesAString(aToString2());
+
+// set
+b.toString = function (): string {
+  return "foo";
+};
+c.toString = function (): number {
+  return 123;
+};
+
+// override
+var cToString: () => number = c.toString;
+
+// ... on a built-in instance
+var xToString: number = x.toString; // error
+var xToString2: () => number = x.toString; // error
+takesAString(x.toString());
+
+// ... on an instance
+var yToString: number = y.toString; // error
+takesAString(y.toString());
+
+// ... on a primitive
+(123).toString();
+(123).toString;
+(123).toString = function () {}; // error
+(123).toString(2);
+(123).toString("foo"); // error
+(123).toString(null); // error
+
+//
+// hasOwnProperty
+//
+
+// call
+takesABool(a.hasOwnProperty("foo"));
+
+// get
+var aHasOwnProperty: (prop: string) => boolean = a.hasOwnProperty;
+var aHasOwnProperty2 = a.hasOwnProperty;
+takesABool(aHasOwnProperty2("bar"));
+
+// set
+b.hasOwnProperty = function () {
+  return false;
+};
+
+// ... on a built-in instance
+var xHasOwnProperty: number = x.hasOwnProperty; // error
+var xHasOwnProperty2: (prop: string) => number = x.hasOwnProperty; // error
+takesABool(x.hasOwnProperty("foo"));
+
+// ... on an instance
+var yHasOwnProperty: number = y.hasOwnProperty; // error
+takesABool(y.hasOwnProperty("foo"));
+
+//
+// propertyIsEnumerable
+//
+
+// call
+takesABool(a.propertyIsEnumerable("foo"));
+
+// get
+var aPropertyIsEnumerable: (prop: string) => boolean = a.propertyIsEnumerable;
+var aPropertyIsEnumerable2 = a.propertyIsEnumerable;
+takesABool(aPropertyIsEnumerable2("bar"));
+
+// set
+b.propertyIsEnumerable = function () {
+  return false;
+};
+
+// ... on a built-in instance
+var xPropertyIsEnumerable: number = x.propertyIsEnumerable; // error
+var xPropertyIsEnumerable2: (prop: string) => number = x.propertyIsEnumerable; // error
+takesABool(x.propertyIsEnumerable("foo"));
+
+// ... on an instance
+var yPropertyIsEnumerable: number = y.propertyIsEnumerable; // error
+takesABool(y.propertyIsEnumerable("foo"));
+
+//
+// valueOf
+//
+
+// call
+takesAnObject(a.valueOf());
+
+// get
+var aValueOf: () => Object = a.valueOf;
+var aValueOf2 = a.valueOf;
+takesAnObject(aValueOf2());
+
+// set
+b.valueOf = function () {
+  return {};
+};
+
+// ... on a built-in instance
+var xValueOf: number = x.valueOf; // error
+takesANumber(x.valueOf());
+
+// ... on an instance
+var yValueOf: number = y.valueOf; // error
+takesAnObject(y.valueOf());
+
+// ... on a literal
+var strValueOf: string = "foo".valueOf();
+var numValueOf: number = (123).valueOf();
+var boolValueOf: boolean = true.valueOf();
+
+//
+// toLocaleString
+//
+
+// call
+takesAString(a.toLocaleString());
+
+// get
+var aToLocaleString: () => string = a.toLocaleString;
+var aToLocaleString2 = a.toLocaleString;
+takesAString(aToLocaleString2());
+
+// set
+b.toLocaleString = function () {
+  return "derp";
+};
+
+// ... on a built-in instance
+var xToLocaleString: number = x.toLocaleString; // error
+var xToLocaleString2: () => number = x.toLocaleString; // error
+takesAString(x.toLocaleString());
+
+// ... on an instance
+var yToLocaleString: number = y.toLocaleString; // error
+takesAString(y.toLocaleString());
+
+//
+// constructor
+//
+
+var k: Object = a.constructor;
+(123).constructor;
+
+================================================================================
+`;

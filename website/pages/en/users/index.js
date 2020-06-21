@@ -52,7 +52,7 @@ class Users extends React.Component {
 }
 
 Users.defaultProps = {
-  language: "en"
+  language: "en",
 };
 
 Users.title = "Who's using Prettier?";

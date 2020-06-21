@@ -1,0 +1,72 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`variable_definitions.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+query short($foo:ComplexType, $site   : Site =         MOBILE,     $nonNull: Int!) {
+  hello
+}
+
+query long($foo: ComplexType, $site: Float = 124241.12312,
+$bar: String = "Long string here", $arg: String = "Hello world!",,,,,
+$nonNull: String!) {
+  hello
+}
+
+query lists($foo: [Int  ], $bar:    [Int!], $arg: [ Int! ]!) {
+  ok
+}
+
+query listslong($foo: [String  ], $bar:    [String!], $arg: [ Int! ]!, $veryLongName: [ Int! ]) {
+  ok
+}
+
+query withvariabledirective($foo:   Int   @directive) {
+  ok
+}
+
+query withvariabledirectives($foo:   Int   @directive   @another) {
+  ok
+}
+
+=====================================output=====================================
+query short($foo: ComplexType, $site: Site = MOBILE, $nonNull: Int!) {
+  hello
+}
+
+query long(
+  $foo: ComplexType
+  $site: Float = 124241.12312
+  $bar: String = "Long string here"
+  $arg: String = "Hello world!"
+  $nonNull: String!
+) {
+  hello
+}
+
+query lists($foo: [Int], $bar: [Int!], $arg: [Int!]!) {
+  ok
+}
+
+query listslong(
+  $foo: [String]
+  $bar: [String!]
+  $arg: [Int!]!
+  $veryLongName: [Int!]
+) {
+  ok
+}
+
+query withvariabledirective($foo: Int @directive) {
+  ok
+}
+
+query withvariabledirectives($foo: Int @directive @another) {
+  ok
+}
+
+================================================================================
+`;

@@ -84,7 +84,40 @@ and add this config to your `package.json`:
 
 Read more about this tool [here](https://github.com/JamesHenry/precise-commits#2-precommit-hook).
 
-## Option 5. bash script
+## Option 5. [git-format-staged](https://github.com/hallettj/git-format-staged)
+
+**Use Case:** Great for when you want to format partially-staged files, and other options do not provide a good fit for your project.
+
+Git-format-staged is used to run any formatter that can accept file content via stdin. It operates differently than other tools that format partially-staged files: it applies the formatter directly to objects in the git object database, and merges changes back to the working tree. This procedure provides several guarantees:
+
+1. Changes in commits are always formatted.
+2. Unstaged changes are never, under any circumstances staged during the formatting process.
+3. If there are conflicts between formatted, staged changes and unstaged changes then your working tree files are left untouched - your work won't be overwritten, and there are no stashes to clean up.
+4. Unstaged changes are not formatted.
+
+Git-format-staged requires Python v3 or v2.7. Python is usually pre-installed on Linux and macOS, but not on Windows. Use git-format-staged with [husky](https://github.com/typicode/husky):
+
+```bash
+yarn add --dev husky prettier git-format-staged
+```
+
+and add this config to your `package.json`:
+
+```json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "git-format-staged -f 'prettier --stdin --stdin-filepath \"{}\"' '*.js' '*.jsx' '*.ts' '*.tsx' '*.css' '*.json' '*.gql'"
+    }
+  }
+}
+```
+
+Add or remove file extensions to suit your project. Note that regardless of which extensions you list formatting will respect any `.prettierignore` files in your project.
+
+To read about how git-format-staged works see [Automatic Code Formatting for Partially-Staged Files](https://www.olioapps.com/blog/automatic-code-formatting/).
+
+## Option 6. bash script
 
 Alternately you can save this script as `.git/hooks/pre-commit` and give it execute permission:
 

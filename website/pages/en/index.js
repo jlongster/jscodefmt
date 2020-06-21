@@ -7,12 +7,12 @@ const AnimatedLogo = require("@sandhose/prettier-animated-logo");
 
 const siteConfig = require(process.cwd() + "/siteConfig.js");
 
-const ButtonGroup = props => (
+const ButtonGroup = (props) => (
   <div className="buttonGroup buttonWrapper">{props.children}</div>
 );
 
 ButtonGroup.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
 };
 
 class Button extends React.Component {
@@ -28,13 +28,13 @@ class Button extends React.Component {
 }
 
 Button.defaultProps = {
-  target: "_self"
+  target: "_self",
 };
 
 Button.propTypes = {
   href: PropTypes.string,
   target: PropTypes.string,
-  children: PropTypes.any
+  children: PropTypes.any,
 };
 
 function Tidelift() {
@@ -45,7 +45,7 @@ function Tidelift() {
   );
 }
 
-const HomeSplash = props => {
+const HomeSplash = (props) => {
   return (
     <div className="homeContainer">
       <Tidelift />
@@ -76,7 +76,7 @@ const HomeSplash = props => {
 };
 
 HomeSplash.propTypes = {
-  language: PropTypes.string
+  language: PropTypes.string,
 };
 
 const TldrSection = ({ language }) => (
@@ -86,7 +86,7 @@ const TldrSection = ({ language }) => (
         style={{
           display: "flex",
           flexFlow: "row wrap",
-          justifyContent: "space-evenly"
+          justifyContent: "space-evenly",
         }}
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
@@ -115,7 +115,7 @@ const TldrSection = ({ language }) => (
 );
 
 TldrSection.propTypes = {
-  language: PropTypes.string
+  language: PropTypes.string,
 };
 
 const Language = ({ name, nameLink, showName, image, variants }) => (
@@ -124,7 +124,7 @@ const Language = ({ name, nameLink, showName, image, variants }) => (
     style={{
       display: "flex",
       alignItems: "flex-start",
-      paddingBottom: "1em"
+      paddingBottom: "1em",
     }}
   >
     <img src={image} style={{ width: "50px", padding: "0 20px" }} />
@@ -134,7 +134,7 @@ const Language = ({ name, nameLink, showName, image, variants }) => (
           {nameLink ? <a href={nameLink}>{name}</a> : name}
         </li>
       )}
-      {variants.map(variant => (
+      {variants.map((variant) => (
         <li key={variant}>
           <MarkdownBlock>{variant}</MarkdownBlock>
         </li>
@@ -148,7 +148,7 @@ Language.propTypes = {
   nameLink: PropTypes.string,
   showName: PropTypes.bool,
   image: PropTypes.string,
-  variants: PropTypes.array
+  variants: PropTypes.array,
 };
 
 const LanguagesSection = () => {
@@ -182,12 +182,12 @@ const LanguagesSection = () => {
           style={{
             display: "flex",
             flexFlow: "row wrap",
-            justifyContent: "space-around"
+            justifyContent: "space-around",
           }}
         >
           {languageChunks.map((languageChunk, index) => (
             <div key={index} style={{ flex: "1 1 auto" }}>
-              {languageChunk.map(language => (
+              {languageChunk.map((language) => (
                 <Language key={language.name} {...language} />
               ))}
             </div>
@@ -211,7 +211,7 @@ const Editor = ({ content = "", image, name }) => (
 Editor.propTypes = {
   content: PropTypes.string,
   image: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
 };
 
 const EditorSupportSection = () => (
@@ -222,10 +222,10 @@ const EditorSupportSection = () => (
         style={{
           display: "flex",
           flexFlow: "row wrap",
-          justifyContent: "space-around"
+          justifyContent: "space-around",
         }}
       >
-        {siteConfig.editors.map(editor => (
+        {siteConfig.editors.map((editor) => (
           <Editor key={editor.name} {...editor} />
         ))}
       </div>
@@ -245,13 +245,13 @@ const EditorSupportSection = () => (
 
 const bash = (...args) => `~~~bash\n${String.raw(...args)}\n~~~`;
 
-const json = object => `~~~json\n${JSON.stringify(object, null, 2)}\n~~~`;
+const json = (object) => `~~~json\n${JSON.stringify(object, null, 2)}\n~~~`;
 
 class GetStartedSection extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      npmClient: "yarn"
+      npmClient: "yarn",
     };
   }
 
@@ -265,7 +265,7 @@ class GetStartedSection extends React.Component {
               display: "flex",
               flexFlow: "row",
               alignItems: "baseline",
-              justifyContent: "space-between"
+              justifyContent: "space-between",
             }}
           >
             <div className="getStartedSteps">
@@ -314,9 +314,9 @@ class GetStartedSection extends React.Component {
                     {json({
                       husky: {
                         hooks: {
-                          "pre-commit": "pretty-quick --staged"
-                        }
-                      }
+                          "pre-commit": "pretty-quick --staged",
+                        },
+                      },
                     })}
                   </MarkdownBlock>
                 </li>
@@ -328,7 +328,7 @@ class GetStartedSection extends React.Component {
                 flexDirection: "column",
                 alignItems: "flex-end",
                 flexGrow: 1,
-                marginLeft: "-75px"
+                marginLeft: "-75px",
               }}
             >
               <ButtonGroup>
@@ -342,7 +342,7 @@ class GetStartedSection extends React.Component {
               <img
                 className="decorativeRects"
                 style={{
-                  marginTop: "32px"
+                  marginTop: "32px",
                 }}
                 src="/images/get_started_rects.svg"
               />
@@ -356,7 +356,7 @@ class GetStartedSection extends React.Component {
 
 const UsersSection = ({ language }) => {
   const showcase = siteConfig.users
-    .filter(user => {
+    .filter((user) => {
       return user.pinned;
     })
     .map((user, i) => {
@@ -376,7 +376,7 @@ const UsersSection = ({ language }) => {
           style={{
             display: "flex",
             flexFlow: "row wrap",
-            justifyContent: "space-around"
+            justifyContent: "space-around",
           }}
         >
           {showcase}
@@ -403,7 +403,7 @@ const UsersSection = ({ language }) => {
           style={{
             display: "flex",
             justifyContent: "space-around",
-            flexFlow: "row wrap"
+            flexFlow: "row wrap",
           }}
         >
           <div style={{ display: "flex", marginTop: "22px" }}>
@@ -415,7 +415,8 @@ const UsersSection = ({ language }) => {
             </a>
             <div style={{ marginLeft: ".7em", width: "260px" }}>
               <p>
-                More than <strong>3000</strong> tools and integrations on npm
+                More than <strong data-placeholder="dependent-npm">5000</strong>{" "}
+                tools and integrations on npm
               </p>
               <Button href="https://www.npmjs.com/browse/depended/prettier">
                 Install Them
@@ -432,7 +433,9 @@ const UsersSection = ({ language }) => {
             </a>
             <div style={{ marginLeft: ".7em", width: "260px" }}>
               <p>
-                More than <strong>1M</strong> dependent repositories on GitHub
+                More than{" "}
+                <strong data-placeholder="dependent-github">1.6M</strong>{" "}
+                dependent repositories on GitHub
               </p>
               <Button href="https://github.com/prettier/prettier/network/dependents">
                 Check Them Out
@@ -446,7 +449,7 @@ const UsersSection = ({ language }) => {
 };
 
 UsersSection.propTypes = {
-  language: PropTypes.string
+  language: PropTypes.string,
 };
 
 class Index extends React.Component {
@@ -470,7 +473,7 @@ class Index extends React.Component {
 }
 
 Index.propTypes = {
-  language: PropTypes.string
+  language: PropTypes.string,
 };
 
 module.exports = Index;

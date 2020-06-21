@@ -1,0 +1,390 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`destructuring.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let [x, y] = [1, 2];
+
+/**
+ * Test what happens when the destructuring is unevaluated. In this case,
+ * \`this\` in a function is unbound, so we never actually find out the type of
+ * \`this.returnsATuple()\` is; thus, we never evaluate \`b\` and so type-at-pos
+ * returns EmptyT.
+ */
+export const X = {
+  returnsATuple: function(): [number, number] {
+    return [1, 2];
+  },
+
+  test: function() {
+    let [a, b] = this.returnsATuple();
+  }
+};
+
+=====================================output=====================================
+// @flow
+
+let [x, y] = [1, 2];
+
+/**
+ * Test what happens when the destructuring is unevaluated. In this case,
+ * \`this\` in a function is unbound, so we never actually find out the type of
+ * \`this.returnsATuple()\` is; thus, we never evaluate \`b\` and so type-at-pos
+ * returns EmptyT.
+ */
+export const X = {
+  returnsATuple: function (): [number, number] {
+    return [1, 2];
+  },
+
+  test: function () {
+    let [a, b] = this.returnsATuple();
+  },
+};
+
+================================================================================
+`;
+
+exports[`function_expressions.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// TODO: type-at-pos between the ()'s should be () => void
+// class X {
+//   foo(): void {}
+// }
+
+const a = {
+  bar(): void {}
+};
+
+const b = {
+  bar: function (): void {}
+};
+
+const c = {
+  m<T>(x: T): T { return x; }
+};
+
+const d = {
+  m: function<T>(x: T): T { return x; }
+};
+
+=====================================output=====================================
+// @flow
+
+// TODO: type-at-pos between the ()'s should be () => void
+// class X {
+//   foo(): void {}
+// }
+
+const a = {
+  bar(): void {},
+};
+
+const b = {
+  bar: function (): void {},
+};
+
+const c = {
+  m<T>(x: T): T {
+    return x;
+  },
+};
+
+const d = {
+  m: function <T>(x: T): T {
+    return x;
+  },
+};
+
+================================================================================
+`;
+
+exports[`generics.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+class C<X> { }
+var cn: C<number> = new C;
+cn;
+
+function foo() { return C; }
+var D = foo();
+var dn: D<number> = new C;
+dn;
+
+type E<X> = C<X>;
+var en: E<number> = new C;
+en;
+
+type F<X> = C<void>;
+var fn: F<number> = new C;
+fn;
+
+type O<X> = { x: X };
+var on: O<number> = { x: 0 };
+on;
+
+type Mono = C<void>;
+var mn: Mono<number> = new C; // error: application of non-poly type
+mn;
+
+=====================================output=====================================
+// @flow
+
+class C<X> {}
+var cn: C<number> = new C();
+cn;
+
+function foo() {
+  return C;
+}
+var D = foo();
+var dn: D<number> = new C();
+dn;
+
+type E<X> = C<X>;
+var en: E<number> = new C();
+en;
+
+type F<X> = C<void>;
+var fn: F<number> = new C();
+fn;
+
+type O<X> = { x: X };
+var on: O<number> = { x: 0 };
+on;
+
+type Mono = C<void>;
+var mn: Mono<number> = new C(); // error: application of non-poly type
+mn;
+
+================================================================================
+`;
+
+exports[`import.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+var num = 42;
+function bar() { }
+bar();
+module.exports = num;
+
+=====================================output=====================================
+// @flow
+var num = 42;
+function bar() {}
+bar();
+module.exports = num;
+
+================================================================================
+`;
+
+exports[`object_special_cases.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+let tests = [
+  function() {
+    let x = {};
+    Object.defineProperty(x, 'foo', { value: '' });
+  },
+];
+
+=====================================output=====================================
+/* @flow */
+
+let tests = [
+  function () {
+    let x = {};
+    Object.defineProperty(x, "foo", { value: "" });
+  },
+];
+
+================================================================================
+`;
+
+exports[`optional.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function foo(x?: string) {
+  return x;
+}
+
+foo();
+
+function bar(obj: { x?: string }) {
+  return obj.x;
+}
+
+function qux(x?) {
+  return x;
+}
+
+=====================================output=====================================
+// @flow
+
+function foo(x?: string) {
+  return x;
+}
+
+foo();
+
+function bar(obj: { x?: string }) {
+  return obj.x;
+}
+
+function qux(x?) {
+  return x;
+}
+
+================================================================================
+`;
+
+exports[`predicates.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+let x = 0;
+if (x == null) {}
+if (x == undefined) {}
+if (Array.isArray(x)) {}
+
+=====================================output=====================================
+/* @flow */
+
+let x = 0;
+if (x == null) {
+}
+if (x == undefined) {
+}
+if (Array.isArray(x)) {
+}
+
+================================================================================
+`;
+
+exports[`react.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import React from "react";
+React.createElement;
+
+=====================================output=====================================
+import React from "react";
+React.createElement;
+
+================================================================================
+`;
+
+exports[`templates.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+\`foo bar\`;
+
+=====================================output=====================================
+/* @flow */
+\`foo bar\`;
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+var str = require('./import');
+function foo() { }
+foo();
+str
+
+type Point = [number, string];
+const x:Point = [1, "foo"];
+type MyStr = "cool";
+const y:MyStr = "cool";
+type MyBool = true;
+const z:MyBool = true;
+type MyNum = 42;
+const w:MyNum = 42;
+
+=====================================output=====================================
+// @flow
+var str = require("./import");
+function foo() {}
+foo();
+str;
+
+type Point = [number, string];
+const x: Point = [1, "foo"];
+type MyStr = "cool";
+const y: MyStr = "cool";
+type MyBool = true;
+const z: MyBool = true;
+type MyNum = 42;
+const w: MyNum = 42;
+
+================================================================================
+`;
+
+exports[`trycatch.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+try {
+  throw "foo";
+} catch (e) {}
+
+=====================================output=====================================
+// @flow
+
+try {
+  throw "foo";
+} catch (e) {}
+
+================================================================================
+`;

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`interface_types.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type A = interface { p: string };
+type B = interface extends X { p: string };
+type C = interface extends X, Y { p: string };
+
+=====================================output=====================================
+type A = interface { p: string };
+type B = interface extends X { p: string };
+type C = interface extends X, Y { p: string };
+
+================================================================================
+`;

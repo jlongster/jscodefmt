@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExplicitProvidesModuleDifferentName.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/*
+ * @providesModule ExplicitProvidesModuleDifferentName
+ * @flow
+ */
+
+module.exports.fun = (): string => "hello there";
+
+=====================================output=====================================
+/*
+ * @providesModule ExplicitProvidesModuleDifferentName
+ * @flow
+ */
+
+module.exports.fun = (): string => "hello there";
+
+================================================================================
+`;
+
+exports[`ExplicitProvidesModuleSameName.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/*
+ * @providesModule ExplicitProvidesModuleSameName
+ * @flow
+ */
+
+module.exports.fun = (): string => "hello there";
+
+=====================================output=====================================
+/*
+ * @providesModule ExplicitProvidesModuleSameName
+ * @flow
+ */
+
+module.exports.fun = (): string => "hello there";
+
+================================================================================
+`;
+
+exports[`ImplicitProvidesModule.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/*
+ * @providesModule ImplicitProvidesModule
+ * @flow
+ */
+
+module.exports.fun = (): string => "hello there";
+
+=====================================output=====================================
+/*
+ * @providesModule ImplicitProvidesModule
+ * @flow
+ */
+
+module.exports.fun = (): string => "hello there";
+
+================================================================================
+`;
+
+exports[`md5.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @providesModule md5 */
+
+=====================================output=====================================
+/* @providesModule md5 */
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var Implicit = require('ImplicitProvidesModule');
+(Implicit.fun(): string);
+
+var ExplicitSameName = require('ExplicitProvidesModuleSameName');
+(ExplicitSameName.fun(): string);
+
+var ExplicitDifferentName = require('ExplicitProvidesModuleDifferentName');
+(ExplicitDifferentName.fun(): string);
+
+=====================================output=====================================
+/* @flow */
+
+var Implicit = require("ImplicitProvidesModule");
+(Implicit.fun(): string);
+
+var ExplicitSameName = require("ExplicitProvidesModuleSameName");
+(ExplicitSameName.fun(): string);
+
+var ExplicitDifferentName = require("ExplicitProvidesModuleDifferentName");
+(ExplicitDifferentName.fun(): string);
+
+================================================================================
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+@decorator4
+class Foo {
+  @decorator1
+  method1() {}
+
+  @decorator2
+  @decorator3
+  method2() {}
+}
+
+=====================================output=====================================
+/* @flow */
+
+@decorator4
+class Foo {
+  @decorator1
+  method1() {}
+
+  @decorator2
+  @decorator3
+  method2() {}
+}
+
+================================================================================
+`;

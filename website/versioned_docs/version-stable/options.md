@@ -94,17 +94,19 @@ Use single quotes instead of double quotes in JSX.
 
 ## Trailing Commas
 
+_Default value changed from `none` to `es5` in v2.0.0_
+
 Print trailing commas wherever possible when multi-line. (A single-line array, for example, never gets trailing commas.)
 
 Valid options:
 
-- `"none"` - No trailing commas.
 - `"es5"` - Trailing commas where valid in ES5 (objects, arrays, etc.)
+- `"none"` - No trailing commas.
 - `"all"` - Trailing commas wherever possible (including function arguments). This requires node 8 or a [transform](https://babeljs.io/docs/plugins/syntax-trailing-function-commas/).
 
-| Default  | CLI Override                                           | API Override                                           |
-| -------- | ------------------------------------------------------ | ------------------------------------------------------ |
-| `"none"` | <code>--trailing-comma <none&#124;es5&#124;all></code> | <code>trailingComma: "<none&#124;es5&#124;all>"</code> |
+| Default | CLI Override                                           | API Override                                           |
+| ------- | ------------------------------------------------------ | ------------------------------------------------------ |
+| `"es5"` | <code>--trailing-comma <es5&#124;none&#124;all></code> | <code>trailingComma: "<es5&#124;none&#124;all>"</code> |
 
 ## Bracket Spacing
 
@@ -128,7 +130,7 @@ Valid options:
 - `true` - Example:
 
 <!-- prettier-ignore -->
-```
+```jsx
 <button
   className="prettier-class"
   id="prettier-id"
@@ -140,7 +142,7 @@ Valid options:
 - `false` - Example:
 
 <!-- prettier-ignore -->
-```
+```jsx
 <button
   className="prettier-class"
   id="prettier-id"
@@ -156,18 +158,22 @@ Valid options:
 
 ## Arrow Function Parentheses
 
-_First available in v1.9.0_
+_First available in v1.9.0, default value changed from `avoid` to `always` in v2.0.0_
 
 Include parentheses around a sole arrow function parameter.
 
 Valid options:
 
-- `"avoid"` - Omit parens when possible. Example: `x => x`
 - `"always"` - Always include parens. Example: `(x) => x`
+- `"avoid"` - Omit parens when possible. Example: `x => x`
 
-| Default   | CLI Override                                    | API Override                                    |
-| --------- | ----------------------------------------------- | ----------------------------------------------- |
-| `"avoid"` | <code>--arrow-parens <avoid&#124;always></code> | <code>arrowParens: "<avoid&#124;always>"</code> |
+| Default    | CLI Override                                    | API Override                                    |
+| ---------- | ----------------------------------------------- | ----------------------------------------------- |
+| `"always"` | <code>--arrow-parens <always&#124;avoid></code> | <code>arrowParens: "<always&#124;avoid>"</code> |
+
+At first glance, avoiding parentheses may look like a better choice because of less visual noise.
+However, when Prettier removes parentheses, it becomes harder to add type annotations, extra arguments or default values as well as making other changes.
+Consistent use of parentheses provides a better developer experience when editing real codebases, which justifies the default value for the option.
 
 ## Range
 
@@ -191,12 +197,13 @@ Specify which parser to use.
 
 Prettier automatically infers the parser from the input file path, so you shouldn't have to change this setting.
 
-Both the `babel` and `flow` parsers support the same set of JavaScript features (including Flow type annotations). They might differ in some edge cases, so if you run into one of those you can try `flow` instead of `babel`.
+Both the `babel` and `flow` parsers support the same set of JavaScript features (including Flow type annotations). They might differ in some edge cases, so if you run into one of those you can try `flow` instead of `babel`. Almost the same applies to `typescript` and `babel-ts`. `babel-ts` might support JavaScript features (proposals) not yet supported by TypeScript, but it's less permissive when it comes to invalid code and less battle-tested than the `typescript` parser.
 
 Valid options:
 
 - `"babel"` (via [@babel/parser](https://github.com/babel/babel/tree/master/packages/babel-parser)) _Named `"babylon"` until v1.16.0_
-- `"babel-flow"` (Same as `"babel"` but enables Flow parsing explicitly to avoid ambiguity) _First available in v1.16.0_
+- `"babel-flow"` (same as `"babel"` but enables Flow parsing explicitly to avoid ambiguity) _First available in v1.16.0_
+- `"babel-ts"` (similar to `"typescript"` but uses Babel and its TypeScript plugin) _First available in v2.0.0_
 - `"flow"` (via [flow-parser](https://github.com/facebook/flow/tree/master/src/parser))
 - `"typescript"` (via [@typescript-eslint/typescript-estree](https://github.com/typescript-eslint/typescript-eslint)) _First available in v1.4.0_
 - `"css"` (via [postcss-scss](https://github.com/postcss/postcss-scss) and [postcss-less](https://github.com/shellscape/postcss-less), autodetects which to use) _First available in v1.7.1_
@@ -325,38 +332,36 @@ Valid options:
 
 ## End of Line
 
-_First available in 1.15.0_
+_First available in v1.15.0, default value changed from `auto` to `lf` in v2.0.0_
 
-For historical reasons, there exist two commonly used flavors of line endings in text files. That is `\n` (or `LF` for _Line Feed_) and `\r\n` (or `CRLF` for _Carriage Return + Line Feed_).
+For historical reasons, there exist two common flavors of line endings in text files.
+That is `\n` (or `LF` for _Line Feed_) and `\r\n` (or `CRLF` for _Carriage Return + Line Feed_).
 The former is common on Linux and macOS, while the latter is prevalent on Windows.
 Some details explaining why it is so [can be found on Wikipedia](https://en.wikipedia.org/wiki/Newline).
 
-By default, Prettier preserves a flavor of line endings a given file has already used.
-It also converts mixed line endings within one file to what it finds at the end of the first line.
+When people collaborate on a project from different operating systems, it becomes easy to end up with mixed line endings in a shared git repository.
+It is also possible for Windows users to accidentally change line endings in a previously committed file from `LF` to `CRLF`.
+Doing so produces a large `git diff` and thus makes the line-by-line history for a file (`git blame`) harder to explore.
 
-When people collaborate on a project from different operating systems, it becomes easy to end up with mixed line endings in the central git repository.
-It is also possible for Windows users to accidentally change line endings in an already committed file from `LF` to `CRLF`.
-Doing so produces a large `git diff`, and if it goes unnoticed during code review, all line-by-line history for the file (`git blame`) gets lost.
+If you want to make sure that your entire git repository only contains Linux-style line endings in files covered by Prettier:
 
-If you want to make sure that your git repository only contains Linux-style line endings in files covered by Prettier:
-
-1. Set `endOfLine` option to `lf`
+1. Ensure Prettier’s `endOfLine` option is set to `lf` (this is a default value since v2.0.0)
 1. Configure [a pre-commit hook](precommit.md) that will run Prettier
-1. Configure Prettier to run in your CI pipeline using [`--check` flag](cli.md#check)
-1. Ask Windows users to run `git config core.autocrlf false` before working on your repo so that git did not convert `LF` to `CRLF` on checkout.
-   Alternatively, you can add `* text=auto eol=lf` to the repo's `.gitattributes` file to achieve this.
+1. Configure Prettier to run in your CI pipeline using [`--check` flag](cli.md#--check). If you use Travis CI, set [the `autocrlf` option](https://docs.travis-ci.com/user/customizing-the-build#git-end-of-line-conversion-control) to `input` in `.travis.yml`.
+1. Add `* text=auto eol=lf` to the repo's `.gitattributes` file.
+   You may need to ask Windows users to re-clone your repo after this change to ensure git has not converted `LF` to `CRLF` on checkout.
 
 All modern text editors in all operating systems are able to correctly display line endings when `\n` (`LF`) is used.
-However, old versions of Notepad for Windows will visually squash such lines into one.
+However, old versions of Notepad for Windows will visually squash such lines into one as they can only deal with `\r\n` (`CRLF`).
 
 Valid options:
 
-- `"auto"` - Maintain existing line endings
-  (mixed values within one file are normalised by looking at what's used after the first line)
 - `"lf"` – Line Feed only (`\n`), common on Linux and macOS as well as inside git repos
 - `"crlf"` - Carriage Return + Line Feed characters (`\r\n`), common on Windows
 - `"cr"` - Carriage Return character only (`\r`), used very rarely
+- `"auto"` - Maintain existing line endings
+  (mixed values within one file are normalised by looking at what's used after the first line)
 
-| Default  | CLI Override                                                | API Override                                               |
-| -------- | ----------------------------------------------------------- | ---------------------------------------------------------- |
-| `"auto"` | <code>--end-of-line <auto&#124;lf&#124;crlf&#124;cr></code> | <code>endOfLine: "<auto&#124;lf&#124;crlf&#124;cr>"</code> |
+| Default | CLI Override                                                | API Override                                               |
+| ------- | ----------------------------------------------------------- | ---------------------------------------------------------- |
+| `"lf"`  | <code>--end-of-line <lf&#124;crlf&#124;cr&#124;auto></code> | <code>endOfLine: "<lf&#124;crlf&#124;cr&#124;auto>"</code> |

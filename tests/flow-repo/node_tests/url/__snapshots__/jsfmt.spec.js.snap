@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`url.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const url = require('url');
+url.format(url.parse('https://example.com/foo'));
+
+=====================================output=====================================
+const url = require("url");
+url.format(url.parse("https://example.com/foo"));
+
+================================================================================
+`;

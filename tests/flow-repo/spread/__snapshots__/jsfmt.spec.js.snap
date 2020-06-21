@@ -1,0 +1,313 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function parseTimestamp(timestamp: string): number {
+    return 0;
+}
+
+function parseCounter(line: string): number {
+    return 0;
+}
+
+function parseGroup(lines: Array<string>): {
+    counter: number;
+    begin: number;
+    end: number;
+    text: string;
+} {
+    var counter = parseCounter(lines[0]);
+    var timeframe = parseTimeframe(lines[1]);
+    return {
+        counter,
+        ...timeframe,
+        text: lines[2]
+    };
+}
+
+function parseTimeframe(line: string): { begin: number; end: number } {
+    var timestamps = line.split('-->');
+    return {
+        begin: parseTimestamp(timestamps[0].trim()),
+        end: parseTimestamp(timestamps[1].trim())
+    };
+}
+
+=====================================output=====================================
+function parseTimestamp(timestamp: string): number {
+  return 0;
+}
+
+function parseCounter(line: string): number {
+  return 0;
+}
+
+function parseGroup(
+  lines: Array<string>
+): {
+  counter: number,
+  begin: number,
+  end: number,
+  text: string,
+} {
+  var counter = parseCounter(lines[0]);
+  var timeframe = parseTimeframe(lines[1]);
+  return {
+    counter,
+    ...timeframe,
+    text: lines[2],
+  };
+}
+
+function parseTimeframe(line: string): { begin: number, end: number } {
+  var timestamps = line.split("-->");
+  return {
+    begin: parseTimestamp(timestamps[0].trim()),
+    end: parseTimestamp(timestamps[1].trim()),
+  };
+}
+
+================================================================================
+`;
+
+exports[`test2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ */
+
+function foo(o) {
+    bar({...o});
+}
+function bar(_: {foo:number}) { }
+foo({foo: 42});
+
+=====================================output=====================================
+/**
+ * @flow
+ */
+
+function foo(o) {
+  bar({ ...o });
+}
+function bar(_: { foo: number }) {}
+foo({ foo: 42 });
+
+================================================================================
+`;
+
+exports[`test3.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var p = { y: "" };
+var q = { z: "" };
+var o = {
+  x: 5,
+  ...p,
+  ...q,
+};
+var y: number = o.y;
+var z: number = o.z;
+
+// test conflicting keys (they get unioned)
+var r = { y: 123 };
+var s = {
+  ...p,
+  ...r,
+};
+var t: boolean = s.y; // error, string or number
+
+=====================================output=====================================
+var p = { y: "" };
+var q = { z: "" };
+var o = {
+  x: 5,
+  ...p,
+  ...q,
+};
+var y: number = o.y;
+var z: number = o.z;
+
+// test conflicting keys (they get unioned)
+var r = { y: 123 };
+var s = {
+  ...p,
+  ...r,
+};
+var t: boolean = s.y; // error, string or number
+
+================================================================================
+`;
+
+exports[`test4.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+function test(...nums: Array<number>) {}
+
+test(0, ...[1, 2, 3]);
+
+=====================================output=====================================
+/* @flow */
+function test(...nums: Array<number>) {}
+
+test(0, ...[1, 2, 3]);
+
+================================================================================
+`;
+
+exports[`test5.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+declare function map<Tv, TNext>(
+  obj: {[key: string]: Tv},
+  iterator:((obj: Tv) => TNext),
+): Array<TNext>;
+
+/**
+ * Tests overriding a property via a spread, where the value is a tvar. the
+ * type of the prop from the object that is being overridden (\`x.kind\` in the
+ * case below) should //not// feed back into the tvar (\`value\`), since the
+ * result is a new object.
+ */
+function test(
+  x: {kind: ?string},
+  kinds: {[key: string]: string}
+): Array<{kind: ?string}> {
+  return map(kinds, (value) => {
+    (value: string); // OK
+    return {
+      ...x,
+      kind: value,
+    };
+  });
+}
+
+=====================================output=====================================
+/* @flow */
+
+declare function map<Tv, TNext>(
+  obj: { [key: string]: Tv },
+  iterator: (obj: Tv) => TNext
+): Array<TNext>;
+
+/**
+ * Tests overriding a property via a spread, where the value is a tvar. the
+ * type of the prop from the object that is being overridden (\`x.kind\` in the
+ * case below) should //not// feed back into the tvar (\`value\`), since the
+ * result is a new object.
+ */
+function test(
+  x: { kind: ?string },
+  kinds: { [key: string]: string }
+): Array<{ kind: ?string }> {
+  return map(kinds, (value) => {
+    (value: string); // OK
+    return {
+      ...x,
+      kind: value,
+    };
+  });
+}
+
+================================================================================
+`;
+
+exports[`test6.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var o = {
+  foo: 'bar'
+};
+o = {...o};
+(o: {foo: string});
+
+var p = {
+  foo: 'bar'
+};
+(p: {foo: string; abc: string}); // error, p doesn't have \`abc\` yet
+p = {...p, abc: 'def'};
+(p: {foo: string; abc: string});
+
+var q = {
+  foo: 'bar'
+};
+for (var i = 0; i < 10; i++) {
+  q = {...q};
+}
+(q: {foo: string});
+
+=====================================output=====================================
+var o = {
+  foo: "bar",
+};
+o = { ...o };
+(o: { foo: string });
+
+var p = {
+  foo: "bar",
+};
+(p: { foo: string, abc: string }); // error, p doesn't have \`abc\` yet
+p = { ...p, abc: "def" };
+(p: { foo: string, abc: string });
+
+var q = {
+  foo: "bar",
+};
+for (var i = 0; i < 10; i++) {
+  q = { ...q };
+}
+(q: { foo: string });
+
+================================================================================
+`;
+
+exports[`test7.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  function(x: Object) {
+    ({...x}: Object);
+    ({...x}: void); // error, Object
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  function (x: Object) {
+    ({ ...x }: Object);
+    ({ ...x }: void); // error, Object
+  },
+];
+
+================================================================================
+`;

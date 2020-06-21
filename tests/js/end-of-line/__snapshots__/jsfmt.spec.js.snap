@@ -1,0 +1,235 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example.js - {"endOfLine":"cr"} format 1`] = `
+====================================options=====================================
+endOfLine: "cr"
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function f() {<LF>
+  console.log("testing line endings");<LF>
+}<LF>
+
+=====================================output=====================================
+function f() {<CR>
+  console.log("testing line endings");<CR>
+}<CR>
+
+================================================================================
+`;
+
+exports[`example.js - {"endOfLine":"crlf"} format 1`] = `
+====================================options=====================================
+endOfLine: "crlf"
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function f() {<LF>
+  console.log("testing line endings");<LF>
+}<LF>
+
+=====================================output=====================================
+function f() {<CRLF>
+  console.log("testing line endings");<CRLF>
+}<CRLF>
+
+================================================================================
+`;
+
+exports[`example.js - {"endOfLine":"lf"} format 1`] = `
+====================================options=====================================
+endOfLine: "lf"
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function f() {<LF>
+  console.log("testing line endings");<LF>
+}<LF>
+
+=====================================output=====================================
+function f() {<LF>
+  console.log("testing line endings");<LF>
+}<LF>
+
+================================================================================
+`;
+
+exports[`multiline.js - {"endOfLine":"cr"} format 1`] = `
+====================================options=====================================
+endOfLine: "cr"
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type IAmIncredibleLongParameterType = {};<LF>
+const IAmAnotherFunctionName = (_0: IAmIncredibleLongParameterType) => {};<LF>
+export const IAmIncredibleLongFunctionName = IAmAnotherFunctionName(<LF>
+  (_0: IAmIncredibleLongParameterType) => {<LF>
+    setTimeout(() => {<LF>
+      /*<LF>
+          Multiline comment<LF>
+          Multiline comment<LF>
+          Multiline comment<LF>
+      */<LF>
+      console.log(<LF>
+        'Multiline string\\<LF>
+         Multiline string\\<LF>
+         Multiline string'<LF>
+      );<LF>
+      console.log(<LF>
+        \`Multiline \\n string\\<LF>
+         Multiline string\\<LF>
+         Multiline string\`<LF>
+      );<LF>
+    });<LF>
+  }<LF>
+);<LF>
+
+=====================================output=====================================
+type IAmIncredibleLongParameterType = {};<CR>
+const IAmAnotherFunctionName = (_0: IAmIncredibleLongParameterType) => {};<CR>
+export const IAmIncredibleLongFunctionName = IAmAnotherFunctionName(<CR>
+  (_0: IAmIncredibleLongParameterType) => {<CR>
+    setTimeout(() => {<CR>
+      /*<CR>
+          Multiline comment<CR>
+          Multiline comment<CR>
+          Multiline comment<CR>
+      */<CR>
+      console.log(<CR>
+        "Multiline string\\<CR>
+         Multiline string\\<CR>
+         Multiline string"<CR>
+      );<CR>
+      console.log(<CR>
+        \`Multiline \\n string\\<CR>
+         Multiline string\\<CR>
+         Multiline string\`<CR>
+      );<CR>
+    });<CR>
+  }<CR>
+);<CR>
+
+================================================================================
+`;
+
+exports[`multiline.js - {"endOfLine":"crlf"} format 1`] = `
+====================================options=====================================
+endOfLine: "crlf"
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type IAmIncredibleLongParameterType = {};<LF>
+const IAmAnotherFunctionName = (_0: IAmIncredibleLongParameterType) => {};<LF>
+export const IAmIncredibleLongFunctionName = IAmAnotherFunctionName(<LF>
+  (_0: IAmIncredibleLongParameterType) => {<LF>
+    setTimeout(() => {<LF>
+      /*<LF>
+          Multiline comment<LF>
+          Multiline comment<LF>
+          Multiline comment<LF>
+      */<LF>
+      console.log(<LF>
+        'Multiline string\\<LF>
+         Multiline string\\<LF>
+         Multiline string'<LF>
+      );<LF>
+      console.log(<LF>
+        \`Multiline \\n string\\<LF>
+         Multiline string\\<LF>
+         Multiline string\`<LF>
+      );<LF>
+    });<LF>
+  }<LF>
+);<LF>
+
+=====================================output=====================================
+type IAmIncredibleLongParameterType = {};<CRLF>
+const IAmAnotherFunctionName = (_0: IAmIncredibleLongParameterType) => {};<CRLF>
+export const IAmIncredibleLongFunctionName = IAmAnotherFunctionName(<CRLF>
+  (_0: IAmIncredibleLongParameterType) => {<CRLF>
+    setTimeout(() => {<CRLF>
+      /*<CRLF>
+          Multiline comment<CRLF>
+          Multiline comment<CRLF>
+          Multiline comment<CRLF>
+      */<CRLF>
+      console.log(<CRLF>
+        "Multiline string\\<CRLF>
+         Multiline string\\<CRLF>
+         Multiline string"<CRLF>
+      );<CRLF>
+      console.log(<CRLF>
+        \`Multiline \\n string\\<CRLF>
+         Multiline string\\<CRLF>
+         Multiline string\`<CRLF>
+      );<CRLF>
+    });<CRLF>
+  }<CRLF>
+);<CRLF>
+
+================================================================================
+`;
+
+exports[`multiline.js - {"endOfLine":"lf"} format 1`] = `
+====================================options=====================================
+endOfLine: "lf"
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type IAmIncredibleLongParameterType = {};<LF>
+const IAmAnotherFunctionName = (_0: IAmIncredibleLongParameterType) => {};<LF>
+export const IAmIncredibleLongFunctionName = IAmAnotherFunctionName(<LF>
+  (_0: IAmIncredibleLongParameterType) => {<LF>
+    setTimeout(() => {<LF>
+      /*<LF>
+          Multiline comment<LF>
+          Multiline comment<LF>
+          Multiline comment<LF>
+      */<LF>
+      console.log(<LF>
+        'Multiline string\\<LF>
+         Multiline string\\<LF>
+         Multiline string'<LF>
+      );<LF>
+      console.log(<LF>
+        \`Multiline \\n string\\<LF>
+         Multiline string\\<LF>
+         Multiline string\`<LF>
+      );<LF>
+    });<LF>
+  }<LF>
+);<LF>
+
+=====================================output=====================================
+type IAmIncredibleLongParameterType = {};<LF>
+const IAmAnotherFunctionName = (_0: IAmIncredibleLongParameterType) => {};<LF>
+export const IAmIncredibleLongFunctionName = IAmAnotherFunctionName(<LF>
+  (_0: IAmIncredibleLongParameterType) => {<LF>
+    setTimeout(() => {<LF>
+      /*<LF>
+          Multiline comment<LF>
+          Multiline comment<LF>
+          Multiline comment<LF>
+      */<LF>
+      console.log(<LF>
+        "Multiline string\\<LF>
+         Multiline string\\<LF>
+         Multiline string"<LF>
+      );<LF>
+      console.log(<LF>
+        \`Multiline \\n string\\<LF>
+         Multiline string\\<LF>
+         Multiline string\`<LF>
+      );<LF>
+    });<LF>
+  }<LF>
+);<LF>
+
+================================================================================
+`;

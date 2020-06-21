@@ -2,7 +2,7 @@
 
 const NODES_KEYS = {
   attrs: true,
-  children: true
+  children: true,
 };
 
 class Node {
@@ -25,7 +25,7 @@ class Node {
           attrMap: this[key].reduce((reduced, attr) => {
             reduced[attr.fullName] = attr.value;
             return reduced;
-          }, Object.create(null))
+          }, Object.create(null)),
         });
       }
     }
@@ -37,7 +37,7 @@ class Node {
     for (const NODES_KEY in NODES_KEYS) {
       const nodes = this[NODES_KEY];
       if (nodes) {
-        const mappedNodes = mapNodesIfChanged(nodes, node => node.map(fn));
+        const mappedNodes = mapNodesIfChanged(nodes, (node) => node.map(fn));
         if (newNode !== nodes) {
           if (!newNode) {
             newNode = new Node();
@@ -59,7 +59,7 @@ class Node {
         siblings,
         prev,
         next,
-        parent
+        parent,
       });
     }
 
@@ -99,7 +99,7 @@ function mapNodesIfChanged(nodes, fn) {
 }
 
 function cloneAndUpdateNodes(nodes, parent) {
-  const siblings = nodes.map(node =>
+  const siblings = nodes.map((node) =>
     node instanceof Node ? node.clone() : new Node(node)
   );
 
@@ -113,7 +113,7 @@ function cloneAndUpdateNodes(nodes, parent) {
       siblings,
       prev,
       next,
-      parent
+      parent,
     });
     prev = current;
     current = next;
@@ -132,5 +132,5 @@ function setNonEnumerableProperties(obj, props) {
 }
 
 module.exports = {
-  Node
+  Node,
 };

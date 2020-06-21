@@ -1,9 +1,14 @@
-name: Dev_Test
+name: Dev
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - master
+      - patch-release
+  pull_request:
 
 jobs:
-  dev_test:
+  test:
     strategy:
       fail-fast: false
       matrix:
@@ -12,25 +17,69 @@ jobs:
           - "macos-latest"
           - "windows-latest"
         node:
-          - "13"
+          - "14"
           - "12"
           - "10"
-
-    name: Dev test on node ${{ matrix.node }} and ${{ matrix.os }}
+        include:
+          # only enable coverage on the fastest job
+          - os: "ubuntu-latest"
+            node: "14"
+            ENABLE_CODE_COVERAGE: true
+        exclude:
+          - os: "macos-latest"
+            node: "12"
+          - os: "windows-latest"
+            node: "12"
+    env:
+      ENABLE_CODE_COVERAGE: ${{ matrix.ENABLE_CODE_COVERAGE }}
+    name: Node.js ${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.1
         with:
           fetch-depth: 1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.0.0
         with:
-          node-version: ${{ matrix.NODE }}
+          node-version: ${{ matrix.node }}
 
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
-      - name: Run Test
-        run: yarn test
+      # TODO: remove this task when/if this fixed
+      # https://github.com/facebook/jest/issues/9457
+      - name: Install jest@24
+        if: matrix.ENABLE_CODE_COVERAGE
+        run: yarn upgrade jest@24
+
+      - name: Run Tests (macOS)
+        if: matrix.os == 'macos-latest'
+        run: yarn test --maxWorkers=4
+
+      - name: Run Tests (Linux and Windows)
+        if: matrix.os != 'macos-latest'
+        run: yarn test --maxWorkers=2
+
+      - name: Upload Coverage
+        uses: codecov/codecov-action@v1.0.7
+        if: matrix.ENABLE_CODE_COVERAGE
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/lcov.info
+          fail_ci_if_error: true
+
+      # #8073 test
+      - name: Run Tests (PRETTIER_FALLBACK_RESOLVE)
+        run: yarn test "tests_integration/__tests__/(config|plugin)"
+        env:
+          PRETTIER_FALLBACK_RESOLVE: true
+
+      - name: Upload Coverage (PRETTIER_FALLBACK_RESOLVE)
+        uses: codecov/codecov-action@v1.0.7
+        if: matrix.ENABLE_CODE_COVERAGE
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage/lcov.info
+          fail_ci_if_error: true

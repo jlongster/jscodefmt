@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`root.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @providesModule Root
+ * @flow
+ */
+
+// trivial edit (adding this comment)
+module.exports = 'Root';
+
+=====================================output=====================================
+/**
+ * @providesModule Root
+ * @flow
+ */
+
+// trivial edit (adding this comment)
+module.exports = "Root";
+
+================================================================================
+`;

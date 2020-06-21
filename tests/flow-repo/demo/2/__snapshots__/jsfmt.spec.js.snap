@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @providesModule Demo */
+
+class A {
+  x: number; // instance field declaration
+  constructor(x) { this.x = x; }
+
+  getX() { return this.x; }
+
+  onLoad(callback) {
+    return callback(this.getX());
+  }
+}
+
+function callback(x: string) { return x.length; }
+
+var a = new A(42);
+a.onLoad(callback);
+
+module.exports = A;
+
+=====================================output=====================================
+/* @providesModule Demo */
+
+class A {
+  x: number; // instance field declaration
+  constructor(x) {
+    this.x = x;
+  }
+
+  getX() {
+    return this.x;
+  }
+
+  onLoad(callback) {
+    return callback(this.getX());
+  }
+}
+
+function callback(x: string) {
+  return x.length;
+}
+
+var a = new A(42);
+a.onLoad(callback);
+
+module.exports = A;
+
+================================================================================
+`;
+
+exports[`B.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var A = require('Demo');
+
+var z = new A("42").getX();
+
+=====================================output=====================================
+var A = require("Demo");
+
+var z = new A("42").getX();
+
+================================================================================
+`;

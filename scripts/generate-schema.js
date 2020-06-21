@@ -23,8 +23,8 @@ function generateSchema(options) {
       optionsDefinition: {
         type: "object",
         properties: fromPairs(
-          options.map(option => [option.name, optionToSchema(option)])
-        )
+          options.map((option) => [option.name, optionToSchema(option)])
+        ),
       },
       overridesDefinition: {
         type: "object",
@@ -41,40 +41,40 @@ function generateSchema(options) {
                   description: "Include these files in this override.",
                   oneOf: [
                     { type: "string" },
-                    { type: "array", items: { type: "string" } }
-                  ]
+                    { type: "array", items: { type: "string" } },
+                  ],
                 },
                 excludeFiles: {
                   description: "Exclude these files from this override.",
                   oneOf: [
                     { type: "string" },
-                    { type: "array", items: { type: "string" } }
-                  ]
+                    { type: "array", items: { type: "string" } },
+                  ],
                 },
                 options: {
                   type: "object",
                   description: "The options to apply for this override.",
-                  $ref: "#/definitions/optionsDefinition"
-                }
+                  $ref: "#/definitions/optionsDefinition",
+                },
               },
-              additionalProperties: false
-            }
-          }
-        }
-      }
+              additionalProperties: false,
+            },
+          },
+        },
+      },
     },
     oneOf: [
       {
         type: "object",
         allOf: [
           { $ref: "#/definitions/optionsDefinition" },
-          { $ref: "#/definitions/overridesDefinition" }
-        ]
+          { $ref: "#/definitions/overridesDefinition" },
+        ],
       },
       {
-        type: "string"
-      }
-    ]
+        type: "string",
+      },
+    ],
   };
 }
 
@@ -86,7 +86,7 @@ function optionToSchema(option) {
       option.type === "choice"
         ? { oneOf: option.choices.map(choiceToSchema) }
         : { type: optionTypeToSchemaType(option.type) }
-    )
+    ),
   };
 }
 

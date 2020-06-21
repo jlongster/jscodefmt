@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`instanceof.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+// x instancof t
+class X1 { foo: number; };
+class X2 { foo: string; };
+
+function x(b) { return b ? new X1 : new X2; }
+
+function consumer1(b) {
+    var g = x(b);
+    if (g instanceof X2) g.foo = '1337';
+    else g.foo = 1337;
+}
+
+function consumer2(b) {
+    var g = x(b);
+    if (g instanceof X1) g.foo = '1337';  // oops
+}
+
+// x.y instanceof t
+class Y1 { bar: X1; };
+class Y2 { bar: X2; };
+
+function y(b) { return b ? new Y1 : new Y2; }
+
+function consumer3(b) {
+    var g = y(b);
+    if (g.bar instanceof X2) g.bar.foo = '1337';
+    else g.bar.foo = 1337;
+}
+
+function consumer4(b) {
+    var g = y(b);
+    if (g.bar instanceof X1) g.bar.foo = '1337';  // oops
+}
+
+// x.y.z instance of t
+class Z1 { baz: Y1; };
+class Z2 { baz: Y2; };
+
+function z(b) { return b ? new Z1 : new Z2; }
+
+function consumer5(b) {
+    var g = z(b);
+    if (g.baz.bar instanceof X2) g.baz.bar.foo = '1337';
+    else g.baz.bar.foo = 1337;
+}
+
+function consumer6(b) {
+    var g = z(b);
+    if (g.baz.bar instanceof X1) g.baz.bar.foo = '1337';  // oops
+}
+
+// this instanceof t
+class C {
+  m() {
+    if (this instanceof D)
+      alert(this.s);
+    else
+      alert("nope");
+  }
+}
+
+class D extends C {
+  s: string;
+  constructor() {
+    super();
+    this.s = "yup";
+  }
+}
+
+
+function foo0(x: Array<number> | number) {
+  if (x instanceof Array) {
+    x[0] = 123;
+  } else {
+    x++;
+  }
+}
+
+function foo1(x: Array<number> | number) {
+  if (x instanceof Array) {
+    x++; // error
+  } else {
+    x[0] = 123; // error
+  }
+}
+
+=====================================output=====================================
+/* @flow */
+
+// x instancof t
+class X1 {
+  foo: number;
+}
+class X2 {
+  foo: string;
+}
+
+function x(b) {
+  return b ? new X1() : new X2();
+}
+
+function consumer1(b) {
+  var g = x(b);
+  if (g instanceof X2) g.foo = "1337";
+  else g.foo = 1337;
+}
+
+function consumer2(b) {
+  var g = x(b);
+  if (g instanceof X1) g.foo = "1337"; // oops
+}
+
+// x.y instanceof t
+class Y1 {
+  bar: X1;
+}
+class Y2 {
+  bar: X2;
+}
+
+function y(b) {
+  return b ? new Y1() : new Y2();
+}
+
+function consumer3(b) {
+  var g = y(b);
+  if (g.bar instanceof X2) g.bar.foo = "1337";
+  else g.bar.foo = 1337;
+}
+
+function consumer4(b) {
+  var g = y(b);
+  if (g.bar instanceof X1) g.bar.foo = "1337"; // oops
+}
+
+// x.y.z instance of t
+class Z1 {
+  baz: Y1;
+}
+class Z2 {
+  baz: Y2;
+}
+
+function z(b) {
+  return b ? new Z1() : new Z2();
+}
+
+function consumer5(b) {
+  var g = z(b);
+  if (g.baz.bar instanceof X2) g.baz.bar.foo = "1337";
+  else g.baz.bar.foo = 1337;
+}
+
+function consumer6(b) {
+  var g = z(b);
+  if (g.baz.bar instanceof X1) g.baz.bar.foo = "1337"; // oops
+}
+
+// this instanceof t
+class C {
+  m() {
+    if (this instanceof D) alert(this.s);
+    else alert("nope");
+  }
+}
+
+class D extends C {
+  s: string;
+  constructor() {
+    super();
+    this.s = "yup";
+  }
+}
+
+function foo0(x: Array<number> | number) {
+  if (x instanceof Array) {
+    x[0] = 123;
+  } else {
+    x++;
+  }
+}
+
+function foo1(x: Array<number> | number) {
+  if (x instanceof Array) {
+    x++; // error
+  } else {
+    x[0] = 123; // error
+  }
+}
+
+================================================================================
+`;

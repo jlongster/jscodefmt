@@ -1,0 +1,165 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fail-0.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Error: 'declare', 'checks' but missing predicate
+
+declare function f2(x: mixed): boolean %checks;
+
+=====================================output=====================================
+// @flow
+
+// Error: 'declare', 'checks' but missing predicate
+
+declare function f2(x: mixed): boolean %checks;
+
+================================================================================
+`;
+
+exports[`fail-1.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Error: no return statement
+
+function f6(x: mixed): %checks (x !== null) {  }
+
+=====================================output=====================================
+// @flow
+
+// Error: no return statement
+
+function f6(x: mixed): %checks(x !== null) {}
+
+================================================================================
+`;
+
+exports[`fail-2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+var a2 = (x: mixed): %checks (x !== null) => {        // Error: body form
+  var x = 1; return x;
+}
+
+=====================================output=====================================
+// @flow
+
+var a2 = (x: mixed): %checks(x !== null) => {
+  // Error: body form
+  var x = 1;
+  return x;
+};
+
+================================================================================
+`;
+
+exports[`fail-3.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Cannot declare predicate with a function body is present.
+
+function f5(x: mixed): %checks (x !== null) { return x !== null }
+
+var a2 = (x: mixed): %checks (x !== null) => x !== null;
+
+=====================================output=====================================
+// @flow
+
+// Cannot declare predicate with a function body is present.
+
+function f5(x: mixed): %checks(x !== null) {
+  return x !== null;
+}
+
+var a2 = (x: mixed): %checks(x !== null) => x !== null;
+
+================================================================================
+`;
+
+exports[`pass.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare function f1(x: mixed): boolean;
+
+declare function f3(x: mixed): boolean %checks (x !== null);
+
+declare function f4(x: mixed): boolean %checks (x !== null);
+
+function f7(x: mixed):  %checks { return x !== null }
+
+var a0 = (x: mixed) => x !== null;
+
+var a1 = (x: mixed): %checks => x !== null;
+
+(x): %checks => x !== null;
+
+const insert_a_really_big_predicated_arrow_function_name_here = (x)
+  : %checks => x !== null;
+
+declare var x;
+(x)
+checks => 123;
+
+type checks = any;
+
+declare function f(x: mixed): checks
+(typeof x === null);
+
+=====================================output=====================================
+// @flow
+
+declare function f1(x: mixed): boolean;
+
+declare function f3(x: mixed): boolean %checks(x !== null);
+
+declare function f4(x: mixed): boolean %checks(x !== null);
+
+function f7(x: mixed): %checks {
+  return x !== null;
+}
+
+var a0 = (x: mixed) => x !== null;
+
+var a1 = (x: mixed): %checks => x !== null;
+
+(x): %checks => x !== null;
+
+const insert_a_really_big_predicated_arrow_function_name_here = (x): %checks =>
+  x !== null;
+
+declare var x;
+x;
+(checks) => 123;
+
+type checks = any;
+
+declare function f(x: mixed): checks;
+typeof x === null;
+
+================================================================================
+`;

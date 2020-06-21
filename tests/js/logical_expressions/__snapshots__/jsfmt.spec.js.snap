@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`issue-7024.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const radioSelectedAttr =
+  (isAnyValueSelected &&
+    node.getAttribute(radioAttr.toLowerCase()) === radioValue) ||
+  ((!isAnyValueSelected && values[a].default === true) || a === 0);
+
+=====================================output=====================================
+const radioSelectedAttr =
+  (isAnyValueSelected &&
+    node.getAttribute(radioAttr.toLowerCase()) === radioValue) ||
+  (!isAnyValueSelected && values[a].default === true) ||
+  a === 0;
+
+================================================================================
+`;
+
+exports[`logical_expression_operators.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// Same operators do not require parens
+(foo && bar) && baz;
+foo && (bar && baz);
+foo && ((bar && baz) && qux);
+foo && (bar && (baz && qux));
+foo && (bar && ((baz && qux) && xyz));
+foo && (bar && (baz && (qux && xyz)));
+
+(foo || bar) || baz;
+foo || (bar || baz);
+foo || ((bar || baz) || qux);
+foo || (bar || (baz || qux));
+foo || (bar || ((baz || qux) || xyz));
+foo || (bar || (baz || (qux || xyz)));
+
+(foo ?? bar) ?? baz;
+foo ?? (bar ?? baz);
+foo ?? ((bar ?? baz) ?? qux);
+foo ?? (bar ?? (baz ?? qux));
+foo ?? (bar ?? ((baz ?? qux) ?? xyz));
+foo ?? (bar ?? (baz ?? (qux ?? xyz)));
+
+// Explicitly parenthesized && and || requires parens
+(foo && bar) || baz;
+(foo || bar) && baz;
+
+foo && (bar || baz);
+foo || (bar && baz);
+
+// Implicitly parenthesized && and || requires parens
+foo && bar || baz;
+foo || bar && baz;
+
+=====================================output=====================================
+// Same operators do not require parens
+foo && bar && baz;
+foo && bar && baz;
+foo && bar && baz && qux;
+foo && bar && baz && qux;
+foo && bar && baz && qux && xyz;
+foo && bar && baz && qux && xyz;
+
+foo || bar || baz;
+foo || bar || baz;
+foo || bar || baz || qux;
+foo || bar || baz || qux;
+foo || bar || baz || qux || xyz;
+foo || bar || baz || qux || xyz;
+
+foo ?? bar ?? baz;
+foo ?? bar ?? baz;
+foo ?? bar ?? baz ?? qux;
+foo ?? bar ?? baz ?? qux;
+foo ?? bar ?? baz ?? qux ?? xyz;
+foo ?? bar ?? baz ?? qux ?? xyz;
+
+// Explicitly parenthesized && and || requires parens
+(foo && bar) || baz;
+(foo || bar) && baz;
+
+foo && (bar || baz);
+foo || (bar && baz);
+
+// Implicitly parenthesized && and || requires parens
+(foo && bar) || baz;
+foo || (bar && baz);
+
+================================================================================
+`;

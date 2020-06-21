@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shorthand-with-sass-variables.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+.class{border:1px  solid       $color;
+}
+
+=====================================output=====================================
+.class {
+  border: 1px solid $color;
+}
+
+================================================================================
+`;

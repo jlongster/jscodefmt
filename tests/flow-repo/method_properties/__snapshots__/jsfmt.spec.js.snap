@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`exports_optional_prop.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare class Foo {
+  bar?: () => string
+}
+
+export {Foo};
+
+=====================================output=====================================
+// @flow
+
+declare class Foo {
+  bar?: () => string;
+}
+
+export { Foo };
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class C {
+  C() { }
+  foo() { }
+  static bar() { }
+  qux() { this.constructor.x; }
+}
+C.x;
+(new C).foo.x;
+C.bar.x;
+
+import {Foo} from './exports_optional_prop';
+const foo = new Foo();
+(foo.bar(): string); // error, could be undefined
+
+function f(x) {
+  (x.bar(): string); // error. caused by \`f(foo)\`; annotate x to track it down.
+}
+f(foo);
+
+=====================================output=====================================
+class C {
+  C() {}
+  foo() {}
+  static bar() {}
+  qux() {
+    this.constructor.x;
+  }
+}
+C.x;
+new C().foo.x;
+C.bar.x;
+
+import { Foo } from "./exports_optional_prop";
+const foo = new Foo();
+(foo.bar(): string); // error, could be undefined
+
+function f(x) {
+  (x.bar(): string); // error. caused by \`f(foo)\`; annotate x to track it down.
+}
+f(foo);
+
+================================================================================
+`;

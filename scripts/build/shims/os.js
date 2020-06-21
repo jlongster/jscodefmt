@@ -1,3 +1,3 @@
 export default {
-  EOL: "\n"
+  EOL: "\n",
 };

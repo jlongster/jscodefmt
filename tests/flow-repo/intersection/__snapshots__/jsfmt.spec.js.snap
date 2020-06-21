@@ -1,0 +1,270 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`intersection.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo(x: $All<Error,{type:number}>): number {
+    return x.type;
+}
+
+function bar(x: Error & {type:number}): number {
+    return x.type;
+}
+
+=====================================output=====================================
+function foo(x: $All<Error, { type: number }>): number {
+  return x.type;
+}
+
+function bar(x: Error & { type: number }): number {
+  return x.type;
+}
+
+================================================================================
+`;
+
+exports[`objassign.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Test intersection of objects flowing to spread assignment.
+ *
+ * Definitions in lib/lib.js
+ *
+ * @noflow
+ */
+
+declare var x: ObjAssignT;
+
+let y: ObjAssignT = { ...x }; // should be fine
+
+=====================================output=====================================
+/**
+ * Test intersection of objects flowing to spread assignment.
+ *
+ * Definitions in lib/lib.js
+ *
+ * @noflow
+ */
+
+declare var x: ObjAssignT;
+
+let y: ObjAssignT = { ...x }; // should be fine
+
+================================================================================
+`;
+
+exports[`pred.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Test interaction of object intersections and predicates.
+ * Definitions in lib/lib.js
+ *
+ * @flow
+ */
+
+type DuplexStreamOptions = ReadableStreamOptions & WritableStreamOptions & {
+  allowHalfOpen? : boolean,
+  readableObjectMode? : boolean,
+  writableObjectMode? : boolean
+};
+
+function hasObjectMode_bad(options: DuplexStreamOptions): boolean {
+  return options.objectMode
+    || options.readableObjectMode
+    || options.writableObjectMode; // error, undefined ~> boolean
+}
+
+function hasObjectMode_ok(options: DuplexStreamOptions): boolean {
+  return !!(options.objectMode
+    || options.readableObjectMode
+    || options.writableObjectMode);
+}
+
+=====================================output=====================================
+/**
+ * Test interaction of object intersections and predicates.
+ * Definitions in lib/lib.js
+ *
+ * @flow
+ */
+
+type DuplexStreamOptions = ReadableStreamOptions &
+  WritableStreamOptions & {
+    allowHalfOpen?: boolean,
+    readableObjectMode?: boolean,
+    writableObjectMode?: boolean,
+  };
+
+function hasObjectMode_bad(options: DuplexStreamOptions): boolean {
+  return (
+    options.objectMode ||
+    options.readableObjectMode ||
+    options.writableObjectMode
+  ); // error, undefined ~> boolean
+}
+
+function hasObjectMode_ok(options: DuplexStreamOptions): boolean {
+  return !!(
+    options.objectMode ||
+    options.readableObjectMode ||
+    options.writableObjectMode
+  );
+}
+
+================================================================================
+`;
+
+exports[`test_fun.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Tests for intersections of function types.
+ *
+ * Note: Flow abuses intersection types to model
+ * function overloading, which precludes using a
+ * correct intersection of return types in the result.
+ *
+ * Here we test the special case where return types
+ * are equal. Tests of the overloading behavior can
+ * be found in tests/overload
+ *
+ * Definitions lin lib/lib.js
+ *
+ * @noflow
+ */
+
+// intersection of function types satisfies union of param types
+
+type F = (_: ObjA) => void;
+type G = (_: ObjB) => void;
+type FG = (_: ObjA | ObjB) => void;
+
+declare var fun1 : F & G;
+
+(fun1 : FG);
+
+var fun2 : FG = fun1;
+
+// simpler variation
+declare var f : ((_: number) => void) & ((_: string) => void);
+var g: (_: number | string) => void = f;
+
+=====================================output=====================================
+/**
+ * Tests for intersections of function types.
+ *
+ * Note: Flow abuses intersection types to model
+ * function overloading, which precludes using a
+ * correct intersection of return types in the result.
+ *
+ * Here we test the special case where return types
+ * are equal. Tests of the overloading behavior can
+ * be found in tests/overload
+ *
+ * Definitions lin lib/lib.js
+ *
+ * @noflow
+ */
+
+// intersection of function types satisfies union of param types
+
+type F = (_: ObjA) => void;
+type G = (_: ObjB) => void;
+type FG = (_: ObjA | ObjB) => void;
+
+declare var fun1: F & G;
+
+(fun1: FG);
+
+var fun2: FG = fun1;
+
+// simpler variation
+declare var f: ((_: number) => void) & ((_: string) => void);
+var g: (_: number | string) => void = f;
+
+================================================================================
+`;
+
+exports[`test_obj.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Tests for intersections of object types
+ *
+ * @noflow
+ */
+
+// TODO we should give explicit errors for incompatibilities
+// which make an intersection uninhabitable:
+// - shared mutable properties with different types
+// - different dictionary types
+//
+// Currently we give no such errors. Instead, we rely on
+// the impossibility of providing a value for such a type
+// to produce errors on value inflows. This is clearly
+// suboptimal, since eg declared vars require no explicit
+// provision of values. This leaves the impossible types
+// free to flow downstream and satisfy impossible constraints.
+
+// intersection of object types satisfies union of properties
+declare var a: A;
+var b: B = a;
+
+// intersection of dictionary types:
+declare var c: C;
+var d: D = c; // ok
+
+// dict type mismatch
+type E = { [key: string]: string };
+var e: E = c; // error
+
+=====================================output=====================================
+/**
+ * Tests for intersections of object types
+ *
+ * @noflow
+ */
+
+// TODO we should give explicit errors for incompatibilities
+// which make an intersection uninhabitable:
+// - shared mutable properties with different types
+// - different dictionary types
+//
+// Currently we give no such errors. Instead, we rely on
+// the impossibility of providing a value for such a type
+// to produce errors on value inflows. This is clearly
+// suboptimal, since eg declared vars require no explicit
+// provision of values. This leaves the impossible types
+// free to flow downstream and satisfy impossible constraints.
+
+// intersection of object types satisfies union of properties
+declare var a: A;
+var b: B = a;
+
+// intersection of dictionary types:
+declare var c: C;
+var d: D = c; // ok
+
+// dict type mismatch
+type E = { [key: string]: string };
+var e: E = c; // error
+
+================================================================================
+`;

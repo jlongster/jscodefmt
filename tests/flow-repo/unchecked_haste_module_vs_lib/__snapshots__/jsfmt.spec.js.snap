@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`buffer.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @providesModule buffer
+ *
+ * Not in flow.
+ * If this module is successfully imported/required, its
+ * type will be Any, so arbitraty uses won't cause errors.
+ * However, if a library module declaration is bound to
+ * the same name as an unchecked module, it will be used
+ * to satisfy imports/requires instead.
+ */
+
+export var INSPECT_MAX_BYTES = 0;
+
+=====================================output=====================================
+/**
+ * @providesModule buffer
+ *
+ * Not in flow.
+ * If this module is successfully imported/required, its
+ * type will be Any, so arbitraty uses won't cause errors.
+ * However, if a library module declaration is bound to
+ * the same name as an unchecked module, it will be used
+ * to satisfy imports/requires instead.
+ */
+
+export var INSPECT_MAX_BYTES = 0;
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Copyright 2004-present Facebook. All Rights Reserved.
+ * @flow
+ */
+
+/* 'buffer' is the name of both an unchecked module in this directory,
+ * and a module declared in library file node.js.
+ * If the require below resolves to the unchecked module, the mistyping
+ * that follows will cause no errors, but if we resolve to the library
+ * instead, we'll get the desired error.
+ */
+var buffer = require("buffer");
+var x: string = buffer.INSPECT_MAX_BYTES; // error, number ~/> string
+
+=====================================output=====================================
+/**
+ * Copyright 2004-present Facebook. All Rights Reserved.
+ * @flow
+ */
+
+/* 'buffer' is the name of both an unchecked module in this directory,
+ * and a module declared in library file node.js.
+ * If the require below resolves to the unchecked module, the mistyping
+ * that follows will cause no errors, but if we resolve to the library
+ * instead, we'll get the desired error.
+ */
+var buffer = require("buffer");
+var x: string = buffer.INSPECT_MAX_BYTES; // error, number ~/> string
+
+================================================================================
+`;

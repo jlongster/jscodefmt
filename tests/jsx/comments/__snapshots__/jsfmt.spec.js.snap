@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`eslint-disable.js - {"jsxBracketSameLine":true} format 1`] = `
+====================================options=====================================
+jsxBracketSameLine: true
+parsers: ["flow", "babel", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const render = items => (
+  <div>{ /* eslint-disable */
+    	 items.map(item => null)
+      /* eslint-enable */    }</div>
+)
+
+=====================================output=====================================
+const render = (items) => (
+  <div>
+    {
+      /* eslint-disable */
+      items.map((item) => null)
+      /* eslint-enable */
+    }
+  </div>
+);
+
+================================================================================
+`;
+
+exports[`in-tags.js - {"jsxBracketSameLine":true} format 1`] = `
+====================================options=====================================
+jsxBracketSameLine: true
+parsers: ["flow", "babel", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div
+  // comment
+>
+  {foo}
+</div>;
+
+<div
+  // comment
+  attr="foo"
+>
+  {foo}
+</div>;
+
+<div
+  attr="foo" // comment
+>
+  {foo}
+</div>;
+
+<div
+  attr="foo"
+  // comment
+>
+  {foo}
+</div>;
+
+<br // comment
+/>;
+
+=====================================output=====================================
+<div
+// comment
+>
+  {foo}
+</div>;
+
+<div
+  // comment
+  attr="foo">
+  {foo}
+</div>;
+
+<div
+  attr="foo" // comment
+>
+  {foo}
+</div>;
+
+<div
+  attr="foo"
+  // comment
+>
+  {foo}
+</div>;
+
+<br // comment
+/>;
+
+================================================================================
+`;

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`nested_test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var docblock = require('qux/docblock');
+var min = require('d3/min.js');
+var corge = require('qux/corge');
+
+(docblock.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+(min.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+(corge.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+
+=====================================output=====================================
+/* @flow */
+
+var docblock = require("qux/docblock");
+var min = require("d3/min.js");
+var corge = require("qux/corge");
+
+(docblock.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+(min.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+(corge.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+
+================================================================================
+`;

@@ -11,8 +11,8 @@ describe("support relative paths", () => {
     "level1-glob/level2-glob/level3-glob/shouldNotBeFormat.js",
     "./level1-glob/level2-glob/level3-glob/shouldNotBeIgnored.scss",
     "level1-glob/shouldNotBeIgnored.js",
-    "-l"
+    "-l",
   ]).test({
-    status: 1
+    status: 1,
   });
 });

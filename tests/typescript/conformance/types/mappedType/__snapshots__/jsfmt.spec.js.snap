@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`mappedType.ts 1`] = `
+exports[`mappedType.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

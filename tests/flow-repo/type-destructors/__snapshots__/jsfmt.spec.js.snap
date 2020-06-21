@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`non_maybe_type.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function foo(x: ?string): $NonMaybeType<?string> {
+  if (x != null) { return x; }
+  else return 0; // this should be an error
+}
+
+//(foo(): string); // should not be necessary to expose the error above
+
+(0: $NonMaybeType<null>); // error
+(0: $NonMaybeType<?number>); // ok
+(0: $NonMaybeType<number | null>); // ok
+
+=====================================output=====================================
+// @flow
+
+function foo(x: ?string): $NonMaybeType<?string> {
+  if (x != null) {
+    return x;
+  } else return 0; // this should be an error
+}
+
+//(foo(): string); // should not be necessary to expose the error above
+
+(0: $NonMaybeType<null>); // error
+(0: $NonMaybeType<?number>); // ok
+(0: $NonMaybeType<number | null>); // ok
+
+================================================================================
+`;
+
+exports[`property_type.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type Malformed = $PropertyType<any, number>;
+
+type Obj = { x: string };
+type Obj_Prop_x = $PropertyType<Obj, 'x'>;
+
+(42: Obj_Prop_x);
+
+function foo(o: Obj): $PropertyType<Obj, 'x'> {
+  if (false) return o.x;
+  else return 0;
+}
+
+=====================================output=====================================
+type Malformed = $PropertyType<any, number>;
+
+type Obj = { x: string };
+type Obj_Prop_x = $PropertyType<Obj, "x">;
+
+(42: Obj_Prop_x);
+
+function foo(o: Obj): $PropertyType<Obj, "x"> {
+  if (false) return o.x;
+  else return 0;
+}
+
+================================================================================
+`;
+
+exports[`union.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var x0: $NonMaybeType<number|string> = 0; // ok, number ~> number|string
+var x1: $NonMaybeType<number|string> = true; // err, boolean ~> number|string
+var x2: $PropertyType<{p:number}|{p:string},'p'> = 0; // ok, number ~> number|string
+var x3: $PropertyType<{p:number}|{p:string},'p'> = true; // err, boolean ~> number|string
+
+=====================================output=====================================
+var x0: $NonMaybeType<number | string> = 0; // ok, number ~> number|string
+var x1: $NonMaybeType<number | string> = true; // err, boolean ~> number|string
+var x2: $PropertyType<{ p: number } | { p: string }, "p"> = 0; // ok, number ~> number|string
+var x3: $PropertyType<{ p: number } | { p: string }, "p"> = true; // err, boolean ~> number|string
+
+================================================================================
+`;

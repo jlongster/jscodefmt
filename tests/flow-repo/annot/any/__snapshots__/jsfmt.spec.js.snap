@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type T = any;
+
+export default class {
+  p: T;
+
+  constructor() {
+    this.p = 0;
+  }
+}
+
+=====================================output=====================================
+type T = any;
+
+export default class {
+  p: T;
+
+  constructor() {
+    this.p = 0;
+  }
+}
+
+================================================================================
+`;
+
+exports[`B.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import A from "./A"
+
+class B extends A {
+  p: string; // OK, string ~> any
+}
+
+=====================================output=====================================
+import A from "./A";
+
+class B extends A {
+  p: string; // OK, string ~> any
+}
+
+================================================================================
+`;

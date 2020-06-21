@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`private.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class A {
+  x: number;
+  _x: string;
+  __x: number;
+  constructor() { this.x = 0; this._x = ""; this.__x = 0; }
+}
+
+class B extends A {
+  foo() {
+    var x: number = this.x;
+    var _x: string = this._x;
+    var __x: number = this.__x;
+  }
+}
+
+=====================================output=====================================
+class A {
+  x: number;
+  _x: string;
+  __x: number;
+  constructor() {
+    this.x = 0;
+    this._x = "";
+    this.__x = 0;
+  }
+}
+
+class B extends A {
+  foo() {
+    var x: number = this.x;
+    var _x: string = this._x;
+    var __x: number = this.__x;
+  }
+}
+
+================================================================================
+`;

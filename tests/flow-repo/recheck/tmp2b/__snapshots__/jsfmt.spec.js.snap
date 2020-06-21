@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`b0.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+class C { x: C; }
+class E extends C { x: C; }
+
+module.exports = { C, E };
+
+=====================================output=====================================
+// @flow
+
+class C {
+  x: C;
+}
+class E extends C {
+  x: C;
+}
+
+module.exports = { C, E };
+
+================================================================================
+`;

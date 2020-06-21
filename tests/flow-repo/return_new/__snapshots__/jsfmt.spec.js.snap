@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function Foo() { return {}; }
+var foo: number = new Foo(); // error (returns object literal above)
+
+function Bar() { return 0; }
+var bar: number = new Bar(); // error (returns new object)
+
+function Qux() { }
+var qux: number = new Qux(); // error (returns new object)
+
+class A { }
+function B() { return new A(); }
+var a: A = new B(); // OK (returns new A)
+
+// type applications should be applied before deciding if object-like
+type C<T> = { x: T };
+function makeC<T>(x: T): C<T> { return {x}; }
+(new makeC('x'): C<string>); // normally you wouldn't use \`new\`, but you can
+
+// unions should be split before deciding if object-like
+function makeUnion(): number | {x: string} {
+  return {x: 'x'};
+}
+(new makeUnion(): {x: string}); // error: \`number\` returns {}, missing prop x
+
+=====================================output=====================================
+function Foo() {
+  return {};
+}
+var foo: number = new Foo(); // error (returns object literal above)
+
+function Bar() {
+  return 0;
+}
+var bar: number = new Bar(); // error (returns new object)
+
+function Qux() {}
+var qux: number = new Qux(); // error (returns new object)
+
+class A {}
+function B() {
+  return new A();
+}
+var a: A = new B(); // OK (returns new A)
+
+// type applications should be applied before deciding if object-like
+type C<T> = { x: T };
+function makeC<T>(x: T): C<T> {
+  return { x };
+}
+(new makeC("x"): C<string>); // normally you wouldn't use \`new\`, but you can
+
+// unions should be split before deciding if object-like
+function makeUnion(): number | { x: string } {
+  return { x: "x" };
+}
+(new makeUnion(): { x: string }); // error: \`number\` returns {}, missing prop x
+
+================================================================================
+`;
+
+exports[`test2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class D {
+  constructor(): { x: number }; // OK
+  y: any;
+}
+
+var d = new D();
+d.x = ""; // error, string ~/~ number (but property x is found)
+
+(new D: D); // error, new D is an object, D not in proto chain
+
+module.exports = D;
+
+=====================================output=====================================
+declare class D {
+  constructor(): { x: number }; // OK
+  y: any;
+}
+
+var d = new D();
+d.x = ""; // error, string ~/~ number (but property x is found)
+
+(new D(): D); // error, new D is an object, D not in proto chain
+
+module.exports = D;
+
+================================================================================
+`;

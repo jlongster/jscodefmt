@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class StaticOverload {
+  static foo(x: number): number;
+  static foo(x: string): string;
+}
+
+=====================================output=====================================
+declare class StaticOverload {
+  static foo(x: number): number;
+  static foo(x: string): string;
+}
+
+================================================================================
+`;

@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+class A<T> {
+  x: T
+}
+
+module.exports = A;
+
+=====================================output=====================================
+// @flow
+
+class A<T> {
+  x: T;
+}
+
+module.exports = A;
+
+================================================================================
+`;
+
+exports[`B.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let A = require('./A');
+
+class B extends A<string> {
+  constructor() {
+    super();
+  }
+}
+
+module.exports = new B();
+
+=====================================output=====================================
+// @flow
+
+let A = require("./A");
+
+class B extends A<string> {
+  constructor() {
+    super();
+  }
+}
+
+module.exports = new B();
+
+================================================================================
+`;
+
+exports[`C.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// This test exports a function whose return type is the class's \`this\` type.
+// It should be inferred (no annotation required).
+
+class Foo {
+  foo(): this {
+    return this;
+  }
+}
+
+export function f(x: Foo) {
+  return x.foo();
+}
+
+=====================================output=====================================
+// @flow
+
+// This test exports a function whose return type is the class's \`this\` type.
+// It should be inferred (no annotation required).
+
+class Foo {
+  foo(): this {
+    return this;
+  }
+}
+
+export function f(x: Foo) {
+  return x.foo();
+}
+
+================================================================================
+`;

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`f1.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+type T = { x: number };
+type S = { x: string };
+
+declare var a: T;
+declare var b: S;
+declare var c: T;
+
+module.exports = { a, b, c };
+
+=====================================output=====================================
+// @flow
+
+type T = { x: number };
+type S = { x: string };
+
+declare var a: T;
+declare var b: S;
+declare var c: T;
+
+module.exports = { a, b, c };
+
+================================================================================
+`;

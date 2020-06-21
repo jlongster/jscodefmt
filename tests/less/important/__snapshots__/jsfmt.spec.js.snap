@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`important.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+div {
+  max-height: none !important;
+}
+
+.important {
+  .foo() !important;
+}
+
+=====================================output=====================================
+div {
+  max-height: none !important;
+}
+
+.important {
+  .foo() !important;
+}
+
+================================================================================
+`;

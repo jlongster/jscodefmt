@@ -1,7 +1,7 @@
 "use strict";
 
 const {
-  builders: { concat, join, line }
+  builders: { concat, join, line },
 } = require("../document");
 
 function printHtmlBinding(path, options, print) {
@@ -17,7 +17,7 @@ function printHtmlBinding(path, options, print) {
 
   if (options.__isVueForBindingLeft) {
     return path.call(
-      functionDeclarationPath => {
+      (functionDeclarationPath) => {
         const { params } = functionDeclarationPath.getValue();
         return concat([
           params.length > 1 ? "(" : "",
@@ -25,7 +25,7 @@ function printHtmlBinding(path, options, print) {
             concat([",", line]),
             functionDeclarationPath.map(print, "params")
           ),
-          params.length > 1 ? ")" : ""
+          params.length > 1 ? ")" : "",
         ]);
       },
       "program",
@@ -36,7 +36,7 @@ function printHtmlBinding(path, options, print) {
 
   if (options.__isVueSlotScope) {
     return path.call(
-      functionDeclarationPath =>
+      (functionDeclarationPath) =>
         join(concat([",", line]), functionDeclarationPath.map(print, "params")),
       "program",
       "body",
@@ -65,5 +65,5 @@ function isVueEventBindingExpression(node) {
 
 module.exports = {
   isVueEventBindingExpression,
-  printHtmlBinding
+  printHtmlBinding,
 };

@@ -13,30 +13,6 @@ exports[`boolean flags do not swallow the next argument (stdout) 1`] = `
 
 exports[`boolean flags do not swallow the next argument (write) 1`] = `Array []`;
 
-exports[`deprecated option values are warned (stderr) 1`] = `
-"[warn] --trailing-comma without an argument is deprecated; we now treat it as --trailing-comma=es5.
-"
-`;
-
-exports[`deprecated option values are warned (stdout) 1`] = `
-"console.log(\\"could be single quote and without semi\\");
-"
-`;
-
-exports[`deprecated option values are warned (write) 1`] = `Array []`;
-
-exports[`deprecated options are warned (stderr) 1`] = `
-"[warn] --flow-parser is deprecated; we now treat it as --parser=flow.
-"
-`;
-
-exports[`deprecated options are warned (stdout) 1`] = `
-"console.log(\\"could be single quote and without semi\\");
-"
-`;
-
-exports[`deprecated options are warned (write) 1`] = `Array []`;
-
 exports[`negated options work (stderr) 1`] = `""`;
 
 exports[`negated options work (stdout) 1`] = `

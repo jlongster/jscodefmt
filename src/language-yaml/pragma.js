@@ -5,7 +5,7 @@ function isPragma(text) {
 }
 
 function hasPragma(text) {
-  return /^\s*#[^\n\S]*@(prettier|format)\s*?(\n|$)/.test(text);
+  return /^\s*#[^\S\n]*@(prettier|format)\s*?(\n|$)/.test(text);
 }
 
 function insertPragma(text) {
@@ -15,5 +15,5 @@ function insertPragma(text) {
 module.exports = {
   isPragma,
   hasPragma,
-  insertPragma
+  insertPragma,
 };

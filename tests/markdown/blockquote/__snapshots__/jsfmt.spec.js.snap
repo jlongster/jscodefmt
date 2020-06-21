@@ -1,0 +1,207 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`code.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+> NOTE: To use \`unobtrusive\`, \`unobtrusive/import\`, \`unobtrusive/react\`, and \`unobtrusive/flowtype\` together, your eslint config would look like this:
+>\`\`\`json
+>{
+>  "extends": [
+>    "unobtrusive",
+>    "unobtrusive/import",
+>    "unobtrusive/react",
+>    "unobtrusive/flowtype"
+>  ],
+>  "env": {
+>    "browser": true
+>  }
+>}
+>\`\`\`
+
+=====================================output=====================================
+> NOTE: To use \`unobtrusive\`, \`unobtrusive/import\`, \`unobtrusive/react\`, and
+> \`unobtrusive/flowtype\` together, your eslint config would look like this:
+>
+> \`\`\`json
+> {
+>   "extends": [
+>     "unobtrusive",
+>     "unobtrusive/import",
+>     "unobtrusive/react",
+>     "unobtrusive/flowtype"
+>   ],
+>   "env": {
+>     "browser": true
+>   }
+> }
+> \`\`\`
+
+================================================================================
+`;
+
+exports[`ignore-code.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+> \`\`\`\`md
+> <!-- prettier-ignore -->
+> \`\`\`js
+> ugly   ( code ) ;
+> \`\`\`
+> \`\`\`\`
+
+> \`\`\`md
+> <!-- prettier-ignore -->
+> - This is a long long
+>   long long long long
+>   long long paragraph.
+> \`\`\`
+
+> - test
+>   \`\`\`md
+>   <!-- prettier-ignore -->
+>   - This is a long long
+>     long long long long
+>     long long paragraph.
+>   \`\`\`
+
+\`\`\`\`md
+> \`\`\`md
+> <!-- prettier-ignore -->
+> - This is a long long
+>   long long long long
+>   long long paragraph.
+> \`\`\`
+\`\`\`\`
+
+> \`\`\`\`md
+> > \`\`\`md
+> > <!-- prettier-ignore -->
+> > - This is a long long
+> >   long long long long
+> >   long long paragraph.
+> > \`\`\`
+> \`\`\`\`
+
+> 
+> <!-- prettier-ignore -->
+> - This is a long long
+>   long long long long
+>   long long paragraph.
+> 
+
+> \`\`\`\`js
+> // prettier-ignore
+> const x = 1,
+> b = 2
+> \`\`\`\`
+
+=====================================output=====================================
+> \`\`\`\`md
+> <!-- prettier-ignore -->
+> \`\`\`js
+> ugly   ( code ) ;
+> \`\`\`
+> \`\`\`\`
+
+> \`\`\`md
+> <!-- prettier-ignore -->
+> - This is a long long
+>   long long long long
+>   long long paragraph.
+> \`\`\`
+
+> - test
+>   \`\`\`md
+>   <!-- prettier-ignore -->
+>   - This is a long long
+>     long long long long
+>     long long paragraph.
+>   \`\`\`
+
+\`\`\`\`md
+> \`\`\`md
+> <!-- prettier-ignore -->
+> - This is a long long
+>   long long long long
+>   long long paragraph.
+> \`\`\`
+\`\`\`\`
+
+> \`\`\`\`md
+> > \`\`\`md
+> > <!-- prettier-ignore -->
+> > - This is a long long
+> >   long long long long
+> >   long long paragraph.
+> > \`\`\`
+> \`\`\`\`
+
+> <!-- prettier-ignore -->
+> - This is a long long
+>   long long long long
+>   long long paragraph.
+
+> \`\`\`js
+> // prettier-ignore
+> const x = 1,
+> b = 2
+> \`\`\`
+
+================================================================================
+`;
+
+exports[`nested.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+>>> 123
+
+=====================================output=====================================
+> > > 123
+
+================================================================================
+`;
+
+exports[`paragraph.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+> This is a long long long long long long long long long long long long long long long paragraph.
+> This is a long long long long long long long long long long long long long long long paragraph.
+
+=====================================output=====================================
+> This is a long long long long long long long long long long long long long
+> long long paragraph. This is a long long long long long long long long long
+> long long long long long long paragraph.
+
+================================================================================
+`;
+
+exports[`simple.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+> 123
+
+=====================================output=====================================
+> 123
+
+================================================================================
+`;

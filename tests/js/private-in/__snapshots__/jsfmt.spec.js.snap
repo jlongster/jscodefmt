@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`private-in.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+if (#prop in obj) {
+}
+
+#prop in     obj;
+
+#prop      in obj;
+
+#prop in
+obj;
+
+#prop
+in
+obj;
+
+#prop
+in obj;
+
+=====================================output=====================================
+if (#prop in obj) {
+}
+
+#prop in obj;
+
+#prop in obj;
+
+#prop in obj;
+
+#prop in obj;
+
+#prop in obj;
+
+================================================================================
+`;

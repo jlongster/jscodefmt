@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeclareModule_TypeAlias.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ */
+
+declare module ModuleAliasFoo {
+    declare type baz = number;
+    declare type toz = string;
+    declare function foo(bar : baz) : toz;
+}
+
+=====================================output=====================================
+/**
+ * @flow
+ */
+
+declare module ModuleAliasFoo {
+  declare type baz = number;
+  declare type toz = string;
+  declare function foo(bar: baz): toz;
+}
+
+================================================================================
+`;
+
+exports[`declare_type_exports.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+declare module 'foo' {
+    declare class A {
+        toz : number
+    }
+
+    declare var n : string;
+
+    declare type Foo = typeof n;
+    declare type Bar = A;
+    declare type Id<T> = T;
+
+    declare var exports : {
+        (a : number, b : number) : number
+    };
+}
+
+=====================================output=====================================
+/* @flow */
+
+declare module "foo" {
+  declare class A {
+    toz: number;
+  }
+
+  declare var n: string;
+
+  declare type Foo = typeof n;
+  declare type Bar = A;
+  declare type Id<T> = T;
+
+  declare var exports: {
+    (a: number, b: number): number,
+  };
+}
+
+================================================================================
+`;

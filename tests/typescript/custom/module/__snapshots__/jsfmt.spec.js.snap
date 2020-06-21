@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`global.ts 1`] = `
+exports[`global.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -22,7 +22,7 @@ declare global {
 ================================================================================
 `;
 
-exports[`moduleNamespace.ts 1`] = `
+exports[`moduleNamespace.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -40,7 +40,7 @@ namespace f {}
 ================================================================================
 `;
 
-exports[`nestedNamespace.ts 1`] = `
+exports[`nestedNamespace.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

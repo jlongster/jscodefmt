@@ -2,8 +2,8 @@
 
 const { runYarn, logPromise } = require("../utils");
 
-module.exports = async function() {
-  await logPromise("Running linter", runYarn("lint"));
-  await logPromise("Running linter on docs", runYarn("lint-docs"));
+module.exports = async function () {
+  await logPromise("Running linter", runYarn("lint:eslint"));
+  await logPromise("Running Prettier on docs", runYarn("lint:prettier"));
   await logPromise("Running tests", runYarn("test"));
 };

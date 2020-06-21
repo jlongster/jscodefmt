@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+class AImplementation {}
+export function foo(): AImplementation { return new AImplementation(); }
+
+=====================================output=====================================
+/* @flow */
+
+class AImplementation {}
+export function foo(): AImplementation {
+  return new AImplementation();
+}
+
+================================================================================
+`;
+
+exports[`index.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var A = require('A');
+(A.foo(): boolean); // Error: Either AImplementation ~> boolean or ADefinition ~> boolean
+
+var test = require('test');
+(test.foo(): boolean); // Error: Either TestImplementation ~> boolean or TestDefinition ~> boolean
+
+=====================================output=====================================
+/* @flow */
+
+var A = require("A");
+(A.foo(): boolean); // Error: Either AImplementation ~> boolean or ADefinition ~> boolean
+
+var test = require("test");
+(test.foo(): boolean); // Error: Either TestImplementation ~> boolean or TestDefinition ~> boolean
+
+================================================================================
+`;

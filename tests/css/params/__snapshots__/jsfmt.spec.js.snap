@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`params.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+.clusterPlannerDialog input[type="text"],
+.clusterPlannerDialog .uiTypeahead {
+  width: 220px;
+}
+
+=====================================output=====================================
+.clusterPlannerDialog input[type="text"],
+.clusterPlannerDialog .uiTypeahead {
+  width: 220px;
+}
+
+================================================================================
+`;

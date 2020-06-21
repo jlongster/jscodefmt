@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`main.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+import declare_module_exports from "declare_module_exports";
+(declare_module_exports: number);
+(declare_module_exports: string); // Error: number ~> string
+
+// Error: Has no named export "str"!
+import {str} from "declare_m_e_with_other_value_declares";
+
+import type {str2} from "declare_m_e_with_other_type_declares";
+("asdf": str2);
+(42: str2); // Error: number ~> string
+
+/**
+ * \`declare var exports\` is deprecated, so we have a grace period where both
+ * syntaxes will work.
+ */
+
+import DEPRECATED__declare_var_exports from "DEPRECATED__declare_var_exports";
+(DEPRECATED__declare_var_exports: number);
+(DEPRECATED__declare_var_exports: string); // Error: number ~> string
+
+import declare_m_e_with_declare_var_e from "declare_m_e_with_declare_var_e";
+(declare_m_e_with_declare_var_e: number);
+(declare_m_e_with_declare_var_e: string); // Error: number ~> string
+
+=====================================output=====================================
+// @flow
+
+import declare_module_exports from "declare_module_exports";
+(declare_module_exports: number);
+(declare_module_exports: string); // Error: number ~> string
+
+// Error: Has no named export "str"!
+import { str } from "declare_m_e_with_other_value_declares";
+
+import type { str2 } from "declare_m_e_with_other_type_declares";
+("asdf": str2);
+(42: str2); // Error: number ~> string
+
+/**
+ * \`declare var exports\` is deprecated, so we have a grace period where both
+ * syntaxes will work.
+ */
+
+import DEPRECATED__declare_var_exports from "DEPRECATED__declare_var_exports";
+(DEPRECATED__declare_var_exports: number);
+(DEPRECATED__declare_var_exports: string); // Error: number ~> string
+
+import declare_m_e_with_declare_var_e from "declare_m_e_with_declare_var_e";
+(declare_m_e_with_declare_var_e: number);
+(declare_m_e_with_declare_var_e: string); // Error: number ~> string
+
+================================================================================
+`;

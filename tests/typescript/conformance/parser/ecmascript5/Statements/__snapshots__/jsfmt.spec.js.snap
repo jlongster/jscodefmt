@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`parserES5ForOfStatement2.ts 1`] = `
+exports[`parserES5ForOfStatement2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -18,7 +18,7 @@ for (var of X) {
 ================================================================================
 `;
 
-exports[`parserES5ForOfStatement21.ts 1`] = `
+exports[`parserES5ForOfStatement21.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -35,7 +35,7 @@ for (var of of) {
 ================================================================================
 `;
 
-exports[`parserForInStatement2.ts 1`] = `
+exports[`parserForInStatement2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

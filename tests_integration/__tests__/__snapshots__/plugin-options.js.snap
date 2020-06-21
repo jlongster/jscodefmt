@@ -5,9 +5,9 @@ exports[` 1`] = `
 - First value
 + Second value
 
-@@ -17,10 +17,12 @@
-                             Defaults to always.
-    --no-bracket-spacing     Do not print spaces between brackets.
+@@ -20,18 +20,20 @@
+                             Control how Prettier formats quoted code embedded in the file.
+                             Defaults to auto.
     --end-of-line <lf|crlf|cr|auto>
                              Which end of line characters to apply.
                              Defaults to lf.
@@ -17,8 +17,51 @@ exports[` 1`] = `
                              How to handle whitespaces in HTML.
                              Defaults to css.
     --jsx-bracket-same-line  Put > on the last line instead of at a new line.
-                             Defaults to false."
+                             Defaults to false.
+    --jsx-single-quote       Use single quotes in JSX.
+                             Defaults to false.
+-   --parser <flow|babel|babel-flow|babel-ts|typescript|css|less|scss|json|json5|json-stringify|graphql|markdown|mdx|vue|yaml|html|angular|lwc>
++   --parser <flow|babel|babel-flow|babel-ts|typescript|css|less|scss|json|json5|json-stringify|graphql|markdown|mdx|vue|yaml|html|angular|lwc|foo-parser>
+                             Which parser to use.
+    --print-width <int>      The line length where Prettier will try wrap.
+                             Defaults to 80.
+    --prose-wrap <always|never|preserve>
+                             How to wrap prose."
 `;
+
+exports[`include plugin's parsers to the values of the \`parser\` option\` (stderr) 1`] = `""`;
+
+exports[`include plugin's parsers to the values of the \`parser\` option\` (stdout) 1`] = `
+"--parser <flow|babel|babel-flow|babel-ts|typescript|css|less|scss|json|json5|json-stringify|graphql|markdown|mdx|vue|yaml|html|angular|lwc|foo-parser>
+
+  Which parser to use.
+
+Valid options:
+
+  flow             Flow
+  babel            JavaScript
+  babel-flow       Flow
+  babel-ts         TypeScript
+  typescript       TypeScript
+  css              CSS
+  less             Less
+  scss             SCSS
+  json             JSON
+  json5            JSON5
+  json-stringify   JSON.stringify
+  graphql          GraphQL
+  markdown         Markdown
+  mdx              MDX
+  vue              Vue
+  yaml             YAML
+  html             HTML
+  angular          Angular
+  lwc              Lightning Web Components
+  foo-parser       foo (plugin: ./plugin)
+"
+`;
+
+exports[`include plugin's parsers to the values of the \`parser\` option\` (write) 1`] = `Array []`;
 
 exports[`show detailed external option with \`--help foo-option\` (stderr) 1`] = `""`;
 

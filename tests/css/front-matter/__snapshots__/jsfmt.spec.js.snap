@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom-parser.css format 1`] = `
+====================================options=====================================
+parsers: ["css", "scss", "less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+---mycustomparser
+title: Title
+description: Description
+---
+/* comment */
+.something 
+{}
+
+=====================================output=====================================
+---mycustomparser
+title: Title
+description: Description
+---
+
+/* comment */
+.something {
+}
+
+================================================================================
+`;

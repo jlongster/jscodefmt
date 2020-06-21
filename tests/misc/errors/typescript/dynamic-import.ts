@@ -1,0 +1,1 @@
+import('./prettier.mjs', {})

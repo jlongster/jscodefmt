@@ -1,5 +1,5 @@
 export default {
   isatty() {
-    return false
-  }
-}
+    return false;
+  },
+};

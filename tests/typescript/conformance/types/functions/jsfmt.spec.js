@@ -1,3 +1,3 @@
 run_spec(__dirname, ["typescript"], {
-  disableBabelTS: ["functionOverloadErrorsSyntax.ts"]
+  disableBabelTS: ["functionOverloadErrorsSyntax.ts"],
 });

@@ -1,0 +1,241 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`annot.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class A<X> { }
+new A; // OK, implicitly inferred type args
+class B extends A { } // OK, same as above
+
+function foo(b): A<any> { // ok but unsafe, caller may assume any type arg
+  return b ? (new A: A<number>): (new A: A<string>);
+}
+
+function bar(): A<*> { // error, * can't be {} and {x: string} at the same time
+  return (new A: A<{}>) || (new A: A<{x: string}>);
+}
+
+=====================================output=====================================
+class A<X> {}
+new A(); // OK, implicitly inferred type args
+class B extends A {} // OK, same as above
+
+function foo(b): A<any> {
+  // ok but unsafe, caller may assume any type arg
+  return b ? (new A(): A<number>) : (new A(): A<string>);
+}
+
+function bar(): A<*> {
+  // error, * can't be {} and {x: string} at the same time
+  return (new A(): A<{}>) || (new A(): A<{ x: string }>);
+}
+
+================================================================================
+`;
+
+exports[`implicit_bounded_instantiation.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+class Base {}
+class Middle extends Base {}
+class Child extends Middle {}
+
+class C<T: Middle> {
+  meth(a: T): T {
+    return a;
+  }
+}
+
+// T is implicitly (bounded by) Middle in constructor call if not provided.
+// Explicit type arg is required in annotation - here a wildcard captures it.
+var a: C<*> = new C();
+
+a.meth(new Middle());
+a.meth(new Child());
+a.meth(42); // Error: number ~> Middle
+a.meth(new Base()); // Error: Base ~> Middle
+
+=====================================output=====================================
+// @flow
+
+class Base {}
+class Middle extends Base {}
+class Child extends Middle {}
+
+class C<T: Middle> {
+  meth(a: T): T {
+    return a;
+  }
+}
+
+// T is implicitly (bounded by) Middle in constructor call if not provided.
+// Explicit type arg is required in annotation - here a wildcard captures it.
+var a: C<*> = new C();
+
+a.meth(new Middle());
+a.meth(new Child());
+a.meth(42); // Error: number ~> Middle
+a.meth(new Base()); // Error: Base ~> Middle
+
+================================================================================
+`;
+
+exports[`issue-1029.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// naive unification causes combinatorial explosion here,
+// effectively hangs
+
+declare type Box<T> = {
+  map1<U>(f: (x: T) => U): Box<U>;
+  map2<U>(f: (x: T) => U): Box<U>;
+  map3<U>(f: (x: T) => U): Box<U>;
+  map4<U>(f: (x: T) => U): Box<U>;
+  map5<U>(f: (x: T) => U): Box<U>;
+}
+
+declare var bool: Box<boolean>;
+
+declare function unbox<A>(box: Box<A>): A
+
+unbox(bool);
+
+=====================================output=====================================
+// @flow
+
+// naive unification causes combinatorial explosion here,
+// effectively hangs
+
+declare type Box<T> = {
+  map1<U>(f: (x: T) => U): Box<U>,
+  map2<U>(f: (x: T) => U): Box<U>,
+  map3<U>(f: (x: T) => U): Box<U>,
+  map4<U>(f: (x: T) => U): Box<U>,
+  map5<U>(f: (x: T) => U): Box<U>,
+};
+
+declare var bool: Box<boolean>;
+
+declare function unbox<A>(box: Box<A>): A;
+
+unbox(bool);
+
+================================================================================
+`;
+
+exports[`poly.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class Foo<T> {
+    x:T;
+    constructor(x:T) { this.x = x; }
+}
+
+function bar<S>(foo:Foo<S>,y:S):Foo<S> { return new Foo(y); }
+
+var P = {
+    bar: bar
+}
+
+declare var Q: {
+    bar<S>(foo:Foo<S>,y:S):Foo<S>;
+}
+
+var foo = new Foo(0);
+var x:string = foo.x;
+var z:Foo<number> = Q.bar(foo,"");
+
+=====================================output=====================================
+class Foo<T> {
+  x: T;
+  constructor(x: T) {
+    this.x = x;
+  }
+}
+
+function bar<S>(foo: Foo<S>, y: S): Foo<S> {
+  return new Foo(y);
+}
+
+var P = {
+  bar: bar,
+};
+
+declare var Q: {
+  bar<S>(foo: Foo<S>, y: S): Foo<S>,
+};
+
+var foo = new Foo(0);
+var x: string = foo.x;
+var z: Foo<number> = Q.bar(foo, "");
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class C {
+  foo<X>(x: X): X { return x; }
+  foo_<X: number>(x: X): number { return x; }
+  bar<X>(x: X): X { return x; }
+  qux(x: number): number { return x; }
+}
+class D extends C {
+  foo(x: number): number { return x; } // error (specialization, see below)
+  foo_(x: number): number { return x; } // OK, but only because the overridden foo accepts no more than number and returns exactly number
+  bar<X>(x: X): X { return x; } // OK
+  qux<X>(x: X): X { return x; } // OK (generalization)
+}
+
+=====================================output=====================================
+class C {
+  foo<X>(x: X): X {
+    return x;
+  }
+  foo_<X: number>(x: X): number {
+    return x;
+  }
+  bar<X>(x: X): X {
+    return x;
+  }
+  qux(x: number): number {
+    return x;
+  }
+}
+class D extends C {
+  foo(x: number): number {
+    return x;
+  } // error (specialization, see below)
+  foo_(x: number): number {
+    return x;
+  } // OK, but only because the overridden foo accepts no more than number and returns exactly number
+  bar<X>(x: X): X {
+    return x;
+  } // OK
+  qux<X>(x: X): X {
+    return x;
+  } // OK (generalization)
+}
+
+================================================================================
+`;

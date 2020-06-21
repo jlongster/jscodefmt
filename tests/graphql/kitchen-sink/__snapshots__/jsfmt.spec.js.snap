@@ -1,0 +1,380 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`kitchen_sink.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+# Copyright (c) 2015-present, Facebook, Inc.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+query queryName($foo: ComplexType, $site: Site = MOBILE) {
+  whoever123is: node(id: [123, 456]) {
+    id ,
+    ... on User @defer {
+      field2 {
+        id ,
+        alias: field1(first:10, after:$foo,) @include(if: $foo) {
+          id,
+          ...frag
+        }
+      }
+    }
+    ... @skip(unless: $foo) {
+      id
+    }
+    ... {
+      id
+    }
+  }
+}
+
+mutation likeStory {
+  like(story: 123) @defer {
+    story {
+      id
+    }
+  }
+}
+
+subscription StoryLikeSubscription($input: StoryLikeSubscribeInput) {
+  storyLikeSubscribe(input: $input) {
+    story {
+      likers {
+        count
+      }
+      likeSentence {
+        text
+      }
+    }
+  }
+}
+
+fragment frag on Friend {
+  foo(size: $size, bar: $b, obj: {key: "value", block: """
+      block string uses \\"""
+  """})
+}
+
+{
+  unnamed(truthy: true, falsey: false, nullish: null),
+  query
+}
+
+=====================================output=====================================
+# Copyright (c) 2015-present, Facebook, Inc.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+query queryName($foo: ComplexType, $site: Site = MOBILE) {
+  whoever123is: node(id: [123, 456]) {
+    id
+    ... on User @defer {
+      field2 {
+        id
+        alias: field1(first: 10, after: $foo) @include(if: $foo) {
+          id
+          ...frag
+        }
+      }
+    }
+    ... @skip(unless: $foo) {
+      id
+    }
+    ... {
+      id
+    }
+  }
+}
+
+mutation likeStory {
+  like(story: 123) @defer {
+    story {
+      id
+    }
+  }
+}
+
+subscription StoryLikeSubscription($input: StoryLikeSubscribeInput) {
+  storyLikeSubscribe(input: $input) {
+    story {
+      likers {
+        count
+      }
+      likeSentence {
+        text
+      }
+    }
+  }
+}
+
+fragment frag on Friend {
+  foo(
+    size: $size
+    bar: $b
+    obj: {
+      key: "value"
+      block: """
+      block string uses \\"""
+      """
+    }
+  )
+}
+
+{
+  unnamed(truthy: true, falsey: false, nullish: null)
+  query
+}
+
+================================================================================
+`;
+
+exports[`schema_kitchen_sink.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+# Copyright (c) 2015-present, Facebook, Inc.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+schema {
+  query: QueryType
+  mutation: MutationType
+}
+
+"""
+This is a description
+of the \`Foo\` type.
+"""
+type Foo implements Bar {
+  one: Type
+  two(argument: InputType!): Type
+  three(argument: InputType, other: String): Int
+  four(argument: String = "string"): String
+  five(argument: [String] = ["string", "string"]): String
+  six(argument: InputType = {key: "value"}): Type
+  seven(argument: Int = null): Type
+}
+
+type AnnotatedObject @onObject(arg: "value") {
+  annotatedField(arg: Type = "default" @onArg): Type @onField
+}
+
+type UndefinedType
+
+extend type Foo {
+  seven(argument: [String]): Type
+}
+
+extend type Foo @onType
+
+"""
+This is a description
+"""
+interface Bar {
+  one: Type
+  four(argument: String = "string"): String
+}
+
+interface AnnotatedInterface @onInterface {
+  annotatedField(arg: Type @onArg): Type @onField
+}
+
+interface UndefinedInterface
+
+extend interface Bar {
+  two(argument: InputType!): Type
+}
+
+extend interface Bar @onInterface
+
+union Feed = Story | Article | Advert
+
+union AnnotatedUnion @onUnion = A | B
+
+union AnnotatedUnionTwo @onUnion = | A | B
+
+union UndefinedUnion
+
+extend union Feed = Photo | Video
+
+extend union Feed @onUnion
+
+scalar CustomScalar
+
+scalar AnnotatedScalar @onScalar
+
+extend scalar CustomScalar @onScalar
+
+enum Site {
+  DESKTOP
+  MOBILE
+}
+
+enum AnnotatedEnum @onEnum {
+  ANNOTATED_VALUE @onEnumValue
+  OTHER_VALUE
+}
+
+enum UndefinedEnum
+
+extend enum Site {
+  VR
+}
+
+extend enum Site @onEnum
+
+input InputType {
+  key: String!
+  answer: Int = 42
+}
+
+input AnnotatedInput @onInputObject {
+  annotatedField: Type @onField
+}
+
+input UndefinedInput
+
+extend input InputType {
+  other: Float = 1.23e4
+}
+
+extend input InputType @onInputObject
+
+directive @skip(if: Boolean!) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+directive @include(if: Boolean!)
+  on FIELD
+   | FRAGMENT_SPREAD
+   | INLINE_FRAGMENT
+
+directive @include2(if: Boolean!) on
+  | FIELD
+  | FRAGMENT_SPREAD
+  | INLINE_FRAGMENT
+
+=====================================output=====================================
+# Copyright (c) 2015-present, Facebook, Inc.
+#
+# This source code is licensed under the MIT license found in the
+# LICENSE file in the root directory of this source tree.
+
+schema {
+  query: QueryType
+  mutation: MutationType
+}
+
+"""
+This is a description
+of the \`Foo\` type.
+"""
+type Foo implements Bar {
+  one: Type
+  two(argument: InputType!): Type
+  three(argument: InputType, other: String): Int
+  four(argument: String = "string"): String
+  five(argument: [String] = ["string", "string"]): String
+  six(argument: InputType = { key: "value" }): Type
+  seven(argument: Int = null): Type
+}
+
+type AnnotatedObject @onObject(arg: "value") {
+  annotatedField(arg: Type = "default" @onArg): Type @onField
+}
+
+type UndefinedType
+
+extend type Foo {
+  seven(argument: [String]): Type
+}
+
+extend type Foo @onType
+
+"""
+This is a description
+"""
+interface Bar {
+  one: Type
+  four(argument: String = "string"): String
+}
+
+interface AnnotatedInterface @onInterface {
+  annotatedField(arg: Type @onArg): Type @onField
+}
+
+interface UndefinedInterface
+
+extend interface Bar {
+  two(argument: InputType!): Type
+}
+
+extend interface Bar @onInterface
+
+union Feed = Story | Article | Advert
+
+union AnnotatedUnion @onUnion = A | B
+
+union AnnotatedUnionTwo @onUnion = A | B
+
+union UndefinedUnion
+
+extend union Feed = Photo | Video
+
+extend union Feed @onUnion
+
+scalar CustomScalar
+
+scalar AnnotatedScalar @onScalar
+
+extend scalar CustomScalar @onScalar
+
+enum Site {
+  DESKTOP
+  MOBILE
+}
+
+enum AnnotatedEnum @onEnum {
+  ANNOTATED_VALUE @onEnumValue
+  OTHER_VALUE
+}
+
+enum UndefinedEnum
+
+extend enum Site {
+  VR
+}
+
+extend enum Site @onEnum
+
+input InputType {
+  key: String!
+  answer: Int = 42
+}
+
+input AnnotatedInput @onInputObject {
+  annotatedField: Type @onField
+}
+
+input UndefinedInput
+
+extend input InputType {
+  other: Float = 1.23e4
+}
+
+extend input InputType @onInputObject
+
+directive @skip(if: Boolean!) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+directive @include(if: Boolean!) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+directive @include2(if: Boolean!) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+================================================================================
+`;

@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`member-chain.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const { somePropThatHasAReallyLongName, anotherPropThatHasALongName } = this.props.imReallySureAboutThis!;
+
+const { somePropThatHasAReallyLongName2, anotherPropThatHasALongName2 } = this.props.imReallySureAboutThis!.anotherObject;
+
+this.foo.get("bar")!.doThings().more();
+
+foo!.bar().baz().what();
+
+=====================================output=====================================
+const {
+  somePropThatHasAReallyLongName,
+  anotherPropThatHasALongName,
+} = this.props.imReallySureAboutThis!;
+
+const {
+  somePropThatHasAReallyLongName2,
+  anotherPropThatHasALongName2,
+} = this.props.imReallySureAboutThis!.anotherObject;
+
+this.foo.get("bar")!.doThings().more();
+
+foo!.bar().baz().what();
+
+================================================================================
+`;
+
+exports[`optional-chain.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+a?.b!.c;
+a?.b!.c.d;
+a?.b.c!.d;
+a!.b?.c;
+a?.b!?.c;
+a?.b!.c?.c;
+(a?.b!).c;
+(a?.b)!.c;
+
+a?.().b!.c;
+a?.().b!.c.d;
+a?.().b.c!.d;
+a?.().b!?.c;
+a?.().b!.c?.c;
+(a?.().b!).c;
+(a?.().b)!.c;
+
+(a?.b)![c?.d!]
+
+=====================================output=====================================
+a?.b!.c;
+a?.b!.c.d;
+a?.b.c!.d;
+a!.b?.c;
+a?.b!?.c;
+a?.b!.c?.c;
+(a?.b)!.c;
+(a?.b)!.c;
+
+a?.().b!.c;
+a?.().b!.c.d;
+a?.().b.c!.d;
+a?.().b!?.c;
+a?.().b!.c?.c;
+(a?.().b)!.c;
+(a?.().b)!.c;
+
+(a?.b)![c?.d!];
+
+================================================================================
+`;
+
+exports[`parens.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+(a ? b : c) ![tokenKey];
+(a || b) ![tokenKey];
+(void 0)!;
+
+async function f() {
+    return (await foo())!;
+}
+
+function* g() {
+    return (yield * foo())!;
+}
+
+const a = (b()!)(); // parens aren't necessary
+const b = c!();
+
+// parens are necessary if the expression result is called as a constructor
+const c1 = new (d()!)();
+const c2 = new (d()!);
+const c3 = new (d()!.e)();
+new (x()\`\`.y!)();
+new (x()\`\`!.y)();
+new (x()!\`\`.y)();
+new (x!()\`\`.y)();
+
+xyz.a(b!).a(b!).a(b!)
+
+=====================================output=====================================
+(a ? b : c)![tokenKey];
+(a || b)![tokenKey];
+(void 0)!;
+
+async function f() {
+  return (await foo())!;
+}
+
+function* g() {
+  return (yield* foo())!;
+}
+
+const a = b()!(); // parens aren't necessary
+const b = c!();
+
+// parens are necessary if the expression result is called as a constructor
+const c1 = new (d()!)();
+const c2 = new (d()!)();
+const c3 = new (d()!.e)();
+new (x()\`\`.y!)();
+new (x()\`\`!.y)();
+new (x()!\`\`.y)();
+new (x!()\`\`.y)();
+
+xyz.a(b!).a(b!).a(b!);
+
+================================================================================
+`;

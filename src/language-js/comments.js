@@ -5,7 +5,7 @@ const {
   addLeadingComment,
   addTrailingComment,
   addDanglingComment,
-  getNextNonSpaceNonCommentCharacterIndex
+  getNextNonSpaceNonCommentCharacterIndex,
 } = require("../common/util-shared");
 
 function handleOwnLineComment(comment, text, options, ast, isLastComment) {
@@ -74,6 +74,7 @@ function handleOwnLineComment(comment, text, options, ast, isLastComment) {
 function handleEndOfLineComment(comment, text, options, ast, isLastComment) {
   const { precedingNode, enclosingNode, followingNode } = comment;
   return (
+    handleClosureTypeCastComments(followingNode, comment) ||
     handleLastFunctionArgComments(
       text,
       precedingNode,
@@ -183,7 +184,9 @@ function handleRemainingComment(comment, text, options, ast, isLastComment) {
 }
 
 function addBlockStatementFirstComment(node, comment) {
-  const body = node.body.filter(n => n.type !== "EmptyStatement");
+  const body = (node.body || node.properties).filter(
+    (n) => n.type !== "EmptyStatement"
+  );
   if (body.length === 0) {
     addDanglingComment(node, comment);
   } else {
@@ -197,6 +200,14 @@ function addBlockOrNotComment(node, comment) {
   } else {
     addLeadingComment(node, comment);
   }
+}
+
+function handleClosureTypeCastComments(followingNode, comment) {
+  if (followingNode && isTypeCastComment(comment)) {
+    addLeadingComment(followingNode, comment);
+    return true;
+  }
+  return false;
 }
 
 // There are often comments before the else clause of if statements like
@@ -396,7 +407,8 @@ function handleConditionalExpressionComments(
   if (
     (!precedingNode || !isSameLineAsPrecedingNode) &&
     enclosingNode &&
-    enclosingNode.type === "ConditionalExpression" &&
+    (enclosingNode.type === "ConditionalExpression" ||
+      enclosingNode.type === "TSConditionalType") &&
     followingNode
   ) {
     addLeadingComment(followingNode, comment);
@@ -429,20 +441,48 @@ function handleClassComments(
   if (
     enclosingNode &&
     (enclosingNode.type === "ClassDeclaration" ||
-      enclosingNode.type === "ClassExpression") &&
-    enclosingNode.decorators &&
-    enclosingNode.decorators.length > 0 &&
-    !(followingNode && followingNode.type === "Decorator")
+      enclosingNode.type === "ClassExpression" ||
+      enclosingNode.type === "DeclareClass" ||
+      enclosingNode.type === "DeclareInterface" ||
+      enclosingNode.type === "InterfaceDeclaration" ||
+      enclosingNode.type === "TSInterfaceDeclaration")
   ) {
-    if (!enclosingNode.decorators || enclosingNode.decorators.length === 0) {
-      addLeadingComment(enclosingNode, comment);
-    } else {
+    if (
+      enclosingNode.decorators &&
+      enclosingNode.decorators.length > 0 &&
+      !(followingNode && followingNode.type === "Decorator")
+    ) {
       addTrailingComment(
         enclosingNode.decorators[enclosingNode.decorators.length - 1],
         comment
       );
+      return true;
     }
-    return true;
+
+    if (enclosingNode.body && followingNode === enclosingNode.body) {
+      addBlockStatementFirstComment(enclosingNode.body, comment);
+      return true;
+    }
+
+    // Don't add leading comments to `implements`, `extends`, `mixins` to
+    // avoid printing the comment after the keyword.
+    if (followingNode) {
+      for (const prop of ["implements", "extends", "mixins"]) {
+        if (enclosingNode[prop] && followingNode === enclosingNode[prop][0]) {
+          if (
+            precedingNode &&
+            (precedingNode === enclosingNode.id ||
+              precedingNode === enclosingNode.typeParameters ||
+              precedingNode === enclosingNode.superClass)
+          ) {
+            addTrailingComment(precedingNode, comment);
+          } else {
+            addDanglingComment(enclosingNode, comment, prop);
+          }
+          return true;
+        }
+      }
+    }
   }
   return false;
 }
@@ -713,9 +753,27 @@ function handleUnionTypeComments(
     (enclosingNode.type === "UnionTypeAnnotation" ||
       enclosingNode.type === "TSUnionType")
   ) {
-    addTrailingComment(precedingNode, comment);
-    return true;
+    if (privateUtil.isNodeIgnoreComment(comment)) {
+      followingNode.prettierIgnore = true;
+      comment.unignore = true;
+    }
+    if (precedingNode) {
+      addTrailingComment(precedingNode, comment);
+      return true;
+    }
+    return false;
   }
+
+  if (
+    followingNode &&
+    (followingNode.type === "UnionTypeAnnotation" ||
+      followingNode.type === "TSUnionType") &&
+    privateUtil.isNodeIgnoreComment(comment)
+  ) {
+    followingNode.types[0].prettierIgnore = true;
+    comment.unignore = true;
+  }
+
   return false;
 }
 
@@ -818,7 +876,8 @@ function handleVariableDeclaratorComments(
     (followingNode.type === "ObjectExpression" ||
       followingNode.type === "ArrayExpression" ||
       followingNode.type === "TemplateLiteral" ||
-      followingNode.type === "TaggedTemplateExpression")
+      followingNode.type === "TaggedTemplateExpression" ||
+      isBlockComment(comment))
   ) {
     addLeadingComment(followingNode, comment);
     return true;
@@ -892,7 +951,7 @@ function hasLeadingComment(node, fn = () => true) {
     return node.leadingComments.some(fn);
   }
   if (node.comments) {
-    return node.comments.some(comment => comment.leading && fn(comment));
+    return node.comments.some((comment) => comment.leading && fn(comment));
   }
   return false;
 }
@@ -923,7 +982,7 @@ function getGapRegex(enclosingNode) {
   ) {
     // Support degenerate single-element unions and intersections.
     // E.g.: `type A = /* 1 */ & B`
-    return /^[\s(&|]*$/;
+    return /^[\s&(|]*$/;
   }
 }
 
@@ -949,12 +1008,24 @@ function getCommentChildNodes(node, options) {
   }
 }
 
+function isTypeCastComment(comment) {
+  return (
+    isBlockComment(comment) &&
+    comment.value[0] === "*" &&
+    // TypeScript expects the type to be enclosed in curly brackets, however
+    // Closure Compiler accepts types in parens and even without any delimiters at all.
+    // That's why we just search for "@type".
+    /@type\b/.test(comment.value)
+  );
+}
+
 module.exports = {
   handleOwnLineComment,
   handleEndOfLineComment,
   handleRemainingComment,
   hasLeadingComment,
   isBlockComment,
+  isTypeCastComment,
   getGapRegex,
-  getCommentChildNodes
+  getCommentChildNodes,
 };

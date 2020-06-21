@@ -1,0 +1,365 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// You should be able to call objects with call properties
+function a(f: { (): string }, g: { (x: number): string } ): string {
+  return f() + g(123);
+}
+
+// ...and get an error if the return type is wrong
+function b(f: { (): string }): number {
+  return f();
+}
+
+// ...or if the param type is wrong
+function c(f: { (x: number): number }): number {
+  return f("hello");
+}
+
+// ...or if the arity is wrong
+function d(f: { (x: number): number }): number {
+  return f();
+}
+
+// ...or if there is no call property
+function e(f: {}): number {
+  return f();
+}
+
+// Make sure we complain even if the object literal is unsealed.
+function f(): number {
+  var x = {};
+  return x();
+}
+
+=====================================output=====================================
+// You should be able to call objects with call properties
+function a(f: { (): string }, g: { (x: number): string }): string {
+  return f() + g(123);
+}
+
+// ...and get an error if the return type is wrong
+function b(f: { (): string }): number {
+  return f();
+}
+
+// ...or if the param type is wrong
+function c(f: { (x: number): number }): number {
+  return f("hello");
+}
+
+// ...or if the arity is wrong
+function d(f: { (x: number): number }): number {
+  return f();
+}
+
+// ...or if there is no call property
+function e(f: {}): number {
+  return f();
+}
+
+// Make sure we complain even if the object literal is unsealed.
+function f(): number {
+  var x = {};
+  return x();
+}
+
+================================================================================
+`;
+
+exports[`B.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// You should be able to use a function as an object with a call property
+var a: { (x: number): string } = function (x: number): string { return "hi"; };
+
+// ...and it should notice when the return type is wrong
+var b: { (x: number): number } = function (x: number): string { return "hi"; };
+
+// ...or if the param type is wrong
+var c: { (x: string): string } = function (x: number): string { return "hi"; };
+
+// ...or if the arity is wrong
+var d: { (): string } = function (x: number): string { return "hi"; };
+
+// ...but subtyping rules still apply
+var e: { (x: any): void } = function() { } // arity
+var f: { (): mixed } = function(): string { return "hi" } // return type
+var g: { (x: string): void } = function(x: mixed) { } // param type
+
+// A function can be an object
+var y : {} = function (x: number): string { return "hi"; };
+var z : Object = function (x: number): string { return "hi"; };
+
+=====================================output=====================================
+// You should be able to use a function as an object with a call property
+var a: { (x: number): string } = function (x: number): string {
+  return "hi";
+};
+
+// ...and it should notice when the return type is wrong
+var b: { (x: number): number } = function (x: number): string {
+  return "hi";
+};
+
+// ...or if the param type is wrong
+var c: { (x: string): string } = function (x: number): string {
+  return "hi";
+};
+
+// ...or if the arity is wrong
+var d: { (): string } = function (x: number): string {
+  return "hi";
+};
+
+// ...but subtyping rules still apply
+var e: { (x: any): void } = function () {}; // arity
+var f: { (): mixed } = function (): string {
+  return "hi";
+}; // return type
+var g: { (x: string): void } = function (x: mixed) {}; // param type
+
+// A function can be an object
+var y: {} = function (x: number): string {
+  return "hi";
+};
+var z: Object = function (x: number): string {
+  return "hi";
+};
+
+================================================================================
+`;
+
+exports[`C.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// You should be able to use an object as a function
+function a(x: { (z: number): string }): (z: number) => string {
+  return x;
+}
+
+// ...and it should notice when the return type is wrong
+function b(x: { (z: number): string }): (z: number) => number {
+  return x;
+}
+
+// ...or if the param type is wrong
+function c(x: { (z: number): string }): (z: string) => string {
+  return x;
+}
+
+// ...or if the arity is wrong
+function d(x: { (z: number): string }): () => string {
+  return x;
+}
+
+// ...or if it doesn't have a call property
+function e(x: {}): () => string {
+  return x;
+}
+
+// AnyFunT should also be allowed
+function f(x: { (z: number): string }): Function {
+  return x;
+}
+
+// ... but only if the object is callable
+function g(x: {}): Function {
+  return x; // error
+}
+
+=====================================output=====================================
+// You should be able to use an object as a function
+function a(x: { (z: number): string }): (z: number) => string {
+  return x;
+}
+
+// ...and it should notice when the return type is wrong
+function b(x: { (z: number): string }): (z: number) => number {
+  return x;
+}
+
+// ...or if the param type is wrong
+function c(x: { (z: number): string }): (z: string) => string {
+  return x;
+}
+
+// ...or if the arity is wrong
+function d(x: { (z: number): string }): () => string {
+  return x;
+}
+
+// ...or if it doesn't have a call property
+function e(x: {}): () => string {
+  return x;
+}
+
+// AnyFunT should also be allowed
+function f(x: { (z: number): string }): Function {
+  return x;
+}
+
+// ... but only if the object is callable
+function g(x: {}): Function {
+  return x; // error
+}
+
+================================================================================
+`;
+
+exports[`D.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// Multiple call properties should also be supported
+function a(f: { (): string; (x: number): string }): string {
+  return f() + f(123);
+}
+
+// It should be fine when a function satisfies them all
+var b: { (): string; (x: number): string } =
+  function (x?: number): string { return "hi"; };
+
+// ...but should notice when a function doesn't satisfy them all
+var c: { (): string; (x: number): string } =
+  function (x: number): string { return "hi"; };
+
+// Only one call property needs to match the function
+function d(x: { (): string; (x: number): string }): () => string {
+  return x;
+}
+
+// ...but you need at least one
+function e(x: { (): string; (x: number): string }): () => number {
+  return x;
+}
+
+=====================================output=====================================
+// Multiple call properties should also be supported
+function a(f: { (): string, (x: number): string }): string {
+  return f() + f(123);
+}
+
+// It should be fine when a function satisfies them all
+var b: { (): string, (x: number): string } = function (x?: number): string {
+  return "hi";
+};
+
+// ...but should notice when a function doesn't satisfy them all
+var c: { (): string, (x: number): string } = function (x: number): string {
+  return "hi";
+};
+
+// Only one call property needs to match the function
+function d(x: { (): string, (x: number): string }): () => string {
+  return x;
+}
+
+// ...but you need at least one
+function e(x: { (): string, (x: number): string }): () => number {
+  return x;
+}
+
+================================================================================
+`;
+
+exports[`E.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// Expecting properties that don't exist should be an error
+var a : { someProp: number } = function () {};
+
+// Expecting properties that do exist should be fine
+var b : { apply: Function } = function () {};
+
+// Expecting properties in the functions statics should be fine
+var f = function () {};
+f.myProp = 123;
+var c : { myProp: number } = f;
+
+=====================================output=====================================
+// Expecting properties that don't exist should be an error
+var a: { someProp: number } = function () {};
+
+// Expecting properties that do exist should be fine
+var b: { apply: Function } = function () {};
+
+// Expecting properties in the functions statics should be fine
+var f = function () {};
+f.myProp = 123;
+var c: { myProp: number } = f;
+
+================================================================================
+`;
+
+exports[`F.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// You should be able to use an arrow function as an object with a call property
+
+var a: { (x: number): string } = (x) => x.toString()
+
+// ...and it should notice when the return type is wrong
+var b: { (x: number): number } = (x) => "hi"
+
+// ...or if the param type is wrong
+var c: { (x: string): string } = (x) => x.toFixed()
+
+// ...or if the arity is wrong
+var d: { (): string } = (x) => "hi"
+
+// ...but subtyping rules still apply
+var e: { (x: any): void } = () => { } // arity
+var f: { (): mixed } = () => "hi" // return type
+var g: { (x: Date): void } = (x) => { x * 2 } // param type (date < number)
+
+// A function can be an object
+var y : {} = (x) => "hi"
+var z : Object = (x) => "hi"
+
+=====================================output=====================================
+// You should be able to use an arrow function as an object with a call property
+
+var a: { (x: number): string } = (x) => x.toString();
+
+// ...and it should notice when the return type is wrong
+var b: { (x: number): number } = (x) => "hi";
+
+// ...or if the param type is wrong
+var c: { (x: string): string } = (x) => x.toFixed();
+
+// ...or if the arity is wrong
+var d: { (): string } = (x) => "hi";
+
+// ...but subtyping rules still apply
+var e: { (x: any): void } = () => {}; // arity
+var f: { (): mixed } = () => "hi"; // return type
+var g: { (x: Date): void } = (x) => {
+  x * 2;
+}; // param type (date < number)
+
+// A function can be an object
+var y: {} = (x) => "hi";
+var z: Object = (x) => "hi";
+
+================================================================================
+`;

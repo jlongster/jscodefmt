@@ -21,13 +21,13 @@ function formatMarkdown(
     codeBlock(input, syntax),
     "",
     "**Output:**",
-    codeBlock(output, syntax)
+    codeBlock(output, syntax),
   ]
     .concat(
       isIdempotent ? [] : ["", "**Second Output:**", codeBlock(output2, syntax)]
     )
     .concat(full ? ["", "**Expected behavior:**", ""] : [])
-    .filter(part => {
+    .filter((part) => {
       return part != null;
     })
     .join("\n");
@@ -36,7 +36,6 @@ function formatMarkdown(
 function getMarkdownSyntax(options) {
   switch (options.parser) {
     case "babel":
-    case "babylon": // backward compatibility
     case "babel-flow":
     case "flow":
       return "jsx";

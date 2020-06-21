@@ -3,7 +3,7 @@
 const React = require("react");
 const PropTypes = require("prop-types");
 
-const GithubButton = props => (
+const GithubButton = (props) => (
   <a
     className="github-button"
     href={props.config.githubUrl}
@@ -16,7 +16,7 @@ const GithubButton = props => (
 );
 
 GithubButton.propTypes = {
-  config: PropTypes.object
+  config: PropTypes.object,
 };
 
 class Footer extends React.Component {
@@ -90,7 +90,7 @@ class Footer extends React.Component {
 
 Footer.propTypes = {
   language: PropTypes.string,
-  config: PropTypes.object
+  config: PropTypes.object,
 };
 
 module.exports = Footer;

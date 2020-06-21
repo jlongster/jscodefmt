@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unary.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function x0(y: string): number {
+  return +y; // ok, + exists solely for coercion
+}
+
+function x1(y: string): number {
+  return -y; // error, we don't allow coercion here
+}
+
+function x3(y: string) {
+  return ~y;  // error, we don't allow coercion here
+}
+
+function x4(y: string): boolean {
+  return !y; // ok, coercion is allowed
+}
+
+(-1: void); // error, number ~> void
+
+=====================================output=====================================
+/* @flow */
+
+function x0(y: string): number {
+  return +y; // ok, + exists solely for coercion
+}
+
+function x1(y: string): number {
+  return -y; // error, we don't allow coercion here
+}
+
+function x3(y: string) {
+  return ~y; // error, we don't allow coercion here
+}
+
+function x4(y: string): boolean {
+  return !y; // ok, coercion is allowed
+}
+
+(-1: void); // error, number ~> void
+
+================================================================================
+`;
+
+exports[`update.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  function(y: number) {
+    y++;
+    y--;
+    ++y;
+    --y;
+  },
+
+  function(y: string) {
+    y++; // error, we don't allow coercion here
+    (y: number); // ok, y is a number now
+    y++; // error, but you still can't write a number to a string
+  },
+
+  function(y: string) {
+    y--; // error, we don't allow coercion here
+  },
+
+  function(y: string) {
+    ++y; // error, we don't allow coercion here
+  },
+
+  function(y: string) {
+    --y; // error, we don't allow coercion here
+  },
+
+  function() {
+    const y = 123;
+    y++; // error, can't update const
+    y--; // error, can't update const
+  },
+
+  function(y: any) {
+    y++; // ok
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  function (y: number) {
+    y++;
+    y--;
+    ++y;
+    --y;
+  },
+
+  function (y: string) {
+    y++; // error, we don't allow coercion here
+    (y: number); // ok, y is a number now
+    y++; // error, but you still can't write a number to a string
+  },
+
+  function (y: string) {
+    y--; // error, we don't allow coercion here
+  },
+
+  function (y: string) {
+    ++y; // error, we don't allow coercion here
+  },
+
+  function (y: string) {
+    --y; // error, we don't allow coercion here
+  },
+
+  function () {
+    const y = 123;
+    y++; // error, can't update const
+    y--; // error, can't update const
+  },
+
+  function (y: any) {
+    y++; // ok
+  },
+];
+
+================================================================================
+`;

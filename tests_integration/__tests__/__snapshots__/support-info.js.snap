@@ -1,88 +1,174 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`API getSupportInfo() with version 0.0.0 -> 1.0.0 1`] = `
-"Snapshot Diff:
-- First value
-+ Second value
-
-@@ -16,19 +16,35 @@
-    \\"options\\": Object {
-      \\"bracketSpacing\\": Object {
-        \\"default\\": true,
-        \\"type\\": \\"boolean\\",
-      },
-+     \\"jsxBracketSameLine\\": Object {
-+       \\"default\\": false,
-+       \\"type\\": \\"boolean\\",
-+     },
-+     \\"parser\\": Object {
-+       \\"choices\\": Array [
-+         \\"flow\\",
-+         \\"babylon\\",
-+       ],
-+       \\"default\\": \\"babylon\\",
-+       \\"type\\": \\"choice\\",
-+     },
-      \\"printWidth\\": Object {
-        \\"default\\": 80,
-        \\"range\\": Object {
-          \\"end\\": Infinity,
-          \\"start\\": 0,
-          \\"step\\": 1,
-        },
-        \\"type\\": \\"int\\",
-      },
-+     \\"semi\\": Object {
-+       \\"default\\": true,
-+       \\"type\\": \\"boolean\\",
-+     },
-      \\"singleQuote\\": Object {
-        \\"default\\": false,
-        \\"type\\": \\"boolean\\",
-      },
-      \\"tabWidth\\": Object {
-@@ -43,17 +59,15 @@
-      \\"trailingComma\\": Object {
-        \\"choices\\": Array [
-          \\"es5\\",
-          \\"none\\",
-          \\"all\\",
--         true,
--         false,
-        ],
--       \\"default\\": false,
-+       \\"default\\": \\"none\\",
-        \\"type\\": \\"choice\\",
-      },
--     \\"useFlowParser\\": Object {
-+     \\"useTabs\\": Object {
-        \\"default\\": false,
-        \\"type\\": \\"boolean\\",
-      },
-    },
-  }"
-`;
-
-exports[`API getSupportInfo() with version 0.0.0 1`] = `
+exports[`API getSupportInfo() 1`] = `
 Object {
   "languages": Object {
+    "Angular": Array [
+      "angular",
+    ],
+    "CSS": Array [
+      "css",
+    ],
     "Flow": Array [
-      "babylon",
+      "babel",
       "flow",
     ],
+    "GraphQL": Array [
+      "graphql",
+    ],
+    "HTML": Array [
+      "html",
+    ],
+    "JSON": Array [
+      "json",
+    ],
+    "JSON with Comments": Array [
+      "json",
+    ],
+    "JSON.stringify": Array [
+      "json-stringify",
+    ],
+    "JSON5": Array [
+      "json5",
+    ],
     "JSX": Array [
-      "babylon",
+      "babel",
       "flow",
     ],
     "JavaScript": Array [
-      "babylon",
+      "babel",
       "flow",
+    ],
+    "Less": Array [
+      "less",
+    ],
+    "Lightning Web Components": Array [
+      "lwc",
+    ],
+    "MDX": Array [
+      "mdx",
+    ],
+    "Markdown": Array [
+      "markdown",
+    ],
+    "PostCSS": Array [
+      "css",
+    ],
+    "SCSS": Array [
+      "scss",
+    ],
+    "TSX": Array [
+      "typescript",
+      "babel-ts",
+    ],
+    "TypeScript": Array [
+      "typescript",
+      "babel-ts",
+    ],
+    "Vue": Array [
+      "vue",
+    ],
+    "YAML": Array [
+      "yaml",
     ],
   },
   "options": Object {
+    "arrowParens": Object {
+      "choices": Array [
+        "always",
+        "avoid",
+      ],
+      "default": "always",
+      "type": "choice",
+    },
     "bracketSpacing": Object {
       "default": true,
       "type": "boolean",
+    },
+    "cursorOffset": Object {
+      "default": -1,
+      "range": Object {
+        "end": Infinity,
+        "start": -1,
+        "step": 1,
+      },
+      "type": "int",
+    },
+    "embeddedLanguageFormatting": Object {
+      "choices": Array [
+        "auto",
+        "off",
+      ],
+      "default": "auto",
+      "type": "choice",
+    },
+    "endOfLine": Object {
+      "choices": Array [
+        "lf",
+        "crlf",
+        "cr",
+        "auto",
+      ],
+      "default": "lf",
+      "type": "choice",
+    },
+    "filepath": Object {
+      "default": undefined,
+      "type": "path",
+    },
+    "htmlWhitespaceSensitivity": Object {
+      "choices": Array [
+        "css",
+        "strict",
+        "ignore",
+      ],
+      "default": "css",
+      "type": "choice",
+    },
+    "insertPragma": Object {
+      "default": false,
+      "type": "boolean",
+    },
+    "jsxBracketSameLine": Object {
+      "default": false,
+      "type": "boolean",
+    },
+    "jsxSingleQuote": Object {
+      "default": false,
+      "type": "boolean",
+    },
+    "parser": Object {
+      "choices": Array [
+        "flow",
+        "babel",
+        "babel-flow",
+        "babel-ts",
+        "typescript",
+        "css",
+        "less",
+        "scss",
+        "json",
+        "json5",
+        "json-stringify",
+        "graphql",
+        "markdown",
+        "mdx",
+        "vue",
+        "yaml",
+        "html",
+        "angular",
+        "lwc",
+      ],
+      "default": undefined,
+      "type": "choice",
+    },
+    "pluginSearchDirs": Object {
+      "default": Array [],
+      "type": "path",
+    },
+    "plugins": Object {
+      "default": Array [],
+      "type": "path",
     },
     "printWidth": Object {
       "default": 80,
@@ -92,6 +178,50 @@ Object {
         "step": 1,
       },
       "type": "int",
+    },
+    "proseWrap": Object {
+      "choices": Array [
+        "always",
+        "never",
+        "preserve",
+      ],
+      "default": "preserve",
+      "type": "choice",
+    },
+    "quoteProps": Object {
+      "choices": Array [
+        "as-needed",
+        "consistent",
+        "preserve",
+      ],
+      "default": "as-needed",
+      "type": "choice",
+    },
+    "rangeEnd": Object {
+      "default": Infinity,
+      "range": Object {
+        "end": Infinity,
+        "start": 0,
+        "step": 1,
+      },
+      "type": "int",
+    },
+    "rangeStart": Object {
+      "default": 0,
+      "range": Object {
+        "end": Infinity,
+        "start": 0,
+        "step": 1,
+      },
+      "type": "int",
+    },
+    "requirePragma": Object {
+      "default": false,
+      "type": "boolean",
+    },
+    "semi": Object {
+      "default": true,
+      "type": "boolean",
     },
     "singleQuote": Object {
       "default": false,
@@ -111,596 +241,20 @@ Object {
         "es5",
         "none",
         "all",
-        true,
-        false,
       ],
-      "default": false,
+      "default": "es5",
       "type": "choice",
     },
-    "useFlowParser": Object {
+    "useTabs": Object {
+      "default": false,
+      "type": "boolean",
+    },
+    "vueIndentScriptAndStyle": Object {
       "default": false,
       "type": "boolean",
     },
   },
 }
-`;
-
-exports[`API getSupportInfo() with version 1.0.0 -> 1.4.0 1`] = `
-"Snapshot Diff:
-- First value
-+ Second value
-
-@@ -1,7 +1,10 @@
-  Object {
-    \\"languages\\": Object {
-+     \\"CSS\\": Array [
-+       \\"postcss\\",
-+     ],
-      \\"Flow\\": Array [
-        \\"babylon\\",
-        \\"flow\\",
-      ],
-      \\"JSX\\": Array [
-@@ -9,31 +12,81 @@
-        \\"flow\\",
-      ],
-      \\"JavaScript\\": Array [
-        \\"babylon\\",
-        \\"flow\\",
-+     ],
-+     \\"Less\\": Array [
-+       \\"postcss\\",
-+     ],
-+     \\"PostCSS\\": Array [
-+       \\"postcss\\",
-+     ],
-+     \\"SCSS\\": Array [
-+       \\"postcss\\",
-+     ],
-+     \\"TSX\\": Array [
-+       \\"typescript\\",
-+       \\"babel-ts\\",
-+     ],
-+     \\"TypeScript\\": Array [
-+       \\"typescript\\",
-+       \\"babel-ts\\",
-      ],
-    },
-    \\"options\\": Object {
-      \\"bracketSpacing\\": Object {
-        \\"default\\": true,
-        \\"type\\": \\"boolean\\",
-      },
-+     \\"cursorOffset\\": Object {
-+       \\"default\\": -1,
-+       \\"range\\": Object {
-+         \\"end\\": Infinity,
-+         \\"start\\": -1,
-+         \\"step\\": 1,
-+       },
-+       \\"type\\": \\"int\\",
-+     },
-+     \\"filepath\\": Object {
-+       \\"default\\": undefined,
-+       \\"type\\": \\"path\\",
-+     },
-      \\"jsxBracketSameLine\\": Object {
-        \\"default\\": false,
-        \\"type\\": \\"boolean\\",
-      },
-      \\"parser\\": Object {
-        \\"choices\\": Array [
-          \\"flow\\",
-          \\"babylon\\",
-+         \\"typescript\\",
-+         \\"postcss\\",
-        ],
-        \\"default\\": \\"babylon\\",
-        \\"type\\": \\"choice\\",
-      },
-      \\"printWidth\\": Object {
-        \\"default\\": 80,
-+       \\"range\\": Object {
-+         \\"end\\": Infinity,
-+         \\"start\\": 0,
-+         \\"step\\": 1,
-+       },
-+       \\"type\\": \\"int\\",
-+     },
-+     \\"rangeEnd\\": Object {
-+       \\"default\\": Infinity,
-+       \\"range\\": Object {
-+         \\"end\\": Infinity,
-+         \\"start\\": 0,
-+         \\"step\\": 1,
-+       },
-+       \\"type\\": \\"int\\",
-+     },
-+     \\"rangeStart\\": Object {
-+       \\"default\\": 0,
-        \\"range\\": Object {
-          \\"end\\": Infinity,
-          \\"start\\": 0,
-          \\"step\\": 1,
-        },"
-`;
-
-exports[`API getSupportInfo() with version 1.4.0 -> 1.5.0 1`] = `
-"Snapshot Diff:
-- First value
-+ Second value
-
-@@ -5,10 +5,19 @@
-      ],
-      \\"Flow\\": Array [
-        \\"babylon\\",
-        \\"flow\\",
-      ],
-+     \\"GraphQL\\": Array [
-+       \\"graphql\\",
-+     ],
-+     \\"JSON\\": Array [
-+       \\"json\\",
-+     ],
-+     \\"JSON with Comments\\": Array [
-+       \\"json\\",
-+     ],
-      \\"JSX\\": Array [
-        \\"babylon\\",
-        \\"flow\\",
-      ],
-      \\"JavaScript\\": Array [
-@@ -59,10 +68,12 @@
-        \\"choices\\": Array [
-          \\"flow\\",
-          \\"babylon\\",
-          \\"typescript\\",
-          \\"postcss\\",
-+         \\"json\\",
-+         \\"graphql\\",
-        ],
-        \\"default\\": \\"babylon\\",
-        \\"type\\": \\"choice\\",
-      },
-      \\"printWidth\\": Object {"
-`;
-
-exports[`API getSupportInfo() with version 1.5.0 -> 1.7.1 1`] = `
-"Snapshot Diff:
-- First value
-+ Second value
-
-@@ -1,9 +1,9 @@
-  Object {
-    \\"languages\\": Object {
-      \\"CSS\\": Array [
--       \\"postcss\\",
-+       \\"css\\",
-      ],
-      \\"Flow\\": Array [
-        \\"babylon\\",
-        \\"flow\\",
-      ],
-@@ -23,17 +23,17 @@
-      \\"JavaScript\\": Array [
-        \\"babylon\\",
-        \\"flow\\",
-      ],
-      \\"Less\\": Array [
--       \\"postcss\\",
-+       \\"less\\",
-      ],
-      \\"PostCSS\\": Array [
--       \\"postcss\\",
-+       \\"css\\",
-      ],
-      \\"SCSS\\": Array [
--       \\"postcss\\",
-+       \\"scss\\",
-      ],
-      \\"TSX\\": Array [
-        \\"typescript\\",
-        \\"babel-ts\\",
-      ],
-@@ -67,11 +67,13 @@
-      \\"parser\\": Object {
-        \\"choices\\": Array [
-          \\"flow\\",
-          \\"babylon\\",
-          \\"typescript\\",
--         \\"postcss\\",
-+         \\"css\\",
-+         \\"less\\",
-+         \\"scss\\",
-          \\"json\\",
-          \\"graphql\\",
-        ],
-        \\"default\\": \\"babylon\\",
-        \\"type\\": \\"choice\\",
-@@ -100,10 +102,14 @@
-          \\"end\\": Infinity,
-          \\"start\\": 0,
-          \\"step\\": 1,
-        },
-        \\"type\\": \\"int\\",
-+     },
-+     \\"requirePragma\\": Object {
-+       \\"default\\": false,
-+       \\"type\\": \\"boolean\\",
-      },
-      \\"semi\\": Object {
-        \\"default\\": true,
-        \\"type\\": \\"boolean\\",
-      },"
-`;
-
-exports[`API getSupportInfo() with version 1.7.1 -> 1.8.0 1`] = `
-"Snapshot Diff:
-- First value
-+ Second value
-
-@@ -25,10 +25,13 @@
-        \\"flow\\",
-      ],
-      \\"Less\\": Array [
-        \\"less\\",
-      ],
-+     \\"Markdown\\": Array [
-+       \\"markdown\\",
-+     ],
-      \\"PostCSS\\": Array [
-        \\"css\\",
-      ],
-      \\"SCSS\\": Array [
-        \\"scss\\",
-@@ -57,10 +60,14 @@
-        \\"type\\": \\"int\\",
-      },
-      \\"filepath\\": Object {
-        \\"default\\": undefined,
-        \\"type\\": \\"path\\",
-+     },
-+     \\"insertPragma\\": Object {
-+       \\"default\\": false,
-+       \\"type\\": \\"boolean\\",
-      },
-      \\"jsxBracketSameLine\\": Object {
-        \\"default\\": false,
-        \\"type\\": \\"boolean\\",
-      },
-@@ -72,10 +79,11 @@
-          \\"css\\",
-          \\"less\\",
-          \\"scss\\",
-          \\"json\\",
-          \\"graphql\\",
-+         \\"markdown\\",
-        ],
-        \\"default\\": \\"babylon\\",
-        \\"type\\": \\"choice\\",
-      },
-      \\"printWidth\\": Object {"
-`;
-
-exports[`API getSupportInfo() with version 1.8.0 -> 1.8.2 1`] = `
-"Snapshot Diff:
-- First value
-+ Second value
-
-@@ -93,10 +93,18 @@
-          \\"start\\": 0,
-          \\"step\\": 1,
-        },
-        \\"type\\": \\"int\\",
-      },
-+     \\"proseWrap\\": Object {
-+       \\"choices\\": Array [
-+         false,
-+         true,
-+       ],
-+       \\"default\\": true,
-+       \\"type\\": \\"choice\\",
-+     },
-      \\"rangeEnd\\": Object {
-        \\"default\\": Infinity,
-        \\"range\\": Object {
-          \\"end\\": Infinity,
-          \\"start\\": 0,"
-`;
-
-exports[`API getSupportInfo() with version 1.8.2 -> 1.16.0 1`] = `
-"Snapshot Diff:
-- First value
-+ Second value
-
-@@ -1,33 +1,48 @@
-  Object {
-    \\"languages\\": Object {
-+     \\"Angular\\": Array [
-+       \\"angular\\",
-+     ],
-      \\"CSS\\": Array [
-        \\"css\\",
-      ],
-      \\"Flow\\": Array [
--       \\"babylon\\",
-+       \\"babel\\",
-        \\"flow\\",
-      ],
-      \\"GraphQL\\": Array [
-        \\"graphql\\",
-+     ],
-+     \\"HTML\\": Array [
-+       \\"html\\",
-      ],
-      \\"JSON\\": Array [
-        \\"json\\",
-      ],
-      \\"JSON with Comments\\": Array [
-        \\"json\\",
-      ],
-+     \\"JSON.stringify\\": Array [
-+       \\"json-stringify\\",
-+     ],
-+     \\"JSON5\\": Array [
-+       \\"json5\\",
-+     ],
-      \\"JSX\\": Array [
--       \\"babylon\\",
-+       \\"babel\\",
-        \\"flow\\",
-      ],
-      \\"JavaScript\\": Array [
--       \\"babylon\\",
-+       \\"babel\\",
-        \\"flow\\",
-      ],
-      \\"Less\\": Array [
-        \\"less\\",
-+     ],
-+     \\"MDX\\": Array [
-+       \\"mdx\\",
-      ],
-      \\"Markdown\\": Array [
-        \\"markdown\\",
-      ],
-      \\"PostCSS\\": Array [
-@@ -41,13 +56,27 @@
-        \\"babel-ts\\",
-      ],
-      \\"TypeScript\\": Array [
-        \\"typescript\\",
-        \\"babel-ts\\",
-+     ],
-+     \\"Vue\\": Array [
-+       \\"vue\\",
-+     ],
-+     \\"YAML\\": Array [
-+       \\"yaml\\",
-      ],
-    },
-    \\"options\\": Object {
-+     \\"arrowParens\\": Object {
-+       \\"choices\\": Array [
-+         \\"always\\",
-+         \\"avoid\\",
-+       ],
-+       \\"default\\": \\"avoid\\",
-+       \\"type\\": \\"choice\\",
-+     },
-      \\"bracketSpacing\\": Object {
-        \\"default\\": true,
-        \\"type\\": \\"boolean\\",
-      },
-      \\"cursorOffset\\": Object {
-@@ -57,36 +86,75 @@
-          \\"start\\": -1,
-          \\"step\\": 1,
-        },
-        \\"type\\": \\"int\\",
-      },
-+     \\"endOfLine\\": Object {
-+       \\"choices\\": Array [
-+         \\"lf\\",
-+         \\"crlf\\",
-+         \\"cr\\",
-+         \\"auto\\",
-+       ],
-+       \\"default\\": \\"auto\\",
-+       \\"type\\": \\"choice\\",
-+     },
-      \\"filepath\\": Object {
-        \\"default\\": undefined,
-        \\"type\\": \\"path\\",
-      },
-+     \\"htmlWhitespaceSensitivity\\": Object {
-+       \\"choices\\": Array [
-+         \\"css\\",
-+         \\"strict\\",
-+         \\"ignore\\",
-+       ],
-+       \\"default\\": \\"css\\",
-+       \\"type\\": \\"choice\\",
-+     },
-      \\"insertPragma\\": Object {
-        \\"default\\": false,
-        \\"type\\": \\"boolean\\",
-      },
-      \\"jsxBracketSameLine\\": Object {
-        \\"default\\": false,
-        \\"type\\": \\"boolean\\",
-      },
-+     \\"jsxSingleQuote\\": Object {
-+       \\"default\\": false,
-+       \\"type\\": \\"boolean\\",
-+     },
-      \\"parser\\": Object {
-        \\"choices\\": Array [
-          \\"flow\\",
--         \\"babylon\\",
-+         \\"babel\\",
-+         \\"babel-flow\\",
-          \\"typescript\\",
-          \\"css\\",
-          \\"less\\",
-          \\"scss\\",
-          \\"json\\",
-+         \\"json5\\",
-+         \\"json-stringify\\",
-          \\"graphql\\",
-          \\"markdown\\",
-+         \\"mdx\\",
-+         \\"vue\\",
-+         \\"yaml\\",
-+         \\"html\\",
-+         \\"angular\\",
-        ],
--       \\"default\\": \\"babylon\\",
-+       \\"default\\": undefined,
-        \\"type\\": \\"choice\\",
-+     },
-+     \\"pluginSearchDirs\\": Object {
-+       \\"default\\": Array [],
-+       \\"type\\": \\"path\\",
-+     },
-+     \\"plugins\\": Object {
-+       \\"default\\": Array [],
-+       \\"type\\": \\"path\\",
-      },
-      \\"printWidth\\": Object {
-        \\"default\\": 80,
-        \\"range\\": Object {
-          \\"end\\": Infinity,
-@@ -95,14 +163,15 @@
-        },
-        \\"type\\": \\"int\\",
-      },
-      \\"proseWrap\\": Object {
-        \\"choices\\": Array [
--         false,
--         true,
-+         \\"always\\",
-+         \\"never\\",
-+         \\"preserve\\",
-        ],
--       \\"default\\": true,
-+       \\"default\\": \\"preserve\\",
-        \\"type\\": \\"choice\\",
-      },
-      \\"rangeEnd\\": Object {
-        \\"default\\": Infinity,
-        \\"range\\": Object {"
-`;
-
-exports[`API getSupportInfo() with version 1.16.0 -> undefined 1`] = `
-"Snapshot Diff:
-- First value
-+ Second value
-
-@@ -37,10 +37,13 @@
-        \\"flow\\",
-      ],
-      \\"Less\\": Array [
-        \\"less\\",
-      ],
-+     \\"Lightning Web Components\\": Array [
-+       \\"lwc\\",
-+     ],
-      \\"MDX\\": Array [
-        \\"mdx\\",
-      ],
-      \\"Markdown\\": Array [
-        \\"markdown\\",
-@@ -70,11 +73,11 @@
-      \\"arrowParens\\": Object {
-        \\"choices\\": Array [
-          \\"always\\",
-          \\"avoid\\",
-        ],
--       \\"default\\": \\"avoid\\",
-+       \\"default\\": \\"always\\",
-        \\"type\\": \\"choice\\",
-      },
-      \\"bracketSpacing\\": Object {
-        \\"default\\": true,
-        \\"type\\": \\"boolean\\",
-@@ -93,11 +96,11 @@
-          \\"lf\\",
-          \\"crlf\\",
-          \\"cr\\",
-          \\"auto\\",
-        ],
--       \\"default\\": \\"auto\\",
-+       \\"default\\": \\"lf\\",
-        \\"type\\": \\"choice\\",
-      },
-      \\"filepath\\": Object {
-        \\"default\\": undefined,
-        \\"type\\": \\"path\\",
-@@ -126,10 +129,11 @@
-      \\"parser\\": Object {
-        \\"choices\\": Array [
-          \\"flow\\",
-          \\"babel\\",
-          \\"babel-flow\\",
-+         \\"babel-ts\\",
-          \\"typescript\\",
-          \\"css\\",
-          \\"less\\",
-          \\"scss\\",
-          \\"json\\",
-@@ -140,10 +144,11 @@
-          \\"mdx\\",
-          \\"vue\\",
-          \\"yaml\\",
-          \\"html\\",
-          \\"angular\\",
-+         \\"lwc\\",
-        ],
-        \\"default\\": undefined,
-        \\"type\\": \\"choice\\",
-      },
-      \\"pluginSearchDirs\\": Object {
-@@ -168,10 +173,19 @@
-          \\"always\\",
-          \\"never\\",
-          \\"preserve\\",
-        ],
-        \\"default\\": \\"preserve\\",
-+       \\"type\\": \\"choice\\",
-+     },
-+     \\"quoteProps\\": Object {
-+       \\"choices\\": Array [
-+         \\"as-needed\\",
-+         \\"consistent\\",
-+         \\"preserve\\",
-+       ],
-+       \\"default\\": \\"as-needed\\",
-        \\"type\\": \\"choice\\",
-      },
-      \\"rangeEnd\\": Object {
-        \\"default\\": Infinity,
-        \\"range\\": Object {
-@@ -215,14 +229,18 @@
-        \\"choices\\": Array [
-          \\"es5\\",
-          \\"none\\",
-          \\"all\\",
-        ],
--       \\"default\\": \\"none\\",
-+       \\"default\\": \\"es5\\",
-        \\"type\\": \\"choice\\",
-      },
-      \\"useTabs\\": Object {
-+       \\"default\\": false,
-+       \\"type\\": \\"boolean\\",
-+     },
-+     \\"vueIndentScriptAndStyle\\": Object {
-        \\"default\\": false,
-        \\"type\\": \\"boolean\\",
-      },
-    },
-  }"
 `;
 
 exports[`CLI --support-info (stderr) 1`] = `""`;
@@ -891,6 +445,7 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"codemirrorMimeType\\": \\"text/javascript\\",
       \\"codemirrorMode\\": \\"javascript\\",
       \\"extensions\\": [
+        \\".jsonc\\",
         \\".sublime-build\\",
         \\".sublime-commands\\",
         \\".sublime-completions\\",
@@ -1137,7 +692,7 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"since\\": \\"1.14.0\\",
       \\"tmScope\\": \\"source.yaml\\",
       \\"type\\": \\"data\\",
-      \\"vscodeLanguageIds\\": [\\"yaml\\"]
+      \\"vscodeLanguageIds\\": [\\"yaml\\", \\"ansible\\"]
     }
   ],
   \\"options\\": [
@@ -1179,6 +734,25 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"range\\": { \\"end\\": null, \\"start\\": -1, \\"step\\": 1 },
       \\"since\\": \\"1.4.0\\",
       \\"type\\": \\"int\\"
+    },
+    {
+      \\"category\\": \\"Global\\",
+      \\"choices\\": [
+        {
+          \\"description\\": \\"Format embedded code if Prettier can automatically identify it.\\",
+          \\"value\\": \\"auto\\"
+        },
+        {
+          \\"description\\": \\"Never automatically format embedded code.\\",
+          \\"value\\": \\"off\\"
+        }
+      ],
+      \\"default\\": \\"auto\\",
+      \\"description\\": \\"Control how Prettier formats quoted code embedded in the file.\\",
+      \\"name\\": \\"embeddedLanguageFormatting\\",
+      \\"pluginDefaults\\": {},
+      \\"since\\": \\"2.1.0\\",
+      \\"type\\": \\"choice\\"
     },
     {
       \\"category\\": \\"Global\\",

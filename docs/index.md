@@ -13,7 +13,7 @@ Prettier is an opinionated code formatter with support for:
 - [TypeScript](https://www.typescriptlang.org/)
 - CSS, [Less](http://lesscss.org/), and [SCSS](https://sass-lang.com)
 - [HTML](https://en.wikipedia.org/wiki/HTML)
-- [JSON](http://json.org/)
+- [JSON](https://json.org/)
 - [GraphQL](https://graphql.org/)
 - [Markdown](https://commonmark.org/), including [GFM](https://github.github.com/gfm/) and [MDX](https://mdxjs.com/)
 - [YAML](https://yaml.org/)

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`index.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+export var name: "subdir/custom_resolve_dir/testproj2" = "subdir/custom_resolve_dir/testproj2";
+
+=====================================output=====================================
+// @flow
+
+export var name: "subdir/custom_resolve_dir/testproj2" =
+  "subdir/custom_resolve_dir/testproj2";
+
+================================================================================
+`;

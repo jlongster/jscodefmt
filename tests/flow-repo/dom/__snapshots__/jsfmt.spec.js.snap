@@ -1,0 +1,958 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CanvasRenderingContext2D.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // fillRect
+  function(ctx: CanvasRenderingContext2D) {
+    ctx.fillRect(0, 0, 200, 100);
+  },
+
+  // moveTo
+  function(ctx: CanvasRenderingContext2D) {
+    ctx.moveTo('0', '1');  // error: should be numbers
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // fillRect
+  function (ctx: CanvasRenderingContext2D) {
+    ctx.fillRect(0, 0, 200, 100);
+  },
+
+  // moveTo
+  function (ctx: CanvasRenderingContext2D) {
+    ctx.moveTo("0", "1"); // error: should be numbers
+  },
+];
+
+================================================================================
+`;
+
+exports[`CustomEvent.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // CustomEvent
+  function(document: Document) {
+    const event = document.createEvent('CustomEvent');
+    event.initCustomEvent('butts', true, false, { nice: 42 });
+  }
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // CustomEvent
+  function (document: Document) {
+    const event = document.createEvent("CustomEvent");
+    event.initCustomEvent("butts", true, false, { nice: 42 });
+  },
+];
+
+================================================================================
+`;
+
+exports[`Document.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // createElement
+  function(document: Document) {
+    (document.createElement('canvas'): HTMLCanvasElement);
+    (document.createElement('link'): HTMLLinkElement);
+    (document.createElement('option'): HTMLOptionElement);
+    (document.createElement('select'): HTMLSelectElement);
+    (document.querySelector('select'): HTMLSelectElement | null);
+    (document.createElement('hr'): HTMLElement); // GH #3752
+  }
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // createElement
+  function (document: Document) {
+    (document.createElement("canvas"): HTMLCanvasElement);
+    (document.createElement("link"): HTMLLinkElement);
+    (document.createElement("option"): HTMLOptionElement);
+    (document.createElement("select"): HTMLSelectElement);
+    (document.querySelector("select"): HTMLSelectElement | null);
+    (document.createElement("hr"): HTMLElement); // GH #3752
+  },
+];
+
+================================================================================
+`;
+
+exports[`Element.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // scrollIntoView
+  function(element: Element) {
+    element.scrollIntoView();
+    element.scrollIntoView(false);
+    element.scrollIntoView({});
+    element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    element.scrollIntoView({ block: 'end' });
+    element.scrollIntoView({ behavior: 'smooth' });
+
+    // fails
+    element.scrollIntoView({ behavior: 'invalid' });
+    element.scrollIntoView({ block: 'invalid' });
+    element.scrollIntoView(1);
+  }
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // scrollIntoView
+  function (element: Element) {
+    element.scrollIntoView();
+    element.scrollIntoView(false);
+    element.scrollIntoView({});
+    element.scrollIntoView({ behavior: "smooth", block: "end" });
+    element.scrollIntoView({ block: "end" });
+    element.scrollIntoView({ behavior: "smooth" });
+
+    // fails
+    element.scrollIntoView({ behavior: "invalid" });
+    element.scrollIntoView({ block: "invalid" });
+    element.scrollIntoView(1);
+  },
+];
+
+================================================================================
+`;
+
+exports[`HTMLCanvasElement.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // getContext
+  function(el: HTMLCanvasElement) {
+    (el.getContext('2d'): ?CanvasRenderingContext2D);
+  }
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // getContext
+  function (el: HTMLCanvasElement) {
+    (el.getContext("2d"): ?CanvasRenderingContext2D);
+  },
+];
+
+================================================================================
+`;
+
+exports[`HTMLElement.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // scrollIntoView
+  function(element: HTMLElement) {
+    element.scrollIntoView();
+    element.scrollIntoView(false);
+    element.scrollIntoView({});
+    element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    element.scrollIntoView({ block: 'end' });
+    element.scrollIntoView({ behavior: 'smooth' });
+
+    // fails
+    element.scrollIntoView({ behavior: 'invalid' });
+    element.scrollIntoView({ block: 'invalid' });
+    element.scrollIntoView(1);
+  }
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // scrollIntoView
+  function (element: HTMLElement) {
+    element.scrollIntoView();
+    element.scrollIntoView(false);
+    element.scrollIntoView({});
+    element.scrollIntoView({ behavior: "smooth", block: "end" });
+    element.scrollIntoView({ block: "end" });
+    element.scrollIntoView({ behavior: "smooth" });
+
+    // fails
+    element.scrollIntoView({ behavior: "invalid" });
+    element.scrollIntoView({ block: "invalid" });
+    element.scrollIntoView(1);
+  },
+];
+
+================================================================================
+`;
+
+exports[`HTMLInputElement.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // setRangeText
+  function(el: HTMLInputElement) {
+    el.setRangeText('foo');
+    el.setRangeText('foo', 123); // end is required
+    el.setRangeText('foo', 123, 234);
+    el.setRangeText('foo', 123, 234, 'select');
+    el.setRangeText('foo', 123, 234, 'bogus'); // invalid value
+  }
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // setRangeText
+  function (el: HTMLInputElement) {
+    el.setRangeText("foo");
+    el.setRangeText("foo", 123); // end is required
+    el.setRangeText("foo", 123, 234);
+    el.setRangeText("foo", 123, 234, "select");
+    el.setRangeText("foo", 123, 234, "bogus"); // invalid value
+  },
+];
+
+================================================================================
+`;
+
+exports[`URL.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+const a = new URL('http://flowtype.org/'); // correct
+const b = new URL('/docs', a); // correct
+const c = new URL('/docs', 'http://flowtype.org/'); // correct
+
+const d: URLSearchParams = c.searchParams; // correct
+const e: string = c.path; // not correct
+const f: string = c.pathname; // correct
+const g: string = c.hash; // correct
+const h: string = c.host; // correct
+const i: string = c.hostname; // correct
+const j: string = c.href; // correct
+const l: string = c.origin; // correct
+const m: string = c.password; // correct
+const n: string = c.pathname; // correct
+const o: string = c.port; // correct
+const p: string = c.protocol; // correct
+const q: string = c.search; // correct
+const r: string = c.username; // correct
+
+=====================================output=====================================
+/* @flow */
+
+const a = new URL("http://flowtype.org/"); // correct
+const b = new URL("/docs", a); // correct
+const c = new URL("/docs", "http://flowtype.org/"); // correct
+
+const d: URLSearchParams = c.searchParams; // correct
+const e: string = c.path; // not correct
+const f: string = c.pathname; // correct
+const g: string = c.hash; // correct
+const h: string = c.host; // correct
+const i: string = c.hostname; // correct
+const j: string = c.href; // correct
+const l: string = c.origin; // correct
+const m: string = c.password; // correct
+const n: string = c.pathname; // correct
+const o: string = c.port; // correct
+const p: string = c.protocol; // correct
+const q: string = c.search; // correct
+const r: string = c.username; // correct
+
+================================================================================
+`;
+
+exports[`eventtarget.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let listener: EventListener = function (event: Event) :void {};
+
+let tests = [
+  // attachEvent
+  function() {
+    let target = new EventTarget();
+    (target.attachEvent('foo', listener): void); // invalid, may be undefined
+    (target.attachEvent && target.attachEvent('foo', listener): void); // valid
+  },
+
+  // detachEvent
+  function() {
+    let target = new EventTarget();
+    (target.detachEvent('foo', listener): void); // invalid, may be undefined
+    (target.detachEvent && target.detachEvent('foo', listener): void); // valid
+  },
+
+  function() {
+    window.onmessage = (event: MessageEvent) => {
+      (event.target: window);
+    };
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+let listener: EventListener = function (event: Event): void {};
+
+let tests = [
+  // attachEvent
+  function () {
+    let target = new EventTarget();
+    (target.attachEvent("foo", listener): void); // invalid, may be undefined
+    (target.attachEvent && target.attachEvent("foo", listener): void); // valid
+  },
+
+  // detachEvent
+  function () {
+    let target = new EventTarget();
+    (target.detachEvent("foo", listener): void); // invalid, may be undefined
+    (target.detachEvent && target.detachEvent("foo", listener): void); // valid
+  },
+
+  function () {
+    window.onmessage = (event: MessageEvent) => {
+      (event.target: window);
+    };
+  },
+];
+
+================================================================================
+`;
+
+exports[`path2d.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // arcTo
+  function() {
+    let path = new Path2D();
+    (path.arcTo(0, 0, 0, 0, 10): void); // valid
+    (path.arcTo(0, 0, 0, 0, 10, 20, 5): void); // valid
+    (path.arcTo(0, 0, 0, 0, 10, '20', 5): void); // invalid
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // arcTo
+  function () {
+    let path = new Path2D();
+    (path.arcTo(0, 0, 0, 0, 10): void); // valid
+    (path.arcTo(0, 0, 0, 0, 10, 20, 5): void); // valid
+    (path.arcTo(0, 0, 0, 0, 10, "20", 5): void); // invalid
+  },
+];
+
+================================================================================
+`;
+
+exports[`registerElement.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // should work with Object.create()
+  function() {
+    document.registerElement('custom-element', {
+      prototype: Object.create(HTMLElement.prototype, {
+        createdCallback: { value: function createdCallback () {
+        }},
+        attachedCallback: { value: function attachedCallback () {
+        }},
+        detachedCallback: { value: function detachedCallback () {
+        }},
+        attributeChangedCallback: {
+          value: function attributeChangedCallback (
+            attributeLocalName,
+            oldAttributeValue,
+            newAttributeValue,
+            attributeNamespace
+          ) {
+          }
+        }
+      })
+    })
+  },
+  // or with Object.assign()
+  function() {
+    document.registerElement('custom-element', {
+      prototype: Object.assign(Object.create(HTMLElement.prototype), {
+        createdCallback () {
+        },
+        attachedCallback () {
+        },
+        detachedCallback () {
+        },
+        attributeChangedCallback (
+          attributeLocalName,
+          oldAttributeValue,
+          newAttributeValue,
+          attributeNamespace
+        ) {
+        }
+      })
+    })
+  },
+  // should complain about invalid callback parameters
+  function() {
+    document.registerElement('custom-element', {
+      prototype: {
+        attributeChangedCallback(
+          localName: string,
+          oldVal: string, // Error: This might be null
+          newVal: string, // Error: This might be null
+          namespace: string) {}
+      },
+    });
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // should work with Object.create()
+  function () {
+    document.registerElement("custom-element", {
+      prototype: Object.create(HTMLElement.prototype, {
+        createdCallback: { value: function createdCallback() {} },
+        attachedCallback: { value: function attachedCallback() {} },
+        detachedCallback: { value: function detachedCallback() {} },
+        attributeChangedCallback: {
+          value: function attributeChangedCallback(
+            attributeLocalName,
+            oldAttributeValue,
+            newAttributeValue,
+            attributeNamespace
+          ) {},
+        },
+      }),
+    });
+  },
+  // or with Object.assign()
+  function () {
+    document.registerElement("custom-element", {
+      prototype: Object.assign(Object.create(HTMLElement.prototype), {
+        createdCallback() {},
+        attachedCallback() {},
+        detachedCallback() {},
+        attributeChangedCallback(
+          attributeLocalName,
+          oldAttributeValue,
+          newAttributeValue,
+          attributeNamespace
+        ) {},
+      }),
+    });
+  },
+  // should complain about invalid callback parameters
+  function () {
+    document.registerElement("custom-element", {
+      prototype: {
+        attributeChangedCallback(
+          localName: string,
+          oldVal: string, // Error: This might be null
+          newVal: string, // Error: This might be null
+          namespace: string
+        ) {},
+      },
+    });
+  },
+];
+
+================================================================================
+`;
+
+exports[`traversal.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // basic functionality
+  function() {
+    const i: NodeIterator<*,*> = document.createNodeIterator(document.body);
+    const filter: NodeFilter = i.filter;
+    const response:
+      typeof NodeFilter.FILTER_ACCEPT |
+      typeof NodeFilter.FILTER_REJECT |
+      typeof NodeFilter.FILTER_SKIP =
+      filter.acceptNode(document.body);
+  },
+  function() {
+    const w: TreeWalker<*,*> = document.createTreeWalker(document.body);
+    const filter: NodeFilter = w.filter;
+    const response:
+      typeof NodeFilter.FILTER_ACCEPT |
+      typeof NodeFilter.FILTER_REJECT |
+      typeof NodeFilter.FILTER_SKIP =
+      filter.acceptNode(document.body);
+  },
+  // rootNode must be a Node
+  function() {
+    document.createNodeIterator(document.body); // valid
+    document.createNodeIterator({}); // invalid
+  },
+  function() {
+    document.createTreeWalker(document.body);
+    document.createTreeWalker({}); // invalid
+  },
+  // Type Parameters
+  function() {
+    const _root = document.body;
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_ELEMENT);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | Element = i.referenceNode;
+    const previousNode: Element | null = i.previousNode();
+    const nextNode: Element | null = i.nextNode();
+  },
+  function() {
+    const _root = document.body.attributes[0];
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_ATTRIBUTE);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | Attr = i.referenceNode
+    const previousNode: Attr | null = i.previousNode();
+    const nextNode: Attr | null = i.nextNode();
+  },
+  function() {
+    const _root = document.body;
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_TEXT);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | Text = i.referenceNode;
+    const previousNode: Text | null = i.previousNode();
+    const nextNode: Text | null = i.nextNode();
+  },
+  function() {
+    const _root = document;
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_DOCUMENT);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | Document = i.referenceNode;
+    const previousNode: Document | null = i.previousNode();
+    const nextNode: Document | null = i.nextNode();
+  },
+  function() {
+    const _root = document;
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_DOCUMENT_TYPE);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | DocumentType = i.referenceNode;
+    const previousNode: DocumentType | null = i.previousNode();
+    const nextNode: DocumentType | null = i.nextNode();
+  },
+  function() {
+    const _root = document.createDocumentFragment();
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_DOCUMENT_FRAGMENT);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | DocumentFragment = i.referenceNode;
+    const previousNode: DocumentFragment | null = i.previousNode();
+    const nextNode: DocumentFragment | null = i.nextNode();
+  },
+  function() {
+    const _root = document.body;
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_ALL);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | Node = i.referenceNode;
+    const previousNode: Node | null = i.previousNode();
+    const nextNode: Node | null = i.nextNode();
+  },
+  function() {
+    const _root = document.body;
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_ELEMENT);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | Element = w.currentNode;
+    const parentNode: Element | null = w.parentNode();
+    const firstChild: Element | null = w.firstChild();
+    const lastChild: Element | null = w.lastChild();
+    const previousSibling: Element | null = w.previousSibling();
+    const nextSibling: Element | null = w.nextSibling();
+    const previousNode: Element | null = w.previousNode();
+    const nextNode: Element | null = w.nextNode();
+  },
+  function() {
+    const _root = document.body.attributes[0];
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_ATTRIBUTE);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | Attr = w.currentNode;
+    const parentNode: Attr | null = w.parentNode();
+    const firstChild: Attr | null = w.firstChild();
+    const lastChild: Attr | null = w.lastChild();
+    const previousSibling: Attr | null = w.previousSibling();
+    const nextSibling: Attr | null = w.nextSibling();
+    const previousNode: Attr | null = w.previousNode();
+    const nextNode: Attr | null = w.nextNode();
+  },
+  function() {
+    const _root = document.body;
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_TEXT);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | Text = w.currentNode;
+    const parentNode: Text | null = w.parentNode();
+    const firstChild: Text | null = w.firstChild();
+    const lastChild: Text | null = w.lastChild();
+    const previousSibling: Text | null = w.previousSibling();
+    const nextSibling: Text | null = w.nextSibling();
+    const previousNode: Text | null = w.previousNode();
+    const nextNode: Text | null = w.nextNode();
+  },
+  function() {
+    const _root = document;
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_DOCUMENT);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | Document = w.currentNode;
+    const parentNode: Document | null = w.parentNode();
+    const firstChild: Document | null = w.firstChild();
+    const lastChild: Document | null = w.lastChild();
+    const previousSibling: Document | null = w.previousSibling();
+    const nextSibling: Document | null = w.nextSibling();
+    const previousNode: Document | null = w.previousNode();
+    const nextNode: Document | null = w.nextNode();
+  },
+  function() {
+    const _root = document;
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_DOCUMENT_TYPE);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | DocumentType = w.currentNode;
+    const parentNode: DocumentType | null = w.parentNode();
+    const firstChild: DocumentType | null = w.firstChild();
+    const lastChild: DocumentType | null = w.lastChild();
+    const previousSibling: DocumentType | null = w.previousSibling();
+    const nextSibling: DocumentType | null = w.nextSibling();
+    const previousNode: DocumentType | null = w.previousNode();
+    const nextNode: DocumentType | null = w.nextNode();
+  },
+  function() {
+    const _root = document.createDocumentFragment();
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_DOCUMENT_FRAGMENT);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | DocumentFragment = w.currentNode;
+    const parentNode: DocumentFragment | null = w.parentNode();
+    const firstChild: DocumentFragment | null = w.firstChild();
+    const lastChild: DocumentFragment | null = w.lastChild();
+    const previousSibling: DocumentFragment | null = w.previousSibling();
+    const nextSibling: DocumentFragment | null = w.nextSibling();
+    const previousNode: DocumentFragment | null = w.previousNode();
+    const nextNode: DocumentFragment | null = w.nextNode();
+  },
+  function() {
+    const _root = document.body;
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_ALL);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | Node = w.currentNode;
+    const parentNode: Node | null = w.parentNode();
+    const firstChild: Node | null = w.firstChild();
+    const lastChild: Node | null = w.lastChild();
+    const previousSibling: Node | null = w.previousSibling();
+    const nextSibling: Node | null = w.nextSibling();
+    const previousNode: Node | null = w.previousNode();
+    const nextNode: Node | null = w.nextNode();
+  },
+  // NodeFilterInterface
+  function() {
+    document.createNodeIterator(document.body, -1, node => NodeFilter.FILTER_ACCEPT); // valid
+    document.createNodeIterator(document.body, -1, node => 'accept'); // invalid
+    document.createNodeIterator(document.body, -1, { acceptNode: node => NodeFilter.FILTER_ACCEPT }); // valid
+    document.createNodeIterator(document.body, -1, { acceptNode: node => 'accept' }); // invalid
+    document.createNodeIterator(document.body, -1, {}); // invalid
+  },
+  function() {
+    document.createTreeWalker(document.body, -1, node => NodeFilter.FILTER_ACCEPT); // valid
+    document.createTreeWalker(document.body, -1, node => 'accept'); // invalid
+    document.createTreeWalker(document.body, -1, { acceptNode: node => NodeFilter.FILTER_ACCEPT }); // valid
+    document.createTreeWalker(document.body, -1, { acceptNode: node => 'accept' }); // invalid
+    document.createTreeWalker(document.body, -1, {}); // invalid
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // basic functionality
+  function () {
+    const i: NodeIterator<*, *> = document.createNodeIterator(document.body);
+    const filter: NodeFilter = i.filter;
+    const response:
+      | typeof NodeFilter.FILTER_ACCEPT
+      | typeof NodeFilter.FILTER_REJECT
+      | typeof NodeFilter.FILTER_SKIP = filter.acceptNode(document.body);
+  },
+  function () {
+    const w: TreeWalker<*, *> = document.createTreeWalker(document.body);
+    const filter: NodeFilter = w.filter;
+    const response:
+      | typeof NodeFilter.FILTER_ACCEPT
+      | typeof NodeFilter.FILTER_REJECT
+      | typeof NodeFilter.FILTER_SKIP = filter.acceptNode(document.body);
+  },
+  // rootNode must be a Node
+  function () {
+    document.createNodeIterator(document.body); // valid
+    document.createNodeIterator({}); // invalid
+  },
+  function () {
+    document.createTreeWalker(document.body);
+    document.createTreeWalker({}); // invalid
+  },
+  // Type Parameters
+  function () {
+    const _root = document.body;
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_ELEMENT);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | Element = i.referenceNode;
+    const previousNode: Element | null = i.previousNode();
+    const nextNode: Element | null = i.nextNode();
+  },
+  function () {
+    const _root = document.body.attributes[0];
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_ATTRIBUTE);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | Attr = i.referenceNode;
+    const previousNode: Attr | null = i.previousNode();
+    const nextNode: Attr | null = i.nextNode();
+  },
+  function () {
+    const _root = document.body;
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_TEXT);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | Text = i.referenceNode;
+    const previousNode: Text | null = i.previousNode();
+    const nextNode: Text | null = i.nextNode();
+  },
+  function () {
+    const _root = document;
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_DOCUMENT);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | Document = i.referenceNode;
+    const previousNode: Document | null = i.previousNode();
+    const nextNode: Document | null = i.nextNode();
+  },
+  function () {
+    const _root = document;
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_DOCUMENT_TYPE);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | DocumentType = i.referenceNode;
+    const previousNode: DocumentType | null = i.previousNode();
+    const nextNode: DocumentType | null = i.nextNode();
+  },
+  function () {
+    const _root = document.createDocumentFragment();
+    const i = document.createNodeIterator(
+      _root,
+      NodeFilter.SHOW_DOCUMENT_FRAGMENT
+    );
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | DocumentFragment = i.referenceNode;
+    const previousNode: DocumentFragment | null = i.previousNode();
+    const nextNode: DocumentFragment | null = i.nextNode();
+  },
+  function () {
+    const _root = document.body;
+    const i = document.createNodeIterator(_root, NodeFilter.SHOW_ALL);
+    const root: typeof _root = i.root;
+    const referenceNode: typeof _root | Node = i.referenceNode;
+    const previousNode: Node | null = i.previousNode();
+    const nextNode: Node | null = i.nextNode();
+  },
+  function () {
+    const _root = document.body;
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_ELEMENT);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | Element = w.currentNode;
+    const parentNode: Element | null = w.parentNode();
+    const firstChild: Element | null = w.firstChild();
+    const lastChild: Element | null = w.lastChild();
+    const previousSibling: Element | null = w.previousSibling();
+    const nextSibling: Element | null = w.nextSibling();
+    const previousNode: Element | null = w.previousNode();
+    const nextNode: Element | null = w.nextNode();
+  },
+  function () {
+    const _root = document.body.attributes[0];
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_ATTRIBUTE);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | Attr = w.currentNode;
+    const parentNode: Attr | null = w.parentNode();
+    const firstChild: Attr | null = w.firstChild();
+    const lastChild: Attr | null = w.lastChild();
+    const previousSibling: Attr | null = w.previousSibling();
+    const nextSibling: Attr | null = w.nextSibling();
+    const previousNode: Attr | null = w.previousNode();
+    const nextNode: Attr | null = w.nextNode();
+  },
+  function () {
+    const _root = document.body;
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_TEXT);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | Text = w.currentNode;
+    const parentNode: Text | null = w.parentNode();
+    const firstChild: Text | null = w.firstChild();
+    const lastChild: Text | null = w.lastChild();
+    const previousSibling: Text | null = w.previousSibling();
+    const nextSibling: Text | null = w.nextSibling();
+    const previousNode: Text | null = w.previousNode();
+    const nextNode: Text | null = w.nextNode();
+  },
+  function () {
+    const _root = document;
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_DOCUMENT);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | Document = w.currentNode;
+    const parentNode: Document | null = w.parentNode();
+    const firstChild: Document | null = w.firstChild();
+    const lastChild: Document | null = w.lastChild();
+    const previousSibling: Document | null = w.previousSibling();
+    const nextSibling: Document | null = w.nextSibling();
+    const previousNode: Document | null = w.previousNode();
+    const nextNode: Document | null = w.nextNode();
+  },
+  function () {
+    const _root = document;
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_DOCUMENT_TYPE);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | DocumentType = w.currentNode;
+    const parentNode: DocumentType | null = w.parentNode();
+    const firstChild: DocumentType | null = w.firstChild();
+    const lastChild: DocumentType | null = w.lastChild();
+    const previousSibling: DocumentType | null = w.previousSibling();
+    const nextSibling: DocumentType | null = w.nextSibling();
+    const previousNode: DocumentType | null = w.previousNode();
+    const nextNode: DocumentType | null = w.nextNode();
+  },
+  function () {
+    const _root = document.createDocumentFragment();
+    const w = document.createTreeWalker(
+      _root,
+      NodeFilter.SHOW_DOCUMENT_FRAGMENT
+    );
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | DocumentFragment = w.currentNode;
+    const parentNode: DocumentFragment | null = w.parentNode();
+    const firstChild: DocumentFragment | null = w.firstChild();
+    const lastChild: DocumentFragment | null = w.lastChild();
+    const previousSibling: DocumentFragment | null = w.previousSibling();
+    const nextSibling: DocumentFragment | null = w.nextSibling();
+    const previousNode: DocumentFragment | null = w.previousNode();
+    const nextNode: DocumentFragment | null = w.nextNode();
+  },
+  function () {
+    const _root = document.body;
+    const w = document.createTreeWalker(_root, NodeFilter.SHOW_ALL);
+    const root: typeof _root = w.root;
+    const currentNode: typeof _root | Node = w.currentNode;
+    const parentNode: Node | null = w.parentNode();
+    const firstChild: Node | null = w.firstChild();
+    const lastChild: Node | null = w.lastChild();
+    const previousSibling: Node | null = w.previousSibling();
+    const nextSibling: Node | null = w.nextSibling();
+    const previousNode: Node | null = w.previousNode();
+    const nextNode: Node | null = w.nextNode();
+  },
+  // NodeFilterInterface
+  function () {
+    document.createNodeIterator(
+      document.body,
+      -1,
+      (node) => NodeFilter.FILTER_ACCEPT
+    ); // valid
+    document.createNodeIterator(document.body, -1, (node) => "accept"); // invalid
+    document.createNodeIterator(document.body, -1, {
+      acceptNode: (node) => NodeFilter.FILTER_ACCEPT,
+    }); // valid
+    document.createNodeIterator(document.body, -1, {
+      acceptNode: (node) => "accept",
+    }); // invalid
+    document.createNodeIterator(document.body, -1, {}); // invalid
+  },
+  function () {
+    document.createTreeWalker(
+      document.body,
+      -1,
+      (node) => NodeFilter.FILTER_ACCEPT
+    ); // valid
+    document.createTreeWalker(document.body, -1, (node) => "accept"); // invalid
+    document.createTreeWalker(document.body, -1, {
+      acceptNode: (node) => NodeFilter.FILTER_ACCEPT,
+    }); // valid
+    document.createTreeWalker(document.body, -1, {
+      acceptNode: (node) => "accept",
+    }); // invalid
+    document.createTreeWalker(document.body, -1, {}); // invalid
+  },
+];
+
+================================================================================
+`;

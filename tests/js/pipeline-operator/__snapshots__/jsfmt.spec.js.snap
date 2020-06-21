@@ -1,0 +1,319 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`block-comments.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+bifornCringerMoshedPerplexSawder
+|> foo1
+|> foo2 /* comment1 */
+|> foo3 /* comment2 */
+|> kochabCooieGameOnOboleUnweave
+|> glimseGlyphsHazardNoopsTieTie;
+
+=====================================output=====================================
+bifornCringerMoshedPerplexSawder
+  |> foo1
+  |> foo2 /* comment1 */
+  |> foo3 /* comment2 */
+  |> kochabCooieGameOnOboleUnweave
+  |> glimseGlyphsHazardNoopsTieTie;
+
+================================================================================
+`;
+
+exports[`fsharp_style_pipeline_operator.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+promise
+  |> await
+  |> x => doubleSay(x, ', ')
+  |> capitalize
+  |> x => x + '!'
+  |> x => new User.Message(x)
+  |> x => stream.write(x)
+  |> await
+  |> console.log;
+
+const result = "hello"
+  |> doubleSay
+  |> capitalize
+  |> exclaim;
+
+const newScore = person.score
+  |> double
+  |> n => add(7, n)
+  |> n => boundScore(0, 100, n);
+
+const user = url
+  |> api.get
+  |> await
+  |> r => r.json()
+  |> await
+  |> j => j.data.user;
+
+const f = (x) => (x |> (y) => y + 1)
+  |> (z) => z * y
+
+const _f = (x) => x
+  |> (y) => y + 1
+  |> (z) => z * y
+
+const g = (x) => x
+  |> (y) => (y + 1 |> (z) => z * y)
+
+const _g = (x) => x
+  |> (y => (y + 1 |> (z) => z * y))
+
+const __g = (x) => x
+  |> (
+    y => {
+      return (y + 1 |> (z) => z * y);
+    }
+  )
+
+const f = x + ((f) => (f |> f));
+const f = x |> (f) => f |> f;
+
+=====================================output=====================================
+promise
+  |> await
+  |> (x) => doubleSay(x, ", ")
+  |> capitalize
+  |> (x) => x + "!"
+  |> (x) => new User.Message(x)
+  |> (x) => stream.write(x)
+  |> await
+  |> console.log;
+
+const result = "hello" |> doubleSay |> capitalize |> exclaim;
+
+const newScore =
+  person.score |> double |> (n) => add(7, n) |> (n) => boundScore(0, 100, n);
+
+const user =
+  url |> api.get |> await |> (r) => r.json() |> await |> (j) => j.data.user;
+
+const f = (x) => x |> (y) => y + 1 |> (z) => z * y;
+
+const _f = (x) => x |> (y) => y + 1 |> (z) => z * y;
+
+const g = (x) => x |> (y) => (y + 1 |> (z) => z * y);
+
+const _g = (x) => x |> ((y) => (y + 1 |> (z) => z * y));
+
+const __g = (x) =>
+  x
+  |> ((y) => {
+    return y + 1 |> (z) => z * y;
+  });
+
+const f = x + ((f) => f |> f);
+const f = x |> (f) => f |> f;
+
+================================================================================
+`;
+
+exports[`minimal_pipeline_operator.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+a |> b |> c;
+
+a |> (b |> c);
+
+(a |> b) || c;
+a |> (b || c);
+
+let result = "hello"
+  |> doubleSay
+  |> capitalize
+  |> exclaim;
+
+let newScore = person.score
+  |> double
+  |> (_ => add(7, _))
+  |> (_ => subtract(2, _))
+  |> (_ => boundScore(0, 100, _));
+
+function createPerson (attrs) {
+  attrs
+    |> bounded('age', 1, 100)
+    |> format('name', /^[a-z]$/i)
+    |> Person.insertIntoDatabase;
+}
+
+foo |> (bar ?? baz);
+(foo |> bar) ?? baz;
+
+const result = [1,2,3]
+ |> map(a => a * 2)
+ |> filter(a => a > 5)
+ |> reduce((sum, a) => a+sum, 0)
+ |> increment
+ |> add(3)
+
+const searchResults$ = fromEvent(document.querySelector('input'), 'input')
+  |> map(event => event.target.value)
+  |> filter(searchText => searchText.length > 2)
+  |> debounce(300)
+  |> distinctUntilChanged()
+  |> switchMap(searchText => queryApi(searchText) |> retry(3))
+  |> share();
+
+const result = [5,10]
+  |> (_ => _.map(x => x * 2))
+  |> (_ => _.reduce( (a,b) => a + b ))
+  |> (sum => sum + 1)
+
+const result2 = [4, 9].map( x => x |> inc |> double )
+
+=====================================output=====================================
+a |> b |> c;
+
+a |> (b |> c);
+
+(a |> b) || c;
+a |> b || c;
+
+let result = "hello" |> doubleSay |> capitalize |> exclaim;
+
+let newScore =
+  person.score
+  |> double
+  |> ((_) => add(7, _))
+  |> ((_) => subtract(2, _))
+  |> ((_) => boundScore(0, 100, _));
+
+function createPerson(attrs) {
+  attrs
+    |> bounded("age", 1, 100)
+    |> format("name", /^[a-z]$/i)
+    |> Person.insertIntoDatabase;
+}
+
+foo |> bar ?? baz;
+(foo |> bar) ?? baz;
+
+const result =
+  [1, 2, 3]
+  |> map((a) => a * 2)
+  |> filter((a) => a > 5)
+  |> reduce((sum, a) => a + sum, 0)
+  |> increment
+  |> add(3);
+
+const searchResults$ =
+  fromEvent(document.querySelector("input"), "input")
+  |> map((event) => event.target.value)
+  |> filter((searchText) => searchText.length > 2)
+  |> debounce(300)
+  |> distinctUntilChanged()
+  |> switchMap((searchText) => queryApi(searchText) |> retry(3))
+  |> share();
+
+const result =
+  [5, 10]
+  |> ((_) => _.map((x) => x * 2))
+  |> ((_) => _.reduce((a, b) => a + b))
+  |> ((sum) => sum + 1);
+
+const result2 = [4, 9].map((x) => x |> inc |> double);
+
+================================================================================
+`;
+
+exports[`smart_pipeline_operator.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+a |> await # |> # * 3;
+
+foo
+  |> await #
+  |> # || throw new Error(\`foo \${bar1}\`)
+  |> bar2(#, ", ")
+  |> bar3
+  |> # + "!"
+  |> new Bar.Foo(#)
+  |> await bar.bar(#)
+  |> console.log;
+
+const result = "hello"
+  |> doubleSay
+  |> capitalize(#, "foo")
+  |> exclaim;
+
+function createPerson (attrs) {
+  attrs
+    |> foo
+    |> foo
+    |> Person.insertIntoDatabase;
+}
+
+const result = [1,2,3]
+ |> #.map(a => a * 2 )
+ |> #.filter(a => a > 5)
+ |> #.reduce((sum, a) => a+sum, 0)
+ |> increment
+ |> add(#, 3)
+
+const searchResults$ = fromEvent(document.querySelector('input'), 'input')
+  |> map(#, event => event.target.value)
+  |> filter(#, searchText => searchText.length > 2)
+  |> debounce(#, 300)
+  |> distinctUntilChanged
+  |> switchMap(#, searchText => queryApi(searchText) |> retry(#, 3))
+  |> share;
+
+v |> #.method() |> f;
+
+=====================================output=====================================
+a |> await # |> # * 3;
+
+foo
+  |> await #
+  |> # || throw new Error(\`foo \${bar1}\`)
+  |> bar2(#, ", ")
+  |> bar3
+  |> # + "!"
+  |> new Bar.Foo(#)
+  |> await bar.bar(#)
+  |> console.log;
+
+const result = "hello" |> doubleSay |> capitalize(#, "foo") |> exclaim;
+
+function createPerson(attrs) {
+  attrs |> foo |> foo |> Person.insertIntoDatabase;
+}
+
+const result =
+  [1, 2, 3]
+  |> #.map((a) => a * 2)
+  |> #.filter((a) => a > 5)
+  |> #.reduce((sum, a) => a + sum, 0)
+  |> increment
+  |> add(#, 3);
+
+const searchResults$ =
+  fromEvent(document.querySelector("input"), "input")
+  |> map(#, (event) => event.target.value)
+  |> filter(#, (searchText) => searchText.length > 2)
+  |> debounce(#, 300)
+  |> distinctUntilChanged
+  |> switchMap(#, (searchText) => queryApi(searchText) |> retry(#, 3))
+  |> share;
+
+v |> #.method() |> f;
+
+================================================================================
+`;

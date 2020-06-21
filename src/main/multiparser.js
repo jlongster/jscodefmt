@@ -4,7 +4,7 @@ const { normalize } = require("./options");
 const comments = require("./comments");
 
 function printSubtree(path, print, options, printAstToDoc) {
-  if (options.printer.embed) {
+  if (options.printer.embed && options.embeddedLanguageFormatting === "auto") {
     return options.printer.embed(
       path,
       print,
@@ -28,7 +28,7 @@ function textToDoc(text, partialNextOptions, parentOptions, printAstToDoc) {
         parentOptions.parser === "angular" ||
         parentOptions.parser === "lwc"
       ),
-      originalText: text
+      originalText: text,
     },
     { passThrough: true }
   );
@@ -44,5 +44,5 @@ function textToDoc(text, partialNextOptions, parentOptions, printAstToDoc) {
 }
 
 module.exports = {
-  printSubtree
+  printSubtree,
 };

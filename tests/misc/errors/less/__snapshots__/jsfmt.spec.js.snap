@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`inline-comment.js error test 1`] = `
+"(postcss) CssSyntaxError Unknown word (5:4)
+  3 | a{
+  4 | 	prop
+> 5 | // inline
+    |    ^
+  6 | :
+  7 | value;
+  8 | }"
+`;

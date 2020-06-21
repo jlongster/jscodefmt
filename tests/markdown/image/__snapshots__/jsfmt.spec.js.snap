@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`simple.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+![hello](http://example.com/image.png)
+
+=====================================output=====================================
+![hello](http://example.com/image.png)
+
+================================================================================
+`;
+
+exports[`title.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+![hello](http://example.com/image.png "title")
+
+=====================================output=====================================
+![hello](http://example.com/image.png "title")
+
+================================================================================
+`;

@@ -1,0 +1,327 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`boolean.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Boolean (the class) tests. booleans (the literals) are not part of core.js
+
+let tests = [
+  // constructor
+  function() {
+    new Boolean();
+    new Boolean(0);
+    new Boolean(-0);
+    new Boolean(null);
+    new Boolean(false);
+    new Boolean(NaN);
+    new Boolean(undefined);
+    new Boolean("");
+  },
+
+  // toString
+  function() {
+    (true).toString();
+    let x: boolean = false;
+    x.toString();
+    (new Boolean(true)).toString();
+  },
+
+  // valueOf
+  function() {
+    ((new Boolean(0)).valueOf(): boolean);
+  },
+
+  // casting
+  function() {
+    Boolean();
+    Boolean(0);
+    Boolean(-0);
+    Boolean(null);
+    Boolean(false);
+    Boolean(NaN);
+    Boolean(undefined);
+    Boolean("");
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+// Boolean (the class) tests. booleans (the literals) are not part of core.js
+
+let tests = [
+  // constructor
+  function () {
+    new Boolean();
+    new Boolean(0);
+    new Boolean(-0);
+    new Boolean(null);
+    new Boolean(false);
+    new Boolean(NaN);
+    new Boolean(undefined);
+    new Boolean("");
+  },
+
+  // toString
+  function () {
+    true.toString();
+    let x: boolean = false;
+    x.toString();
+    new Boolean(true).toString();
+  },
+
+  // valueOf
+  function () {
+    (new Boolean(0).valueOf(): boolean);
+  },
+
+  // casting
+  function () {
+    Boolean();
+    Boolean(0);
+    Boolean(-0);
+    Boolean(null);
+    Boolean(false);
+    Boolean(NaN);
+    Boolean(undefined);
+    Boolean("");
+  },
+];
+
+================================================================================
+`;
+
+exports[`map.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function* generator(): Iterable<[string, number]> {
+  while (true) {
+    yield ['foo', 123];
+  }
+}
+
+let tests = [
+  // good constructors
+  function() {
+    let w = new Map();
+    let x = new Map(null);
+    let y = new Map([['foo', 123]]);
+    let z = new Map(generator());
+    let a: Map<string, number> = new Map();
+    let b: Map<string, number> = new Map([['foo', 123]]);
+    let c: Map<string, number> = new Map(generator());
+  },
+
+  // bad constructors
+  function() {
+    let x = new Map(['foo', 123]); // error
+    let y: Map<number, string> = new Map([['foo', 123]]); // error
+  },
+
+  // get()
+  function(x: Map<string, number>) {
+    (x.get('foo'): boolean); // error, string | void
+    x.get(123); // error, wrong key type
+  },
+];
+
+=====================================output=====================================
+// @flow
+
+function* generator(): Iterable<[string, number]> {
+  while (true) {
+    yield ["foo", 123];
+  }
+}
+
+let tests = [
+  // good constructors
+  function () {
+    let w = new Map();
+    let x = new Map(null);
+    let y = new Map([["foo", 123]]);
+    let z = new Map(generator());
+    let a: Map<string, number> = new Map();
+    let b: Map<string, number> = new Map([["foo", 123]]);
+    let c: Map<string, number> = new Map(generator());
+  },
+
+  // bad constructors
+  function () {
+    let x = new Map(["foo", 123]); // error
+    let y: Map<number, string> = new Map([["foo", 123]]); // error
+  },
+
+  // get()
+  function (x: Map<string, number>) {
+    (x.get("foo"): boolean); // error, string | void
+    x.get(123); // error, wrong key type
+  },
+];
+
+================================================================================
+`;
+
+exports[`regexp.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let tests = [
+  // constructor
+  function() {
+    new RegExp('foo');
+    new RegExp(/foo/);
+    new RegExp('foo', 'i');
+    new RegExp('foo', 'ig');
+    new RegExp(/foo/, 'i'); // invalid in ES5, valid in ES6
+    new RegExp(/foo/g, 'i'); // invalid in ES5, valid in ES6
+  },
+
+  // called as a function (equivalent to the constructor per ES6 21.2.3)
+  function() {
+    RegExp('foo');
+    RegExp(/foo/);
+    RegExp('foo', 'i');
+    RegExp('foo', 'ig');
+    RegExp(/foo/, 'i'); // invalid in ES5, valid in ES6
+    RegExp(/foo/g, 'i'); // invalid in ES5, valid in ES6
+  },
+
+  // invalid flags
+  function() {
+    RegExp('foo', 'z'); // error
+    new RegExp('foo', 'z'); // error
+  }
+];
+
+=====================================output=====================================
+// @flow
+
+let tests = [
+  // constructor
+  function () {
+    new RegExp("foo");
+    new RegExp(/foo/);
+    new RegExp("foo", "i");
+    new RegExp("foo", "ig");
+    new RegExp(/foo/, "i"); // invalid in ES5, valid in ES6
+    new RegExp(/foo/g, "i"); // invalid in ES5, valid in ES6
+  },
+
+  // called as a function (equivalent to the constructor per ES6 21.2.3)
+  function () {
+    RegExp("foo");
+    RegExp(/foo/);
+    RegExp("foo", "i");
+    RegExp("foo", "ig");
+    RegExp(/foo/, "i"); // invalid in ES5, valid in ES6
+    RegExp(/foo/g, "i"); // invalid in ES5, valid in ES6
+  },
+
+  // invalid flags
+  function () {
+    RegExp("foo", "z"); // error
+    new RegExp("foo", "z"); // error
+  },
+];
+
+================================================================================
+`;
+
+exports[`weakset.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+let ws = new WeakSet();
+let obj: Object = {};
+let dict: {foo: string} = {foo: 'bar'};
+
+ws.add(window);
+ws.add(obj);
+ws.add(dict);
+ws.has(window);
+ws.has(obj);
+ws.has(dict);
+ws.delete(window);
+ws.delete(obj);
+ws.delete(dict);
+
+let ws2 = new WeakSet([obj, dict]);
+
+let ws3 = new WeakSet([1, 2, 3]); // error, must be objects
+
+function* generator(): Iterable<{foo: string}> {
+  while (true) {
+    yield {foo: 'bar'};
+  }
+}
+
+let ws4 = new WeakSet(generator());
+
+function* numbers(): Iterable<number> {
+  let i = 0;
+  while (true) {
+    yield i++;
+  }
+}
+
+let ws5 = new WeakSet(numbers()); // error, must be objects
+
+=====================================output=====================================
+// @flow
+
+let ws = new WeakSet();
+let obj: Object = {};
+let dict: { foo: string } = { foo: "bar" };
+
+ws.add(window);
+ws.add(obj);
+ws.add(dict);
+ws.has(window);
+ws.has(obj);
+ws.has(dict);
+ws.delete(window);
+ws.delete(obj);
+ws.delete(dict);
+
+let ws2 = new WeakSet([obj, dict]);
+
+let ws3 = new WeakSet([1, 2, 3]); // error, must be objects
+
+function* generator(): Iterable<{ foo: string }> {
+  while (true) {
+    yield { foo: "bar" };
+  }
+}
+
+let ws4 = new WeakSet(generator());
+
+function* numbers(): Iterable<number> {
+  let i = 0;
+  while (true) {
+    yield i++;
+  }
+}
+
+let ws5 = new WeakSet(numbers()); // error, must be objects
+
+================================================================================
+`;

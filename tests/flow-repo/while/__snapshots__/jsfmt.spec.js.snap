@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`abnormal.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function foo(x: boolean) {
+  var ii = 10;
+  while (ii-- >= 0) {
+    if (x) {
+      continue;
+    }
+    return;
+  }
+  //console.log('this is still reachable');
+}
+
+function bar(x: boolean) {
+  var ii = 0;
+  while (ii > 0) {
+    return;
+  }
+  //console.log('this is still reachable');
+}
+
+=====================================output=====================================
+/* @flow */
+
+function foo(x: boolean) {
+  var ii = 10;
+  while (ii-- >= 0) {
+    if (x) {
+      continue;
+    }
+    return;
+  }
+  //console.log('this is still reachable');
+}
+
+function bar(x: boolean) {
+  var ii = 0;
+  while (ii > 0) {
+    return;
+  }
+  //console.log('this is still reachable');
+}
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class C {
+    m() { return new C; }
+}
+function blah() {}
+var node: ?C = new C;
+while (node) {
+    var parent = node.m();
+    var cloneable: C = node;
+    blah();
+    node = parent.m();
+}
+
+=====================================output=====================================
+class C {
+  m() {
+    return new C();
+  }
+}
+function blah() {}
+var node: ?C = new C();
+while (node) {
+  var parent = node.m();
+  var cloneable: C = node;
+  blah();
+  node = parent.m();
+}
+
+================================================================================
+`;

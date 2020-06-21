@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dynamic-import.ts error test 1`] = `
+"Dynamic import must have one specifier as an argument. (1:8)
+> 1 | import('./prettier.mjs', {})
+    |        ^
+  2 | "
+`;
+
+exports[`invalid-jsx-1.ts error test 1`] = `
+"Unexpected token. Did you mean \`{'>'}\` or \`&gt;\`? (3:45)
+  1 | // https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-9.html#-and--are-now-invalid-jsx-text-characters
+  2 | 
+> 3 | let directions = <div>Navigate to: Menu Bar > Tools > Options</div>
+    |                                             ^
+  4 | "
+`;
+
+exports[`module-attributes-dynamic.ts error test 1`] = `
+"Dynamic import must have one specifier as an argument. (1:8)
+> 1 | import(\\"foo.json\\", { with: { type: \\"json\\" } })
+    |        ^
+  2 | "
+`;
+
+exports[`module-attributes-static.ts error test 1`] = `
+"';' expected. (1:28)
+> 1 | import foo from \\"foo.json\\" with type: \\"json\\";
+    |                            ^
+  2 | "
+`;
+
+exports[`snippet: #0 error test 1`] = `
+"Unexpected token. Did you mean \`{'}'}\` or \`&rbrace;\`? (1:15)
+> 1 | let x1 = <div>}</div>;
+    |               ^"
+`;
+
+exports[`snippet: #1 error test 1`] = `
+"Unexpected token. Did you mean \`{'>'}\` or \`&gt;\`? (1:15)
+> 1 | let x2 = <div>></div>;
+    |               ^"
+`;
+
+exports[`snippet: #2 error test 1`] = `
+"':' expected. (1:21)
+> 1 | let x3 = <div>{\\"foo\\"}}</div>;
+    |                     ^"
+`;
+
+exports[`snippet: #3 error test 1`] = `
+"':' expected. (1:21)
+> 1 | let x4 = <div>{\\"foo\\"}></div>;
+    |                     ^"
+`;
+
+exports[`snippet: #4 error test 1`] = `
+"Expression expected. (1:15)
+> 1 | let x5 = <div>}{\\"foo\\"}</div>;
+    |               ^"
+`;
+
+exports[`snippet: #5 error test 1`] = `
+"Expression expected. (1:15)
+> 1 | let x6 = <div>>{\\"foo\\"}</div>;
+    |               ^"
+`;

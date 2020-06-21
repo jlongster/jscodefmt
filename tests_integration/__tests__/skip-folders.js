@@ -7,7 +7,7 @@ expect.addSnapshotSerializer(require("../path-serializer"));
 describe("skips folders in glob", () => {
   runPrettier("cli/skip-folders", ["**/*", "-l"]).test({
     status: 1,
-    stderr: ""
+    stderr: "",
   });
 });
 
@@ -17,6 +17,6 @@ describe("skip folders passed specifically", () => {
     "a/file.js",
     "b",
     "b/file.js",
-    "-l"
+    "-l",
   ]).test({ status: 1, stderr: "" });
 });

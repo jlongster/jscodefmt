@@ -1,0 +1,147 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// $FlowFixMe
+var test1: string = 123; // This error should be suppressed
+
+// $FlowIssue
+var test2: string = 123; // This error should be suppressed
+
+function getNum() {
+  return 123;
+}
+
+// $FlowFixMe This was the second loc in the error
+var test3: string = getNum(); // This error should be suppressed
+
+// $FlowFixMe Error unused suppression
+
+var test4: string = 123; // This error is NOT suppressed
+
+                         // $FlowFixMe Indentation shouldn't matter
+var test5: string = 123; // This error should be suppressed
+
+/*
+ * $FlowNewLine
+ */
+var test6: string = 123;
+
+=====================================output=====================================
+// $FlowFixMe
+var test1: string = 123; // This error should be suppressed
+
+// $FlowIssue
+var test2: string = 123; // This error should be suppressed
+
+function getNum() {
+  return 123;
+}
+
+// $FlowFixMe This was the second loc in the error
+var test3: string = getNum(); // This error should be suppressed
+
+// $FlowFixMe Error unused suppression
+
+var test4: string = 123; // This error is NOT suppressed
+
+// $FlowFixMe Indentation shouldn't matter
+var test5: string = 123; // This error should be suppressed
+
+/*
+ * $FlowNewLine
+ */
+var test6: string = 123;
+
+================================================================================
+`;
+
+exports[`B.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// $FlowFixMe
+var test1: string = library_num;
+
+=====================================output=====================================
+// $FlowFixMe
+var test1: string = library_num;
+
+================================================================================
+`;
+
+exports[`C.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function takesAString(x: string): void {}
+
+function runTest(y: number): void {
+  takesAString(
+    /* $FlowFixMe - suppressing the error op location should also work */
+    y,
+  );
+}
+
+=====================================output=====================================
+function takesAString(x: string): void {}
+
+function runTest(y: number): void {
+  takesAString(
+    /* $FlowFixMe - suppressing the error op location should also work */
+    y
+  );
+}
+
+================================================================================
+`;
+
+exports[`D.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare var x: {
+  x: { foo: string }
+};
+declare var y: {
+  // $FlowFixMe - this location is only mentioned in the extra section
+  x: { bar: number }
+};
+x = y;
+
+=====================================output=====================================
+declare var x: {
+  x: { foo: string },
+};
+declare var y: {
+  // $FlowFixMe - this location is only mentioned in the extra section
+  x: { bar: number },
+};
+x = y;
+
+================================================================================
+`;
+
+exports[`lib.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare var library_num: number;
+
+=====================================output=====================================
+declare var library_num: number;
+
+================================================================================
+`;

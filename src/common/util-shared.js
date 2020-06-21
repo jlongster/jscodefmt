@@ -23,7 +23,7 @@ const {
   makeString,
   addLeadingComment,
   addDanglingComment,
-  addTrailingComment
+  addTrailingComment,
 } = require("./util");
 
 module.exports = {
@@ -49,5 +49,5 @@ module.exports = {
   makeString,
   addLeadingComment,
   addDanglingComment,
-  addTrailingComment
+  addTrailingComment,
 };

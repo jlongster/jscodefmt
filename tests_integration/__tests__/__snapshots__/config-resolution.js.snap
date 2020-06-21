@@ -27,6 +27,9 @@ console.log(
   \\"should have no semi\\"
 )
 console.log(
+  \\"jest/__best-tests__/.file.js should have semi\\"
+);
+console.log(
   \\"jest/__best-tests__/file.js should have semi\\"
 );
 console.log(
@@ -134,6 +137,7 @@ function f() {
   )
 }
 console.log(\\"should have no semi\\")
+console.log(\\"jest/__best-tests__/.file.js should have semi\\");
 console.log(\\"jest/__best-tests__/file.js should have semi\\");
 console.log(\\"jest/Component.js should not have semi\\")
 console.log(\\"jest/Component.test.js should have semi\\");

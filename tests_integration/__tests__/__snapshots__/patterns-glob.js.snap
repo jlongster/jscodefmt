@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fixtures-1: Should match all files (stderr) 1`] = `""`;
+
+exports[`fixtures-1: Should match all files (stdout) 1`] = `
+"!file.js
+a.js
+b.js
+"
+`;
+
+exports[`fixtures-1: Should match all files (write) 1`] = `Array []`;
+
+exports[`fixtures-1: Should match files except \`a.js\` (stderr) 1`] = `""`;
+
+exports[`fixtures-1: Should match files except \`a.js\` (stdout) 1`] = `
+"!file.js
+b.js
+"
+`;
+
+exports[`fixtures-1: Should match files except \`a.js\` (write) 1`] = `Array []`;
+
+exports[`fixtures-2: Should match \`a.js\` and \`!b.js\` (stderr) 1`] = `""`;
+
+exports[`fixtures-2: Should match \`a.js\` and \`!b.js\` (stdout) 1`] = `
+"!b.js
+a.js
+"
+`;
+
+exports[`fixtures-2: Should match \`a.js\` and \`!b.js\` (write) 1`] = `Array []`;
+
+exports[`fixtures-2: Should match all js files and all supported files in the '!dir.js' directory (stderr) 1`] = `""`;
+
+exports[`fixtures-2: Should match all js files and all supported files in the '!dir.js' directory (stdout) 1`] = `
+"!b.js
+a.js
+!dir.js/1.css
+!dir.js/2.css
+"
+`;
+
+exports[`fixtures-2: Should match all js files and all supported files in the '!dir.js' directory (write) 1`] = `Array []`;
+
+exports[`fixtures-2: Should only match \`!b.js\` (stderr) 1`] = `""`;
+
+exports[`fixtures-2: Should only match \`!b.js\` (stdout) 1`] = `
+"!b.js
+"
+`;
+
+exports[`fixtures-2: Should only match \`!b.js\` (write) 1`] = `Array []`;
+
+exports[`fixtures-3: Should exclude \`.svn\` (existing) (stderr) 1`] = `""`;
+
+exports[`fixtures-3: Should exclude \`.svn\` (existing) (stdout) 1`] = `
+"outside.js
+"
+`;
+
+exports[`fixtures-3: Should exclude \`.svn\` (existing) (write) 1`] = `Array []`;
+
+exports[`fixtures-3: Should exclude \`.svn\` (nonexisting) (stderr) 1`] = `""`;
+
+exports[`fixtures-3: Should exclude \`.svn\` (nonexisting) (stdout) 1`] = `
+"outside.js
+"
+`;
+
+exports[`fixtures-3: Should exclude \`.svn\` (nonexisting) (write) 1`] = `Array []`;
+
+exports[`fixtures-3: Should match \`outside.js\`, \`dir/inside.js\` and \`dir/node_modules/in-node_modules.js\` (stderr) 1`] = `""`;
+
+exports[`fixtures-3: Should match \`outside.js\`, \`dir/inside.js\` and \`dir/node_modules/in-node_modules.js\` (stdout) 1`] = `
+"dir/inside.js
+dir/node_modules/in-node_modules.js
+outside.js
+"
+`;
+
+exports[`fixtures-3: Should match \`outside.js\`, \`dir/inside.js\` and \`dir/node_modules/in-node_modules.js\` (write) 1`] = `Array []`;
+
+exports[`fixtures-3: Should only match \`outside.js\` and \`dir/inside.js\` (stderr) 1`] = `""`;
+
+exports[`fixtures-3: Should only match \`outside.js\` and \`dir/inside.js\` (stdout) 1`] = `
+"dir/inside.js
+outside.js
+"
+`;
+
+exports[`fixtures-3: Should only match \`outside.js\` and \`dir/inside.js\` (write) 1`] = `Array []`;
+
+exports[`fixtures-4: Should match \`level-1.js\` #2 (stderr) 1`] = `""`;
+
+exports[`fixtures-4: Should match \`level-1.js\` #2 (stdout) 1`] = `
+"0/level-1.js
+"
+`;
+
+exports[`fixtures-4: Should match \`level-1.js\` #2 (write) 1`] = `Array []`;
+
+exports[`fixtures-4: Should match \`level-1.js\` #3 (stderr) 1`] = `""`;
+
+exports[`fixtures-4: Should match \`level-1.js\` #3 (stdout) 1`] = `
+"0/level-1.js
+"
+`;
+
+exports[`fixtures-4: Should match \`level-1.js\` #3 (write) 1`] = `Array []`;
+
+exports[`fixtures-4: Should match \`level-1.js\` (stderr) 1`] = `""`;
+
+exports[`fixtures-4: Should match \`level-1.js\` (stdout) 1`] = `
+"0/level-1.js
+"
+`;
+
+exports[`fixtures-4: Should match \`level-1.js\` (write) 1`] = `Array []`;

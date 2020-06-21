@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`enum.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+enum State {
+  PENDING
+  VISIBLE
+  ARCHIVED
+}
+
+=====================================output=====================================
+enum State {
+  PENDING
+  VISIBLE
+  ARCHIVED
+}
+
+================================================================================
+`;

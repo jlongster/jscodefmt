@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`declare_class_fields.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class B {p: number;}
+class C extends B {declare p: 256 | 1000;}
+
+=====================================output=====================================
+class B {
+  p: number;
+}
+class C extends B {
+  declare p: 256 | 1000;
+}
+
+================================================================================
+`;
+
+exports[`declare_enum.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare const enum Foo {}
+declare enum Bar {}
+
+=====================================output=====================================
+declare const enum Foo {}
+declare enum Bar {}
+
+================================================================================
+`;
+
+exports[`declare_function.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare function x();
+declare function y(): void;
+
+declare namespace A {
+    function x();
+    function y(): void;
+}
+
+=====================================output=====================================
+declare function x();
+declare function y(): void;
+
+declare namespace A {
+  function x();
+  function y(): void;
+}
+
+================================================================================
+`;
+
+exports[`declare_interface.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare interface Dictionary<T> {
+  [index: string]: T
+}
+
+=====================================output=====================================
+declare interface Dictionary<T> {
+  [index: string]: T;
+}
+
+================================================================================
+`;
+
+exports[`declare_var.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// tslint:disable-next-line:no-use-before-declare
+const hello = 5;
+
+// tslint:disable-next-line:no-use-before-declare
+declare const hello2 = 5;
+
+=====================================output=====================================
+// tslint:disable-next-line:no-use-before-declare
+const hello = 5;
+
+// tslint:disable-next-line:no-use-before-declare
+declare const hello2 = 5;
+
+================================================================================
+`;

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`intersection.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type State = {
+  sharedProperty: any;
+} & (
+  | { discriminant: "FOO"; foo: any }
+  | { discriminant: "BAR"; bar: any }
+  | { discriminant: "BAZ"; baz: any } 
+);
+
+=====================================output=====================================
+type State = {
+  sharedProperty: any,
+} & (
+  | { discriminant: "FOO", foo: any }
+  | { discriminant: "BAR", bar: any }
+  | { discriminant: "BAZ", baz: any }
+);
+
+================================================================================
+`;

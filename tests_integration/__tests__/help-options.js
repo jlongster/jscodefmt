@@ -9,25 +9,25 @@ const arrayify = require("../../src/utils/arrayify");
 arrayify(
   {
     ...util.createDetailedOptionMap(
-      prettier.getSupportInfo(null, {
+      prettier.getSupportInfo({
         showDeprecated: true,
         showUnreleased: true,
-        showInternal: true
+        showInternal: true,
       }).options
     ),
-    ...util.normalizeDetailedOptionMap(constant.options)
+    ...util.normalizeDetailedOptionMap(constant.options),
   },
   "name"
-).forEach(option => {
+).forEach((option) => {
   const optionNames = [
     option.description ? option.name : null,
-    option.oppositeDescription ? `no-${option.name}` : null
+    option.oppositeDescription ? `no-${option.name}` : null,
   ].filter(Boolean);
 
-  optionNames.forEach(optionName => {
+  optionNames.forEach((optionName) => {
     describe(`show detailed usage with --help ${optionName}`, () => {
       runPrettier("cli", ["--help", optionName]).test({
-        status: 0
+        status: 0,
       });
     });
   });

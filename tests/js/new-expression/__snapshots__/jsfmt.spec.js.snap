@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`call.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+new (factory())()
+new factory()()
+
+new (factory())(factory())
+
+=====================================output=====================================
+new (factory())();
+new factory()();
+
+new (factory())(factory());
+
+================================================================================
+`;
+
+exports[`new_expression.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+new (memoize.Cache || MapCache)
+new (typeof this == "function" ? this : Dict())
+new (createObj()).prop(a());
+new (x()\`\`.y)();
+new e[f().x].y();
+new e[f()].y();
+new (a().b)();
+new (a().b().c)();
+new (a\`\`());
+
+=====================================output=====================================
+new (memoize.Cache || MapCache)();
+new (typeof this == "function" ? this : Dict())();
+new (createObj().prop)(a());
+new (x()\`\`.y)();
+new e[f().x].y();
+new e[f()].y();
+new (a().b)();
+new (a().b().c)();
+new (a\`\`())();
+
+================================================================================
+`;
+
+exports[`with-member-expression.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function functionName() {
+  // indent to make the line break
+  if (true) {
+    this._aVeryLongVariableNameToForceLineBreak = new this.Promise(
+      (resolve, reject) => {
+        // do something
+      }
+    );
+  }
+}
+
+=====================================output=====================================
+function functionName() {
+  // indent to make the line break
+  if (true) {
+    this._aVeryLongVariableNameToForceLineBreak = new this.Promise(
+      (resolve, reject) => {
+        // do something
+      }
+    );
+  }
+}
+
+================================================================================
+`;

@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare module A {
+  declare function foo(): string;
+}
+
+=====================================output=====================================
+declare module A {
+  declare function foo(): string;
+}
+
+================================================================================
+`;
+
+exports[`B.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @providesModule B
+ * @flow
+ */
+
+module.exports = require('A');
+
+=====================================output=====================================
+/**
+ * @providesModule B
+ * @flow
+ */
+
+module.exports = require("A");
+
+================================================================================
+`;
+
+exports[`C.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @providesModule C
+ * @flow
+ */
+
+module.exports = require('B');
+
+=====================================output=====================================
+/**
+ * @providesModule C
+ * @flow
+ */
+
+module.exports = require("B");
+
+================================================================================
+`;
+
+exports[`D.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @providesModule D
+ * @flow
+ */
+
+var bar1: string = require('A');
+var bar2: string = require('B');
+var bar3: string = require('C');
+
+=====================================output=====================================
+/**
+ * @providesModule D
+ * @flow
+ */
+
+var bar1: string = require("A");
+var bar2: string = require("B");
+var bar3: string = require("C");
+
+================================================================================
+`;

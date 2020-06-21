@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`assignment_expression.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+this.size = this._origin = this._capacity = 0;
+
+=====================================output=====================================
+this.size = this._origin = this._capacity = 0;
+
+================================================================================
+`;

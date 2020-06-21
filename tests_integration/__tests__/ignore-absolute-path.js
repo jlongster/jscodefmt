@@ -8,8 +8,8 @@ describe("support absolute filename", () => {
     path.resolve(__dirname, "../cli/ignore-absolute-path/ignored/module.js"),
     path.resolve(__dirname, "../cli/ignore-absolute-path/depth1/ignored/*.js"),
     path.resolve(__dirname, "../cli/ignore-absolute-path/regular-module.js"),
-    "-l"
+    "-l",
   ]).test({
-    status: 1
+    status: 1,
   });
 });

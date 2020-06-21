@@ -8,7 +8,7 @@ Run Prettier in the browser with the `standalone.js` UMD bundle shipped in the N
 
 ### `prettier.format(code, options)`
 
-Unlike the `format` function from the [main API](api.md#prettierformatsource-options), this function does not load plugins automatically, so a `plugins` property is required if you want to load plugins. Additionally, the parsers included in the Prettier package won't be loaded automatically, so you need to load them before using them.
+Unlike the `format` function from the [main API](api.md#prettierformatsource--options), this function does not load plugins automatically, so a `plugins` property is required if you want to load plugins. Additionally, the parsers included in the Prettier package won't be loaded automatically, so you need to load them before using them.
 
 See [Usage](#usage) below for examples.
 
@@ -17,12 +17,12 @@ See [Usage](#usage) below for examples.
 ### Global
 
 ```html
-<script src="https://unpkg.com/prettier@1.19.1/standalone.js"></script>
-<script src="https://unpkg.com/prettier@1.19.1/parser-graphql.js"></script>
+<script src="https://unpkg.com/prettier@2.0.5/standalone.js"></script>
+<script src="https://unpkg.com/prettier@2.0.5/parser-graphql.js"></script>
 <script>
   prettier.format("query { }", {
     parser: "graphql",
-    plugins: prettierPlugins
+    plugins: prettierPlugins,
   });
 </script>
 ```
@@ -35,7 +35,7 @@ import parserGraphql from "prettier/parser-graphql";
 
 prettier.format("query { }", {
   parser: "graphql",
-  plugins: [parserGraphql]
+  plugins: [parserGraphql],
 });
 ```
 
@@ -43,8 +43,8 @@ prettier.format("query { }", {
 
 ```js
 define([
-  "https://unpkg.com/prettier@1.19.1/standalone.js",
-  "https://unpkg.com/prettier@1.19.1/parser-graphql.js"
+  "https://unpkg.com/prettier@2.0.5/standalone.js",
+  "https://unpkg.com/prettier@2.0.5/parser-graphql.js",
 ], (prettier, ...plugins) => {
   prettier.format("query { }", { parser: "graphql", plugins });
 });
@@ -63,7 +63,7 @@ This syntax doesn't necessarily work in the browser, but it can be used when bun
 ### Worker
 
 ```js
-importScripts("https://unpkg.com/prettier@1.19.1/standalone.js");
-importScripts("https://unpkg.com/prettier@1.19.1/parser-graphql.js");
+importScripts("https://unpkg.com/prettier@2.0.5/standalone.js");
+importScripts("https://unpkg.com/prettier@2.0.5/parser-graphql.js");
 prettier.format("query { }", { parser: "graphql", plugins: prettierPlugins });
 ```

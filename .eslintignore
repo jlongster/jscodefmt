@@ -2,8 +2,7 @@
 /tests/**/*.js
 !/tests/**/jsfmt.spec.js
 !/**/.eslintrc.js
-/test.js
-/scripts/build/shims
+/test*.js
 /scripts/release/node_modules
 /coverage/
 /dist/

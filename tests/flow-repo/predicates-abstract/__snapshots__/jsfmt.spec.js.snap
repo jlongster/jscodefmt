@@ -1,0 +1,406 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`filter.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Filter the contents of an array
+
+declare function my_filter<T, P: $Pred<1>>(v: Array<T>, cb: P): Array<$Refine<T,P,1>>;
+
+declare var arr: Array<mixed>;
+const barr = my_filter(arr, is_string);
+(barr: Array<string>);
+
+function is_string(x): %checks {
+  return typeof x === "string";
+}
+
+=====================================output=====================================
+// @flow
+
+// Filter the contents of an array
+
+declare function my_filter<T, P: $Pred<1>>(
+  v: Array<T>,
+  cb: P
+): Array<$Refine<T, P, 1>>;
+
+declare var arr: Array<mixed>;
+const barr = my_filter(arr, is_string);
+(barr: Array<string>);
+
+function is_string(x): %checks {
+  return typeof x === "string";
+}
+
+================================================================================
+`;
+
+exports[`filter-union.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Filter the contents of an array
+
+
+declare function my_filter<T, P: $Pred<1>>(v: Array<T>, cb: P): Array<$Refine<T,P,1>>;
+
+type A = { kind: 'A', u: number }
+type B = { kind: 'B', v: string }
+type C = { kind: 'C', y: boolean }
+type D = { kind: 'D', x: boolean }
+type E = { kind: 'E', y: boolean }
+
+declare var ab: Array<A|B|C>;
+
+(my_filter(ab, (x): %checks => x.kind === 'A'): Array<A>);    // OK
+(my_filter(ab, (x): %checks => x.kind !== 'A'): Array<B|C>);  // OK
+
+=====================================output=====================================
+// @flow
+
+// Filter the contents of an array
+
+declare function my_filter<T, P: $Pred<1>>(
+  v: Array<T>,
+  cb: P
+): Array<$Refine<T, P, 1>>;
+
+type A = { kind: "A", u: number };
+type B = { kind: "B", v: string };
+type C = { kind: "C", y: boolean };
+type D = { kind: "D", x: boolean };
+type E = { kind: "E", y: boolean };
+
+declare var ab: Array<A | B | C>;
+
+(my_filter(ab, (x): %checks => x.kind === "A"): Array<A>); // OK
+(my_filter(ab, (x): %checks => x.kind !== "A"): Array<B | C>); // OK
+
+================================================================================
+`;
+
+exports[`refine.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+/*
+  $Pred<N> is an "abstract predicate type", i.e. denotes a (function) type that
+  refines N variables. So if \`cb\` is a function, then it should be refining
+  exactly N argument. It is abstract in that we do not need to specify:
+  (a) which variables are going to be refined (just the number), or (b) what
+  exactly the refinement (predicate) is going to be.
+
+  $Refine<T,P,k> is a refinement type, that refines type T with the k-th
+  argument that gets refined by an abstract preficate type P.
+*/
+declare function refine<T, P: $Pred<1>>(v: T, cb: P): $Refine<T,P,1>;
+// function refine(v, cb)
+// { if (cb(v)) { return v; } else { throw new Error(); } }
+
+/*
+  Use case
+*/
+declare var a: mixed;
+var b = refine(a, is_string);
+(b: string);
+
+declare function refine_fst<T, P: $Pred<2>>(v: T, w: T, cb: P): $Refine<T,P,1>;
+// function refine_fst(v, w, cb)
+// { if (cb(v, w)) { return v; } else { throw new Error(); } }
+
+declare var c: mixed;
+declare var d: mixed;
+
+var e = refine2(c, d, is_string_and_number);
+(e: string);
+
+
+declare function refine2<T, P: $Pred<2>>(v: T, w: T, cb: P): $Refine<T,P,1>;
+
+// function refine_fst(v, w, cb)
+// { if (cb(v, w)) { return w; } else { throw new Error(); } }
+
+function is_string(x): boolean %checks {
+  return typeof x === "string";
+}
+
+function is_string_and_number(x, y): %checks {
+  return typeof x === "string" && typeof y === "number";
+}
+
+=====================================output=====================================
+// @flow
+
+/*
+  $Pred<N> is an "abstract predicate type", i.e. denotes a (function) type that
+  refines N variables. So if \`cb\` is a function, then it should be refining
+  exactly N argument. It is abstract in that we do not need to specify:
+  (a) which variables are going to be refined (just the number), or (b) what
+  exactly the refinement (predicate) is going to be.
+
+  $Refine<T,P,k> is a refinement type, that refines type T with the k-th
+  argument that gets refined by an abstract preficate type P.
+*/
+declare function refine<T, P: $Pred<1>>(v: T, cb: P): $Refine<T, P, 1>;
+// function refine(v, cb)
+// { if (cb(v)) { return v; } else { throw new Error(); } }
+
+/*
+  Use case
+*/
+declare var a: mixed;
+var b = refine(a, is_string);
+(b: string);
+
+declare function refine_fst<T, P: $Pred<2>>(
+  v: T,
+  w: T,
+  cb: P
+): $Refine<T, P, 1>;
+// function refine_fst(v, w, cb)
+// { if (cb(v, w)) { return v; } else { throw new Error(); } }
+
+declare var c: mixed;
+declare var d: mixed;
+
+var e = refine2(c, d, is_string_and_number);
+(e: string);
+
+declare function refine2<T, P: $Pred<2>>(v: T, w: T, cb: P): $Refine<T, P, 1>;
+
+// function refine_fst(v, w, cb)
+// { if (cb(v, w)) { return w; } else { throw new Error(); } }
+
+function is_string(x): boolean %checks {
+  return typeof x === "string";
+}
+
+function is_string_and_number(x, y): %checks {
+  return typeof x === "string" && typeof y === "number";
+}
+
+================================================================================
+`;
+
+exports[`sanity-filter.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare function my_filter<T, P: $Pred<1>>(v: Array<T>, cb: P): Array<$Refine<T,P,1>>;
+
+// Sanity check A: filtering the wrong type
+declare var a: Array<mixed>;
+const b = my_filter(a, is_string);
+(b: Array<number>);
+
+
+// Sanity check B: Passing non-predicate function to filter
+declare var c: Array<mixed>;
+const d = my_filter(c, is_string_regular);
+(d: Array<string>);
+
+function is_string(x): boolean %checks {
+  return typeof x === "string";
+}
+
+function is_string_regular(x): boolean {
+  return typeof x === "string";
+}
+
+=====================================output=====================================
+// @flow
+
+declare function my_filter<T, P: $Pred<1>>(
+  v: Array<T>,
+  cb: P
+): Array<$Refine<T, P, 1>>;
+
+// Sanity check A: filtering the wrong type
+declare var a: Array<mixed>;
+const b = my_filter(a, is_string);
+(b: Array<number>);
+
+// Sanity check B: Passing non-predicate function to filter
+declare var c: Array<mixed>;
+const d = my_filter(c, is_string_regular);
+(d: Array<string>);
+
+function is_string(x): boolean %checks {
+  return typeof x === "string";
+}
+
+function is_string_regular(x): boolean {
+  return typeof x === "string";
+}
+
+================================================================================
+`;
+
+exports[`sanity-filter-union.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Filter the contents of an array
+
+
+declare function my_filter<T, P: $Pred<1>>(v: Array<T>, cb: P): Array<$Refine<T,P,1>>;
+
+type A = { kind: 'A', u: number }
+type B = { kind: 'B', v: string }
+type C = { kind: 'C', y: boolean }
+type D = { kind: 'D', x: boolean }
+type E = { kind: 'E', y: boolean }
+
+declare var ab: Array<A|B|C>;
+
+(my_filter(ab, (x): %checks => x.kind === 'A'): Array<B>);    // ERROR
+(my_filter(ab, (x): %checks => x.kind !== 'A'): Array<A|C>);  // ERROR
+
+=====================================output=====================================
+// @flow
+
+// Filter the contents of an array
+
+declare function my_filter<T, P: $Pred<1>>(
+  v: Array<T>,
+  cb: P
+): Array<$Refine<T, P, 1>>;
+
+type A = { kind: "A", u: number };
+type B = { kind: "B", v: string };
+type C = { kind: "C", y: boolean };
+type D = { kind: "D", x: boolean };
+type E = { kind: "E", y: boolean };
+
+declare var ab: Array<A | B | C>;
+
+(my_filter(ab, (x): %checks => x.kind === "A"): Array<B>); // ERROR
+(my_filter(ab, (x): %checks => x.kind !== "A"): Array<A | C>); // ERROR
+
+================================================================================
+`;
+
+exports[`sanity-refine.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// Sanity check A: the refinment position index is outside of the allowed range
+declare function refine<T, P: $Pred<1>>(v: T, cb: P): $Refine<T,P,2>;
+
+declare var a: mixed;
+var b = refine(a, is_string);   // ERROR: index out of bounds
+(b: string);
+
+
+// Sanity check B: refine2 expects a function that accepts 3 arguments but
+// it is called with a function that takes 2
+declare var c: mixed;
+declare var d: mixed;
+declare var e: mixed;
+
+declare function refine3<T, P: $Pred<3>>(u: T, v: T, w: T, cb: P): $Refine<T,P,1>;
+
+var e = refine3(c, d, e, is_string_and_number);
+(e: string);
+
+function is_string_and_number(x, y): %checks {
+  return typeof x === "string" && typeof y === "number";
+}
+
+
+// Sanity check C: expecting a predicate function but passed a non-predicate one
+var e = refine(a, is_string_regular);   // ERROR: is_string_regular is not a
+                                        // predicate function
+(e: number);
+
+////////////////////////////////////////////////////////////////////////////////
+
+function is_string(x): %checks {
+  return typeof x === "string";
+}
+
+function is_string_regular(x)  {
+  return typeof x === "string";
+}
+
+function is_string_and_number(x, y): %checks {
+  return typeof x === "string" && typeof y === "number";
+}
+
+=====================================output=====================================
+// @flow
+
+// Sanity check A: the refinment position index is outside of the allowed range
+declare function refine<T, P: $Pred<1>>(v: T, cb: P): $Refine<T, P, 2>;
+
+declare var a: mixed;
+var b = refine(a, is_string); // ERROR: index out of bounds
+(b: string);
+
+// Sanity check B: refine2 expects a function that accepts 3 arguments but
+// it is called with a function that takes 2
+declare var c: mixed;
+declare var d: mixed;
+declare var e: mixed;
+
+declare function refine3<T, P: $Pred<3>>(
+  u: T,
+  v: T,
+  w: T,
+  cb: P
+): $Refine<T, P, 1>;
+
+var e = refine3(c, d, e, is_string_and_number);
+(e: string);
+
+function is_string_and_number(x, y): %checks {
+  return typeof x === "string" && typeof y === "number";
+}
+
+// Sanity check C: expecting a predicate function but passed a non-predicate one
+var e = refine(a, is_string_regular); // ERROR: is_string_regular is not a
+// predicate function
+(e: number);
+
+////////////////////////////////////////////////////////////////////////////////
+
+function is_string(x): %checks {
+  return typeof x === "string";
+}
+
+function is_string_regular(x) {
+  return typeof x === "string";
+}
+
+function is_string_and_number(x, y): %checks {
+  return typeof x === "string" && typeof y === "number";
+}
+
+================================================================================
+`;

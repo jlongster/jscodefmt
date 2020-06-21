@@ -4,6 +4,7 @@ const chalk = require("chalk");
 const execa = require("execa");
 const minimist = require("minimist");
 const path = require("path");
+const fs = require("fs");
 const stringWidth = require("string-width");
 
 const bundler = require("./bundler");
@@ -13,7 +14,7 @@ const Cache = require("./cache");
 
 // Errors in promises should be fatal.
 const loggedErrors = new Set();
-process.on("unhandledRejection", err => {
+process.on("unhandledRejection", (err) => {
   // No need to print it twice.
   if (!loggedErrors.has(err)) {
     console.error(err);
@@ -21,6 +22,7 @@ process.on("unhandledRejection", err => {
   process.exit(1);
 });
 
+const CACHE_VERSION = "v24"; // This need update when updating build scripts
 const CACHED = chalk.bgYellow.black(" CACHED ");
 const OK = chalk.bgGreen.black("  DONE  ");
 const FAIL = chalk.bgRed.black("  FAIL  ");
@@ -35,21 +37,33 @@ function fitTerminal(input) {
 }
 
 async function createBundle(bundleConfig, cache) {
-  const { output } = bundleConfig;
+  const { output, target } = bundleConfig;
   process.stdout.write(fitTerminal(output));
 
-  return bundler(bundleConfig, cache)
-    .catch(error => {
-      console.log(FAIL + "\n");
-      handleError(error);
-    })
-    .then(result => {
-      if (result.cached) {
-        console.log(CACHED);
-      } else {
-        console.log(OK);
+  try {
+    const { cached } = await bundler(bundleConfig, cache);
+
+    if (cached) {
+      console.log(CACHED);
+      return;
+    }
+
+    // Files including U+FFEE can't load in Chrome Extension
+    // `prettier-chrome-extension` https://github.com/prettier/prettier-chrome-extension
+    // details https://github.com/prettier/prettier/pull/8534
+    if (target === "universal") {
+      const file = path.join("dist", output);
+      const content = fs.readFileSync(file, "utf8");
+      if (content.includes("\ufffe")) {
+        throw new Error("Bundled umd file should not have U+FFFE character.");
       }
-    });
+    }
+
+    console.log(OK);
+  } catch (error) {
+    console.log(FAIL + "\n");
+    handleError(error);
+  }
 }
 
 function handleError(error) {
@@ -66,7 +80,7 @@ async function cacheFiles() {
     for (const bundleConfig of bundleConfigs) {
       await execa("cp", [
         path.join("dist", bundleConfig.output),
-        path.join(".cache", "files")
+        path.join(".cache", "files"),
       ]);
     }
   } catch (err) {
@@ -81,7 +95,7 @@ async function preparePackage() {
   delete pkg.devDependencies;
   pkg.scripts = {
     prepublishOnly:
-      "node -e \"assert.equal(require('.').version, require('..').version)\""
+      "node -e \"assert.equal(require('.').version, require('..').version)\"",
   };
   pkg.files = ["*.js"];
   await util.writeJson("dist/package.json", pkg);
@@ -98,7 +112,7 @@ async function run(params) {
     await execa("rm", ["-rf", ".cache"]);
   }
 
-  const bundleCache = new Cache(".cache/", "v21");
+  const bundleCache = new Cache(".cache/", CACHE_VERSION);
   await bundleCache.load();
 
   console.log(chalk.inverse(" Building packages "));
@@ -106,14 +120,14 @@ async function run(params) {
     await createBundle(bundleConfig, bundleCache);
   }
 
-  await bundleCache.save();
   await cacheFiles();
+  await bundleCache.save();
 
   await preparePackage();
 }
 
 run(
   minimist(process.argv.slice(2), {
-    boolean: ["purge-cache"]
+    boolean: ["purge-cache"],
   })
 );

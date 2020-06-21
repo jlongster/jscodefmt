@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`innerTypeParameterShadowingOuterOne.ts 1`] = `
+exports[`innerTypeParameterShadowingOuterOne.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -68,7 +68,7 @@ function f2<T extends Date, U extends Date>() {
 ================================================================================
 `;
 
-exports[`innerTypeParameterShadowingOuterOne2.ts 1`] = `
+exports[`innerTypeParameterShadowingOuterOne2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -154,7 +154,7 @@ class C2<T extends Date, U extends Date> {
 ================================================================================
 `;
 
-exports[`staticMembersUsingClassTypeParameter.ts 1`] = `
+exports[`staticMembersUsingClassTypeParameter.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -196,7 +196,7 @@ class C3<T extends Date> {
 ================================================================================
 `;
 
-exports[`typeParametersAvailableInNestedScope2.ts 1`] = `
+exports[`typeParametersAvailableInNestedScope2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

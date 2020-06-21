@@ -11,6 +11,6 @@ describe("plugin search should not crash when prettier isn't inside a directory"
     stdout: "",
     stderr: "",
     status: 0,
-    write: []
+    write: [],
   });
 });

@@ -1,26 +1,29 @@
 "use strict";
 
+const { getShebang } = require("./util");
+
 function includeShebang(text, ast) {
-  if (!text.startsWith("#!")) {
+  const shebang = getShebang(text);
+
+  if (!shebang) {
     return;
   }
+  const index = shebang.length;
 
-  const index = text.indexOf("\n");
-  const shebang = text.slice(2, index);
   const comment = {
     type: "Line",
-    value: shebang,
+    value: shebang.slice(2),
     range: [0, index],
     loc: {
       start: {
         line: 1,
-        column: 0
+        column: 0,
       },
       end: {
         line: 1,
-        column: index
-      }
-    }
+        column: index,
+      },
+    },
   };
 
   ast.comments = [comment].concat(ast.comments);

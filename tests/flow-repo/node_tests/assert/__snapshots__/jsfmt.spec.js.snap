@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`assert.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var assert = require("assert")
+assert(true) // ok
+assert.ok(true) // ok
+
+=====================================output=====================================
+/* @flow */
+
+var assert = require("assert");
+assert(true); // ok
+assert.ok(true); // ok
+
+================================================================================
+`;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unclosed_tag.vue error test 1`] = `
+"Unexpected character \\"EOF\\" (2:1)
+  1 | <div
+> 2 | 
+    | ^"
+`;
+
+exports[`unclosed_tag_in_template.vue error test 1`] = `
+"Unexpected character \\"/\\" (4:2)
+  2 |   <p>Templates are formatted as well...
+  3 |     </
+> 4 | </template>
+    |  ^
+  5 | "
+`;
+
+exports[`upper-case.html error test 1`] = `
+"Void elements do not have end tags \\"Input\\" (8:21)
+   6 |   <div id=\\"app\\">
+   7 |     <!-- when vue parse use for html, Input should not treat as component -->
+>  8 |     <Input>{{value}}</Input>
+     |                     ^
+   9 |   </div>
+  10 | </body>
+  11 |   <script src=\\"https://unpkg.com/vue/dist/vue.js\\"></script>"
+`;

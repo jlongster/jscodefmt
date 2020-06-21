@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function() {
+module.exports = function () {
   return {
     name: "evaluate",
 
@@ -21,8 +21,8 @@ module.exports = function() {
 
       return {
         code: `var json = ${json}; export default json;`,
-        map: { mappings: "" }
+        map: { mappings: "" },
       };
-    }
+    },
   };
 };

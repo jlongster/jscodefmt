@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`A.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @providesModule A */
+class Implementation {}
+export function foo(): Implementation { return new Implementation; }
+
+=====================================output=====================================
+/* @providesModule A */
+class Implementation {}
+export function foo(): Implementation {
+  return new Implementation();
+}
+
+================================================================================
+`;
+
+exports[`ExplicitProvidesModuleDifferentName.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/*
+ * @providesModule ExplicitProvidesModuleDifferentName
+ * @flow
+ */
+
+class Implementation {}
+module.exports.fun = (): Implementation => new Implementation;
+
+=====================================output=====================================
+/*
+ * @providesModule ExplicitProvidesModuleDifferentName
+ * @flow
+ */
+
+class Implementation {}
+module.exports.fun = (): Implementation => new Implementation();
+
+================================================================================
+`;
+
+exports[`ExplicitProvidesModuleSameName.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/*
+ * @providesModule ExplicitProvidesModuleSameName
+ * @flow
+ */
+
+class Implementation {}
+module.exports.fun = (): Implementation => new Implementation;
+
+=====================================output=====================================
+/*
+ * @providesModule ExplicitProvidesModuleSameName
+ * @flow
+ */
+
+class Implementation {}
+module.exports.fun = (): Implementation => new Implementation();
+
+================================================================================
+`;
+
+exports[`ImplicitProvidesModule.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/*
+ * @providesModule ImplicitProvidesModule
+ * @flow
+ */
+
+class Implementation {}
+module.exports.fun = (): Implementation => new Implementation;
+
+=====================================output=====================================
+/*
+ * @providesModule ImplicitProvidesModule
+ * @flow
+ */
+
+class Implementation {}
+module.exports.fun = (): Implementation => new Implementation();
+
+================================================================================
+`;
+
+exports[`md5.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @providesModule md5 */
+
+=====================================output=====================================
+/* @providesModule md5 */
+
+================================================================================
+`;
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var Implicit = require('ImplicitProvidesModule');
+(Implicit.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+
+var ExplicitSameName = require('ExplicitProvidesModuleSameName');
+(ExplicitSameName.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+
+var ExplicitDifferentName = require('ExplicitProvidesModuleDifferentName');
+(ExplicitDifferentName.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+
+=====================================output=====================================
+/* @flow */
+
+var Implicit = require("ImplicitProvidesModule");
+(Implicit.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+
+var ExplicitSameName = require("ExplicitProvidesModuleSameName");
+(ExplicitSameName.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+
+var ExplicitDifferentName = require("ExplicitProvidesModuleDifferentName");
+(ExplicitDifferentName.fun(): boolean); // Error: Either Implementation ~> boolean or Declaration ~> boolean
+
+================================================================================
+`;

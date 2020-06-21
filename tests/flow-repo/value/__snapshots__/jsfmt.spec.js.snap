@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`value.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var o = {};
+o["x"] = 4;
+var y:string = o["x"];
+
+var table: { [_: string]: number } = {};
+table["x"] = "hello";
+
+=====================================output=====================================
+var o = {};
+o["x"] = 4;
+var y: string = o["x"];
+
+var table: { [_: string]: number } = {};
+table["x"] = "hello";
+
+================================================================================
+`;

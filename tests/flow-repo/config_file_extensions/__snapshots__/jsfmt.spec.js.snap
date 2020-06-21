@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/*
+ * @flow
+ */
+
+function foo(x) {
+  var a: number = 'asdf';
+  return x * 10;
+}
+
+// This file should be ignored, so this should not result in an error
+foo('Hello, world!');
+
+=====================================output=====================================
+/*
+ * @flow
+ */
+
+function foo(x) {
+  var a: number = "asdf";
+  return x * 10;
+}
+
+// This file should be ignored, so this should not result in an error
+foo("Hello, world!");
+
+================================================================================
+`;

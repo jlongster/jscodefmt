@@ -1,0 +1,389 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CRLF.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@nice-blue: #5B83AD;
+@light-blue: @nice-blue + #111;
+
+// Comment 1
+/*
+ * Comment 2
+ */
+#header {
+  // Comment 3
+  /*
+   * Comment 4
+   */
+  color: @light-blue;
+}
+
+@media only screen and (max-width: 600px) {
+  // Comment 1
+  /*
+   * Comment 5
+   */
+  body {
+    background-color: lightblue; // Comment 6
+    color: red; /* Comment 7 */
+  }
+}
+
+=====================================output=====================================
+@nice-blue: #5b83ad;
+@light-blue: @nice-blue + #111;
+
+// Comment 1
+/*
+ * Comment 2
+ */
+#header {
+  // Comment 3
+  /*
+   * Comment 4
+   */
+  color: @light-blue;
+}
+
+@media only screen and (max-width: 600px) {
+  // Comment 1
+  /*
+   * Comment 5
+   */
+  body {
+    background-color: lightblue; // Comment 6
+    color: red; /* Comment 7 */
+  }
+}
+
+================================================================================
+`;
+
+exports[`between-decl.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+selector {
+prop: // comment
+value;
+
+prop: /* block */ value;
+
+prop
+: value;
+}
+
+// #5603
+.grid {
+        grid-template-areas: //
+          "header header header" //
+          "sidebar content content" //
+          "footer footer footer";
+
+        grid-template-areas:
+          "header header header" //
+          "sidebar content content" //
+          "footer footer footer";
+ }
+
+// TODO: make these pretty
+selector {
+prop:
+/* block */
+value;
+
+prop/* block */:
+value;
+
+prop
+/* block */
+:
+value;
+
+prop/* before */: // after
+value;
+
+
+prop/* before */: /* after*/
+value;
+}
+
+=====================================output=====================================
+selector {
+  prop: // comment
+    value;
+
+  prop: /* block */ value;
+
+  prop: value;
+}
+
+// #5603
+.grid {
+  grid-template-areas: //
+    "header header header" //
+    "sidebar content content" //
+    "footer footer footer";
+
+  grid-template-areas: "header header header" //
+    "sidebar content content" //
+    "footer footer footer";
+}
+
+// TODO: make these pretty
+selector {
+  prop:
+/* block */ value;
+
+  prop/* block */: value;
+
+  prop/* block */
+: value;
+
+  prop/* before */: // after
+    value;
+
+  prop/* before */: /* after*/ value;
+}
+
+================================================================================
+`;
+
+exports[`block.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// Animation definitions cannot cross the shadow boundary,
+// and thus need to be loaded directly into the atom-text-editor scope.
+/* Kikoo */
+/**
+ * Kikoo
+ */
+
+=====================================output=====================================
+// Animation definitions cannot cross the shadow boundary,
+// and thus need to be loaded directly into the atom-text-editor scope.
+/* Kikoo */
+/**
+ * Kikoo
+ */
+
+================================================================================
+`;
+
+exports[`block-2.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* Kikoo */
+/**
+ * Kikoo
+ */
+
+=====================================output=====================================
+/* Kikoo */
+/**
+ * Kikoo
+ */
+
+================================================================================
+`;
+
+exports[`issue-8130.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@import "../node_modules/foo/bar.less";
+
+// @index(['./components/**/*.less', '!./**/_demo/**'], f => \`@import '\${f.path}\${f.ext}';\`)
+@import './components/Button/Button.less';
+@import './components/Form/Form.less';
+@import './components/Input/Input.less';
+// @endindex
+
+=====================================output=====================================
+@import "../node_modules/foo/bar.less";
+
+// @index(['./components/**/*.less', '!./**/_demo/**'], f => \`@import '\${f.path}\${f.ext}';\`)
+@import "./components/Button/Button.less";
+@import "./components/Form/Form.less";
+@import "./components/Input/Input.less";
+// @endindex
+
+================================================================================
+`;
+
+exports[`mixed.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+
+@import "a";
+
+// '/*' <-- this breaks formatting
+
+@import 'b';
+// another comment
+//no-space before
+
+=====================================output=====================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+
+@import "a";
+
+// '/*' <-- this breaks formatting
+
+@import "b";
+// another comment
+//no-space before
+
+================================================================================
+`;
+
+exports[`mixed-2.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+@import "a";
+//*
+@import 'b';
+/* block */
+/*no-space block*/
+
+=====================================output=====================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+@import "a";
+//*
+@import "b";
+/* block */
+/*no-space block*/
+
+================================================================================
+`;
+
+exports[`mixed-block.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+
+@import "a";
+
+// '/*' <-- this breaks formatting
+
+@import 'b';
+/* block */
+/*no-space block*/
+
+=====================================output=====================================
+/* DO NOT ADD EXTRA CODE TO THIS FILE */
+
+@import "a";
+
+// '/*' <-- this breaks formatting
+
+@import "b";
+/* block */
+/*no-space block*/
+
+================================================================================
+`;
+
+exports[`places.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+div {
+  // a
+
+  margin-left: -@leftMargin; // b
+} // c
+
+// d
+div {}
+
+=====================================output=====================================
+div {
+  // a
+
+  margin-left: -@leftMargin; // b
+} // c
+
+// d
+div {
+}
+
+================================================================================
+`;
+
+exports[`prettier-ignore.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// prettier-ignore
+@blue:  blue;
+@black: darkgray;
+
+foo {
+  /* prettier-ignore */
+  thing:     foo;
+  -ms-thing: foo;
+}
+
+=====================================output=====================================
+// prettier-ignore
+@blue:  blue;
+@black: darkgray;
+
+foo {
+  /* prettier-ignore */
+  thing:     foo;
+  -ms-thing: foo;
+}
+
+================================================================================
+`;
+
+exports[`trailing_star_slash.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@media (max-width: 1) {}
+a {
+  // element.style */
+}
+
+=====================================output=====================================
+@media (max-width: 1) {
+}
+a {
+  // element.style */
+}
+
+================================================================================
+`;

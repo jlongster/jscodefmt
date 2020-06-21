@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`module-attributes-dynamic.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import("foo.json", { with: { type: "json" } })
+
+=====================================output=====================================
+import("foo.json", { with: { type: "json" } });
+
+================================================================================
+`;
+
+exports[`module-attributes-static.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+import foo from "foo.json" with type: "json";
+
+=====================================output=====================================
+import foo from "foo.json" with type: "json";
+
+================================================================================
+`;

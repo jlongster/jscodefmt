@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`lib.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare module 'foo' {
+  declare function bar(str: string): number;
+}
+
+=====================================output=====================================
+declare module "foo" {
+  declare function bar(str: string): number;
+}
+
+================================================================================
+`;

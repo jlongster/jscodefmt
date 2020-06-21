@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`issue-8041.ts error test 1`] = `
+"Did not expect a type annotation here. (1:2)
+> 1 | (a:b)
+    |  ^
+  2 | "
+`;

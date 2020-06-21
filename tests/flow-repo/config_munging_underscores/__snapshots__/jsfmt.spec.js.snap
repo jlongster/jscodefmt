@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`chain.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+class A {
+  _property1: number;
+  static _sProperty: number;
+
+  constructor() {
+    this._property1 = 5;
+  }
+  _method1(): number {
+    return 1;
+  }
+  static _sMethod(): string {
+    return "some string";
+  }
+}
+A._sProperty = 48;
+
+class B extends A {
+  _property1: string;
+  static _sProperty: string;
+
+  constructor() {
+    super();
+    this._property1 = "another string";
+  }
+  _method1(): string {
+    return "yet another string";
+  }
+  static _sMethod(): number {
+    return 23;
+  }
+}
+B._sProperty = "B._sProperty string";
+
+=====================================output=====================================
+/* @flow */
+
+class A {
+  _property1: number;
+  static _sProperty: number;
+
+  constructor() {
+    this._property1 = 5;
+  }
+  _method1(): number {
+    return 1;
+  }
+  static _sMethod(): string {
+    return "some string";
+  }
+}
+A._sProperty = 48;
+
+class B extends A {
+  _property1: string;
+  static _sProperty: string;
+
+  constructor() {
+    super();
+    this._property1 = "another string";
+  }
+  _method1(): string {
+    return "yet another string";
+  }
+  static _sMethod(): number {
+    return 23;
+  }
+}
+B._sProperty = "B._sProperty string";
+
+================================================================================
+`;
+
+exports[`commonjs_export.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+class C {
+  _p: string;
+}
+
+module.exports = new C;
+
+=====================================output=====================================
+/* @flow */
+
+class C {
+  _p: string;
+}
+
+module.exports = new C();
+
+================================================================================
+`;
+
+exports[`commonjs_import.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+import {_p} from "./commonjs_export";
+
+=====================================output=====================================
+/* @flow */
+
+import { _p } from "./commonjs_export";
+
+================================================================================
+`;

@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class C<T> {
+  a<A>(x:T, a:A) {
+    this.b(x); // ok
+    this.b(a); // error: A ~> incompatible instance of T
+  }
+
+  b(x:T) {}
+}
+
+=====================================output=====================================
+class C<T> {
+  a<A>(x: T, a: A) {
+    this.b(x); // ok
+    this.b(a); // error: A ~> incompatible instance of T
+  }
+
+  b(x: T) {}
+}
+
+================================================================================
+`;
+
+exports[`default_params.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function f<T>(a:T) {
+  function g<U>(b:U, c:T = a) {
+    function h(d:U = b) {}
+    h(); // ok
+    h(b); // ok
+    h(c); // err, T ~> U
+  }
+  g(0); // ok
+  g(0,a); // ok
+  g(0,0); // error: number ~> T
+}
+f(0); // ok
+
+=====================================output=====================================
+function f<T>(a: T) {
+  function g<U>(b: U, c: T = a) {
+    function h(d: U = b) {}
+    h(); // ok
+    h(b); // ok
+    h(c); // err, T ~> U
+  }
+  g(0); // ok
+  g(0, a); // ok
+  g(0, 0); // error: number ~> T
+}
+f(0); // ok
+
+================================================================================
+`;
+
+exports[`method_shadow.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// Ensure method type params properly shadow outer type params. Subclass ensures
+// the generated insttype has the correct tvars. Should behave the same for
+// classes, interfaces, and declared classes.
+
+class A<T> {
+  x:T;
+  constructor(x:T) { this.x = x }
+  m<T>(x:T):A<T> { return new A(x) }
+}
+
+class B<T> extends A<T> {
+  m<T>(x:T):B<T> { return new B(x) }
+}
+
+interface C<T> {
+  m<T>(x:T):C<T>;
+}
+
+interface D<T> extends C<T> {
+  m<T>(x:T):D<T>;
+}
+
+declare class E<T> {
+  m<T>(x:T):E<T>;
+}
+
+declare class F<T> extends E<T> {
+  m<T>(x:T):F<T>;
+}
+
+
+// Bounds can refer to parent type params (until they are shadowed).
+
+class G<T> {
+  x:T;
+  constructor(x:T) { this.x = x }
+  m<T:T>(x:T):G<T> { return new G(x) } // T-as-bound is G's T
+}
+
+declare var g: G<number|string>;
+g.m(0); // ok
+g.m(true); // err, bool ~> number|string
+(g.m(""): G<number>); // err, string ~> number
+
+
+// Shadow bounds incompatible with parent
+
+class H<T> {
+    x:T;
+    m<T>(x:T) {
+        this.x = x; // err, m's T != H's T
+    }
+}
+
+=====================================output=====================================
+// Ensure method type params properly shadow outer type params. Subclass ensures
+// the generated insttype has the correct tvars. Should behave the same for
+// classes, interfaces, and declared classes.
+
+class A<T> {
+  x: T;
+  constructor(x: T) {
+    this.x = x;
+  }
+  m<T>(x: T): A<T> {
+    return new A(x);
+  }
+}
+
+class B<T> extends A<T> {
+  m<T>(x: T): B<T> {
+    return new B(x);
+  }
+}
+
+interface C<T> {
+  m<T>(x: T): C<T>;
+}
+
+interface D<T> extends C<T> {
+  m<T>(x: T): D<T>;
+}
+
+declare class E<T> {
+  m<T>(x: T): E<T>;
+}
+
+declare class F<T> extends E<T> {
+  m<T>(x: T): F<T>;
+}
+
+// Bounds can refer to parent type params (until they are shadowed).
+
+class G<T> {
+  x: T;
+  constructor(x: T) {
+    this.x = x;
+  }
+  m<T: T>(x: T): G<T> {
+    return new G(x);
+  } // T-as-bound is G's T
+}
+
+declare var g: G<number | string>;
+g.m(0); // ok
+g.m(true); // err, bool ~> number|string
+(g.m(""): G<number>); // err, string ~> number
+
+// Shadow bounds incompatible with parent
+
+class H<T> {
+  x: T;
+  m<T>(x: T) {
+    this.x = x; // err, m's T != H's T
+  }
+}
+
+================================================================================
+`;

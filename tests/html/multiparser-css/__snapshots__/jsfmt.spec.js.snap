@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`html-with-css-style.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    blink{
+
+        display:  none ;}
+    </style>
+</head>
+<body></body>
+</html>
+
+
+=====================================output=====================================
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      blink {
+        display: none;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
+
+================================================================================
+`;

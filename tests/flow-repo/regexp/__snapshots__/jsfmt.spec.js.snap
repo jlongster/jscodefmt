@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`regexp.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var patt=/Hello/g
+var match:number = patt.test("Hello world!");
+
+=====================================output=====================================
+var patt = /Hello/g;
+var match: number = patt.test("Hello world!");
+
+================================================================================
+`;

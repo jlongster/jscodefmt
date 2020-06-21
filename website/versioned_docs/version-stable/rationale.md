@@ -37,7 +37,7 @@ By default, Prettier’s printing algorithm prints expressions on a single line 
 ```js
 const user = {
   name: "John Doe",
-  age: 30
+  age: 30,
 };
 ```
 
@@ -69,7 +69,7 @@ const user = {
 ```js
 const user = {
   name: "John Doe",
-  age: 30
+  age: 30,
 };
 ```
 
@@ -85,7 +85,7 @@ Just like with objects, decorators are used for a lot of different things. Somet
 ```js
 @Component({
   selector: "hero-button",
-  template: `<button>{{label}}</button>`
+  template: `<button>{{ label }}</button>`,
 })
 class HeroButtonComponent {
   // These decorators were written inline and fit on the line so they stay
@@ -188,7 +188,7 @@ This practice is also common in [standard] which uses a semicolon-free style.
 
 The [`--print-width`](options.md#print-width) is more of a guideline to Prettier than a hard rule. It generally means “try to make lines this long, go shorter if needed and longer in special cases.”
 
-There are some edge cases, such as really long string literals, regexps, comments and variable names, which cannot be broken across lines (without using code transforms which [Prettier doesn’t do](#what-prettier-is-not-concerned-about)). Or if you nest your code 50 levels deep your lines are of course going to be mostly indentation :)
+There are some edge cases, such as really long string literals, regexps, comments and variable names, which cannot be broken across lines (without using code transforms which [Prettier doesn’t do](#what-prettier-is-_not_-concerned-about)). Or if you nest your code 50 levels deep your lines are of course going to be mostly indentation :)
 
 Apart from that, there are a few cases where Prettier intentionally exceeds the print width.
 
@@ -199,7 +199,7 @@ Prettier can break long `import` statements across several lines:
 ```js
 import {
   CollectionDashboard,
-  DashboardPlaceholder
+  DashboardPlaceholder,
 } from "../components/collections/collection-dashboard/main";
 ```
 

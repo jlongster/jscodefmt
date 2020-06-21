@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`timers.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function setImmediateCallback(): number {
+  return 0;
+}
+
+setImmediate(setImmediateCallback);
+
+=====================================output=====================================
+// @flow
+
+function setImmediateCallback(): number {
+  return 0;
+}
+
+setImmediate(setImmediateCallback);
+
+================================================================================
+`;

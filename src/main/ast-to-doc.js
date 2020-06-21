@@ -61,7 +61,7 @@ function printAstToDoc(ast, options, alignmentSize = 0) {
       // comments to print
       res = comments.printComments(
         path,
-        p => callPluginPrintFunction(p, options, printGenerically, args),
+        (p) => callPluginPrintFunction(p, options, printGenerically, args),
         options,
         args && args.needsSemi
       );

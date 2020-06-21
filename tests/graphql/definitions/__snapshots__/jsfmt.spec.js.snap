@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fields.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+query MyFirstQuery {
+  hello
+}
+
+mutation
+MyFirstMutation {
+  world
+}
+
+subscription, ThisIsASub, {
+  excellent
+}
+
+, query, ThisIsASub, {
+  excellent
+}
+
+query {
+  noName
+}
+
+{
+  noOperationType
+}
+
+=====================================output=====================================
+query MyFirstQuery {
+  hello
+}
+
+mutation MyFirstMutation {
+  world
+}
+
+subscription ThisIsASub {
+  excellent
+}
+
+query ThisIsASub {
+  excellent
+}
+
+query {
+  noName
+}
+
+{
+  noOperationType
+}
+
+================================================================================
+`;

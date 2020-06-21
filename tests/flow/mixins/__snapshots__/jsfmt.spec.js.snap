@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comments.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class D1<T> // 1
+mixins C<T> {}
+
+declare class D2<T> // 1
+mixins C<T> // 2
+{}
+
+declare class D3<T> // 1
+// 2
+mixins C<T> // 3
+{}
+
+declare class D4<T> // 1
+// 2
+extends B<T>
+mixins C<T> // 3
+{}
+
+declare class D5<T> // 1
+extends B<T>
+// 2
+mixins C<T> // 3
+{}
+
+=====================================output=====================================
+declare class D1<T> // 1
+  mixins C<T> {}
+
+declare class D2<T> // 1
+  mixins C<T> {
+  // 2
+}
+
+declare class D3<T> // 1
+  // 2
+  mixins C<T> {
+  // 3
+}
+
+declare class D4<T> // 1
+  // 2
+  extends B<T>
+  mixins C<T> {
+  // 3
+}
+
+declare class D5<T> // 1
+  extends B<T>
+  // 2
+  mixins C<T> {
+  // 3
+}
+
+================================================================================
+`;
+
+exports[`type.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare class A<T> extends B<T> mixins C<T> {}
+declare class D<T> mixins C<T> {}
+
+=====================================output=====================================
+declare class A<T> extends B<T> mixins C<T> {}
+declare class D<T> mixins C<T> {}
+
+================================================================================
+`;

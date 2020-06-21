@@ -1,0 +1,582 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`async.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// "For async functions, a Promise<T> is returned,
+// and the type of return expressions must be T."
+//
+
+async function f0(): Promise<number> {
+  return 1;
+}
+
+async function f1(): Promise<bool> {
+  return 1;  // error, number != bool
+}
+
+// await: (p: Promise<T> | T) => T
+//
+
+async function f2(p: Promise<number>): Promise<number> {
+  var x: number = await p;
+  var y: number = await 1;
+  return x + y;
+}
+
+async function f3(p: Promise<number>): Promise<number> {
+  return await p;
+}
+
+// TODO: this is one of those bad generic errors, currently:
+// "inconsistent use of library definitions" with two core.js locs
+async function f4(p: Promise<number>): Promise<bool> {
+  return await p; // error, number != bool
+}
+
+// async arrow functions
+//
+
+var f5: () => Promise<number> = async () => await 1;
+
+// async methods
+//
+
+class C {
+  async m() { return 1; }
+  async mt<T>(a: T): Promise<T> { return a; }
+  static async m(a): void { await a; } // error, void != Promise<void>
+  static async mt<T>(a: T): Promise<T> { return a; }
+}
+
+// async function props
+
+var obj = { f: async () => await 1 };
+var objf : () => Promise<number> = obj.f;
+
+=====================================output=====================================
+// @flow
+
+// "For async functions, a Promise<T> is returned,
+// and the type of return expressions must be T."
+//
+
+async function f0(): Promise<number> {
+  return 1;
+}
+
+async function f1(): Promise<boolean> {
+  return 1; // error, number != bool
+}
+
+// await: (p: Promise<T> | T) => T
+//
+
+async function f2(p: Promise<number>): Promise<number> {
+  var x: number = await p;
+  var y: number = await 1;
+  return x + y;
+}
+
+async function f3(p: Promise<number>): Promise<number> {
+  return await p;
+}
+
+// TODO: this is one of those bad generic errors, currently:
+// "inconsistent use of library definitions" with two core.js locs
+async function f4(p: Promise<number>): Promise<boolean> {
+  return await p; // error, number != bool
+}
+
+// async arrow functions
+//
+
+var f5: () => Promise<number> = async () => await 1;
+
+// async methods
+//
+
+class C {
+  async m() {
+    return 1;
+  }
+  async mt<T>(a: T): Promise<T> {
+    return a;
+  }
+  static async m(a): void {
+    await a;
+  } // error, void != Promise<void>
+  static async mt<T>(a: T): Promise<T> {
+    return a;
+  }
+}
+
+// async function props
+
+var obj = { f: async () => await 1 };
+var objf: () => Promise<number> = obj.f;
+
+================================================================================
+`;
+
+exports[`async_base_class.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// This is kind of weird, but it should parse. This works in babel without the
+// parens around (await promise). From the es6 and async/await specs I (nmote)
+// am not clear on whether it should. In any case it's a strange corner case
+// that is probably not important to support.
+class C {};
+
+var P: Promise<Class<C>> = new Promise(function (resolve, reject) {
+  resolve(C);
+});
+
+async function foo() {
+  class Bar extends (await P) { }
+  return Bar;
+}
+
+=====================================output=====================================
+// This is kind of weird, but it should parse. This works in babel without the
+// parens around (await promise). From the es6 and async/await specs I (nmote)
+// am not clear on whether it should. In any case it's a strange corner case
+// that is probably not important to support.
+class C {}
+
+var P: Promise<Class<C>> = new Promise(function (resolve, reject) {
+  resolve(C);
+});
+
+async function foo() {
+  class Bar extends (await P) {}
+  return Bar;
+}
+
+================================================================================
+`;
+
+exports[`async_parse.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+async function f() {}
+async function ft<T>(a: T) {}
+
+class C {
+  async m() {}
+  async mt<T>(a: T) {}
+  static async m(a) {}
+  static async mt<T>(a: T) {}
+}
+
+var e = async function () {};
+var et = async function<T> (a: T) {};
+
+var n = new async function() {};
+
+var o = { async m() {} };
+var ot = { async m<T>(a: T) {} };
+var oz = { async async() {} };
+
+var x = { async : 5 };
+console.log(x.async);
+
+var async = 3;
+var y = { async };
+
+=====================================output=====================================
+async function f() {}
+async function ft<T>(a: T) {}
+
+class C {
+  async m() {}
+  async mt<T>(a: T) {}
+  static async m(a) {}
+  static async mt<T>(a: T) {}
+}
+
+var e = async function () {};
+var et = async function <T>(a: T) {};
+
+var n = new (async function () {})();
+
+var o = { async m() {} };
+var ot = { async m<T>(a: T) {} };
+var oz = { async async() {} };
+
+var x = { async: 5 };
+console.log(x.async);
+
+var async = 3;
+var y = { async };
+
+================================================================================
+`;
+
+exports[`async_promise.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+async function f(): Promise<number> {
+  return Promise.resolve(1);
+}
+
+=====================================output=====================================
+async function f(): Promise<number> {
+  return Promise.resolve(1);
+}
+
+================================================================================
+`;
+
+exports[`async_return_void.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+async function foo1(): Promise<string> {
+  return;
+}
+
+async function foo2(): Promise<string> {
+  return undefined;
+}
+
+async function foo3(): Promise<string> {
+  function bar() { }
+  return bar();
+}
+
+=====================================output=====================================
+// @flow
+
+async function foo1(): Promise<string> {
+  return;
+}
+
+async function foo2(): Promise<string> {
+  return undefined;
+}
+
+async function foo3(): Promise<string> {
+  function bar() {}
+  return bar();
+}
+
+================================================================================
+`;
+
+exports[`async2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// misc basic
+
+function test1() {
+  async function foo() {
+    return 42;
+  }
+
+  async function bar() {
+    var a = await foo();
+    var b: number = a; // valid
+    var c: string = a; // Error: number ~> string
+  }
+}
+
+//
+// void returns:
+//
+
+// inference should produce return type Promise<void>
+// in the absence of an explicit return
+//
+
+function test2() {
+  async function voidoid1() {
+    console.log("HEY");
+  }
+
+  var voidoid2: () => Promise<void> = voidoid1; // ok
+
+  var voidoid3: () => void = voidoid1; // error, void != Promise<void>
+}
+
+// annotated return type of Promise<void> should work
+//
+
+function test3() {
+  async function voidoid4(): Promise<void> { // ok
+    console.log("HEY");
+  }
+}
+
+// other annotated return types should fail
+// (note: misannotated return types with explicit
+// return statements are covered in async.js)
+//
+
+function test4() {
+  async function voidoid5(): void { // error, void != Promise<void>
+    console.log("HEY");
+  }
+}
+
+function test5() {
+  async function voidoid6()
+  : Promise<number> { // error, number != void
+    console.log("HEY");
+  }
+}
+
+=====================================output=====================================
+// @flow
+
+// misc basic
+
+function test1() {
+  async function foo() {
+    return 42;
+  }
+
+  async function bar() {
+    var a = await foo();
+    var b: number = a; // valid
+    var c: string = a; // Error: number ~> string
+  }
+}
+
+//
+// void returns:
+//
+
+// inference should produce return type Promise<void>
+// in the absence of an explicit return
+//
+
+function test2() {
+  async function voidoid1() {
+    console.log("HEY");
+  }
+
+  var voidoid2: () => Promise<void> = voidoid1; // ok
+
+  var voidoid3: () => void = voidoid1; // error, void != Promise<void>
+}
+
+// annotated return type of Promise<void> should work
+//
+
+function test3() {
+  async function voidoid4(): Promise<void> {
+    // ok
+    console.log("HEY");
+  }
+}
+
+// other annotated return types should fail
+// (note: misannotated return types with explicit
+// return statements are covered in async.js)
+//
+
+function test4() {
+  async function voidoid5(): void {
+    // error, void != Promise<void>
+    console.log("HEY");
+  }
+}
+
+function test5() {
+  async function voidoid6(): Promise<number> {
+    // error, number != void
+    console.log("HEY");
+  }
+}
+
+================================================================================
+`;
+
+exports[`async3.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+/**
+ * test nested-promise unwrapping.
+ * Note: currently we don't do this properly in the underlying
+ * type of the Promise class, which causes spurious errors to
+ * be raised here. Once that's fixed, the errors here will go
+ * away.
+ */
+
+async function foo() {
+  return 42;
+}
+
+async function bar() {
+  return foo();
+}
+
+async function baz() {
+
+  // a should now be typed as number, but is in fact
+  // Promise<number> until nested-promise unwrap is fixed
+  var a = await bar();
+
+  // TODO this is valid code, but currently gives Promise ~> number error
+  // due to lack of transitive Promise unwrap.
+  var b: number = a;
+
+  // should be number ~> string error, but currently gives
+  // Promise ~> string error for the same reason
+  var c: string = a;
+}
+
+=====================================output=====================================
+// @flow
+
+/**
+ * test nested-promise unwrapping.
+ * Note: currently we don't do this properly in the underlying
+ * type of the Promise class, which causes spurious errors to
+ * be raised here. Once that's fixed, the errors here will go
+ * away.
+ */
+
+async function foo() {
+  return 42;
+}
+
+async function bar() {
+  return foo();
+}
+
+async function baz() {
+  // a should now be typed as number, but is in fact
+  // Promise<number> until nested-promise unwrap is fixed
+  var a = await bar();
+
+  // TODO this is valid code, but currently gives Promise ~> number error
+  // due to lack of transitive Promise unwrap.
+  var b: number = a;
+
+  // should be number ~> string error, but currently gives
+  // Promise ~> string error for the same reason
+  var c: string = a;
+}
+
+================================================================================
+`;
+
+exports[`await_parse.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+async function f() { await 1; }
+async function ft<T>(a: T) { await 1; }
+
+class C {
+  async m() { await 1; }
+  async mt<T>(a: T) { await 1; }
+  static async m(a) { await 1; }
+  static async mt<T>(a: T) { await 1; }
+}
+
+var e = async function () { await 1; };
+var et = async function<T> (a: T) { await 1; };
+
+var n = new async function() { await 1; };
+
+var o = { async m() { await 1; } };
+var ot = { async m<T>(a: T) { await 1; } };
+var oz = { async async(async) { await async; } };
+
+var x = { await : 5 };
+console.log(x.await);
+
+var await = 3;
+var y = { await };
+
+=====================================output=====================================
+async function f() {
+  await 1;
+}
+async function ft<T>(a: T) {
+  await 1;
+}
+
+class C {
+  async m() {
+    await 1;
+  }
+  async mt<T>(a: T) {
+    await 1;
+  }
+  static async m(a) {
+    await 1;
+  }
+  static async mt<T>(a: T) {
+    await 1;
+  }
+}
+
+var e = async function () {
+  await 1;
+};
+var et = async function <T>(a: T) {
+  await 1;
+};
+
+var n = new (async function () {
+  await 1;
+})();
+
+var o = {
+  async m() {
+    await 1;
+  },
+};
+var ot = {
+  async m<T>(a: T) {
+    await 1;
+  },
+};
+var oz = {
+  async async(async) {
+    await async;
+  },
+};
+
+var x = { await: 5 };
+console.log(x.await);
+
+var await = 3;
+var y = { await };
+
+================================================================================
+`;

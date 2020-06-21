@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`decorator.ts 1`] = `
+exports[`decorator.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`data-url.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+div {
+  background-image: url(data:image/png;base64,iVBORw0KGg);
+}
+
+=====================================output=====================================
+div {
+  background-image: url(data:image/png;base64,iVBORw0KGg);
+}
+
+================================================================================
+`;

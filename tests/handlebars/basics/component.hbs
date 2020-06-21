@@ -1,0 +1,29 @@
+<UserGreeting @name="Ricardo" @greeting="Olá" />
+{{@greeting}}, {{@name}}!
+
+<div>
+  <UserGreeting
+    @aVeryLongArgumentNameThatIsStillGoing={{@alsoAVeryLongArgument}}
+  />
+</div>
+
+<Form as |f|>
+  <f.input @title="hello" />
+  <f.input>hello</f.input>
+</Form>
+
+<this.label @title="hello" />
+
+<button onclick={{action next}}>Next</button>
+
+<button disabled class="disabled"></button>
+
+<button disabled=disabled class="disabled"></button>
+
+<img alt="" />
+
+<div ...attributes>Hello</div>
+
+<ul class="list-unstyled
+  one-tab">
+</ul>

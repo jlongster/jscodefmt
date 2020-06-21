@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+var a: string = 0;
+module.exports = a;
+
+=====================================output=====================================
+// @flow
+var a: string = 0;
+module.exports = a;
+
+================================================================================
+`;
+
+exports[`b.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+var a = require('./a');
+var b: number = a;
+module.exports = b;
+
+=====================================output=====================================
+// @flow
+var a = require("./a");
+var b: number = a;
+module.exports = b;
+
+================================================================================
+`;
+
+exports[`c.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+var b = require('./b');
+var c: string = b;
+module.exports = c;
+
+=====================================output=====================================
+// @flow
+var b = require("./b");
+var c: string = b;
+module.exports = c;
+
+================================================================================
+`;
+
+exports[`dupe1.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Dupe provider 1/2
+ * @providesModule Dupe
+ * @flow
+ */
+module.exports = "dupe1";
+
+=====================================output=====================================
+/**
+ * Dupe provider 1/2
+ * @providesModule Dupe
+ * @flow
+ */
+module.exports = "dupe1";
+
+================================================================================
+`;
+
+exports[`dupe2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Dupe provider 2/2
+ * @providesModule Dupe
+ * @flow
+ */
+module.exports = "dupe2";
+
+=====================================output=====================================
+/**
+ * Dupe provider 2/2
+ * @providesModule Dupe
+ * @flow
+ */
+module.exports = "dupe2";
+
+================================================================================
+`;
+
+exports[`requires_dupe.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * depends on doubly-provided module
+ * @flow
+ */
+var dupe = require('Dupe');
+
+=====================================output=====================================
+/**
+ * depends on doubly-provided module
+ * @flow
+ */
+var dupe = require("Dupe");
+
+================================================================================
+`;
+
+exports[`requires_unchecked.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * depends on an unchecked module, which will be deleted
+ * @flow
+ */
+var unchecked = require('Unchecked');
+
+=====================================output=====================================
+/**
+ * depends on an unchecked module, which will be deleted
+ * @flow
+ */
+var unchecked = require("Unchecked");
+
+================================================================================
+`;
+
+exports[`unchecked.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * Not a flow module.
+ * @providesModule Unchecked
+ */
+module.exports = "unchecked";
+
+=====================================output=====================================
+/**
+ * Not a flow module.
+ * @providesModule Unchecked
+ */
+module.exports = "unchecked";
+
+================================================================================
+`;

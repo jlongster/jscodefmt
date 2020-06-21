@@ -1,1 +1,0 @@
-functionName<A /* A comment */>();

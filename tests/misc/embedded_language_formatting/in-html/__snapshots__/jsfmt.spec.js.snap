@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.html - {"embeddedLanguageFormatting":"off"} format 1`] = `
+====================================options=====================================
+embeddedLanguageFormatting: "off"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!doctype html>
+<head>
+  <style>a {}</style>
+  <script>1  + 2</script>
+</head>
+
+=====================================output=====================================
+<!DOCTYPE html>
+<head>
+  <style>
+    a {}
+  </style>
+  <script>
+    1  + 2
+  </script>
+</head>
+
+================================================================================
+`;
+
+exports[`test.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!doctype html>
+<head>
+  <style>a {}</style>
+  <script>1  + 2</script>
+</head>
+
+=====================================output=====================================
+<!DOCTYPE html>
+<head>
+  <style>
+    a {
+    }
+  </style>
+  <script>
+    1 + 2;
+  </script>
+</head>
+
+================================================================================
+`;

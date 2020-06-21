@@ -1,0 +1,202 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`beginning-tag-after-a-list-item.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+- A list item.
+<details><summary>Summary</summary>
+<p>
+
+- A list item.
+
+</p>
+</details>
+
+- A list item.
+<blockquote>
+
+<p>quoted sentence1<br>
+quoted sentence2</p>
+</blockquote>
+
+- indented html is formatted as it is
+  <blockquote>asdf</blockquote>
+
+=====================================output=====================================
+- A list item.
+<details><summary>Summary</summary>
+<p>
+
+- A list item.
+
+</p>
+</details>
+
+- A list item.
+<blockquote>
+
+<p>quoted sentence1<br>
+quoted sentence2</p>
+</blockquote>
+
+- indented html is formatted as it is
+  <blockquote>asdf</blockquote>
+
+================================================================================
+`;
+
+exports[`blank-line-between-htmls.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+<!--lint disable no-html-->
+<p align="center"><img src="logo/vertical.png" alt="labelify" height="150px"></p>
+<!--lint enable no-html-->
+
+=====================================output=====================================
+<!--lint disable no-html-->
+<p align="center"><img src="logo/vertical.png" alt="labelify" height="150px"></p>
+<!--lint enable no-html-->
+
+================================================================================
+`;
+
+exports[`multiline.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+1.  Some test text, the goal is to have the html table below nested within this number. When formating on save Prettier will continue to add an indent each time pushing the table further and further out of sync. 
+
+    <table class="table table-striped">
+    <tr>
+    <th>Test</th>
+    <th>Table</th>
+    </tr>
+    <tbody>
+        <tr>
+        <td>will</td>
+        <td>be</td>
+        </tr>
+        <tr>
+        <td>pushed</td>
+        <td>When</td>
+        </tr>
+        <tr>
+        <td>Format on</td>
+        <td>Save</td>
+        </tr>
+    </tbody>
+    </table>
+
+=====================================output=====================================
+1.  Some test text, the goal is to have the html table below nested within this
+    number. When formating on save Prettier will continue to add an indent each
+    time pushing the table further and further out of sync.
+
+    <table class="table table-striped">
+    <tr>
+    <th>Test</th>
+    <th>Table</th>
+    </tr>
+    <tbody>
+        <tr>
+        <td>will</td>
+        <td>be</td>
+        </tr>
+        <tr>
+        <td>pushed</td>
+        <td>When</td>
+        </tr>
+        <tr>
+        <td>Format on</td>
+        <td>Save</td>
+        </tr>
+    </tbody>
+    </table>
+
+================================================================================
+`;
+
+exports[`multiline-with-trailing-space.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+1.  Some test text, the goal is to have the html table below nested within this number. When formating on save Prettier will continue to add an indent each time pushing the table further and further out of sync. 
+
+    <table class="table table-striped">
+    <tr>
+    <th>Test</th>
+    <th>Table</th>
+    </tr>
+    <tbody>
+        <tr>
+        <td>will</td>  
+        <td>be</td>
+        </tr>
+        <tr>  
+        <td>pushed</td>  
+        <td>When</td>
+        </tr>  
+        <tr>  
+        <td>Format on</td>  
+        <td>Save</td>  
+        </tr>
+    </tbody>
+    </table>
+
+=====================================output=====================================
+1.  Some test text, the goal is to have the html table below nested within this
+    number. When formating on save Prettier will continue to add an indent each
+    time pushing the table further and further out of sync.
+
+    <table class="table table-striped">
+    <tr>
+    <th>Test</th>
+    <th>Table</th>
+    </tr>
+    <tbody>
+        <tr>
+        <td>will</td>  
+        <td>be</td>
+        </tr>
+        <tr>  
+        <td>pushed</td>  
+        <td>When</td>
+        </tr>  
+        <tr>  
+        <td>Format on</td>  
+        <td>Save</td>  
+        </tr>
+    </tbody>
+    </table>
+
+================================================================================
+`;
+
+exports[`simple.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+<!-- hello world -->
+
+=====================================output=====================================
+<!-- hello world -->
+
+================================================================================
+`;

@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`crash.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// This file triggers a violation of the "disjoint-or-nested ranges invariant"
+// that we implicitly assume in type-at-pos and coverage implementations. In
+// particular, when unchecked it causes a crash with coverage --color.
+
+declare module foo {
+}
+
+declare module bar {
+}
+
+// TODO
+
+=====================================output=====================================
+// This file triggers a violation of the "disjoint-or-nested ranges invariant"
+// that we implicitly assume in type-at-pos and coverage implementations. In
+// particular, when unchecked it causes a crash with coverage --color.
+
+declare module foo {
+}
+
+declare module bar {
+}
+
+// TODO
+
+================================================================================
+`;
+
+exports[`declare_module.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// check coverage of declare module
+
+declare module foo {
+}
+
+=====================================output=====================================
+// check coverage of declare module
+
+declare module foo {
+}
+
+================================================================================
+`;
+
+exports[`no_pragma.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+let x = 0;
+(x: string);
+
+=====================================output=====================================
+let x = 0;
+(x: string);
+
+================================================================================
+`;
+
+exports[`non-termination.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// This file triggers a violation of the "disjoint-or-nested ranges invariant"
+// that we implicitly assume in type-at-pos and coverage implementations. In
+// particular, when unchecked it causes non-termination with coverage --color.
+
+declare module foo {
+}
+
+declare module bar {
+}
+
+// TODO
+
+declare class qux {
+}
+
+=====================================output=====================================
+// This file triggers a violation of the "disjoint-or-nested ranges invariant"
+// that we implicitly assume in type-at-pos and coverage implementations. In
+// particular, when unchecked it causes non-termination with coverage --color.
+
+declare module foo {
+}
+
+declare module bar {
+}
+
+// TODO
+
+declare class qux {}
+
+================================================================================
+`;

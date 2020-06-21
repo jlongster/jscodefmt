@@ -1,5 +1,7 @@
 "use strict";
 
+const { isFrontMatterNode } = require("../common/util");
+
 function clean(ast, newObj, parent) {
   [
     "raw", // front-matter
@@ -8,12 +10,12 @@ function clean(ast, newObj, parent) {
     "source",
     "before",
     "after",
-    "trailingComma"
-  ].forEach(name => {
+    "trailingComma",
+  ].forEach((name) => {
     delete newObj[name];
   });
 
-  if (ast.type === "yaml") {
+  if (isFrontMatterNode(ast) && ast.lang === "yaml") {
     delete newObj.value;
   }
 
@@ -24,8 +26,7 @@ function clean(ast, newObj, parent) {
     parent.nodes.length !== 0 &&
     // first non-front-matter comment
     (parent.nodes[0] === ast ||
-      ((parent.nodes[0].type === "yaml" || parent.nodes[0].type === "toml") &&
-        parent.nodes[1] === ast))
+      (isFrontMatterNode(parent.nodes[0]) && parent.nodes[1] === ast))
   ) {
     /**
      * something
@@ -38,6 +39,10 @@ function clean(ast, newObj, parent) {
     if (/^\*\s*@(format|prettier)\s*$/.test(ast.text)) {
       return null;
     }
+  }
+
+  if (ast.type === "value-root") {
+    delete newObj.text;
   }
 
   if (
@@ -113,7 +118,7 @@ function clean(ast, newObj, parent) {
     }
 
     if (newObj.value) {
-      newObj.value = newObj.value.trim().replace(/^['"]|['"]$/g, "");
+      newObj.value = newObj.value.trim().replace(/^["']|["']$/g, "");
       delete newObj.quoted;
     }
   }
@@ -129,7 +134,7 @@ function clean(ast, newObj, parent) {
     newObj.value
   ) {
     newObj.value = newObj.value.replace(
-      /([\d.eE+-]+)([a-zA-Z]*)/g,
+      /([\d+.Ee-]+)([A-Za-z]*)/g,
       (match, numStr, unit) => {
         const num = Number(numStr);
         return isNaN(num) ? match : num + unit.toLowerCase();
@@ -157,7 +162,7 @@ function clean(ast, newObj, parent) {
 }
 
 function cleanCSSStrings(value) {
-  return value.replace(/'/g, '"').replace(/\\([^a-fA-F\d])/g, "$1");
+  return value.replace(/'/g, '"').replace(/\\([^\dA-Fa-f])/g, "$1");
 }
 
 module.exports = clean;

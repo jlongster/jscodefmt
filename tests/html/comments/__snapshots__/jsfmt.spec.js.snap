@@ -1,0 +1,2118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`before-text.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!-- hello -->
+
+123
+
+=====================================output=====================================
+<!-- hello -->
+
+123
+
+================================================================================
+`;
+
+exports[`before-text.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!-- hello -->
+
+123
+
+=====================================output=====================================
+<!-- hello -->
+
+123
+
+================================================================================
+`;
+
+exports[`before-text.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<!-- hello -->
+
+123
+
+=====================================output=====================================
+<!-- hello -->
+
+123
+
+================================================================================
+`;
+
+exports[`before-text.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<!-- hello -->
+
+123
+
+=====================================output=====================================
+<!-- hello -->
+
+123
+
+================================================================================
+`;
+
+exports[`before-text.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!-- hello -->
+
+123
+
+=====================================output=====================================
+<!-- hello -->
+
+123
+
+================================================================================
+`;
+
+exports[`bogus.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<? hello ?>
+<!- world ->
+
+=====================================output=====================================
+<? hello ?>
+<!- world ->
+
+================================================================================
+`;
+
+exports[`bogus.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<? hello ?>
+<!- world ->
+
+=====================================output=====================================
+<? hello ?>
+<!- world ->
+
+================================================================================
+`;
+
+exports[`bogus.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<? hello ?>
+<!- world ->
+
+=====================================output=====================================
+<? hello ?>
+<!- world ->
+
+================================================================================
+`;
+
+exports[`bogus.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<? hello ?>
+<!- world ->
+
+=====================================output=====================================
+<? hello ?>
+<!- world ->
+
+================================================================================
+`;
+
+exports[`bogus.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<? hello ?>
+<!- world ->
+
+=====================================output=====================================
+<? hello ?>
+<!- world ->
+
+================================================================================
+`;
+
+exports[`conditional.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <!--[if IE 5]>This is IE 5<br><![endif]-->
+    <!--[if IE 6]>This is IE 6<br><![endif]-->
+    <!--[if IE 7]>This is IE 7<br><![endif]-->
+    <!--[if IE 8]>This is IE 8<br><![endif]-->
+    <!--[if IE 9]>This is IE 9<br><![endif]-->
+
+  </body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<body width="100%" align="center">
+  <center  >                                        
+    <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td><![endif]-->
+    <div>  </div>
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+  </center  >
+</body>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html hello><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
+<!--[if gte IE 9]><!--><html><head><!--<![endif]-->
+  </head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9
+]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!--[if IE 5]>
+      This is IE 5
+      <br />
+    <![endif]-->
+    <!--[if IE 6]>
+      This is IE 6
+      <br />
+    <![endif]-->
+    <!--[if IE 7]>
+      This is IE 7
+      <br />
+    <![endif]-->
+    <!--[if IE 8]>
+      This is IE 8
+      <br />
+    <![endif]-->
+    <!--[if IE 9]>
+      This is IE 9
+      <br />
+    <![endif]-->
+  </body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<body width="100%" align="center">
+  <center>
+    <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td><![endif]-->
+    <div></div>
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+  </center>
+</body>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html hello><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
+<!--[if gte IE 9]><!-->
+<html>
+  <head>
+    <!--<![endif]-->
+  </head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+================================================================================
+`;
+
+exports[`conditional.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <!--[if IE 5]>This is IE 5<br><![endif]-->
+    <!--[if IE 6]>This is IE 6<br><![endif]-->
+    <!--[if IE 7]>This is IE 7<br><![endif]-->
+    <!--[if IE 8]>This is IE 8<br><![endif]-->
+    <!--[if IE 9]>This is IE 9<br><![endif]-->
+
+  </body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<body width="100%" align="center">
+  <center  >                                        
+    <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td><![endif]-->
+    <div>  </div>
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+  </center  >
+</body>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html hello><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
+<!--[if gte IE 9]><!--><html><head><!--<![endif]-->
+  </head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9
+]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!--[if IE 5]>This is IE 5<br /><![endif]-->
+    <!--[if IE 6]>This is IE 6<br /><![endif]-->
+    <!--[if IE 7]>This is IE 7<br /><![endif]-->
+    <!--[if IE 8]>This is IE 8<br /><![endif]-->
+    <!--[if IE 9]>This is IE 9<br /><![endif]-->
+  </body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<body width="100%" align="center">
+  <center>
+    <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td><![endif]-->
+    <div> </div>
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+  </center>
+</body>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html hello><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
+<!--[if gte IE 9
+]><!--><html
+  ><head
+    ><!--<![endif]-->
+  </head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+================================================================================
+`;
+
+exports[`conditional.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <!--[if IE 5]>This is IE 5<br><![endif]-->
+    <!--[if IE 6]>This is IE 6<br><![endif]-->
+    <!--[if IE 7]>This is IE 7<br><![endif]-->
+    <!--[if IE 8]>This is IE 8<br><![endif]-->
+    <!--[if IE 9]>This is IE 9<br><![endif]-->
+
+  </body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<body width="100%" align="center">
+  <center  >                                        
+    <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td><![endif]-->
+    <div>  </div>
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+  </center  >
+</body>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html hello><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
+<!--[if gte IE 9]><!--><html><head><!--<![endif]-->
+  </head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9
+]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!--[if IE 5]>This is IE 5<br /><![endif]-->
+    <!--[if IE 6]>This is IE 6<br /><![endif]-->
+    <!--[if IE 7]>This is IE 7<br /><![endif]-->
+    <!--[if IE 8]>This is IE 8<br /><![endif]-->
+    <!--[if IE 9]>This is IE 9<br /><![endif]-->
+  </body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<body width="100%" align="center">
+  <center>
+    <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td><![endif]-->
+    <div></div>
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+  </center>
+</body>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html hello><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
+<!--[if gte IE 9]><!-->
+<html>
+  <head>
+    <!--<![endif]-->
+  </head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+================================================================================
+`;
+
+exports[`conditional.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <!--[if IE 5]>This is IE 5<br><![endif]-->
+    <!--[if IE 6]>This is IE 6<br><![endif]-->
+    <!--[if IE 7]>This is IE 7<br><![endif]-->
+    <!--[if IE 8]>This is IE 8<br><![endif]-->
+    <!--[if IE 9]>This is IE 9<br><![endif]-->
+
+  </body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<body width="100%" align="center">
+  <center  >                                        
+    <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td><![endif]-->
+    <div>  </div>
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+  </center  >
+</body>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html hello><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
+<!--[if gte IE 9]><!--><html><head><!--<![endif]-->
+  </head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9
+]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!--[if IE 5
+      ]>This
+      is
+      IE
+      5<br
+    /><![endif]-->
+    <!--[if IE 6
+      ]>This
+      is
+      IE
+      6<br
+    /><![endif]-->
+    <!--[if IE 7
+      ]>This
+      is
+      IE
+      7<br
+    /><![endif]-->
+    <!--[if IE 8
+      ]>This
+      is
+      IE
+      8<br
+    /><![endif]-->
+    <!--[if IE 9
+      ]>This
+      is
+      IE
+      9<br
+    /><![endif]-->
+  </body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
+<html
+  lang="zh-CN"
+>
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
+<html
+  lang="zh-CN"
+>
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
+<html
+  lang="zh-CN"
+>
+  <head></head>
+  <body></body>
+</html>
+
+<body
+  width="100%"
+  align="center"
+>
+  <center>
+    <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td><![endif]-->
+    <div></div>
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+  </center>
+</body>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html
+  hello
+><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
+<!--[if gte IE 9]><!-->
+<html>
+  <head>
+    <!--<![endif]-->
+  </head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+================================================================================
+`;
+
+exports[`conditional.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <body>
+
+    <!--[if IE 5]>This is IE 5<br><![endif]-->
+    <!--[if IE 6]>This is IE 6<br><![endif]-->
+    <!--[if IE 7]>This is IE 7<br><![endif]-->
+    <!--[if IE 8]>This is IE 8<br><![endif]-->
+    <!--[if IE 9]>This is IE 9<br><![endif]-->
+
+  </body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<body width="100%" align="center">
+  <center  >                                        
+    <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td><![endif]-->
+    <div>  </div>
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+  </center  >
+</body>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html hello><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
+<!--[if gte IE 9]><!--><html><head><!--<![endif]-->
+  </head>
+  <body></body>
+</html>
+
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9
+]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!--[if IE 5]>This is IE 5<br /><![endif]-->
+    <!--[if IE 6]>This is IE 6<br /><![endif]-->
+    <!--[if IE 7]>This is IE 7<br /><![endif]-->
+    <!--[if IE 8]>This is IE 8<br /><![endif]-->
+    <!--[if IE 9]>This is IE 9<br /><![endif]-->
+  </body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
+<html lang="zh-CN">
+  <head></head>
+  <body></body>
+</html>
+
+<body width="100%" align="center">
+  <center>
+    <!--[if (gte mso 9)|(IE)]><table cellpadding="0" cellspacing="0" border="0" width="600" align="center"><tr><td><![endif]-->
+    <div></div>
+    <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+  </center>
+</body>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html hello><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
+<!--[if gte IE 9]><!-->
+<html>
+  <head>
+    <!--<![endif]-->
+  </head>
+  <body></body>
+</html>
+
+<!doctype html>
+<!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
+<!--[if gte IE 9]><!--><html><!--<![endif]-->
+  <head></head>
+  <body></body>
+</html>
+
+================================================================================
+`;
+
+exports[`for_debugging.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <body>
+
+<!-- Do not display this at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+  <!-- Do not display this at the moment
+  <img border="0" src="pic_trulli.jpg" alt="Trulli">
+  -->
+
+    <!-- Do not display this at the moment
+    <img border="0" src="pic_trulli.jpg" alt="Trulli">
+    -->
+
+  </body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!-- Do not display this at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+    <!-- Do not display this at the moment
+  <img border="0" src="pic_trulli.jpg" alt="Trulli">
+  -->
+
+    <!-- Do not display this at the moment
+    <img border="0" src="pic_trulli.jpg" alt="Trulli">
+    -->
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`for_debugging.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <body>
+
+<!-- Do not display this at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+  <!-- Do not display this at the moment
+  <img border="0" src="pic_trulli.jpg" alt="Trulli">
+  -->
+
+    <!-- Do not display this at the moment
+    <img border="0" src="pic_trulli.jpg" alt="Trulli">
+    -->
+
+  </body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!-- Do not display this at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+    <!-- Do not display this at the moment
+  <img border="0" src="pic_trulli.jpg" alt="Trulli">
+  -->
+
+    <!-- Do not display this at the moment
+    <img border="0" src="pic_trulli.jpg" alt="Trulli">
+    -->
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`for_debugging.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <body>
+
+<!-- Do not display this at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+  <!-- Do not display this at the moment
+  <img border="0" src="pic_trulli.jpg" alt="Trulli">
+  -->
+
+    <!-- Do not display this at the moment
+    <img border="0" src="pic_trulli.jpg" alt="Trulli">
+    -->
+
+  </body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!-- Do not display this at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+    <!-- Do not display this at the moment
+  <img border="0" src="pic_trulli.jpg" alt="Trulli">
+  -->
+
+    <!-- Do not display this at the moment
+    <img border="0" src="pic_trulli.jpg" alt="Trulli">
+    -->
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`for_debugging.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <body>
+
+<!-- Do not display this at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+  <!-- Do not display this at the moment
+  <img border="0" src="pic_trulli.jpg" alt="Trulli">
+  -->
+
+    <!-- Do not display this at the moment
+    <img border="0" src="pic_trulli.jpg" alt="Trulli">
+    -->
+
+  </body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!-- Do not display this at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+    <!-- Do not display this at the moment
+  <img border="0" src="pic_trulli.jpg" alt="Trulli">
+  -->
+
+    <!-- Do not display this at the moment
+    <img border="0" src="pic_trulli.jpg" alt="Trulli">
+    -->
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`for_debugging.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+  <body>
+
+<!-- Do not display this at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+  <!-- Do not display this at the moment
+  <img border="0" src="pic_trulli.jpg" alt="Trulli">
+  -->
+
+    <!-- Do not display this at the moment
+    <img border="0" src="pic_trulli.jpg" alt="Trulli">
+    -->
+
+  </body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!-- Do not display this at the moment
+<img border="0" src="pic_trulli.jpg" alt="Trulli">
+-->
+
+    <!-- Do not display this at the moment
+  <img border="0" src="pic_trulli.jpg" alt="Trulli">
+  -->
+
+    <!-- Do not display this at the moment
+    <img border="0" src="pic_trulli.jpg" alt="Trulli">
+    -->
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`hidden.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <!--This is a comment-->
+        <!-- This is a comment -->
+        <!--  This is a comment  -->
+        <!--   This   is   a   comment   -->
+        <p>This is a paragraph.</p>
+        <!-- Comments are not displayed in the browser -->
+
+    </body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!--This is a comment-->
+    <!-- This is a comment -->
+    <!--  This is a comment  -->
+    <!--   This   is   a   comment   -->
+    <p>This is a paragraph.</p>
+    <!-- Comments are not displayed in the browser -->
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`hidden.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <!--This is a comment-->
+        <!-- This is a comment -->
+        <!--  This is a comment  -->
+        <!--   This   is   a   comment   -->
+        <p>This is a paragraph.</p>
+        <!-- Comments are not displayed in the browser -->
+
+    </body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!--This is a comment-->
+    <!-- This is a comment -->
+    <!--  This is a comment  -->
+    <!--   This   is   a   comment   -->
+    <p>This is a paragraph.</p>
+    <!-- Comments are not displayed in the browser -->
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`hidden.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <!--This is a comment-->
+        <!-- This is a comment -->
+        <!--  This is a comment  -->
+        <!--   This   is   a   comment   -->
+        <p>This is a paragraph.</p>
+        <!-- Comments are not displayed in the browser -->
+
+    </body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!--This is a comment-->
+    <!-- This is a comment -->
+    <!--  This is a comment  -->
+    <!--   This   is   a   comment   -->
+    <p>This is a paragraph.</p>
+    <!-- Comments are not displayed in the browser -->
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`hidden.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <!--This is a comment-->
+        <!-- This is a comment -->
+        <!--  This is a comment  -->
+        <!--   This   is   a   comment   -->
+        <p>This is a paragraph.</p>
+        <!-- Comments are not displayed in the browser -->
+
+    </body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!--This is a comment-->
+    <!-- This is a comment -->
+    <!--  This is a comment  -->
+    <!--   This   is   a   comment   -->
+    <p>
+      This
+      is
+      a
+      paragraph.
+    </p>
+    <!-- Comments are not displayed in the browser -->
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`hidden.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <!--This is a comment-->
+        <!-- This is a comment -->
+        <!--  This is a comment  -->
+        <!--   This   is   a   comment   -->
+        <p>This is a paragraph.</p>
+        <!-- Comments are not displayed in the browser -->
+
+    </body>
+</html>
+
+=====================================output=====================================
+<!doctype html>
+<html>
+  <body>
+    <!--This is a comment-->
+    <!-- This is a comment -->
+    <!--  This is a comment  -->
+    <!--   This   is   a   comment   -->
+    <p>This is a paragraph.</p>
+    <!-- Comments are not displayed in the browser -->
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`surrounding-empty-line.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<ul><!-- 123
+--><li>First</li><!-- 123
+456
+   789
+--><li>Second</li><!--
+
+
+    123
+       456
+          789
+
+
+--><li>Second</li><!--
+
+
+           123
+        456
+    789
+
+
+--></ul>
+<span><!--
+--><span>a</span><!--
+--><span>b</span><!--
+--></span>
+
+<span><!-- 1
+--><span>a</span><!-- 2
+--><span>b</span><!-- 3
+--></span>
+
+<span><!--
+1 --><span>a</span><!--
+2 --><span>b</span><!--
+3 --></span>
+
+123<!---->456
+
+123<!--x-->456
+
+<!-- A
+     B -->
+
+<!--
+The null hero's name is {{nullHero.name}}
+
+See console log:
+  TypeError: Cannot read property 'name' of null in [null]
+-->
+
+<!--
+    The null hero's name is {{nullHero.name}}
+
+    See console log:
+    TypeError: Cannot read property 'name' of null in [null]
+-->
+
+=====================================output=====================================
+<ul>
+  <!-- 123
+-->
+  <li>First</li>
+  <!-- 123
+456
+   789
+-->
+  <li>Second</li>
+  <!--
+
+
+    123
+       456
+          789
+
+
+-->
+  <li>Second</li>
+  <!--
+
+
+           123
+        456
+    789
+
+
+--></ul>
+<span>
+  <!--
+-->
+  <span>a</span>
+  <!--
+-->
+  <span>b</span>
+  <!--
+--></span>
+
+<span>
+  <!-- 1
+-->
+  <span>a</span>
+  <!-- 2
+-->
+  <span>b</span>
+  <!-- 3
+--></span>
+
+<span>
+  <!--
+1 -->
+  <span>a</span>
+  <!--
+2 -->
+  <span>b</span>
+  <!--
+3 -->
+</span>
+
+123
+<!---->
+456 123
+<!--x-->
+456
+
+<!-- A
+     B -->
+
+<!--
+The null hero's name is {{nullHero.name}}
+
+See console log:
+  TypeError: Cannot read property 'name' of null in [null]
+-->
+
+<!--
+    The null hero's name is {{nullHero.name}}
+
+    See console log:
+    TypeError: Cannot read property 'name' of null in [null]
+-->
+
+================================================================================
+`;
+
+exports[`surrounding-empty-line.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<ul><!-- 123
+--><li>First</li><!-- 123
+456
+   789
+--><li>Second</li><!--
+
+
+    123
+       456
+          789
+
+
+--><li>Second</li><!--
+
+
+           123
+        456
+    789
+
+
+--></ul>
+<span><!--
+--><span>a</span><!--
+--><span>b</span><!--
+--></span>
+
+<span><!-- 1
+--><span>a</span><!-- 2
+--><span>b</span><!-- 3
+--></span>
+
+<span><!--
+1 --><span>a</span><!--
+2 --><span>b</span><!--
+3 --></span>
+
+123<!---->456
+
+123<!--x-->456
+
+<!-- A
+     B -->
+
+<!--
+The null hero's name is {{nullHero.name}}
+
+See console log:
+  TypeError: Cannot read property 'name' of null in [null]
+-->
+
+<!--
+    The null hero's name is {{nullHero.name}}
+
+    See console log:
+    TypeError: Cannot read property 'name' of null in [null]
+-->
+
+=====================================output=====================================
+<ul
+  ><!-- 123
+--><li>First</li
+  ><!-- 123
+456
+   789
+--><li>Second</li
+  ><!--
+
+
+    123
+       456
+          789
+
+
+--><li>Second</li
+  ><!--
+
+
+           123
+        456
+    789
+
+
+--></ul>
+<span
+  ><!--
+--><span>a</span
+  ><!--
+--><span>b</span
+  ><!--
+--></span>
+
+<span
+  ><!-- 1
+--><span>a</span
+  ><!-- 2
+--><span>b</span
+  ><!-- 3
+--></span>
+
+<span
+  ><!--
+1 --><span>a</span
+  ><!--
+2 --><span>b</span
+  ><!--
+3 --></span
+>
+
+123<!---->456 123<!--x-->456
+
+<!-- A
+     B -->
+
+<!--
+The null hero's name is {{nullHero.name}}
+
+See console log:
+  TypeError: Cannot read property 'name' of null in [null]
+-->
+
+<!--
+    The null hero's name is {{nullHero.name}}
+
+    See console log:
+    TypeError: Cannot read property 'name' of null in [null]
+-->
+
+================================================================================
+`;
+
+exports[`surrounding-empty-line.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<ul><!-- 123
+--><li>First</li><!-- 123
+456
+   789
+--><li>Second</li><!--
+
+
+    123
+       456
+          789
+
+
+--><li>Second</li><!--
+
+
+           123
+        456
+    789
+
+
+--></ul>
+<span><!--
+--><span>a</span><!--
+--><span>b</span><!--
+--></span>
+
+<span><!-- 1
+--><span>a</span><!-- 2
+--><span>b</span><!-- 3
+--></span>
+
+<span><!--
+1 --><span>a</span><!--
+2 --><span>b</span><!--
+3 --></span>
+
+123<!---->456
+
+123<!--x-->456
+
+<!-- A
+     B -->
+
+<!--
+The null hero's name is {{nullHero.name}}
+
+See console log:
+  TypeError: Cannot read property 'name' of null in [null]
+-->
+
+<!--
+    The null hero's name is {{nullHero.name}}
+
+    See console log:
+    TypeError: Cannot read property 'name' of null in [null]
+-->
+
+=====================================output=====================================
+<ul>
+  <!-- 123
+-->
+  <li>First</li>
+  <!-- 123
+456
+   789
+-->
+  <li>Second</li>
+  <!--
+
+
+    123
+       456
+          789
+
+
+-->
+  <li>Second</li>
+  <!--
+
+
+           123
+        456
+    789
+
+
+--></ul>
+<span
+  ><!--
+--><span>a</span
+  ><!--
+--><span>b</span
+  ><!--
+--></span>
+
+<span
+  ><!-- 1
+--><span>a</span
+  ><!-- 2
+--><span>b</span
+  ><!-- 3
+--></span>
+
+<span
+  ><!--
+1 --><span>a</span
+  ><!--
+2 --><span>b</span
+  ><!--
+3 --></span
+>
+
+123<!---->456 123<!--x-->456
+
+<!-- A
+     B -->
+
+<!--
+The null hero's name is {{nullHero.name}}
+
+See console log:
+  TypeError: Cannot read property 'name' of null in [null]
+-->
+
+<!--
+    The null hero's name is {{nullHero.name}}
+
+    See console log:
+    TypeError: Cannot read property 'name' of null in [null]
+-->
+
+================================================================================
+`;
+
+exports[`surrounding-empty-line.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<ul><!-- 123
+--><li>First</li><!-- 123
+456
+   789
+--><li>Second</li><!--
+
+
+    123
+       456
+          789
+
+
+--><li>Second</li><!--
+
+
+           123
+        456
+    789
+
+
+--></ul>
+<span><!--
+--><span>a</span><!--
+--><span>b</span><!--
+--></span>
+
+<span><!-- 1
+--><span>a</span><!-- 2
+--><span>b</span><!-- 3
+--></span>
+
+<span><!--
+1 --><span>a</span><!--
+2 --><span>b</span><!--
+3 --></span>
+
+123<!---->456
+
+123<!--x-->456
+
+<!-- A
+     B -->
+
+<!--
+The null hero's name is {{nullHero.name}}
+
+See console log:
+  TypeError: Cannot read property 'name' of null in [null]
+-->
+
+<!--
+    The null hero's name is {{nullHero.name}}
+
+    See console log:
+    TypeError: Cannot read property 'name' of null in [null]
+-->
+
+=====================================output=====================================
+<ul>
+  <!-- 123
+-->
+  <li>
+    First
+  </li>
+  <!-- 123
+456
+   789
+-->
+  <li>
+    Second
+  </li>
+  <!--
+
+
+    123
+       456
+          789
+
+
+-->
+  <li>
+    Second
+  </li>
+  <!--
+
+
+           123
+        456
+    789
+
+
+--></ul>
+<span
+  ><!--
+--><span
+    >a</span
+  ><!--
+--><span
+    >b</span
+  ><!--
+--></span>
+
+<span
+  ><!-- 1
+--><span
+    >a</span
+  ><!-- 2
+--><span
+    >b</span
+  ><!-- 3
+--></span>
+
+<span
+  ><!--
+1 --><span
+    >a</span
+  ><!--
+2 --><span
+    >b</span
+  ><!--
+3 --></span
+>
+
+123<!---->456
+123<!--x-->456
+
+<!-- A
+     B -->
+
+<!--
+The null hero's name is {{nullHero.name}}
+
+See console log:
+  TypeError: Cannot read property 'name' of null in [null]
+-->
+
+<!--
+    The null hero's name is {{nullHero.name}}
+
+    See console log:
+    TypeError: Cannot read property 'name' of null in [null]
+-->
+
+================================================================================
+`;
+
+exports[`surrounding-empty-line.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<ul><!-- 123
+--><li>First</li><!-- 123
+456
+   789
+--><li>Second</li><!--
+
+
+    123
+       456
+          789
+
+
+--><li>Second</li><!--
+
+
+           123
+        456
+    789
+
+
+--></ul>
+<span><!--
+--><span>a</span><!--
+--><span>b</span><!--
+--></span>
+
+<span><!-- 1
+--><span>a</span><!-- 2
+--><span>b</span><!-- 3
+--></span>
+
+<span><!--
+1 --><span>a</span><!--
+2 --><span>b</span><!--
+3 --></span>
+
+123<!---->456
+
+123<!--x-->456
+
+<!-- A
+     B -->
+
+<!--
+The null hero's name is {{nullHero.name}}
+
+See console log:
+  TypeError: Cannot read property 'name' of null in [null]
+-->
+
+<!--
+    The null hero's name is {{nullHero.name}}
+
+    See console log:
+    TypeError: Cannot read property 'name' of null in [null]
+-->
+
+=====================================output=====================================
+<ul>
+  <!-- 123
+-->
+  <li>First</li>
+  <!-- 123
+456
+   789
+-->
+  <li>Second</li>
+  <!--
+
+
+    123
+       456
+          789
+
+
+-->
+  <li>Second</li>
+  <!--
+
+
+           123
+        456
+    789
+
+
+--></ul>
+<span
+  ><!--
+--><span>a</span
+  ><!--
+--><span>b</span
+  ><!--
+--></span>
+
+<span
+  ><!-- 1
+--><span>a</span
+  ><!-- 2
+--><span>b</span
+  ><!-- 3
+--></span>
+
+<span
+  ><!--
+1 --><span>a</span
+  ><!--
+2 --><span>b</span
+  ><!--
+3 --></span
+>
+
+123<!---->456 123<!--x-->456
+
+<!-- A
+     B -->
+
+<!--
+The null hero's name is {{nullHero.name}}
+
+See console log:
+  TypeError: Cannot read property 'name' of null in [null]
+-->
+
+<!--
+    The null hero's name is {{nullHero.name}}
+
+    See console log:
+    TypeError: Cannot read property 'name' of null in [null]
+-->
+
+================================================================================
+`;

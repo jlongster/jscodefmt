@@ -7,7 +7,7 @@ validateDependencyObject(pkg.dependencies);
 validateDependencyObject(pkg.devDependencies);
 
 function validateDependencyObject(object) {
-  Object.keys(object).forEach(key => {
+  Object.keys(object).forEach((key) => {
     if (object[key][0] === "^" || object[key][0] === "~") {
       console.error(
         chalk.red("error"),

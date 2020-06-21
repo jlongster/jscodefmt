@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`b1.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+import { C, E } from "./b0";
+function foo() { return C; }
+function bar() { return E; }
+let X = bar();
+class F extends X { }
+class D extends F { }
+module.exports = { C, D };
+
+=====================================output=====================================
+// @flow
+
+import { C, E } from "./b0";
+function foo() {
+  return C;
+}
+function bar() {
+  return E;
+}
+let X = bar();
+class F extends X {}
+class D extends F {}
+module.exports = { C, D };
+
+================================================================================
+`;

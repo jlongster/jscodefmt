@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`classAppearsToHaveMembersOfObject.ts 1`] = `
+exports[`classAppearsToHaveMembersOfObject.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -28,7 +28,7 @@ var o2: {} = c;
 ================================================================================
 `;
 
-exports[`classExtendingClass.ts 1`] = `
+exports[`classExtendingClass.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -101,7 +101,7 @@ var r8 = D2.other(1);
 ================================================================================
 `;
 
-exports[`classExtendsItselfIndirectly.ts 1`] = `
+exports[`classExtendsItselfIndirectly.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -146,7 +146,7 @@ class E2<T> extends D2<T> {
 ================================================================================
 `;
 
-exports[`classIsSubtypeOfBaseType.ts 1`] = `
+exports[`classIsSubtypeOfBaseType.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

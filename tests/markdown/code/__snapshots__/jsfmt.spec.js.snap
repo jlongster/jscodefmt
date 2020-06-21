@@ -1,0 +1,292 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`0-indent-js.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+- 1
+  - 2
+    - 3
+      \`\`\`js
+      md\`
+      # this is the root indent
+
+      # this is the root indent
+
+      # this is the root indent
+      \`
+
+      something\`
+      asd
+
+      asd
+
+      asd
+      \`
+      \`\`\`
+
+=====================================output=====================================
+- 1
+
+  - 2
+
+    - 3
+
+      \`\`\`js
+      md\`
+      # this is the root indent
+
+      # this is the root indent
+
+      # this is the root indent
+      \`;
+
+      something\`
+      asd
+      
+      asd
+      
+      asd
+      \`;
+      \`\`\`
+
+================================================================================
+`;
+
+exports[`additional-space.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+1. Fork the repo and create your branch from \`master\`.
+
+   Open terminal (e.g. Terminal, iTerm, Git Bash or Git Shell) and type:
+   \`\`\`sh
+   git clone https://github.com/<your_username>/jest
+   cd jest
+   git checkout -b my_branch
+   \`\`\`
+   Note:
+   Replace \`<your_username>\` with your GitHub username
+
+3. Run \`yarn install\`.
+   On Windows:
+   To install [Yarn](https://yarnpkg.com/en/docs/install#windows-tab) on Windows you may need to download either node.js or Chocolatey<br />
+
+    \`\`\`sh
+    yarn install
+    \`\`\`
+    To check your version of Yarn and ensure it's installed you can type:
+    \`\`\`sh
+    yarn --version
+    \`\`\`
+=====================================output=====================================
+1. Fork the repo and create your branch from \`master\`.
+
+   Open terminal (e.g. Terminal, iTerm, Git Bash or Git Shell) and type:
+
+   \`\`\`sh
+   git clone https://github.com/<your_username>/jest
+   cd jest
+   git checkout -b my_branch
+   \`\`\`
+
+   Note: Replace \`<your_username>\` with your GitHub username
+
+2. Run \`yarn install\`. On Windows: To install
+   [Yarn](https://yarnpkg.com/en/docs/install#windows-tab) on Windows you may
+   need to download either node.js or Chocolatey<br />
+
+   \`\`\`sh
+   yarn install
+   \`\`\`
+
+   To check your version of Yarn and ensure it's installed you can type:
+
+   \`\`\`sh
+   yarn --version
+   \`\`\`
+
+================================================================================
+`;
+
+exports[`backtick.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+\`\`\`\`\`\`\`\`\`\`
+
+\`\`\`js
+console.log("hello world!");
+\`\`\`
+
+\`\`\`\`\`\`\`\`\`\`
+
+=====================================output=====================================
+\`\`\`\`
+
+\`\`\`js
+console.log("hello world!");
+\`\`\`
+
+\`\`\`\`
+
+================================================================================
+`;
+
+exports[`format.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+\`\`\`js
+const foo      = 'bar'
+
+
+
+   console     .log(    213    )
+\`\`\`
+
+=====================================output=====================================
+\`\`\`js
+const foo = "bar";
+
+console.log(213);
+\`\`\`
+
+================================================================================
+`;
+
+exports[`indent.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+    Indented Code Block
+    Indented Code Block
+    Indented Code Block
+    Indented Code Block
+    Indented Code Block
+
+- \`\`\`
+  Fenced Code Block
+  Fenced Code Block
+  Fenced Code Block
+  Fenced Code Block
+  Fenced Code Block
+  \`\`\`
+
+<!-- prettier/prettier#3459 -->
+
+1. Change to your home directory:
+
+        cd
+
+2. List the contents:
+
+        ls -l
+
+=====================================output=====================================
+    Indented Code Block
+    Indented Code Block
+    Indented Code Block
+    Indented Code Block
+    Indented Code Block
+
+- \`\`\`
+  Fenced Code Block
+  Fenced Code Block
+  Fenced Code Block
+  Fenced Code Block
+  Fenced Code Block
+  \`\`\`
+
+<!-- prettier/prettier#3459 -->
+
+1.  Change to your home directory:
+
+        cd
+
+2.  List the contents:
+
+        ls -l
+
+================================================================================
+`;
+
+exports[`lang.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+\`\`\`js
+console.log("hello world");
+\`\`\`
+
+=====================================output=====================================
+\`\`\`js
+console.log("hello world");
+\`\`\`
+
+================================================================================
+`;
+
+exports[`leading-trailing-newlines.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+\`\`\`
+
+
+123
+
+
+\`\`\`
+
+=====================================output=====================================
+\`\`\`
+
+
+123
+
+
+\`\`\`
+
+================================================================================
+`;
+
+exports[`simple.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+\`\`\`
+hello world
+\`\`\`
+
+=====================================output=====================================
+\`\`\`
+hello world
+\`\`\`
+
+================================================================================
+`;

@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
   logoWrapper.addEventListener("touchstart", handleLogoDrag);
   logoWrapper.addEventListener("dragstart", handleLogoDrag);
 
-  lastDash.addEventListener("animationend", event => {
+  lastDash.addEventListener("animationend", (event) => {
     if (event.animationName.match(/roll/)) {
       logo.classList.remove("rolling");
     }
@@ -34,13 +34,13 @@ window.addEventListener("load", () => {
   const npmButton = document.querySelector(".showNpmButton");
   const getStartedSection = document.querySelector(".getStartedSection");
 
-  npmButton.addEventListener("click", event => {
+  npmButton.addEventListener("click", (event) => {
     event.preventDefault();
     npmButton.classList.add("active");
     yarnButton.classList.remove("active");
     getStartedSection.classList.add("getStartedSection--npm");
   });
-  yarnButton.addEventListener("click", event => {
+  yarnButton.addEventListener("click", (event) => {
     event.preventDefault();
     yarnButton.classList.add("active");
     npmButton.classList.remove("active");

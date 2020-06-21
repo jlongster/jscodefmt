@@ -1,0 +1,372 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Arith.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+/* @providesModule Arith */
+
+function num(x:number) { }
+
+function str(x:string) { }
+
+function foo() {
+  var x = 0;
+  var y = "...";
+  var z = {};
+  num(x+x);
+  num(x+y); // error
+  str(x+y);
+  str(x+x); // error
+  str(z+y); // error
+}
+
+// test MaybeT(NumT)
+function bar0(x: ?number, y: number) {
+  num(x + y);
+}
+function bar1(x: number, y: ?number) {
+  num(x + y);
+}
+
+// test OptionalT(NumT)
+function bar2(x?: number, y: number) {
+  num(x + y);
+}
+function bar3(x: number, y?: number) {
+  num(x + y);
+}
+
+// test OptionalT(MaybeT(NumT))
+function bar4(x?: ?number, y: number) {
+  num(x + y);
+}
+function bar5(x: number, y?: ?number) {
+  num(x + y);
+}
+
+num(null + null); // === 0
+num(undefined + undefined); // === NaN
+
+num(null + 1); // === 1
+num(1 + null); // === 1
+num(undefined + 1); // === NaN
+num(1 + undefined); // === NaN
+
+num(null + true); // === 1
+num(true + null); // === 1
+num(undefined + true); // === NaN
+num(true + undefined); // === NaN
+
+str("foo" + true); // error
+str(true + "foo"); // error
+str("foo" + null); // error
+str(null + "foo"); // error
+str("foo" + undefined); // error
+str(undefined + "foo"); // error
+
+let tests = [
+  function(x: mixed, y: mixed) {
+    (x + y); // error
+    (x + 0); // error
+    (0 + x); // error
+    (x + ""); // error
+    ("" + x); // error
+    (x + {}); // error
+    ({} + x); // error
+  },
+
+  // when one side is a string or number and the other is invalid, we
+  // assume you are expecting a string or number (respectively), rather than
+  // erroring twice saying number !~> string and obj !~> string.
+  function() {
+    ((1 + {}): number); // error: object !~> number
+    (({} + 1): number); // error: object !~> number
+    (("1" + {}): string); // error: object !~> string
+    (({} + "1"): string); // error: object !~> string
+  },
+
+  function(x: any, y: number, z: string) {
+    (x + y: string); // ok
+    (y + x: string); // ok
+
+    (x + z: empty); // error, string ~> empty
+    (z + x: empty); // error, string ~> empty
+  },
+];
+
+=====================================output=====================================
+/* @providesModule Arith */
+
+function num(x: number) {}
+
+function str(x: string) {}
+
+function foo() {
+  var x = 0;
+  var y = "...";
+  var z = {};
+  num(x + x);
+  num(x + y); // error
+  str(x + y);
+  str(x + x); // error
+  str(z + y); // error
+}
+
+// test MaybeT(NumT)
+function bar0(x: ?number, y: number) {
+  num(x + y);
+}
+function bar1(x: number, y: ?number) {
+  num(x + y);
+}
+
+// test OptionalT(NumT)
+function bar2(x?: number, y: number) {
+  num(x + y);
+}
+function bar3(x: number, y?: number) {
+  num(x + y);
+}
+
+// test OptionalT(MaybeT(NumT))
+function bar4(x?: ?number, y: number) {
+  num(x + y);
+}
+function bar5(x: number, y?: ?number) {
+  num(x + y);
+}
+
+num(null + null); // === 0
+num(undefined + undefined); // === NaN
+
+num(null + 1); // === 1
+num(1 + null); // === 1
+num(undefined + 1); // === NaN
+num(1 + undefined); // === NaN
+
+num(null + true); // === 1
+num(true + null); // === 1
+num(undefined + true); // === NaN
+num(true + undefined); // === NaN
+
+str("foo" + true); // error
+str(true + "foo"); // error
+str("foo" + null); // error
+str(null + "foo"); // error
+str("foo" + undefined); // error
+str(undefined + "foo"); // error
+
+let tests = [
+  function (x: mixed, y: mixed) {
+    x + y; // error
+    x + 0; // error
+    0 + x; // error
+    x + ""; // error
+    "" + x; // error
+    x + {}; // error
+    ({} + x); // error
+  },
+
+  // when one side is a string or number and the other is invalid, we
+  // assume you are expecting a string or number (respectively), rather than
+  // erroring twice saying number !~> string and obj !~> string.
+  function () {
+    (1 + {}: number); // error: object !~> number
+    ({} + 1: number); // error: object !~> number
+    ("1" + {}: string); // error: object !~> string
+    ({} + "1": string); // error: object !~> string
+  },
+
+  function (x: any, y: number, z: string) {
+    (x + y: string); // ok
+    (y + x: string); // ok
+
+    (x + z: empty); // error, string ~> empty
+    (z + x: empty); // error, string ~> empty
+  },
+];
+
+================================================================================
+`;
+
+exports[`exponent.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+let x: number = 2 ** 3;
+x **= 4;
+
+let y: string = "123";
+y **= 2; // error
+
+1 + 2 ** 3 + 4;
+2 ** 2;
+(-2) ** 2;
+
+=====================================output=====================================
+/* @flow */
+
+let x: number = 2 ** 3;
+x **= 4;
+
+let y: string = "123";
+y **= 2; // error
+
+1 + 2 ** 3 + 4;
+2 ** 2;
+(-2) ** 2;
+
+================================================================================
+`;
+
+exports[`generic.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function f<A>(a: A): A { return a + a; } // error
+function f<A,B>(a: A, b: B): A {return a + b; } // error
+function f<A,B>(a: A, b: B): A {return b + a; } // error
+function f<A,B>(a: A, b: B): B {return a + b; } // error
+function f<A,B>(a: A, b: B): B {return b + a; } // error
+
+=====================================output=====================================
+/* @flow */
+
+function f<A>(a: A): A {
+  return a + a;
+} // error
+function f<A, B>(a: A, b: B): A {
+  return a + b;
+} // error
+function f<A, B>(a: A, b: B): A {
+  return b + a;
+} // error
+function f<A, B>(a: A, b: B): B {
+  return a + b;
+} // error
+function f<A, B>(a: A, b: B): B {
+  return b + a;
+} // error
+
+================================================================================
+`;
+
+exports[`mult.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function num(x:number) { }
+
+num(null * 1);
+num(1 * null);
+
+let x: number = 2 * 3;
+x *= 4;
+
+let y: string = "123";
+y *= 2; // error
+
+=====================================output=====================================
+/* @flow */
+
+function num(x: number) {}
+
+num(null * 1);
+num(1 * null);
+
+let x: number = 2 * 3;
+x *= 4;
+
+let y: string = "123";
+y *= 2; // error
+
+================================================================================
+`;
+
+exports[`relational.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+(1 < 2);
+(1 < "foo"); // error
+("foo" < 1); // error
+("foo" < "bar");
+(1 < {foo: 1}); // error
+({foo: 1} < 1); // error
+({foo: 1} < {foo: 1}); // error
+("foo" < {foo: 1}); // error
+({foo: 1} < "foo"); // error
+
+var x = (null : ?number);
+(1 < x); // 2 errors: null !~> number; undefined !~> number
+(x < 1); // 2 errors: null !~> number; undefined !~> number
+
+(null < null); // error
+(undefined < null); // error
+(null < undefined); // error
+(undefined < undefined); // error
+(NaN < 1);
+(1 < NaN);
+(NaN < NaN);
+
+let tests = [
+  function(x: any, y: number, z: string) {
+    (x > y);
+    (x > z);
+  },
+];
+
+=====================================output=====================================
+/* @flow */
+
+1 < 2;
+1 < "foo"; // error
+"foo" < 1; // error
+"foo" < "bar";
+1 < { foo: 1 }; // error
+({ foo: 1 } < 1); // error
+({ foo: 1 } < { foo: 1 }); // error
+"foo" < { foo: 1 }; // error
+({ foo: 1 } < "foo"); // error
+
+var x = (null: ?number);
+1 < x; // 2 errors: null !~> number; undefined !~> number
+x < 1; // 2 errors: null !~> number; undefined !~> number
+
+null < null; // error
+undefined < null; // error
+null < undefined; // error
+undefined < undefined; // error
+NaN < 1;
+1 < NaN;
+NaN < NaN;
+
+let tests = [
+  function (x: any, y: number, z: string) {
+    x > y;
+    x > z;
+  },
+];
+
+================================================================================
+`;

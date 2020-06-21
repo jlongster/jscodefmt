@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`spread.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare var iterableOf123: Iterable<123>;
+function fun(x: 'hi', y: 123) {}
+fun('hi', ...iterableOf123); // No error - ignore the fact iterableOf123 could be empty
+
+function funWithRestArray(x: 'hi', y: 123, ...rest: Array<number>) {}
+
+funWithRestArray('hi', 123, ...iterableOf123); // Ok
+funWithRestArray('hi', ...iterableOf123); // No error - ignore the fact iterableOf123 could be empty
+funWithRestArray('hi', ...iterableOf123, ...iterableOf123); // No error - ignore the fact iterableOf123 could be empty
+
+// 2 errors
+// 1. 'bye' ~> 123 in case the first spread is empty
+// 2. 'bye' ~> number in case the first spread is not empty
+funWithRestArray('hi', ...iterableOf123, 'bye', ...iterableOf123);
+
+=====================================output=====================================
+declare var iterableOf123: Iterable<123>;
+function fun(x: "hi", y: 123) {}
+fun("hi", ...iterableOf123); // No error - ignore the fact iterableOf123 could be empty
+
+function funWithRestArray(x: "hi", y: 123, ...rest: Array<number>) {}
+
+funWithRestArray("hi", 123, ...iterableOf123); // Ok
+funWithRestArray("hi", ...iterableOf123); // No error - ignore the fact iterableOf123 could be empty
+funWithRestArray("hi", ...iterableOf123, ...iterableOf123); // No error - ignore the fact iterableOf123 could be empty
+
+// 2 errors
+// 1. 'bye' ~> 123 in case the first spread is empty
+// 2. 'bye' ~> number in case the first spread is not empty
+funWithRestArray("hi", ...iterableOf123, "bye", ...iterableOf123);
+
+================================================================================
+`;

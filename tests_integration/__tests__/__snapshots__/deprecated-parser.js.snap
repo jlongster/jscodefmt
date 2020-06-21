@@ -1,6 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`API format with deprecated parser (postcss) should work 1`] = `
-"{ parser: \\"postcss\\" } is deprecated; we now treat it as { parser: \\"css\\" }.
-"
-`;

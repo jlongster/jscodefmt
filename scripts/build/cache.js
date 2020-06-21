@@ -21,12 +21,12 @@ function Cache(cacheDir, version) {
   this.updated = {
     version: this.version,
     checksums: {},
-    files: {}
+    files: {},
   };
 }
 
 // Loads the manifest.json file with the information from the last build
-Cache.prototype.load = async function() {
+Cache.prototype.load = async function () {
   // This should never throw, if it does, let it fail the build
   const lockfile = await readFile("yarn.lock", "utf-8");
   const lockfileHash = hashString(lockfile);
@@ -60,7 +60,7 @@ Cache.prototype.load = async function() {
 // any (or the list itself) have changed.
 // This takes the same rollup config used for bundling to include files that are
 // resolved by specific plugins.
-Cache.prototype.checkBundle = async function(id, inputOptions, outputOptions) {
+Cache.prototype.checkBundle = async function (id, inputOptions, outputOptions) {
   const files = new Set(this.files[id]);
   const newFiles = (this.updated.files[id] = []);
 
@@ -70,8 +70,8 @@ Cache.prototype.checkBundle = async function(id, inputOptions, outputOptions) {
   const { output } = await bundle.generate(outputOptions);
 
   const modules = output
-    .filter(mod => !/\0/.test(mod.facadeModuleId))
-    .map(mod => [path.relative(ROOT, mod.facadeModuleId), mod.code]);
+    .filter((mod) => !/\0/.test(mod.facadeModuleId))
+    .map((mod) => [path.relative(ROOT, mod.facadeModuleId), mod.code]);
 
   for (const [id, code] of modules) {
     newFiles.push(id);
@@ -96,7 +96,7 @@ Cache.prototype.checkBundle = async function(id, inputOptions, outputOptions) {
   return !dirty && files.size === 0;
 };
 
-Cache.prototype.save = async function() {
+Cache.prototype.save = async function () {
   try {
     await writeFile(this.manifest, JSON.stringify(this.updated, null, 2));
   } catch (err) {
@@ -109,10 +109,7 @@ function required(name) {
 }
 
 function hashString(string) {
-  return crypto
-    .createHash("md5")
-    .update(string)
-    .digest("hex");
+  return crypto.createHash("md5").update(string).digest("hex");
 }
 
 function getRollupConfig(rollupConfig) {
@@ -120,12 +117,12 @@ function getRollupConfig(rollupConfig) {
     ...rollupConfig,
     onwarn() {},
     plugins: rollupConfig.plugins.filter(
-      plugin =>
+      (plugin) =>
         // We're not interested in dependencies, we already check `yarn.lock`
         plugin.name !== "node-resolve" &&
         // This is really slow, we need this "preflight" to be fast
         plugin.name !== "babel"
-    )
+    ),
   };
 }
 

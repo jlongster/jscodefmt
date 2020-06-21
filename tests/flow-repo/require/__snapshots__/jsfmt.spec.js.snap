@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`B.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+exports.numberValue = 42;
+
+=====================================output=====================================
+/* @flow */
+
+exports.numberValue = 42;
+
+================================================================================
+`;
+
+exports[`C.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+=====================================output=====================================
+/* @flow */
+
+================================================================================
+`;
+
+exports[`E.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+// Local \`exports\` var is just a ref to module.exports, so mutating the original
+// value will affect the exports object but re-binding it makes it useless and
+// does not affect the exports value.
+module.exports = {
+  numberValue: 42
+};
+
+exports = {stringValue: ''};
+
+=====================================output=====================================
+/* @flow */
+
+// Local \`exports\` var is just a ref to module.exports, so mutating the original
+// value will affect the exports object but re-binding it makes it useless and
+// does not affect the exports value.
+module.exports = {
+  numberValue: 42,
+};
+
+exports = { stringValue: "" };
+
+================================================================================
+`;
+
+exports[`ProvidesModuleA.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @providesModule A
+ * @flow
+ */
+
+exports.numberValue = 42;
+
+=====================================output=====================================
+/**
+ * @providesModule A
+ * @flow
+ */
+
+exports.numberValue = 42;
+
+================================================================================
+`;
+
+exports[`ProvidesModuleD.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @providesModule D
+ * @flow
+ */
+
+=====================================output=====================================
+/**
+ * @providesModule D
+ * @flow
+ */
+
+================================================================================
+`;
+
+exports[`not_builtin_require.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function require(x: string) {}
+require("not a module name");
+
+=====================================output=====================================
+// @flow
+
+function require(x: string) {}
+require("not a module name");
+
+================================================================================
+`;
+
+exports[`not_builtin_require2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+type require = number;
+var a: require = 42;
+
+=====================================output=====================================
+// @flow
+
+type require = number;
+var a: require = 42;
+
+================================================================================
+`;
+
+exports[`require.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function takesANumber(num: number): void {}
+function takesAString(str: string): void {}
+
+// @providesModule
+var A = require("A");
+takesANumber(A.numberValue);
+takesAString(A.numberValue);
+
+// File path
+var B = require("./B");
+takesANumber(B.numberValue);
+takesAString(B.numberValue);
+
+// C.js exists, but not as a providesModule
+require("C");
+
+// @providesModule D exists, but not as a filename
+require("./D");
+
+// E exports an object with a numVal property
+var E = require('./E');
+var e_1: number = E.numberValue;
+E.stringValue; // Error: The E exports obj has no 'stringValue' property
+
+// We require that the param passed to require() be a string literal to support
+// guaranteed static extraction
+var a = './E';
+require(a); // Error: Param must be string literal
+require(\`./E\`); // template literals are ok...
+require(\`\${'./E'}\`); // error: but only if they have no expressions
+
+// require.call is allowed but circumverts Flow's static analysis
+require.call(null, "DoesNotExist");
+
+=====================================output=====================================
+/* @flow */
+
+function takesANumber(num: number): void {}
+function takesAString(str: string): void {}
+
+// @providesModule
+var A = require("A");
+takesANumber(A.numberValue);
+takesAString(A.numberValue);
+
+// File path
+var B = require("./B");
+takesANumber(B.numberValue);
+takesAString(B.numberValue);
+
+// C.js exists, but not as a providesModule
+require("C");
+
+// @providesModule D exists, but not as a filename
+require("./D");
+
+// E exports an object with a numVal property
+var E = require("./E");
+var e_1: number = E.numberValue;
+E.stringValue; // Error: The E exports obj has no 'stringValue' property
+
+// We require that the param passed to require() be a string literal to support
+// guaranteed static extraction
+var a = "./E";
+require(a); // Error: Param must be string literal
+require(\`./E\`); // template literals are ok...
+require(\`\${"./E"}\`); // error: but only if they have no expressions
+
+// require.call is allowed but circumverts Flow's static analysis
+require.call(null, "DoesNotExist");
+
+================================================================================
+`;

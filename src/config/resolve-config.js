@@ -2,24 +2,23 @@
 
 const thirdParty = require("../common/third-party");
 const minimatch = require("minimatch");
-const resolve = require("resolve");
 const path = require("path");
 const mem = require("mem");
 
 const resolveEditorConfig = require("./resolve-config-editorconfig");
 const loadToml = require("../utils/load-toml");
+const resolve = require("../common/resolve");
 
 const getExplorerMemoized = mem(
-  opts => {
+  (opts) => {
     const cosmiconfig = thirdParty["cosmiconfig" + (opts.sync ? "Sync" : "")];
     const explorer = cosmiconfig("prettier", {
       cache: opts.cache,
-      transform: result => {
+      transform: (result) => {
         if (result && result.config) {
           if (typeof result.config === "string") {
-            const modulePath = resolve.sync(result.config, {
-              basedir: path.dirname(result.filepath)
-            });
+            const dir = path.dirname(result.filepath);
+            const modulePath = resolve(result.config, { paths: [dir] });
             result.config = eval("require")(modulePath);
           }
 
@@ -42,27 +41,23 @@ const getExplorerMemoized = mem(
         ".prettierrc.yml",
         ".prettierrc.js",
         "prettier.config.js",
-        ".prettierrc.toml"
+        ".prettierrc.toml",
       ],
       loaders: {
-        ".toml": loadToml
-      }
+        ".toml": loadToml,
+      },
     });
 
-    return {
-      // cosmiconfig v4 interface
-      load: (searchPath, configPath) =>
-        configPath ? explorer.load(configPath) : explorer.search(searchPath)
-    };
+    return explorer;
   },
   { cacheKey: JSON.stringify }
 );
 
 /** @param {{ cache: boolean, sync: boolean }} opts */
-function getLoadFunction(opts) {
+function getExplorer(opts) {
   // Normalize opts before passing to a memoized function
   opts = { sync: false, cache: false, ...opts };
-  return getExplorerMemoized(opts).load;
+  return getExplorerMemoized(opts);
 }
 
 function _resolveConfig(filePath, opts, sync) {
@@ -70,21 +65,24 @@ function _resolveConfig(filePath, opts, sync) {
   const loadOpts = {
     cache: !!opts.useCache,
     sync: !!sync,
-    editorconfig: !!opts.editorconfig
+    editorconfig: !!opts.editorconfig,
   };
-  const load = getLoadFunction(loadOpts);
+  const { load, search } = getExplorer(loadOpts);
   const loadEditorConfig = resolveEditorConfig.getLoadFunction(loadOpts);
-  const arr = [load, loadEditorConfig].map(l => l(filePath, opts.config));
+  const arr = [
+    opts.config ? load(opts.config) : search(filePath),
+    loadEditorConfig(filePath),
+  ];
 
   const unwrapAndMerge = ([result, editorConfigured]) => {
     const merged = {
       ...editorConfigured,
-      ...mergeOverrides(result, filePath)
+      ...mergeOverrides(result, filePath),
     };
 
-    ["plugins", "pluginSearchDirs"].forEach(optionName => {
+    ["plugins", "pluginSearchDirs"].forEach((optionName) => {
       if (Array.isArray(merged[optionName])) {
-        merged[optionName] = merged[optionName].map(value =>
+        merged[optionName] = merged[optionName].map((value) =>
           typeof value === "string" && value.startsWith(".") // relative path
             ? path.resolve(path.dirname(result.filepath), value)
             : value
@@ -116,14 +114,14 @@ function clearCache() {
 }
 
 async function resolveConfigFile(filePath) {
-  const load = getLoadFunction({ sync: false });
-  const result = await load(filePath);
+  const { search } = getExplorer({ sync: false });
+  const result = await search(filePath);
   return result ? result.filepath : null;
 }
 
-resolveConfigFile.sync = filePath => {
-  const load = getLoadFunction({ sync: true });
-  const result = load(filePath);
+resolveConfigFile.sync = (filePath) => {
+  const { search } = getExplorer({ sync: true });
+  const result = search(filePath);
   return result ? result.filepath : null;
 };
 
@@ -155,8 +153,8 @@ function pathMatchesGlobs(filePath, patterns, excludedPatterns) {
   const opts = { matchBase: true, dot: true };
 
   return (
-    patternList.some(pattern => minimatch(filePath, pattern, opts)) &&
-    !excludedPatternList.some(excludedPattern =>
+    patternList.some((pattern) => minimatch(filePath, pattern, opts)) &&
+    !excludedPatternList.some((excludedPattern) =>
       minimatch(filePath, excludedPattern, opts)
     )
   );
@@ -165,5 +163,5 @@ function pathMatchesGlobs(filePath, patterns, excludedPatterns) {
 module.exports = {
   resolveConfig,
   resolveConfigFile,
-  clearCache
+  clearCache,
 };

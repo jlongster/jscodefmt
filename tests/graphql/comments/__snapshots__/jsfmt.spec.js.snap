@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`argument_comment.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+query (
+  $string: String, # Some variable comment
+  $bool: Boolean # Some comment
+ ) {
+   someField
+ }
+
+=====================================output=====================================
+query(
+  $string: String # Some variable comment
+  $bool: Boolean # Some comment
+) {
+  someField
+}
+
+================================================================================
+`;
+
+exports[`fields.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+query { 
+  someField # Trailing comment
+}
+
+
+
+=====================================output=====================================
+query {
+  someField # Trailing comment
+}
+
+================================================================================
+`;
+
+exports[`interfaces.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type Type1
+implements
+A & B &
+# comment 1
+                 C & D &
+# comment 2
+ E {a: a}
+
+=====================================output=====================================
+type Type1 implements A & B &
+# comment 1
+C & D &
+# comment 2
+E {
+  a: a
+}
+
+================================================================================
+`;
+
+exports[`tokens.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+# import "./claimsFragment.gql"
+
+query claimsByBookingReferenceAndLastName($bookingReference: String!, $lastName: String!) {
+  claimsByBookingReferenceAndLastName(bookingReference: $bookingReference, lastName: $lastName) {
+    ... claim
+  }
+}
+
+=====================================output=====================================
+# import "./claimsFragment.gql"
+
+query claimsByBookingReferenceAndLastName(
+  $bookingReference: String!
+  $lastName: String!
+) {
+  claimsByBookingReferenceAndLastName(
+    bookingReference: $bookingReference
+    lastName: $lastName
+  ) {
+    ...claim
+  }
+}
+
+================================================================================
+`;

@@ -10,7 +10,7 @@ async function pushGit({ version }) {
   await execa("git", ["push", "--tags"]);
 }
 
-module.exports = function(params) {
+module.exports = function (params) {
   if (params.dry) {
     return;
   }

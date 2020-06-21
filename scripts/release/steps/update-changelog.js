@@ -1,11 +1,10 @@
 "use strict";
 
 const chalk = require("chalk");
-const dedent = require("dedent");
-const execa = require("execa");
+const { outdent, string: outdentString } = require("outdent");
 const fs = require("fs");
 const semver = require("semver");
-const { waitForEnter } = require("../utils");
+const { waitForEnter, runYarn, logPromise } = require("../utils");
 
 function getBlogPostInfo(version) {
   const date = new Date();
@@ -15,13 +14,13 @@ function getBlogPostInfo(version) {
 
   return {
     file: `website/blog/${year}-${month}-${day}-${version}.md`,
-    path: `blog/${year}/${month}/${day}/${version}.html`
+    path: `blog/${year}/${month}/${day}/${version}.html`,
   };
 }
 
 function writeChangelog({ version, previousVersion, releaseNotes }) {
   const changelog = fs.readFileSync("CHANGELOG.md", "utf-8");
-  const newEntry = dedent`
+  const newEntry = outdent`
     # ${version}
 
     [diff](https://github.com/prettier/prettier/compare/${previousVersion}...${version})
@@ -31,7 +30,7 @@ function writeChangelog({ version, previousVersion, releaseNotes }) {
   fs.writeFileSync("CHANGELOG.md", newEntry + "\n\n" + changelog);
 }
 
-module.exports = async function({ version, previousVersion }) {
+module.exports = async function ({ version, previousVersion }) {
   const semverDiff = semver.diff(version, previousVersion);
 
   if (semverDiff !== "patch") {
@@ -39,14 +38,14 @@ module.exports = async function({ version, previousVersion }) {
     writeChangelog({
       version,
       previousVersion,
-      releaseNotes: `🔗 [Release Notes](https://prettier.io/${blogPost.path})`
+      releaseNotes: `🔗 [Release Notes](https://prettier.io/${blogPost.path})`,
     });
     if (fs.existsSync(blogPost.file)) {
       // Everything is fine, this step is finished
       return;
     }
     console.warn(
-      dedent(chalk`
+      outdentString(chalk`
         {yellow warning} The file {bold ${blogPost.file}} doesn't exist, but it will be referenced in {bold CHANGELOG.md}. Make sure to create it later.
 
         Press ENTER to continue.
@@ -54,7 +53,7 @@ module.exports = async function({ version, previousVersion }) {
     );
   } else {
     console.log(
-      dedent(chalk`
+      outdentString(chalk`
         {yellow.bold A manual step is necessary.}
 
         You can copy the entries from {bold changelog_unreleased/*/pr-*.md} to {bold CHANGELOG.md}
@@ -68,5 +67,8 @@ module.exports = async function({ version, previousVersion }) {
   }
 
   await waitForEnter();
-  await execa("yarn", ["lint-docs", "--fix"]);
+  await logPromise(
+    "Re-running Prettier on docs",
+    runYarn(["lint:prettier", "--write"])
+  );
 };

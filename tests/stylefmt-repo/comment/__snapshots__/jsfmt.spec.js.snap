@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comment.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * comment
+ */
+
+.class
+{
+  padding:10px; }
+/*comment*/
+
+
+.foo{color:red
+}
+
+
+/*
+  at rule
+ */
+
+
+@media only screen {
+  /* inner at rule comment */
+  .foo { display: none; }
+
+  /*
+   * another comment
+   */
+   /* in a row */
+
+.bar {
+  color:yellow;
+}
+}
+
+=====================================output=====================================
+/**
+ * comment
+ */
+
+.class {
+  padding: 10px;
+}
+/*comment*/
+
+.foo {
+  color: red;
+}
+
+/*
+  at rule
+ */
+
+@media only screen {
+  /* inner at rule comment */
+  .foo {
+    display: none;
+  }
+
+  /*
+   * another comment
+   */
+  /* in a row */
+
+  .bar {
+    color: yellow;
+  }
+}
+
+================================================================================
+`;

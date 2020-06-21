@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`hello.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{
+  short(var: $var, int: 5, float: 5.6, bool: true, string: "hello world!")
+  long(var: $thisIsAReallyLongVariableNameRight, int: 52342342342, float: 5.6, bool: true, string: "hello world this is a very long string!")
+}
+
+=====================================output=====================================
+{
+  short(var: $var, int: 5, float: 5.6, bool: true, string: "hello world!")
+  long(
+    var: $thisIsAReallyLongVariableNameRight
+    int: 52342342342
+    float: 5.6
+    bool: true
+    string: "hello world this is a very long string!"
+  )
+}
+
+================================================================================
+`;

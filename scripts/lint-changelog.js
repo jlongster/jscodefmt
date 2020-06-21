@@ -1,9 +1,11 @@
+#!/usr/bin/env node
 "use strict";
 const fs = require("fs");
 const path = require("path");
 
 const CHANGELOG_DIR = "changelog_unreleased";
 const TEMPLATE_FILE = "TEMPLATE.md";
+const BLOG_POST_INTRO_FILE = "blog-post-intro.md";
 const CHANGELOG_CATEGORIES = [
   "angular",
   "api",
@@ -22,34 +24,42 @@ const CHANGELOG_CATEGORIES = [
   "scss",
   "typescript",
   "vue",
-  "yaml"
+  "yaml",
 ];
 const CHANGELOG_ROOT = path.join(__dirname, `../${CHANGELOG_DIR}`);
-const showErrorMessage = message => {
+const showErrorMessage = (message) => {
   console.error(message);
   process.exitCode = 1;
 };
 
 const files = fs.readdirSync(CHANGELOG_ROOT);
 for (const file of files) {
-  if (file !== TEMPLATE_FILE && !CHANGELOG_CATEGORIES.includes(file)) {
+  if (
+    file !== TEMPLATE_FILE &&
+    file !== BLOG_POST_INTRO_FILE &&
+    !CHANGELOG_CATEGORIES.includes(file)
+  ) {
     showErrorMessage(`Please remove "${file}" from "${CHANGELOG_DIR}".`);
   }
 }
-for (const file of [TEMPLATE_FILE, ...CHANGELOG_CATEGORIES]) {
+for (const file of [
+  TEMPLATE_FILE,
+  BLOG_POST_INTRO_FILE,
+  ...CHANGELOG_CATEGORIES,
+]) {
   if (!files.includes(file)) {
     showErrorMessage(`Please don't remove "${file}" from "${CHANGELOG_DIR}".`);
   }
 }
 
-const authorRegex = /by \[@(.*?)\]\(https:\/\/github\.com\/\1\)/;
+const authorRegex = /by \[@(.*?)]\(https:\/\/github\.com\/\1\)/;
 const titleRegex = /^#{4} (.*?)\(\[#\d{4,}]/;
 
 const template = fs.readFileSync(
   path.join(CHANGELOG_ROOT, TEMPLATE_FILE),
   "utf8"
 );
-const [templateComment] = template.match(/<!--[\s\S]*?-->/);
+const [templateComment] = template.match(/<!--[\S\s]*?-->/);
 const [templateAuthorLink] = template.match(authorRegex);
 
 for (const category of CHANGELOG_CATEGORIES) {
@@ -106,11 +116,10 @@ for (const category of CHANGELOG_CATEGORIES) {
       continue;
     }
     const [, title] = titleMatch;
-    const categoryInTitle = title
-      .split(":")
-      .shift()
-      .trim();
-    if (CHANGELOG_CATEGORIES.includes(categoryInTitle.toLowerCase())) {
+    const categoryInTitle = title.split(":").shift().trim();
+    if (
+      [...CHANGELOG_CATEGORIES, "js"].includes(categoryInTitle.toLowerCase())
+    ) {
       showErrorMessage(
         `[${displayPath}]: Please remove "${categoryInTitle}:" in title.`
       );

@@ -1,7 +1,0 @@
-steps:
-  - template: ../steps/install-nodejs.yml
-  - template: ../steps/install-dependencies.yml
-  - script: yarn test
-    displayName: "Run tests"
-  - template: ../steps/publish-test-results.yml
-  - template: ../steps/publish-code-coverage.yml

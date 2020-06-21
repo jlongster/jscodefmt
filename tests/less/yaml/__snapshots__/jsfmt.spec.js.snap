@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`yaml.less format 1`] = `
+====================================options=====================================
+parsers: ["less"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+---
+title: Title
+description: Description
+---
+
+a {
+  color: red;
+}
+
+=====================================output=====================================
+---
+title: Title
+description: Description
+---
+
+a {
+  color: red;
+}
+
+================================================================================
+`;

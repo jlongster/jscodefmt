@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fill.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+div {
+  border-left: 1px solid mix($warningBackgroundColors, $warningBorderColors, 50%);
+  $fontFamily: "Lato", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+=====================================output=====================================
+div {
+  border-left: 1px solid
+    mix($warningBackgroundColors, $warningBorderColors, 50%);
+  $fontFamily: "Lato", -apple-system, "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+}
+
+================================================================================
+`;

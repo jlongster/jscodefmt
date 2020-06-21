@@ -1,0 +1,289 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`any.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+function foo(x:any):any { return x; }
+function bar(x:any):mixed { return x; }
+function qux(x:mixed):any { return x; }
+
+var x:string = foo(0);
+var y:string = bar(0);
+var z:string = qux(0);
+
+=====================================output=====================================
+// @flow
+
+function foo(x: any): any {
+  return x;
+}
+function bar(x: any): mixed {
+  return x;
+}
+function qux(x: mixed): any {
+  return x;
+}
+
+var x: string = foo(0);
+var y: string = bar(0);
+var z: string = qux(0);
+
+================================================================================
+`;
+
+exports[`anyexportflowfile.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+module.exports = ((x: any) => x: any);
+
+=====================================output=====================================
+// @flow
+
+module.exports = ((x: any) => x: any);
+
+================================================================================
+`;
+
+exports[`flowfixme.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/*
+  FlowFixMe is a synonym for any, used by the Flow team to
+  signal a needed mod to JS devs.
+
+  @flow
+ */
+
+// no param
+function foo(x:$FlowFixMe):$FlowFixMe { return x; }
+function bar(x:$FlowFixMe):mixed { return x; }
+// param (info only)
+function qux(x:$FlowFixMe<number>):$FlowFixMe<number> { return x; }
+// ...params are still checked. unknown type
+function baz(x:$FlowFixMe<nnumber>): $FlowFixMe<number> { return x; }
+
+var x:string = foo(0);
+var y:string = bar(0);
+var z:string = qux(0);
+var w:string = baz(0);
+
+=====================================output=====================================
+/*
+  FlowFixMe is a synonym for any, used by the Flow team to
+  signal a needed mod to JS devs.
+
+  @flow
+ */
+
+// no param
+function foo(x: $FlowFixMe): $FlowFixMe {
+  return x;
+}
+function bar(x: $FlowFixMe): mixed {
+  return x;
+}
+// param (info only)
+function qux(x: $FlowFixMe<number>): $FlowFixMe<number> {
+  return x;
+}
+// ...params are still checked. unknown type
+function baz(x: $FlowFixMe<nnumber>): $FlowFixMe<number> {
+  return x;
+}
+
+var x: string = foo(0);
+var y: string = bar(0);
+var z: string = qux(0);
+var w: string = baz(0);
+
+================================================================================
+`;
+
+exports[`flowissue.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/*
+  $FlowIssue is a synonym for any, used by JS devs to signal
+  a potential typechecker bug to the Flow team.
+
+  @flow
+ */
+
+// no param
+function foo(x:$FlowIssue):$FlowIssue { return x; }
+function bar(x:$FlowIssue):mixed { return x; }
+// param (info only)
+function qux(x:$FlowIssue<number>):$FlowIssue<number> { return x; }
+// ...params are still checked. unknown type
+function baz(x:$FlowIssue<nnumber>): $FlowIssue<number> { return x; }
+
+var x:string = foo(0);
+var y:string = bar(0);
+var z:string = qux(0);
+var w:string = baz(0);
+
+=====================================output=====================================
+/*
+  $FlowIssue is a synonym for any, used by JS devs to signal
+  a potential typechecker bug to the Flow team.
+
+  @flow
+ */
+
+// no param
+function foo(x: $FlowIssue): $FlowIssue {
+  return x;
+}
+function bar(x: $FlowIssue): mixed {
+  return x;
+}
+// param (info only)
+function qux(x: $FlowIssue<number>): $FlowIssue<number> {
+  return x;
+}
+// ...params are still checked. unknown type
+function baz(x: $FlowIssue<nnumber>): $FlowIssue<number> {
+  return x;
+}
+
+var x: string = foo(0);
+var y: string = bar(0);
+var z: string = qux(0);
+var w: string = baz(0);
+
+================================================================================
+`;
+
+exports[`nonflowfile.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @noflow
+
+module.exports = (x) => x;
+
+=====================================output=====================================
+// @noflow
+
+module.exports = (x) => x;
+
+================================================================================
+`;
+
+exports[`propagate.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare class C {
+  bar(n1: number, n2: number): number;
+  bar(s1: string, s2: string): string;
+}
+
+function foo(c: C, x: any): string {
+  let y = x.y;
+  return c.bar(0, y); // should be able to select first case and error
+}
+
+var any_fun1 = require('./nonflowfile');
+function bar1(x: mixed) {
+  if (any_fun1(x)) {
+    (x: boolean);
+  }
+}
+
+var any_fun2 = require('./anyexportflowfile');
+function bar2(x: mixed) {
+  if (any_fun2(x)) {
+    (x: boolean);
+  }
+}
+
+=====================================output=====================================
+// @flow
+
+declare class C {
+  bar(n1: number, n2: number): number;
+  bar(s1: string, s2: string): string;
+}
+
+function foo(c: C, x: any): string {
+  let y = x.y;
+  return c.bar(0, y); // should be able to select first case and error
+}
+
+var any_fun1 = require("./nonflowfile");
+function bar1(x: mixed) {
+  if (any_fun1(x)) {
+    (x: boolean);
+  }
+}
+
+var any_fun2 = require("./anyexportflowfile");
+function bar2(x: mixed) {
+  if (any_fun2(x)) {
+    (x: boolean);
+  }
+}
+
+================================================================================
+`;
+
+exports[`reach.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * like class and function values, any-typed values may be used in
+ * type annotations. Here we test propagation of any through the
+ * annotation - without it, the body of the if will be unreachable
+ */
+
+type AsyncRequest = any;
+
+function foo(o: ?AsyncRequest) {
+  if (o) {
+    var n: number = o;
+  }
+}
+
+=====================================output=====================================
+/**
+ * like class and function values, any-typed values may be used in
+ * type annotations. Here we test propagation of any through the
+ * annotation - without it, the body of the if will be unreachable
+ */
+
+type AsyncRequest = any;
+
+function foo(o: ?AsyncRequest) {
+  if (o) {
+    var n: number = o;
+  }
+}
+
+================================================================================
+`;

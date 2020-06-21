@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/**
+ * @flow
+ */
+// one error here, to verify lib errors sort to top.
+var x: string = 0;
+
+=====================================output=====================================
+/**
+ * @flow
+ */
+// one error here, to verify lib errors sort to top.
+var x: string = 0;
+
+================================================================================
+`;

@@ -1,0 +1,22 @@
+foo1:
+  - foo: item1
+    bar: item1
+
+  # - foo: item2
+  #   bar: item2
+
+  # - foo: item3
+  #   bar: item3
+
+  - foo: item4
+    bar: item4
+
+foo2:
+  - foo: item11
+    bar: item11
+
+  # - foo: item22
+  #   bar: item22
+
+  # - foo: item33
+  #   bar: item33

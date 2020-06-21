@@ -10,5 +10,5 @@ function insertPragma(text) {
 
 module.exports = {
   hasPragma,
-  insertPragma
+  insertPragma,
 };

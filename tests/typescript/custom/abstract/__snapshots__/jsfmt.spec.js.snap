@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`abstractNewlineHandling.ts 1`] = `
+exports[`abstractNewlineHandling.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -38,7 +38,7 @@ export class Y {}
 ================================================================================
 `;
 
-exports[`abstractProperties.ts 1`] = `
+exports[`abstractProperties.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -76,7 +76,7 @@ abstract class Foo {
 ================================================================================
 `;
 
-exports[`abstractPropertiesWithBreaks.ts 1`] = `
+exports[`abstractPropertiesWithBreaks.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

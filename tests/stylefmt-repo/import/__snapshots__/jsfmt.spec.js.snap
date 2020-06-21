@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`import.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+        @import         "./settings"    ;
+
+
+@import      "./components" ;@import "./themes";
+.class{float: left;
+}
+
+=====================================output=====================================
+@import "./settings";
+
+@import "./components";
+@import "./themes";
+.class {
+  float: left;
+}
+
+================================================================================
+`;

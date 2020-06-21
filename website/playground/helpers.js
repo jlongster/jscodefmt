@@ -1,5 +1,5 @@
 export function stateToggler(key) {
-  return state => ({ [key]: !state[key] });
+  return (state) => ({ [key]: !state[key] });
 }
 
 const { hasOwnProperty } = Object.prototype;

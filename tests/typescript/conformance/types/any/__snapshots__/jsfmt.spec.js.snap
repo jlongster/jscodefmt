@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`anyAsConstructor.ts 1`] = `
+exports[`anyAsConstructor.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -32,7 +32,7 @@ var d = new x<any>(x); // no error
 ================================================================================
 `;
 
-exports[`anyAsFunctionCall.ts 1`] = `
+exports[`anyAsFunctionCall.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -58,7 +58,7 @@ var c = x(x);
 ================================================================================
 `;
 
-exports[`anyAsGenericFunctionCall.ts 1`] = `
+exports[`anyAsGenericFunctionCall.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -94,7 +94,7 @@ var d = x<any>(x);
 ================================================================================
 `;
 
-exports[`anyPropertyAccess.ts 1`] = `
+exports[`anyPropertyAccess.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

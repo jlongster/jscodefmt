@@ -2,7 +2,7 @@
 
 function massageAST(ast, options, parent) {
   if (Array.isArray(ast)) {
-    return ast.map(e => massageAST(e, options, parent)).filter(Boolean);
+    return ast.map((e) => massageAST(e, options, parent)).filter(Boolean);
   }
 
   if (!ast || typeof ast !== "object") {
@@ -19,7 +19,7 @@ function massageAST(ast, options, parent) {
   if (options.printer.massageAstNode) {
     const result = options.printer.massageAstNode(ast, newObj, parent);
     if (result === null) {
-      return undefined;
+      return;
     }
     if (result) {
       return result;

@@ -22,7 +22,7 @@ function getFileContentOrNull(filename) {
  * @param {string} filename
  * @returns {null | string}
  */
-getFileContentOrNull.sync = function(filename) {
+getFileContentOrNull.sync = function (filename) {
   try {
     return fs.readFileSync(filename, "utf8");
   } catch (error) {

@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`objects.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{
+  shortWithObj(obj: { hello: "world", x: 5 })
+  multilineObj(obj: {
+    hello: "world",
+    x: 5
+  })
+  longWithObj(obj: { ,,longString: "hello world this is a very long string!", list: [1, 2, 3, 4, 5, 6, 7] })
+  emptyObj(arg: {})
+}
+
+=====================================output=====================================
+{
+  shortWithObj(obj: { hello: "world", x: 5 })
+  multilineObj(obj: { hello: "world", x: 5 })
+  longWithObj(
+    obj: {
+      longString: "hello world this is a very long string!"
+      list: [1, 2, 3, 4, 5, 6, 7]
+    }
+  )
+  emptyObj(arg: {})
+}
+
+================================================================================
+`;

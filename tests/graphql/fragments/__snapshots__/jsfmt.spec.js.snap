@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fragments.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{
+  field
+  ...   XYZ
+  ... on TheType {
+    ...AFragment
+    ...          {
+      noTypeCondition
+    }
+  }
+}
+
+fragment XYZ on ABC {
+  field
+  ...AFragment
+}
+
+=====================================output=====================================
+{
+  field
+  ...XYZ
+  ... on TheType {
+    ...AFragment
+    ... {
+      noTypeCondition
+    }
+  }
+}
+
+fragment XYZ on ABC {
+  field
+  ...AFragment
+}
+
+================================================================================
+`;

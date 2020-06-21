@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`no-semi.ts - {"semi":false} format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+semi: false
+                                                                                | printWidth
+=====================================input======================================
+class A {
+  bar: A;
+  [baz]
+
+  // none of the semicolons above this comment can be omitted.
+  // none of the semicolons below this comment are necessary.
+
+  bar: A;
+  private [baz]
+}
+
+=====================================output=====================================
+class A {
+  bar: A;
+  [baz]
+
+  // none of the semicolons above this comment can be omitted.
+  // none of the semicolons below this comment are necessary.
+
+  bar: A
+  private [baz]
+}
+
+================================================================================
+`;
+
+exports[`no-semi.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class A {
+  bar: A;
+  [baz]
+
+  // none of the semicolons above this comment can be omitted.
+  // none of the semicolons below this comment are necessary.
+
+  bar: A;
+  private [baz]
+}
+
+=====================================output=====================================
+class A {
+  bar: A;
+  [baz];
+
+  // none of the semicolons above this comment can be omitted.
+  // none of the semicolons below this comment are necessary.
+
+  bar: A;
+  private [baz];
+}
+
+================================================================================
+`;
+
+exports[`non-null.ts - {"semi":false} format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+semi: false
+                                                                                | printWidth
+=====================================input======================================
+// the 2nd line needs ASI protection
+const el = ReactDOM.findDOMNode(ref)
+;(el as HTMLElement)!.style.cursor = 'pointer'
+
+=====================================output=====================================
+// the 2nd line needs ASI protection
+const el = ReactDOM.findDOMNode(ref)
+;(el as HTMLElement)!.style.cursor = "pointer"
+
+================================================================================
+`;
+
+exports[`non-null.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// the 2nd line needs ASI protection
+const el = ReactDOM.findDOMNode(ref)
+;(el as HTMLElement)!.style.cursor = 'pointer'
+
+=====================================output=====================================
+// the 2nd line needs ASI protection
+const el = ReactDOM.findDOMNode(ref);
+(el as HTMLElement)!.style.cursor = "pointer";
+
+================================================================================
+`;

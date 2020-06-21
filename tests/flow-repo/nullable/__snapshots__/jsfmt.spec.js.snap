@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`maybe.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+// unwrapping nested maybes should work
+(('foo': ?(?string)): ?string); // ok
+((123: ?(?number)): ?string); // error (only num ~> string)
+
+=====================================output=====================================
+// @flow
+
+// unwrapping nested maybes should work
+(("foo": ??string): ?string); // ok
+((123: ??number): ?string); // error (only num ~> string)
+
+================================================================================
+`;
+
+exports[`nullable.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo():string { return null; }
+
+function bar():?string { return null; }
+
+function qux(x:string) { }
+
+function corge(x:number) { }
+
+var x = bar(); // x: ?string
+if (x != null) qux(x); // x: ?string | null
+if (x != null) corge(x); // x: ?string | null
+
+function grault() { x = null; }
+if (x != null) {
+  grault(); qux(x);
+}
+
+var array_of_nullable: Array<?number> = [null, 3];
+
+=====================================output=====================================
+function foo(): string {
+  return null;
+}
+
+function bar(): ?string {
+  return null;
+}
+
+function qux(x: string) {}
+
+function corge(x: number) {}
+
+var x = bar(); // x: ?string
+if (x != null) qux(x); // x: ?string | null
+if (x != null) corge(x); // x: ?string | null
+
+function grault() {
+  x = null;
+}
+if (x != null) {
+  grault();
+  qux(x);
+}
+
+var array_of_nullable: Array<?number> = [null, 3];
+
+================================================================================
+`;
+
+exports[`simple_nullable.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo(x:?string) {}
+function bar(x:?number) {}
+foo('hmm');
+bar('hmm');
+
+function fn(data: ?{}) {}
+fn({some: 'literal'});
+
+=====================================output=====================================
+function foo(x: ?string) {}
+function bar(x: ?number) {}
+foo("hmm");
+bar("hmm");
+
+function fn(data: ?{}) {}
+fn({ some: "literal" });
+
+================================================================================
+`;

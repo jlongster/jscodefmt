@@ -1,0 +1,7 @@
+# This test to grantee `graphql` parser won't allow
+# something like `|` as seperator
+# which will break seperator detection added in #7305
+
+type A implements A | B {
+  a: a
+}

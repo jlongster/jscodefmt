@@ -23,9 +23,9 @@ describe("--write with --loglevel=silent doesn't log filenames", () => {
   runPrettier("cli/write", [
     "--write",
     "unformatted.js",
-    "--loglevel=silent"
+    "--loglevel=silent",
   ]).test({
-    status: 0
+    status: 0,
   });
 });
 
@@ -36,7 +36,7 @@ function runPrettierWithLogLevel(logLevel, patterns) {
     "--unknown-option",
     "--parser",
     "unknown-parser",
-    "not-found.js"
+    "not-found.js",
   ]);
 
   expect(result.status).toEqual(2);
@@ -44,7 +44,7 @@ function runPrettierWithLogLevel(logLevel, patterns) {
   const stderr = stripAnsi(result.stderr);
 
   if (patterns) {
-    patterns.forEach(pattern => {
+    patterns.forEach((pattern) => {
       expect(stderr).toMatch(pattern);
     });
   } else {

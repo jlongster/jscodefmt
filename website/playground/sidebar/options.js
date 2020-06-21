@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 
 import { Checkbox, Select, NumberInput } from "./inputs";
 
@@ -11,7 +11,7 @@ export function BooleanOption({ option, value, onChange }) {
       label={option.cliName}
       title={getDescription(option)}
       checked={maybeInvert(value)}
-      onChange={checked => onChange(option, maybeInvert(checked))}
+      onChange={(checked) => onChange(option, maybeInvert(checked))}
     />
   );
 }
@@ -21,9 +21,9 @@ export function ChoiceOption({ option, value, onChange }) {
     <Select
       label={option.cliName}
       title={getDescription(option)}
-      values={option.choices.map(choice => choice.value)}
+      values={option.choices.map((choice) => choice.value)}
       selected={value}
-      onChange={val => onChange(option, val)}
+      onChange={(val) => onChange(option, val)}
     />
   );
 }
@@ -37,12 +37,12 @@ export function NumberOption({ option, value, onChange }) {
       max={option.range.end}
       step={option.range.step}
       value={value}
-      onChange={val => onChange(option, val)}
+      onChange={(val) => onChange(option, val)}
     />
   );
 }
 
-export default function(props) {
+export default function (props) {
   switch (props.option.type) {
     case "boolean":
       return <BooleanOption {...props} />;

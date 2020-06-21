@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`API.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+var OpenGraphObject = require('./models/OpenGraphObject.js');
+
+=====================================output=====================================
+// @flow
+
+var OpenGraphObject = require("./models/OpenGraphObject.js");
+
+================================================================================
+`;

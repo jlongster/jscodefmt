@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`flow_object_comment.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+export default (
+  {
+    foo,
+    bar
+  }: {
+    // comment
+    foo?: Object,
+    // comment 2
+    bar?: Object,
+  },
+) => {}
+
+=====================================output=====================================
+export default ({
+  foo,
+  bar,
+}: {
+  // comment
+  foo?: Object,
+  // comment 2
+  bar?: Object,
+}) => {};
+
+================================================================================
+`;

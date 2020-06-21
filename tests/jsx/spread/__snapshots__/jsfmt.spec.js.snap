@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`attribute.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div {...a}/>;
+
+<div {...(a || {})} />;
+
+<div {...(cond ? foo : bar)} />;
+
+<div {...a /* comment */}/>;
+
+<div {/* comment */...a}/>;
+
+<div {...a //comment
+}/>;
+
+<div {...a
+  //comment
+}/>;
+
+<div {
+  //comment
+  ...a
+}/>;
+
+<div {//comment
+  ...a // comment
+}/>;
+
+=====================================output=====================================
+<div {...a} />;
+
+<div {...(a || {})} />;
+
+<div {...(cond ? foo : bar)} />;
+
+<div {...a /* comment */} />;
+
+<div {/* comment */ ...a} />;
+
+<div
+  {
+    ...a //comment
+  }
+/>;
+
+<div
+  {
+    ...a
+    //comment
+  }
+/>;
+
+<div
+  {
+    //comment
+    ...a
+  }
+/>;
+
+<div
+  {
+    //comment
+    ...a // comment
+  }
+/>;
+
+================================================================================
+`;
+
+exports[`child.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>{...a}</div>;
+
+<div>{...a /* comment */}</div>;
+
+<div>{/* comment */...a}</div>;
+
+<div>{...a //comment
+}</div>;
+
+<div>{...a
+  //comment
+}</div>;
+
+<div>{
+  //comment
+  ...a
+}</div>;
+
+<div>{//comment
+  ...a // comment
+}</div>;
+
+=====================================output=====================================
+<div>{...a}</div>;
+
+<div>{...a /* comment */}</div>;
+
+<div>{/* comment */ ...a}</div>;
+
+<div>
+  {
+    ...a //comment
+  }
+</div>;
+
+<div>
+  {
+    ...a
+    //comment
+  }
+</div>;
+
+<div>
+  {
+    //comment
+    ...a
+  }
+</div>;
+
+<div>
+  {
+    //comment
+    ...a // comment
+  }
+</div>;
+
+================================================================================
+`;

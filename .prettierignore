@@ -1,9 +1,11 @@
 dist/
 .cache/
 coverage/
-/tests/
+/tests/**/*.*
 !/tests/**/jsfmt.spec.js
 /tests_integration/cli/
 /tests_integration/plugins/
 /website/build/
+/website/static/lib/
+/website/static/playground.js
 cspell.json

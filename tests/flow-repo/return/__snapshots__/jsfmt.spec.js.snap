@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`function_return.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class C {
+    foo() { }
+    bar() { return; }
+    fn(x:number) { return x; }
+}
+
+function f(x): number {
+  if (x > 1) {
+    return 42;
+  }
+}
+
+function g(x): ?number {
+  if (x > 1) {
+    return 42;
+  }
+}
+
+function h(x): number {
+  if (x > 1) {
+    return 42;
+  }
+  return;
+}
+
+function i(x): ?number {
+  if (x > 1) {
+    return 42;
+  }
+  return;
+}
+
+module.exports = C;
+
+//function fn(x:number) { return x; }
+//module.exports = fn;
+
+=====================================output=====================================
+class C {
+  foo() {}
+  bar() {
+    return;
+  }
+  fn(x: number) {
+    return x;
+  }
+}
+
+function f(x): number {
+  if (x > 1) {
+    return 42;
+  }
+}
+
+function g(x): ?number {
+  if (x > 1) {
+    return 42;
+  }
+}
+
+function h(x): number {
+  if (x > 1) {
+    return 42;
+  }
+  return;
+}
+
+function i(x): ?number {
+  if (x > 1) {
+    return 42;
+  }
+  return;
+}
+
+module.exports = C;
+
+//function fn(x:number) { return x; }
+//module.exports = fn;
+
+================================================================================
+`;
+
+exports[`void.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* This is a regression test. At one point we incorrectly inferred the return
+   type of functions that have an explicit \`undefined\` to be only \`undefined\` --
+   ignoring other possible exits. */
+function f(b) {
+  if (b) {
+    return undefined;
+  } else {
+    return "nope";
+  }
+}
+
+(f(true): void); // error: string ~> void
+
+=====================================output=====================================
+/* This is a regression test. At one point we incorrectly inferred the return
+   type of functions that have an explicit \`undefined\` to be only \`undefined\` --
+   ignoring other possible exits. */
+function f(b) {
+  if (b) {
+    return undefined;
+  } else {
+    return "nope";
+  }
+}
+
+(f(true): void); // error: string ~> void
+
+================================================================================
+`;

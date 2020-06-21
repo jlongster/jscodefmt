@@ -34,7 +34,7 @@ function resolveParser(opts, parsers) {
       parse: opts.parser,
       astFormat: "estree",
       locStart,
-      locEnd
+      locEnd,
     };
   }
 
@@ -54,7 +54,7 @@ function resolveParser(opts, parsers) {
           parse: eval("require")(path.resolve(process.cwd(), opts.parser)),
           astFormat: "estree",
           locStart,
-          locEnd
+          locEnd,
         };
       } catch (err) {
         /* istanbul ignore next */
@@ -75,7 +75,7 @@ function parse(text, opts) {
         enumerable: true,
         get() {
           return parsers[parserName].parse;
-        }
+        },
       }),
     {}
   );
@@ -89,7 +89,7 @@ function parse(text, opts) {
 
     return {
       text,
-      ast: parser.parse(text, parsersForCustomParserApi, opts)
+      ast: parser.parse(text, parsersForCustomParserApi, opts),
     };
   } catch (error) {
     const { loc } = error;
@@ -97,7 +97,7 @@ function parse(text, opts) {
     if (loc) {
       const codeFrame = require("@babel/code-frame");
       error.codeFrame = codeFrame.codeFrameColumns(text, loc, {
-        highlightCode: true
+        highlightCode: true,
       });
       error.message += "\n" + error.codeFrame;
       throw error;

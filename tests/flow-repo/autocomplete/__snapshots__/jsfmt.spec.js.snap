@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`customfun.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+declare var idx: $Facebookism$Idx;
+declare var merge: $Facebookism$Merge;
+declare var mergeDeepInto: $Facebookism$MergeDeepInto;
+declare var mergeInto: $Facebookism$MergeInto;
+declare var mixin: $Facebookism$Mixin;
+declare var objectGetPrototypeOf: Object$GetPrototypeOf
+declare var objectAssign: Object$Assign
+
+m
+
+=====================================output=====================================
+// @flow
+
+declare var idx: $Facebookism$Idx;
+declare var merge: $Facebookism$Merge;
+declare var mergeDeepInto: $Facebookism$MergeDeepInto;
+declare var mergeInto: $Facebookism$MergeInto;
+declare var mixin: $Facebookism$Mixin;
+declare var objectGetPrototypeOf: Object$GetPrototypeOf;
+declare var objectAssign: Object$Assign;
+
+m;
+
+================================================================================
+`;
+
+exports[`unknown.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @noflow
+module.exports = { x: { y: "" } };
+
+=====================================output=====================================
+// @noflow
+module.exports = { x: { y: "" } };
+
+================================================================================
+`;

@@ -3,13 +3,15 @@
     "allowJs": true,
     "checkJs": true,
     "noEmit": true,
-    "target": "es5",
+    "target": "es2015",
     "module": "commonjs",
     "resolveJsonModule": true,
     // TBD it is desired to enabled strict type checking at some point:
     "strict": false
   },
   "exclude": [
+    "coverage/",
+    "test*.js",
     // [TBD] JavaScript sources *not* affected by src/language-*:
     "src/main/ast-to-doc.js",
     "src/main/core.js",
@@ -32,7 +34,10 @@
     "src/common/internal-plugins.js",
     "src/common/load-plugins.js",
     "src/cli/index.js",
+    "src/cli/expand-patterns.js",
     "src/cli/util.js",
+    "src/cli/constant.js",
+    "src/cli/prettier-internal.js",
     // [TBD] top-level JavaScript sources affected by JSDoc issues
     // in other sources:
     "src/index.js",

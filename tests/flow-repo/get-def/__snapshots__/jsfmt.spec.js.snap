@@ -1,0 +1,179 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`class.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+class Foo {
+  prop: ?string;
+  #privateProp: number;
+  fun(): void {
+    this.#privateProp;
+    this.#privateProp = 4;
+  }
+}
+
+const foo = new Foo();
+foo.prop;
+foo.prop = null;
+foo.fun();
+
+if (foo.prop != null) {
+  foo.prop;
+}
+
+function f(x: ?Foo): void {
+  x.fun();
+}
+
+function f(x: Foo | null | void): void {
+  x.fun();
+}
+
+=====================================output=====================================
+// @flow
+
+class Foo {
+  prop: ?string;
+  #privateProp: number;
+  fun(): void {
+    this.#privateProp;
+    this.#privateProp = 4;
+  }
+}
+
+const foo = new Foo();
+foo.prop;
+foo.prop = null;
+foo.fun();
+
+if (foo.prop != null) {
+  foo.prop;
+}
+
+function f(x: ?Foo): void {
+  x.fun();
+}
+
+function f(x: Foo | null | void): void {
+  x.fun();
+}
+
+================================================================================
+`;
+
+exports[`example.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var lib = require('./library');
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+var re = /^keynote (talk){2} (lightning){3,5} (talk){2} closing partytime!!!/
+
+// t123456
+add(lib.iTakeAString(42), 7);
+
+// D123456
+lib.bar();
+
+=====================================output=====================================
+/* @flow */
+
+var lib = require("./library");
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+var re = /^keynote (talk){2} (lightning){3,5} (talk){2} closing partytime!!!/;
+
+// t123456
+add(lib.iTakeAString(42), 7);
+
+// D123456
+lib.bar();
+
+================================================================================
+`;
+
+exports[`imports.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+import thing from "./helpers/exports_default.js";
+thing;
+
+import {foo, bar as baz} from "./helpers/exports_named.js";
+foo;
+baz;
+
+import * as things from "./helpers/exports_named.js";
+things;
+
+=====================================output=====================================
+// @flow
+
+import thing from "./helpers/exports_default.js";
+thing;
+
+import { foo, bar as baz } from "./helpers/exports_named.js";
+foo;
+baz;
+
+import * as things from "./helpers/exports_named.js";
+things;
+
+================================================================================
+`;
+
+exports[`library.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+module.exports = {
+
+  iTakeAString: function(name: string): number {
+    return 42;
+  },
+
+  bar: function(): number {
+    return 42;
+  },
+
+};
+
+=====================================output=====================================
+/* @flow */
+
+module.exports = {
+  iTakeAString: function (name: string): number {
+    return 42;
+  },
+
+  bar: function (): number {
+    return 42;
+  },
+};
+
+================================================================================
+`;

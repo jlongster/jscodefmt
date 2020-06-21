@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arguments.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type Video {
+  playable_url(quality: String, preferred: String): Url
+}
+
+=====================================output=====================================
+type Video {
+  playable_url(quality: String, preferred: String): Url
+}
+
+================================================================================
+`;
+
+exports[`directives.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type PokemonType {
+  pokemon_type: String @mock(value: "Electric")
+}
+
+=====================================output=====================================
+type PokemonType {
+  pokemon_type: String @mock(value: "Electric")
+}
+
+================================================================================
+`;
+
+exports[`extend.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+extend type Feedback {
+  custom_int: Int
+}
+
+=====================================output=====================================
+extend type Feedback {
+  custom_int: Int
+}
+
+================================================================================
+`;
+
+exports[`implements.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type VRMConversation implements Node, Entity @foo {
+  a: Int
+}
+
+=====================================output=====================================
+type VRMConversation implements Node, Entity @foo {
+  a: Int
+}
+
+================================================================================
+`;
+
+exports[`input.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+input Params {
+  app_id: ID!
+  key_hash: String!
+}
+
+=====================================output=====================================
+input Params {
+  app_id: ID!
+  key_hash: String!
+}
+
+================================================================================
+`;
+
+exports[`object_type_def.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type FeedHomeStories {
+  debug_info: String
+  query_title: String
+}
+
+=====================================output=====================================
+type FeedHomeStories {
+  debug_info: String
+  query_title: String
+}
+
+================================================================================
+`;

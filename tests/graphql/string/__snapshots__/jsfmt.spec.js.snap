@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`string.graphql format 1`] = `
+====================================options=====================================
+parsers: ["graphql"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+query X($a: Int) @relay(meta: "{\\"lowPri\\": true}") { a }
+
+"""abc"""
+type T {
+  a: Int
+}
+
+"""
+abc
+"""
+type T {
+  a: Int
+}
+
+"""
+  a
+    b
+      c
+         """
+type T { a: Int }
+
+type Foo {
+"""
+This is a description
+of the \`one\` field.
+"""
+  one: Type
+}
+
+type Foo {
+q("docs" field: String): Type
+q("A long string of description of the field parameter to make this break" field: String): Type
+q("""docs""" field: String): Type
+}
+
+enum Enum {
+"""
+Description of \`one\`
+"""
+one
+}
+
+input Input {
+"""
+Description of \`one\`
+"""
+one: string
+}
+
+{
+  foo(input: {multiline: "ab\\ncd"}) { id }
+}
+
+=====================================output=====================================
+query X($a: Int) @relay(meta: "{\\"lowPri\\": true}") {
+  a
+}
+
+"""
+abc
+"""
+type T {
+  a: Int
+}
+
+"""
+abc
+"""
+type T {
+  a: Int
+}
+
+"""
+a
+  b
+    c
+"""
+type T {
+  a: Int
+}
+
+type Foo {
+  """
+  This is a description
+  of the \`one\` field.
+  """
+  one: Type
+}
+
+type Foo {
+  q("docs" field: String): Type
+  q(
+    "A long string of description of the field parameter to make this break"
+    field: String
+  ): Type
+  q(
+    """
+    docs
+    """
+    field: String
+  ): Type
+}
+
+enum Enum {
+  """
+  Description of \`one\`
+  """
+  one
+}
+
+input Input {
+  """
+  Description of \`one\`
+  """
+  one: string
+}
+
+{
+  foo(input: { multiline: "ab\\ncd" }) {
+    id
+  }
+}
+
+================================================================================
+`;

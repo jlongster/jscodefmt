@@ -9,16 +9,16 @@ class Help extends React.Component {
       {
         content:
           "Learn more using the [documentation on this site.](/docs/en/why-prettier.html)\n",
-        title: "Browse Docs"
+        title: "Browse Docs",
       },
       {
         content: "Ask questions about the documentation and project\n",
-        title: "Join the community"
+        title: "Join the community",
       },
       {
         content: "Find out what's new with this project\n",
-        title: "Stay up to date"
-      }
+        title: "Stay up to date",
+      },
     ];
 
     return (
@@ -40,7 +40,7 @@ class Help extends React.Component {
 }
 
 Help.defaultProps = {
-  language: "en"
+  language: "en",
 };
 
 module.exports = Help;

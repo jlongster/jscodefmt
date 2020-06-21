@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+export type FileMetaData = [
+  /* id */ string,
+  /* mtime */ number,
+  /* visited */ 0|1,
+  /* dependencies */ Array<string>,
+];
+
+export type ModuleMetaData = [Path, /* type */ number];
+
+=====================================output=====================================
+export type FileMetaData = [
+  /* id */ string,
+  /* mtime */ number,
+  /* visited */ 0 | 1,
+  /* dependencies */ Array<string>
+];
+
+export type ModuleMetaData = [Path, /* type */ number];
+
+================================================================================
+`;

@@ -3,7 +3,8 @@
 exports[`doesn't ignore node_modules with --with-node-modules flag (stderr) 1`] = `""`;
 
 exports[`doesn't ignore node_modules with --with-node-modules flag (stdout) 1`] = `
-"node_modules/node-module.js
+"nested/node_modules/node-module.js
+node_modules/node-module.js
 not_node_modules/file.js
 regular-module.js
 "
@@ -16,6 +17,7 @@ exports[`doesn't ignore node_modules with --with-node-modules flag for file list
 exports[`doesn't ignore node_modules with --with-node-modules flag for file list (stdout) 1`] = `
 "node_modules/node-module.js
 not_node_modules/file.js
+nested/node_modules/node-module.js
 regular-module.js
 "
 `;

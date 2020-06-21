@@ -1,1 +1,1 @@
-var x = 'this should not be formatterd';
+var x = 'this should not be formatted';

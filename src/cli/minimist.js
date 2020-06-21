@@ -8,14 +8,14 @@ const PLACEHOLDER = null;
 /**
  * unspecified boolean flag without default value is parsed as `undefined` instead of `false`
  */
-module.exports = function(args, options) {
+module.exports = function (args, options) {
   const boolean = options.boolean || [];
   const defaults = options.default || {};
 
-  const booleanWithoutDefault = boolean.filter(key => !(key in defaults));
+  const booleanWithoutDefault = boolean.filter((key) => !(key in defaults));
   const newDefaults = {
     ...defaults,
-    ...fromPairs(booleanWithoutDefault.map(key => [key, PLACEHOLDER]))
+    ...fromPairs(booleanWithoutDefault.map((key) => [key, PLACEHOLDER])),
   };
 
   const parsed = minimist(args, { ...options, default: newDefaults });

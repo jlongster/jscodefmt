@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`c2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+import { foo } from "./c1";
+
+export function bar(props: { y: number }) {
+  foo({ y: 0 });
+}
+
+=====================================output=====================================
+// @flow
+
+import { foo } from "./c1";
+
+export function bar(props: { y: number }) {
+  foo({ y: 0 });
+}
+
+================================================================================
+`;

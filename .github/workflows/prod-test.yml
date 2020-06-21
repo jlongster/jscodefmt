@@ -1,6 +1,11 @@
-name: Prod_Test
+name: Prod
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - master
+      - patch-release
+  pull_request:
 
 jobs:
   build:
@@ -8,28 +13,76 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.1
         with:
           fetch-depth: 1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.0.0
         with:
-          node-version: "12"
+          node-version: "14"
 
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
+
+      - name: Cache Build Results
+        id: build-cache
+        uses: actions/cache@v2
+        with:
+          path: .cache
+          key: v2-build-cache-${{ hashFiles('yarn.lock') }}-${{ hashFiles('scripts/build/**/*') }}-${{ github.ref }}-
+          restore-keys: |
+            v2-build-cache-${{ hashFiles('yarn.lock') }}-${{ hashFiles('scripts/build/**/*') }}-${{ github.ref }}-
+            v2-build-cache-${{ hashFiles('yarn.lock') }}-${{ hashFiles('scripts/build/**/*') }}-refs/heads/${{ github.base_ref }}-
+            v2-build-cache-${{ hashFiles('yarn.lock') }}-${{ hashFiles('scripts/build/**/*') }}-refs/heads/master-
 
       - name: Build Package
         run: yarn build
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: dist
           path: dist
 
-  prod_test:
+      # This step calls `git reset`
+      # It should be the last step
+      # The cache step might saving the result of master branch, need investigate
+      - name: Check Sizes
+        if: github.event_name == 'pull_request' && startsWith(github.head_ref, 'dependabot/npm_and_yarn/')
+        uses: preactjs/compressed-size-action@v2.0.1
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+          compression: none
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.1
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.0.0
+        with:
+          node-version: "14"
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Download Artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist
+
+      - name: Lint Code
+        run: yarn lint:dist
+
+  test:
     strategy:
       fail-fast: false
       matrix:
@@ -38,21 +91,25 @@ jobs:
           - "macos-latest"
           - "windows-latest"
         node:
-          - "13"
+          - "14"
           - "12"
           - "10"
-
-    name: Prod test on node ${{ matrix.node }} and ${{ matrix.os }}
+        exclude:
+          - os: "macos-latest"
+            node: "12"
+          - os: "windows-latest"
+            node: "12"
+    name: Node.js ${{ matrix.node }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     needs: [build]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2.3.1
         with:
           fetch-depth: 1
 
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2.0.0
         with:
           node-version: ${{ matrix.node }}
 
@@ -60,10 +117,30 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Download Artifact
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v2
         with:
           name: dist
           path: dist
 
-      - name: Run Test
-        run: yarn test:dist
+      - name: Run Tests (macOS)
+        if: matrix.os == 'macos-latest'
+        run: yarn test:dist --maxWorkers=4
+
+      - name: Run Tests (Linux and Windows)
+        if: matrix.os != 'macos-latest'
+        run: yarn test:dist --maxWorkers=2
+
+      - name: Run Tests (standalone) (macOS)
+        if: matrix.os == 'macos-latest'
+        run: yarn test:dist-standalone --maxWorkers=4
+
+      - name: Run Tests (standalone) (Linux and Windows)
+        if: matrix.os != 'macos-latest'
+        run: yarn test:dist-standalone --maxWorkers=2
+
+      # #8073 test
+      - name: Run Tests (PRETTIER_FALLBACK_RESOLVE)
+        run: yarn test "tests_integration/__tests__/(config|plugin)"
+        env:
+          NODE_ENV: production
+          PRETTIER_FALLBACK_RESOLVE: true

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`classAbstractAccessor.ts 1`] = `
+exports[`classAbstractAccessor.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -27,7 +27,7 @@ abstract class A {
 ================================================================================
 `;
 
-exports[`classAbstractAsIdentifier.ts 1`] = `
+exports[`classAbstractAsIdentifier.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -50,7 +50,7 @@ new abstract();
 ================================================================================
 `;
 
-exports[`classAbstractAssignabilityConstructorFunction.ts 1`] = `
+exports[`classAbstractAssignabilityConstructorFunction.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -73,7 +73,7 @@ AAA = "asdf";
 ================================================================================
 `;
 
-exports[`classAbstractClinterfaceAssignability.ts 1`] = `
+exports[`classAbstractClinterfaceAssignability.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -109,7 +109,7 @@ AAA = A;
 ================================================================================
 `;
 
-exports[`classAbstractConstructorAssignability.ts 1`] = `
+exports[`classAbstractConstructorAssignability.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -147,7 +147,7 @@ new CC();
 ================================================================================
 `;
 
-exports[`classAbstractCrashedOnce.ts 1`] = `
+exports[`classAbstractCrashedOnce.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -175,7 +175,7 @@ var x = new bar();
 ================================================================================
 `;
 
-exports[`classAbstractExtends.ts 1`] = `
+exports[`classAbstractExtends.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -217,7 +217,7 @@ class E extends B {
 ================================================================================
 `;
 
-exports[`classAbstractFactoryFunction.ts 1`] = `
+exports[`classAbstractFactoryFunction.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -261,7 +261,7 @@ NewB(B);
 ================================================================================
 `;
 
-exports[`classAbstractGeneric.ts 1`] = `
+exports[`classAbstractGeneric.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -326,7 +326,7 @@ class G<T> extends A {
 ================================================================================
 `;
 
-exports[`classAbstractImportInstantiation.ts 1`] = `
+exports[`classAbstractImportInstantiation.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -350,7 +350,7 @@ new myA();
 ================================================================================
 `;
 
-exports[`classAbstractInAModule.ts 1`] = `
+exports[`classAbstractInAModule.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -373,7 +373,7 @@ new M.B();
 ================================================================================
 `;
 
-exports[`classAbstractInheritance.ts 1`] = `
+exports[`classAbstractInheritance.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -426,7 +426,7 @@ abstract class GG extends CC {}
 ================================================================================
 `;
 
-exports[`classAbstractInstantiations1.ts 1`] = `
+exports[`classAbstractInstantiations1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -475,7 +475,7 @@ c = new B();
 ================================================================================
 `;
 
-exports[`classAbstractInstantiations2.ts 1`] = `
+exports[`classAbstractInstantiations2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -591,7 +591,7 @@ class H {
 ================================================================================
 `;
 
-exports[`classAbstractMethodInNonAbstractClass.ts 1`] = `
+exports[`classAbstractMethodInNonAbstractClass.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -616,7 +616,7 @@ class B {
 ================================================================================
 `;
 
-exports[`classAbstractMethodWithImplementation.ts 1`] = `
+exports[`classAbstractMethodWithImplementation.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -633,7 +633,7 @@ abstract class A {
 ================================================================================
 `;
 
-exports[`classAbstractMixedWithModifiers.ts 1`] = `
+exports[`classAbstractMixedWithModifiers.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -674,7 +674,7 @@ abstract class A {
 ================================================================================
 `;
 
-exports[`classAbstractOverloads.ts 1`] = `
+exports[`classAbstractOverloads.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -733,7 +733,7 @@ abstract class B {
 ================================================================================
 `;
 
-exports[`classAbstractOverrideWithAbstract.ts 1`] = `
+exports[`classAbstractOverrideWithAbstract.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -790,7 +790,7 @@ class DD extends BB {
 ================================================================================
 `;
 
-exports[`classAbstractProperties.ts 1`] = `
+exports[`classAbstractProperties.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -827,7 +827,7 @@ abstract class A {
 ================================================================================
 `;
 
-exports[`classAbstractSingleLineDecl.ts 1`] = `
+exports[`classAbstractSingleLineDecl.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -862,7 +862,7 @@ new C();
 ================================================================================
 `;
 
-exports[`classAbstractSuperCalls.ts 1`] = `
+exports[`classAbstractSuperCalls.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -939,7 +939,7 @@ abstract class BB extends AA {
 ================================================================================
 `;
 
-exports[`classAbstractUsingAbstractMethod1.ts 1`] = `
+exports[`classAbstractUsingAbstractMethod1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -986,7 +986,7 @@ a.foo();
 ================================================================================
 `;
 
-exports[`classAbstractUsingAbstractMethods2.ts 1`] = `
+exports[`classAbstractUsingAbstractMethods2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -1051,7 +1051,7 @@ class DD extends AA {
 ================================================================================
 `;
 
-exports[`classAbstractWithInterface.ts 1`] = `
+exports[`classAbstractWithInterface.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

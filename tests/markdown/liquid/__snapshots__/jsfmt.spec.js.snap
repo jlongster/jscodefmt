@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`example-1.md - {"proseWrap":"always"} format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+proseWrap: "always"
+                                                                                | printWidth
+=====================================input======================================
+{% include_relative _installations/tarball.md %}
+
+{% cloudinary nice_prefix_-_for_the_filename.jpg %}
+
+# Userscripts <span>[{% img github.svg alt:"View on GitHub" title:"View on GitHub" %}](https://github.com/Charcoal-SE/Userscripts) [Build <span>status loading…</span>](//travis-ci.org/Charcoal-SE/userscripts){: .build}</span>
+
+{% css userscripts %}
+{% js userscripts %}
+
+{{ foo
+multiline
+where does it end }}
+
+=====================================output=====================================
+{% include_relative _installations/tarball.md %}
+
+{% cloudinary nice_prefix_-_for_the_filename.jpg %}
+
+# Userscripts <span>[{% img github.svg alt:"View on GitHub" title:"View on GitHub" %}](https://github.com/Charcoal-SE/Userscripts) [Build <span>status loading…</span>](//travis-ci.org/Charcoal-SE/userscripts){: .build}</span>
+
+{% css userscripts %} {% js userscripts %}
+
+{{ foo
+multiline
+where does it end }}
+
+================================================================================
+`;
+
+exports[`example-1.md format 1`] = `
+====================================options=====================================
+parsers: ["markdown"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+{% include_relative _installations/tarball.md %}
+
+{% cloudinary nice_prefix_-_for_the_filename.jpg %}
+
+# Userscripts <span>[{% img github.svg alt:"View on GitHub" title:"View on GitHub" %}](https://github.com/Charcoal-SE/Userscripts) [Build <span>status loading…</span>](//travis-ci.org/Charcoal-SE/userscripts){: .build}</span>
+
+{% css userscripts %}
+{% js userscripts %}
+
+{{ foo
+multiline
+where does it end }}
+
+=====================================output=====================================
+{% include_relative _installations/tarball.md %}
+
+{% cloudinary nice_prefix_-_for_the_filename.jpg %}
+
+# Userscripts <span>[{% img github.svg alt:"View on GitHub" title:"View on GitHub" %}](https://github.com/Charcoal-SE/Userscripts) [Build <span>status loading…</span>](//travis-ci.org/Charcoal-SE/userscripts){: .build}</span>
+
+{% css userscripts %}
+{% js userscripts %}
+
+{{ foo
+multiline
+where does it end }}
+
+================================================================================
+`;

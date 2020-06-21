@@ -1,0 +1,745 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comments.js - {"trailingComma":"all"} format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+trailingComma: "all"
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+type Foo = {
+  // comment
+  ...,
+};
+
+type Foo = {
+  /* comment */
+  ...,
+};
+
+type Foo = { /* comment */ ... };
+
+type Foo = { /* comment */
+  ...};
+
+type Foo = {
+  // comment0
+  // comment1
+  ...,
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  ...,
+};
+
+type Foo = {
+  // comment
+  foo: string,
+  ...
+};
+
+type Foo = {
+  // comment0
+  // comment1
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  [string]: string,
+  ...
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  foo: string,
+  ...
+};
+
+=====================================output=====================================
+// @flow
+
+type Foo = {
+  // comment
+  ...
+};
+
+type Foo = {
+  /* comment */
+  ...
+};
+
+type Foo = { /* comment */ ... };
+
+type Foo = {
+  /* comment */
+  ...
+};
+
+type Foo = {
+  // comment0
+  // comment1
+  ...
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  ...
+};
+
+type Foo = {
+  // comment
+  foo: string,
+  ...
+};
+
+type Foo = {
+  // comment0
+  // comment1
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  [string]: string,
+  ...
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  foo: string,
+  ...
+};
+
+================================================================================
+`;
+
+exports[`comments.js - {"trailingComma":"es5"} format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+trailingComma: "es5"
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+type Foo = {
+  // comment
+  ...,
+};
+
+type Foo = {
+  /* comment */
+  ...,
+};
+
+type Foo = { /* comment */ ... };
+
+type Foo = { /* comment */
+  ...};
+
+type Foo = {
+  // comment0
+  // comment1
+  ...,
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  ...,
+};
+
+type Foo = {
+  // comment
+  foo: string,
+  ...
+};
+
+type Foo = {
+  // comment0
+  // comment1
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  [string]: string,
+  ...
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  foo: string,
+  ...
+};
+
+=====================================output=====================================
+// @flow
+
+type Foo = {
+  // comment
+  ...
+};
+
+type Foo = {
+  /* comment */
+  ...
+};
+
+type Foo = { /* comment */ ... };
+
+type Foo = {
+  /* comment */
+  ...
+};
+
+type Foo = {
+  // comment0
+  // comment1
+  ...
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  ...
+};
+
+type Foo = {
+  // comment
+  foo: string,
+  ...
+};
+
+type Foo = {
+  // comment0
+  // comment1
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  [string]: string,
+  ...
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  foo: string,
+  ...
+};
+
+================================================================================
+`;
+
+exports[`comments.js - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+type Foo = {
+  // comment
+  ...,
+};
+
+type Foo = {
+  /* comment */
+  ...,
+};
+
+type Foo = { /* comment */ ... };
+
+type Foo = { /* comment */
+  ...};
+
+type Foo = {
+  // comment0
+  // comment1
+  ...,
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  ...,
+};
+
+type Foo = {
+  // comment
+  foo: string,
+  ...
+};
+
+type Foo = {
+  // comment0
+  // comment1
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  [string]: string,
+  ...
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  foo: string,
+  ...
+};
+
+=====================================output=====================================
+// @flow
+
+type Foo = {
+  // comment
+  ...
+};
+
+type Foo = {
+  /* comment */
+  ...
+};
+
+type Foo = { /* comment */ ... };
+
+type Foo = {
+  /* comment */
+  ...
+};
+
+type Foo = {
+  // comment0
+  // comment1
+  ...
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  ...
+};
+
+type Foo = {
+  // comment
+  foo: string,
+  ...
+};
+
+type Foo = {
+  // comment0
+  // comment1
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  foo: string,
+  ...
+};
+
+type Foo = {
+  /* comment */
+  [string]: string,
+  ...
+};
+
+type Foo = {
+  /* comment0 */
+  /* comment1 */
+  foo: string,
+  ...
+};
+
+================================================================================
+`;
+
+exports[`test.js - {"trailingComma":"all"} format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+trailingComma: "all"
+                                                                                | printWidth
+=====================================input======================================
+//@flow
+type T = {
+  a: number,
+  ...,
+}
+
+type I = {
+  [string]: number,
+  ...,
+}
+
+type U = { a: number, b: number, c: number, d: number, e: number, f: number, g: number, ...};
+
+type V = {x: {...}, y: {x: {...}, a: number, b: number, c: number, d: number, e: number, f: number, ...}, z: {...}, foo: number, bar: {foo: number, ...}, ...};
+
+function test(x: {foo: number, bar: number, baz: number, qux: nunber, a: number, b: number, c: {a: number, ...}, ...}) { return x; }
+function test(x: {foo: number, bar: number, baz: number, qux: nunber, a: number, b: number, c: {a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, ...}, ...}) { return x; }
+
+type W = {...};
+type X = {
+  ...,
+};
+
+=====================================output=====================================
+//@flow
+type T = {
+  a: number,
+  ...
+};
+
+type I = {
+  [string]: number,
+  ...
+};
+
+type U = {
+  a: number,
+  b: number,
+  c: number,
+  d: number,
+  e: number,
+  f: number,
+  g: number,
+  ...
+};
+
+type V = {
+  x: { ... },
+  y: {
+    x: { ... },
+    a: number,
+    b: number,
+    c: number,
+    d: number,
+    e: number,
+    f: number,
+    ...
+  },
+  z: { ... },
+  foo: number,
+  bar: { foo: number, ... },
+  ...
+};
+
+function test(x: {
+  foo: number,
+  bar: number,
+  baz: number,
+  qux: nunber,
+  a: number,
+  b: number,
+  c: { a: number, ... },
+  ...
+}) {
+  return x;
+}
+function test(x: {
+  foo: number,
+  bar: number,
+  baz: number,
+  qux: nunber,
+  a: number,
+  b: number,
+  c: {
+    a: number,
+    b: number,
+    c: number,
+    d: number,
+    e: number,
+    f: number,
+    g: number,
+    h: number,
+    i: number,
+    ...
+  },
+  ...
+}) {
+  return x;
+}
+
+type W = { ... };
+type X = { ... };
+
+================================================================================
+`;
+
+exports[`test.js - {"trailingComma":"es5"} format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+trailingComma: "es5"
+                                                                                | printWidth
+=====================================input======================================
+//@flow
+type T = {
+  a: number,
+  ...,
+}
+
+type I = {
+  [string]: number,
+  ...,
+}
+
+type U = { a: number, b: number, c: number, d: number, e: number, f: number, g: number, ...};
+
+type V = {x: {...}, y: {x: {...}, a: number, b: number, c: number, d: number, e: number, f: number, ...}, z: {...}, foo: number, bar: {foo: number, ...}, ...};
+
+function test(x: {foo: number, bar: number, baz: number, qux: nunber, a: number, b: number, c: {a: number, ...}, ...}) { return x; }
+function test(x: {foo: number, bar: number, baz: number, qux: nunber, a: number, b: number, c: {a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, ...}, ...}) { return x; }
+
+type W = {...};
+type X = {
+  ...,
+};
+
+=====================================output=====================================
+//@flow
+type T = {
+  a: number,
+  ...
+};
+
+type I = {
+  [string]: number,
+  ...
+};
+
+type U = {
+  a: number,
+  b: number,
+  c: number,
+  d: number,
+  e: number,
+  f: number,
+  g: number,
+  ...
+};
+
+type V = {
+  x: { ... },
+  y: {
+    x: { ... },
+    a: number,
+    b: number,
+    c: number,
+    d: number,
+    e: number,
+    f: number,
+    ...
+  },
+  z: { ... },
+  foo: number,
+  bar: { foo: number, ... },
+  ...
+};
+
+function test(x: {
+  foo: number,
+  bar: number,
+  baz: number,
+  qux: nunber,
+  a: number,
+  b: number,
+  c: { a: number, ... },
+  ...
+}) {
+  return x;
+}
+function test(x: {
+  foo: number,
+  bar: number,
+  baz: number,
+  qux: nunber,
+  a: number,
+  b: number,
+  c: {
+    a: number,
+    b: number,
+    c: number,
+    d: number,
+    e: number,
+    f: number,
+    g: number,
+    h: number,
+    i: number,
+    ...
+  },
+  ...
+}) {
+  return x;
+}
+
+type W = { ... };
+type X = { ... };
+
+================================================================================
+`;
+
+exports[`test.js - {"trailingComma":"none"} format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+trailingComma: "none"
+                                                                                | printWidth
+=====================================input======================================
+//@flow
+type T = {
+  a: number,
+  ...,
+}
+
+type I = {
+  [string]: number,
+  ...,
+}
+
+type U = { a: number, b: number, c: number, d: number, e: number, f: number, g: number, ...};
+
+type V = {x: {...}, y: {x: {...}, a: number, b: number, c: number, d: number, e: number, f: number, ...}, z: {...}, foo: number, bar: {foo: number, ...}, ...};
+
+function test(x: {foo: number, bar: number, baz: number, qux: nunber, a: number, b: number, c: {a: number, ...}, ...}) { return x; }
+function test(x: {foo: number, bar: number, baz: number, qux: nunber, a: number, b: number, c: {a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, ...}, ...}) { return x; }
+
+type W = {...};
+type X = {
+  ...,
+};
+
+=====================================output=====================================
+//@flow
+type T = {
+  a: number,
+  ...
+};
+
+type I = {
+  [string]: number,
+  ...
+};
+
+type U = {
+  a: number,
+  b: number,
+  c: number,
+  d: number,
+  e: number,
+  f: number,
+  g: number,
+  ...
+};
+
+type V = {
+  x: { ... },
+  y: {
+    x: { ... },
+    a: number,
+    b: number,
+    c: number,
+    d: number,
+    e: number,
+    f: number,
+    ...
+  },
+  z: { ... },
+  foo: number,
+  bar: { foo: number, ... },
+  ...
+};
+
+function test(x: {
+  foo: number,
+  bar: number,
+  baz: number,
+  qux: nunber,
+  a: number,
+  b: number,
+  c: { a: number, ... },
+  ...
+}) {
+  return x;
+}
+function test(x: {
+  foo: number,
+  bar: number,
+  baz: number,
+  qux: nunber,
+  a: number,
+  b: number,
+  c: {
+    a: number,
+    b: number,
+    c: number,
+    d: number,
+    e: number,
+    f: number,
+    g: number,
+    h: number,
+    i: number,
+    ...
+  },
+  ...
+}) {
+  return x;
+}
+
+type W = { ... };
+type X = { ... };
+
+================================================================================
+`;

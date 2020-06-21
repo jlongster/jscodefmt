@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`field_declare_modifier.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class Foo {
+  declare foo: number;
+  declare static bar: string;
+}
+
+=====================================output=====================================
+class Foo {
+  declare foo: number;
+  declare static bar: string;
+}
+
+================================================================================
+`;

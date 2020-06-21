@@ -17,14 +17,14 @@ function parse(text, parsers, opts) {
     esproposal_class_static_fields: true,
     esproposal_export_star_as: true,
     esproposal_optional_chaining: true,
-    esproposal_nullish_coalescing: true
+    esproposal_nullish_coalescing: true,
   });
 
   if (ast.errors.length > 0) {
     const { loc } = ast.errors[0];
     throw createError(ast.errors[0].message, {
       start: { line: loc.start.line, column: loc.start.column + 1 },
-      end: { line: loc.end.line, column: loc.end.column + 1 }
+      end: { line: loc.end.line, column: loc.end.column + 1 },
     });
   }
 
@@ -35,6 +35,6 @@ function parse(text, parsers, opts) {
 // Export as a plugin so we can reuse the same bundle for UMD loading
 module.exports = {
   parsers: {
-    flow: { parse, astFormat: "estree", hasPragma, ...locFns }
-  }
+    flow: { parse, astFormat: "estree", hasPragma, ...locFns },
+  },
 };

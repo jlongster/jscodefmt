@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`string.ts 1`] = `
+exports[`string.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -42,7 +42,7 @@ type B = {
 ================================================================================
 `;
 
-exports[`symbol.ts 1`] = `
+exports[`symbol.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

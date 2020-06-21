@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`constructorDefaultValuesReferencingThis.ts 1`] = `
+exports[`constructorDefaultValuesReferencingThis.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -33,7 +33,7 @@ class E<T> {
 ================================================================================
 `;
 
-exports[`constructorImplementationWithDefaultValues.ts 1`] = `
+exports[`constructorImplementationWithDefaultValues.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -84,7 +84,7 @@ class E<T extends Date> {
 ================================================================================
 `;
 
-exports[`constructorImplementationWithDefaultValues2.ts 1`] = `
+exports[`constructorImplementationWithDefaultValues2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -135,7 +135,7 @@ class E<T extends Date> {
 ================================================================================
 `;
 
-exports[`constructorOverloadsWithDefaultValues.ts 1`] = `
+exports[`constructorOverloadsWithDefaultValues.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -170,7 +170,7 @@ class D<T> {
 ================================================================================
 `;
 
-exports[`constructorOverloadsWithOptionalParameters.ts 1`] = `
+exports[`constructorOverloadsWithOptionalParameters.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -205,7 +205,7 @@ class D<T> {
 ================================================================================
 `;
 
-exports[`constructorParameterProperties.ts 1`] = `
+exports[`constructorParameterProperties.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -257,7 +257,7 @@ var r4 = d.z; // error
 ================================================================================
 `;
 
-exports[`constructorParameterProperties2.ts 1`] = `
+exports[`constructorParameterProperties2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -331,7 +331,7 @@ var r4 = f.y; // error
 ================================================================================
 `;
 
-exports[`declarationEmitReadonly.ts 1`] = `
+exports[`declarationEmitReadonly.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -352,7 +352,7 @@ class C {
 ================================================================================
 `;
 
-exports[`readonlyConstructorAssignment.ts 1`] = `
+exports[`readonlyConstructorAssignment.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -440,7 +440,7 @@ class E extends D {
 ================================================================================
 `;
 
-exports[`readonlyInConstructorParameters.ts 1`] = `
+exports[`readonlyInConstructorParameters.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
@@ -477,7 +477,7 @@ new F(1).x;
 ================================================================================
 `;
 
-exports[`readonlyReadonly.ts 1`] = `
+exports[`readonlyReadonly.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80

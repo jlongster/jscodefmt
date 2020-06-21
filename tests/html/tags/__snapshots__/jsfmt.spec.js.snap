@@ -1,0 +1,4205 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`case-sensitive.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<CaseSensitive CaseSensitive="true">hello world</CaseSensitive>
+
+=====================================output=====================================
+<CaseSensitive CaseSensitive="true">hello world</CaseSensitive>
+
+================================================================================
+`;
+
+exports[`case-sensitive.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<CaseSensitive CaseSensitive="true">hello world</CaseSensitive>
+
+=====================================output=====================================
+<CaseSensitive CaseSensitive="true">hello world</CaseSensitive>
+
+================================================================================
+`;
+
+exports[`case-sensitive.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<CaseSensitive CaseSensitive="true">hello world</CaseSensitive>
+
+=====================================output=====================================
+<CaseSensitive CaseSensitive="true">hello world</CaseSensitive>
+
+================================================================================
+`;
+
+exports[`case-sensitive.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<CaseSensitive CaseSensitive="true">hello world</CaseSensitive>
+
+=====================================output=====================================
+<CaseSensitive
+  CaseSensitive="true"
+  >hello
+  world</CaseSensitive
+>
+
+================================================================================
+`;
+
+exports[`case-sensitive.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<CaseSensitive CaseSensitive="true">hello world</CaseSensitive>
+
+=====================================output=====================================
+<CaseSensitive CaseSensitive="true">hello world</CaseSensitive>
+
+================================================================================
+`;
+
+exports[`closing-at-start.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+    aaaaaaaaaa
+    <a
+      href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      >bbbbbbbbbb</a
+    >
+    cccccccccc
+</div>
+<div>
+    aaaaaaaaaa
+    <a
+      href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      >bbbbbbbbbb</a
+    >cccccccccc
+</div>
+
+=====================================output=====================================
+<div>
+  aaaaaaaaaa
+  <a
+    href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+  >
+    bbbbbbbbbb
+  </a>
+  cccccccccc
+</div>
+<div>
+  aaaaaaaaaa
+  <a
+    href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+  >
+    bbbbbbbbbb
+  </a>
+  cccccccccc
+</div>
+
+================================================================================
+`;
+
+exports[`closing-at-start.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+    aaaaaaaaaa
+    <a
+      href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      >bbbbbbbbbb</a
+    >
+    cccccccccc
+</div>
+<div>
+    aaaaaaaaaa
+    <a
+      href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      >bbbbbbbbbb</a
+    >cccccccccc
+</div>
+
+=====================================output=====================================
+<div>
+  aaaaaaaaaa
+  <a
+    href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+    >bbbbbbbbbb</a
+  >
+  cccccccccc
+</div>
+<div>
+  aaaaaaaaaa
+  <a
+    href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+    >bbbbbbbbbb</a
+  >cccccccccc
+</div>
+
+================================================================================
+`;
+
+exports[`closing-at-start.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<div>
+    aaaaaaaaaa
+    <a
+      href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      >bbbbbbbbbb</a
+    >
+    cccccccccc
+</div>
+<div>
+    aaaaaaaaaa
+    <a
+      href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      >bbbbbbbbbb</a
+    >cccccccccc
+</div>
+
+=====================================output=====================================
+<div>
+  aaaaaaaaaa
+  <a href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong">bbbbbbbbbb</a>
+  cccccccccc
+</div>
+<div>
+  aaaaaaaaaa
+  <a href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong">bbbbbbbbbb</a>cccccccccc
+</div>
+
+================================================================================
+`;
+
+exports[`closing-at-start.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<div>
+    aaaaaaaaaa
+    <a
+      href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      >bbbbbbbbbb</a
+    >
+    cccccccccc
+</div>
+<div>
+    aaaaaaaaaa
+    <a
+      href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      >bbbbbbbbbb</a
+    >cccccccccc
+</div>
+
+=====================================output=====================================
+<div>
+  aaaaaaaaaa
+  <a
+    href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+    >bbbbbbbbbb</a
+  >
+  cccccccccc
+</div>
+<div>
+  aaaaaaaaaa
+  <a
+    href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+    >bbbbbbbbbb</a
+  >cccccccccc
+</div>
+
+================================================================================
+`;
+
+exports[`closing-at-start.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+    aaaaaaaaaa
+    <a
+      href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      >bbbbbbbbbb</a
+    >
+    cccccccccc
+</div>
+<div>
+    aaaaaaaaaa
+    <a
+      href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+      >bbbbbbbbbb</a
+    >cccccccccc
+</div>
+
+=====================================output=====================================
+<div>
+  aaaaaaaaaa
+  <a
+    href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+    >bbbbbbbbbb</a
+  >
+  cccccccccc
+</div>
+<div>
+  aaaaaaaaaa
+  <a
+    href="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+    >bbbbbbbbbb</a
+  >cccccccccc
+</div>
+
+================================================================================
+`;
+
+exports[`custom-element.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<app-foo></app-foo>
+<app-bar></app-bar>
+
+=====================================output=====================================
+<app-foo></app-foo>
+<app-bar></app-bar>
+
+================================================================================
+`;
+
+exports[`custom-element.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<app-foo></app-foo>
+<app-bar></app-bar>
+
+=====================================output=====================================
+<app-foo></app-foo>
+<app-bar></app-bar>
+
+================================================================================
+`;
+
+exports[`custom-element.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<app-foo></app-foo>
+<app-bar></app-bar>
+
+=====================================output=====================================
+<app-foo></app-foo>
+<app-bar></app-bar>
+
+================================================================================
+`;
+
+exports[`custom-element.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<app-foo></app-foo>
+<app-bar></app-bar>
+
+=====================================output=====================================
+<app-foo></app-foo>
+<app-bar></app-bar>
+
+================================================================================
+`;
+
+exports[`custom-element.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<app-foo></app-foo>
+<app-bar></app-bar>
+
+=====================================output=====================================
+<app-foo></app-foo>
+<app-bar></app-bar>
+
+================================================================================
+`;
+
+exports[`openging-at-end.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<p
+  >Want to write us a letter? Use our<a
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+  href="contacts.html#Mailing_address"
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+  href="contacts.html#Mailing_address"
+  href1="contacts.html#Mailing_address"
+  href2="contacts.html#Mailing_address"
+  href3="contacts.html#Mailing_address"
+  href4="contacts.html#Mailing_address"
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+=====================================output=====================================
+<p>
+  Want to write us a letter? Use our
+  <a>
+    <b><a>mailing address</a></b>
+  </a>
+  .
+</p>
+
+<p>
+  Want to write us a letter? Use our
+  <a href="contacts.html#Mailing_address">
+    <b><a>mailing address</a></b>
+  </a>
+  .
+</p>
+
+<p>
+  Want to write us a letter? Use our
+  <a
+    href="contacts.html#Mailing_address"
+    href1="contacts.html#Mailing_address"
+    href2="contacts.html#Mailing_address"
+    href3="contacts.html#Mailing_address"
+    href4="contacts.html#Mailing_address"
+  >
+    <b><a>mailing address</a></b>
+  </a>
+  .
+</p>
+
+================================================================================
+`;
+
+exports[`openging-at-end.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<p
+  >Want to write us a letter? Use our<a
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+  href="contacts.html#Mailing_address"
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+  href="contacts.html#Mailing_address"
+  href1="contacts.html#Mailing_address"
+  href2="contacts.html#Mailing_address"
+  href3="contacts.html#Mailing_address"
+  href4="contacts.html#Mailing_address"
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+=====================================output=====================================
+<p
+  >Want to write us a letter? Use our<a
+    ><b><a>mailing address</a></b></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a href="contacts.html#Mailing_address"
+    ><b><a>mailing address</a></b></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+    href="contacts.html#Mailing_address"
+    href1="contacts.html#Mailing_address"
+    href2="contacts.html#Mailing_address"
+    href3="contacts.html#Mailing_address"
+    href4="contacts.html#Mailing_address"
+    ><b><a>mailing address</a></b></a
+  >.</p
+>
+
+================================================================================
+`;
+
+exports[`openging-at-end.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<p
+  >Want to write us a letter? Use our<a
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+  href="contacts.html#Mailing_address"
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+  href="contacts.html#Mailing_address"
+  href1="contacts.html#Mailing_address"
+  href2="contacts.html#Mailing_address"
+  href3="contacts.html#Mailing_address"
+  href4="contacts.html#Mailing_address"
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+=====================================output=====================================
+<p>
+  Want to write us a letter? Use our<a
+    ><b><a>mailing address</a></b></a
+  >.
+</p>
+
+<p>
+  Want to write us a letter? Use our<a href="contacts.html#Mailing_address"
+    ><b><a>mailing address</a></b></a
+  >.
+</p>
+
+<p>
+  Want to write us a letter? Use our<a href="contacts.html#Mailing_address" href1="contacts.html#Mailing_address" href2="contacts.html#Mailing_address" href3="contacts.html#Mailing_address" href4="contacts.html#Mailing_address"
+    ><b><a>mailing address</a></b></a
+  >.
+</p>
+
+================================================================================
+`;
+
+exports[`openging-at-end.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<p
+  >Want to write us a letter? Use our<a
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+  href="contacts.html#Mailing_address"
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+  href="contacts.html#Mailing_address"
+  href1="contacts.html#Mailing_address"
+  href2="contacts.html#Mailing_address"
+  href3="contacts.html#Mailing_address"
+  href4="contacts.html#Mailing_address"
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+=====================================output=====================================
+<p>
+  Want
+  to
+  write
+  us
+  a
+  letter?
+  Use
+  our<a
+    ><b
+      ><a
+        >mailing
+        address</a
+      ></b
+    ></a
+  >.
+</p>
+
+<p>
+  Want
+  to
+  write
+  us
+  a
+  letter?
+  Use
+  our<a
+    href="contacts.html#Mailing_address"
+    ><b
+      ><a
+        >mailing
+        address</a
+      ></b
+    ></a
+  >.
+</p>
+
+<p>
+  Want
+  to
+  write
+  us
+  a
+  letter?
+  Use
+  our<a
+    href="contacts.html#Mailing_address"
+    href1="contacts.html#Mailing_address"
+    href2="contacts.html#Mailing_address"
+    href3="contacts.html#Mailing_address"
+    href4="contacts.html#Mailing_address"
+    ><b
+      ><a
+        >mailing
+        address</a
+      ></b
+    ></a
+  >.
+</p>
+
+================================================================================
+`;
+
+exports[`openging-at-end.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<p
+  >Want to write us a letter? Use our<a
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+  href="contacts.html#Mailing_address"
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+<p
+  >Want to write us a letter? Use our<a
+  href="contacts.html#Mailing_address"
+  href1="contacts.html#Mailing_address"
+  href2="contacts.html#Mailing_address"
+  href3="contacts.html#Mailing_address"
+  href4="contacts.html#Mailing_address"
+    ><b
+      ><a>mailing address</a></b
+    ></a
+  >.</p
+>
+
+=====================================output=====================================
+<p>
+  Want to write us a letter? Use our<a
+    ><b><a>mailing address</a></b></a
+  >.
+</p>
+
+<p>
+  Want to write us a letter? Use our<a href="contacts.html#Mailing_address"
+    ><b><a>mailing address</a></b></a
+  >.
+</p>
+
+<p>
+  Want to write us a letter? Use our<a
+    href="contacts.html#Mailing_address"
+    href1="contacts.html#Mailing_address"
+    href2="contacts.html#Mailing_address"
+    href3="contacts.html#Mailing_address"
+    href4="contacts.html#Mailing_address"
+    ><b><a>mailing address</a></b></a
+  >.
+</p>
+
+================================================================================
+`;
+
+exports[`option.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<select><option>Blue</option><option>Green</option><optgroup label="Darker"><option>Dark Blue</option><option>Dark Green</option></optgroup></select>
+<input list=colors>
+<datalist id=colors><option>Blue</option><option>Green</option></datalist>
+
+=====================================output=====================================
+<select>
+  <option>Blue</option>
+  <option>Green</option>
+  <optgroup label="Darker">
+    <option>Dark Blue</option>
+    <option>Dark Green</option>
+  </optgroup>
+</select>
+<input list="colors" />
+<datalist id="colors">
+  <option>Blue</option>
+  <option>Green</option>
+</datalist>
+
+================================================================================
+`;
+
+exports[`option.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<select><option>Blue</option><option>Green</option><optgroup label="Darker"><option>Dark Blue</option><option>Dark Green</option></optgroup></select>
+<input list=colors>
+<datalist id=colors><option>Blue</option><option>Green</option></datalist>
+
+=====================================output=====================================
+<select
+  ><option>Blue</option
+  ><option>Green</option
+  ><optgroup label="Darker"
+    ><option>Dark Blue</option><option>Dark Green</option></optgroup
+  ></select
+>
+<input list="colors" />
+<datalist id="colors"><option>Blue</option><option>Green</option></datalist>
+
+================================================================================
+`;
+
+exports[`option.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<select><option>Blue</option><option>Green</option><optgroup label="Darker"><option>Dark Blue</option><option>Dark Green</option></optgroup></select>
+<input list=colors>
+<datalist id=colors><option>Blue</option><option>Green</option></datalist>
+
+=====================================output=====================================
+<select>
+  <option>Blue</option
+  ><option>Green</option
+  ><optgroup label="Darker"><option>Dark Blue</option><option>Dark Green</option></optgroup>
+</select>
+<input list="colors" />
+<datalist id="colors">
+  <option>Blue</option>
+  <option>Green</option>
+</datalist>
+
+================================================================================
+`;
+
+exports[`option.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<select><option>Blue</option><option>Green</option><optgroup label="Darker"><option>Dark Blue</option><option>Dark Green</option></optgroup></select>
+<input list=colors>
+<datalist id=colors><option>Blue</option><option>Green</option></datalist>
+
+=====================================output=====================================
+<select>
+  <option
+    >Blue</option
+  ><option
+    >Green</option
+  ><optgroup
+    label="Darker"
+  >
+    <option
+      >Dark
+      Blue</option
+    ><option
+      >Dark
+      Green</option
+    >
+  </optgroup>
+</select>
+<input
+  list="colors"
+/>
+<datalist
+  id="colors"
+>
+  <option
+    >Blue</option
+  >
+  <option
+    >Green</option
+  >
+</datalist>
+
+================================================================================
+`;
+
+exports[`option.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<select><option>Blue</option><option>Green</option><optgroup label="Darker"><option>Dark Blue</option><option>Dark Green</option></optgroup></select>
+<input list=colors>
+<datalist id=colors><option>Blue</option><option>Green</option></datalist>
+
+=====================================output=====================================
+<select>
+  <option>Blue</option
+  ><option>Green</option
+  ><optgroup label="Darker">
+    <option>Dark Blue</option><option>Dark Green</option>
+  </optgroup>
+</select>
+<input list="colors" />
+<datalist id="colors">
+  <option>Blue</option>
+  <option>Green</option>
+</datalist>
+
+================================================================================
+`;
+
+exports[`pre.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<pre>
+--------------------------------------------------------------------------------
+
+
+                                      *         *       *
+                                     **        **      ***
+                                     **        **       *
+   ****    ***  ****               ********  ********                   ***  ****
+  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
+ *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
+**    **     **          *   ***     **        **       **     *   ***    **
+**    **     **         **    ***    **        **       **    **    ***   **
+**    **     **         ********     **        **       **    ********    **
+**    **     **         *******      **        **       **    *******     **
+**    **     **         **           **        **       **    **          **
+*******      ***        ****    *    **        **       **    ****    *   ***
+******        ***        *******      **        **      *** *  *******     ***
+**                        *****                          ***    *****
+**
+**
+ **
+
+--------------------------------------------------------------------------------
+</pre>
+<pre>
+
+        Text in a pre element
+
+    is displayed in a fixed-width
+
+   font, and it preserves
+
+   both             spaces and
+
+   line breaks
+
+</pre>
+<pre>     Foo     Bar     </pre>
+<pre>
+     Foo     Bar
+</pre>
+<pre>Foo     Bar
+</pre>
+<pre>
+     Foo     Bar</pre>
+<figure role="img" aria-labelledby="cow-caption">
+  <pre>
+___________________________
+< I'm an expert in my field. >
+---------------------------
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||
+___________________________
+  </pre>
+  <figcaption id="cow-caption">
+    A cow saying, "I'm an expert in my field." The cow is illustrated using preformatted text characters.
+  </figcaption>
+</figure>
+<pre data-attr-1="foo" data-attr-2="foo" data-attr-3="foo" data-attr-4="foo" data-attr-5="foo" data-attr-6="foo">
+     Foo     Bar
+</pre>
+<div>
+  <div>
+    <div>
+      <div>
+        <pre>
+          ______
+          STRING
+          ______
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<pre></pre>
+
+<pre><code #foo></code></pre>
+
+<details>
+  <pre><!--Comments-->
+  </pre></details>
+
+<details><pre>
+  <!--Comments-->
+</pre>
+</details>
+
+<!-- #6028 -->
+<pre><br></pre>
+<pre><hr></pre>
+
+=====================================output=====================================
+<pre>
+--------------------------------------------------------------------------------
+
+
+                                      *         *       *
+                                     **        **      ***
+                                     **        **       *
+   ****    ***  ****               ********  ********                   ***  ****
+  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
+ *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
+**    **     **          *   ***     **        **       **     *   ***    **
+**    **     **         **    ***    **        **       **    **    ***   **
+**    **     **         ********     **        **       **    ********    **
+**    **     **         *******      **        **       **    *******     **
+**    **     **         **           **        **       **    **          **
+*******      ***        ****    *    **        **       **    ****    *   ***
+******        ***        *******      **        **      *** *  *******     ***
+**                        *****                          ***    *****
+**
+**
+ **
+
+--------------------------------------------------------------------------------
+</pre>
+<pre>
+
+        Text in a pre element
+
+    is displayed in a fixed-width
+
+   font, and it preserves
+
+   both             spaces and
+
+   line breaks
+
+</pre>
+<pre>     Foo     Bar     </pre>
+<pre>
+     Foo     Bar
+</pre>
+<pre>
+Foo     Bar
+</pre>
+<pre>     Foo     Bar</pre>
+<figure role="img" aria-labelledby="cow-caption">
+  <pre>
+___________________________
+< I'm an expert in my field. >
+---------------------------
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||
+___________________________
+  </pre>
+  <figcaption id="cow-caption">
+    A cow saying, "I'm an expert in my field." The cow is illustrated using
+    preformatted text characters.
+  </figcaption>
+</figure>
+<pre
+  data-attr-1="foo"
+  data-attr-2="foo"
+  data-attr-3="foo"
+  data-attr-4="foo"
+  data-attr-5="foo"
+  data-attr-6="foo"
+>
+     Foo     Bar
+</pre>
+<div>
+  <div>
+    <div>
+      <div>
+        <pre>
+          ______
+          STRING
+          ______
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<pre></pre>
+
+<pre><code #foo></code></pre>
+
+<details>
+  <pre><!--Comments-->
+  </pre>
+</details>
+
+<details>
+  <pre>
+  <!--Comments-->
+</pre>
+</details>
+
+<!-- #6028 -->
+<pre><br /></pre>
+<pre><hr /></pre>
+
+================================================================================
+`;
+
+exports[`pre.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<pre>
+--------------------------------------------------------------------------------
+
+
+                                      *         *       *
+                                     **        **      ***
+                                     **        **       *
+   ****    ***  ****               ********  ********                   ***  ****
+  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
+ *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
+**    **     **          *   ***     **        **       **     *   ***    **
+**    **     **         **    ***    **        **       **    **    ***   **
+**    **     **         ********     **        **       **    ********    **
+**    **     **         *******      **        **       **    *******     **
+**    **     **         **           **        **       **    **          **
+*******      ***        ****    *    **        **       **    ****    *   ***
+******        ***        *******      **        **      *** *  *******     ***
+**                        *****                          ***    *****
+**
+**
+ **
+
+--------------------------------------------------------------------------------
+</pre>
+<pre>
+
+        Text in a pre element
+
+    is displayed in a fixed-width
+
+   font, and it preserves
+
+   both             spaces and
+
+   line breaks
+
+</pre>
+<pre>     Foo     Bar     </pre>
+<pre>
+     Foo     Bar
+</pre>
+<pre>Foo     Bar
+</pre>
+<pre>
+     Foo     Bar</pre>
+<figure role="img" aria-labelledby="cow-caption">
+  <pre>
+___________________________
+< I'm an expert in my field. >
+---------------------------
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||
+___________________________
+  </pre>
+  <figcaption id="cow-caption">
+    A cow saying, "I'm an expert in my field." The cow is illustrated using preformatted text characters.
+  </figcaption>
+</figure>
+<pre data-attr-1="foo" data-attr-2="foo" data-attr-3="foo" data-attr-4="foo" data-attr-5="foo" data-attr-6="foo">
+     Foo     Bar
+</pre>
+<div>
+  <div>
+    <div>
+      <div>
+        <pre>
+          ______
+          STRING
+          ______
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<pre></pre>
+
+<pre><code #foo></code></pre>
+
+<details>
+  <pre><!--Comments-->
+  </pre></details>
+
+<details><pre>
+  <!--Comments-->
+</pre>
+</details>
+
+<!-- #6028 -->
+<pre><br></pre>
+<pre><hr></pre>
+
+=====================================output=====================================
+<pre>
+--------------------------------------------------------------------------------
+
+
+                                      *         *       *
+                                     **        **      ***
+                                     **        **       *
+   ****    ***  ****               ********  ********                   ***  ****
+  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
+ *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
+**    **     **          *   ***     **        **       **     *   ***    **
+**    **     **         **    ***    **        **       **    **    ***   **
+**    **     **         ********     **        **       **    ********    **
+**    **     **         *******      **        **       **    *******     **
+**    **     **         **           **        **       **    **          **
+*******      ***        ****    *    **        **       **    ****    *   ***
+******        ***        *******      **        **      *** *  *******     ***
+**                        *****                          ***    *****
+**
+**
+ **
+
+--------------------------------------------------------------------------------
+</pre>
+<pre>
+
+        Text in a pre element
+
+    is displayed in a fixed-width
+
+   font, and it preserves
+
+   both             spaces and
+
+   line breaks
+
+</pre>
+<pre>     Foo     Bar     </pre>
+<pre>
+     Foo     Bar
+</pre>
+<pre>
+Foo     Bar
+</pre>
+<pre>     Foo     Bar</pre>
+<figure role="img" aria-labelledby="cow-caption">
+  <pre>
+___________________________
+< I'm an expert in my field. >
+---------------------------
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||
+___________________________
+  </pre>
+  <figcaption id="cow-caption">
+    A cow saying, "I'm an expert in my field." The cow is illustrated using
+    preformatted text characters.
+  </figcaption>
+</figure>
+<pre
+  data-attr-1="foo"
+  data-attr-2="foo"
+  data-attr-3="foo"
+  data-attr-4="foo"
+  data-attr-5="foo"
+  data-attr-6="foo"
+>
+     Foo     Bar
+</pre>
+<div>
+  <div>
+    <div>
+      <div>
+        <pre>
+          ______
+          STRING
+          ______
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<pre></pre>
+
+<pre><code #foo></code></pre>
+
+<details>
+  <pre><!--Comments-->
+  </pre>
+</details>
+
+<details>
+  <pre>
+  <!--Comments-->
+</pre>
+</details>
+
+<!-- #6028 -->
+<pre><br /></pre>
+<pre><hr /></pre>
+
+================================================================================
+`;
+
+exports[`pre.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<pre>
+--------------------------------------------------------------------------------
+
+
+                                      *         *       *
+                                     **        **      ***
+                                     **        **       *
+   ****    ***  ****               ********  ********                   ***  ****
+  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
+ *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
+**    **     **          *   ***     **        **       **     *   ***    **
+**    **     **         **    ***    **        **       **    **    ***   **
+**    **     **         ********     **        **       **    ********    **
+**    **     **         *******      **        **       **    *******     **
+**    **     **         **           **        **       **    **          **
+*******      ***        ****    *    **        **       **    ****    *   ***
+******        ***        *******      **        **      *** *  *******     ***
+**                        *****                          ***    *****
+**
+**
+ **
+
+--------------------------------------------------------------------------------
+</pre>
+<pre>
+
+        Text in a pre element
+
+    is displayed in a fixed-width
+
+   font, and it preserves
+
+   both             spaces and
+
+   line breaks
+
+</pre>
+<pre>     Foo     Bar     </pre>
+<pre>
+     Foo     Bar
+</pre>
+<pre>Foo     Bar
+</pre>
+<pre>
+     Foo     Bar</pre>
+<figure role="img" aria-labelledby="cow-caption">
+  <pre>
+___________________________
+< I'm an expert in my field. >
+---------------------------
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||
+___________________________
+  </pre>
+  <figcaption id="cow-caption">
+    A cow saying, "I'm an expert in my field." The cow is illustrated using preformatted text characters.
+  </figcaption>
+</figure>
+<pre data-attr-1="foo" data-attr-2="foo" data-attr-3="foo" data-attr-4="foo" data-attr-5="foo" data-attr-6="foo">
+     Foo     Bar
+</pre>
+<div>
+  <div>
+    <div>
+      <div>
+        <pre>
+          ______
+          STRING
+          ______
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<pre></pre>
+
+<pre><code #foo></code></pre>
+
+<details>
+  <pre><!--Comments-->
+  </pre></details>
+
+<details><pre>
+  <!--Comments-->
+</pre>
+</details>
+
+<!-- #6028 -->
+<pre><br></pre>
+<pre><hr></pre>
+
+=====================================output=====================================
+<pre>
+--------------------------------------------------------------------------------
+
+
+                                      *         *       *
+                                     **        **      ***
+                                     **        **       *
+   ****    ***  ****               ********  ********                   ***  ****
+  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
+ *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
+**    **     **          *   ***     **        **       **     *   ***    **
+**    **     **         **    ***    **        **       **    **    ***   **
+**    **     **         ********     **        **       **    ********    **
+**    **     **         *******      **        **       **    *******     **
+**    **     **         **           **        **       **    **          **
+*******      ***        ****    *    **        **       **    ****    *   ***
+******        ***        *******      **        **      *** *  *******     ***
+**                        *****                          ***    *****
+**
+**
+ **
+
+--------------------------------------------------------------------------------
+</pre>
+<pre>
+
+        Text in a pre element
+
+    is displayed in a fixed-width
+
+   font, and it preserves
+
+   both             spaces and
+
+   line breaks
+
+</pre>
+<pre>     Foo     Bar     </pre>
+<pre>
+     Foo     Bar
+</pre>
+<pre>
+Foo     Bar
+</pre>
+<pre>     Foo     Bar</pre>
+<figure role="img" aria-labelledby="cow-caption">
+  <pre>
+___________________________
+< I'm an expert in my field. >
+---------------------------
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||
+___________________________
+  </pre>
+  <figcaption id="cow-caption">
+    A cow saying, "I'm an expert in my field." The cow is illustrated using preformatted text characters.
+  </figcaption>
+</figure>
+<pre data-attr-1="foo" data-attr-2="foo" data-attr-3="foo" data-attr-4="foo" data-attr-5="foo" data-attr-6="foo">
+     Foo     Bar
+</pre>
+<div>
+  <div>
+    <div>
+      <div>
+        <pre>
+          ______
+          STRING
+          ______
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<pre></pre>
+
+<pre><code #foo></code></pre>
+
+<details>
+  <pre><!--Comments-->
+  </pre>
+</details>
+
+<details>
+  <pre>
+  <!--Comments-->
+</pre>
+</details>
+
+<!-- #6028 -->
+<pre><br /></pre>
+<pre><hr /></pre>
+
+================================================================================
+`;
+
+exports[`pre.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<pre>
+--------------------------------------------------------------------------------
+
+
+                                      *         *       *
+                                     **        **      ***
+                                     **        **       *
+   ****    ***  ****               ********  ********                   ***  ****
+  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
+ *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
+**    **     **          *   ***     **        **       **     *   ***    **
+**    **     **         **    ***    **        **       **    **    ***   **
+**    **     **         ********     **        **       **    ********    **
+**    **     **         *******      **        **       **    *******     **
+**    **     **         **           **        **       **    **          **
+*******      ***        ****    *    **        **       **    ****    *   ***
+******        ***        *******      **        **      *** *  *******     ***
+**                        *****                          ***    *****
+**
+**
+ **
+
+--------------------------------------------------------------------------------
+</pre>
+<pre>
+
+        Text in a pre element
+
+    is displayed in a fixed-width
+
+   font, and it preserves
+
+   both             spaces and
+
+   line breaks
+
+</pre>
+<pre>     Foo     Bar     </pre>
+<pre>
+     Foo     Bar
+</pre>
+<pre>Foo     Bar
+</pre>
+<pre>
+     Foo     Bar</pre>
+<figure role="img" aria-labelledby="cow-caption">
+  <pre>
+___________________________
+< I'm an expert in my field. >
+---------------------------
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||
+___________________________
+  </pre>
+  <figcaption id="cow-caption">
+    A cow saying, "I'm an expert in my field." The cow is illustrated using preformatted text characters.
+  </figcaption>
+</figure>
+<pre data-attr-1="foo" data-attr-2="foo" data-attr-3="foo" data-attr-4="foo" data-attr-5="foo" data-attr-6="foo">
+     Foo     Bar
+</pre>
+<div>
+  <div>
+    <div>
+      <div>
+        <pre>
+          ______
+          STRING
+          ______
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<pre></pre>
+
+<pre><code #foo></code></pre>
+
+<details>
+  <pre><!--Comments-->
+  </pre></details>
+
+<details><pre>
+  <!--Comments-->
+</pre>
+</details>
+
+<!-- #6028 -->
+<pre><br></pre>
+<pre><hr></pre>
+
+=====================================output=====================================
+<pre>
+--------------------------------------------------------------------------------
+
+
+                                      *         *       *
+                                     **        **      ***
+                                     **        **       *
+   ****    ***  ****               ********  ********                   ***  ****
+  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
+ *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
+**    **     **          *   ***     **        **       **     *   ***    **
+**    **     **         **    ***    **        **       **    **    ***   **
+**    **     **         ********     **        **       **    ********    **
+**    **     **         *******      **        **       **    *******     **
+**    **     **         **           **        **       **    **          **
+*******      ***        ****    *    **        **       **    ****    *   ***
+******        ***        *******      **        **      *** *  *******     ***
+**                        *****                          ***    *****
+**
+**
+ **
+
+--------------------------------------------------------------------------------
+</pre>
+<pre>
+
+        Text in a pre element
+
+    is displayed in a fixed-width
+
+   font, and it preserves
+
+   both             spaces and
+
+   line breaks
+
+</pre>
+<pre>
+     Foo     Bar     </pre
+>
+<pre>
+     Foo     Bar
+</pre>
+<pre>
+Foo     Bar
+</pre>
+<pre>
+     Foo     Bar</pre
+>
+<figure
+  role="img"
+  aria-labelledby="cow-caption"
+>
+  <pre>
+___________________________
+< I'm an expert in my field. >
+---------------------------
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||
+___________________________
+  </pre>
+  <figcaption
+    id="cow-caption"
+  >
+    A
+    cow
+    saying,
+    "I'm
+    an
+    expert
+    in
+    my
+    field."
+    The
+    cow
+    is
+    illustrated
+    using
+    preformatted
+    text
+    characters.
+  </figcaption>
+</figure>
+<pre
+  data-attr-1="foo"
+  data-attr-2="foo"
+  data-attr-3="foo"
+  data-attr-4="foo"
+  data-attr-5="foo"
+  data-attr-6="foo"
+>
+     Foo     Bar
+</pre>
+<div>
+  <div>
+    <div>
+      <div>
+        <pre>
+          ______
+          STRING
+          ______
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<pre></pre>
+
+<pre><code #foo></code></pre>
+
+<details>
+  <pre><!--Comments-->
+  </pre>
+</details>
+
+<details>
+  <pre>
+  <!--Comments-->
+</pre>
+</details>
+
+<!-- #6028 -->
+<pre>
+  <br
+/></pre>
+<pre>
+  <hr
+/></pre>
+
+================================================================================
+`;
+
+exports[`pre.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<pre>
+--------------------------------------------------------------------------------
+
+
+                                      *         *       *
+                                     **        **      ***
+                                     **        **       *
+   ****    ***  ****               ********  ********                   ***  ****
+  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
+ *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
+**    **     **          *   ***     **        **       **     *   ***    **
+**    **     **         **    ***    **        **       **    **    ***   **
+**    **     **         ********     **        **       **    ********    **
+**    **     **         *******      **        **       **    *******     **
+**    **     **         **           **        **       **    **          **
+*******      ***        ****    *    **        **       **    ****    *   ***
+******        ***        *******      **        **      *** *  *******     ***
+**                        *****                          ***    *****
+**
+**
+ **
+
+--------------------------------------------------------------------------------
+</pre>
+<pre>
+
+        Text in a pre element
+
+    is displayed in a fixed-width
+
+   font, and it preserves
+
+   both             spaces and
+
+   line breaks
+
+</pre>
+<pre>     Foo     Bar     </pre>
+<pre>
+     Foo     Bar
+</pre>
+<pre>Foo     Bar
+</pre>
+<pre>
+     Foo     Bar</pre>
+<figure role="img" aria-labelledby="cow-caption">
+  <pre>
+___________________________
+< I'm an expert in my field. >
+---------------------------
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||
+___________________________
+  </pre>
+  <figcaption id="cow-caption">
+    A cow saying, "I'm an expert in my field." The cow is illustrated using preformatted text characters.
+  </figcaption>
+</figure>
+<pre data-attr-1="foo" data-attr-2="foo" data-attr-3="foo" data-attr-4="foo" data-attr-5="foo" data-attr-6="foo">
+     Foo     Bar
+</pre>
+<div>
+  <div>
+    <div>
+      <div>
+        <pre>
+          ______
+          STRING
+          ______
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<pre></pre>
+
+<pre><code #foo></code></pre>
+
+<details>
+  <pre><!--Comments-->
+  </pre></details>
+
+<details><pre>
+  <!--Comments-->
+</pre>
+</details>
+
+<!-- #6028 -->
+<pre><br></pre>
+<pre><hr></pre>
+
+=====================================output=====================================
+<pre>
+--------------------------------------------------------------------------------
+
+
+                                      *         *       *
+                                     **        **      ***
+                                     **        **       *
+   ****    ***  ****               ********  ********                   ***  ****
+  * ***  *  **** **** *    ***    ********  ********  ***        ***     **** **** *
+ *   ****    **   ****    * ***      **        **      ***      * ***     **   ****
+**    **     **          *   ***     **        **       **     *   ***    **
+**    **     **         **    ***    **        **       **    **    ***   **
+**    **     **         ********     **        **       **    ********    **
+**    **     **         *******      **        **       **    *******     **
+**    **     **         **           **        **       **    **          **
+*******      ***        ****    *    **        **       **    ****    *   ***
+******        ***        *******      **        **      *** *  *******     ***
+**                        *****                          ***    *****
+**
+**
+ **
+
+--------------------------------------------------------------------------------
+</pre>
+<pre>
+
+        Text in a pre element
+
+    is displayed in a fixed-width
+
+   font, and it preserves
+
+   both             spaces and
+
+   line breaks
+
+</pre>
+<pre>     Foo     Bar     </pre>
+<pre>
+     Foo     Bar
+</pre>
+<pre>
+Foo     Bar
+</pre>
+<pre>     Foo     Bar</pre>
+<figure role="img" aria-labelledby="cow-caption">
+  <pre>
+___________________________
+< I'm an expert in my field. >
+---------------------------
+     \\   ^__^
+      \\  (oo)\\_______
+         (__)\\       )\\/\\
+             ||----w |
+             ||     ||
+___________________________
+  </pre>
+  <figcaption id="cow-caption">
+    A cow saying, "I'm an expert in my field." The cow is illustrated using
+    preformatted text characters.
+  </figcaption>
+</figure>
+<pre
+  data-attr-1="foo"
+  data-attr-2="foo"
+  data-attr-3="foo"
+  data-attr-4="foo"
+  data-attr-5="foo"
+  data-attr-6="foo"
+>
+     Foo     Bar
+</pre>
+<div>
+  <div>
+    <div>
+      <div>
+        <pre>
+          ______
+          STRING
+          ______
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+<pre></pre>
+
+<pre><code #foo></code></pre>
+
+<details>
+  <pre><!--Comments-->
+  </pre>
+</details>
+
+<details>
+  <pre>
+  <!--Comments-->
+</pre>
+</details>
+
+<!-- #6028 -->
+<pre><br /></pre>
+<pre><hr /></pre>
+
+================================================================================
+`;
+
+exports[`tags.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<br/>
+<br />
+<br  />
+<br
+/>
+<br attribute-a />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute />
+<br attribute-a="value" />
+<br
+  attribute-a="value"
+/>
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value" />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value" />
+<br attribute-a="value" attribute-b="value" attribute-c="value" attribute-d="value" attribute-e="value" attribute-f="value" />
+<div>string</div>
+<div>very very very very very very very very very very very very very very very very long string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute>string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value">string</div>
+<div attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value">string</div>
+<div attribute="value">very very very very very very very very very very very very very very very very long string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">very very very very very very very very very very very very very very very very long string</div>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+<div><div>string</div></div>
+<div><div>string</div><div>string</div></div>
+<div><div><div>string</div></div><div>string</div></div>
+<div><div>string</div><div><div>string</div></div></div>
+<div><div></div></div>
+<div><div></div><div></div></div>
+<div><div><div><div><div><div><div>string</div></div></div></div></div></div></div>
+<div>
+  <div>string</div>
+</div>
+<div>
+
+  <div>string</div>
+
+</div>
+<div>
+
+  <div>string</div>
+
+  <div>string</div>
+
+</div>
+<ul
+  >123<li
+    class="foo"
+    id="bar"
+  >First</li
+  >456<li
+    class="baz"
+  >Second</li
+  >789</ul
+>
+<span>*<b>200</b></span>
+<img src="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong" />123
+<div>123<meta attr/>456</div>
+<p>x<span a="b"></span></p>
+<p>x<meta a></p>
+<p>x<meta></p>
+<span></span>
+
+<label aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa></label> |
+<span></span>
+<br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  >12345678901234567890</button
+> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  >12345678901234567890</button
+> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.</p>
+<li>12345678901234567890123456789012345678901234567890123456789012345678901234567890</li>
+<div>
+<app-nav></app-nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<app-nav [input]="something"></app-nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<app-primary-navigation></app-primary-navigation>
+<router-outlet></router-outlet>
+<app-footer [input]="something"></app-footer>
+</div>
+<x:root><SPAN>tag name in other namespace should also lower cased</SPAN></x:root>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  "<strong>seddoeiusmod</strong>".
+</div>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  <strong>seddoeiusmod</strong>.
+</div>
+<span>
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+</span>
+
+<!-- #5810 -->
+<table><tr>
+</tr>
+</table><div>Should not insert empty line before this div</div>
+
+<!-- self-closing -->
+<span><input type="checkbox"/> </span>
+<span><span><input type="checkbox"/></span></span>
+<span><input type="checkbox"/></span>
+
+=====================================output=====================================
+<br />
+<br />
+<br />
+<br />
+<br attribute-a />
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute
+/>
+<br attribute-a="value" />
+<br attribute-a="value" />
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value"
+/>
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value"
+/>
+<br
+  attribute-a="value"
+  attribute-b="value"
+  attribute-c="value"
+  attribute-d="value"
+  attribute-e="value"
+  attribute-f="value"
+/>
+<div>string</div>
+<div>
+  very very very very very very very very very very very very very very very
+  very long string
+</div>
+<div
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute
+>
+  string
+</div>
+<div
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value"
+>
+  string
+</div>
+<div
+  attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value"
+>
+  string
+</div>
+<div attribute="value">
+  very very very very very very very very very very very very very very very
+  very long string
+</div>
+<div
+  attribute="value"
+  attributea="value"
+  attributeb="value"
+  attributec="value"
+  attributed="value"
+  attributef="value"
+>
+  string
+</div>
+<div
+  attribute="value"
+  attributea="value"
+  attributeb="value"
+  attributec="value"
+  attributed="value"
+  attributef="value"
+>
+  very very very very very very very very very very very very very very very
+  very long string
+</div>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4" />
+  <source src="movie.ogg" type="video/ogg" />
+  Your browser does not support the video tag.
+</video>
+<div><div>string</div></div>
+<div>
+  <div>string</div>
+  <div>string</div>
+</div>
+<div>
+  <div><div>string</div></div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+  <div><div>string</div></div>
+</div>
+<div><div></div></div>
+<div>
+  <div></div>
+  <div></div>
+</div>
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div><div>string</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+
+  <div>string</div>
+</div>
+<ul>
+  123
+  <li class="foo" id="bar">First</li>
+  456
+  <li class="baz">Second</li>
+  789
+</ul>
+<span>
+  *
+  <b>200</b>
+</span>
+<img
+  src="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+/>
+123
+<div>
+  123
+  <meta attr />
+  456
+</div>
+<p>
+  x
+  <span a="b"></span>
+</p>
+<p>
+  x
+  <meta a />
+</p>
+<p>
+  x
+  <meta />
+</p>
+<span></span>
+
+<label
+  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+></label>
+|
+<span></span>
+<br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>12345678901234567890</button>
+<br />
+<br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)">
+  Disabled Cancel
+</button>
+<br />
+<br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>12345678901234567890</button>
+<br />
+<br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)">
+  Disabled Cancel
+</button>
+<br />
+<br />
+<p>
+  "
+  <span [innerHTML]="title"></span>
+  " is the
+  <i>property bound</i>
+  title.
+</p>
+<li>
+  12345678901234567890123456789012345678901234567890123456789012345678901234567890
+</li>
+<div>
+  <app-nav></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+  <app-nav [input]="something"></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+  <app-primary-navigation></app-primary-navigation>
+  <router-outlet></router-outlet>
+  <app-footer [input]="something"></app-footer>
+</div>
+<x:root>
+  <span>tag name in other namespace should also lower cased</span>
+</x:root>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, "
+  <strong>seddoeiusmod</strong>
+  ".
+</div>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  <strong>seddoeiusmod</strong>
+  .
+</div>
+<span>
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+</span>
+
+<!-- #5810 -->
+<table><tr></tr></table>
+<div>Should not insert empty line before this div</div>
+
+<!-- self-closing -->
+<span><input type="checkbox" /></span>
+<span>
+  <span><input type="checkbox" /></span>
+</span>
+<span><input type="checkbox" /></span>
+
+================================================================================
+`;
+
+exports[`tags.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<br/>
+<br />
+<br  />
+<br
+/>
+<br attribute-a />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute />
+<br attribute-a="value" />
+<br
+  attribute-a="value"
+/>
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value" />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value" />
+<br attribute-a="value" attribute-b="value" attribute-c="value" attribute-d="value" attribute-e="value" attribute-f="value" />
+<div>string</div>
+<div>very very very very very very very very very very very very very very very very long string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute>string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value">string</div>
+<div attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value">string</div>
+<div attribute="value">very very very very very very very very very very very very very very very very long string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">very very very very very very very very very very very very very very very very long string</div>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+<div><div>string</div></div>
+<div><div>string</div><div>string</div></div>
+<div><div><div>string</div></div><div>string</div></div>
+<div><div>string</div><div><div>string</div></div></div>
+<div><div></div></div>
+<div><div></div><div></div></div>
+<div><div><div><div><div><div><div>string</div></div></div></div></div></div></div>
+<div>
+  <div>string</div>
+</div>
+<div>
+
+  <div>string</div>
+
+</div>
+<div>
+
+  <div>string</div>
+
+  <div>string</div>
+
+</div>
+<ul
+  >123<li
+    class="foo"
+    id="bar"
+  >First</li
+  >456<li
+    class="baz"
+  >Second</li
+  >789</ul
+>
+<span>*<b>200</b></span>
+<img src="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong" />123
+<div>123<meta attr/>456</div>
+<p>x<span a="b"></span></p>
+<p>x<meta a></p>
+<p>x<meta></p>
+<span></span>
+
+<label aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa></label> |
+<span></span>
+<br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  >12345678901234567890</button
+> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  >12345678901234567890</button
+> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.</p>
+<li>12345678901234567890123456789012345678901234567890123456789012345678901234567890</li>
+<div>
+<app-nav></app-nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<app-nav [input]="something"></app-nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<app-primary-navigation></app-primary-navigation>
+<router-outlet></router-outlet>
+<app-footer [input]="something"></app-footer>
+</div>
+<x:root><SPAN>tag name in other namespace should also lower cased</SPAN></x:root>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  "<strong>seddoeiusmod</strong>".
+</div>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  <strong>seddoeiusmod</strong>.
+</div>
+<span>
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+</span>
+
+<!-- #5810 -->
+<table><tr>
+</tr>
+</table><div>Should not insert empty line before this div</div>
+
+<!-- self-closing -->
+<span><input type="checkbox"/> </span>
+<span><span><input type="checkbox"/></span></span>
+<span><input type="checkbox"/></span>
+
+=====================================output=====================================
+<br />
+<br />
+<br />
+<br />
+<br attribute-a />
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute
+/>
+<br attribute-a="value" />
+<br attribute-a="value" />
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value"
+/>
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value"
+/>
+<br
+  attribute-a="value"
+  attribute-b="value"
+  attribute-c="value"
+  attribute-d="value"
+  attribute-e="value"
+  attribute-f="value"
+/>
+<div>string</div>
+<div
+  >very very very very very very very very very very very very very very very
+  very long string</div
+>
+<div
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute
+  >string</div
+>
+<div
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value"
+  >string</div
+>
+<div
+  attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value"
+  >string</div
+>
+<div attribute="value"
+  >very very very very very very very very very very very very very very very
+  very long string</div
+>
+<div
+  attribute="value"
+  attributea="value"
+  attributeb="value"
+  attributec="value"
+  attributed="value"
+  attributef="value"
+  >string</div
+>
+<div
+  attribute="value"
+  attributea="value"
+  attributeb="value"
+  attributec="value"
+  attributed="value"
+  attributef="value"
+  >very very very very very very very very very very very very very very very
+  very long string</div
+>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4" />
+  <source src="movie.ogg" type="video/ogg" />
+  Your browser does not support the video tag.
+</video>
+<div><div>string</div></div>
+<div><div>string</div><div>string</div></div>
+<div
+  ><div><div>string</div></div
+  ><div>string</div></div
+>
+<div
+  ><div>string</div><div><div>string</div></div></div
+>
+<div><div></div></div>
+<div><div></div><div></div></div>
+<div
+  ><div
+    ><div
+      ><div
+        ><div
+          ><div><div>string</div></div></div
+        ></div
+      ></div
+    ></div
+  ></div
+>
+<div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+
+  <div>string</div>
+</div>
+<ul
+  >123<li class="foo" id="bar">First</li
+  >456<li class="baz">Second</li
+  >789</ul
+>
+<span>*<b>200</b></span>
+<img
+  src="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+/>123
+<div>123<meta attr />456</div>
+<p>x<span a="b"></span></p>
+<p>x<meta a /></p>
+<p>x<meta /></p>
+<span></span>
+
+<label
+  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+></label>
+|
+<span></span>
+<br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>12345678901234567890</button>
+<br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>12345678901234567890</button>
+<br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.</p>
+<li
+  >12345678901234567890123456789012345678901234567890123456789012345678901234567890</li
+>
+<div>
+  <app-nav></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+  <app-nav [input]="something"></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+  <app-primary-navigation></app-primary-navigation>
+  <router-outlet></router-outlet>
+  <app-footer [input]="something"></app-footer>
+</div>
+<x:root
+  ><span>tag name in other namespace should also lower cased</span></x:root
+>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  "<strong>seddoeiusmod</strong>".
+</div>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  <strong>seddoeiusmod</strong>.
+</div>
+<span>
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+</span>
+
+<!-- #5810 -->
+<table><tr> </tr> </table
+><div>Should not insert empty line before this div</div>
+
+<!-- self-closing -->
+<span><input type="checkbox" /> </span>
+<span
+  ><span><input type="checkbox" /></span
+></span>
+<span><input type="checkbox" /></span>
+
+================================================================================
+`;
+
+exports[`tags.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<br/>
+<br />
+<br  />
+<br
+/>
+<br attribute-a />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute />
+<br attribute-a="value" />
+<br
+  attribute-a="value"
+/>
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value" />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value" />
+<br attribute-a="value" attribute-b="value" attribute-c="value" attribute-d="value" attribute-e="value" attribute-f="value" />
+<div>string</div>
+<div>very very very very very very very very very very very very very very very very long string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute>string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value">string</div>
+<div attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value">string</div>
+<div attribute="value">very very very very very very very very very very very very very very very very long string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">very very very very very very very very very very very very very very very very long string</div>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+<div><div>string</div></div>
+<div><div>string</div><div>string</div></div>
+<div><div><div>string</div></div><div>string</div></div>
+<div><div>string</div><div><div>string</div></div></div>
+<div><div></div></div>
+<div><div></div><div></div></div>
+<div><div><div><div><div><div><div>string</div></div></div></div></div></div></div>
+<div>
+  <div>string</div>
+</div>
+<div>
+
+  <div>string</div>
+
+</div>
+<div>
+
+  <div>string</div>
+
+  <div>string</div>
+
+</div>
+<ul
+  >123<li
+    class="foo"
+    id="bar"
+  >First</li
+  >456<li
+    class="baz"
+  >Second</li
+  >789</ul
+>
+<span>*<b>200</b></span>
+<img src="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong" />123
+<div>123<meta attr/>456</div>
+<p>x<span a="b"></span></p>
+<p>x<meta a></p>
+<p>x<meta></p>
+<span></span>
+
+<label aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa></label> |
+<span></span>
+<br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  >12345678901234567890</button
+> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  >12345678901234567890</button
+> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.</p>
+<li>12345678901234567890123456789012345678901234567890123456789012345678901234567890</li>
+<div>
+<app-nav></app-nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<app-nav [input]="something"></app-nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<app-primary-navigation></app-primary-navigation>
+<router-outlet></router-outlet>
+<app-footer [input]="something"></app-footer>
+</div>
+<x:root><SPAN>tag name in other namespace should also lower cased</SPAN></x:root>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  "<strong>seddoeiusmod</strong>".
+</div>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  <strong>seddoeiusmod</strong>.
+</div>
+<span>
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+</span>
+
+<!-- #5810 -->
+<table><tr>
+</tr>
+</table><div>Should not insert empty line before this div</div>
+
+<!-- self-closing -->
+<span><input type="checkbox"/> </span>
+<span><span><input type="checkbox"/></span></span>
+<span><input type="checkbox"/></span>
+
+=====================================output=====================================
+<br />
+<br />
+<br />
+<br />
+<br attribute-a />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute />
+<br attribute-a="value" />
+<br attribute-a="value" />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value" />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value" />
+<br attribute-a="value" attribute-b="value" attribute-c="value" attribute-d="value" attribute-e="value" attribute-f="value" />
+<div>string</div>
+<div>very very very very very very very very very very very very very very very very long string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute>string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value">string</div>
+<div attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value">string</div>
+<div attribute="value">very very very very very very very very very very very very very very very very long string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">very very very very very very very very very very very very very very very very long string</div>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4" />
+  <source src="movie.ogg" type="video/ogg" />
+  Your browser does not support the video tag.
+</video>
+<div><div>string</div></div>
+<div>
+  <div>string</div>
+  <div>string</div>
+</div>
+<div>
+  <div><div>string</div></div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+  <div><div>string</div></div>
+</div>
+<div><div></div></div>
+<div>
+  <div></div>
+  <div></div>
+</div>
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div><div>string</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+
+  <div>string</div>
+</div>
+<ul>
+  123
+  <li class="foo" id="bar">First</li>
+  456
+  <li class="baz">Second</li>
+  789
+</ul>
+<span>*<b>200</b></span>
+<img src="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong" />123
+<div>123<meta attr />456</div>
+<p>x<span a="b"></span></p>
+<p>x<meta a /></p>
+<p>x<meta /></p>
+<span></span>
+
+<label aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa></label> |
+<span></span>
+<br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>12345678901234567890</button> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)">Disabled Cancel</button>
+<br /><br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>12345678901234567890</button> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)">Disabled Cancel</button>
+<br /><br />
+<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.</p>
+<li>12345678901234567890123456789012345678901234567890123456789012345678901234567890</li>
+<div>
+  <app-nav></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+  <app-nav [input]="something"></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+  <app-primary-navigation></app-primary-navigation>
+  <router-outlet></router-outlet>
+  <app-footer [input]="something"></app-footer>
+</div>
+<x:root><span>tag name in other namespace should also lower cased</span></x:root>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, "<strong>seddoeiusmod</strong>".
+</div>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  <strong>seddoeiusmod</strong>.
+</div>
+<span>
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+</span>
+
+<!-- #5810 -->
+<table>
+  <tr></tr>
+</table>
+<div>Should not insert empty line before this div</div>
+
+<!-- self-closing -->
+<span><input type="checkbox" /> </span>
+<span
+  ><span><input type="checkbox" /></span
+></span>
+<span><input type="checkbox" /></span>
+
+================================================================================
+`;
+
+exports[`tags.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<br/>
+<br />
+<br  />
+<br
+/>
+<br attribute-a />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute />
+<br attribute-a="value" />
+<br
+  attribute-a="value"
+/>
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value" />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value" />
+<br attribute-a="value" attribute-b="value" attribute-c="value" attribute-d="value" attribute-e="value" attribute-f="value" />
+<div>string</div>
+<div>very very very very very very very very very very very very very very very very long string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute>string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value">string</div>
+<div attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value">string</div>
+<div attribute="value">very very very very very very very very very very very very very very very very long string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">very very very very very very very very very very very very very very very very long string</div>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+<div><div>string</div></div>
+<div><div>string</div><div>string</div></div>
+<div><div><div>string</div></div><div>string</div></div>
+<div><div>string</div><div><div>string</div></div></div>
+<div><div></div></div>
+<div><div></div><div></div></div>
+<div><div><div><div><div><div><div>string</div></div></div></div></div></div></div>
+<div>
+  <div>string</div>
+</div>
+<div>
+
+  <div>string</div>
+
+</div>
+<div>
+
+  <div>string</div>
+
+  <div>string</div>
+
+</div>
+<ul
+  >123<li
+    class="foo"
+    id="bar"
+  >First</li
+  >456<li
+    class="baz"
+  >Second</li
+  >789</ul
+>
+<span>*<b>200</b></span>
+<img src="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong" />123
+<div>123<meta attr/>456</div>
+<p>x<span a="b"></span></p>
+<p>x<meta a></p>
+<p>x<meta></p>
+<span></span>
+
+<label aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa></label> |
+<span></span>
+<br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  >12345678901234567890</button
+> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  >12345678901234567890</button
+> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.</p>
+<li>12345678901234567890123456789012345678901234567890123456789012345678901234567890</li>
+<div>
+<app-nav></app-nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<app-nav [input]="something"></app-nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<app-primary-navigation></app-primary-navigation>
+<router-outlet></router-outlet>
+<app-footer [input]="something"></app-footer>
+</div>
+<x:root><SPAN>tag name in other namespace should also lower cased</SPAN></x:root>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  "<strong>seddoeiusmod</strong>".
+</div>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  <strong>seddoeiusmod</strong>.
+</div>
+<span>
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+</span>
+
+<!-- #5810 -->
+<table><tr>
+</tr>
+</table><div>Should not insert empty line before this div</div>
+
+<!-- self-closing -->
+<span><input type="checkbox"/> </span>
+<span><span><input type="checkbox"/></span></span>
+<span><input type="checkbox"/></span>
+
+=====================================output=====================================
+<br />
+<br />
+<br />
+<br />
+<br
+  attribute-a
+/>
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute
+/>
+<br
+  attribute-a="value"
+/>
+<br
+  attribute-a="value"
+/>
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value"
+/>
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value"
+/>
+<br
+  attribute-a="value"
+  attribute-b="value"
+  attribute-c="value"
+  attribute-d="value"
+  attribute-e="value"
+  attribute-f="value"
+/>
+<div>
+  string
+</div>
+<div>
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  long
+  string
+</div>
+<div
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute
+>
+  string
+</div>
+<div
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value"
+>
+  string
+</div>
+<div
+  attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value"
+>
+  string
+</div>
+<div
+  attribute="value"
+>
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  long
+  string
+</div>
+<div
+  attribute="value"
+  attributea="value"
+  attributeb="value"
+  attributec="value"
+  attributed="value"
+  attributef="value"
+>
+  string
+</div>
+<div
+  attribute="value"
+  attributea="value"
+  attributeb="value"
+  attributec="value"
+  attributed="value"
+  attributef="value"
+>
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  very
+  long
+  string
+</div>
+<video
+  width="320"
+  height="240"
+  controls
+>
+  <source
+    src="movie.mp4"
+    type="video/mp4"
+  />
+  <source
+    src="movie.ogg"
+    type="video/ogg"
+  />
+  Your
+  browser
+  does
+  not
+  support
+  the
+  video
+  tag.
+</video>
+<div>
+  <div>
+    string
+  </div>
+</div>
+<div>
+  <div>
+    string
+  </div>
+  <div>
+    string
+  </div>
+</div>
+<div>
+  <div>
+    <div>
+      string
+    </div>
+  </div>
+  <div>
+    string
+  </div>
+</div>
+<div>
+  <div>
+    string
+  </div>
+  <div>
+    <div>
+      string
+    </div>
+  </div>
+</div>
+<div>
+  <div></div>
+</div>
+<div>
+  <div></div>
+  <div></div>
+</div>
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              string
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div>
+    string
+  </div>
+</div>
+<div>
+  <div>
+    string
+  </div>
+</div>
+<div>
+  <div>
+    string
+  </div>
+
+  <div>
+    string
+  </div>
+</div>
+<ul>
+  123
+  <li
+    class="foo"
+    id="bar"
+  >
+    First
+  </li>
+  456
+  <li
+    class="baz"
+  >
+    Second
+  </li>
+  789
+</ul>
+<span
+  >*<b
+    >200</b
+  ></span
+>
+<img
+  src="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+/>123
+<div>
+  123<meta
+    attr
+  />456
+</div>
+<p>
+  x<span
+    a="b"
+  ></span>
+</p>
+<p>
+  x<meta
+    a
+  />
+</p>
+<p>
+  x<meta />
+</p>
+<span></span>
+
+<label
+  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+></label>
+|
+<span></span>
+<br />
+<button
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+>
+  12345678901234567890
+</button>
+<br /><br />
+
+<button
+  bind-disabled="isUnchanged"
+  on-click="onSave($event)"
+>
+  Disabled
+  Cancel
+</button>
+<br /><br />
+<button
+  xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+>
+  12345678901234567890
+</button>
+<br /><br />
+
+<button
+  bind-disabled="isUnchanged"
+  on-click="onSave($event)"
+>
+  Disabled
+  Cancel
+</button>
+<br /><br />
+<p>
+  "<span
+    [innerHTML]="title"
+  ></span
+  >"
+  is
+  the
+  <i
+    >property
+    bound</i
+  >
+  title.
+</p>
+<li>
+  12345678901234567890123456789012345678901234567890123456789012345678901234567890
+</li>
+<div>
+  <app-nav></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+  <app-nav
+    [input]="something"
+  ></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+  <app-primary-navigation></app-primary-navigation>
+  <router-outlet></router-outlet>
+  <app-footer
+    [input]="something"
+  ></app-footer>
+</div>
+<x:root
+  ><span
+    >tag
+    name
+    in
+    other
+    namespace
+    should
+    also
+    lower
+    cased</span
+  ></x:root
+>
+<div>
+  Lorem
+  ipsum
+  dolor
+  sit
+  amet,
+  consectetur
+  adipiscing
+  elit,
+  "<strong>seddoeiusmod</strong>".
+</div>
+<div>
+  Lorem
+  ipsum
+  dolor
+  sit
+  amet,
+  consectetur
+  adipiscing
+  elit,
+  <strong
+    >seddoeiusmod</strong
+  >.
+</div>
+<span>
+  <i
+    class="fa fa-refresh fa-spin"
+  />
+  <i
+    class="fa fa-refresh fa-spin"
+  />
+  <i
+    class="fa fa-refresh fa-spin"
+  />
+</span>
+
+<!-- #5810 -->
+<table>
+  <tr></tr>
+</table>
+<div>
+  Should
+  not
+  insert
+  empty
+  line
+  before
+  this
+  div
+</div>
+
+<!-- self-closing -->
+<span
+  ><input
+    type="checkbox"
+  />
+</span>
+<span
+  ><span
+    ><input
+      type="checkbox" /></span
+></span>
+<span
+  ><input
+    type="checkbox"
+/></span>
+
+================================================================================
+`;
+
+exports[`tags.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<br/>
+<br />
+<br  />
+<br
+/>
+<br attribute-a />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute />
+<br attribute-a="value" />
+<br
+  attribute-a="value"
+/>
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value" />
+<br very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value" />
+<br attribute-a="value" attribute-b="value" attribute-c="value" attribute-d="value" attribute-e="value" attribute-f="value" />
+<div>string</div>
+<div>very very very very very very very very very very very very very very very very long string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute>string</div>
+<div very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value">string</div>
+<div attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value">string</div>
+<div attribute="value">very very very very very very very very very very very very very very very very long string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">string</div>
+<div attribute="value" attributea="value" attributeb="value" attributec="value" attributed="value" attributef="value">very very very very very very very very very very very very very very very very long string</div>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
+<div><div>string</div></div>
+<div><div>string</div><div>string</div></div>
+<div><div><div>string</div></div><div>string</div></div>
+<div><div>string</div><div><div>string</div></div></div>
+<div><div></div></div>
+<div><div></div><div></div></div>
+<div><div><div><div><div><div><div>string</div></div></div></div></div></div></div>
+<div>
+  <div>string</div>
+</div>
+<div>
+
+  <div>string</div>
+
+</div>
+<div>
+
+  <div>string</div>
+
+  <div>string</div>
+
+</div>
+<ul
+  >123<li
+    class="foo"
+    id="bar"
+  >First</li
+  >456<li
+    class="baz"
+  >Second</li
+  >789</ul
+>
+<span>*<b>200</b></span>
+<img src="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong" />123
+<div>123<meta attr/>456</div>
+<p>x<span a="b"></span></p>
+<p>x<meta a></p>
+<p>x<meta></p>
+<span></span>
+
+<label aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa></label> |
+<span></span>
+<br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  >12345678901234567890</button
+> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  >12345678901234567890</button
+> <br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)"
+  >Disabled Cancel</button
+>
+<br /><br />
+<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.</p>
+<li>12345678901234567890123456789012345678901234567890123456789012345678901234567890</li>
+<div>
+<app-nav></app-nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<app-nav [input]="something"></app-nav>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<app-primary-navigation></app-primary-navigation>
+<router-outlet></router-outlet>
+<app-footer [input]="something"></app-footer>
+</div>
+<x:root><SPAN>tag name in other namespace should also lower cased</SPAN></x:root>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  "<strong>seddoeiusmod</strong>".
+</div>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  <strong>seddoeiusmod</strong>.
+</div>
+<span>
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+</span>
+
+<!-- #5810 -->
+<table><tr>
+</tr>
+</table><div>Should not insert empty line before this div</div>
+
+<!-- self-closing -->
+<span><input type="checkbox"/> </span>
+<span><span><input type="checkbox"/></span></span>
+<span><input type="checkbox"/></span>
+
+=====================================output=====================================
+<br />
+<br />
+<br />
+<br />
+<br attribute-a />
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute
+/>
+<br attribute-a="value" />
+<br attribute-a="value" />
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value"
+/>
+<br
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value"
+/>
+<br
+  attribute-a="value"
+  attribute-b="value"
+  attribute-c="value"
+  attribute-d="value"
+  attribute-e="value"
+  attribute-f="value"
+/>
+<div>string</div>
+<div>
+  very very very very very very very very very very very very very very very
+  very long string
+</div>
+<div
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute
+>
+  string
+</div>
+<div
+  very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-attribute="value"
+>
+  string
+</div>
+<div
+  attribute="very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-value"
+>
+  string
+</div>
+<div attribute="value">
+  very very very very very very very very very very very very very very very
+  very long string
+</div>
+<div
+  attribute="value"
+  attributea="value"
+  attributeb="value"
+  attributec="value"
+  attributed="value"
+  attributef="value"
+>
+  string
+</div>
+<div
+  attribute="value"
+  attributea="value"
+  attributeb="value"
+  attributec="value"
+  attributed="value"
+  attributef="value"
+>
+  very very very very very very very very very very very very very very very
+  very long string
+</div>
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4" />
+  <source src="movie.ogg" type="video/ogg" />
+  Your browser does not support the video tag.
+</video>
+<div><div>string</div></div>
+<div>
+  <div>string</div>
+  <div>string</div>
+</div>
+<div>
+  <div><div>string</div></div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+  <div><div>string</div></div>
+</div>
+<div><div></div></div>
+<div>
+  <div></div>
+  <div></div>
+</div>
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div><div>string</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+</div>
+<div>
+  <div>string</div>
+
+  <div>string</div>
+</div>
+<ul>
+  123
+  <li class="foo" id="bar">First</li>
+  456
+  <li class="baz">Second</li>
+  789
+</ul>
+<span>*<b>200</b></span>
+<img
+  src="longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong"
+/>123
+<div>123<meta attr />456</div>
+<p>x<span a="b"></span></p>
+<p>x<meta a /></p>
+<p>x<meta /></p>
+<span></span>
+
+<label
+  aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+></label>
+|
+<span></span>
+<br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>12345678901234567890</button>
+<br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)">
+  Disabled Cancel
+</button>
+<br /><br />
+<button xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx>12345678901234567890</button>
+<br /><br />
+
+<button bind-disabled="isUnchanged" on-click="onSave($event)">
+  Disabled Cancel
+</button>
+<br /><br />
+<p>"<span [innerHTML]="title"></span>" is the <i>property bound</i> title.</p>
+<li>
+  12345678901234567890123456789012345678901234567890123456789012345678901234567890
+</li>
+<div>
+  <app-nav></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+  <app-nav [input]="something"></app-nav>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+
+  <app-primary-navigation></app-primary-navigation>
+  <router-outlet></router-outlet>
+  <app-footer [input]="something"></app-footer>
+</div>
+<x:root
+  ><span>tag name in other namespace should also lower cased</span></x:root
+>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  "<strong>seddoeiusmod</strong>".
+</div>
+<div>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+  <strong>seddoeiusmod</strong>.
+</div>
+<span>
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+  <i class="fa fa-refresh fa-spin" />
+</span>
+
+<!-- #5810 -->
+<table>
+  <tr></tr>
+</table>
+<div>Should not insert empty line before this div</div>
+
+<!-- self-closing -->
+<span><input type="checkbox" /> </span>
+<span
+  ><span><input type="checkbox" /></span
+></span>
+<span><input type="checkbox" /></span>
+
+================================================================================
+`;
+
+exports[`textarea.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <textarea rows="10" cols="45" name="text">
+                        String
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<textarea></textarea>
+
+<div><textarea>lorem ipsum</textarea></div>
+
+=====================================output=====================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <textarea rows="10" cols="45" name="text">
+                        String
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<textarea></textarea>
+
+<div><textarea>lorem ipsum</textarea></div>
+
+================================================================================
+`;
+
+exports[`textarea.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <textarea rows="10" cols="45" name="text">
+                        String
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<textarea></textarea>
+
+<div><textarea>lorem ipsum</textarea></div>
+
+=====================================output=====================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <textarea rows="10" cols="45" name="text">
+                        String
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<textarea></textarea>
+
+<div><textarea>lorem ipsum</textarea></div>
+
+================================================================================
+`;
+
+exports[`textarea.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <textarea rows="10" cols="45" name="text">
+                        String
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<textarea></textarea>
+
+<div><textarea>lorem ipsum</textarea></div>
+
+=====================================output=====================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <textarea rows="10" cols="45" name="text">
+                        String
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<textarea></textarea>
+
+<div><textarea>lorem ipsum</textarea></div>
+
+================================================================================
+`;
+
+exports[`textarea.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <textarea rows="10" cols="45" name="text">
+                        String
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<textarea></textarea>
+
+<div><textarea>lorem ipsum</textarea></div>
+
+=====================================output=====================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <textarea
+                          rows="10"
+                          cols="45"
+                          name="text"
+                        >
+                        String
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<textarea></textarea>
+
+<div>
+  <textarea>
+lorem ipsum</textarea
+  >
+</div>
+
+================================================================================
+`;
+
+exports[`textarea.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <textarea rows="10" cols="45" name="text">
+                        String
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<textarea></textarea>
+
+<div><textarea>lorem ipsum</textarea></div>
+
+=====================================output=====================================
+<div>
+  <div>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <textarea rows="10" cols="45" name="text">
+                        String
+                        </textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<textarea></textarea>
+
+<div><textarea>lorem ipsum</textarea></div>
+
+================================================================================
+`;
+
+exports[`unsupported.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "ignore"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<center></center>
+
+=====================================output=====================================
+<center></center>
+
+================================================================================
+`;
+
+exports[`unsupported.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
+====================================options=====================================
+htmlWhitespaceSensitivity: "strict"
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<center></center>
+
+=====================================output=====================================
+<center></center>
+
+================================================================================
+`;
+
+exports[`unsupported.html - {"printWidth":"Infinity"} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: Infinity
+=====================================input======================================
+<center></center>
+
+=====================================output=====================================
+<center></center>
+
+================================================================================
+`;
+
+exports[`unsupported.html - {"printWidth":1} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 1
+ | printWidth
+=====================================input======================================
+<center></center>
+
+=====================================output=====================================
+<center></center>
+
+================================================================================
+`;
+
+exports[`unsupported.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<center></center>
+
+=====================================output=====================================
+<center></center>
+
+================================================================================
+`;

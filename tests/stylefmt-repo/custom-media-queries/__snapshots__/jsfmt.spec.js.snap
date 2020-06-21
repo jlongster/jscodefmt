@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom-media-queries.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+@custom-media     --small-viewport ( max-width:30em   )
+
+
+;
+
+@media (      --small-viewport    ){
+.rule{color:blue;}
+}
+
+=====================================output=====================================
+@custom-media --small-viewport (max-width: 30em);
+
+@media (--small-viewport) {
+  .rule {
+    color: blue;
+  }
+}
+
+================================================================================
+`;

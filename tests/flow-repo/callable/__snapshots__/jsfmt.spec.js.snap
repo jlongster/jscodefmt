@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`optional.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type F = {
+  (x: string): number;
+  p?: string;
+}
+
+function f(x) {
+  return x.length;
+}
+
+(f: F);
+
+=====================================output=====================================
+type F = {
+  (x: string): number,
+  p?: string,
+};
+
+function f(x) {
+  return x.length;
+}
+
+(f: F);
+
+================================================================================
+`;
+
+exports[`primitives.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var x = Boolean(4);
+function foo(fn:(value:any)=>boolean) { }
+foo(Boolean);
+
+var dict: { [k: string]: any } = {};
+dict(); // error, callable signature not found
+
+interface ICall {
+  (x: string): void;
+}
+declare var icall: ICall;
+icall(0); // error, number ~> string
+icall.call(null, 0); // error, number ~> string
+
+type Callable = {
+  (x: string): void;
+}
+
+declare var callable: Callable;
+callable(0); // error, number ~> string
+callable.call(null, 0); // error, number ~> string
+
+=====================================output=====================================
+var x = Boolean(4);
+function foo(fn: (value: any) => boolean) {}
+foo(Boolean);
+
+var dict: { [k: string]: any } = {};
+dict(); // error, callable signature not found
+
+interface ICall {
+  (x: string): void;
+}
+declare var icall: ICall;
+icall(0); // error, number ~> string
+icall.call(null, 0); // error, number ~> string
+
+type Callable = {
+  (x: string): void,
+};
+
+declare var callable: Callable;
+callable(0); // error, number ~> string
+callable.call(null, 0); // error, number ~> string
+
+================================================================================
+`;

@@ -1,2 +1,2 @@
-var x = 'this should be formatterd';
+var x = 'this should be formatted';
 

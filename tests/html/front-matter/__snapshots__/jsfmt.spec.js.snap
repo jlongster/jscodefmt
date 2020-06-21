@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom-parser.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+---mycustomparser
+  
+title: Hello
+slug: home
+
+---
+
+<h1>
+  Hello world!</h1>
+
+=====================================output=====================================
+---mycustomparser
+  
+title: Hello
+slug: home
+
+---
+
+<h1>
+  Hello world!
+</h1>
+
+================================================================================
+`;

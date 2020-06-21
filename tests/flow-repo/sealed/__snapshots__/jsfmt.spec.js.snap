@@ -1,0 +1,115 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`function.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function Bar(x: number) {
+  this.x = x;
+}
+Bar.prototype.getX = function() { return this.x; }
+Bar.prototype.getY = function(): string { return this.y; }
+
+module.exports = Bar;
+
+=====================================output=====================================
+/* @flow */
+
+function Bar(x: number) {
+  this.x = x;
+}
+Bar.prototype.getX = function () {
+  return this.x;
+};
+Bar.prototype.getY = function (): string {
+  return this.y;
+};
+
+module.exports = Bar;
+
+================================================================================
+`;
+
+exports[`proto.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function Foo() { }
+var o = new Foo();
+var x:number = o.x;
+
+Foo.prototype.m = function() { return this.x; }
+
+var y:number = o.m();
+o.x = "...";
+
+Foo.prototype = { m: function() { return false; } }
+
+var export_o: { x:any; } = o; // awkward type cast
+
+module.exports = export_o;
+
+=====================================output=====================================
+function Foo() {}
+var o = new Foo();
+var x: number = o.x;
+
+Foo.prototype.m = function () {
+  return this.x;
+};
+
+var y: number = o.m();
+o.x = "...";
+
+Foo.prototype = {
+  m: function () {
+    return false;
+  },
+};
+
+var export_o: { x: any } = o; // awkward type cast
+
+module.exports = export_o;
+
+================================================================================
+`;
+
+exports[`sealed.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var o = require('./proto');
+
+o.z = 0;
+var x:string = o.x;
+
+var Bar = require('./function');
+var a = new Bar(234);
+a.x = 123;
+a.y = 'abc'; // error, needs to be declared in Bar's constructor
+(a.getX(): number);
+(a.getY(): string);
+
+=====================================output=====================================
+var o = require("./proto");
+
+o.z = 0;
+var x: string = o.x;
+
+var Bar = require("./function");
+var a = new Bar(234);
+a.x = 123;
+a.y = "abc"; // error, needs to be declared in Bar's constructor
+(a.getX(): number);
+(a.getY(): string);
+
+================================================================================
+`;

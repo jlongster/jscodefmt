@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`array.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var a = ["..."];
+var b = a.map (function (x) { return 0; });
+var c: string = b[0]; // error: number !~> string
+
+var array = [];
+function f() {
+    array = array.map (function () { return "..."; });
+    var x:number = array[0]; // error: string !~> number
+}
+
+var Foo = require('./genericfoo');
+var foo = new Foo();
+function g() {
+    var foo1 = foo.map (function() { return "..."; });
+    var x:number = foo1.get(); // error: string !~> number
+    foo = foo1;
+}
+
+=====================================output=====================================
+var a = ["..."];
+var b = a.map(function (x) {
+  return 0;
+});
+var c: string = b[0]; // error: number !~> string
+
+var array = [];
+function f() {
+  array = array.map(function () {
+    return "...";
+  });
+  var x: number = array[0]; // error: string !~> number
+}
+
+var Foo = require("./genericfoo");
+var foo = new Foo();
+function g() {
+  var foo1 = foo.map(function () {
+    return "...";
+  });
+  var x: number = foo1.get(); // error: string !~> number
+  foo = foo1;
+}
+
+================================================================================
+`;
+
+exports[`genericfoo.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class Foo<T> {
+    x:T;
+    self():Foo<T> { return this; }
+    map<U>(callbackfn: () => U): Foo<U> { return new Foo(); }
+    set(x:T): void { }
+    get(): T { return this.x; }
+}
+
+module.exports = Foo;
+
+=====================================output=====================================
+class Foo<T> {
+  x: T;
+  self(): Foo<T> {
+    return this;
+  }
+  map<U>(callbackfn: () => U): Foo<U> {
+    return new Foo();
+  }
+  set(x: T): void {}
+  get(): T {
+    return this.x;
+  }
+}
+
+module.exports = Foo;
+
+================================================================================
+`;

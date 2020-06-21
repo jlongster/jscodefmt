@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`trailing-commas.js - {"trailingComma":"all"} format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow"]
+printWidth: 80
+trailingComma: "all"
+                                                                                | printWidth
+=====================================input======================================
+declare class C {
+  f(
+    superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,
+    ...args
+  ): void,
+}
+
+function f(
+  superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,
+  ...args
+) {}
+
+declare class C { f(...superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong): void; }
+
+[superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,,];
+
+[veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong, ...a] = [];
+var {veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong, ...a} = {};
+
+
+=====================================output=====================================
+declare class C {
+  f(
+    superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,
+    ...args
+  ): void;
+}
+
+function f(
+  superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,
+  ...args
+) {}
+
+declare class C {
+  f(
+    ...superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong
+  ): void;
+}
+
+[
+  superSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong,
+  ,
+];
+
+[
+  veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong,
+  ...a
+] = [];
+var {
+  veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLong,
+  ...a
+} = {};
+
+================================================================================
+`;

@@ -1,0 +1,170 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`arrays.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function foo(x) { return [x, x > 0, "number " + x]; }
+
+var [n, b, s] = foo(42);
+n * s.length;
+
+=====================================output=====================================
+function foo(x) {
+  return [x, x > 0, "number " + x];
+}
+
+var [n, b, s] = foo(42);
+n * s.length;
+
+================================================================================
+`;
+
+exports[`export_class.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class C {
+    x: number;
+    constructor(x: number) { this.x = x; }
+}
+
+module.exports = C;
+
+=====================================output=====================================
+class C {
+  x: number;
+  constructor(x: number) {
+    this.x = x;
+  }
+}
+
+module.exports = C;
+
+================================================================================
+`;
+
+exports[`generics.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+var r: number = 0;
+function foo<X>(x: X): X { r = x; return x; }
+
+=====================================output=====================================
+/* @flow */
+
+var r: number = 0;
+function foo<X>(x: X): X {
+  r = x;
+  return x;
+}
+
+================================================================================
+`;
+
+exports[`import_class.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var C = require('./export_class');
+
+var c = new C("");
+
+=====================================output=====================================
+var C = require("./export_class");
+
+var c = new C("");
+
+================================================================================
+`;
+
+exports[`locals.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+
+function foo() {
+    var x = 0;
+    var y = x;
+}
+
+function bar(x: ?string): number {
+    if (x == null) x = "";
+    return x.length;
+}
+
+=====================================output=====================================
+/* @flow */
+
+function foo() {
+  var x = 0;
+  var y = x;
+}
+
+function bar(x: ?string): number {
+  if (x == null) x = "";
+  return x.length;
+}
+
+================================================================================
+`;
+
+exports[`objects.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function C() { this.x = 0; }
+C.prototype.foo = function() { return this.x; }
+
+var c = new C();
+var x: string = c.foo();
+
+function foo() { return this.y; }
+function bar() { return this.foo(); }
+var o = { y: "", foo: foo, bar: bar };
+var o2 = { y: 0, foo: foo, bar: bar };
+
+o.bar();
+var y: number = o2.bar();
+
+=====================================output=====================================
+function C() {
+  this.x = 0;
+}
+C.prototype.foo = function () {
+  return this.x;
+};
+
+var c = new C();
+var x: string = c.foo();
+
+function foo() {
+  return this.y;
+}
+function bar() {
+  return this.foo();
+}
+var o = { y: "", foo: foo, bar: bar };
+var o2 = { y: 0, foo: foo, bar: bar };
+
+o.bar();
+var y: number = o2.bar();
+
+================================================================================
+`;

@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`e1.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+export type Action =
+  | { type: 'QUX' }
+  | { type: 'BAR' }
+;
+
+export const LIFE = 0;
+
+=====================================output=====================================
+// @flow
+
+export type Action = { type: "QUX" } | { type: "BAR" };
+
+export const LIFE = 0;
+
+================================================================================
+`;
+
+exports[`e2.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+import type { Action } from './e1';
+
+const f = (): Action => {
+  return { type: 'QUX' };
+}
+
+import { LIFE } from './e1';
+
+(LIFE: 0);
+
+=====================================output=====================================
+// @flow
+
+import type { Action } from "./e1";
+
+const f = (): Action => {
+  return { type: "QUX" };
+};
+
+import { LIFE } from "./e1";
+
+(LIFE: 0);
+
+================================================================================
+`;

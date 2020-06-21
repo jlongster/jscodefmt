@@ -1,0 +1,799 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`abstract_class.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+abstract class AbstractRule {
+    /**
+     * @deprecated
+     * Failures will be filtered based on \`tslint:disable\` comments by tslint.
+     * This method now does nothing.
+     */
+    filterFailures() {}
+}
+
+=====================================output=====================================
+abstract class AbstractRule {
+  /**
+   * @deprecated
+   * Failures will be filtered based on \`tslint:disable\` comments by tslint.
+   * This method now does nothing.
+   */
+  filterFailures() {}
+}
+
+================================================================================
+`;
+
+exports[`after_jsx_generic.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+let comp = (
+  <>
+    <Component<number> /* comment1 */></Component>
+    <Component<number> foo /* comment2 */></Component>
+    <Component<number> /* comment3 */ bar></Component>
+    <Component<number> foo /* comment4 */ bar></Component>
+
+    <Component<number>
+      // comment5
+    ></Component>
+    <Component<number>
+      foo
+      // comment6
+    ></Component>
+    <Component<number>
+      // comment7
+      foo
+    ></Component>
+    <Component<number>
+      foo
+      // comment8
+      bar
+    ></Component>
+  </>
+);
+
+=====================================output=====================================
+let comp = (
+  <>
+    <Component<number> /* comment1 */></Component>
+    <Component<number> foo /* comment2 */></Component>
+    <Component<number> /* comment3 */ bar></Component>
+    <Component<number> foo /* comment4 */ bar></Component>
+
+    <Component<number>
+    // comment5
+    ></Component>
+    <Component<number>
+      foo
+      // comment6
+    ></Component>
+    <Component<number>
+      // comment7
+      foo
+    ></Component>
+    <Component<number>
+      foo
+      // comment8
+      bar
+    ></Component>
+  </>
+);
+
+================================================================================
+`;
+
+exports[`declare_function.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+declare function fn(
+  currentRequest: {a: number},
+  // TODO this is a very very very very long comment that makes it go > 80 columns
+): number;
+
+declare function /* foo */ f( /* baz */ a /* taz */) /* bar */;
+=====================================output=====================================
+declare function fn(
+  currentRequest: { a: number }
+  // TODO this is a very very very very long comment that makes it go > 80 columns
+): number;
+
+declare function /* foo */ f(/* baz */ a /* taz */); /* bar */
+
+================================================================================
+`;
+
+exports[`interface.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+interface Foo {
+  bar(
+    currentRequest: {a: number},
+    // TODO this is a very very very very long comment that makes it go > 80 columns
+  ): number;
+
+  (
+    currentRequest: {a: number},
+    // TODO this is a very very very very long comment that makes it go > 80 columns
+  ): number;
+
+  new (
+    currentRequest: {a: number},
+    // TODO this is a very very very very long comment that makes it go > 80 columns
+  ): number;
+
+  foo: {
+    x(
+      currentRequest: {a: number},
+      // TODO this is a very very very very long comment that makes it go > 80 columns
+    ): number;
+
+    y: (
+      currentRequest: {a: number},
+      // TODO this is a very very very very long comment that makes it go > 80 columns
+    ) => number;
+  }
+}
+
+=====================================output=====================================
+interface Foo {
+  bar(
+    currentRequest: { a: number }
+    // TODO this is a very very very very long comment that makes it go > 80 columns
+  ): number;
+
+  (
+    currentRequest: { a: number }
+    // TODO this is a very very very very long comment that makes it go > 80 columns
+  ): number;
+
+  new (
+    currentRequest: { a: number }
+    // TODO this is a very very very very long comment that makes it go > 80 columns
+  ): number;
+
+  foo: {
+    x(
+      currentRequest: { a: number }
+      // TODO this is a very very very very long comment that makes it go > 80 columns
+    ): number;
+
+    y: (
+      currentRequest: { a: number }
+      // TODO this is a very very very very long comment that makes it go > 80 columns
+    ) => number;
+  };
+}
+
+================================================================================
+`;
+
+exports[`issues.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// Adding a comment stops the pretty printing process and everything is
+// squished in a single line afterward
+export type BuckWebSocketMessage = {
+  // Not actually from Buck - this is to let the receiver know that the socket is connected.
+  type: 'SocketConnected',
+} | {
+  type: 'BuildProgressUpdated',
+  progressValue: number,
+} | {
+  type: 'BuildFinished',
+  exitCode: number,
+} | {
+  type: 'BuildStarted',
+} | {
+  type: 'ParseStarted',
+} | {
+  type: 'ParseFinished',
+} | {
+  type: 'RunStarted',
+} | {
+  type: 'RunComplete',
+};
+
+// Two extra levels of indentation because of the comment
+export type AsyncExecuteOptions = child_process$execFileOpts & {
+  // The contents to write to stdin.
+  stdin?: string,
+  dontLogInNuclide?: boolean,
+};
+
+=====================================output=====================================
+// Adding a comment stops the pretty printing process and everything is
+// squished in a single line afterward
+export type BuckWebSocketMessage =
+  | {
+      // Not actually from Buck - this is to let the receiver know that the socket is connected.
+      type: "SocketConnected";
+    }
+  | {
+      type: "BuildProgressUpdated";
+      progressValue: number;
+    }
+  | {
+      type: "BuildFinished";
+      exitCode: number;
+    }
+  | {
+      type: "BuildStarted";
+    }
+  | {
+      type: "ParseStarted";
+    }
+  | {
+      type: "ParseFinished";
+    }
+  | {
+      type: "RunStarted";
+    }
+  | {
+      type: "RunComplete";
+    };
+
+// Two extra levels of indentation because of the comment
+export type AsyncExecuteOptions = child_process$execFileOpts & {
+  // The contents to write to stdin.
+  stdin?: string;
+  dontLogInNuclide?: boolean;
+};
+
+================================================================================
+`;
+
+exports[`jsx.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var example1 = <div>
+	https://test
+</div>;
+
+var example2 = <div>
+	/*test*/
+</div>;
+
+=====================================output=====================================
+var example1 = <div>https://test</div>;
+
+var example2 = <div>/*test*/</div>;
+
+================================================================================
+`;
+
+exports[`location.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function x({
+  x,
+  y,
+}: {
+  // Hello world.
+  x: string,
+  // Yoyo.
+  y: string,
+}) {}
+
+export interface ApplicationEventData {
+  registerBroadcastReceiver(onReceiveCallback: (
+    context: any /* android.content.Context */,
+    intent: any /* android.content.Intent */
+  ) => void): void;
+}
+
+export type WrappedFormUtils = {
+  getFieldDecorator(id: string, options?: {
+    /** 子节点的值的属性，如 Checkbox 的是 'checked' */
+    valuePropName?: string;
+    /** 子节点的初始值，类型、可选值均由子节点决定 */
+    initialValue?: any;
+    /** 收集子节点的值的时机 */
+    trigger?: string;
+    /** 可以把 onChange 的参数转化为控件的值，例如 DatePicker 可设为：(date, dateString) => dateString */
+    getValueFromEvent?: (...args: any[]) => any;
+    /** 校验子节点值的时机 */
+    validateTrigger?: string | string[];
+    /** 校验规则，参见 [async-validator](https://github.com/yiminghe/async-validator) */
+    rules?: ValidationRule[];
+    /** 是否和其他控件互斥，特别用于 Radio 单选控件 */
+    exclusive?: boolean;
+  }): (node: React.ReactNode) => React.ReactNode;
+};
+
+=====================================output=====================================
+function x({
+  x,
+  y,
+}: {
+  // Hello world.
+  x: string;
+  // Yoyo.
+  y: string;
+}) {}
+
+export interface ApplicationEventData {
+  registerBroadcastReceiver(
+    onReceiveCallback: (
+      context: any /* android.content.Context */,
+      intent: any /* android.content.Intent */
+    ) => void
+  ): void;
+}
+
+export type WrappedFormUtils = {
+  getFieldDecorator(
+    id: string,
+    options?: {
+      /** 子节点的值的属性，如 Checkbox 的是 'checked' */
+      valuePropName?: string;
+      /** 子节点的初始值，类型、可选值均由子节点决定 */
+      initialValue?: any;
+      /** 收集子节点的值的时机 */
+      trigger?: string;
+      /** 可以把 onChange 的参数转化为控件的值，例如 DatePicker 可设为：(date, dateString) => dateString */
+      getValueFromEvent?: (...args: any[]) => any;
+      /** 校验子节点值的时机 */
+      validateTrigger?: string | string[];
+      /** 校验规则，参见 [async-validator](https://github.com/yiminghe/async-validator) */
+      rules?: ValidationRule[];
+      /** 是否和其他控件互斥，特别用于 Radio 单选控件 */
+      exclusive?: boolean;
+    }
+  ): (node: React.ReactNode) => React.ReactNode;
+};
+
+================================================================================
+`;
+
+exports[`mapped_types.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type A = {
+  // commentA
+  [a in A]: string;
+}
+
+type B = {
+  /* commentB */ [b in B]: string
+}
+
+type C = {
+  [/* commentC */ c in C]: string
+}
+
+type D = {
+  [d /* commentD */ in D]: string
+}
+
+type E = {
+  [e in /* commentE */ E]: string
+}
+
+type F = {
+  [f in F /* commentF */]: string
+}
+
+type G = {
+  [g in G] /* commentG */: string
+}
+
+type H = { /* commentH */ [h in H]: string }
+
+type I = { [/* commentI */ i in I]: string }
+
+type J = { [j /* commentJ */ in J]: string }
+
+type K = { [k in /* commentK */ K]: string }
+
+type L = { [l in L /* commentL */]: string }
+
+type M = { [m in M] /* commentG */: string }
+
+=====================================output=====================================
+type A = {
+  // commentA
+  [a in A]: string;
+};
+
+type B = {
+  /* commentB */ [b in B]: string;
+};
+
+type C = {
+  [/* commentC */ c in C]: string;
+};
+
+type D = {
+  [d /* commentD */ in D]: string;
+};
+
+type E = {
+  [e in /* commentE */ E]: string;
+};
+
+type F = {
+  [f in F /* commentF */]: string;
+};
+
+type G = {
+  [g in G /* commentG */]: string;
+};
+
+type H = { [/* commentH */ h in H]: string };
+
+type I = { [/* commentI */ i in I]: string };
+
+type J = { [j /* commentJ */ in J]: string };
+
+type K = { [k in /* commentK */ K]: string };
+
+type L = { [l in L /* commentL */]: string };
+
+type M = { [m in M /* commentG */]: string };
+
+================================================================================
+`;
+
+exports[`method_types.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+interface foo1 {
+  bar3/* foo */ (/* baz */) // bat
+  bar/* foo */ ? /* bar */ (/* baz */) /* bat */;
+  bar2/* foo */ (/* baz */) /* bat */
+}
+
+interface foo2 {
+  bar/* foo */ ? /* bar */ (bar: /* baz */ string): /* bat */ string;
+}
+
+interface foo3 {
+  /* foo */ (/* bar */): /* baz */ string;
+}
+
+interface foo4 {
+  /* foo */ (bar: /* bar */ string): /* baz */ string;
+}
+
+interface foo5 {
+  /* foo */ new /* bar */  (a: /* baz */ string): /* bat */ string
+}
+
+interface foo6 {
+  /* foo */ new /* bar */ (/* baz */): /* bat */ string
+}
+
+type foo7 = /* foo */ (/* bar */) /* baz */ => void
+
+type foo8 = /* foo */ (a: /* bar */ string) /* baz */ => void
+
+let foo9: new /* foo */ (/* bar */) /* baz */ => string;
+
+let foo10: new /* foo */ (a: /* bar */ string) /* baz */ => string;
+
+abstract class Test {
+  abstract foo12 /* foo */ (a: /* bar */ string): /* baz */ void
+
+  abstract foo13 /* foo */ (/* bar */) /* baz */
+}
+
+=====================================output=====================================
+interface foo1 {
+  bar3 /* foo */(/* baz */); // bat
+  bar /* foo */ /* bar */?(/* baz */) /* bat */;
+  bar2 /* foo */(/* baz */) /* bat */;
+}
+
+interface foo2 {
+  bar /* foo */?(/* bar */ bar: /* baz */ string): /* bat */ string;
+}
+
+interface foo3 {
+  /* foo */ (/* bar */): /* baz */ string;
+}
+
+interface foo4 {
+  /* foo */ (bar: /* bar */ string): /* baz */ string;
+}
+
+interface foo5 {
+  /* foo */ new (/* bar */ a: /* baz */ string): /* bat */ string;
+}
+
+interface foo6 {
+  /* foo */ new (/* baz */): /* bar */ /* bat */ string;
+}
+
+type foo7 = /* foo */ (/* bar */) => /* baz */ void;
+
+type foo8 = /* foo */ (a: /* bar */ string) => /* baz */ void;
+
+let foo9: new (/* bar */) => /* foo */ /* baz */ string;
+
+let foo10: new (/* foo */ a: /* bar */ string) => /* baz */ string;
+
+abstract class Test {
+  abstract foo12 /* foo */(a: /* bar */ string): /* baz */ void;
+
+  abstract foo13 /* foo */(/* bar */); /* baz */
+}
+
+================================================================================
+`;
+
+exports[`methods.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+export class Point {
+/**
+ * Does something.
+ */
+  foo() {}
+
+    /**
+     * Does something else.
+     */
+  bar() {}
+
+                /**
+                 * Does
+                 * something
+                 * much
+                 * better
+                 * than
+                 * the
+                 * rest.
+                 */
+  baz() {}
+
+      /**
+       * Buzz-Fizz.
+       * Note: This is indented too far.
+       */
+      fizzBuzz() {}
+
+      /**
+       * Turns the given string into pig-latin.
+       */
+              pigLatinize(value: string) {
+/**
+ * This is a block comment inside of a method.
+ */
+              }
+
+  /**
+        * One
+ * Two
+   * Three
+* Four 
+   */
+  mismatchedIndentation() {}
+
+  inline /* foo*/ (/* bar */) /* baz */ {}
+}
+
+=====================================output=====================================
+export class Point {
+  /**
+   * Does something.
+   */
+  foo() {}
+
+  /**
+   * Does something else.
+   */
+  bar() {}
+
+  /**
+   * Does
+   * something
+   * much
+   * better
+   * than
+   * the
+   * rest.
+   */
+  baz() {}
+
+  /**
+   * Buzz-Fizz.
+   * Note: This is indented too far.
+   */
+  fizzBuzz() {}
+
+  /**
+   * Turns the given string into pig-latin.
+   */
+  pigLatinize(value: string) {
+    /**
+     * This is a block comment inside of a method.
+     */
+  }
+
+  /**
+   * One
+   * Two
+   * Three
+   * Four
+   */
+  mismatchedIndentation() {}
+
+  inline /* foo*/(/* bar */) /* baz */ {}
+}
+
+================================================================================
+`;
+
+exports[`type-parameters.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+functionName<A /* A comment */>();
+const a: T</* comment */> = 1;
+functionName</* comment */>();
+function foo</* comment */>() {}
+interface Foo {
+ </* comment */>(arg): any;
+}
+type T = </* comment */>(arg) => any;
+
+functionName<
+  A // comment
+>();
+const a: T<
+  // comment
+> = 1;
+functionName<
+  // comment
+>();
+function foo<
+  // comment
+>() {}
+interface Foo {
+ <
+  A// comment
+ >(arg): any;
+}
+type T = <
+  // comment
+>(arg) => any;
+
+=====================================output=====================================
+functionName<A /* A comment */>();
+const a: T</* comment */> = 1;
+functionName</* comment */>();
+function foo</* comment */>() {}
+interface Foo {
+  </* comment */>(arg): any;
+}
+type T = </* comment */>(arg) => any;
+
+functionName<
+  A // comment
+>();
+const a: T<
+  // comment
+> = 1;
+functionName<
+  // comment
+>();
+function foo<
+  // comment
+>() {}
+interface Foo {
+  <
+    A // comment
+  >(
+    arg
+  ): any;
+}
+type T = <
+  // comment
+>(
+  arg
+) => any;
+
+================================================================================
+`;
+
+exports[`types.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+(() => {
+  // swallow error and fallback to using directory as path
+}) as string[];
+
+=====================================output=====================================
+(() => {
+  // swallow error and fallback to using directory as path
+}) as string[];
+
+================================================================================
+`;
+
+exports[`union.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type UploadState<E, EM, D>
+  // The upload hasnt begun yet
+  = {type: "Not_begun"}
+  // The upload timed out
+  | {type: "Timed_out"}
+  // Failed somewhere on the line
+  | {type: "Failed", error: E, errorMsg: EM}
+  // Uploading to aws3 and CreatePostMutation succeeded
+  | {type: "Success", data: D};
+
+type UploadState2<E, EM, D>
+  // The upload hasnt begun yet
+  = A
+  // The upload timed out
+  | B
+  // Failed somewhere on the line
+  | C
+  // Uploading to aws3 and CreatePostMutation succeeded
+  | D;
+
+=====================================output=====================================
+type UploadState<E, EM, D> =
+  // The upload hasnt begun yet
+  | { type: "Not_begun" }
+  // The upload timed out
+  | { type: "Timed_out" }
+  // Failed somewhere on the line
+  | { type: "Failed"; error: E; errorMsg: EM }
+  // Uploading to aws3 and CreatePostMutation succeeded
+  | { type: "Success"; data: D };
+
+type UploadState2<E, EM, D> =
+  // The upload hasnt begun yet
+  | A
+  // The upload timed out
+  | B
+  // Failed somewhere on the line
+  | C
+  // Uploading to aws3 and CreatePostMutation succeeded
+  | D;
+
+================================================================================
+`;

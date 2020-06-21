@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`mapped-type.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type Keys = 'option1' | 'option2';
+type A = { [K in Keys] };
+type B = { [K in Keys]+? };
+
+=====================================output=====================================
+type Keys = "option1" | "option2";
+type A = { [K in Keys] };
+type B = { [K in Keys]+? };
+
+================================================================================
+`;

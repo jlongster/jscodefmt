@@ -14,7 +14,7 @@ printWidth: 80
 </head>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <head>
   <style>
     a {}
@@ -40,7 +40,7 @@ printWidth: 80
 </head>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <head>
   <style>
     a {

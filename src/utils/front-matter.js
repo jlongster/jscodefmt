@@ -1,21 +1,15 @@
 "use strict";
 
-const escape = require("escape-string-regexp");
-
 const DELIMITER_MAP = {
   "---": "yaml",
   "+++": "toml",
 };
 
-function parse(text) {
-  const delimiterRegex = Object.keys(DELIMITER_MAP).map(escape).join("|");
+// trailing spaces after delimiters are allowed
+const frontMatterRe = /^(-{3}|\+{3})([^\n]*)\n(?:([\S\s]*?)\n)?\1[^\S\n]*(\n|$)/;
 
-  const match = text.match(
-    // trailing spaces after delimiters are allowed
-    new RegExp(
-      `^(${delimiterRegex})([^\\n]*)\\n(?:([\\s\\S]*?)\\n)?\\1[^\\n\\S]*(\\n|$)`
-    )
-  );
+function parse(text) {
+  const match = text.match(frontMatterRe);
 
   if (match === null) {
     return { frontMatter: null, content: text };

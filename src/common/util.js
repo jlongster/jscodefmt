@@ -1,7 +1,6 @@
 "use strict";
 
 const stringWidth = require("string-width");
-const escapeStringRegexp = require("escape-string-regexp");
 const getLast = require("../utils/get-last");
 const support = require("../main/support");
 
@@ -679,50 +678,60 @@ function printNumber(rawNumber) {
 /**
  * @param {string} str
  * @param {string} target
+ * @yields {number}
+ */
+function* getContinuousCount(str, target) {
+  const targetLength = target.length;
+
+  let index = 0;
+  while (index < str.length) {
+    index = str.indexOf(target, index);
+    if (index === -1) {
+      return yield 0;
+    }
+
+    let count = 1;
+    index += targetLength;
+
+    while (str.slice(index, index + targetLength) === target) {
+      index += targetLength;
+      count++;
+    }
+
+    yield count;
+  }
+}
+
+/**
+ * @param {string} str
+ * @param {string} target
  * @returns {number}
  */
 function getMaxContinuousCount(str, target) {
-  const results = str.match(
-    new RegExp(`(${escapeStringRegexp(target)})+`, "g")
-  );
-
-  if (results === null) {
-    return 0;
+  // `Math.max(...getContinuousCount(str, target))` crashes on huge file
+  let max = 0;
+  for (const count of getContinuousCount(str, target)) {
+    max = Math.max(max, count);
   }
-
-  return results.reduce(
-    (maxCount, result) => Math.max(maxCount, result.length / target.length),
-    0
-  );
+  return max;
 }
 
 function getMinNotPresentContinuousCount(str, target) {
-  const matches = str.match(
-    new RegExp(`(${escapeStringRegexp(target)})+`, "g")
-  );
-
-  if (matches === null) {
-    return 0;
-  }
-
-  const countPresent = new Map();
   let max = 0;
+  const countPresent = new Set();
 
-  for (const match of matches) {
-    const count = match.length / target.length;
-    countPresent.set(count, true);
-    if (count > max) {
-      max = count;
+  for (const count of getContinuousCount(str, target)) {
+    max = Math.max(max, count);
+    countPresent.add(count);
+  }
+
+  for (let count = 1; count < max; count++) {
+    if (!countPresent.has(count)) {
+      return count;
     }
   }
 
-  for (let i = 1; i < max; i++) {
-    if (!countPresent.get(i)) {
-      return i;
-    }
-  }
-
-  return max + 1;
+  return max ? max + 1 : 0;
 }
 
 /**

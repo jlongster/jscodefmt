@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`no-paramter.js format 1`] = `
+====================================options=====================================
+parsers: ["babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+function a(
+    // Comment inside
+) {
+    call();
+}
+
+function b
+// Comment before
+() {
+    call();
+}
+
+function c() // Comment after
+ {
+    call();
+}
+
+function aa(
+    // Comment inside
+) {
+}
+
+function bb
+// Comment before
+() {
+}
+
+function cc() // Comment after
+ {
+}
+
+foo = function named(
+    // Comment inside
+) {
+    call();
+}
+
+foo = function named
+// Comment before
+() {}
+
+foo = function named() // Comment after
+ {}
+
+foo = function (
+    // Comment inside
+) {}
+
+foo = function
+// Comment before
+() {}
+
+foo = function () // Comment after
+ {}
+
+foo =  (
+    // Comment inside
+) => {}
+
+foo = // Comment before
+() => {}
+
+foo =  () => // Comment after2
+ {}
+
+foo =  (
+    // Comment inside
+) => 1
+
+foo = // Comment before
+() => 1
+
+foo =  () => // Comment after2
+ 1
+
+=====================================output=====================================
+function a() {
+  // Comment inside
+  call();
+}
+
+function b() {
+  // Comment before
+  call();
+}
+
+function c() {
+  // Comment after
+  call();
+}
+
+function aa() {
+  // Comment inside
+}
+
+function bb() {
+  // Comment before
+}
+
+function cc() {
+  // Comment after
+}
+
+foo = function named() {
+  // Comment inside
+  call();
+};
+
+foo = function named() {
+  // Comment before
+};
+
+foo = function named() {
+  // Comment after
+};
+
+foo = function () {
+  // Comment inside
+};
+
+foo = function () {
+  // Comment before
+};
+
+foo = function () {
+  // Comment after
+};
+
+foo = () =>
+  // Comment inside
+  {};
+
+foo = () => {}; // Comment before
+
+foo = () =>
+  // Comment after2
+  {};
+
+foo = () =>
+  // Comment inside
+  1;
+
+foo = () => 1; // Comment before
+
+foo = () =>
+  // Comment after2
+  1;
+
+================================================================================
+`;

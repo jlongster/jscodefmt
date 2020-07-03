@@ -659,37 +659,29 @@ function handleLastFunctionArgComments(
       options.locEnd
     ) === ")"
   ) {
-    addTrailingComment(precedingNode, comment);
-    return true;
+    const params = enclosingNode.parameters || enclosingNode.params;
+    if (params.length !== 0) {
+      addTrailingComment(precedingNode, comment);
+      return true;
+    }
   }
 
   if (
     enclosingNode &&
-    enclosingNode.type === "FunctionDeclaration" &&
+    (enclosingNode.type === "FunctionDeclaration" ||
+      enclosingNode.type === "FunctionExpression") &&
     followingNode &&
     followingNode.type === "BlockStatement"
   ) {
-    const functionParamRightParenIndex = (() => {
-      if ((enclosingNode.params || enclosingNode.parameters).length !== 0) {
-        return privateUtil.getNextNonSpaceNonCommentCharacterIndexWithStartIndex(
+    const params = enclosingNode.parameters || enclosingNode.params;
+    if (
+      params.length === 0 ||
+      options.locStart(comment) >
+        privateUtil.getNextNonSpaceNonCommentCharacterIndexWithStartIndex(
           text,
-          options.locEnd(
-            privateUtil.getLast(
-              enclosingNode.params || enclosingNode.parameters
-            )
-          )
-        );
-      }
-      const functionParamLeftParenIndex = privateUtil.getNextNonSpaceNonCommentCharacterIndexWithStartIndex(
-        text,
-        options.locEnd(enclosingNode.id)
-      );
-      return privateUtil.getNextNonSpaceNonCommentCharacterIndexWithStartIndex(
-        text,
-        functionParamLeftParenIndex + 1
-      );
-    })();
-    if (options.locStart(comment) > functionParamRightParenIndex) {
+          options.locEnd(privateUtil.getLast(params))
+        )
+    ) {
       addBlockStatementFirstComment(followingNode, comment);
       return true;
     }

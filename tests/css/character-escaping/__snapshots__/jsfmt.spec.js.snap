@@ -118,7 +118,7 @@ printWidth: 80
 }
 #\\3A hover {
 }
-#\\3A hover\\3a focus\\3a active {
+#\\3A hover\\3A focus\\3A active {
 }
 #\\[attr\\=value\\] {
 }

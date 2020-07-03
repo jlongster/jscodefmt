@@ -105,22 +105,21 @@ function clean(ast, newObj, parent) {
   }
 
   if (ast.type === "selector-attribute") {
-    newObj.attribute = newObj.attribute.trim();
-
-    if (newObj.namespace) {
-      if (typeof newObj.namespace === "string") {
-        newObj.namespace = newObj.namespace.trim();
-
-        if (newObj.namespace.length === 0) {
-          newObj.namespace = true;
-        }
-      }
+    if (ast.namespace === "") {
+      newObj.namespace = true;
     }
 
-    if (newObj.value) {
-      newObj.value = newObj.value.trim().replace(/^["']|["']$/g, "");
-      delete newObj.quoted;
+    if (typeof newObj.value === "string") {
+      newObj.value = ast.getQuotedValue({
+        quoteMark: '"',
+        preferCurrentQuoteMark: false,
+        smart: false,
+      });
     }
+    delete newObj.spaces;
+    delete newObj.quoted;
+    delete newObj._value;
+    delete newObj._quoteMark;
   }
 
   if (

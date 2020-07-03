@@ -237,6 +237,9 @@ function parseSelector(selector) {
     };
   }
 
+  // `postcss-selector-parser@6.0.0` throws parsing `foo | bar`
+  selector = selector.replace(/\s*\|/, "|");
+
   const selectorParser = require("postcss-selector-parser");
 
   let result = null;
@@ -244,7 +247,7 @@ function parseSelector(selector) {
   try {
     selectorParser((result_) => {
       result = result_;
-    }).process(selector);
+    }).processSync(selector);
   } catch (e) {
     // Fail silently. It's better to print it as is than to try and parse it
     // Note: A common failure is for SCSS nested properties. `background:
@@ -495,7 +498,11 @@ function parseNestedCSS(node, options) {
       }
 
       if (name === "extend" || name === "nest") {
-        node.selector = parseSelector(params);
+        // `postcss-selector-parser@6.0.0` can't parse `@extend .a !optional`
+        const [selector, declaration] = params.split("!");
+
+        node.selector = parseSelector(selector.trim());
+        node.declaration = (declaration || "").trim();
         delete node.params;
 
         return node;

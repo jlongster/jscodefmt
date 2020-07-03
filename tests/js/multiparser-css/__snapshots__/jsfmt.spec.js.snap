@@ -171,13 +171,15 @@ button.\${foo}.\${bar} {
 
 =====================================output=====================================
 export const foo = css\`
-  &.foo .\${bar}::before,&.foo[value="hello"] .\${bar}::before {
+  &.foo .\${bar}::before,
+  &.foo[value="hello"] .\${bar}::before {
     position: absolute;
   }
 \`;
 
 export const foo2 = css\`
-  a.\${bar}:focus,a.\${bar}:hover {
+  a.\${bar}:focus,
+  a.\${bar}:hover {
     color: red;
   }
 \`;

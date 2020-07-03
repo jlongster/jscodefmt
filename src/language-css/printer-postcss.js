@@ -6,6 +6,7 @@ const {
   hasIgnoreComment,
   hasNewline,
   isFrontMatterNode,
+  getPreferredQuote,
 } = require("../common/util");
 const { isNextLineEmpty } = require("../common/util-shared");
 const {
@@ -275,7 +276,13 @@ function genericPrint(path, options, print) {
             ])
           : "",
         node.selector
-          ? indent(concat([" ", path.call(print, "selector")]))
+          ? indent(
+              concat([
+                " ",
+                path.call(print, "selector"),
+                node.declaration ? ` !${node.declaration}` : "",
+              ])
+            )
           : "",
         node.value
           ? group(
@@ -404,40 +411,38 @@ function genericPrint(path, options, print) {
       const index = parentNode && parentNode.nodes.indexOf(node);
       const prevNode = index && parentNode.nodes[index - 1];
 
-      return concat([
-        node.namespace
-          ? concat([node.namespace === true ? "" : node.namespace.trim(), "|"])
-          : "",
-        prevNode.type === "selector-nesting"
-          ? node.value
-          : adjustNumbers(
-              isKeyframeAtRuleKeywords(path, node.value)
-                ? node.value.toLowerCase()
-                : node.value
-            ),
-      ]);
+      let value = preferRowsValue(node);
+      if (prevNode.type !== "selector-nesting") {
+        value = adjustNumbers(
+          isKeyframeAtRuleKeywords(path, value) ? value.toLowerCase() : value
+        );
+      }
+
+      return concat([printNamespace(node), value]);
     }
     case "selector-id": {
-      return concat(["#", node.value]);
+      return concat(["#", preferRowsValue(node)]);
     }
     case "selector-class": {
-      return concat([".", adjustNumbers(adjustStrings(node.value, options))]);
+      return concat([
+        ".",
+        adjustNumbers(adjustStrings(preferRowsValue(node)), options),
+      ]);
     }
     case "selector-attribute": {
+      const operator = node.operator || "";
+      const value = operator ? quoteAttributeValue(node, options) : "";
+      const insensitiveFlag = node.insensitive
+        ? "i"
+        : node.raws.insensitiveFlag;
+
       return concat([
         "[",
-        node.namespace
-          ? concat([node.namespace === true ? "" : node.namespace.trim(), "|"])
-          : "",
-        node.attribute.trim(),
-        node.operator ? node.operator : "",
-        node.value
-          ? quoteAttributeValue(
-              adjustStrings(node.value.trim(), options),
-              options
-            )
-          : "",
-        node.insensitive ? " i" : "",
+        printNamespace(node),
+        node.attribute,
+        operator,
+        value,
+        insensitiveFlag ? ` ${insensitiveFlag}` : "",
         "]",
       ]);
     }
@@ -465,12 +470,7 @@ function genericPrint(path, options, print) {
       return concat([leading, value]);
     }
     case "selector-universal": {
-      return concat([
-        node.namespace
-          ? concat([node.namespace === true ? "" : node.namespace.trim(), "|"])
-          : "",
-        node.value,
-      ]);
+      return concat([printNamespace(node), node.value]);
     }
     case "selector-pseudo": {
       return concat([
@@ -1026,11 +1026,17 @@ function adjustStrings(value, options) {
   return value.replace(STRING_REGEX, (match) => printString(match, options));
 }
 
-function quoteAttributeValue(value, options) {
-  const quote = options.singleQuote ? "'" : '"';
-  return value.includes('"') || value.includes("'")
-    ? value
-    : quote + value + quote;
+function quoteAttributeValue(node, options) {
+  let value = preferRowsValue(node)
+    .replace(/^('|")(.*?)\1$/, "$2")
+    .replace(/\\(["'\\])/g, "$1");
+  const quote = getPreferredQuote(value, options.singleQuote ? "'" : '"');
+
+  value = value
+    .replace(/\\/g, "\\\\")
+    .replace(new RegExp(quote, "g"), "\\" + quote);
+
+  return quote + value + quote;
 }
 
 function adjustNumbers(value) {
@@ -1049,6 +1055,16 @@ function printCssNumber(rawNumber) {
       // Remove trailing `.0`.
       .replace(/\.0(?=$|e)/, "")
   );
+}
+
+function printNamespace(node) {
+  return node.namespace
+    ? concat([node.namespace === true ? "" : node.namespace, "|"])
+    : "";
+}
+
+function preferRowsValue(node) {
+  return (node.raws && node.raws.value) || node.value;
 }
 
 module.exports = {

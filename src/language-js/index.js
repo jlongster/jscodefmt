@@ -8,14 +8,14 @@ const options = require("./options");
 const languages = [
   createLanguage(require("linguist-languages/data/JavaScript"), (data) => ({
     since: "0.0.0",
-    parsers: ["babel", "flow"],
+    parsers: ["babel", "async-babel", "flow"],
     vscodeLanguageIds: ["javascript", "mongo"],
     interpreters: data.interpreters.concat(["nodejs"]),
   })),
   createLanguage(require("linguist-languages/data/JavaScript"), () => ({
     name: "Flow",
     since: "0.0.0",
-    parsers: ["babel", "flow"],
+    parsers: ["babel", "async-babel", "flow"],
     vscodeLanguageIds: ["javascript"],
     aliases: [],
     filenames: [],
@@ -23,7 +23,7 @@ const languages = [
   })),
   createLanguage(require("linguist-languages/data/JSX"), () => ({
     since: "0.0.0",
-    parsers: ["babel", "flow"],
+    parsers: ["babel", "async-babel", "flow"],
     vscodeLanguageIds: ["javascriptreact"],
   })),
   createLanguage(require("linguist-languages/data/TypeScript"), () => ({

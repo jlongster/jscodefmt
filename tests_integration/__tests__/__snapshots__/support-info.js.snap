@@ -11,6 +11,7 @@ Object {
     ],
     "Flow": Array [
       "babel",
+      "async-babel",
       "flow",
     ],
     "GraphQL": Array [
@@ -33,10 +34,12 @@ Object {
     ],
     "JSX": Array [
       "babel",
+      "async-babel",
       "flow",
     ],
     "JavaScript": Array [
       "babel",
+      "async-babel",
       "flow",
     ],
     "Less": Array [
@@ -306,7 +309,7 @@ exports[`CLI --support-info (stdout) 1`] = `
       ],
       \\"linguistLanguageId\\": 183,
       \\"name\\": \\"JavaScript\\",
-      \\"parsers\\": [\\"babel\\", \\"flow\\"],
+      \\"parsers\\": [\\"babel\\", \\"async-babel\\", \\"flow\\"],
       \\"since\\": \\"0.0.0\\",
       \\"tmScope\\": \\"source.js\\",
       \\"type\\": \\"programming\\",
@@ -333,7 +336,7 @@ exports[`CLI --support-info (stdout) 1`] = `
       ],
       \\"linguistLanguageId\\": 183,
       \\"name\\": \\"Flow\\",
-      \\"parsers\\": [\\"babel\\", \\"flow\\"],
+      \\"parsers\\": [\\"babel\\", \\"async-babel\\", \\"flow\\"],
       \\"since\\": \\"0.0.0\\",
       \\"tmScope\\": \\"source.js\\",
       \\"type\\": \\"programming\\",
@@ -347,7 +350,7 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"group\\": \\"JavaScript\\",
       \\"linguistLanguageId\\": 178,
       \\"name\\": \\"JSX\\",
-      \\"parsers\\": [\\"babel\\", \\"flow\\"],
+      \\"parsers\\": [\\"babel\\", \\"async-babel\\", \\"flow\\"],
       \\"since\\": \\"0.0.0\\",
       \\"tmScope\\": \\"source.js.jsx\\",
       \\"type\\": \\"programming\\",

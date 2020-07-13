@@ -82,6 +82,10 @@ function parse(text, opts) {
 
   const parser = resolveParser(opts, parsers);
 
+  if (parser.async) {
+    return parseAsync(text, opts);
+  }
+
   try {
     if (parser.preprocess) {
       text = parser.preprocess(text, opts);
@@ -90,6 +94,51 @@ function parse(text, opts) {
     return {
       text,
       ast: parser.parse(text, parsersForCustomParserApi, opts),
+    };
+  } catch (error) {
+    const { loc } = error;
+
+    if (loc) {
+      const codeFrame = require("@babel/code-frame");
+      error.codeFrame = codeFrame.codeFrameColumns(text, loc, {
+        highlightCode: true,
+      });
+      error.message += "\n" + error.codeFrame;
+      throw error;
+    }
+
+    /* istanbul ignore next */
+    throw error.stack;
+  }
+}
+
+// [TBD]: merge with sync version
+async function parseAsync(text, opts) {
+  const parsers = getParsers(opts);
+
+  // Create a new object {parserName: parseFn}. Uses defineProperty() to only call
+  // the parsers getters when actually calling the parser `parse` function.
+  const parsersForCustomParserApi = Object.keys(parsers).reduce(
+    (object, parserName) =>
+      Object.defineProperty(object, parserName, {
+        enumerable: true,
+        get() {
+          return parsers[parserName].parse;
+        },
+      }),
+    {}
+  );
+
+  const parser = resolveParser(opts, parsers);
+
+  try {
+    if (parser.preprocess) {
+      text = parser.preprocess(text, opts);
+    }
+
+    return {
+      text,
+      ast: await parser.parse(text, parsersForCustomParserApi, opts),
     };
   } catch (error) {
     const { loc } = error;

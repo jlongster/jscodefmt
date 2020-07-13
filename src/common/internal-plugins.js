@@ -10,6 +10,11 @@ module.exports = [
       get babel() {
         return require("../language-js/parser-babel").parsers.babel;
       },
+      get "async-babel"() {
+        return eval("require")("../language-js/parser-babel").parsers[
+          "async-babel"
+        ];
+      },
       get "babel-flow"() {
         return require("../language-js/parser-babel").parsers["babel-flow"];
       },

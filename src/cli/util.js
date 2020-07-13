@@ -484,6 +484,154 @@ function formatFiles(context) {
 
     try {
       result = format(context, input, options);
+      if (result.then) {
+        return formatFilesAsync(context);
+      }
+      output = result.formatted;
+    } catch (error) {
+      handleError(context, filename, error);
+      continue;
+    }
+
+    const isDifferent = output !== input;
+
+    if (isTTY()) {
+      // Remove previously printed filename to log it with duration.
+      readline.clearLine(process.stdout, 0);
+      readline.cursorTo(process.stdout, 0, null);
+    }
+
+    if (context.argv.write) {
+      // Don't write the file if it won't change in order not to invalidate
+      // mtime based caches.
+      if (isDifferent) {
+        if (!context.argv.check && !context.argv["list-different"]) {
+          context.logger.log(`${filename} ${Date.now() - start}ms`);
+        }
+
+        try {
+          fs.writeFileSync(filename, output, "utf8");
+        } catch (error) {
+          context.logger.error(
+            `Unable to write file: ${filename}\n${error.message}`
+          );
+          // Don't exit the process if one file failed
+          process.exitCode = 2;
+        }
+      } else if (!context.argv.check && !context.argv["list-different"]) {
+        context.logger.log(`${chalk.grey(filename)} ${Date.now() - start}ms`);
+      }
+    } else if (context.argv["debug-check"]) {
+      if (result.filepath) {
+        context.logger.log(result.filepath);
+      } else {
+        process.exitCode = 2;
+      }
+    } else if (!context.argv.check && !context.argv["list-different"]) {
+      writeOutput(context, result, options);
+    }
+
+    if ((context.argv.check || context.argv["list-different"]) && isDifferent) {
+      context.logger.log(filename);
+      numberOfUnformattedFilesFound += 1;
+    }
+  }
+
+  // Print check summary based on expected exit code
+  if (context.argv.check) {
+    context.logger.log(
+      numberOfUnformattedFilesFound === 0
+        ? "All matched files use Prettier code style!"
+        : context.argv.write
+        ? "Code style issues fixed in the above file(s)."
+        : "Code style issues found in the above file(s). Forgot to run Prettier?"
+    );
+  }
+
+  // Ensure non-zero exitCode when using --check/list-different is not combined with --write
+  if (
+    (context.argv.check || context.argv["list-different"]) &&
+    numberOfUnformattedFilesFound > 0 &&
+    !process.exitCode &&
+    !context.argv.write
+  ) {
+    process.exitCode = 1;
+  }
+}
+
+async function formatFilesAsync(context) {
+  // The ignorer will be used to filter file paths after the glob is checked,
+  // before any files are actually written
+  const ignorer = createIgnorerFromContextOrDie(context);
+
+  let numberOfUnformattedFilesFound = 0;
+
+  if (context.argv.check) {
+    context.logger.log("Checking formatting...");
+  }
+
+  for (const pathOrError of expandPatterns(context)) {
+    if (typeof pathOrError === "object") {
+      context.logger.error(pathOrError.error);
+      // Don't exit, but set the exit code to 2
+      process.exitCode = 2;
+      continue;
+    }
+
+    const filename = pathOrError;
+    // If there's an ignore-path set, the filename must be relative to the
+    // ignore path, not the current working directory.
+    const ignoreFilename = context.argv["ignore-path"]
+      ? path.relative(path.dirname(context.argv["ignore-path"]), filename)
+      : filename;
+
+    const fileIgnored = ignorer.ignores(fixWindowsSlashes(ignoreFilename));
+    if (
+      fileIgnored &&
+      (context.argv["debug-check"] ||
+        context.argv.write ||
+        context.argv.check ||
+        context.argv["list-different"])
+    ) {
+      continue;
+    }
+
+    const options = {
+      ...getOptionsForFile(context, filename),
+      filepath: filename,
+    };
+
+    if (isTTY()) {
+      context.logger.log(filename, { newline: false });
+    }
+
+    let input;
+    try {
+      input = fs.readFileSync(filename, "utf8");
+    } catch (error) {
+      // Add newline to split errors from filename line.
+      context.logger.log("");
+
+      context.logger.error(
+        `Unable to read file: ${filename}\n${error.message}`
+      );
+      // Don't exit the process if one file failed
+      process.exitCode = 2;
+      continue;
+    }
+
+    if (fileIgnored) {
+      writeOutput(context, { formatted: input }, options);
+      continue;
+    }
+
+    const start = Date.now();
+
+    let result;
+    let output;
+
+    try {
+      result = await format(context, input, options);
       output = result.formatted;
     } catch (error) {
       handleError(context, filename, error);

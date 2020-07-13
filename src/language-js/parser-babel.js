@@ -226,6 +226,11 @@ function assertJsonNode(node, parent) {
 }
 
 const babel = { parse, astFormat: "estree", hasPragma, ...locFns };
+const asyncBabel = {
+  ...babel,
+  parse: async (text, parsers, opts) => parse(text, parsers, opts),
+  async: true,
+};
 const babelFlow = { ...babel, parse: parseFlow };
 const babelTypeScript = { ...babel, parse: parseTypeScript };
 const babelExpression = { ...babel, parse: parseExpression };
@@ -234,6 +239,7 @@ const babelExpression = { ...babel, parse: parseExpression };
 module.exports = {
   parsers: {
     babel,
+    "async-babel": asyncBabel,
     "babel-flow": babelFlow,
     "babel-ts": babelTypeScript,
     json: {

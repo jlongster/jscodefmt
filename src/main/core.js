@@ -71,6 +71,117 @@ function coreFormat(text, opts, addAlignmentSize) {
   addAlignmentSize = addAlignmentSize || 0;
 
   const parsed = parser.parse(text, opts);
+  if (parsed.then) {
+    return coreFormatAsync(text, opts, addAlignmentSize);
+  }
+  const { ast } = parsed;
+  text = parsed.text;
+
+  if (opts.cursorOffset >= 0) {
+    const nodeResult = rangeUtil.findNodeAtOffset(ast, opts.cursorOffset, opts);
+    if (nodeResult && nodeResult.node) {
+      opts.cursorNode = nodeResult.node;
+    }
+  }
+
+  const astComments = attachComments(text, ast, opts);
+  const doc = printAstToDoc(ast, opts, addAlignmentSize);
+
+  const result = printDocToString(doc, opts);
+
+  ensureAllCommentsPrinted(astComments);
+  // Remove extra leading indentation as well as the added indentation after last newline
+  if (addAlignmentSize > 0) {
+    const trimmed = result.formatted.trim();
+
+    if (result.cursorNodeStart !== undefined) {
+      result.cursorNodeStart -= result.formatted.indexOf(trimmed);
+    }
+
+    result.formatted = trimmed + convertEndOfLineToChars(opts.endOfLine);
+  }
+
+  if (opts.cursorOffset >= 0) {
+    let oldCursorNodeStart;
+    let oldCursorNodeText;
+
+    let cursorOffsetRelativeToOldCursorNode;
+
+    let newCursorNodeStart;
+    let newCursorNodeText;
+
+    if (opts.cursorNode && result.cursorNodeText) {
+      oldCursorNodeStart = opts.locStart(opts.cursorNode);
+      oldCursorNodeText = text.slice(
+        oldCursorNodeStart,
+        opts.locEnd(opts.cursorNode)
+      );
+
+      cursorOffsetRelativeToOldCursorNode =
+        opts.cursorOffset - oldCursorNodeStart;
+
+      newCursorNodeStart = result.cursorNodeStart;
+      newCursorNodeText = result.cursorNodeText;
+    } else {
+      oldCursorNodeStart = 0;
+      oldCursorNodeText = text;
+
+      cursorOffsetRelativeToOldCursorNode = opts.cursorOffset;
+
+      newCursorNodeStart = 0;
+      newCursorNodeText = result.formatted;
+    }
+
+    if (oldCursorNodeText === newCursorNodeText) {
+      return {
+        formatted: result.formatted,
+        cursorOffset: newCursorNodeStart + cursorOffsetRelativeToOldCursorNode,
+      };
+    }
+
+    // diff old and new cursor node texts, with a special cursor
+    // symbol inserted to find out where it moves to
+
+    const oldCursorNodeCharArray = oldCursorNodeText.split("");
+    oldCursorNodeCharArray.splice(
+      cursorOffsetRelativeToOldCursorNode,
+      0,
+      CURSOR
+    );
+
+    const newCursorNodeCharArray = newCursorNodeText.split("");
+
+    const cursorNodeDiff = diff.diffArrays(
+      oldCursorNodeCharArray,
+      newCursorNodeCharArray
+    );
+
+    let cursorOffset = newCursorNodeStart;
+    for (const entry of cursorNodeDiff) {
+      if (entry.removed) {
+        if (entry.value.includes(CURSOR)) {
+          break;
+        }
+      } else {
+        cursorOffset += entry.count;
+      }
+    }
+
+    return { formatted: result.formatted, cursorOffset };
+  }
+
+  return { formatted: result.formatted };
+}
+
+// [TBD]: merge with sync version
+async function coreFormatAsync(text, opts, addAlignmentSize) {
+  if (!text || !text.trim().length) {
+    return { formatted: "", cursorOffset: 0 };
+  }
+
+  addAlignmentSize = addAlignmentSize || 0;
+
+  const parsed = await parser.parse(text, opts);
   const { ast } = parsed;
   text = parsed.text;
 
@@ -172,6 +283,9 @@ function coreFormat(text, opts, addAlignmentSize) {
 
 function formatRange(text, opts) {
   const parsed = parser.parse(text, opts);
+  if (parsed.then) {
+    return formatRangeAsync(text, opts);
+  }
   const { ast } = parsed;
   text = parsed.text;
 
@@ -190,6 +304,103 @@ function formatRange(text, opts) {
   const alignmentSize = getAlignmentSize(indentString, opts.tabWidth);
 
   const rangeResult = coreFormat(
+    rangeString,
+    {
+      ...opts,
+      rangeStart: 0,
+      rangeEnd: Infinity,
+      // track the cursor offset only if it's within our range
+      cursorOffset:
+        opts.cursorOffset >= rangeStart && opts.cursorOffset < rangeEnd
+          ? opts.cursorOffset - rangeStart
+          : -1,
+    },
+    alignmentSize
+  );
+
+  // Since the range contracts to avoid trailing whitespace,
+  // we need to remove the newline that was inserted by the `format` call.
+  const rangeTrimmed = rangeResult.formatted.trimEnd();
+  const rangeLeft = text.slice(0, rangeStart);
+  const rangeRight = text.slice(rangeEnd);
+
+  let { cursorOffset } = opts;
+  if (opts.cursorOffset >= rangeEnd) {
+    // handle the case where the cursor was past the end of the range
+    cursorOffset =
+      opts.cursorOffset - rangeEnd + (rangeStart + rangeTrimmed.length);
+  } else if (rangeResult.cursorOffset !== undefined) {
+    // handle the case where the cursor was in the range
+    cursorOffset = rangeResult.cursorOffset + rangeStart;
+  }
+  // keep the cursor as it was if it was before the start of the range
+
+  let formatted;
+  if (opts.endOfLine === "lf") {
+    formatted = rangeLeft + rangeTrimmed + rangeRight;
+  } else {
+    const eol = convertEndOfLineToChars(opts.endOfLine);
+    if (cursorOffset >= 0) {
+      const parts = [rangeLeft, rangeTrimmed, rangeRight];
+      let partIndex = 0;
+      let partOffset = cursorOffset;
+      while (partIndex < parts.length) {
+        const part = parts[partIndex];
+        if (partOffset < part.length) {
+          parts[partIndex] =
+            parts[partIndex].slice(0, partOffset) +
+            PLACEHOLDERS.cursorOffset +
+            parts[partIndex].slice(partOffset);
+          break;
+        }
+        partIndex++;
+        partOffset -= part.length;
+      }
+      const [newRangeLeft, newRangeTrimmed, newRangeRight] = parts;
+      formatted = (
+        newRangeLeft.replace(/\n/g, eol) +
+        newRangeTrimmed +
+        newRangeRight.replace(/\n/g, eol)
+      ).replace(PLACEHOLDERS.cursorOffset, (_, index) => {
+        cursorOffset = index;
+        return "";
+      });
+    } else {
+      formatted =
+        rangeLeft.replace(/\n/g, eol) +
+        rangeTrimmed +
+        rangeRight.replace(/\n/g, eol);
+    }
+  }
+
+  return { formatted, cursorOffset };
+}
+
+// [TBD]: merge with sync version
+async function formatRangeAsync(text, opts) {
+  const parsed = await parser.parse(text, opts);
+  const { ast } = parsed;
+  text = parsed.text;
+
+  const range = rangeUtil.calculateRange(text, opts, ast);
+  const { rangeStart, rangeEnd } = range;
+  const rangeString = text.slice(rangeStart, rangeEnd);
+
+  // Try to extend the range backwards to the beginning of the line.
+  // This is so we can detect indentation correctly and restore it.
+  // Use `Math.min` since `lastIndexOf` returns 0 when `rangeStart` is 0
+  const rangeStart2 = Math.min(
+    rangeStart,
+    text.lastIndexOf("\n", rangeStart) + 1
+  );
+  const indentString = text.slice(rangeStart2, rangeStart);
+
+  const alignmentSize = privateUtil.getAlignmentSize(
+    indentString,
+    opts.tabWidth
+  );
+
+  const rangeResult = await coreFormatAsync(
     rangeString,
     {
       ...opts,

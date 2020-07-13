@@ -203,6 +203,16 @@ global.run_spec = (fixtures, parsers, options) => {
         }
       });
 
+      if (parsers.includes("babel")) {
+        test("async format", async () => {
+          const asyncResult = await format(input, filename, {
+            ...mainOptions,
+            parser: "async-babel",
+          });
+          expect(asyncResult).toEqual(formattedWithCursor);
+        });
+      }
+
       const parsersToVerify = parsers.slice(1);
       if (parsers.includes("typescript") && !parsers.includes("babel-ts")) {
         parsersToVerify.push("babel-ts");
@@ -272,6 +282,16 @@ function format(source, filename, options) {
     filepath: filename,
     ...options,
   });
+
+  if (result.then) {
+    return result.then((result) =>
+      options.cursorOffset >= 0
+        ? result.formatted.slice(0, result.cursorOffset) +
+          CURSOR_PLACEHOLDER +
+          result.formatted.slice(result.cursorOffset)
+        : result.formatted
+    );
+  }
 
   return options.cursorOffset >= 0
     ? result.formatted.slice(0, result.cursorOffset) +

@@ -115,6 +115,7 @@ function isSourceElement(opts, node) {
   switch (opts.parser) {
     case "flow":
     case "babel":
+    case "async-babel":
     case "babel-flow":
     case "babel-ts":
     case "typescript":

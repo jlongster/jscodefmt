@@ -126,6 +126,7 @@ const options = {
     choices: [
       { value: "flow", description: "Flow" },
       { value: "babel", since: "1.16.0", description: "JavaScript" },
+      { value: "async-babel", since: null, description: "JavaScript" },
       { value: "babel-flow", since: "1.16.0", description: "Flow" },
       { value: "babel-ts", since: "2.0.0", description: "TypeScript" },
       { value: "typescript", since: "1.4.0", description: "TypeScript" },

@@ -124,6 +124,98 @@ interface Foo {
 ================================================================================
 `;
 
+exports[`issue-5446.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+// @flow
+
+const mapDispatch: MapDispatch<*> = (dispatch, props) => ({
+  ...props,
+  onInit: ({ user }: { user: Some_user }) => {
+    if (user) {
+      const { name } = user;
+      switch (user.__typename) {
+        case "A": {
+          dispatch(user.onInitByQuery("A"));
+          break;
+        }
+        case "B":
+          dispatch(user.onInitByQuery("B"));
+          break;
+        case "C":
+          dispatch(user.onInitByQuery("C"));
+          break;
+        default:
+          /* :: (user.__typename: empty); */ // eslint-disable-line
+          break;
+      }
+      dispatch(
+        user.onInitByQuery({
+          user: { firstName: first_name, lastName: last_name },
+        }),
+      );
+    }
+  },
+});
+
+type Props = {|
+  ...$Exact<PropsWithTFn>,
+  ...$Exact<$Call<typeof mapStateToProps, *, *>>,
+  ...$Exact<$Call<typeof mapDispatch, *, *>>,
+  ...$Exact<withResponse.WithQueryProps<RootQuery>>,
+|};
+
+/* :: (kind: empty);*/
+export const A: T<V> = 0;
+
+=====================================output=====================================
+// @flow
+
+const mapDispatch: MapDispatch<*> = (dispatch, props) => ({
+  ...props,
+  onInit: ({ user }: { user: Some_user }) => {
+    if (user) {
+      const { name } = user;
+      switch (user.__typename) {
+        case "A": {
+          dispatch(user.onInitByQuery("A"));
+          break;
+        }
+        case "B":
+          dispatch(user.onInitByQuery("B"));
+          break;
+        case "C":
+          dispatch(user.onInitByQuery("C"));
+          break;
+        default:
+          (user.__typename: empty); // eslint-disable-line
+          break;
+      }
+      dispatch(
+        user.onInitByQuery({
+          user: { firstName: first_name, lastName: last_name },
+        })
+      );
+    }
+  },
+});
+
+type Props = {|
+  ...$Exact<PropsWithTFn>,
+  ...$Exact<$Call<typeof mapStateToProps, *, *>>,
+  ...$Exact<$Call<typeof mapDispatch, *, *>>,
+  ...$Exact<withResponse.WithQueryProps<RootQuery>>,
+|};
+
+(kind: empty);
+export const A: T<V> = 0;
+
+================================================================================
+`;
+
 exports[`issues.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
@@ -289,6 +381,32 @@ this /*
 : any */.foo = 5;
 
 const x = (input /*: string */) /*: string */ => {};
+
+================================================================================
+`;
+
+exports[`type_parameter.js format 1`] = `
+====================================options=====================================
+parsers: ["flow", "babel"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+type A<B> = B;
+
+foo/*::<bar>*/(baz);
+
+type C<D> = D;
+class E<F> {}
+type G = $Exact<string>;
+
+=====================================output=====================================
+type A<B> = B;
+
+foo/*:: <bar> */(baz);
+
+type C<D> = D;
+class E<F> {}
+type G = $Exact<string>;
 
 ================================================================================
 `;

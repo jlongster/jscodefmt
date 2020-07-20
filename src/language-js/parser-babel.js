@@ -4,10 +4,11 @@ const createError = require("../common/parser-create-error");
 const { hasPragma } = require("./pragma");
 const { locStart, locEnd } = require("./loc");
 const postprocess = require("./postprocess");
+const { generateCombinations, babelPlugins } = require("./babel-plugins");
 
-function babelOptions({ sourceType, extraPlugins = [] }) {
+function babelOptions(options) {
   return {
-    sourceType,
+    sourceType: "module",
     allowAwaitOutsideFunction: true,
     allowImportExportEverywhere: true,
     allowReturnOutsideFunction: true,
@@ -15,72 +16,33 @@ function babelOptions({ sourceType, extraPlugins = [] }) {
     allowUndeclaredExports: true,
     errorRecovery: true,
     createParenthesizedExpressions: true,
-    plugins: [
-      // When adding a plugin, please add a test in `tests/js/babel-plugins`,
-      // To remove plugins, remove it here and run `yarn test tests/js/babel-plugins` to verify
-
-      "doExpressions",
-      "classProperties",
-      "exportDefaultFrom",
-      "functionBind",
-      "functionSent",
-      "numericSeparator",
-      "classPrivateProperties",
-      "throwExpressions",
-      "logicalAssignment",
-      "classPrivateMethods",
-      "v8intrinsic",
-      "partialApplication",
-      ["decorators", { decoratorsBeforeExport: false }],
-      "privateIn",
-      ["moduleAttributes", { version: "may-2020" }],
-      ["recordAndTuple", { syntaxType: "hash" }],
-      ...extraPlugins,
-    ],
+    ...options,
   };
 }
 
-function resolvePluginsConflict(
-  condition,
-  pluginCombinations,
-  conflictPlugins
-) {
-  if (!condition) {
-    return pluginCombinations;
-  }
-  const combinations = [];
-  for (const combination of pluginCombinations) {
-    for (const plugin of conflictPlugins) {
-      combinations.push([...combination, plugin]);
-    }
-  }
-  return combinations;
-}
-
-function createParse(parseMethod, ...pluginCombinations) {
-  return (text, parsers, opts) => {
+function createParse(parseMethod, parserPluginCombinations) {
+  return (text, parsers, opts = {}) => {
     // Inline the require to avoid loading all the JS if we don't use it
     const babel = require("@babel/parser");
+    const parse = babel[parseMethod];
 
     const sourceType =
-      opts && opts.__babelSourceType === "script" ? "script" : "module";
+      opts.__babelSourceType === "script" ? "script" : "module";
+
+    const combinations = generateCombinations(
+      text,
+      parserPluginCombinations(text)
+    );
+
+    if (opts.__testBabelPluginCombinations) {
+      return [...combinations];
+    }
 
     let ast;
     try {
-      const combinations = resolvePluginsConflict(
-        text.includes("|>"),
-        pluginCombinations,
-        [
-          ["pipelineOperator", { proposal: "smart" }],
-          ["pipelineOperator", { proposal: "minimal" }],
-          ["pipelineOperator", { proposal: "fsharp" }],
-        ]
-      );
       ast = tryCombinations(
-        (options) => babel[parseMethod](text, options),
-        combinations.map((extraPlugins) =>
-          babelOptions({ sourceType, extraPlugins })
-        )
+        (plugins) => parse(text, babelOptions({ sourceType, plugins })),
+        combinations
       );
     } catch (error) {
       throw createError(
@@ -102,23 +64,43 @@ function createParse(parseMethod, ...pluginCombinations) {
   };
 }
 
-const parse = createParse("parse", ["jsx", "flow"]);
-const parseFlow = createParse("parse", [
-  "jsx",
-  ["flow", { all: true, enums: true }],
-]);
-const parseTypeScript = createParse(
-  "parse",
-  ["jsx", "typescript"],
-  ["typescript"]
-);
-const parseExpression = createParse("parseExpression", ["jsx"]);
+const parse = createParse("parse", function* (text) {
+  const plugins = [];
+  const jsxPlugin = babelPlugins.jsx;
+
+  if (jsxPlugin.test(text)) {
+    plugins.push(jsxPlugin);
+  }
+
+  if (!text.includes("@flow")) {
+    yield plugins;
+  }
+
+  yield [...plugins, babelPlugins.flow];
+});
+const parseFlow = createParse("parse", (text) => {
+  return [
+    babelPlugins.jsx.test(text)
+      ? [babelPlugins.jsx, babelPlugins.flowWithOptions]
+      : [babelPlugins.flowWithOptions],
+  ];
+});
+const parseTypeScript = createParse("parse", function* (text) {
+  if (babelPlugins.jsx.test(text)) {
+    yield [babelPlugins.jsx, babelPlugins.typescript];
+  }
+
+  yield [babelPlugins.typescript];
+});
+const parseExpression = createParse("parseExpression", (text) => {
+  return babelPlugins.jsx.test(text) ? [[babelPlugins.jsx]] : [];
+});
 
 function tryCombinations(fn, combinations) {
   let error;
-  for (let i = 0; i < combinations.length; i++) {
+  for (const plugins of combinations) {
     try {
-      return rethrowSomeRecoveredErrors(fn(combinations[i]));
+      return rethrowSomeRecoveredErrors(fn(plugins));
     } catch (_error) {
       if (!error) {
         error = _error;

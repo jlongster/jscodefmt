@@ -88,9 +88,9 @@ exports[`snippet: #8 error test 1`] = `
 `;
 
 exports[`snippet: #9 error test 1`] = `
-"Tuple expressions starting with '[|' are only allowed when the 'syntaxType' option of the 'recordAndTuple' plugin is set to 'bar' (1:1)
+"Unexpected token (1:2)
 > 1 | [| 1 |]
-    | ^"
+    |  ^"
 `;
 
 exports[`static-import-source-should-not-has-extra-token.js error test 1`] = `

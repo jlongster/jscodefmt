@@ -15,7 +15,13 @@ const thirdParty = isProduction
   ? path.join(prettierRootDir, "./third-party")
   : path.join(prettierRootDir, "./src/common/third-party");
 
+const babelParsers = require(path.join(
+  prettierRootDir,
+  isProduction ? "./parser-babel" : "./src/language-js/parser-babel"
+)).parsers;
+
 module.exports = {
   thirdParty,
   prettierCli,
+  babelParsers,
 };

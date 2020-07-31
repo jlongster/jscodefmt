@@ -516,6 +516,19 @@ Default: true
 
 exports[`show detailed usage with --help semi (write) 1`] = `Array []`;
 
+exports[`show detailed usage with --help single-attribute-per-line (stderr) 1`] = `""`;
+
+exports[`show detailed usage with --help single-attribute-per-line (stdout) 1`] = `
+"--single-attribute-per-line
+
+  Enforce single attribute per line in HTML, Vue and JSX.
+
+Default: false
+"
+`;
+
+exports[`show detailed usage with --help single-attribute-per-line (write) 1`] = `Array []`;
+
 exports[`show detailed usage with --help single-quote (stderr) 1`] = `""`;
 
 exports[`show detailed usage with --help single-quote (stdout) 1`] = `

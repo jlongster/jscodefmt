@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`single-attribute-per-line.html - {"singleAttributePerLine":true} format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+singleAttributePerLine: true
+                                                                                | printWidth
+=====================================input======================================
+<div data-a="1">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div data-a="1" data-b="2" data-c="3">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div data-a="Lorem ipsum dolor sit amet" data-b="Lorem ipsum dolor sit amet" data-c="Lorem ipsum dolor sit amet">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div data-long-attribute-a="1" data-long-attribute-b="2" data-long-attribute-c="3">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<img src="/images/foo.png" />
+
+<img src="/images/foo.png" alt="bar" />
+
+<img src="/images/foo.png" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+
+=====================================output=====================================
+<div data-a="1">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div
+  data-a="1"
+  data-b="2"
+  data-c="3"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div
+  data-a="Lorem ipsum dolor sit amet"
+  data-b="Lorem ipsum dolor sit amet"
+  data-c="Lorem ipsum dolor sit amet"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div
+  data-long-attribute-a="1"
+  data-long-attribute-b="2"
+  data-long-attribute-c="3"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<img src="/images/foo.png" />
+
+<img
+  src="/images/foo.png"
+  alt="bar"
+/>
+
+<img
+  src="/images/foo.png"
+  alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+/>
+
+================================================================================
+`;
+
+exports[`single-attribute-per-line.html format 1`] = `
+====================================options=====================================
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div data-a="1">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div data-a="1" data-b="2" data-c="3">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div data-a="Lorem ipsum dolor sit amet" data-b="Lorem ipsum dolor sit amet" data-c="Lorem ipsum dolor sit amet">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div data-long-attribute-a="1" data-long-attribute-b="2" data-long-attribute-c="3">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<img src="/images/foo.png" />
+
+<img src="/images/foo.png" alt="bar" />
+
+<img src="/images/foo.png" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+
+=====================================output=====================================
+<div data-a="1">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div data-a="1" data-b="2" data-c="3">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div
+  data-a="Lorem ipsum dolor sit amet"
+  data-b="Lorem ipsum dolor sit amet"
+  data-c="Lorem ipsum dolor sit amet"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<div
+  data-long-attribute-a="1"
+  data-long-attribute-b="2"
+  data-long-attribute-c="3"
+>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</div>
+
+<img src="/images/foo.png" />
+
+<img src="/images/foo.png" alt="bar" />
+
+<img
+  src="/images/foo.png"
+  alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+/>
+
+================================================================================
+`;

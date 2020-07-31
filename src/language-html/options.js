@@ -1,5 +1,7 @@
 "use strict";
 
+const commonOptions = require("../common/common-options");
+
 const CATEGORY_HTML = "HTML";
 
 // format based on https://github.com/prettier/prettier/blob/master/src/main/core-options.js
@@ -25,6 +27,7 @@ module.exports = {
       },
     ],
   },
+  singleAttributePerLine: commonOptions.singleAttributePerLine,
   vueIndentScriptAndStyle: {
     since: "1.19.0",
     category: CATEGORY_HTML,

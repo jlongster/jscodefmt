@@ -344,6 +344,11 @@ in order for it to be formatted.",
           "description": "Print semicolons.",
           "type": "boolean",
         },
+        "singleAttributePerLine": Object {
+          "default": false,
+          "description": "Enforce single attribute per line in HTML, Vue and JSX.",
+          "type": "boolean",
+        },
         "singleQuote": Object {
           "default": false,
           "description": "Use single quotes instead of double quotes.",

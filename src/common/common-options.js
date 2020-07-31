@@ -46,4 +46,11 @@ module.exports = {
       },
     ],
   },
+  singleAttributePerLine: {
+    since: "2.1.0",
+    category: CATEGORY_COMMON,
+    type: "boolean",
+    default: false,
+    description: "Enforce single attribute per line in HTML, Vue and JSX.",
+  },
 };

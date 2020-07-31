@@ -223,6 +223,10 @@ Object {
       "default": true,
       "type": "boolean",
     },
+    "singleAttributePerLine": Object {
+      "default": false,
+      "type": "boolean",
+    },
     "singleQuote": Object {
       "default": false,
       "type": "boolean",
@@ -996,6 +1000,15 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"oppositeDescription\\": \\"Do not print semicolons, except at the beginning of lines which may need them.\\",
       \\"pluginDefaults\\": {},
       \\"since\\": \\"1.0.0\\",
+      \\"type\\": \\"boolean\\"
+    },
+    {
+      \\"category\\": \\"Common\\",
+      \\"default\\": false,
+      \\"description\\": \\"Enforce single attribute per line in HTML, Vue and JSX.\\",
+      \\"name\\": \\"singleAttributePerLine\\",
+      \\"pluginDefaults\\": {},
+      \\"since\\": \\"2.1.0\\",
       \\"type\\": \\"boolean\\"
     },
     {

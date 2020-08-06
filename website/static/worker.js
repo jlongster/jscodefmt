@@ -56,6 +56,10 @@ function handleMessage(message) {
 
   if (message.type === "format") {
     var options = message.options || {};
+    if (typeof options.debugMode === "boolean") {
+      PRETTIER_DEBUG = options.debugMode;
+      delete options.debugMode;
+    }
 
     delete options.ast;
     delete options.doc;

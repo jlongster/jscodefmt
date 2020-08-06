@@ -7,10 +7,12 @@ export default class extends React.Component {
   constructor() {
     super();
     this.state = {
+      debugMode: true,
       showSidebar: false,
       showAst: false,
       showDoc: false,
       showSecondFormat: false,
+      toggleDebugMode: () => this.setState(stateToggler("debugMode")),
       toggleSidebar: () => this.setState(stateToggler("showSidebar")),
       toggleAst: () => this.setState(stateToggler("showAst")),
       toggleDoc: () => this.setState(stateToggler("showDoc")),

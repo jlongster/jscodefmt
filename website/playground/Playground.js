@@ -214,6 +214,11 @@ class Playground extends React.Component {
                       </SidebarCategory>
                       <SidebarCategory title="Debug">
                         <Checkbox
+                          label="debug mode"
+                          checked={editorState.debugMode}
+                          onChange={editorState.toggleDebugMode}
+                        />
+                        <Checkbox
                           label="show AST"
                           checked={editorState.showAst}
                           onChange={editorState.toggleAst}

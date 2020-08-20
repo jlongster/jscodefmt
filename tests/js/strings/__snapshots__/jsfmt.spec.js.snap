@@ -244,11 +244,9 @@ const Bar = styled.div\`
 \`
 
 =====================================output=====================================
-foo(
-  \`a long string \${
-    1 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3
-  } with expr\`,
-);
+foo(\`a long string \${
+  1 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3
+} with expr\`);
 
 const x = \`a long string \${
   1 +
@@ -273,37 +271,33 @@ const x = \`a long string \${
   3
 } with expr\`;
 
-foo(
-  \`a long string \${
-    1 +
-    2 +
-    3 +
-    2 +
-    3 +
-    2 +
-    3 +
-    2 +
-    3 +
-    2 +
-    3 +
-    2 +
-    (function () {
-      const x = 5;
+foo(\`a long string \${
+  1 +
+  2 +
+  3 +
+  2 +
+  3 +
+  2 +
+  3 +
+  2 +
+  3 +
+  2 +
+  3 +
+  2 +
+  (function () {
+    const x = 5;
 
-      return x;
-    })() +
-    3 +
-    2 +
-    3 +
-    2 +
-    3
-  } with expr\`,
-);
+    return x;
+  })() +
+  3 +
+  2 +
+  3 +
+  2 +
+  3
+} with expr\`);
 
 pipe.write(
-  \`\\n  \${chalk.dim(
-    \`\\u203A and \${more} more \${more} more \${more} more \${more}\`,
-  )}\`,
+  \`\\n  \${chalk.dim(\`\\u203A and \${more} more \${more} more \${more} more \${more}\`)}\`,
 );
 
 // https://github.com/prettier/prettier/issues/1662#issue-230406820
@@ -323,12 +317,10 @@ const env = \${JSON.stringify(
 \`;
 
 // https://github.com/prettier/prettier/issues/821#issue-210557749
-f(
-  \`\${{
-    a: 4,
-    b: 9,
-  }}\`,
-);
+f(\`\${{
+  a: 4,
+  b: 9,
+}}\`);
 
 // https://github.com/prettier/prettier/issues/1183#issue-220863505
 const makeBody = (store, assets, html) =>
@@ -427,11 +419,9 @@ const Bar = styled.div\`
 \`
 
 =====================================output=====================================
-foo(
-  \`a long string \${
-    1 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3
-  } with expr\`
-);
+foo(\`a long string \${
+  1 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3
+} with expr\`);
 
 const x = \`a long string \${
   1 +
@@ -456,37 +446,33 @@ const x = \`a long string \${
   3
 } with expr\`;
 
-foo(
-  \`a long string \${
-    1 +
-    2 +
-    3 +
-    2 +
-    3 +
-    2 +
-    3 +
-    2 +
-    3 +
-    2 +
-    3 +
-    2 +
-    (function () {
-      const x = 5;
+foo(\`a long string \${
+  1 +
+  2 +
+  3 +
+  2 +
+  3 +
+  2 +
+  3 +
+  2 +
+  3 +
+  2 +
+  3 +
+  2 +
+  (function () {
+    const x = 5;
 
-      return x;
-    })() +
-    3 +
-    2 +
-    3 +
-    2 +
-    3
-  } with expr\`
-);
+    return x;
+  })() +
+  3 +
+  2 +
+  3 +
+  2 +
+  3
+} with expr\`);
 
 pipe.write(
-  \`\\n  \${chalk.dim(
-    \`\\u203A and \${more} more \${more} more \${more} more \${more}\`
-  )}\`
+  \`\\n  \${chalk.dim(\`\\u203A and \${more} more \${more} more \${more} more \${more}\`)}\`
 );
 
 // https://github.com/prettier/prettier/issues/1662#issue-230406820
@@ -506,12 +492,10 @@ const env = \${JSON.stringify(
 \`;
 
 // https://github.com/prettier/prettier/issues/821#issue-210557749
-f(
-  \`\${{
-    a: 4,
-    b: 9,
-  }}\`
-);
+f(\`\${{
+  a: 4,
+  b: 9,
+}}\`);
 
 // https://github.com/prettier/prettier/issues/1183#issue-220863505
 const makeBody = (store, assets, html) =>

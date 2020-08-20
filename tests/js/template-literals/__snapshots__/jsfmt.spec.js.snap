@@ -185,9 +185,7 @@ const shouldWrapForNow = \`such a long template string \${
 const shouldNotWrap = \`simple expressions should not break \${this} \${variable} \${a.b.c} \${this.b.c} \${a[b].c} \${a.b[c]} \${a.b["c"]} \${a?.b?.c}\`;
 
 console.log(
-  chalk.white(
-    \`Covered Lines below threshold: \${coverageSettings.lines}%. Actual: \${coverageSummary.total.lines.pct}%\`
-  )
+  chalk.white(\`Covered Lines below threshold: \${coverageSettings.lines}%. Actual: \${coverageSummary.total.lines.pct}%\`)
 );
 
 x = \`mdl-textfield mdl-js-textfield \${className} \${
@@ -212,21 +210,17 @@ console.log(
   \`Trying update appcast for \${app.name} (\${app.cask.appcast}) -> (\${app.cask.appcastGenerated})\`
 );
 
-console.log(
-  \`brew cask audit --download \${_.map(definitions, "caskName").join(" ")}\`
-);
+console.log(\`brew cask audit --download \${_.map(definitions, "caskName").join(
+  " "
+)}\`);
 
-console.log(
-  \`\\nApparently jetbrains changed the release artifact for \${app.name}@\${app.jetbrains.version}.\\n\`
-);
+console.log(\`\\nApparently jetbrains changed the release artifact for \${app.name}@\${app.jetbrains.version}.\\n\`);
 
 descirbe("something", () => {
   test(\`{pass: false} expect(\${small}).toBeGreaterThanOrEqual(\${big})\`, () => {});
 });
 
-throw new Error(
-  \`pretty-format: Option "theme" has a key "\${key}" whose value "\${value}" is undefined in ansi-styles.\`
-);
+throw new Error(\`pretty-format: Option "theme" has a key "\${key}" whose value "\${value}" is undefined in ansi-styles.\`);
 
 ================================================================================
 `;

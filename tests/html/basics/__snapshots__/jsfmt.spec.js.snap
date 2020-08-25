@@ -73,7 +73,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head></head>
   <body></body>
@@ -294,7 +294,7 @@ printWidth: 80
 
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -385,7 +385,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js" lang="">
   <head>
     <meta charset="utf-8" />

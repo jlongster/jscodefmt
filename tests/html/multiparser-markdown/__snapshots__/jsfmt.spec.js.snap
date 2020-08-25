@@ -20,7 +20,7 @@ printWidth: 80
 
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <script type="text/markdown">

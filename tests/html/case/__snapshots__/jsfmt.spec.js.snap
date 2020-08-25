@@ -24,7 +24,7 @@ printWidth: 80
 </HTML>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js mY-ClAsS">
   <head>
     <meta charset="utf-8" />

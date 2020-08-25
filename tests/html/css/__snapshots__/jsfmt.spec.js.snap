@@ -190,7 +190,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Sample styled page</title>

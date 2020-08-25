@@ -78,7 +78,7 @@ printWidth: 80
 <!DOCTYPE html><HTML CLASS="no-js mY-ClAsS"><HEAD><META CHARSET="utf-8"><TITLE>My tITlE</TITLE><META NAME="description" content="My CoNtEnT"></HEAD></HTML>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js mY-ClAsS">
   <head>
     <meta charset="utf-8" />

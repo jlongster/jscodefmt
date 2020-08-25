@@ -70,7 +70,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html class="no-js" lang="en">
   <head>
     <meta charset="utf-8" />

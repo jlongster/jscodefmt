@@ -52,7 +52,7 @@ printWidth: 80
 </svg>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>SVG</title>

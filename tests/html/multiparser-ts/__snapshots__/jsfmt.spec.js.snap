@@ -28,7 +28,7 @@ printWidth: 80
 
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <script lang="ts">

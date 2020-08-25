@@ -3309,7 +3309,7 @@ new Vue({el: '#app'})
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <div v-if="foo === 'foo'"></div>
@@ -3341,7 +3341,7 @@ new Vue({el: '#app'})
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <div v-if="foo === 'foo'"></div>
@@ -3372,7 +3372,7 @@ new Vue({el: '#app'})
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <div v-if="foo === 'foo'"></div>

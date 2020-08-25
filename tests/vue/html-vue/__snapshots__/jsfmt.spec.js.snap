@@ -115,7 +115,7 @@ printWidth: 80
 
 =====================================output=====================================
 <!-- https://github.com/vuejs/vue/blob/dev/examples/elastic-header/index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -271,7 +271,7 @@ printWidth: 80
 
 =====================================output=====================================
 <!-- Hello World example from https://github.com/vuejs/vuejs.org/blob/master/src/v2/examples/vue-20-hello-world/index.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>My first Vue app</title>
@@ -318,7 +318,7 @@ printWidth: 80
 =====================================output=====================================
 <!-- issue #8162 -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <div v-if="foo === 'foo'"></div>
@@ -340,7 +340,7 @@ printWidth: 80
 <!doctype html><HTML></HTML>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html></html>
 
 ================================================================================
@@ -364,7 +364,7 @@ new Vue({el: '#app'})
 </HTML>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <div v-if="foo === 'foo'"></div>

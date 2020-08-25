@@ -251,7 +251,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!--[if IE 5]>
@@ -277,21 +277,21 @@ printWidth: 80
   </body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
 <html lang="zh-CN">
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
 <html lang="zh-CN">
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
 <html lang="zh-CN">
   <head></head>
@@ -306,21 +306,21 @@ printWidth: 80
   </center>
 </body>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html hello><!--<![endif]-->
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
 <!--[if gte IE 9]><!-->
 <html>
@@ -330,7 +330,7 @@ printWidth: 80
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
   <head></head>
@@ -419,7 +419,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!--[if IE 5]>This is IE 5<br /><![endif]-->
@@ -430,21 +430,21 @@ printWidth: 80
   </body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
 <html lang="zh-CN">
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
 <html lang="zh-CN">
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
 <html lang="zh-CN">
   <head></head>
@@ -459,21 +459,21 @@ printWidth: 80
   </center>
 </body>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html hello><!--<![endif]-->
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
 <!--[if gte IE 9
 ]><!--><html
@@ -483,7 +483,7 @@ printWidth: 80
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
   <head></head>
@@ -570,7 +570,7 @@ printWidth: Infinity
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!--[if IE 5]>This is IE 5<br /><![endif]-->
@@ -581,21 +581,21 @@ printWidth: Infinity
   </body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
 <html lang="zh-CN">
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
 <html lang="zh-CN">
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
 <html lang="zh-CN">
   <head></head>
@@ -610,21 +610,21 @@ printWidth: Infinity
   </center>
 </body>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html hello><!--<![endif]-->
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
 <!--[if gte IE 9]><!-->
 <html>
@@ -634,7 +634,7 @@ printWidth: Infinity
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
   <head></head>
@@ -722,7 +722,7 @@ printWidth: 1
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!--[if IE 5
@@ -758,7 +758,7 @@ printWidth: 1
   </body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
 <html
   lang="zh-CN"
@@ -767,7 +767,7 @@ printWidth: 1
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
 <html
   lang="zh-CN"
@@ -776,7 +776,7 @@ printWidth: 1
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
 <html
   lang="zh-CN"
@@ -796,14 +796,14 @@ printWidth: 1
   </center>
 </body>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html
   hello
@@ -812,7 +812,7 @@ printWidth: 1
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
 <!--[if gte IE 9]><!-->
 <html>
@@ -822,7 +822,7 @@ printWidth: 1
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
   <head></head>
@@ -910,7 +910,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!--[if IE 5]>This is IE 5<br /><![endif]-->
@@ -921,21 +921,21 @@ printWidth: 80
   </body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><![endif]-->
 <html lang="zh-CN">
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><div><![endif]-->
 <html lang="zh-CN">
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html lang="zh-CN"><div></div><![endif]-->
 <html lang="zh-CN">
   <head></head>
@@ -950,21 +950,21 @@ printWidth: 80
   </center>
 </body>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html hello><!--<![endif]-->
   <head></head>
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><head><![endif]-->
 <!--[if gte IE 9]><!-->
 <html>
@@ -974,7 +974,7 @@ printWidth: 80
   <body></body>
 </html>
 
-<!DOCTYPE html>
+<!doctype html>
 <!--[if lt IE 9]><html class="legacy-ie"><![endif]-->
 <!--[if gte IE 9]><!--><html><!--<![endif]-->
   <head></head>
@@ -1011,7 +1011,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!-- Do not display this at the moment
@@ -1058,7 +1058,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!-- Do not display this at the moment
@@ -1103,7 +1103,7 @@ printWidth: Infinity
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!-- Do not display this at the moment
@@ -1149,7 +1149,7 @@ printWidth: 1
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!-- Do not display this at the moment
@@ -1195,7 +1195,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!-- Do not display this at the moment
@@ -1237,7 +1237,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!--This is a comment-->
@@ -1274,7 +1274,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!--This is a comment-->
@@ -1309,7 +1309,7 @@ printWidth: Infinity
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!--This is a comment-->
@@ -1345,7 +1345,7 @@ printWidth: 1
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!--This is a comment-->
@@ -1386,7 +1386,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <body>
     <!--This is a comment-->

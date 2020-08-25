@@ -98,7 +98,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Sample styled page</title>
@@ -186,7 +186,7 @@ printWidth: 80
 </html>
 
 =====================================output=====================================
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head> </head>
   <body>

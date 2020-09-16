@@ -113,6 +113,9 @@ jobs:
       - name: Install Dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Remove Local Installed Prettier
+        run: yarn remove prettier
+
       - name: Download Artifact
         uses: actions/download-artifact@v2
         with:

@@ -175,38 +175,11 @@ exports[`show version with --version (stderr) 1`] = `""`;
 exports[`show version with --version (write) 1`] = `Array []`;
 
 exports[`show warning with --help not-found (typo) (stderr) 1`] = `
-"[warn] Unknown flag \\"parserr\\", did you mean \\"parser\\"?
+"[error] Unknown flag \\"parserr\\", did you mean \\"parser\\"?
 "
 `;
 
-exports[`show warning with --help not-found (typo) (stdout) 1`] = `
-"--parser <flow|babel|babel-flow|babel-ts|typescript|css|less|scss|json|json5|json-stringify|graphql|markdown|mdx|vue|yaml|html|angular|lwc>
-
-  Which parser to use.
-
-Valid options:
-
-  flow             Flow
-  babel            JavaScript
-  babel-flow       Flow
-  babel-ts         TypeScript
-  typescript       TypeScript
-  css              CSS
-  less             Less
-  scss             SCSS
-  json             JSON
-  json5            JSON5
-  json-stringify   JSON.stringify
-  graphql          GraphQL
-  markdown         Markdown
-  mdx              MDX
-  vue              Vue
-  yaml             YAML
-  html             HTML
-  angular          Angular
-  lwc              Lightning Web Components
-"
-`;
+exports[`show warning with --help not-found (typo) (stdout) 1`] = `""`;
 
 exports[`show warning with --help not-found (typo) (write) 1`] = `Array []`;
 

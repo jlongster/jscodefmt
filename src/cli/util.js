@@ -1020,7 +1020,14 @@ function normalizeContextArgv(context, keys) {
   const argv = !keys ? context.argv : pick(context.argv, keys);
 
   context.argv = optionsNormalizer.normalizeCliOptions(argv, detailedOptions, {
-    logger: context.logger,
+    logger: {
+      warn(...args) {
+        if (context.logger) {
+          context.logger.error(...args);
+        }
+        process.exit(1);
+      },
+    },
   });
 }
 //------------------------------context-util-end--------------------------------

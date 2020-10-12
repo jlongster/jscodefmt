@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Exit on unknown options "---unknown"} (stderr) 1`] = `
+"[error] Ignored unknown option ---unknown.
+"
+`;
+
+exports[`Exit on unknown options "--unknown -0 ---unknown"} (stderr) 1`] = `
+"[error] Ignored unknown option -0=---unknown. Did you mean -_?
+"
+`;
+
+exports[`Exit on unknown options "--unknown"} (stderr) 1`] = `
+"[error] Ignored unknown option --unknown.
+"
+`;
+
+exports[`Exit on unknown options "-0"} (stderr) 1`] = `
+"[error] Ignored unknown option -0. Did you mean -_?
+"
+`;
+
+exports[`Not unknown option "-" (stderr) 1`] = `
+"[error] No files matching the pattern were found: \\"foo.js\\".
+[error] No files matching the pattern were found: \\"-\\".
+"
+`;
+
+exports[`Not unknown option "--" (stderr) 1`] = `
+"[error] No files matching the pattern were found: \\"foo.js\\".
+"
+`;
+
+exports[`Not unknown option "un--known" (stderr) 1`] = `
+"[error] No files matching the pattern were found: \\"foo.js\\".
+[error] No files matching the pattern were found: \\"un--known\\".
+"
+`;
+
+exports[`Not unknown option "un-known" (stderr) 1`] = `
+"[error] No files matching the pattern were found: \\"foo.js\\".
+[error] No files matching the pattern were found: \\"un-known\\".
+"
+`;
+
+exports[`Should suggest right option "--html-whitespace"} (stderr) 1`] = `
+"[error] Ignored unknown option --html-whitespace.
+"
+`;
+
+exports[`Should suggest right option "--tab"} (stderr) 1`] = `
+"[error] Ignored unknown option --tab.
+"
+`;
+
+exports[`Should suggest right option "-no-conf"} (stderr) 1`] = `
+"[error] Ignored unknown option -n. Did you mean -_?
+"
+`;

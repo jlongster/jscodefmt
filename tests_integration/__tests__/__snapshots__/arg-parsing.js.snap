@@ -51,26 +51,20 @@ exports[`number file/dir (stdout) 5`] = `
 `;
 
 exports[`unknown negated options are warned (stderr) 1`] = `
-"[warn] Ignored unknown option --no-unknown.
+"[error] Ignored unknown option --no-unknown.
 "
 `;
 
-exports[`unknown negated options are warned (stdout) 1`] = `
-"console.log(\\"could be single quote and without semi\\");
-"
-`;
+exports[`unknown negated options are warned (stdout) 1`] = `""`;
 
 exports[`unknown negated options are warned (write) 1`] = `Array []`;
 
 exports[`unknown options are warned (stderr) 1`] = `
-"[warn] Ignored unknown option --unknown.
+"[error] Ignored unknown option --unknown.
 "
 `;
 
-exports[`unknown options are warned (stdout) 1`] = `
-"console.log(\\"could be single quote and without semi\\");
-"
-`;
+exports[`unknown options are warned (stdout) 1`] = `""`;
 
 exports[`unknown options are warned (write) 1`] = `Array []`;
 

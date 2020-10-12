@@ -12,11 +12,11 @@ test("do not show warnings with --loglevel error", () => {
 });
 
 test("show errors and warnings with --loglevel warn", () => {
-  runPrettierWithLogLevel("warn", ["[error]", "[warn]"]);
+  runPrettierWithLogLevel("warn", ["[error]"]);
 });
 
 test("show all logs with --loglevel debug", () => {
-  runPrettierWithLogLevel("debug", ["[error]", "[warn]", "[debug]"]);
+  runPrettierWithLogLevel("debug", ["[error]", "[debug]"]);
 });
 
 describe("--write with --loglevel=silent doesn't log filenames", () => {
@@ -33,7 +33,6 @@ function runPrettierWithLogLevel(logLevel, patterns) {
   const result = runPrettier("cli/loglevel", [
     "--loglevel",
     logLevel,
-    "--unknown-option",
     "--parser",
     "unknown-parser",
     "not-found.js",

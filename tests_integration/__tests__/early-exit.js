@@ -56,7 +56,7 @@ describe("show warning with --help not-found (typo)", () => {
     // cspell:disable-next-line
     "parserr",
   ]).test({
-    status: 0,
+    status: 1,
   });
 });
 

@@ -119,9 +119,7 @@ function getRollupConfig(rollupConfig) {
     plugins: rollupConfig.plugins.filter(
       (plugin) =>
         // We're not interested in dependencies, we already check `yarn.lock`
-        plugin.name !== "node-resolve" &&
-        // This is really slow, we need this "preflight" to be fast
-        plugin.name !== "babel"
+        plugin.name !== "node-resolve"
     ),
   };
 }

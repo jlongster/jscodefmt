@@ -11,7 +11,6 @@ const nodeGlobals = require("rollup-plugin-node-globals");
 const json = require("@rollup/plugin-json");
 const replace = require("@rollup/plugin-replace");
 const { terser } = require("rollup-plugin-terser");
-const { babel } = require("@rollup/plugin-babel");
 const nativeShims = require("./rollup-plugins/native-shims");
 const executable = require("./rollup-plugins/executable");
 const evaluate = require("./rollup-plugins/evaluate");
@@ -54,43 +53,6 @@ const entries = [
     ),
   },
 ];
-
-function getBabelConfig(bundle) {
-  const config = {
-    babelrc: false,
-    plugins: bundle.babelPlugins || [],
-    compact: bundle.type === "plugin" ? false : "auto",
-  };
-  if (bundle.type === "core") {
-    config.plugins.push(
-      require.resolve("./babel-plugins/transform-custom-require")
-    );
-  }
-  const targets = { node: "10" };
-  if (bundle.target === "universal") {
-    targets.browsers = [
-      ">0.5%",
-      "not ie 11",
-      "not safari 5.1",
-      "not op_mini all",
-    ];
-  }
-  config.presets = [
-    [
-      require.resolve("@babel/preset-env"),
-      {
-        targets,
-        exclude: ["transform-async-to-generator"],
-        modules: false,
-      },
-    ],
-  ];
-  config.plugins.push([
-    require.resolve("@babel/plugin-proposal-object-rest-spread"),
-    { loose: true, useBuiltIns: true },
-  ]);
-  return config;
-}
 
 function getRollupConfig(bundle) {
   const config = {
@@ -143,8 +105,6 @@ function getRollupConfig(bundle) {
   }
   Object.assign(replaceStrings, bundle.replace);
 
-  const babelConfig = { babelHelpers: "bundled", ...getBabelConfig(bundle) };
-
   const alias = { ...bundle.alias };
   alias.entries = [...entries, ...(alias.entries || [])];
 
@@ -174,7 +134,6 @@ function getRollupConfig(bundle) {
     }),
     externals(bundle.externals),
     bundle.target === "universal" && nodeGlobals(),
-    babel(babelConfig),
     bundle.minify !== false &&
       bundle.target === "universal" &&
       terser({
@@ -230,17 +189,6 @@ function getWebpackConfig(bundle) {
   const root = path.resolve(__dirname, "..", "..");
   const config = {
     entry: path.resolve(root, bundle.input),
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          use: {
-            loader: "babel-loader",
-            options: getBabelConfig(bundle),
-          },
-        },
-      ],
-    },
     output: {
       path: path.resolve(root, "dist"),
       filename: bundle.output,

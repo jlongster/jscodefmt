@@ -13,7 +13,6 @@ const path = require("path");
  * @property {CommonJSConfig} [commonjs={}] - options for `rollup-plugin-commonjs`
  * @property {string[]} externals - array of paths that should not be included in the final bundle
  * @property {Object.<string, string>} replace - map of strings to replace when processing the bundle
- * @property {string[]} babelPlugins - babel plugins
  * @property {Object?} terserOptions - options for `terser`
  * @property {boolean?} minify - minify
 

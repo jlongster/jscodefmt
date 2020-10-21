@@ -32,7 +32,12 @@ createIgnorer.sync = function (ignorePath, withNodeModules) {
  * @param {boolean?} withNodeModules
  */
 function _createIgnorer(ignoreContent, withNodeModules) {
-  const ignorer = ignore().add(ignoreContent || "");
+  const ignorer = ignore();
+
+  if (ignoreContent) {
+    ignorer.add(ignoreContent);
+  }
+
   if (!withNodeModules) {
     ignorer.add("node_modules");
   }

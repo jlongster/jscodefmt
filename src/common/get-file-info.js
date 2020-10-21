@@ -1,6 +1,7 @@
 "use strict";
 
 const path = require("path");
+const ignore = require("ignore");
 const options = require("../main/options");
 const config = require("../config/resolve-config");
 const createIgnorer = require("./create-ignorer");
@@ -85,7 +86,9 @@ function _getFileInfo({
   const normalizedFilePath = normalizeFilePath(filePath, ignorePath);
 
   const fileInfo = {
-    ignored: ignorer.ignores(normalizedFilePath),
+    ignored:
+      ignore.isPathValid(normalizedFilePath) &&
+      ignorer.ignores(normalizedFilePath),
     inferredParser: null,
   };
 
@@ -115,9 +118,10 @@ function _getFileInfo({
 }
 
 function normalizeFilePath(filePath, ignorePath) {
-  return ignorePath
-    ? path.relative(path.dirname(ignorePath), filePath)
-    : filePath;
+  return path.relative(
+    ignorePath ? path.dirname(ignorePath) : process.cwd(),
+    filePath
+  );
 }
 
 module.exports = getFileInfo;

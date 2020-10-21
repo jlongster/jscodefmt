@@ -1,5 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Should not ignore files in parent dir (stderr) 1`] = `""`;
+
+exports[`Should not ignore files in parent dir (stdout) 1`] = `
+"{ \\"ignored\\": false, \\"inferredParser\\": \\"babel\\" }
+
+"
+`;
+
+exports[`Should not ignore files in parent dir (write) 1`] = `Array []`;
+
 exports[`extracts file-info for a file in not_node_modules (stderr) 1`] = `""`;
 
 exports[`extracts file-info for a file in not_node_modules (stdout) 1`] = `

@@ -5,7 +5,6 @@ const fs = require("fs");
 const readline = require("readline");
 const camelCase = require("camelcase");
 const dashify = require("dashify");
-
 const chalk = require("chalk");
 const stringify = require("fast-json-stable-stringify");
 const fromPairs = require("lodash/fromPairs");
@@ -13,6 +12,7 @@ const pick = require("lodash/pick");
 const groupBy = require("lodash/groupBy");
 const flat = require("lodash/flatten");
 const partition = require("lodash/partition");
+const { isPathValid } = require("ignore");
 // eslint-disable-next-line no-restricted-modules
 const prettier = require("../index");
 // eslint-disable-next-line no-restricted-modules
@@ -391,7 +391,7 @@ function formatStdin(context) {
     .then((input) => {
       if (
         relativeFilepath &&
-        ignorer.ignores(fixWindowsSlashes(relativeFilepath))
+        isIgnored(ignorer, fixWindowsSlashes(relativeFilepath))
       ) {
         writeOutput(context, { formatted: input });
         return;
@@ -422,6 +422,10 @@ function createIgnorerFromContextOrDie(context) {
   }
 }
 
+function isIgnored(ignorer, file) {
+  return isPathValid(file) && ignorer.ignores(file);
+}
+
 function formatFiles(context) {
   // The ignorer will be used to filter file paths after the glob is checked,
   // before any files are actually written
@@ -448,7 +452,7 @@ function formatFiles(context) {
       ? path.relative(path.dirname(context.argv["ignore-path"]), filename)
       : filename;
 
-    const fileIgnored = ignorer.ignores(fixWindowsSlashes(ignoreFilename));
+    const fileIgnored = isIgnored(ignorer, fixWindowsSlashes(ignoreFilename));
     if (
       fileIgnored &&
       (context.argv["debug-check"] ||

@@ -53,6 +53,16 @@ describe("file-info should not try resolve config with --no-config", () => {
 });
 
 describe("extracts file-info with ignored=true for a file in a hand-picked .prettierignore", () => {
+  runPrettier("cli/ignore-path/", [
+    "--file-info",
+    "regular-module.js",
+    "--ignore-path=.prettierignore",
+  ]).test({
+    status: 0,
+  });
+});
+
+describe("Should not ignore files in parent dir", () => {
   runPrettier("cli/", [
     "--file-info",
     "regular-module.js",

@@ -58,3 +58,7 @@ const style2 =/**
   width,
 });
 
+const foooobar = /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems || foo);
+const foooobar = /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems + foo);
+const foooobar = /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems || foo) ? foo : bar;
+const foooobar = /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems.fooooo.fooo);

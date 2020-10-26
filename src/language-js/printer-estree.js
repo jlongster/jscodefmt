@@ -109,6 +109,7 @@ const {
   shouldPrintComma,
   shouldFlatten,
   startsWithNoLookaheadToken,
+  getParenthesizedExpression,
 } = require("./utils");
 
 const printMemberChain = require("./print/member-chain");
@@ -5011,11 +5012,11 @@ function printAssignmentRight(leftNode, rightNode, printedRight, options) {
   if (hasLeadingOwnLineComment(options.originalText, rightNode, options)) {
     return indent(concat([line, printedRight]));
   }
-
+  rightNode = getParenthesizedExpression(rightNode);
   const canBreak =
     (isBinaryish(rightNode) && !shouldInlineLogicalExpression(rightNode)) ||
     (rightNode.type === "ConditionalExpression" &&
-      isBinaryish(rightNode.test) &&
+      isBinaryish(getParenthesizedExpression(rightNode.test)) &&
       !shouldInlineLogicalExpression(rightNode.test)) ||
     rightNode.type === "StringLiteralTypeAnnotation" ||
     (rightNode.type === "ClassExpression" &&

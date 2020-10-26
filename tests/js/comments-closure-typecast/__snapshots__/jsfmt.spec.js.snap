@@ -81,6 +81,10 @@ const style2 =/**
   width,
 });
 
+const foooobar = /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems || foo);
+const foooobar = /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems + foo);
+const foooobar = /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems || foo) ? foo : bar;
+const foooobar = /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems.fooooo.fooo);
 
 =====================================output=====================================
 // test to make sure comments are attached correctly
@@ -145,6 +149,17 @@ const style2 = /**
  */ ({
   width,
 });
+
+const foooobar =
+  /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems || foo);
+const foooobar =
+  /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems + foo);
+const foooobar =
+  /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems || foo)
+    ? foo
+    : bar;
+const foooobar =
+  /** @type {Array.<fooo.barr.baaaaaaz>} */ (fooobaarbazzItems.fooooo.fooo);
 
 ================================================================================
 `;

@@ -2,7 +2,7 @@
 
 exports[`A.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -70,7 +70,7 @@ module.exports = {
 
 exports[`B.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -116,7 +116,7 @@ A.js|8 col 23 error|  object literal
 
 exports[`apply.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -137,7 +137,7 @@ printWidth: 80
 
 exports[`non_objects.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -159,7 +159,7 @@ Object.assign({ a: "foo" }, 123);
 
 exports[`spread.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -201,7 +201,7 @@ declare var tup: [{ foo: string }, { bar: number }];
 
 exports[`undefined.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

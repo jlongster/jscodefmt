@@ -2,7 +2,7 @@
 
 exports[`any.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -24,7 +24,7 @@ const val: string = dict[k]; // error: number incompatible with string
 
 exports[`compatible.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -68,7 +68,7 @@ function foo2(x: {
 
 exports[`dictionary.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -676,7 +676,7 @@ function subtype_optional_c_to_dict(x: { p?: C }): { [k: string]: B } {
 
 exports[`incompatible.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -806,7 +806,7 @@ function foo8(x: { [key: string]: number }) {
 
 exports[`issue-1745.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -868,7 +868,7 @@ class B {
 
 exports[`test.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -900,7 +900,7 @@ module.exports = o;
 
 exports[`test_client.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

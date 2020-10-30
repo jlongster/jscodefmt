@@ -2,7 +2,7 @@
 
 exports[`classes.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -76,7 +76,7 @@ function bar(x: Bar): string {
 
 exports[`interfaces-neg.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -140,7 +140,7 @@ if (data.kind === "user") {
 
 exports[`interfaces-pos.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -204,7 +204,7 @@ if (data.kind === "system") {
 
 exports[`type-decls-neg.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -276,7 +276,7 @@ if (data.kind === "user") {
 
 exports[`type-decls-pos.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

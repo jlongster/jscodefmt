@@ -2,7 +2,7 @@
 
 exports[`gen_big_disjoint_union.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -8022,7 +8022,7 @@ function foo(x: TAction): TAction {
 
 exports[`test.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

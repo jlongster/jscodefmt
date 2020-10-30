@@ -2,7 +2,7 @@
 
 exports[`A.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -24,7 +24,7 @@ module.exports = A;
 
 exports[`B.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -52,7 +52,7 @@ module.exports = B;
 
 exports[`C.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -84,7 +84,7 @@ module.exports = C;
 
 exports[`D.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -102,7 +102,7 @@ new E().x;
 
 exports[`class_shapes.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -184,7 +184,7 @@ var w: Foo = z;
 
 exports[`expr.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -257,7 +257,7 @@ var alias2: Alias = _Alias.factory(); // error: bad pun
 
 exports[`extends_any.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -279,7 +279,7 @@ class Derived2 extends Derived1 {
 
 exports[`loc.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -301,7 +301,7 @@ class Foo {} // error, shadows type Foo
 
 exports[`statics.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

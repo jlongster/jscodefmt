@@ -2,7 +2,7 @@
 
 exports[`maybe_return.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -16,7 +16,7 @@ function getScaledData({ x }): ?{ foo: number } {}
 
 exports[`prettier-ignore.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

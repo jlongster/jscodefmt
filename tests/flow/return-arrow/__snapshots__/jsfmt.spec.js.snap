@@ -2,7 +2,7 @@
 
 exports[`in_object_type.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -70,7 +70,7 @@ const example17 = (): (?{ p: (string) => string }) => (0: any);
 
 exports[`issue-1249.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -124,7 +124,7 @@ type X = (a & b) => void;
 
 exports[`parens.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

@@ -2,7 +2,7 @@
 
 exports[`issue-598.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -60,7 +60,7 @@ function identity<A>(val: A): Functor<A> {
 
 exports[`issue-1228.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -91,7 +91,7 @@ function id(x: Task<any, any>): Task<any, any> {
 
 exports[`test.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -137,7 +137,7 @@ pstar = (new P(): P<P<number>>); // OK
 
 exports[`test2.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -209,7 +209,7 @@ class C<X> extends B<X> {}
 
 exports[`test3.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -253,7 +253,7 @@ function bar(x: P<number>): () => P<number> {
 
 exports[`test4.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -267,7 +267,7 @@ type T = T; // cycle in type alias should not cause non-termination
 
 exports[`test5.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

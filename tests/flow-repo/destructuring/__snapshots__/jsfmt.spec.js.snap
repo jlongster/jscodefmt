@@ -2,7 +2,7 @@
 
 exports[`array_rest.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -38,7 +38,7 @@ let [...e] = 0;
 
 exports[`computed.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -68,7 +68,7 @@ var { ["key"]: val3, ...spread } = { key: "val" };
 
 exports[`defaults.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -248,7 +248,7 @@ function default_expr_scope({ a, b = a }) {}
 
 exports[`destructuring.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -402,7 +402,7 @@ var cp2_err: string = others.childprop2; // Error: number ~> string
 
 exports[`eager.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -418,7 +418,7 @@ var x;
 
 exports[`poly.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -496,7 +496,7 @@ function arr_rest_pattern<X>([_, ...a]: ArrRest<X>) {
 
 exports[`rec.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -548,7 +548,7 @@ var { x: o } = o;
 
 exports[`refinement_non_termination.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -580,7 +580,7 @@ class UndefinedValue extends Value {}
 
 exports[`string_lit.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -602,7 +602,7 @@ var { "with-dash": with_dash } = { "with-dash": "motivating example" };
 
 exports[`unannotated.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

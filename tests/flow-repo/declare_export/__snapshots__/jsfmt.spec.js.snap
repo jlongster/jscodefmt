@@ -2,7 +2,7 @@
 
 exports[`B.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -20,7 +20,7 @@ exports.numberValue = 42;
 
 exports[`C.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -34,7 +34,7 @@ printWidth: 80
 
 exports[`CommonJS_Clobbering_Class.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -98,7 +98,7 @@ module.exports = Test;
 
 exports[`CommonJS_Clobbering_Lit.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -134,7 +134,7 @@ module.exports = {
 
 exports[`CommonJS_Named.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -166,7 +166,7 @@ exports.numberValue5 = 5;
 
 exports[`ES6_Default_AnonFunction1.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -190,7 +190,7 @@ declare export default () => number;
 
 exports[`ES6_Default_AnonFunction2.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -214,7 +214,7 @@ declare export default () => number;
 
 exports[`ES6_Default_NamedClass1.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -252,7 +252,7 @@ declare export function getAFoo(): FooImpl;
 
 exports[`ES6_Default_NamedClass2.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -278,7 +278,7 @@ declare export default class Foo {
 
 exports[`ES6_Default_NamedFunction1.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -302,7 +302,7 @@ declare export default function foo(): number;
 
 exports[`ES6_Default_NamedFunction2.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -326,7 +326,7 @@ declare export default function foo(): number;
 
 exports[`ES6_DefaultAndNamed.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -346,7 +346,7 @@ declare export var str: string;
 
 exports[`ES6_ExportAllFrom_Intermediary1.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -370,7 +370,7 @@ declare export * from "ES6_ExportAllFrom_Source1"
 
 exports[`ES6_ExportAllFrom_Intermediary2.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -394,7 +394,7 @@ declare export * from "ES6_ExportAllFrom_Source2"
 
 exports[`ES6_ExportAllFrom_Source1.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -418,7 +418,7 @@ declare export var numberValue1: number;
 
 exports[`ES6_ExportAllFrom_Source2.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -442,7 +442,7 @@ declare export var numberValue2: number;
 
 exports[`ES6_ExportAllFromMulti.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -462,7 +462,7 @@ declare export * from "./ES6_ExportAllFrom_Source2"
 
 exports[`ES6_ExportFrom_Intermediary1.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -492,7 +492,7 @@ declare export {
 
 exports[`ES6_ExportFrom_Intermediary2.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -522,7 +522,7 @@ declare export {
 
 exports[`ES6_ExportFrom_Source1.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -548,7 +548,7 @@ declare export var numberValue2: number;
 
 exports[`ES6_ExportFrom_Source2.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -574,7 +574,7 @@ declare export var numberValue2: number;
 
 exports[`ES6_Named1.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -630,7 +630,7 @@ declare export var varDeclNumber2: number;
 
 exports[`ES6_Named2.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -682,7 +682,7 @@ declare export var varDeclNumber4: number;
 
 exports[`ProvidesModuleA.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -714,7 +714,7 @@ exports.stringValue = "str";
 
 exports[`ProvidesModuleCJSDefault.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -742,7 +742,7 @@ module.exports = {
 
 exports[`ProvidesModuleD.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -762,7 +762,7 @@ printWidth: 80
 
 exports[`ProvidesModuleES6Default.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -794,7 +794,7 @@ export default {
 
 exports[`SideEffects.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -808,7 +808,7 @@ printWidth: 80
 
 exports[`es6modules.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

@@ -2,7 +2,7 @@
 
 exports[`comments.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -64,7 +64,7 @@ declare class D5<T> // 1
 
 exports[`type.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

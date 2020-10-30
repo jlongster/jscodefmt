@@ -2,7 +2,7 @@
 
 exports[`arrow.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -32,7 +32,7 @@ const run = (cmd /*: string */) /*: Promise<void> */ => {};
 
 exports[`class.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -54,7 +54,7 @@ class A {
 
 exports[`functions.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -68,7 +68,7 @@ function foo<T>(bar /*: T[] */, baz /*: T */) /*: S */ {}
 
 exports[`generics.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -102,7 +102,7 @@ foo/*:: <bar> */();
 
 exports[`interface.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -126,7 +126,7 @@ interface Foo {
 
 exports[`issues.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -204,7 +204,7 @@ export type AsyncExecuteOptions = child_process$execFileOpts & {
 
 exports[`let.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -220,7 +220,7 @@ let bar /*: string */ = "a";
 
 exports[`object_type_annotation.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -259,7 +259,7 @@ type Props3 = {
 
 exports[`type_annotations.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -295,7 +295,7 @@ const x = (input /*: string */) /*: string */ => {};
 
 exports[`union.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

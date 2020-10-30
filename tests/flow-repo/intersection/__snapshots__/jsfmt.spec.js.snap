@@ -2,7 +2,7 @@
 
 exports[`intersection.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -28,7 +28,7 @@ function bar(x: Error & { type: number }): number {
 
 exports[`objassign.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -62,7 +62,7 @@ let y: ObjAssignT = { ...x }; // should be fine
 
 exports[`pred.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -127,7 +127,7 @@ function hasObjectMode_ok(options: DuplexStreamOptions): boolean {
 
 exports[`test_fun.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -201,7 +201,7 @@ var g: (_: number | string) => void = f;
 
 exports[`test_obj.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

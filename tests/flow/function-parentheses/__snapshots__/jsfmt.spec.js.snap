@@ -3,7 +3,7 @@
 exports[`single.js - {"arrowParens":"avoid"} format 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -27,7 +27,7 @@ const selectorByPath: Path => SomethingSelector<
 
 exports[`single.js - {"trailingComma":"all"} format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth
@@ -52,7 +52,7 @@ const selectorByPath: (Path) => SomethingSelector<
 
 exports[`single.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -77,7 +77,7 @@ const selectorByPath: (Path) => SomethingSelector<
 exports[`test.js - {"arrowParens":"avoid"} format 1`] = `
 ====================================options=====================================
 arrowParens: "avoid"
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -213,7 +213,7 @@ type T8 = ??(() => A) | B;
 
 exports[`test.js - {"trailingComma":"all"} format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth
@@ -350,7 +350,7 @@ type T8 = ??(() => A) | B;
 
 exports[`test.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

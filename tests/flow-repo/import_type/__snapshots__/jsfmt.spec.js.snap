@@ -2,7 +2,7 @@
 
 exports[`ExportCJSDefault_Class.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -40,7 +40,7 @@ module.exports = ClassFoo3;
 
 exports[`ExportCJSNamed_Class.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -98,7 +98,7 @@ exports.foo5Inst = new ClassFoo5();
 
 exports[`ExportDefault_Class.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -132,7 +132,7 @@ export var foo1Inst = new ClassFoo1();
 
 exports[`ExportNamed_Alias.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -170,7 +170,7 @@ export function givesAFoo3Obj(): AliasFoo3 {
 
 exports[`ExportNamed_Class.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -204,7 +204,7 @@ export var foo2Inst = new ClassFoo2();
 
 exports[`ExportsANumber.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -222,7 +222,7 @@ export var numValue = 42;
 
 exports[`import_type.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -398,7 +398,7 @@ function foo() {
 
 exports[`issue-359.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

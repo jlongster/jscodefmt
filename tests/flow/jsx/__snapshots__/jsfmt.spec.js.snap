@@ -2,7 +2,7 @@
 
 exports[`func_inside_attr.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -16,7 +16,7 @@ printWidth: 80
 
 exports[`return_type.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

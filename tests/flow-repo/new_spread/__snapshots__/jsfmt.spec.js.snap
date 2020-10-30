@@ -2,7 +2,7 @@
 
 exports[`type.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -208,7 +208,7 @@ declare var o13: O13;
 
 exports[`type_any.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -246,7 +246,7 @@ var o3: O3 = (0: mixed); // ok
 
 exports[`type_contra.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -284,7 +284,7 @@ declare var o2: O2;
 
 exports[`type_dict.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -372,7 +372,7 @@ declare var o12: { ...{| [string]: T |}, ...{| [string]: U |} };
 
 exports[`type_generic.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -390,7 +390,7 @@ declare function spread<A, B>(a: A, b: B): { ...A, ...B };
 
 exports[`type_instance.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -430,7 +430,7 @@ declare var o2: O2;
 
 exports[`type_intersection.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -498,7 +498,7 @@ declare var o5: O5;
 
 exports[`type_intersection_optional.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -640,7 +640,7 @@ declare var o21: { ...{| p: T |} & { q: U } };
 
 exports[`type_optional.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -712,7 +712,7 @@ declare var p: { ...{| p?: T |}, ...{| p?: U |} };
 
 exports[`type_union.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

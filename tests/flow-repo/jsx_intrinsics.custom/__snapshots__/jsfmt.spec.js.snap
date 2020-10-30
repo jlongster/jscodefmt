@@ -2,7 +2,7 @@
 
 exports[`main.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -48,7 +48,7 @@ var d: React.Element<{ id: number }> = <div id="asdf" />; // Error: Props<{id:st
 
 exports[`strings.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

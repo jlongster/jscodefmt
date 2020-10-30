@@ -2,7 +2,7 @@
 
 exports[`quotes.js - {"quoteProps":"consistent"} format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "consistent"
                                                                                 | printWidth

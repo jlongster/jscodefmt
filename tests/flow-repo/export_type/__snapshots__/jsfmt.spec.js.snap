@@ -2,7 +2,7 @@
 
 exports[`cjs_with_types.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -28,7 +28,7 @@ module.exports = {};
 
 exports[`importer.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -104,7 +104,7 @@ var n: IFoo2 = { prop: 42 }; // Error: {prop:number} ~> {prop:string}
 
 exports[`types_only.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -148,7 +148,7 @@ export interface IFoo {
 
 exports[`types_only2.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

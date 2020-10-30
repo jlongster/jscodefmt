@@ -2,7 +2,7 @@
 
 exports[`builtin.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -38,7 +38,7 @@ var lengthTest4: IHasLength = true; // bool doesn't have length
 
 exports[`class.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -96,7 +96,7 @@ var testInstance3: IHasYString = new ClassWithXString(); // Error missing prop
 
 exports[`obj.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -148,7 +148,7 @@ function propTest6(y: { [key: string]: number }) {
 
 exports[`optional.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

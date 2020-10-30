@@ -1,1 +1,1 @@
-run_spec(__dirname, ["flow"], { quoteProps: "consistent" });
+run_spec(__dirname, ["flow", "babel-flow"], { quoteProps: "consistent" });

@@ -2,7 +2,7 @@
 
 exports[`param.js - {"trailingComma":"all"} format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth
@@ -19,7 +19,7 @@ function g({}: Foo) {}
 
 exports[`param.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

@@ -2,7 +2,7 @@
 
 exports[`sanity.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -68,7 +68,7 @@ function bak(z: string | number): number {
 
 exports[`sanity-multi-params.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -108,7 +108,7 @@ function foo(x: string | Array<string>): string {
 
 exports[`sanity-ordering.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -156,7 +156,7 @@ function dotAccess(head, create) {
 
 exports[`sanity-unbound-var.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -202,7 +202,7 @@ function foo(x: string | Array<string>): string {
 
 exports[`simple-predicate-func.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -360,7 +360,7 @@ declare function from_two_strings(x: string, y: string): void;
 
 exports[`simple-predicate-func-post.js format 1`] = `
 ====================================options=====================================
-parsers: ["flow"]
+parsers: ["flow", "babel-flow"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

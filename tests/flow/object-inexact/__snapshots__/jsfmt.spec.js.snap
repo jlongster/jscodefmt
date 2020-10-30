@@ -2,7 +2,7 @@
 
 exports[`comments.js - {"trailingComma":"all"} format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth
@@ -137,7 +137,7 @@ type Foo = {
 
 exports[`comments.js - {"trailingComma":"es5"} format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
 trailingComma: "es5"
                                                                                 | printWidth
@@ -272,7 +272,7 @@ type Foo = {
 
 exports[`comments.js - {"trailingComma":"none"} format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
 trailingComma: "none"
                                                                                 | printWidth
@@ -407,7 +407,7 @@ type Foo = {
 
 exports[`test.js - {"trailingComma":"all"} format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
 trailingComma: "all"
                                                                                 | printWidth
@@ -520,7 +520,7 @@ type X = { ... };
 
 exports[`test.js - {"trailingComma":"es5"} format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
 trailingComma: "es5"
                                                                                 | printWidth
@@ -633,7 +633,7 @@ type X = { ... };
 
 exports[`test.js - {"trailingComma":"none"} format 1`] = `
 ====================================options=====================================
-parsers: ["flow", "babel"]
+parsers: ["flow", "babel-flow", "babel"]
 printWidth: 80
 trailingComma: "none"
                                                                                 | printWidth

@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`issue-815.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+type T = A|B;
+class U {};
+declare var children: U;
+(children: T|U);
+class A {};
+class B {};
+
+type VirtualElement = Thunk|VirtualNode;
+type Child = VirtualElement;
+type Children = Array<Child>;
+
+
+class Thunk {}
+class VirtualNode {
+  children: Child|Children;
+  constructor(type, children/*:Children*/) {
+    this.children = children.length === 1 ? children[0] :
+      children;
+  }
+}
+
+=====================================output=====================================
+/* @flow */
+type T = A | B;
+class U {}
+declare var children: U;
+(children: T | U);
+class A {}
+class B {}
+
+type VirtualElement = Thunk | VirtualNode;
+type Child = VirtualElement;
+type Children = Array<Child>;
+
+class Thunk {}
+class VirtualNode {
+  children: Child | Children;
+  constructor(type, children /*: Children */) {
+    this.children = children.length === 1 ? children[0] : children;
+  }
+}
+
+================================================================================
+`;
+
+exports[`issue-815.js format 2`] = `
+====================================options=====================================
+parsers: ["babel-flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* @flow */
+type T = A|B;
+class U {};
+declare var children: U;
+(children: T|U);
+class A {};
+class B {};
+
+type VirtualElement = Thunk|VirtualNode;
+type Child = VirtualElement;
+type Children = Array<Child>;
+
+
+class Thunk {}
+class VirtualNode {
+  children: Child|Children;
+  constructor(type, children/*:Children*/) {
+    this.children = children.length === 1 ? children[0] :
+      children;
+  }
+}
+
+=====================================output=====================================
+/* @flow */
+type T = A | B;
+class U {}
+declare var children: U;
+(children: T | U);
+class A {}
+class B {}
+
+type VirtualElement = Thunk | VirtualNode;
+type Child = VirtualElement;
+type Children = Array<Child>;
+
+class Thunk {}
+class VirtualNode {
+  children: Child | Children;
+  constructor(type, children /*:Children*/) {
+    this.children = children.length === 1 ? children[0] : children;
+  }
+}
+
+================================================================================
+`;

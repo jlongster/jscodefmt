@@ -128,7 +128,7 @@ function getConditionalChainContents(node) {
 }
 
 function conditionalExpressionChainContainsJSX(node) {
-  return getConditionalChainContents(node).some(isJSXNode);
+  return getConditionalChainContents(node).some((node) => isJSXNode(node));
 }
 
 /**

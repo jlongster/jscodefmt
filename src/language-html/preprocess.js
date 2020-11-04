@@ -73,7 +73,7 @@ function mergeIeConditonalStartEndCommentIntoElementOpeningTag(
     node.firstChild.sourceSpan.start.offset === node.startSourceSpan.end.offset;
   return ast.map((node) => {
     if (node.children) {
-      const isTargetResults = node.children.map(isTarget);
+      const isTargetResults = node.children.map((child) => isTarget(child));
       if (isTargetResults.some(Boolean)) {
         const newChildren = [];
 
@@ -123,7 +123,9 @@ function mergeIeConditonalStartEndCommentIntoElementOpeningTag(
 function mergeNodeIntoText(ast, shouldMerge, getValue) {
   return ast.map((node) => {
     if (node.children) {
-      const shouldMergeResults = node.children.map(shouldMerge);
+      const shouldMergeResults = node.children.map((child) =>
+        shouldMerge(child)
+      );
       if (shouldMergeResults.some(Boolean)) {
         const newChildren = [];
         for (let i = 0; i < node.children.length; i++) {
@@ -193,7 +195,9 @@ function mergeSimpleElementIntoText(ast /*, options */) {
     node.next.type === "text";
   return ast.map((node) => {
     if (node.children) {
-      const isSimpleElementResults = node.children.map(isSimpleElement);
+      const isSimpleElementResults = node.children.map((child) =>
+        isSimpleElement(child)
+      );
       if (isSimpleElementResults.some(Boolean)) {
         const newChildren = [];
         for (let i = 0; i < node.children.length; i++) {

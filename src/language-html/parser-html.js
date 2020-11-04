@@ -78,7 +78,7 @@ function ngHtmlParser(
         inferParserByLanguage(langValue, options) === "html"
       );
     };
-    if (rootNodes.some(shouldParseAsHTML)) {
+    if (rootNodes.some((node) => shouldParseAsHTML(node))) {
       let secondParseResult;
       const doSecondParse = () =>
         parser.parse(input, {

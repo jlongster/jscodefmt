@@ -11,7 +11,9 @@ const DELIMITER_MAP = {
 };
 
 function parse(text) {
-  const delimiterRegex = Object.keys(DELIMITER_MAP).map(escape).join("|");
+  const delimiterRegex = Object.keys(DELIMITER_MAP)
+    .map((delimiter) => escape(delimiter))
+    .join("|");
 
   const match = text.match(
     // trailing spaces after delimiters are allowed

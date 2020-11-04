@@ -32,7 +32,7 @@ function postprocess(ast, options) {
     ast = visitNode(ast, (node) => {
       if (
         node.leadingComments &&
-        node.leadingComments.some(isTypeCastComment)
+        node.leadingComments.some((comment) => isTypeCastComment(comment))
       ) {
         startOffsetsOfTypeCastedNodes.add(locStart(node));
       }

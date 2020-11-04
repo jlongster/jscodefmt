@@ -329,11 +329,19 @@ function printMemberChain(path, options, print) {
       return "";
     }
     return indent(
-      group(concat([hardline, join(hardline, groups.map(printGroup))]))
+      group(
+        concat([
+          hardline,
+          join(
+            hardline,
+            groups.map((group) => printGroup(group))
+          ),
+        ])
+      )
     );
   }
 
-  const printedGroups = groups.map(printGroup);
+  const printedGroups = groups.map((group) => printGroup(group));
   const oneLine = concat(printedGroups);
 
   const cutoff = shouldMerge ? 3 : 2;
@@ -362,14 +370,16 @@ function printMemberChain(path, options, print) {
 
   const expanded = concat([
     printGroup(groups[0]),
-    shouldMerge ? concat(groups.slice(1, 2).map(printGroup)) : "",
+    shouldMerge
+      ? concat(groups.slice(1, 2).map((group) => printGroup(group)))
+      : "",
     shouldHaveEmptyLineBeforeIndent ? hardline : "",
     printIndentedGroup(groups.slice(shouldMerge ? 2 : 1)),
   ]);
 
   const callExpressions = printedNodes
     .map(({ node }) => node)
-    .filter(isCallOrOptionalCallExpression);
+    .filter((node) => isCallOrOptionalCallExpression(node));
 
   function lastGroupWillBreakAndOtherCallsHaveFunctionArguments() {
     const lastGroupNode = getLast(getLast(groups)).node;
@@ -379,7 +389,9 @@ function printMemberChain(path, options, print) {
       willBreak(lastGroupDoc) &&
       callExpressions
         .slice(0, -1)
-        .some((n) => n.arguments.some(isFunctionOrArrowExpression))
+        .some((n) =>
+          n.arguments.some((node) => isFunctionOrArrowExpression(node))
+        )
     );
   }
 
@@ -395,7 +407,7 @@ function printMemberChain(path, options, print) {
       callExpressions.some(
         (expr) => !expr.arguments.every((arg) => isSimpleCallArgument(arg, 0))
       )) ||
-    printedGroups.slice(0, -1).some(willBreak) ||
+    printedGroups.slice(0, -1).some((group) => willBreak(group)) ||
     lastGroupWillBreakAndOtherCallsHaveFunctionArguments()
   ) {
     return group(expanded);

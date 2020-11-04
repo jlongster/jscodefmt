@@ -30,7 +30,7 @@ function flattenDoc(doc) {
       ...doc,
       contents: flattenDoc(doc.contents),
       expandedStates: doc.expandedStates
-        ? doc.expandedStates.map(flattenDoc)
+        ? doc.expandedStates.map((doc) => flattenDoc(doc))
         : doc.expandedStates,
     };
   } else if (doc.contents) {
@@ -66,7 +66,7 @@ function printDoc(doc) {
   }
 
   if (doc.type === "concat") {
-    return "[" + doc.parts.map(printDoc).join(", ") + "]";
+    return "[" + doc.parts.map((doc) => printDoc(doc)).join(", ") + "]";
   }
 
   if (doc.type === "indent") {
@@ -97,7 +97,7 @@ function printDoc(doc) {
       return (
         "conditionalGroup(" +
         "[" +
-        doc.expandedStates.map(printDoc).join(",") +
+        doc.expandedStates.map((doc) => printDoc(doc)).join(",") +
         "])"
       );
     }
@@ -111,7 +111,9 @@ function printDoc(doc) {
   }
 
   if (doc.type === "fill") {
-    return "fill" + "(" + doc.parts.map(printDoc).join(", ") + ")";
+    return (
+      "fill" + "(" + doc.parts.map((doc) => printDoc(doc)).join(", ") + ")"
+    );
   }
 
   if (doc.type === "line-suffix") {

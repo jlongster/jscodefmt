@@ -37,7 +37,9 @@ class Node {
     for (const NODES_KEY in NODES_KEYS) {
       const nodes = this[NODES_KEY];
       if (nodes) {
-        const mappedNodes = mapNodesIfChanged(nodes, (node) => node.map(fn));
+        const mappedNodes = mapNodesIfChanged(nodes, (node) =>
+          node.map((node) => fn(node))
+        );
         if (newNode !== nodes) {
           if (!newNode) {
             newNode = new Node();
@@ -92,7 +94,7 @@ class Node {
 }
 
 function mapNodesIfChanged(nodes, fn) {
-  const newNodes = nodes.map(fn);
+  const newNodes = nodes.map((node) => fn(node));
   return newNodes.some((newNode, index) => newNode !== nodes[index])
     ? newNodes
     : nodes;

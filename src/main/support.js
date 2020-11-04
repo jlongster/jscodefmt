@@ -31,7 +31,7 @@ function getSupportInfo({
 
   const languages = plugins
     .reduce((all, plugin) => all.concat(plugin.languages || []), [])
-    .filter(filterSince);
+    .filter((plugin) => filterSince(plugin));
 
   const options = arrayify(
     Object.assign({}, ...plugins.map(({ options }) => options), coreOptions),
@@ -39,7 +39,7 @@ function getSupportInfo({
   )
     .filter((option) => filterSince(option) && filterDeprecated(option))
     .sort((a, b) => (a.name === b.name ? 0 : a.name < b.name ? -1 : 1))
-    .map(mapInternal)
+    .map((option) => mapInternal(option))
     .map((option) => {
       option = { ...option };
 
@@ -48,7 +48,7 @@ function getSupportInfo({
           option.default.length === 1
             ? option.default[0].value
             : option.default
-                .filter(filterSince)
+                .filter((option) => filterSince(option))
                 .sort((info1, info2) =>
                   semver.compare(info2.since, info1.since)
                 )[0].value;

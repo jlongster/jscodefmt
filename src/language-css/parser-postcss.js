@@ -152,7 +152,7 @@ function flattenGroups(node) {
   }
 
   if (node.type === "paren_group" || node.type === "comma_group") {
-    return { ...node, groups: node.groups.map(flattenGroups) };
+    return { ...node, groups: node.groups.map((doc) => flattenGroups(doc)) };
   }
 
   return node;

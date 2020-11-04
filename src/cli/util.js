@@ -651,7 +651,9 @@ function createOptionUsage(context, option, threshold) {
 
 function createDefaultValueDisplay(value) {
   return Array.isArray(value)
-    ? `[${value.map(createDefaultValueDisplay).join(", ")}]`
+    ? `[${value
+        .map((valueItem) => createDefaultValueDisplay(valueItem))
+        .join(", ")}]`
     : value;
 }
 

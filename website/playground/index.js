@@ -19,7 +19,9 @@ class App extends React.Component {
     this.worker.getMetadata().then(({ supportInfo, version }) => {
       this.setState({
         loaded: true,
-        availableOptions: supportInfo.options.map(augmentOption),
+        availableOptions: supportInfo.options.map((option) =>
+          augmentOption(option)
+        ),
         version: fixPrettierVersion(version),
       });
     });

@@ -10,3 +10,4 @@ coverage/
 /website/static/lib/
 /website/static/playground.js
 cspell.json
+**/.yarn/

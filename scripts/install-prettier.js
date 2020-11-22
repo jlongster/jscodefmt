@@ -7,7 +7,7 @@ const tempy = require("tempy");
 shell.config.fatal = true;
 
 const rootDir = path.join(__dirname, "..");
-const client = process.env.NPM_CLIENT || "yarn";
+const client = process.env.NPM_CLIENT || "npm";
 const packageDir =
   process.env.NODE_ENV === "production" ? path.join(rootDir, "dist") : rootDir;
 
@@ -30,7 +30,7 @@ module.exports = () => {
       break;
     default:
       // yarn fails when engine requirement not compatible by default
-      installCommand = `yarn add "${tarPath}"`;
+      installCommand = `yarn set version classic && yarn add "${tarPath}"`;
   }
 
   shell.exec(installCommand, { cwd: tmpDir });

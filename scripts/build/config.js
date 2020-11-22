@@ -45,6 +45,9 @@ const parsers = [
       "extra.projects = prepareAndTransformProjects(":
         "extra.projects = [] || prepareAndTransformProjects(",
       "process.versions.node": "'999.999.999'",
+      // `typescript/lib/tsc.js` and `typescript/lib/tsserver.js` try to use pnpApi
+      "process.versions.pnp": "false",
+      'require("pnpapi")': "{}",
     },
   },
   {

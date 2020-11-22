@@ -15,7 +15,7 @@
 /coverage
 .idea
 package-lock.json
-.yarn/*
+**/.yarn/*
 !.yarn/releases
 !.yarn/plugins
 !.yarn/sdks

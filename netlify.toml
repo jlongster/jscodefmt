@@ -1,3 +1,4 @@
 [build.environment]
-  NODE_VERSION = "12"
+  NODE_VERSION = "14"
+  NETLIFY_USE_YARN = "true"
   YARN_VERSION = "1.22.10"

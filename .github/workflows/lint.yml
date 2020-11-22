@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v2.1.2
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Check Dependencies
         run: yarn lint:deps

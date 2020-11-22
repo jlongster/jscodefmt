@@ -1,6 +1,6 @@
 "use strict";
 
-const parseSrcset = require("parse-srcset");
+const parseSrcset = require("@fisker/parse-srcset");
 const {
   builders: { concat, ifBreak, join, line },
 } = require("../document");

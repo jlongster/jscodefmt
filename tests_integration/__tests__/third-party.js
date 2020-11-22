@@ -59,7 +59,11 @@ describe("cosmiconfig", () => {
       cosmiconfigSync("prettier").search(
         path.join(__dirname, "../cli/config/invalid/broken-json")
       );
-    }).toThrowErrorMatchingSnapshot();
+    })
+      // There are two kinds of message https://github.com/sindresorhus/parse-json/pull/23
+      // (before parse-json v5.1.0) Unexpected token a in JSON at position 1 while parsing near '{a':}'
+      // (after parse-json v5.1.0) Unexpected token "a" (0x61) in JSON at position 1 while parsing "{a':}/n\"
+      .toThrowError(/in JSON at position 1 while parsing/);
   });
 });
 

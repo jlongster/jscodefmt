@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v2.1.2
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Cache Build Results
         id: build-cache
@@ -63,7 +63,7 @@ jobs:
         uses: actions/setup-node@v2.1.2
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Download Artifact
         uses: actions/download-artifact@v2
@@ -113,7 +113,7 @@ jobs:
           node-version: ${{ matrix.node }}
 
       - name: Install Dependencies
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
 
       - name: Download Artifact
         uses: actions/download-artifact@v2

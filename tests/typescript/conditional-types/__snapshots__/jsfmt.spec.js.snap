@@ -108,11 +108,11 @@ type T = test extends B
     */
     foo
   : test extends B
-  ? /* comment
+    ? /* comment
   comment
     comment */
-    foo
-  : bar;
+      foo
+    : bar;
 
 type T = test extends B ? /* comment */ foo : bar;
 
@@ -132,13 +132,13 @@ type T = test extends B
      comment
            comment
     */
-  test extends B
-  ? foo
-  : /* comment
+    test extends B
+    ? foo
+    : /* comment
   comment
     comment
    */
-    bar;
+      bar;
 
 type T = test extends B ? foo : /* comment */ bar;
 
@@ -199,8 +199,8 @@ type U2 = (new () => X) extends T ? U : V;
 export type DeepReadonly<T> = T extends any[]
   ? DeepReadonlyArray<T[number]>
   : T extends object
-  ? DeepReadonlyObject<T>
-  : T;
+    ? DeepReadonlyObject<T>
+    : T;
 
 type NonFunctionPropertyNames<T> = {
   [K in keyof T]: T[K] extends Function ? never : K;
@@ -215,14 +215,14 @@ type DeepReadonlyObject<T> = {
 type TypeName<T> = T extends string
   ? "string"
   : T extends number
-  ? "number"
-  : T extends boolean
-  ? "boolean"
-  : T extends undefined
-  ? "undefined"
-  : T extends Function
-  ? "function"
-  : "object";
+    ? "number"
+    : T extends boolean
+      ? "boolean"
+      : T extends undefined
+        ? "undefined"
+        : T extends Function
+          ? "function"
+          : "object";
 
 type Type01 = 0 extends (1 extends 2 ? 3 : 4) ? 5 : 6;
 type Type02 = 0 extends (1 extends 2 ? 3 : 4) ? 5 : 6;
@@ -270,10 +270,10 @@ type TestReturnType<T extends (...args: any[]) => any> = T extends (
 type Unpacked<T> = T extends (infer U)[]
   ? U
   : T extends (...args: any[]) => infer U
-  ? U
-  : T extends Promise<infer U>
-  ? U
-  : T;
+    ? U
+    : T extends Promise<infer U>
+      ? U
+      : T;
 
 ================================================================================
 `;

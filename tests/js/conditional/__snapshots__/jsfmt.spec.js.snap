@@ -177,11 +177,11 @@ test
     */
     foo
   : test
-  ? /* comment
+    ? /* comment
   comment
     comment */
-    foo
-  : bar;
+      foo
+    : bar;
 
 test ? /* comment */ foo : bar;
 
@@ -201,13 +201,13 @@ test
      comment
            comment
     */
-  test
-  ? foo
-  : /* comment
+    test
+    ? foo
+    : /* comment
   comment
     comment
    */
-    bar;
+      bar;
 
 test ? foo : /* comment */ bar;
 

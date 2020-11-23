@@ -179,9 +179,9 @@ fn(
   bifornCringerMoshedPerplexSawder,
   askTrovenaBeenaDependsRowans,
   glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
-    anodyneCondosMalateOverateRetinol 
-      ? annularCooeedSplicesWalksWayWay 
-      : kochabCooieGameOnOboleUnweave 
+    anodyneCondosMalateOverateRetinol
+      ? annularCooeedSplicesWalksWayWay
+      : kochabCooieGameOnOboleUnweave
 );
 
 =====================================output=====================================
@@ -209,9 +209,9 @@ fn(
   bifornCringerMoshedPerplexSawder,
   askTrovenaBeenaDependsRowans,
   glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
-    anodyneCondosMalateOverateRetinol 
-      ? annularCooeedSplicesWalksWayWay 
-      : kochabCooieGameOnOboleUnweave 
+    anodyneCondosMalateOverateRetinol
+      ? annularCooeedSplicesWalksWayWay
+      : kochabCooieGameOnOboleUnweave
 );
 
 =====================================output=====================================
@@ -238,9 +238,9 @@ fn(
   bifornCringerMoshedPerplexSawder,
   askTrovenaBeenaDependsRowans,
   glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
-    anodyneCondosMalateOverateRetinol 
-      ? annularCooeedSplicesWalksWayWay 
-      : kochabCooieGameOnOboleUnweave 
+    anodyneCondosMalateOverateRetinol
+      ? annularCooeedSplicesWalksWayWay
+      : kochabCooieGameOnOboleUnweave
 );
 
 =====================================output=====================================
@@ -266,9 +266,9 @@ fn(
   bifornCringerMoshedPerplexSawder,
   askTrovenaBeenaDependsRowans,
   glimseGlyphsHazardNoopsTieTie === averredBathersBoxroomBuggyNurl &&
-    anodyneCondosMalateOverateRetinol 
-      ? annularCooeedSplicesWalksWayWay 
-      : kochabCooieGameOnOboleUnweave 
+    anodyneCondosMalateOverateRetinol
+      ? annularCooeedSplicesWalksWayWay
+      : kochabCooieGameOnOboleUnweave
 );
 
 =====================================output=====================================
@@ -463,10 +463,10 @@ a
 aaaaaaaaaaaaaaa
     ? bbbbbbbbbbbbbbbbbb
     : ccccccccccccccc
-    ? ddddddddddddddd
-    : eeeeeeeeeeeeeee
-    ? fffffffffffffff
-    : gggggggggggggggg;
+      ? ddddddddddddddd
+      : eeeeeeeeeeeeeee
+        ? fffffffffffffff
+        : gggggggggggggggg;
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
     ? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -794,10 +794,10 @@ a
 aaaaaaaaaaaaaaa
 	? bbbbbbbbbbbbbbbbbb
 	: ccccccccccccccc
-	? ddddddddddddddd
-	: eeeeeeeeeeeeeee
-	? fffffffffffffff
-	: gggggggggggggggg;
+	  ? ddddddddddddddd
+	  : eeeeeeeeeeeeeee
+	    ? fffffffffffffff
+	    : gggggggggggggggg;
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -1128,10 +1128,10 @@ a
 aaaaaaaaaaaaaaa
 	? bbbbbbbbbbbbbbbbbb
 	: ccccccccccccccc
-	? ddddddddddddddd
-	: eeeeeeeeeeeeeee
-	? fffffffffffffff
-	: gggggggggggggggg;
+	  ? ddddddddddddddd
+	  : eeeeeeeeeeeeeee
+	    ? fffffffffffffff
+	    : gggggggggggggggg;
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 	? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -1457,10 +1457,10 @@ a
 aaaaaaaaaaaaaaa
   ? bbbbbbbbbbbbbbbbbb
   : ccccccccccccccc
-  ? ddddddddddddddd
-  : eeeeeeeeeeeeeee
-  ? fffffffffffffff
-  : gggggggggggggggg;
+    ? ddddddddddddddd
+    : eeeeeeeeeeeeeee
+      ? fffffffffffffff
+      : gggggggggggggggg;
 
 aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
   ? aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
@@ -1711,6 +1711,15 @@ a
     ? line
     : softline
 
+const result = children && !isEmptyChildren(children)
+  ? children
+  : props.match
+    ? component
+      ? React.createElement(component, props)
+      : render
+        ? render(props)
+        : null
+    : null;
 =====================================output=====================================
 let icecream =
     what == "cone"
@@ -1720,10 +1729,10 @@ let icecream =
 const value = condition1
     ? value1
     : condition2
-    ? value2
-    : condition3
-    ? value3
-    : value4;
+      ? value2
+      : condition3
+        ? value3
+        : value4;
 
 const StorybookLoader = ({ match }) =>
     match.params.storyId === "button" ? (
@@ -1749,32 +1758,32 @@ const message =
     i % 3 === 0 && i % 5 === 0
         ? "fizzbuzz"
         : i % 3 === 0
-        ? "fizz"
-        : i % 5 === 0
-        ? "buzz"
-        : String(i);
+          ? "fizz"
+          : i % 5 === 0
+            ? "buzz"
+            : String(i);
 
 const paymentMessage =
     state == "success"
         ? "Payment completed successfully"
         : state == "processing"
-        ? "Payment processing"
-        : state == "invalid_cvc"
-        ? "There was an issue with your CVC number"
-        : state == "invalid_expiry"
-        ? "Expiry must be sometime in the past."
-        : "There was an issue with the payment.  Please contact support.";
+          ? "Payment processing"
+          : state == "invalid_cvc"
+            ? "There was an issue with your CVC number"
+            : state == "invalid_expiry"
+              ? "Expiry must be sometime in the past."
+              : "There was an issue with the payment.  Please contact support.";
 
 const paymentMessage2 =
     state == "success"
         ? 1 //'Payment completed successfully'
         : state == "processing"
-        ? 2 //'Payment processing'
-        : state == "invalid_cvc"
-        ? 3 //'There was an issue with your CVC number'
-        : true //state == 'invalid_expiry'
-        ? 4 //'Expiry must be sometime in the past.'
-        : 5; // 'There was an issue with the payment.  Please contact support.'
+          ? 2 //'Payment processing'
+          : state == "invalid_cvc"
+            ? 3 //'There was an issue with your CVC number'
+            : true //state == 'invalid_expiry'
+              ? 4 //'Expiry must be sometime in the past.'
+              : 5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
     <div
@@ -1783,31 +1792,42 @@ const foo = (
             (medals[0].record
                 ? "-record"
                 : medals[0].unique
-                ? "-unique"
-                : medals[0].type)
+                  ? "-unique"
+                  : medals[0].type)
         }
     >
         {medals[0].record
             ? i18n("Record")
             : medals[0].unique
-            ? i18n("Unique")
-            : medals[0].type === 0
-            ? i18n("Silver")
-            : medals[0].type === 1
-            ? i18n("Gold")
-            : medals[0].type === 2
-            ? i18n("Platinum")
-            : i18n("Theme")}
+              ? i18n("Unique")
+              : medals[0].type === 0
+                ? i18n("Silver")
+                : medals[0].type === 1
+                  ? i18n("Gold")
+                  : medals[0].type === 2
+                    ? i18n("Platinum")
+                    : i18n("Theme")}
     </div>
 );
 
 a
     ? literalline
     : {
-          123: 12,
-      }
-    ? line
-    : softline;
+            123: 12,
+        }
+      ? line
+      : softline;
+
+const result =
+    children && !isEmptyChildren(children)
+        ? children
+        : props.match
+          ? component
+              ? React.createElement(component, props)
+              : render
+                ? render(props)
+                : null
+          : null;
 
 ================================================================================
 `;
@@ -1916,6 +1936,15 @@ a
     ? line
     : softline
 
+const result = children && !isEmptyChildren(children)
+  ? children
+  : props.match
+    ? component
+      ? React.createElement(component, props)
+      : render
+        ? render(props)
+        : null
+    : null;
 =====================================output=====================================
 let icecream =
 	what == "cone"
@@ -1925,10 +1954,10 @@ let icecream =
 const value = condition1
 	? value1
 	: condition2
-	? value2
-	: condition3
-	? value3
-	: value4;
+	  ? value2
+	  : condition3
+	    ? value3
+	    : value4;
 
 const StorybookLoader = ({ match }) =>
 	match.params.storyId === "button" ? (
@@ -1954,32 +1983,32 @@ const message =
 	i % 3 === 0 && i % 5 === 0
 		? "fizzbuzz"
 		: i % 3 === 0
-		? "fizz"
-		: i % 5 === 0
-		? "buzz"
-		: String(i);
+		  ? "fizz"
+		  : i % 5 === 0
+		    ? "buzz"
+		    : String(i);
 
 const paymentMessage =
 	state == "success"
 		? "Payment completed successfully"
 		: state == "processing"
-		? "Payment processing"
-		: state == "invalid_cvc"
-		? "There was an issue with your CVC number"
-		: state == "invalid_expiry"
-		? "Expiry must be sometime in the past."
-		: "There was an issue with the payment.  Please contact support.";
+		  ? "Payment processing"
+		  : state == "invalid_cvc"
+		    ? "There was an issue with your CVC number"
+		    : state == "invalid_expiry"
+		      ? "Expiry must be sometime in the past."
+		      : "There was an issue with the payment.  Please contact support.";
 
 const paymentMessage2 =
 	state == "success"
 		? 1 //'Payment completed successfully'
 		: state == "processing"
-		? 2 //'Payment processing'
-		: state == "invalid_cvc"
-		? 3 //'There was an issue with your CVC number'
-		: true //state == 'invalid_expiry'
-		? 4 //'Expiry must be sometime in the past.'
-		: 5; // 'There was an issue with the payment.  Please contact support.'
+		  ? 2 //'Payment processing'
+		  : state == "invalid_cvc"
+		    ? 3 //'There was an issue with your CVC number'
+		    : true //state == 'invalid_expiry'
+		      ? 4 //'Expiry must be sometime in the past.'
+		      : 5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
 	<div
@@ -1988,31 +2017,42 @@ const foo = (
 			(medals[0].record
 				? "-record"
 				: medals[0].unique
-				? "-unique"
-				: medals[0].type)
+				  ? "-unique"
+				  : medals[0].type)
 		}
 	>
 		{medals[0].record
 			? i18n("Record")
 			: medals[0].unique
-			? i18n("Unique")
-			: medals[0].type === 0
-			? i18n("Silver")
-			: medals[0].type === 1
-			? i18n("Gold")
-			: medals[0].type === 2
-			? i18n("Platinum")
-			: i18n("Theme")}
+			  ? i18n("Unique")
+			  : medals[0].type === 0
+			    ? i18n("Silver")
+			    : medals[0].type === 1
+			      ? i18n("Gold")
+			      : medals[0].type === 2
+			        ? i18n("Platinum")
+			        : i18n("Theme")}
 	</div>
 );
 
 a
 	? literalline
 	: {
-			123: 12,
-	  }
-	? line
-	: softline;
+				123: 12,
+	    }
+	  ? line
+	  : softline;
+
+const result =
+	children && !isEmptyChildren(children)
+		? children
+		: props.match
+		  ? component
+				? React.createElement(component, props)
+				: render
+				  ? render(props)
+				  : null
+		  : null;
 
 ================================================================================
 `;
@@ -2120,6 +2160,15 @@ a
     ? line
     : softline
 
+const result = children && !isEmptyChildren(children)
+  ? children
+  : props.match
+    ? component
+      ? React.createElement(component, props)
+      : render
+        ? render(props)
+        : null
+    : null;
 =====================================output=====================================
 let icecream =
 	what == "cone"
@@ -2129,10 +2178,10 @@ let icecream =
 const value = condition1
 	? value1
 	: condition2
-	? value2
-	: condition3
-	? value3
-	: value4;
+	  ? value2
+	  : condition3
+	    ? value3
+	    : value4;
 
 const StorybookLoader = ({ match }) =>
 	match.params.storyId === "button" ? (
@@ -2158,32 +2207,32 @@ const message =
 	i % 3 === 0 && i % 5 === 0
 		? "fizzbuzz"
 		: i % 3 === 0
-		? "fizz"
-		: i % 5 === 0
-		? "buzz"
-		: String(i);
+		  ? "fizz"
+		  : i % 5 === 0
+		    ? "buzz"
+		    : String(i);
 
 const paymentMessage =
 	state == "success"
 		? "Payment completed successfully"
 		: state == "processing"
-		? "Payment processing"
-		: state == "invalid_cvc"
-		? "There was an issue with your CVC number"
-		: state == "invalid_expiry"
-		? "Expiry must be sometime in the past."
-		: "There was an issue with the payment.  Please contact support.";
+		  ? "Payment processing"
+		  : state == "invalid_cvc"
+		    ? "There was an issue with your CVC number"
+		    : state == "invalid_expiry"
+		      ? "Expiry must be sometime in the past."
+		      : "There was an issue with the payment.  Please contact support.";
 
 const paymentMessage2 =
 	state == "success"
 		? 1 //'Payment completed successfully'
 		: state == "processing"
-		? 2 //'Payment processing'
-		: state == "invalid_cvc"
-		? 3 //'There was an issue with your CVC number'
-		: true //state == 'invalid_expiry'
-		? 4 //'Expiry must be sometime in the past.'
-		: 5; // 'There was an issue with the payment.  Please contact support.'
+		  ? 2 //'Payment processing'
+		  : state == "invalid_cvc"
+		    ? 3 //'There was an issue with your CVC number'
+		    : true //state == 'invalid_expiry'
+		      ? 4 //'Expiry must be sometime in the past.'
+		      : 5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
 	<div
@@ -2192,31 +2241,42 @@ const foo = (
 			(medals[0].record
 				? "-record"
 				: medals[0].unique
-				? "-unique"
-				: medals[0].type)
+				  ? "-unique"
+				  : medals[0].type)
 		}
 	>
 		{medals[0].record
 			? i18n("Record")
 			: medals[0].unique
-			? i18n("Unique")
-			: medals[0].type === 0
-			? i18n("Silver")
-			: medals[0].type === 1
-			? i18n("Gold")
-			: medals[0].type === 2
-			? i18n("Platinum")
-			: i18n("Theme")}
+			  ? i18n("Unique")
+			  : medals[0].type === 0
+			    ? i18n("Silver")
+			    : medals[0].type === 1
+			      ? i18n("Gold")
+			      : medals[0].type === 2
+			        ? i18n("Platinum")
+			        : i18n("Theme")}
 	</div>
 );
 
 a
 	? literalline
 	: {
-			123: 12,
-	  }
-	? line
-	: softline;
+				123: 12,
+	    }
+	  ? line
+	  : softline;
+
+const result =
+	children && !isEmptyChildren(children)
+		? children
+		: props.match
+		  ? component
+				? React.createElement(component, props)
+				: render
+				  ? render(props)
+				  : null
+		  : null;
 
 ================================================================================
 `;
@@ -2323,6 +2383,15 @@ a
     ? line
     : softline
 
+const result = children && !isEmptyChildren(children)
+  ? children
+  : props.match
+    ? component
+      ? React.createElement(component, props)
+      : render
+        ? render(props)
+        : null
+    : null;
 =====================================output=====================================
 let icecream =
   what == "cone"
@@ -2332,10 +2401,10 @@ let icecream =
 const value = condition1
   ? value1
   : condition2
-  ? value2
-  : condition3
-  ? value3
-  : value4;
+    ? value2
+    : condition3
+      ? value3
+      : value4;
 
 const StorybookLoader = ({ match }) =>
   match.params.storyId === "button" ? (
@@ -2361,32 +2430,32 @@ const message =
   i % 3 === 0 && i % 5 === 0
     ? "fizzbuzz"
     : i % 3 === 0
-    ? "fizz"
-    : i % 5 === 0
-    ? "buzz"
-    : String(i);
+      ? "fizz"
+      : i % 5 === 0
+        ? "buzz"
+        : String(i);
 
 const paymentMessage =
   state == "success"
     ? "Payment completed successfully"
     : state == "processing"
-    ? "Payment processing"
-    : state == "invalid_cvc"
-    ? "There was an issue with your CVC number"
-    : state == "invalid_expiry"
-    ? "Expiry must be sometime in the past."
-    : "There was an issue with the payment.  Please contact support.";
+      ? "Payment processing"
+      : state == "invalid_cvc"
+        ? "There was an issue with your CVC number"
+        : state == "invalid_expiry"
+          ? "Expiry must be sometime in the past."
+          : "There was an issue with the payment.  Please contact support.";
 
 const paymentMessage2 =
   state == "success"
     ? 1 //'Payment completed successfully'
     : state == "processing"
-    ? 2 //'Payment processing'
-    : state == "invalid_cvc"
-    ? 3 //'There was an issue with your CVC number'
-    : true //state == 'invalid_expiry'
-    ? 4 //'Expiry must be sometime in the past.'
-    : 5; // 'There was an issue with the payment.  Please contact support.'
+      ? 2 //'Payment processing'
+      : state == "invalid_cvc"
+        ? 3 //'There was an issue with your CVC number'
+        : true //state == 'invalid_expiry'
+          ? 4 //'Expiry must be sometime in the past.'
+          : 5; // 'There was an issue with the payment.  Please contact support.'
 
 const foo = (
   <div
@@ -2395,31 +2464,42 @@ const foo = (
       (medals[0].record
         ? "-record"
         : medals[0].unique
-        ? "-unique"
-        : medals[0].type)
+          ? "-unique"
+          : medals[0].type)
     }
   >
     {medals[0].record
       ? i18n("Record")
       : medals[0].unique
-      ? i18n("Unique")
-      : medals[0].type === 0
-      ? i18n("Silver")
-      : medals[0].type === 1
-      ? i18n("Gold")
-      : medals[0].type === 2
-      ? i18n("Platinum")
-      : i18n("Theme")}
+        ? i18n("Unique")
+        : medals[0].type === 0
+          ? i18n("Silver")
+          : medals[0].type === 1
+            ? i18n("Gold")
+            : medals[0].type === 2
+              ? i18n("Platinum")
+              : i18n("Theme")}
   </div>
 );
 
 a
   ? literalline
   : {
-      123: 12,
-    }
-  ? line
-  : softline;
+        123: 12,
+      }
+    ? line
+    : softline;
+
+const result =
+  children && !isEmptyChildren(children)
+    ? children
+    : props.match
+      ? component
+        ? React.createElement(component, props)
+        : render
+          ? render(props)
+          : null
+      : null;
 
 ================================================================================
 `;
@@ -2486,8 +2566,8 @@ const value = (
         ? true
         : false
     : true
-    ? true
-    : false;
+      ? true
+      : false;
 
 (
     bifornCringerMoshedPerplexSawder
@@ -2576,8 +2656,8 @@ const value = (
 		? true
 		: false
 	: true
-	? true
-	: false;
+	  ? true
+	  : false;
 
 (
 	bifornCringerMoshedPerplexSawder
@@ -2665,8 +2745,8 @@ const value = (
 		? true
 		: false
 	: true
-	? true
-	: false;
+	  ? true
+	  : false;
 
 (
 	bifornCringerMoshedPerplexSawder
@@ -2753,8 +2833,8 @@ const value = (
     ? true
     : false
   : true
-  ? true
-  : false;
+    ? true
+    : false;
 
 (
   bifornCringerMoshedPerplexSawder

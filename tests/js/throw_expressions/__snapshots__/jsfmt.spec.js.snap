@@ -54,10 +54,10 @@ function getEncoder(encoding) {
     encoding === "utf8"
       ? new UTF8Encoder()
       : encoding === "utf16le"
-      ? new UTF16Encoder(false)
-      : encoding === "utf16be"
-      ? new UTF16Encoder(true)
-      : throw new Error("Unsupported encoding");
+        ? new UTF16Encoder(false)
+        : encoding === "utf16be"
+          ? new UTF16Encoder(true)
+          : throw new Error("Unsupported encoding");
 }
 
 class Product {

@@ -17,6 +17,7 @@ const { hasPragma } = require("./pragma");
 const { Node } = require("./ast");
 const { parseIeConditionalComment } = require("./conditional-comment");
 const { locStart, locEnd } = require("./loc");
+const { isVueSourceElement } = require("./source-elements");
 
 function ngHtmlParser(
   input,
@@ -382,22 +383,25 @@ module.exports = {
       allowHtmComponentClosingTags: true,
     }),
     angular: createParser(),
-    vue: createParser({
-      recognizeSelfClosing: true,
-      isTagNameCaseSensitive: true,
-      getTagContentType: (tagName, prefix, hasParent, attrs) => {
-        if (
-          tagName.toLowerCase() !== "html" &&
-          !hasParent &&
-          (tagName !== "template" ||
-            attrs.some(
-              ({ name, value }) => name === "lang" && value !== "html"
-            ))
-        ) {
-          return require("angular-html-parser").TagContentType.RAW_TEXT;
-        }
-      },
-    }),
+    vue: {
+      ...createParser({
+        recognizeSelfClosing: true,
+        isTagNameCaseSensitive: true,
+        getTagContentType: (tagName, prefix, hasParent, attrs) => {
+          if (
+            tagName.toLowerCase() !== "html" &&
+            !hasParent &&
+            (tagName !== "template" ||
+              attrs.some(
+                ({ name, value }) => name === "lang" && value !== "html"
+              ))
+          ) {
+            return require("angular-html-parser").TagContentType.RAW_TEXT;
+          }
+        },
+      }),
+      isSourceElement: isVueSourceElement,
+    },
     lwc: createParser(),
   },
 };

@@ -4,6 +4,7 @@ const createError = require("../common/parser-create-error");
 const { hasPragma } = require("./pragma");
 const { locStart, locEnd } = require("./loc");
 const postprocess = require("./parse-postprocess");
+const { isSourceElement } = require("./source-elements");
 
 function parse(text, parsers, opts) {
   // Inline the require to avoid loading all the JS if we don't use it
@@ -39,6 +40,13 @@ function parse(text, parsers, opts) {
 // Export as a plugin so we can reuse the same bundle for UMD loading
 module.exports = {
   parsers: {
-    flow: { parse, astFormat: "estree", hasPragma, locStart, locEnd },
+    flow: {
+      parse,
+      astFormat: "estree",
+      hasPragma,
+      locStart,
+      locEnd,
+      isSourceElement,
+    },
   },
 };

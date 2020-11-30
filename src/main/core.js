@@ -141,9 +141,14 @@ function coreFormat(originalText, opts, addAlignmentSize) {
   return { formatted: result.formatted, cursorOffset: -1 };
 }
 
-function formatRange(originalText, opts) {
+function formatRange(originalText, opts, selectedParser) {
   const { ast, text } = parser.parse(originalText, opts);
-  const { rangeStart, rangeEnd } = rangeUtil.calculateRange(text, opts, ast);
+  const { rangeStart, rangeEnd } = rangeUtil.calculateRange(
+    text,
+    opts,
+    ast,
+    selectedParser
+  );
   const rangeString = text.slice(rangeStart, rangeEnd);
 
   // Try to extend the range backwards to the beginning of the line.
@@ -290,7 +295,7 @@ function format(originalText, originalOptions) {
   let result;
 
   if (options.rangeStart > 0 || options.rangeEnd < text.length) {
-    result = formatRange(text, options);
+    result = formatRange(text, options, selectedParser);
   } else {
     if (!hasPragma && options.insertPragma && options.printer.insertPragma) {
       text = options.printer.insertPragma(text);

@@ -8,6 +8,7 @@ const {
 const { hasPragma } = require("./pragma");
 const { locStart, locEnd } = require("./loc");
 const postprocess = require("./parse-postprocess");
+const { isSourceElement, isJsonSourceElement } = require("./source-elements");
 
 function babelOptions({ sourceType, extraPlugins = [] }) {
   return {
@@ -252,10 +253,27 @@ function assertJsonNode(node, parent) {
   }
 }
 
-const babel = { parse, astFormat: "estree", hasPragma, locStart, locEnd };
-const babelFlow = { ...babel, parse: parseFlow };
-const babelTypeScript = { ...babel, parse: parseTypeScript };
-const babelExpression = { ...babel, parse: parseExpression };
+const babel = {
+  parse,
+  astFormat: "estree",
+  hasPragma,
+  locStart,
+  locEnd,
+  isSourceElement,
+};
+const babelFlow = {
+  ...babel,
+  parse: parseFlow,
+};
+const babelTypeScript = {
+  ...babel,
+  parse: parseTypeScript,
+};
+const babelExpression = {
+  ...babel,
+  parse: parseExpression,
+  isSourceElement: undefined,
+};
 
 // Export as a plugin so we can reuse the same bundle for UMD loading
 module.exports = {
@@ -268,6 +286,7 @@ module.exports = {
       hasPragma() {
         return true;
       },
+      isSourceElement: isJsonSourceElement,
     },
     json5: babelExpression,
     "json-stringify": {
@@ -281,6 +300,6 @@ module.exports = {
     /** for vue filter */
     __vue_expression: babelExpression,
     /** for vue event binding to handle semicolon */
-    __vue_event_binding: babel,
+    __vue_event_binding: { ...babel, isSourceElement: undefined },
   },
 };

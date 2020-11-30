@@ -3,6 +3,7 @@
 const createError = require("../common/parser-create-error");
 const { hasPragma } = require("./pragma");
 const { locStart, locEnd } = require("./loc");
+const isSourceElement = require("./source-elements");
 
 function parseComments(ast) {
   const comments = [];
@@ -80,6 +81,7 @@ module.exports = {
       hasPragma,
       locStart,
       locEnd,
+      isSourceElement,
     },
   },
 };

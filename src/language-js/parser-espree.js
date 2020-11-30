@@ -4,6 +4,7 @@ const createError = require("../common/parser-create-error");
 const { hasPragma } = require("./pragma");
 const { locStart, locEnd } = require("./loc");
 const postprocess = require("./parse-postprocess");
+const { isSourceElement } = require("./source-elements");
 
 const espreeOptions = {
   range: true,
@@ -53,6 +54,13 @@ function parse(originalText, parsers, options) {
 
 module.exports = {
   parsers: {
-    espree: { parse, astFormat: "estree", hasPragma, locStart, locEnd },
+    espree: {
+      parse,
+      astFormat: "estree",
+      hasPragma,
+      locStart,
+      locEnd,
+      isSourceElement,
+    },
   },
 };

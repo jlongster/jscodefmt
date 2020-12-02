@@ -52,9 +52,6 @@ function getChildNodes(node) {
 
 const childNodesCache = new WeakMap();
 function getSortedChildNodes(node, options, resultArray) {
-  if (!isNode(node)) {
-    return [];
-  }
   if (childNodesCache.has(node)) {
     return childNodesCache.get(node);
   }

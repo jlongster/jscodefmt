@@ -51,14 +51,22 @@ function getChildNodes(node) {
 }
 
 const childNodesCache = new WeakMap();
-function getSortedChildNodes(node, options, resultArray) {
+function getSortedChildNodes(node, options) {
   if (childNodesCache.has(node)) {
     return childNodesCache.get(node);
   }
 
   const { printer, locStart, locEnd } = options;
 
-  if (resultArray) {
+  const resultArray = [];
+  childNodesCache.set(node, resultArray);
+
+  const childNodes =
+    (printer.getCommentChildNodes &&
+      printer.getCommentChildNodes(node, options)) ||
+    getChildNodes(node);
+
+  for (const node of childNodes) {
     if (printer.canAttachComment && printer.canAttachComment(node)) {
       const start = locStart(node);
       const end = locEnd(node);
@@ -75,20 +83,7 @@ function getSortedChildNodes(node, options, resultArray) {
         }
       }
       resultArray.splice(i + 1, 0, node);
-      return resultArray;
     }
-  } else {
-    resultArray = [];
-    childNodesCache.set(node, resultArray);
-  }
-
-  const childNodes =
-    (printer.getCommentChildNodes &&
-      printer.getCommentChildNodes(node, options)) ||
-    getChildNodes(node);
-
-  for (const childNode of childNodes) {
-    getSortedChildNodes(childNode, options, resultArray);
   }
 
   return resultArray;

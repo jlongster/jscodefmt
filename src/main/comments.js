@@ -26,30 +26,6 @@ const {
   addTrailingComment,
 } = require("../common/util");
 
-const isNode = (node) =>
-  node && !Array.isArray(node) && typeof node === "object";
-function getChildNodes(node) {
-  const childNodes = [];
-  for (const [key, value] of Object.entries(node)) {
-    if (
-      key !== "enclosingNode" &&
-      key !== "precedingNode" &&
-      key !== "followingNode" &&
-      key !== "tokens" &&
-      key !== "comments" &&
-      value
-    ) {
-      if (Array.isArray(value)) {
-        childNodes.push(...value.filter((node) => isNode(node)));
-      } else if (isNode(node)) {
-        childNodes.push(value);
-      }
-    }
-  }
-
-  return childNodes;
-}
-
 const childNodesCache = new WeakMap();
 function getSortedChildNodes(node, options) {
   if (childNodesCache.has(node)) {
@@ -57,36 +33,49 @@ function getSortedChildNodes(node, options) {
   }
 
   const { printer, locStart, locEnd } = options;
+  if (!printer.canAttachComment) {
+    return [];
+  }
 
-  const resultArray = [];
-  childNodesCache.set(node, resultArray);
+  let childNodes;
+  if (printer.getCommentChildNodes) {
+    childNodes = printer.getCommentChildNodes(node, options);
+  }
 
-  const childNodes =
-    (printer.getCommentChildNodes &&
-      printer.getCommentChildNodes(node, options)) ||
-    getChildNodes(node);
-
-  for (const node of childNodes) {
-    if (printer.canAttachComment && printer.canAttachComment(node)) {
-      const start = locStart(node);
-      const end = locEnd(node);
-      // This reverse insertion sort almost always takes constant
-      // time because we almost always (maybe always?) append the
-      // nodes in order anyway.
-      let i = resultArray.length - 1;
-      for (; i >= 0; --i) {
-        if (
-          locStart(resultArray[i]) <= start &&
-          locEnd(resultArray[i]) <= end
-        ) {
-          break;
+  if (!childNodes) {
+    childNodes = [];
+    for (const [key, value] of Object.entries(node)) {
+      if (
+        key !== "enclosingNode" &&
+        key !== "precedingNode" &&
+        key !== "followingNode" &&
+        key !== "tokens" &&
+        key !== "comments"
+      ) {
+        if (Array.isArray(value)) {
+          childNodes.push(...value);
+        } else {
+          childNodes.push(value);
         }
       }
-      resultArray.splice(i + 1, 0, node);
     }
   }
 
-  return resultArray;
+  childNodes = childNodes
+    .filter(
+      (node) =>
+        node &&
+        !Array.isArray(node) &&
+        typeof node === "object" &&
+        printer.canAttachComment(node)
+    )
+    .sort(
+      (aNode, bNode) =>
+        locStart(aNode) - locStart(bNode) || locEnd(aNode) - locEnd(bNode)
+    );
+
+  childNodesCache.set(node, childNodes);
+  return childNodes;
 }
 
 // As efficiently as possible, decorate the comment object with

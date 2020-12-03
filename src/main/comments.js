@@ -64,10 +64,7 @@ function getSortedChildNodes(node, options) {
   childNodes = childNodes
     .filter(
       (node) =>
-        node &&
-        !Array.isArray(node) &&
-        typeof node === "object" &&
-        printer.canAttachComment(node)
+        node && typeof node === "object" && printer.canAttachComment(node)
     )
     .sort(
       (aNode, bNode) =>

@@ -14,6 +14,7 @@ const {
 const {
   isBlockComment,
   getFunctionParameters,
+  getCallArguments,
   isPrettierIgnoreComment,
   isJSXNode,
   hasFlowShorthandAnnotationComment,
@@ -517,26 +518,12 @@ function handleCommentInEmptyParens({ comment, enclosingNode, text }) {
 
   // Only add dangling comments to fix the case when no params are present,
   // i.e. a function without any argument.
-  if (
-    enclosingNode &&
-    ((isRealFunctionLikeNode(enclosingNode) &&
-      getFunctionParameters(enclosingNode).length === 0) ||
-      ((enclosingNode.type === "CallExpression" ||
-        enclosingNode.type === "OptionalCallExpression" ||
-        enclosingNode.type === "NewExpression") &&
-        enclosingNode.arguments.length === 0))
-  ) {
-    addDanglingComment(enclosingNode, comment);
+  const node = getEmptyFunctionParametersOrCallArgumentsNode(enclosingNode);
+  if (node) {
+    addDanglingComment(node, comment);
     return true;
   }
-  if (
-    enclosingNode &&
-    enclosingNode.type === "MethodDefinition" &&
-    getFunctionParameters(enclosingNode.value).length === 0
-  ) {
-    addDanglingComment(enclosingNode.value, comment);
-    return true;
-  }
+
   return false;
 }
 
@@ -565,8 +552,7 @@ function handleLastFunctionArgComments({
     precedingNode &&
     (precedingNode.type === "Identifier" ||
       precedingNode.type === "AssignmentPattern") &&
-    enclosingNode &&
-    isRealFunctionLikeNode(enclosingNode) &&
+    isFunctionLikeNode(enclosingNode) &&
     getNextNonSpaceNonCommentCharacter(text, comment, locEnd) === ")"
   ) {
     addTrailingComment(precedingNode, comment);
@@ -864,25 +850,53 @@ function handleTSMappedTypeComments({
   return false;
 }
 
+const functionLikeNodeTypes = new Set([
+  "ArrowFunctionExpression",
+  "FunctionExpression",
+  "FunctionDeclaration",
+  "ObjectMethod",
+  "ClassMethod",
+  "TSDeclareFunction",
+  "TSCallSignatureDeclaration",
+  "TSConstructSignatureDeclaration",
+  "TSMethodSignature",
+  "TSConstructorType",
+  "TSFunctionType",
+  "TSDeclareMethod",
+]);
 /**
  * @param {Node} node
  * @returns {boolean}
  */
-function isRealFunctionLikeNode(node) {
-  return (
-    node.type === "ArrowFunctionExpression" ||
-    node.type === "FunctionExpression" ||
-    node.type === "FunctionDeclaration" ||
-    node.type === "ObjectMethod" ||
-    node.type === "ClassMethod" ||
-    node.type === "TSDeclareFunction" ||
-    node.type === "TSCallSignatureDeclaration" ||
-    node.type === "TSConstructSignatureDeclaration" ||
-    node.type === "TSMethodSignature" ||
-    node.type === "TSConstructorType" ||
-    node.type === "TSFunctionType" ||
-    node.type === "TSDeclareMethod"
-  );
+function isFunctionLikeNode(node) {
+  return node && functionLikeNodeTypes.has(node.type);
+}
+const valueFunctionLikeNodeTypes = new Set([
+  "MethodDefinition",
+  "TSAbstractMethodDefinition",
+]);
+const callLikeNodeTypes = new Set([
+  "CallExpression",
+  "OptionalCallExpression",
+  "NewExpression",
+]);
+function getEmptyFunctionParametersOrCallArgumentsNode(node) {
+  if (!node) {
+    return;
+  }
+
+  if (isFunctionLikeNode(node) && getFunctionParameters(node).length === 0) {
+    return node;
+  }
+  if (callLikeNodeTypes.has(node.type) && getCallArguments(node).length === 0) {
+    return node;
+  }
+  if (
+    valueFunctionLikeNodeTypes.has(node.type) &&
+    getFunctionParameters(node.value).length === 0
+  ) {
+    return node.value;
+  }
 }
 
 /**

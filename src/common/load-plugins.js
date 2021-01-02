@@ -7,7 +7,7 @@ const partition = require("lodash/partition");
 const globby = require("globby");
 const mem = require("mem");
 const internalPlugins = require("../languages");
-const thirdParty = require("./third-party");
+const { findParentDir } = require("./third-party");
 const resolve = require("./resolve");
 
 const memoizedLoad = mem(load, { cacheKey: JSON.stringify });
@@ -27,7 +27,9 @@ function load(plugins, pluginSearchDirs) {
   }
   // unless pluginSearchDirs are provided, auto-load plugins from node_modules that are parent to Prettier
   if (!pluginSearchDirs.length) {
-    const autoLoadDir = thirdParty.findParentDir(__dirname, "node_modules");
+    const autoLoadDir =
+      findParentDir(__dirname, "node_modules/.pnpm") ||
+      findParentDir(__dirname, "node_modules");
     if (autoLoadDir) {
       pluginSearchDirs = [autoLoadDir];
     }

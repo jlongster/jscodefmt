@@ -623,12 +623,12 @@ Default | CLI Override | API Override
 --------|--------------|-------------
 `true` | `--no-bracket-spacing` | `bracketSpacing: <bool>`
 
-### JSX Brackets
-Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
+###  Angle Brackets
+Put the `>` of a multi-line element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
 
 Default | CLI Override | API Override
 --------|--------------|-------------
-`false` | `--jsx-bracket-same-line` | `jsxBracketSameLine: <bool>`
+`false` | `--angle-bracket-same-line` | `angleBracketSameLine: <bool>`
 
 ### Range
 Format only a segment of a file.

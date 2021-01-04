@@ -27,12 +27,14 @@ module.exports = {
     ],
   },
   bracketSpacing: commonOptions.bracketSpacing,
+  angleBracketSameLine: commonOptions.angleBracketSameLine,
   jsxBracketSameLine: {
     since: "0.17.0",
     category: CATEGORY_JAVASCRIPT,
     type: "boolean",
     default: false,
-    description: "Put > on the last line instead of at a new line.",
+    description:
+      "Put > on the last line instead of at a new line. (Deprecated. Use angleBracketSameLine.)",
   },
   semi: {
     since: "1.0.0",

@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`show detailed usage with --help angle-bracket-same-line (stderr) 1`] = `""`;
+
+exports[`show detailed usage with --help angle-bracket-same-line (stdout) 1`] = `
+"--angle-bracket-same-line
+
+  Put > on the last line instead of at a new line.
+
+Default: false
+"
+`;
+
+exports[`show detailed usage with --help angle-bracket-same-line (write) 1`] = `Array []`;
+
 exports[`show detailed usage with --help arrow-parens (stderr) 1`] = `""`;
 
 exports[`show detailed usage with --help arrow-parens (stdout) 1`] = `
@@ -250,7 +263,7 @@ exports[`show detailed usage with --help jsx-bracket-same-line (stderr) 1`] = `"
 exports[`show detailed usage with --help jsx-bracket-same-line (stdout) 1`] = `
 "--jsx-bracket-same-line
 
-  Put > on the last line instead of at a new line.
+  Put > on the last line instead of at a new line. (Deprecated. Use angleBracketSameLine.)
 
 Default: false
 "

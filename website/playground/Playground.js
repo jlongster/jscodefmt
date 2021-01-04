@@ -32,7 +32,7 @@ const ENABLED_OPTIONS = [
   "singleQuote",
   "bracketSpacing",
   "jsxSingleQuote",
-  "jsxBracketSameLine",
+  "angleBracketSameLine",
   "quoteProps",
   "arrowParens",
   "trailingComma",

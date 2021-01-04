@@ -46,4 +46,11 @@ module.exports = {
       },
     ],
   },
+  angleBracketSameLine: {
+    since: "2.3.0",
+    category: CATEGORY_COMMON,
+    type: "boolean",
+    default: false,
+    description: "Put > on the last line instead of at a new line.",
+  },
 };

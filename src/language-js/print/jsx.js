@@ -595,9 +595,9 @@ function printJsxOpeningElement(path, options, print) {
 
   const bracketSameLine =
     // Simple tags (no attributes and no comment in tag name) should be
-    // kept unbroken regardless of `jsxBracketSameLine`
+    // kept unbroken regardless of `angleBracketSameLine`
     (!n.attributes.length && !nameHasComments) ||
-    (options.jsxBracketSameLine &&
+    ((options.jsxBracketSameLine || options.angleBracketSameLine) &&
       // We should print the bracket in a new line for the following cases:
       // <div
       //   // comment

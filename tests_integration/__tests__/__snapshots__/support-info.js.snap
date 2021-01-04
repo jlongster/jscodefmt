@@ -83,6 +83,10 @@ Object {
     ],
   },
   "options": Object {
+    "angleBracketSameLine": Object {
+      "default": false,
+      "type": "boolean",
+    },
     "arrowParens": Object {
       "choices": Array [
         "always",
@@ -737,6 +741,15 @@ exports[`CLI --support-info (stdout) 1`] = `
   ],
   \\"options\\": [
     {
+      \\"category\\": \\"Common\\",
+      \\"default\\": false,
+      \\"description\\": \\"Put > on the last line instead of at a new line.\\",
+      \\"name\\": \\"angleBracketSameLine\\",
+      \\"pluginDefaults\\": {},
+      \\"since\\": \\"2.3.0\\",
+      \\"type\\": \\"boolean\\"
+    },
+    {
       \\"category\\": \\"JavaScript\\",
       \\"choices\\": [
         {
@@ -864,7 +877,7 @@ exports[`CLI --support-info (stdout) 1`] = `
     {
       \\"category\\": \\"JavaScript\\",
       \\"default\\": false,
-      \\"description\\": \\"Put > on the last line instead of at a new line.\\",
+      \\"description\\": \\"Put > on the last line instead of at a new line. (Deprecated. Use angleBracketSameLine.)\\",
       \\"name\\": \\"jsxBracketSameLine\\",
       \\"pluginDefaults\\": {},
       \\"since\\": \\"0.17.0\\",

@@ -12,6 +12,7 @@ const json = require("@rollup/plugin-json");
 const replace = require("@rollup/plugin-replace");
 const { terser } = require("rollup-plugin-terser");
 const { babel } = require("@rollup/plugin-babel");
+const license = require("rollup-plugin-license");
 const nativeShims = require("./rollup-plugins/native-shims");
 const executable = require("./rollup-plugins/executable");
 const evaluate = require("./rollup-plugins/evaluate");
@@ -127,7 +128,7 @@ function getBabelConfig(bundle) {
   return config;
 }
 
-function getRollupConfig(bundle) {
+function getRollupConfig(bundle, options) {
   const config = {
     input: bundle.input,
 
@@ -215,6 +216,14 @@ function getRollupConfig(bundle) {
       terser({
         output: {
           ascii_only: true,
+        },
+      }),
+    options.onLicenseFound &&
+      license({
+        cwd: PROJECT_ROOT,
+        thirdParty: {
+          includePrivate: true,
+          output: options.onLicenseFound,
         },
       }),
   ].filter(Boolean);
@@ -336,7 +345,7 @@ function runWebpack(config) {
 }
 
 module.exports = async function createBundle(bundle, cache, options) {
-  const inputOptions = getRollupConfig(bundle);
+  const inputOptions = getRollupConfig(bundle, options);
   const outputOptions = getRollupOutputOptions(bundle, options);
 
   if (!Array.isArray(outputOptions) && outputOptions.skipped) {

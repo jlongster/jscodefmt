@@ -123,6 +123,7 @@
     "pretty-bytes": "5.5.0",
     "rimraf": "3.0.2",
     "rollup": "2.36.1",
+    "rollup-plugin-license": "2.2.0",
     "rollup-plugin-node-globals": "1.4.0",
     "rollup-plugin-terser": "7.0.2",
     "shelljs": "0.8.4",

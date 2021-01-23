@@ -19,62 +19,52 @@ const {
 } = require("../common/util");
 
 const childNodesCache = new WeakMap();
-function getSortedChildNodes(node, options, resultArray) {
-  if (!node) {
-    return;
-  }
-  const { printer, locStart, locEnd } = options;
-
-  if (resultArray) {
-    if (printer.canAttachComment && printer.canAttachComment(node)) {
-      // This reverse insertion sort almost always takes constant
-      // time because we almost always (maybe always?) append the
-      // nodes in order anyway.
-      let i;
-      for (i = resultArray.length - 1; i >= 0; --i) {
-        if (
-          locStart(resultArray[i]) <= locStart(node) &&
-          locEnd(resultArray[i]) <= locEnd(node)
-        ) {
-          break;
-        }
-      }
-      resultArray.splice(i + 1, 0, node);
-      return;
-    }
-  } else if (childNodesCache.has(node)) {
+function getSortedChildNodes(node, options) {
+  if (childNodesCache.has(node)) {
     return childNodesCache.get(node);
   }
 
-  const childNodes =
-    (printer.getCommentChildNodes &&
-      printer.getCommentChildNodes(node, options)) ||
-    (typeof node === "object" &&
-      Object.keys(node)
-        .filter(
-          (n) =>
-            n !== "enclosingNode" &&
-            n !== "precedingNode" &&
-            n !== "followingNode" &&
-            n !== "tokens" &&
-            n !== "comments"
-        )
-        .map((n) => node[n]));
+  const { printer, locStart, locEnd } = options;
+  if (!printer.canAttachComment) {
+    return [];
+  }
+
+  let childNodes;
+  if (printer.getCommentChildNodes) {
+    childNodes = printer.getCommentChildNodes(node, options);
+  }
 
   if (!childNodes) {
-    return;
+    childNodes = [];
+    for (const [key, value] of Object.entries(node)) {
+      if (
+        key !== "enclosingNode" &&
+        key !== "precedingNode" &&
+        key !== "followingNode" &&
+        key !== "tokens" &&
+        key !== "comments"
+      ) {
+        if (Array.isArray(value)) {
+          childNodes.push(...value);
+        } else {
+          childNodes.push(value);
+        }
+      }
+    }
   }
 
-  if (!resultArray) {
-    resultArray = [];
-    childNodesCache.set(node, resultArray);
-  }
+  childNodes = childNodes
+    .filter(
+      (node) =>
+        node && typeof node === "object" && printer.canAttachComment(node)
+    )
+    .sort(
+      (aNode, bNode) =>
+        locStart(aNode) - locStart(bNode) || locEnd(aNode) - locEnd(bNode)
+    );
 
-  childNodes.forEach((childNode) => {
-    getSortedChildNodes(childNode, options, resultArray);
-  });
-
-  return resultArray;
+  childNodesCache.set(node, childNodes);
+  return childNodes;
 }
 
 // As efficiently as possible, decorate the comment object with

@@ -5,7 +5,7 @@ const runPrettier = require("../runPrettier");
 
 describe("show version with --version", () => {
   runPrettier("cli/with-shebang", ["--version"]).test({
-    stdout: prettier.version + "\n",
+    stdout: `${prettier.version}\n`,
     status: 0,
   });
 });

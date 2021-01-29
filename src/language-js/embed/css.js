@@ -17,11 +17,7 @@ function format(path, print, textToDoc) {
     (prevVal, currVal, idx) =>
       idx === 0
         ? currVal
-        : prevVal +
-          "@prettier-placeholder-" +
-          placeholderID++ +
-          "-id" +
-          currVal,
+        : `${prevVal}@prettier-placeholder-${placeholderID++}-id${currVal}`,
     ""
   );
   const doc = textToDoc(

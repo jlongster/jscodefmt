@@ -57,7 +57,7 @@ function* expandPatternsInternal(context) {
     dot: true,
     ignore: Object.entries(silentlyIgnoredDirs)
       .filter(([, ignored]) => ignored)
-      .map(([dir]) => "**/" + dir),
+      .map(([dir]) => `**/${dir}`),
   };
 
   let supportedFilesGlob;
@@ -84,10 +84,9 @@ function* expandPatternsInternal(context) {
       } else if (stat.isDirectory()) {
         entries.push({
           type: "dir",
-          glob:
-            escapePathForGlob(fixWindowsSlashes(pattern)) +
-            "/" +
-            getSupportedFilesGlob(),
+          glob: `${escapePathForGlob(
+            fixWindowsSlashes(pattern)
+          )}/${getSupportedFilesGlob()}`,
           input: pattern,
         });
       }
@@ -133,7 +132,7 @@ function* expandPatternsInternal(context) {
         context.languages.map((lang) => lang.filenames || [])
       );
       supportedFilesGlob = `**/{${[
-        ...extensions.map((ext) => "*" + (ext[0] === "." ? ext : "." + ext)),
+        ...extensions.map((ext) => `*${ext[0] === "." ? ext : `.${ext}`}`),
         ...filenames,
       ]}}`;
     }

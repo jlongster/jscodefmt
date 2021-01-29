@@ -47,7 +47,7 @@ function printDoc(doc) {
   }
 
   if (isConcat(doc)) {
-    return "[" + getDocParts(doc).map(printDoc).join(", ") + "]";
+    return `[${getDocParts(doc).map(printDoc).join(", ")}]`;
   }
 
   if (doc.type === "line") {
@@ -72,59 +72,48 @@ function printDoc(doc) {
   }
 
   if (doc.type === "indent") {
-    return "indent(" + printDoc(doc.contents) + ")";
+    return `indent(${printDoc(doc.contents)})`;
   }
 
   if (doc.type === "align") {
     return doc.n === Number.NEGATIVE_INFINITY
-      ? "dedentToRoot(" + printDoc(doc.contents) + ")"
+      ? `dedentToRoot(${printDoc(doc.contents)})`
       : doc.n < 0
-      ? "dedent(" + printDoc(doc.contents) + ")"
+      ? `dedent(${printDoc(doc.contents)})`
       : doc.n.type === "root"
-      ? "markAsRoot(" + printDoc(doc.contents) + ")"
-      : "align(" + JSON.stringify(doc.n) + ", " + printDoc(doc.contents) + ")";
+      ? `markAsRoot(${printDoc(doc.contents)})`
+      : `align(${JSON.stringify(doc.n)}, ${printDoc(doc.contents)})`;
   }
 
   if (doc.type === "if-break") {
-    return (
-      "ifBreak(" +
-      printDoc(doc.breakContents) +
-      (doc.flatContents ? ", " + printDoc(doc.flatContents) : "") +
-      ")"
-    );
+    return `ifBreak(${printDoc(doc.breakContents)}${
+      doc.flatContents ? `, ${printDoc(doc.flatContents)}` : ""
+    })`;
   }
 
   if (doc.type === "group") {
     if (doc.expandedStates) {
-      return (
-        "conditionalGroup(" +
-        "[" +
-        doc.expandedStates.map(printDoc).join(",") +
-        "])"
-      );
+      return `${"conditionalGroup(" + "["}${doc.expandedStates
+        .map(printDoc)
+        .join(",")}])`;
     }
 
-    return (
-      (doc.break ? "wrappedGroup" : "group") +
-      "(" +
-      printDoc(doc.contents) +
-      ")"
-    );
+    return `${doc.break ? "wrappedGroup" : "group"}(${printDoc(doc.contents)})`;
   }
 
   if (doc.type === "fill") {
-    return "fill" + "(" + doc.parts.map(printDoc).join(", ") + ")";
+    return `${"fill" + "("}${doc.parts.map(printDoc).join(", ")})`;
   }
 
   if (doc.type === "line-suffix") {
-    return "lineSuffix(" + printDoc(doc.contents) + ")";
+    return `lineSuffix(${printDoc(doc.contents)})`;
   }
 
   if (doc.type === "line-suffix-boundary") {
     return "lineSuffixBoundary";
   }
 
-  throw new Error("Unknown doc type " + doc.type);
+  throw new Error(`Unknown doc type ${doc.type}`);
 }
 
 module.exports = {

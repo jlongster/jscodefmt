@@ -18,7 +18,7 @@ module.exports = function (dir) {
         return null;
       }
 
-      const shim = path.resolve(dir, importee + ".mjs");
+      const shim = path.resolve(dir, `${importee}.mjs`);
       if (fs.existsSync(shim)) {
         return shim;
       }

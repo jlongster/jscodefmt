@@ -82,7 +82,7 @@ run_spec(
           </p>;
         `,
       },
-    ].map((test) => ({ ...test, output: test.output + "\n" })),
+    ].map((test) => ({ ...test, output: `${test.output}\n` })),
   },
   ["flow", "typescript"]
 );

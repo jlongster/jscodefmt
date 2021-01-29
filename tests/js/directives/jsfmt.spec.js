@@ -10,37 +10,33 @@ run_spec(
 
           // comment
         `,
-        output:
-          outdent`
+        output: `${outdent`
             "use strict";
 
             // comment
-          ` + "\n",
+          `}\n`,
       },
       {
         code: outdent`
           'use strict';
           // comment
         `,
-        output:
-          outdent`
+        output: `${outdent`
             "use strict";
             // comment
-          ` + "\n",
+          `}\n`,
       },
       {
-        code:
-          outdent`
+        code: `${outdent`
             'use strict';
 
             // comment
-          ` + "\n",
-        output:
-          outdent`
+          `}\n`,
+        output: `${outdent`
             "use strict";
 
             // comment
-          ` + "\n",
+          `}\n`,
       },
     ],
   },

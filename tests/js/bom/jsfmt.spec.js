@@ -9,7 +9,7 @@ const snippets = fs
   )
   .map((fileName) => {
     const file = path.join(fixtureDirectory, fileName);
-    const code = "\uFEFF" + fs.readFileSync(file, "utf8");
+    const code = `\uFEFF${fs.readFileSync(file, "utf8")}`;
     return {
       name: fileName,
       code,

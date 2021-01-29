@@ -33,7 +33,7 @@ function assertDoc(val) {
   }
 
   /* istanbul ignore next */
-  throw new Error("Value " + JSON.stringify(val) + " is not a valid document");
+  throw new Error(`Value ${JSON.stringify(val)} is not a valid document`);
 }
 
 /**

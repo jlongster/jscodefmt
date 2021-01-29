@@ -29,7 +29,7 @@ function embed(path, print, textToDoc, options) {
       return markAsRoot([
         style,
         node.lang,
-        node.meta ? " " + node.meta : "",
+        node.meta ? ` ${node.meta}` : "",
         hardline,
         replaceNewlinesWithLiterallines(doc),
         hardline,

@@ -142,7 +142,7 @@ function printBinaryishExpression(path, options, print) {
 
   const rest = parts.slice(headParts.length, hasJsx ? -1 : undefined);
 
-  const groupId = Symbol("logicalChain-" + ++uid);
+  const groupId = Symbol(`logicalChain-${++uid}`);
 
   const chain = group(
     [

@@ -5,7 +5,7 @@ const EOL = "\n";
 
 describe("automatically loads 'prettier-plugin-*'", () => {
   runPrettier("plugins/automatic", ["file.txt", "--parser=bar"]).test({
-    stdout: "content from `prettier-plugin-bar` package + contents" + EOL,
+    stdout: `content from \`prettier-plugin-bar\` package + contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -14,7 +14,7 @@ describe("automatically loads 'prettier-plugin-*'", () => {
 
 describe("automatically loads '@prettier/plugin-*'", () => {
   runPrettier("plugins/automatic", ["file.txt", "--parser=foo"]).test({
-    stdout: "foo+contents" + EOL,
+    stdout: `foo+contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -23,7 +23,7 @@ describe("automatically loads '@prettier/plugin-*'", () => {
 
 describe("automatically loads '@<name>/prettier-plugin-*'", () => {
   runPrettier("plugins/automatic", ["file.txt", "--parser=foobar"]).test({
-    stdout: "foobar+contents" + EOL,
+    stdout: `foobar+contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -36,7 +36,7 @@ describe("automatically loads 'prettier-plugin-*' from --plugin-search-dir (same
     "--parser=foo",
     "--plugin-search-dir=.",
   ]).test({
-    stdout: "foo+contents" + EOL,
+    stdout: `foo+contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -49,7 +49,7 @@ describe("automatically loads '@prettier/plugin-*' from --plugin-search-dir (sam
     "--parser=bar",
     "--plugin-search-dir=.",
   ]).test({
-    stdout: "content from `prettier-plugin-bar` package + contents" + EOL,
+    stdout: `content from \`prettier-plugin-bar\` package + contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -62,7 +62,7 @@ describe("automatically loads '@<name>/prettier-plugin-*' from --plugin-search-d
     "--parser=foobar",
     "--plugin-search-dir=.",
   ]).test({
-    stdout: "foobar+contents" + EOL,
+    stdout: `foobar+contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -75,7 +75,7 @@ describe("automatically loads 'prettier-plugin-*' from --plugin-search-dir (diff
     "--parser=foo",
     "--plugin-search-dir=automatic",
   ]).test({
-    stdout: "foo+contents" + EOL,
+    stdout: `foo+contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -88,7 +88,7 @@ describe("automatically loads '@prettier/plugin-*' from --plugin-search-dir (dif
     "--parser=bar",
     "--plugin-search-dir=automatic",
   ]).test({
-    stdout: "content from `prettier-plugin-bar` package + contents" + EOL,
+    stdout: `content from \`prettier-plugin-bar\` package + contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -107,7 +107,7 @@ describe("does not crash when --plugin-search-dir does not contain node_modules"
     ],
     { ignoreLineEndings: true }
   ).test({
-    stdout: "!contents" + EOL,
+    stdout: `!contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -134,7 +134,7 @@ describe("loads --plugin by its relative path", () => {
     "--parser=bar",
     "--plugin=./automatic/node_modules/prettier-plugin-bar/index.js",
   ]).test({
-    stdout: "content from `prettier-plugin-bar` package + contents" + EOL,
+    stdout: `content from \`prettier-plugin-bar\` package + contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -147,7 +147,7 @@ describe("loads --plugin by its relative path without leading ./", () => {
     "--parser=bar",
     "--plugin=automatic/node_modules/prettier-plugin-bar/index.js",
   ]).test({
-    stdout: "content from `prettier-plugin-bar` package + contents" + EOL,
+    stdout: `content from \`prettier-plugin-bar\` package + contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -160,7 +160,7 @@ describe("loads --plugin by relative path to its directory (assuming index.js)",
     "--parser=bar",
     "--plugin=./automatic/node_modules/prettier-plugin-bar",
   ]).test({
-    stdout: "content from `prettier-plugin-bar` package + contents" + EOL,
+    stdout: `content from \`prettier-plugin-bar\` package + contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -173,7 +173,7 @@ describe("loads --plugin by relative path to its directory without leading ./ (a
     "--parser=bar",
     "--plugin=automatic/node_modules/prettier-plugin-bar",
   ]).test({
-    stdout: "content from `prettier-plugin-bar` package + contents" + EOL,
+    stdout: `content from \`prettier-plugin-bar\` package + contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -186,7 +186,7 @@ describe("loads --plugin by filename without leading ./ and ext, should resolve 
     "--parser=bar",
     "--plugin=prettier-plugin-bar",
   ]).test({
-    stdout: "content from `prettier-plugin-bar.js` file + contents" + EOL,
+    stdout: `content from \`prettier-plugin-bar.js\` file + contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],
@@ -199,7 +199,7 @@ describe("loads --plugin by bespoke plugin name (assuming it is installed in cwd
     "--parser=bespoke",
     "--plugin=@company/prettier-plugin-bespoke",
   ]).test({
-    stdout: "bespoke+contents" + EOL,
+    stdout: `bespoke+contents${EOL}`,
     stderr: "",
     status: 0,
     write: [],

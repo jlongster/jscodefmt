@@ -102,7 +102,7 @@ async function createBundle(bundleConfig, cache, options) {
 
     console.log(status.DONE);
   } catch (error) {
-    console.log(status.FAIL + "\n");
+    console.log(`${status.FAIL}\n`);
     handleError(error);
   }
 }

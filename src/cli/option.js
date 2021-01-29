@@ -79,11 +79,11 @@ function getOptionsOrDie(context, filePath) {
       config: context.argv.config,
     });
 
-    context.logger.debug("loaded options `" + JSON.stringify(options) + "`");
+    context.logger.debug(`loaded options \`${JSON.stringify(options)}\``);
     return options;
   } catch (error) {
     context.logger.error(
-      `Invalid configuration file \`${filePath}\`: ` + error.message
+      `Invalid configuration file \`${filePath}\`: ${error.message}`
     );
     process.exit(2);
   }

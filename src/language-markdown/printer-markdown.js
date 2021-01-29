@@ -236,7 +236,7 @@ function genericPrint(path, options, print) {
       return ["> ", align("> ", printChildren(path, options, print))];
     case "heading":
       return [
-        "#".repeat(node.depth) + " ",
+        `${"#".repeat(node.depth)} `,
         printChildren(path, options, print),
       ];
     case "code": {
@@ -257,7 +257,7 @@ function genericPrint(path, options, print) {
       return [
         style,
         node.lang || "",
-        node.meta ? " " + node.meta : "",
+        node.meta ? ` ${node.meta}` : "",
         hardline,
 
         ...replaceEndOfLineWith(
@@ -862,7 +862,7 @@ function printTitle(title, options, printSpace) {
     return "";
   }
   if (printSpace) {
-    return " " + printTitle(title, options, false);
+    return ` ${printTitle(title, options, false)}`;
   }
 
   // title is escaped after `remark-parse` v7

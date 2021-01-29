@@ -125,7 +125,7 @@ class Cache {
 }
 
 function required(name) {
-  throw new Error(name + " is required");
+  throw new Error(`${name} is required`);
 }
 
 function hashString(string) {

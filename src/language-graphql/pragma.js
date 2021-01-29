@@ -5,7 +5,7 @@ function hasPragma(text) {
 }
 
 function insertPragma(text) {
-  return "# @format\n\n" + text;
+  return `# @format\n\n${text}`;
 }
 
 module.exports = {

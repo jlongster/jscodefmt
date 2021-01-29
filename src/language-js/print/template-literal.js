@@ -129,13 +129,13 @@ function printJestEachTemplateLiteral(path, options, print) {
     const parts = [];
     const stringifiedExpressions = expressions.map(
       (doc) =>
-        "${" +
-        printDocToString(doc, {
-          ...options,
-          printWidth: Number.POSITIVE_INFINITY,
-          endOfLine: "lf",
-        }).formatted +
-        "}"
+        `\${${
+          printDocToString(doc, {
+            ...options,
+            printWidth: Number.POSITIVE_INFINITY,
+            endOfLine: "lf",
+          }).formatted
+        }}`
     );
 
     const tableBody = [{ hasLineBreak: false, cells: [] }];

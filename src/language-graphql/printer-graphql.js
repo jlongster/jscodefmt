@@ -514,7 +514,7 @@ function genericPrint(path, options, print) {
 
     default:
       /* istanbul ignore next */
-      throw new Error("unknown graphql type: " + JSON.stringify(n.kind));
+      throw new Error(`unknown graphql type: ${JSON.stringify(n.kind)}`);
   }
 }
 
@@ -556,11 +556,11 @@ function canAttachComment(node) {
 function printComment(commentPath) {
   const comment = commentPath.getValue();
   if (comment.kind === "Comment") {
-    return "#" + comment.value.trimEnd();
+    return `#${comment.value.trimEnd()}`;
   }
 
   /* istanbul ignore next */
-  throw new Error("Not a comment: " + JSON.stringify(comment));
+  throw new Error(`Not a comment: ${JSON.stringify(comment)}`);
 }
 
 function printInterfaces(path, options, print) {

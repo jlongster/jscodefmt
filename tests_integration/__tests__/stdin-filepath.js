@@ -68,7 +68,7 @@ function f() {
 describe("apply editorconfig for stdin-filepath with a deep path", () => {
   runPrettier(
     "cli",
-    ["--stdin-filepath", "config/editorconfig/" + "a/".repeat(30) + "three.js"],
+    ["--stdin-filepath", `config/editorconfig/${"a/".repeat(30)}three.js`],
     {
       input: `
 function f() {
@@ -92,7 +92,7 @@ function f() {
       input: code, // js
     }).test({
       status: 0,
-      stdout: code + "\n",
+      stdout: `${code}\n`,
       stderr: "",
       write: [],
     });
@@ -102,7 +102,7 @@ function f() {
 describe("apply editorconfig for stdin-filepath with a deep path", () => {
   runPrettier(
     "cli",
-    ["--stdin-filepath", "config/editorconfig/" + "a/".repeat(30) + "three.js"],
+    ["--stdin-filepath", `config/editorconfig/${"a/".repeat(30)}three.js`],
     {
       input: `
 function f() {

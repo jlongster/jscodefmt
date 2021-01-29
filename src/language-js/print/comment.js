@@ -38,11 +38,11 @@ function printComment(commentPath, options) {
     const commentEnd = locEnd(comment);
     const isInsideFlowComment =
       options.originalText.slice(commentEnd - 3, commentEnd) === "*-/";
-    return "/*" + comment.value + (isInsideFlowComment ? "*-/" : "*/");
+    return `/*${comment.value}${isInsideFlowComment ? "*-/" : "*/"}`;
   }
 
   /* istanbul ignore next */
-  throw new Error("Not a comment: " + JSON.stringify(comment));
+  throw new Error(`Not a comment: ${JSON.stringify(comment)}`);
 }
 
 function isIndentableBlockComment(comment) {
@@ -64,7 +64,7 @@ function printIndentableBlockComment(comment) {
       lines.map((line, index) =>
         index === 0
           ? line.trimEnd()
-          : " " + (index < lines.length - 1 ? line.trim() : line.trimStart())
+          : ` ${index < lines.length - 1 ? line.trim() : line.trimStart()}`
       )
     ),
     "*/",

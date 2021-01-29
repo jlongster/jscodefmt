@@ -29,15 +29,15 @@ function runPrettier(dir, args = [], options = {}) {
 
   jest
     .spyOn(console, "log")
-    .mockImplementation((text) => appendStdout(text + "\n"));
+    .mockImplementation((text) => appendStdout(`${text}\n`));
 
   jest
     .spyOn(console, "warn")
-    .mockImplementation((text) => appendStderr(text + "\n"));
+    .mockImplementation((text) => appendStderr(`${text}\n`));
 
   jest
     .spyOn(console, "error")
-    .mockImplementation((text) => appendStderr(text + "\n"));
+    .mockImplementation((text) => appendStderr(`${text}\n`));
 
   jest.spyOn(Date, "now").mockImplementation(() => 0);
 

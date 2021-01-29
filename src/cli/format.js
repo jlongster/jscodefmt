@@ -62,7 +62,7 @@ function handleError(context, filename, error) {
   } else {
     // `invalid.js: Error: Some unexpected error\n[stack trace]`
     /* istanbul ignore next */
-    context.logger.error(filename + ": " + (error.stack || error));
+    context.logger.error(`${filename}: ${error.stack || error}`);
   }
 
   // Don't exit the process if one file failed
@@ -76,7 +76,7 @@ function writeOutput(context, result, options) {
   );
 
   if (options && options.cursorOffset >= 0) {
-    process.stderr.write(result.cursorOffset + "\n");
+    process.stderr.write(`${result.cursorOffset}\n`);
   }
 }
 
@@ -130,7 +130,7 @@ function format(context, input, opt) {
     const pppp = prettier.format(pp, opt);
     if (pp !== pppp) {
       throw new errors.DebugError(
-        "prettier(input) !== prettier(prettier(input))\n" + diff(pp, pppp)
+        `prettier(input) !== prettier(prettier(input))\n${diff(pp, pppp)}`
       );
     } else {
       const stringify = (obj) => JSON.stringify(obj, null, 2);
@@ -149,10 +149,7 @@ function format(context, input, opt) {
             ? "AST diff too large to render"
             : diff(ast, past);
         throw new errors.DebugError(
-          "ast(input) !== ast(prettier(input))\n" +
-            astDiff +
-            "\n" +
-            diff(input, pp)
+          `ast(input) !== ast(prettier(input))\n${astDiff}\n${diff(input, pp)}`
         );
       }
     }
@@ -185,17 +182,18 @@ function format(context, input, opt) {
           ms: event.target.times.cycle * 1000,
         };
         context.logger.debug(
-          "'--debug-benchmark' measurements for formatWithCursor: " +
-            JSON.stringify(results, null, 2)
+          `'--debug-benchmark' measurements for formatWithCursor: ${JSON.stringify(
+            results,
+            null,
+            2
+          )}`
         );
       })
       .run({ async: false });
   } else if (context.argv["debug-repeat"] > 0) {
     const repeat = context.argv["debug-repeat"];
     context.logger.debug(
-      "'--debug-repeat' option found, running formatWithCursor " +
-        repeat +
-        " times."
+      `'--debug-repeat' option found, running formatWithCursor ${repeat} times.`
     );
     // should be using `performance.now()`, but only `Date` is cross-platform enough
     const now = Date.now ? () => Date.now() : () => +new Date();
@@ -212,8 +210,11 @@ function format(context, input, opt) {
       ms: averageMs,
     };
     context.logger.debug(
-      "'--debug-repeat' measurements for formatWithCursor: " +
-        JSON.stringify(results, null, 2)
+      `'--debug-repeat' measurements for formatWithCursor: ${JSON.stringify(
+        results,
+        null,
+        2
+      )}`
     );
   }
 

@@ -472,7 +472,7 @@ function printPathNoParens(path, options, print, args) {
     case "NumericLiteral": // Babel 6 Literal split
       return printNumber(n.extra.raw);
     case "DecimalLiteral":
-      return printNumber(n.value) + "m";
+      return `${printNumber(n.value)}m`;
     case "BigIntLiteral":
       // babel: n.extra.raw, flow: n.bigint
       return (n.bigint || n.extra.raw).toLowerCase();
@@ -490,7 +490,7 @@ function printPathNoParens(path, options, print, args) {
         return printNumber(n.raw);
       }
       if (typeof n.value !== "string") {
-        return "" + n.value;
+        return `${n.value}`;
       }
       return nodeStr(n, options);
     case "Directive":
@@ -863,7 +863,7 @@ function printPathNoParens(path, options, print, args) {
     case "MemberTypeAnnotation": // Flow
     case "Type":
       /* istanbul ignore next */
-      throw new Error("unprintable type: " + JSON.stringify(n.type));
+      throw new Error(`unprintable type: ${JSON.stringify(n.type)}`);
     case "ExistsTypeAnnotation":
       return "*";
     case "EmptyTypeAnnotation":
@@ -873,7 +873,7 @@ function printPathNoParens(path, options, print, args) {
     case "ArrayTypeAnnotation":
       return [path.call(print, "elementType"), "[]"];
     case "BooleanLiteralTypeAnnotation":
-      return "" + n.value;
+      return `${n.value}`;
 
     case "EnumDeclaration":
       return ["enum ", path.call(print, "id"), " ", path.call(print, "body")];
@@ -995,7 +995,7 @@ function printPathNoParens(path, options, print, args) {
 
       return [
         modifier,
-        isGetterOrSetter(n) ? n.kind + " " : "",
+        isGetterOrSetter(n) ? `${n.kind} ` : "",
         n.variance ? path.call(print, "variance") : "",
         printPropertyKey(path, options, print),
         printOptionalToken(path),
@@ -1115,7 +1115,7 @@ function printPathNoParens(path, options, print, args) {
 
     default:
       /* istanbul ignore next */
-      throw new Error("unknown type: " + JSON.stringify(n.type));
+      throw new Error(`unknown type: ${JSON.stringify(n.type)}`);
   }
 }
 

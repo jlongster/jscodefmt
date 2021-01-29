@@ -38,7 +38,7 @@ async function bump({
   if (semver.diff(version, previousVersion) === "patch") {
     pkg.version = previousVersionOnDefaultBranch; // restore the `-dev` version
   } else {
-    pkg.version = semver.inc(version, "minor") + "-dev";
+    pkg.version = `${semver.inc(version, "minor")}-dev`;
   }
   await writeJson("package.json", pkg, { spaces: 2 });
 }

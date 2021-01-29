@@ -452,7 +452,7 @@ function makeString(rawContent, enclosingQuote, unescapeUnnecessaryEscapes) {
     // intend to enclose the string with, it must be escaped, so return it with
     // a backslash.
     if (quote === enclosingQuote) {
-      return "\\" + quote;
+      return `\\${quote}`;
     }
 
     if (quote) {
@@ -464,7 +464,7 @@ function makeString(rawContent, enclosingQuote, unescapeUnnecessaryEscapes) {
     return unescapeUnnecessaryEscapes &&
       /^[^\n\r"'0-7\\bfnrt-vx\u2028\u2029]$/.test(escaped)
       ? escaped
-      : "\\" + escaped;
+      : `\\${escaped}`;
   });
 
   return enclosingQuote + newContent + enclosingQuote;
@@ -651,9 +651,9 @@ function describeNodeForDebugging(node) {
       ""
   );
   if (nodeName.length > 20) {
-    nodeName = nodeName.slice(0, 19) + "…";
+    nodeName = `${nodeName.slice(0, 19)}…`;
   }
-  return nodeType + (nodeName ? " " + nodeName : "");
+  return nodeType + (nodeName ? ` ${nodeName}` : "");
 }
 
 module.exports = {

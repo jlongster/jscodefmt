@@ -194,7 +194,7 @@ function printTypescript(path, options, print) {
         parts.push("export ");
       }
       if (n.accessibility) {
-        parts.push(n.accessibility + " ");
+        parts.push(`${n.accessibility} `);
       }
       if (n.static) {
         parts.push("static ");
@@ -221,7 +221,7 @@ function printTypescript(path, options, print) {
     }
     case "TSParameterProperty":
       if (n.accessibility) {
-        parts.push(n.accessibility + " ");
+        parts.push(`${n.accessibility} `);
       }
       if (n.export) {
         parts.push("export ");

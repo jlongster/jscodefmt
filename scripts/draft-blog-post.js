@@ -60,7 +60,7 @@ for (const dir of dirs) {
   const category = categoriesByDir[dir.name];
 
   if (!category) {
-    throw new Error("Unknown category: " + dir.name);
+    throw new Error(`Unknown category: ${dir.name}`);
   }
 
   category.entries = fs
@@ -84,7 +84,7 @@ rimraf.sync(postGlob);
 fs.writeFileSync(
   postFile,
   replaceVersions(
-    [
+    `${[
       fs.readFileSync(introFile, "utf8").trim(),
       "<!--truncate-->",
       ...printEntries({
@@ -99,7 +99,7 @@ fs.writeFileSync(
         title: "Other changes",
         filter: (entry) => !entry.breaking && !entry.highlight,
       }),
-    ].join("\n\n") + "\n"
+    ].join("\n\n")}\n`
   )
 );
 
@@ -122,14 +122,14 @@ function printEntries({ title, filter }) {
     const filteredEntries = entries.filter(filter);
     if (filteredEntries.length > 0) {
       result.push(
-        "### " + title,
+        `### ${title}`,
         ...filteredEntries.map((entry) => entry.content)
       );
     }
   }
 
   if (result.length > 0) {
-    result.unshift("## " + title);
+    result.unshift(`## ${title}`);
   }
 
   return result;

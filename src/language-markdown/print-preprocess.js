@@ -63,7 +63,7 @@ function mergeContinuousImportExport(ast) {
       prevNode.type === "importExport" && node.type === "importExport",
     (prevNode, node) => ({
       type: "importExport",
-      value: prevNode.value + "\n\n" + node.value,
+      value: `${prevNode.value}\n\n${node.value}`,
       position: {
         start: prevNode.position.start,
         end: node.position.end,

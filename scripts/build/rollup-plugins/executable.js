@@ -36,7 +36,7 @@ module.exports = function () {
 
     renderChunk(code) {
       if (banner) {
-        return { code: banner + "\n" + code };
+        return { code: `${banner}\n${code}` };
       }
     },
 

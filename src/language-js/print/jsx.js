@@ -713,7 +713,7 @@ function printJsx(path, options, print) {
     case "JSXAttribute":
       return printJsxAttribute(path, options, print);
     case "JSXIdentifier":
-      return "" + n.name;
+      return `${n.name}`;
     case "JSXNamespacedName":
       return join(":", [
         path.call(print, "namespace"),
@@ -754,18 +754,12 @@ function printJsx(path, options, print) {
 // Only space, newline, carriage return, and tab are treated as whitespace
 // inside JSX.
 const jsxWhitespaceChars = " \n\r\t";
-const matchJsxWhitespaceRegex = new RegExp("([" + jsxWhitespaceChars + "]+)");
-const containsNonJsxWhitespaceRegex = new RegExp(
-  "[^" + jsxWhitespaceChars + "]"
-);
+const matchJsxWhitespaceRegex = new RegExp(`([${jsxWhitespaceChars}]+)`);
+const containsNonJsxWhitespaceRegex = new RegExp(`[^${jsxWhitespaceChars}]`);
 const trimJsxWhitespace = (text) =>
   text.replace(
     new RegExp(
-      "(?:^" +
-        matchJsxWhitespaceRegex.source +
-        "|" +
-        matchJsxWhitespaceRegex.source +
-        "$)"
+      `(?:^${matchJsxWhitespaceRegex.source}|${matchJsxWhitespaceRegex.source}$)`
     ),
     ""
   );

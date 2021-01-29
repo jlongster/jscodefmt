@@ -67,7 +67,7 @@ function readJson(filename) {
 }
 
 function writeJson(filename, content) {
-  fs.writeFileSync(filename, JSON.stringify(content, null, 2) + "\n");
+  fs.writeFileSync(filename, `${JSON.stringify(content, null, 2)}\n`);
 }
 
 function processFile(filename, fn) {

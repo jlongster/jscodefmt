@@ -642,9 +642,9 @@ function isSimpleTemplateLiteral(node) {
  */
 function getTypeScriptMappedTypeModifier(tokenNode, keyword) {
   if (tokenNode === "+") {
-    return "+" + keyword;
+    return `+${keyword}`;
   } else if (tokenNode === "-") {
-    return "-" + keyword;
+    return `-${keyword}`;
   }
   return keyword;
 }

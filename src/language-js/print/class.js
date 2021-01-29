@@ -162,7 +162,7 @@ function printClassMethod(path, options, print) {
     parts.push(printDecorators(path, options, print));
   }
   if (n.accessibility) {
-    parts.push(n.accessibility + " ");
+    parts.push(`${n.accessibility} `);
   }
   if (n.static) {
     parts.push("static ");
@@ -185,7 +185,7 @@ function printClassProperty(path, options, print) {
     parts.push(printDecorators(path, options, print));
   }
   if (n.accessibility) {
-    parts.push(n.accessibility + " ");
+    parts.push(`${n.accessibility} `);
   }
   if (n.declare) {
     parts.push("declare ");

@@ -181,12 +181,12 @@ function splitWithSingleSpace(text) {
 
   /* istanbul ignore next */
   if (lastPart === " ") {
-    parts.push((parts.pop() || "") + " ");
+    parts.push(`${parts.pop() || ""} `);
   }
 
   if (parts[0] === "") {
     parts.shift();
-    parts.unshift(" " + (parts.shift() || ""));
+    parts.unshift(` ${parts.shift() || ""}`);
   }
 
   return parts;
@@ -296,7 +296,7 @@ function getBlockValueLineContents(
           (reduced, word) =>
             // disallow trailing spaces
             reduced.length > 0 && /\s$/.test(getLast(reduced))
-              ? [...reduced.slice(0, -1), getLast(reduced) + " " + word]
+              ? [...reduced.slice(0, -1), `${getLast(reduced)} ${word}`]
               : [...reduced, word],
           []
         )

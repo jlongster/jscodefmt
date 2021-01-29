@@ -204,12 +204,7 @@ function mergeSimpleElementIntoText(ast /*, options */) {
             const { isTrailingSpaceSensitive, hasTrailingSpaces } = nextChild;
             newChildren.push(
               lastChild.clone({
-                value:
-                  lastChild.value +
-                  `<${child.rawName}>` +
-                  child.firstChild.value +
-                  `</${child.rawName}>` +
-                  nextChild.value,
+                value: `${lastChild.value}<${child.rawName}>${child.firstChild.value}</${child.rawName}>${nextChild.value}`,
                 sourceSpan: new ParseSourceSpan(
                   lastChild.sourceSpan.start,
                   nextChild.sourceSpan.end

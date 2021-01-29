@@ -16,7 +16,7 @@ function printAngular(path, options, print) {
         path.call(print, "node"),
         !hasComment(n.node)
           ? ""
-          : " //" + getComments(n.node)[0].value.trimEnd(),
+          : ` //${getComments(n.node)[0].value.trimEnd()}`,
       ];
     case "NGPipeExpression":
       return printBinaryishExpression(path, options, print);

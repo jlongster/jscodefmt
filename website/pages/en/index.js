@@ -5,7 +5,7 @@ const PropTypes = require("prop-types");
 const AnimatedLogo = require("@sandhose/prettier-animated-logo");
 const { MarkdownBlock, Container } = require("../../core/CompLibrary.js");
 
-const siteConfig = require(process.cwd() + "/siteConfig.js");
+const siteConfig = require(`${process.cwd()}/siteConfig.js`);
 
 const ButtonGroup = (props) => (
   <div className="buttonGroup buttonWrapper">{props.children}</div>
@@ -58,7 +58,7 @@ const HomeSplash = (props) => (
             <div className="promoRow">
               <div className="pluginRowBlock">
                 <Button href="/playground/">Try It Online</Button>&nbsp;
-                <Button href={"/docs/" + props.language + "/install.html"}>
+                <Button href={`/docs/${props.language}/install.html`}>
                   Install Prettier
                 </Button>
               </div>
@@ -100,7 +100,7 @@ const TldrSection = ({ language }) => (
             <li>No need to discuss style in code review</li>
             <li>Saves you time and energy</li>
             <li>
-              <a href={"/docs/" + language + "/why-prettier.html"}>And more</a>
+              <a href={`/docs/${language}/why-prettier.html`}>And more</a>
             </li>
           </ul>
         </div>
@@ -264,7 +264,7 @@ const UsersSection = ({ language }) => {
         <div className="more-users">
           <a
             className="button"
-            href={siteConfig.baseUrl + language + "/users/"}
+            href={`${siteConfig.baseUrl + language}/users/`}
             target="_self"
             style={{ marginRight: "10px" }}
           >

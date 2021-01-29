@@ -97,7 +97,7 @@ function parse(text, opts) {
     if (loc) {
       const { codeFrameColumns } = require("@babel/code-frame");
       error.codeFrame = codeFrameColumns(text, loc, { highlightCode: true });
-      error.message += "\n" + error.codeFrame;
+      error.message += `\n${error.codeFrame}`;
       throw error;
     }
 

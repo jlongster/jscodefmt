@@ -397,7 +397,7 @@ function print(path, options, print) {
 
     /* istanbul ignore next */
     default:
-      throw new Error("unknown glimmer type: " + JSON.stringify(n.type));
+      throw new Error(`unknown glimmer type: ${JSON.stringify(n.type)}`);
   }
 }
 

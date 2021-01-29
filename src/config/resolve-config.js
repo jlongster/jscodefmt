@@ -12,7 +12,7 @@ const resolveEditorConfig = require("./resolve-config-editorconfig");
 
 const getExplorerMemoized = mem(
   (opts) => {
-    const cosmiconfig = thirdParty["cosmiconfig" + (opts.sync ? "Sync" : "")];
+    const cosmiconfig = thirdParty[`cosmiconfig${opts.sync ? "Sync" : ""}`];
     const explorer = cosmiconfig("prettier", {
       cache: opts.cache,
       transform: (result) => {

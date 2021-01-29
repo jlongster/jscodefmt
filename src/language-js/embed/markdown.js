@@ -9,7 +9,7 @@ function format(path, print, textToDoc) {
   const node = path.getValue();
   let text = node.quasis[0].value.raw.replace(
     /((?:\\\\)*)\\`/g,
-    (_, backslashes) => "\\".repeat(backslashes.length / 2) + "`"
+    (_, backslashes) => `${"\\".repeat(backslashes.length / 2)}\``
   );
   const indentation = getIndentation(text);
   const hasIndent = indentation !== "";

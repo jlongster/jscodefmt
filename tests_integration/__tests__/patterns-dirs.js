@@ -120,12 +120,11 @@ if (path.sep === "/") {
 }
 
 function testPatterns(namePrefix, cliArgs, expected = {}) {
-  const testName =
-    (namePrefix ? namePrefix + ": " : "") +
-    "prettier " +
-    cliArgs
-      .map((arg) => (/^[\w./=-]+$/.test(arg) ? arg : `'${arg}'`))
-      .join(" ");
+  const testName = `${
+    namePrefix ? `${namePrefix}: ` : ""
+  }prettier ${cliArgs
+    .map((arg) => (/^[\w./=-]+$/.test(arg) ? arg : `'${arg}'`))
+    .join(" ")}`;
 
   describe(testName, () => {
     runPrettier("cli/patterns-dirs", [...cliArgs, "-l"]).test({

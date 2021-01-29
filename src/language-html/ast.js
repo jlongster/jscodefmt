@@ -86,7 +86,7 @@ class Node {
     return this.hasExplicitNamespace ? this.fullName : this.name;
   }
   get fullName() {
-    return this.namespace ? this.namespace + ":" + this.name : this.name;
+    return this.namespace ? `${this.namespace}:${this.name}` : this.name;
   }
 }
 

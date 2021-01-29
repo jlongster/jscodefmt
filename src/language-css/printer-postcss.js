@@ -220,7 +220,7 @@ function genericPrint(path, options, print) {
             node.name,
             ": ",
             node.value ? path.call(print, "value") : "",
-            node.raws.between.trim() ? node.raws.between.trim() + " " : "",
+            node.raws.between.trim() ? `${node.raws.between.trim()} ` : "",
             node.nodes
               ? [
                   "{",
@@ -1023,8 +1023,7 @@ const NUMBER_REGEX = /(?:\d*\.\d+|\d+\.?)(?:[Ee][+-]?\d+)?/g;
 const STANDARD_UNIT_REGEX = /[A-Za-z]+/g;
 const WORD_PART_REGEX = /[$@]?[A-Z_a-z\u0080-\uFFFF][\w\u0080-\uFFFF-]*/g;
 const ADJUST_NUMBERS_REGEX = new RegExp(
-  STRING_REGEX.source +
-    "|" +
+  `${STRING_REGEX.source}|` +
     `(${WORD_PART_REGEX.source})?` +
     `(${NUMBER_REGEX.source})` +
     `(${STANDARD_UNIT_REGEX.source})?`,

@@ -5,7 +5,7 @@ function hasPragma(text) {
 }
 
 function insertPragma(text) {
-  return "<!-- @format -->\n\n" + text.replace(/^\s*\n/, "");
+  return `<!-- @format -->\n\n${text.replace(/^\s*\n/, "")}`;
 }
 
 module.exports = {

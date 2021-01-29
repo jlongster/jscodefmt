@@ -27,7 +27,7 @@ function writeChangelog({ version, previousVersion, releaseNotes }) {
 
     ${releaseNotes}
   `;
-  fs.writeFileSync("CHANGELOG.md", newEntry + "\n\n" + changelog);
+  fs.writeFileSync("CHANGELOG.md", `${newEntry}\n\n${changelog}`);
 }
 
 module.exports = async function ({ version, previousVersion }) {

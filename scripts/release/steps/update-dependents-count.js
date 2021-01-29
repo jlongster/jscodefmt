@@ -77,9 +77,9 @@ function formatNumber(value) {
     return String(value).slice(0, 1) + "0".repeat(String(value).length - 1);
   }
   if (value < 1e6) {
-    return Math.floor(value / 1e2) / 10 + "k";
+    return `${Math.floor(value / 1e2) / 10}k`;
   }
-  return Math.floor(value / 1e5) / 10 + " million";
+  return `${Math.floor(value / 1e5) / 10} million`;
 }
 
 module.exports = async function () {

@@ -1,7 +1,7 @@
 "use strict";
 
 const vnopts = require("vnopts");
-const leven = require("leven");
+const { distance } = require("fastest-levenshtein");
 const chalk = require("chalk");
 const flat = require("lodash/flatten");
 
@@ -29,7 +29,7 @@ class FlagSchema extends vnopts.ChoiceSchema {
       value.length > 0 &&
       !this._flags.includes(value)
     ) {
-      const suggestion = this._flags.find((flag) => leven(flag, value) < 3);
+      const suggestion = this._flags.find((flag) => distance(flag, value) < 3);
       if (suggestion) {
         utils.logger.warn(
           [

@@ -35,3 +35,42 @@ of y);
 for(x of
 //a
 y);
+
+for(x of y)
+  // comment
+  bar();
+
+for(x in y)
+  // comment
+  bar();
+
+for(;;)
+  // comment
+  bar();
+
+for(x of y)
+  // comment1
+  // comment2
+  bar();
+
+for(x in y)
+  // comment1
+  // comment2
+  bar();
+
+for(;;)
+  // comment1
+  // comment2
+  bar();
+
+for(x of y)
+  /* comment */
+  bar();
+
+for(x in y)
+  /* comment */
+  bar();
+
+for(;;)
+  /* comment */
+  bar();

@@ -1326,6 +1326,15 @@ function getComments(node, flags, fn) {
   return test ? node.comments.filter(test) : node.comments;
 }
 
+const forStatements = new Set([
+  "ForStatement",
+  "ForInStatement",
+  "ForOfStatement",
+]);
+function isForStatement(node) {
+  return forStatements.has(node.type);
+}
+
 /**
  * @param {Node} node
  * @returns {boolean}
@@ -1358,6 +1367,7 @@ module.exports = {
   isCallOrOptionalCallExpression,
   isExportDeclaration,
   isFlowAnnotationComment,
+  isForStatement,
   isFunctionCompositionArgs,
   isFunctionNotation,
   isFunctionOrArrowExpression,

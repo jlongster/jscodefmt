@@ -131,7 +131,8 @@
     "synchronous-promise": "2.0.15",
     "tempy": "1.0.0",
     "terser-webpack-plugin": "5.1.1",
-    "webpack": "5.20.0"
+    "webpack": "5.20.0",
+    "yarn-deduplicate": "3.1.0"
   },
   "scripts": {
     "prepublishOnly": "echo \"Error: must publish from dist/\" && exit 1",
@@ -152,9 +153,11 @@
     "lint:dist": "eslint --no-eslintrc --no-ignore --env=es6,browser --parser-options=ecmaVersion:2018 \"dist/!(bin-prettier|index|third-party).js\"",
     "lint:spellcheck": "cspell \"**/*\" \".github/**/*\"",
     "lint:deps": "node ./scripts/check-deps.js",
-    "fix": "run-s fix:eslint fix:prettier",
+    "lint:lockfile": "yarn-deduplicate --list --fail && yarn-deduplicate --list --fail scripts/release/yarn.lock && yarn-deduplicate --list --fail website/yarn.lock",
+    "fix": "run-s fix:eslint fix:prettier fix:lockfile",
     "fix:eslint": "yarn lint:eslint --fix",
     "fix:prettier": "yarn lint:prettier --write",
+    "fix:lockfile": "yarn-deduplicate && yarn-deduplicate scripts/release/yarn.lock && yarn-deduplicate website/yarn.lock",
     "build": "node --max-old-space-size=3072 ./scripts/build/build.js",
     "build-docs": "node ./scripts/build-docs.js"
   }

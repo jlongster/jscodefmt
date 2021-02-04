@@ -39,5 +39,8 @@ jobs:
       - name: Lint Changelog
         run: yarn lint:changelog
 
+      - name: Lint Lock File
+        run: yarn lint:lockfile
+
       - name: Check Lock File Changes
         run: yarn && echo "Listing changed files:" && git diff --name-only --exit-code && echo "No files changed during lint."

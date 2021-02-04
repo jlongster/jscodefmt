@@ -520,22 +520,14 @@ function handleCommentInEmptyParens({ comment, enclosingNode, text }) {
   if (
     enclosingNode &&
     ((isRealFunctionLikeNode(enclosingNode) &&
-      getFunctionParameters(enclosingNode).length === 0) ||
+      getFunctionParameters(getRealFunctionLikeValue(enclosingNode)).length ===
+        0) ||
       ((enclosingNode.type === "CallExpression" ||
         enclosingNode.type === "OptionalCallExpression" ||
         enclosingNode.type === "NewExpression") &&
         enclosingNode.arguments.length === 0))
   ) {
-    addDanglingComment(enclosingNode, comment);
-    return true;
-  }
-  if (
-    enclosingNode &&
-    (enclosingNode.type === "MethodDefinition" ||
-      enclosingNode.type === "TSAbstractMethodDefinition") &&
-    getFunctionParameters(enclosingNode.value).length === 0
-  ) {
-    addDanglingComment(enclosingNode.value, comment);
+    addDanglingComment(getRealFunctionLikeValue(enclosingNode), comment);
     return true;
   }
   return false;
@@ -882,8 +874,24 @@ function isRealFunctionLikeNode(node) {
     node.type === "TSMethodSignature" ||
     node.type === "TSConstructorType" ||
     node.type === "TSFunctionType" ||
-    node.type === "TSDeclareMethod"
+    node.type === "TSDeclareMethod" ||
+    node.type === "MethodDefinition" ||
+    node.type === "TSAbstractMethodDefinition"
   );
+}
+
+/**
+ * @param {Node} node
+ * @returns {Node}
+ */
+function getRealFunctionLikeValue(node) {
+  if (
+    node.type === "MethodDefinition" ||
+    node.type === "TSAbstractMethodDefinition"
+  ) {
+    return node.value;
+  }
+  return node;
 }
 
 /**

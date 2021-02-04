@@ -460,6 +460,65 @@ type M = { [m in M /* commentG */]: string };
 ================================================================================
 `;
 
+exports[`method_2.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+class Foo {
+  method(
+    // comment
+  ) {}
+}
+
+class Foo {
+  method(
+    // comment
+  );
+}
+
+class Foo {
+  method(/* bar */);
+}
+
+class Foo {
+  abstract method(
+    // comment
+  );
+}
+
+class Foo {
+  abstract method(/* bar */);
+}
+
+=====================================output=====================================
+class Foo {
+  method() {}
+  // comment
+}
+
+class Foo {
+  method();
+  // comment
+}
+
+class Foo {
+  method(/* bar */);
+}
+
+class Foo {
+  abstract method();
+  // comment
+}
+
+class Foo {
+  abstract method(/* bar */);
+}
+
+================================================================================
+`;
+
 exports[`method_types.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]

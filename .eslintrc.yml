@@ -29,6 +29,7 @@ rules:
   no-else-return: error
   no-implicit-coercion: error
   no-inner-declarations: error
+  no-lonely-if: error
   no-unneeded-ternary: error
   no-useless-return: error
   no-unused-vars:
@@ -72,6 +73,7 @@ rules:
   unicorn/new-for-builtins: error
   unicorn/no-array-for-each: error
   unicorn/no-array-push-push: error
+  unicorn/no-lonely-if: error
   unicorn/no-useless-undefined: error
   unicorn/prefer-includes: error
   unicorn/prefer-number-properties: error

@@ -205,15 +205,11 @@ function fits(next, restCommands, width, options, hasLineSuffix, mustBeFlat) {
           break;
         case "if-break": {
           const groupMode = doc.groupId ? groupModeMap[doc.groupId] : mode;
-          if (groupMode === MODE_BREAK) {
-            if (doc.breakContents) {
-              cmds.push([ind, mode, doc.breakContents]);
-            }
+          if (groupMode === MODE_BREAK && doc.breakContents) {
+            cmds.push([ind, mode, doc.breakContents]);
           }
-          if (groupMode === MODE_FLAT) {
-            if (doc.flatContents) {
-              cmds.push([ind, mode, doc.flatContents]);
-            }
+          if (groupMode === MODE_FLAT && doc.flatContents) {
+            cmds.push([ind, mode, doc.flatContents]);
           }
 
           break;
@@ -318,7 +314,7 @@ function printDocToString(doc, options) {
 
               if (!doc.break && fits(next, cmds, rem, options, hasLineSuffix)) {
                 cmds.push(next);
-              } else {
+              } else if (doc.expandedStates) {
                 // Expanded states are a rare case where a document
                 // can manually provide multiple representations of
                 // itself. It provides an array of documents
@@ -326,37 +322,34 @@ function printDocToString(doc, options) {
                 // representation first to the most expanded. If a
                 // group has these, we need to manually go through
                 // these states and find the first one that fits.
-                if (doc.expandedStates) {
-                  const mostExpanded =
-                    doc.expandedStates[doc.expandedStates.length - 1];
+                const mostExpanded =
+                  doc.expandedStates[doc.expandedStates.length - 1];
 
-                  if (doc.break) {
-                    cmds.push([ind, MODE_BREAK, mostExpanded]);
+                if (doc.break) {
+                  cmds.push([ind, MODE_BREAK, mostExpanded]);
 
-                    break;
-                  } else {
-                    for (let i = 1; i < doc.expandedStates.length + 1; i++) {
-                      if (i >= doc.expandedStates.length) {
-                        cmds.push([ind, MODE_BREAK, mostExpanded]);
+                  break;
+                } else {
+                  for (let i = 1; i < doc.expandedStates.length + 1; i++) {
+                    if (i >= doc.expandedStates.length) {
+                      cmds.push([ind, MODE_BREAK, mostExpanded]);
+
+                      break;
+                    } else {
+                      const state = doc.expandedStates[i];
+                      const cmd = [ind, MODE_FLAT, state];
+
+                      if (fits(cmd, cmds, rem, options, hasLineSuffix)) {
+                        cmds.push(cmd);
 
                         break;
-                      } else {
-                        const state = doc.expandedStates[i];
-                        const cmd = [ind, MODE_FLAT, state];
-
-                        if (fits(cmd, cmds, rem, options, hasLineSuffix)) {
-                          cmds.push(cmd);
-
-                          break;
-                        }
                       }
                     }
                   }
-                } else {
-                  cmds.push([ind, MODE_BREAK, doc.contents]);
                 }
+              } else {
+                cmds.push([ind, MODE_BREAK, doc.contents]);
               }
-
               break;
             }
           }
@@ -461,15 +454,11 @@ function printDocToString(doc, options) {
         }
         case "if-break": {
           const groupMode = doc.groupId ? groupModeMap[doc.groupId] : mode;
-          if (groupMode === MODE_BREAK) {
-            if (doc.breakContents) {
-              cmds.push([ind, mode, doc.breakContents]);
-            }
+          if (groupMode === MODE_BREAK && doc.breakContents) {
+            cmds.push([ind, mode, doc.breakContents]);
           }
-          if (groupMode === MODE_FLAT) {
-            if (doc.flatContents) {
-              cmds.push([ind, mode, doc.flatContents]);
-            }
+          if (groupMode === MODE_FLAT && doc.flatContents) {
+            cmds.push([ind, mode, doc.flatContents]);
           }
 
           break;

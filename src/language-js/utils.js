@@ -541,24 +541,23 @@ function isTestCall(n, parent) {
     if (isUnitTestSetUp(n)) {
       return isAngularTestWrapper(n.arguments[0]);
     }
-  } else if (n.arguments.length === 2 || n.arguments.length === 3) {
-    if (
-      ((n.callee.type === "Identifier" && unitTestRe.test(n.callee.name)) ||
-        isSkipOrOnlyBlock(n)) &&
-      (isTemplateLiteral(n.arguments[0]) || isStringLiteral(n.arguments[0]))
-    ) {
-      // it("name", () => { ... }, 2500)
-      if (n.arguments[2] && !isNumericLiteral(n.arguments[2])) {
-        return false;
-      }
-      return (
-        (n.arguments.length === 2
-          ? isFunctionOrArrowExpression(n.arguments[1])
-          : isFunctionOrArrowExpressionWithBody(n.arguments[1]) &&
-            getFunctionParameters(n.arguments[1]).length <= 1) ||
-        isAngularTestWrapper(n.arguments[1])
-      );
+  } else if (
+    (n.arguments.length === 2 || n.arguments.length === 3) &&
+    ((n.callee.type === "Identifier" && unitTestRe.test(n.callee.name)) ||
+      isSkipOrOnlyBlock(n)) &&
+    (isTemplateLiteral(n.arguments[0]) || isStringLiteral(n.arguments[0]))
+  ) {
+    // it("name", () => { ... }, 2500)
+    if (n.arguments[2] && !isNumericLiteral(n.arguments[2])) {
+      return false;
     }
+    return (
+      (n.arguments.length === 2
+        ? isFunctionOrArrowExpression(n.arguments[1])
+        : isFunctionOrArrowExpressionWithBody(n.arguments[1]) &&
+          getFunctionParameters(n.arguments[1]).length <= 1) ||
+      isAngularTestWrapper(n.arguments[1])
+    );
   }
   return false;
 }

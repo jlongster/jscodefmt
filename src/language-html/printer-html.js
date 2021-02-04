@@ -478,16 +478,14 @@ function printChildren(path, options, print) {
         prevParts.push(hardline, hardline);
       } else if (prevBetweenLine === hardline) {
         prevParts.push(hardline);
+      } else if (isTextLikeNode(childNode.prev)) {
+        leadingParts.push(prevBetweenLine);
       } else {
-        if (isTextLikeNode(childNode.prev)) {
-          leadingParts.push(prevBetweenLine);
-        } else {
-          leadingParts.push(
-            ifBreak("", softline, {
-              groupId: groupIds[childIndex - 1],
-            })
-          );
-        }
+        leadingParts.push(
+          ifBreak("", softline, {
+            groupId: groupIds[childIndex - 1],
+          })
+        );
       }
     }
 

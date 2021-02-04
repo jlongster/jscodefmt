@@ -91,11 +91,9 @@ function listDifferent(context, input, options, filename) {
         "No parser and no file path given, couldn't infer a parser."
       );
     }
-    if (!prettier.check(input, options)) {
-      if (!context.argv.write) {
-        context.logger.log(filename);
-        process.exitCode = 1;
-      }
+    if (!prettier.check(input, options) && !context.argv.write) {
+      context.logger.log(filename);
+      process.exitCode = 1;
     }
   } catch (error) {
     context.logger.error(error.message);

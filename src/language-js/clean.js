@@ -30,17 +30,17 @@ function clean(ast, newObj, parent) {
   }
 
   if (
-    ast.type === "BigIntLiteral" ||
-    ast.type === "BigIntLiteralTypeAnnotation"
+    (ast.type === "BigIntLiteral" ||
+      ast.type === "BigIntLiteralTypeAnnotation") &&
+    newObj.value
   ) {
-    if (newObj.value) {
-      newObj.value = newObj.value.toLowerCase();
-    }
+    newObj.value = newObj.value.toLowerCase();
   }
-  if (ast.type === "BigIntLiteral" || ast.type === "Literal") {
-    if (newObj.bigint) {
-      newObj.bigint = newObj.bigint.toLowerCase();
-    }
+  if (
+    (ast.type === "BigIntLiteral" || ast.type === "Literal") &&
+    newObj.bigint
+  ) {
+    newObj.bigint = newObj.bigint.toLowerCase();
   }
 
   if (ast.type === "DecimalLiteral") {

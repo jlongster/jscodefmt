@@ -114,13 +114,11 @@ function clean(ast, newObj, parent) {
   if (ast.type === "selector-attribute") {
     newObj.attribute = newObj.attribute.trim();
 
-    if (newObj.namespace) {
-      if (typeof newObj.namespace === "string") {
-        newObj.namespace = newObj.namespace.trim();
+    if (newObj.namespace && typeof newObj.namespace === "string") {
+      newObj.namespace = newObj.namespace.trim();
 
-        if (newObj.namespace.length === 0) {
-          newObj.namespace = true;
-        }
+      if (newObj.namespace.length === 0) {
+        newObj.namespace = true;
       }
     }
 

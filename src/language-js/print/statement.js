@@ -58,14 +58,10 @@ function printStatementSequence(path, options, print, property) {
       if (classPropMayCauseASIProblems(node)) {
         parts.push(";");
       } else if (
-        node.type === "ClassProperty" ||
-        node.type === "PropertyDefinition"
+        (node.type === "ClassProperty" || node.type === "PropertyDefinition") &&
+        classChildNeedsASIProtection(statements[index + 1])
       ) {
-        // `ClassBody` don't allow `EmptyStatement`,
-        // so we can use `statements` to get next node
-        if (classChildNeedsASIProtection(statements[index + 1])) {
-          parts.push(";");
-        }
+        parts.push(";");
       }
     }
 

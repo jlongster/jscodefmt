@@ -233,7 +233,7 @@ function printFunctionType(path, options, print) {
     isArrowFunctionTypeAnnotation &&
     (parent.type === "TypeAnnotation" || parent.type === "TSTypeAnnotation");
 
-  // Sadly we can't put it inside of FastPath::needsColon because we are
+  // Sadly we can't put it inside of AstPath::needsColon because we are
   // printing ":" as part of the expression and it would put parenthesis
   // around :(
   const needsParens =

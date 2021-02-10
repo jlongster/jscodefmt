@@ -133,3 +133,10 @@ describe("fixtures-4: Should match `level-1.js` #3", () => {
     status: 1,
   });
 });
+
+describe("should not ignore file paths contains object prototype keys", () => {
+  runPrettier("cli/patterns-glob/fixtures-5", [
+    "./constructor/should-be-formatted.js",
+    "-l",
+  ]).test({ status: 1 });
+});

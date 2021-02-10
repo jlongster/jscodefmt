@@ -33,7 +33,7 @@ const pathNeedsParens = require("../needs-parens");
 const { willPrintOwnComments } = require("../comments");
 
 /**
- * @typedef {import("../../common/fast-path")} FastPath
+ * @typedef {import("../../common/ast-path")} AstPath
  * @typedef {import("../types/estree").Node} Node
  * @typedef {import("../types/estree").JSXElement} JSXElement
  */
@@ -812,7 +812,7 @@ function isJsxWhitespaceExpression(node) {
 }
 
 /**
- * @param {FastPath} path
+ * @param {AstPath} path
  * @returns {boolean}
  */
 function hasJsxIgnoreComment(path) {

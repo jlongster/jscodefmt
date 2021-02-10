@@ -1,7 +1,7 @@
 "use strict";
 
 const assert = require("assert");
-const FastPath = require("../common/fast-path");
+const AstPath = require("../common/ast-path");
 const doc = require("../document");
 const { printComments } = require("./comments");
 const multiparser = require("./multiparser");
@@ -27,7 +27,7 @@ const docUtils = doc.utils;
  * plugin function again, and so on.
  *
  * All the while, these functions pass a "path" variable around, which
- * is a stack-like data structure (FastPath) that maintains the current
+ * is a stack-like data structure (AstPath) that maintains the current
  * state of the recursion. It is called "path", because it represents
  * the path to the current node through the Abstract Syntax Tree.
  */
@@ -74,7 +74,7 @@ function printAstToDoc(ast, options, alignmentSize = 0) {
     return res;
   }
 
-  let doc = printGenerically(new FastPath(ast));
+  let doc = printGenerically(new AstPath(ast));
   if (alignmentSize > 0) {
     // Add a hardline to make the indents take effect
     // It should be removed in index.js format()
@@ -106,7 +106,7 @@ function printPrettierIgnoredNode(node, options) {
 }
 
 function callPluginPrintFunction(path, options, printPath, args) {
-  assert.ok(path instanceof FastPath);
+  assert.ok(path instanceof AstPath);
 
   const node = path.getValue();
   const { printer } = options;

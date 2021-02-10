@@ -26,7 +26,7 @@ const {
 
 /**
  * @typedef {import("../../document").Doc} Doc
- * @typedef {import("../../common/fast-path")} FastPath
+ * @typedef {import("../../common/ast-path")} AstPath
  *
  * @typedef {any} Options - Prettier options (TBD ...)
  */
@@ -214,7 +214,7 @@ function shouldExtraIndentForConditionalExpression(path) {
  * The following is the shared logic for
  * ternary operators, namely ConditionalExpression
  * and TSConditionalType
- * @param {FastPath} path - The path to the ConditionalExpression/TSConditionalType node.
+ * @param {AstPath} path - The path to the ConditionalExpression/TSConditionalType node.
  * @param {Options} options - Prettier options
  * @param {Function} print - Print function to call recursively
  * @returns {Doc}

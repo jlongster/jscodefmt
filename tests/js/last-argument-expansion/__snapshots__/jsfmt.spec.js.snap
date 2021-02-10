@@ -361,6 +361,27 @@ function mySagas2() {
 ================================================================================
 `;
 
+exports[`function-expression-issue-2239.js format 1`] = `
+====================================options=====================================
+parsers: ["babel", "flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+someFunctionCallWithBigArgumentsAndACallback(thisArgumentIsQuiteLong, function(cool) {
+  return cool
+})
+
+=====================================output=====================================
+someFunctionCallWithBigArgumentsAndACallback(
+  thisArgumentIsQuiteLong,
+  function (cool) {
+    return cool;
+  }
+);
+
+================================================================================
+`;
+
 exports[`jsx.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]

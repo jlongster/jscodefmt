@@ -8,7 +8,7 @@ module.exports = {
     "no-doc-builder-concat": require("./no-doc-builder-concat"),
     "no-empty-flat-contents-for-if-break": require("./no-empty-flat-contents-for-if-break"),
     "no-node-comments": require("./no-node-comments"),
-    "prefer-fast-path-each": require("./prefer-fast-path-each"),
+    "prefer-ast-path-each": require("./prefer-ast-path-each"),
     "prefer-indent-if-break": require("./prefer-indent-if-break"),
     "prefer-is-non-empty-array": require("./prefer-is-non-empty-array"),
     "require-json-extensions": require("./require-json-extensions"),

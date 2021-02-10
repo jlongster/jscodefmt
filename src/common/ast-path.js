@@ -16,7 +16,7 @@ function getNodeStackIndexHelper(stack, count) {
   return -1;
 }
 
-class FastPath {
+class AstPath {
   constructor(value) {
     this.stack = [value];
   }
@@ -51,7 +51,7 @@ class FastPath {
 
   // Temporarily push properties named by string arguments given after the
   // callback function onto this.stack, then call the callback with a
-  // reference to this (modified) FastPath object. Note that the stack will
+  // reference to this (modified) AstPath object. Note that the stack will
   // be restored to its original state after the callback is finished, so it
   // is probably a mistake to retain a reference to the path.
   call(callback, ...names) {
@@ -76,7 +76,7 @@ class FastPath {
     return result;
   }
 
-  // Similar to FastPath.prototype.call, except that the value obtained by
+  // Similar to AstPath.prototype.call, except that the value obtained by
   // accessing this.getValue()[name1][name2]... should be array. The
   // callback will be called with a reference to this path object for each
   // element of the array.
@@ -99,7 +99,7 @@ class FastPath {
     stack.length = length;
   }
 
-  // Similar to FastPath.prototype.each, except that the results of the
+  // Similar to AstPath.prototype.each, except that the results of the
   // callback function invocations are stored in an array and returned at
   // the end of the iteration.
   map(callback, ...names) {
@@ -148,4 +148,4 @@ class FastPath {
   }
 }
 
-module.exports = FastPath;
+module.exports = AstPath;

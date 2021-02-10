@@ -14,7 +14,7 @@ const selector = [
   '[name="map"]',
 ].join("");
 
-const messageId = "prefer-fast-path-each";
+const messageId = "prefer-ast-path-each";
 
 module.exports = {
   meta: {
@@ -24,7 +24,7 @@ module.exports = {
         "https://github.com/prettier/prettier/blob/main/scripts/eslint-plugin-prettier-internal-rules/require-json-extensions.js",
     },
     messages: {
-      [messageId]: "Prefer `FastPath#each()` over `FastPath#map()`.",
+      [messageId]: "Prefer `AstPath#each()` over `AstPath#map()`.",
     },
     fixable: "code",
   },

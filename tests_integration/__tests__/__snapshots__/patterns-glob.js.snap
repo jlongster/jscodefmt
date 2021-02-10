@@ -117,3 +117,12 @@ exports[`fixtures-4: Should match \`level-1.js\` (stdout) 1`] = `
 `;
 
 exports[`fixtures-4: Should match \`level-1.js\` (write) 1`] = `Array []`;
+
+exports[`should not ignore file paths contains object prototype keys (stderr) 1`] = `""`;
+
+exports[`should not ignore file paths contains object prototype keys (stdout) 1`] = `
+"constructor/should-be-formatted.js
+"
+`;
+
+exports[`should not ignore file paths contains object prototype keys (write) 1`] = `Array []`;

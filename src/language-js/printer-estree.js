@@ -340,15 +340,16 @@ function printPathNoParens(path, options, print, args) {
         printTypeAnnotation(path, options, print),
       ];
     case "FunctionDeclaration":
-    case "FunctionExpression":
-      return printFunctionDeclaration(
-        path,
-        print,
-        options,
-        args &&
-          args.expandLastArg &&
-          getCallArguments(path.getParentNode()).length > 1
-      );
+    case "FunctionExpression": {
+      let expandArg = false;
+      if (args && args.expandLastArg) {
+        const parent = path.getParentNode();
+        if (isCallExpression(parent) && getCallArguments(parent).length > 1) {
+          expandArg = true;
+        }
+      }
+      return printFunctionDeclaration(path, print, options, expandArg);
+    }
     case "ArrowFunctionExpression":
       return printArrowFunctionExpression(path, options, print, args);
     case "YieldExpression":

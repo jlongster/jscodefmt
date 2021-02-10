@@ -144,7 +144,7 @@ test("no-node-comments", {
   ],
 });
 
-test("prefer-fast-path-each", {
+test("prefer-ast-path-each", {
   valid: ["const foo = path.map()"],
   invalid: [
     {

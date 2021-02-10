@@ -178,7 +178,7 @@ The printing process works as follows:
 
 1. `preprocess(ast: AST, options: object): AST`, if available, is called. It is passed the AST from the _parser_. The AST returned by `preprocess` will be used by Prettier. If `preprocess` is not defined, the AST returned from the _parser_ will be used.
 2. Comments are attached to the AST (see _Handling comments in a printer_ for details).
-3. A Doc is recursively constructed from the AST. i) `embed(path: FastPath, print, textToDoc, options: object): Doc | null` is called on each AST node. If `embed` returns a Doc, that Doc is used. ii) If `embed` is undefined or returns a falsy value, `print(path: FastPath, options: object, print): Doc` is called on each AST node.
+3. A Doc is recursively constructed from the AST. i) `embed(path: AstPath, print, textToDoc, options: object): Doc | null` is called on each AST node. If `embed` returns a Doc, that Doc is used. ii) If `embed` is undefined or returns a falsy value, `print(path: AstPath, options: object, print): Doc` is called on each AST node.
 
 #### `print`
 
@@ -187,10 +187,10 @@ Most of the work of a plugin's printer will take place in its `print` function, 
 ```ts
 function print(
   // Path to the AST node to print
-  path: FastPath,
+  path: AstPath,
   options: object,
   // Recursively print a child node
-  print: (path: FastPath) => Doc
+  print: (path: AstPath) => Doc
 ): Doc;
 ```
 
@@ -218,9 +218,9 @@ The `embed` function is called when the plugin needs to print one language insid
 ```ts
 function embed(
   // Path to the current AST node
-  path: FastPath,
+  path: AstPath,
   // Print a node with the current printer
-  print: (path: FastPath) => Doc,
+  print: (path: AstPath) => Doc,
   // Parse and print some text using a different parser.
   // You should set `options.parser` to specify which parser to use.
   textToDoc: (text: string, options: object) => Doc,
@@ -272,7 +272,7 @@ Called whenever a comment node needs to be printed. It has the signature:
 ```ts
 function printComment(
   // Path to the current comment node
-  commentPath: FastPath,
+  commentPath: AstPath,
   // Current options
   options: object
 ): Doc;

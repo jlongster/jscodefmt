@@ -1059,6 +1059,13 @@
   dependencies:
     "@simple-dom/interface" "^1.4.0"
 
+"@glimmer/interfaces@0.75.0":
+  version "0.75.0"
+  resolved "https://registry.yarnpkg.com/@glimmer/interfaces/-/interfaces-0.75.0.tgz#ae8559a2ab906d7ab131741398c27f0c6dd1b0f7"
+  integrity sha512-vyIXi/e2yf3C0AfYMJQXdqwmnGOH7GxDRZ2c70UNYHoSCUtjvgyGWKc6rAXzmhRVG1YFyDzoc2wYxGYdx+MMmA==
+  dependencies:
+    "@simple-dom/interface" "^1.4.0"
+
 "@glimmer/reference@0.74.2":
   version "0.74.2"
   resolved "https://registry.yarnpkg.com/@glimmer/reference/-/reference-0.74.2.tgz#368520445b931769bf3624591b18a2680d36aacd"
@@ -1070,13 +1077,13 @@
     "@glimmer/util" "0.74.2"
     "@glimmer/validator" "0.74.2"
 
-"@glimmer/syntax@0.74.2":
-  version "0.74.2"
-  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.74.2.tgz#84efc2555356118a4a275bb8310e261afcf9b048"
-  integrity sha512-G+E2eL0xeo81zBMSkrfobejL/V4YjlAv6Uu8qubwYu/QIHj/UiyxHEMZzN1H88rWcu8iPLzTC4GzFr9Chiu2Jw==
+"@glimmer/syntax@0.75.0":
+  version "0.75.0"
+  resolved "https://registry.yarnpkg.com/@glimmer/syntax/-/syntax-0.75.0.tgz#eeefe5f27ba56aebce2ee09bd91de847a610dd8f"
+  integrity sha512-v+sK7lv8eAoTJmFM8MjRsUG7/8NxhrtN8F0PTUZKIpgfBBWQ5JxtWOypbFNJR3cAo8gggRduEOoELCc7b9e4/g==
   dependencies:
-    "@glimmer/interfaces" "0.74.2"
-    "@glimmer/util" "0.74.2"
+    "@glimmer/interfaces" "0.75.0"
+    "@glimmer/util" "0.75.0"
     "@handlebars/parser" "^2.0.0"
     simple-html-tokenizer "^0.5.10"
 
@@ -1087,6 +1094,15 @@
   dependencies:
     "@glimmer/env" "0.1.7"
     "@glimmer/interfaces" "0.74.2"
+    "@simple-dom/interface" "^1.4.0"
+
+"@glimmer/util@0.75.0":
+  version "0.75.0"
+  resolved "https://registry.yarnpkg.com/@glimmer/util/-/util-0.75.0.tgz#412956227c08e1a1e11500c7bd746947056924e5"
+  integrity sha512-dngZXP0TsGPyJ2kj40TJHcVhWpkBecH6BD93pZKUEsHuXMPxQQeyCuEQBKRPcG3PMi/iHjzOqSMXROh8kyiY/Q==
+  dependencies:
+    "@glimmer/env" "0.1.7"
+    "@glimmer/interfaces" "0.75.0"
     "@simple-dom/interface" "^1.4.0"
 
 "@glimmer/validator@0.74.2":
@@ -1625,6 +1641,11 @@
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-4.14.2.tgz#d96da62be22dc9dc6a06647f3633815350fb3174"
   integrity sha512-LltxawRW6wXy4Gck6ZKlBD05tCHQUj4KLn4iR69IyRiDHX3d3NCAhO+ix5OR2Q+q9bjCrHE/HKt+riZkd1At8Q==
 
+"@typescript-eslint/types@4.15.0":
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-4.15.0.tgz#3011ae1ac3299bb9a5ac56bdd297cccf679d3662"
+  integrity sha512-su4RHkJhS+iFwyqyXHcS8EGPlUVoC+XREfy5daivjLur9JP8GhvTmDipuRpcujtGC4M+GYhUOJCPDE3rC5NJrg==
+
 "@typescript-eslint/typescript-estree@4.0.1":
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-4.0.1.tgz#29a43c7060641ec51c902d9f50ac7c5866ec479f"
@@ -1639,17 +1660,16 @@
     semver "^7.3.2"
     tsutils "^3.17.1"
 
-"@typescript-eslint/typescript-estree@4.14.2":
-  version "4.14.2"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-4.14.2.tgz#9c5ebd8cae4d7b014f890acd81e8e17f309c9df9"
-  integrity sha512-ESiFl8afXxt1dNj8ENEZT12p+jl9PqRur+Y19m0Z/SPikGL6rqq4e7Me60SU9a2M28uz48/8yct97VQYaGl0Vg==
+"@typescript-eslint/typescript-estree@4.15.0":
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-4.15.0.tgz#402c86a7d2111c1f7a2513022f22a38a395b7f93"
+  integrity sha512-jG6xTmcNbi6xzZq0SdWh7wQ9cMb2pqXaUp6bUZOMsIlu5aOlxGxgE/t6L/gPybybQGvdguajXGkZKSndZJpksA==
   dependencies:
-    "@typescript-eslint/types" "4.14.2"
-    "@typescript-eslint/visitor-keys" "4.14.2"
+    "@typescript-eslint/types" "4.15.0"
+    "@typescript-eslint/visitor-keys" "4.15.0"
     debug "^4.1.1"
     globby "^11.0.1"
     is-glob "^4.0.1"
-    lodash "^4.17.15"
     semver "^7.3.2"
     tsutils "^3.17.1"
 
@@ -1661,12 +1681,12 @@
     "@typescript-eslint/types" "4.0.1"
     eslint-visitor-keys "^2.0.0"
 
-"@typescript-eslint/visitor-keys@4.14.2":
-  version "4.14.2"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-4.14.2.tgz#997cbe2cb0690e1f384a833f64794e98727c70c6"
-  integrity sha512-KBB+xLBxnBdTENs/rUgeUKO0UkPBRs2vD09oMRRIkj5BEN8PX1ToXV532desXfpQnZsYTyLLviS7JrPhdL154w==
+"@typescript-eslint/visitor-keys@4.15.0":
+  version "4.15.0"
+  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-4.15.0.tgz#2a07768df30c8a5673f1bce406338a07fdec38ca"
+  integrity sha512-RnDtJwOwFucWFAMjG3ghCG/ikImFJFEg20DI7mn4pHEx3vC48lIAoyjhffvfHmErRDboUPC7p9Z2il4CLb7qxA==
   dependencies:
-    "@typescript-eslint/types" "4.14.2"
+    "@typescript-eslint/types" "4.15.0"
     eslint-visitor-keys "^2.0.0"
 
 "@webassemblyjs/ast@1.11.0":
@@ -7277,10 +7297,10 @@ webpack-sources@^2.1.1:
     source-list-map "^2.0.1"
     source-map "^0.6.1"
 
-webpack@5.20.2:
-  version "5.20.2"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.20.2.tgz#55a6e461e2a6e1ca7467a419886acf9c7b052d5f"
-  integrity sha512-gGPip54KK7DznaaPHVuNGqym3LAXXL+bPkZ9SlLTCdHmmk+m5x+D4UZdhWvw32CMahYlZwZYPsioFIw36/txYQ==
+webpack@5.21.2:
+  version "5.21.2"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-5.21.2.tgz#647507e50d3637695be28af58a6a8246050394e7"
+  integrity sha512-xHflCenx+AM4uWKX71SWHhxml5aMXdy2tu/vdi4lClm7PADKxlyDAFFN1rEFzNV0MAoPpHtBeJnl/+K6F4QBPg==
   dependencies:
     "@types/eslint-scope" "^3.7.0"
     "@types/estree" "^0.0.46"

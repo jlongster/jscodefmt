@@ -23,9 +23,9 @@
     "@angular/compiler": "11.1.1",
     "@babel/code-frame": "7.12.13",
     "@babel/parser": "7.12.11",
-    "@glimmer/syntax": "0.74.2",
+    "@glimmer/syntax": "0.75.0",
     "@iarna/toml": "2.2.5",
-    "@typescript-eslint/typescript-estree": "4.14.2",
+    "@typescript-eslint/typescript-estree": "4.15.0",
     "angular-estree-parser": "2.3.0",
     "angular-html-parser": "1.7.1",
     "camelcase": "6.2.0",
@@ -132,7 +132,7 @@
     "synchronous-promise": "2.0.15",
     "tempy": "1.0.0",
     "terser-webpack-plugin": "5.1.1",
-    "webpack": "5.20.2"
+    "webpack": "5.21.2"
   },
   "scripts": {
     "prepublishOnly": "echo \"Error: must publish from dist/\" && exit 1",

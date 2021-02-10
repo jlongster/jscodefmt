@@ -25,7 +25,7 @@ const { locStart, locEnd, hasSameLocStart } = require("./loc");
  * @typedef {import("./types/estree").TaggedTemplateExpression} TaggedTemplateExpression
  * @typedef {import("./types/estree").Literal} Literal
  *
- * @typedef {import("../common/fast-path")} FastPath
+ * @typedef {import("../common/ast-path")} AstPath
  */
 
 // We match any whitespace except line terminators because
@@ -201,7 +201,7 @@ function isExportDeclaration(node) {
 }
 
 /**
- * @param {FastPath} path
+ * @param {AstPath} path
  * @returns {Node | null}
  */
 function getParentExportDeclaration(path) {
@@ -866,7 +866,7 @@ function isFunctionCompositionArgs(args) {
 // In the above call expression, the second call is the parent node and the
 // first call is the current node.
 /**
- * @param {FastPath} path
+ * @param {AstPath} path
  * @returns {boolean}
  */
 function isLongCurriedCallExpression(path) {

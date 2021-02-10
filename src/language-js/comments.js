@@ -28,7 +28,7 @@ const { locStart, locEnd } = require("./loc");
 /**
  * @typedef {import("./types/estree").Node} Node
  * @typedef {import("./types/estree").Comment} Comment
- * @typedef {import("../common/fast-path")} FastPath
+ * @typedef {import("../common/ast-path")} AstPath
  *
  * @typedef {Object} CommentContext
  * @property {Comment} comment
@@ -944,7 +944,7 @@ function isTypeCastComment(comment) {
 }
 
 /**
- * @param {FastPath} path
+ * @param {AstPath} path
  * @returns {boolean}
  */
 function willPrintOwnComments(path /*, options */) {

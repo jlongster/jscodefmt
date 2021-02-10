@@ -17,7 +17,7 @@ const { shouldPrintParamsWithoutParens } = require("./function");
 
 /**
  * @typedef {import("../../document").Doc} Doc
- * @typedef {import("../../common/fast-path")} FastPath
+ * @typedef {import("../../common/ast-path")} AstPath
  */
 
 function printStatementSequence(path, options, print, property) {

@@ -365,7 +365,7 @@ exports[`function-expression-issue-2239.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 someFunctionCallWithBigArgumentsAndACallback(thisArgumentIsQuiteLong, function(cool) {
   return cool

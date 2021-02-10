@@ -4,7 +4,7 @@ exports[`jsx_ignore.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // this should remain as-is
 <div>

@@ -5,7 +5,7 @@ exports[`module-with-pragma.js - {"requirePragma":true} format 1`] = `
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @flow
@@ -40,7 +40,7 @@ exports[`module-without-pragma.js - {"requirePragma":true} format 1`] = `
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @flow
@@ -81,7 +81,7 @@ printWidth: 80
 rangeEnd: 36
 rangeStart: 21
 requirePragma: true
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | /**
   2 |  * @prettier
@@ -105,7 +105,7 @@ printWidth: 80
 rangeEnd: 15
 rangeStart: 0
 requirePragma: true
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | var test = true
     | ^^^^^^^^^^^^^^^
@@ -121,7 +121,7 @@ exports[`shebang-with-pragma.js - {"requirePragma":true} format 1`] = `
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/usr/bin/env node
 /**
@@ -147,7 +147,7 @@ exports[`shebang-without-pragma.js - {"requirePragma":true} format 1`] = `
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/usr/bin/env node
 function test() { const answer = 42;console.log("%s is the answer to life, the universe, and everything", answer);}
@@ -164,7 +164,7 @@ exports[`snippet: #0 - {"requirePragma":true} format 1`] = `
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿#!/usr/bin/env node
 /** @format */

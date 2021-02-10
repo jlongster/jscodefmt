@@ -5,7 +5,7 @@ exports[`arrow_regression.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const bar = (...varargs:any[]) => {
   console.log(varargs);
@@ -46,7 +46,7 @@ exports[`arrow_regression.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const bar = (...varargs:any[]) => {
   console.log(varargs);
@@ -88,7 +88,7 @@ exports[`comments.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const fn1 = () => {
   return;
@@ -119,7 +119,7 @@ exports[`comments.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const fn1 = () => {
   return;

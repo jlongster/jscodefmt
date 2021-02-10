@@ -5,7 +5,7 @@ exports[`jsonc.md - {"trailingComma":"all"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`jsonc
    // comment
@@ -30,7 +30,7 @@ exports[`trailing_comma.md - {"trailingComma":"all"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`json
 {

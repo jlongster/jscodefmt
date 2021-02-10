@@ -4,7 +4,7 @@ exports[`class-implements.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class a1 extends b // comment
 implements z
@@ -179,7 +179,7 @@ exports[`declare.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class a  // 1
   // extends b   // 2
@@ -215,7 +215,7 @@ exports[`generic.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class G1<T> implements IPoly<T> {
   x: T;
@@ -270,7 +270,7 @@ exports[`misc.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export class SnapshotLogger {
   constructor(

@@ -4,7 +4,7 @@ exports[`array.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -34,7 +34,7 @@ exports[`optional.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -58,7 +58,7 @@ exports[`too-few.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -80,7 +80,7 @@ exports[`tuples.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var a: [] = [];
 var b: [] = [123]; // Error - arity mismatch

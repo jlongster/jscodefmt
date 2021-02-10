@@ -4,7 +4,7 @@ exports[`A.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {
   foo(x:number):void { }
@@ -26,7 +26,7 @@ exports[`B.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var A = require('./A');
 
@@ -54,7 +54,7 @@ exports[`C.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var B = require('./B');
 
@@ -86,7 +86,7 @@ exports[`D.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class D { }
 class E { }
@@ -104,7 +104,7 @@ exports[`class_shapes.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -186,7 +186,7 @@ exports[`expr.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var Bar = class Foo {
   static factory(): Foo { // OK: Foo is a type in this scope
@@ -259,7 +259,7 @@ exports[`extends_any.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Base: any = class {}
 class Derived1 extends Base {}
@@ -281,7 +281,7 @@ exports[`loc.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -303,7 +303,7 @@ exports[`statics.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 

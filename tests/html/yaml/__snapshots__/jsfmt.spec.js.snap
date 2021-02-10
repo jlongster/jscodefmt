@@ -4,7 +4,7 @@ exports[`invalid.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
     invalid:
@@ -33,7 +33,7 @@ exports[`yaml.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 hello:     world

@@ -4,7 +4,7 @@ exports[`parens.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
     prop1: func(1px,1px,1px,func(1px,1px,1px,func(1px,1px,1px)));

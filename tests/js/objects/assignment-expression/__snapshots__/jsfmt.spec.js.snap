@@ -4,7 +4,7 @@ exports[`object-property.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = {
   [this.resource = resource]: 1,
@@ -22,7 +22,7 @@ exports[`object-value.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = {
   resource: (this.resource = resource),

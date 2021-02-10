@@ -4,7 +4,7 @@ exports[`union_types.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 union myUnion = ATypeName | ASecondTypeName
 

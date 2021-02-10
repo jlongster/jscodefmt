@@ -4,7 +4,7 @@ exports[`custom-parser.md format 1`] = `
 ====================================options=====================================
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---mycustomparser
 - hello:    world
@@ -30,7 +30,7 @@ exports[`empty.md format 1`] = `
 ====================================options=====================================
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 ---
@@ -52,7 +52,7 @@ exports[`empty-2.md format 1`] = `
 ====================================options=====================================
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 ---

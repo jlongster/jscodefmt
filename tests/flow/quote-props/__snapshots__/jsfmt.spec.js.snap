@@ -5,7 +5,7 @@ exports[`classes.js - {"quoteProps":"as-needed"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "as-needed"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {
   a = "a"
@@ -53,7 +53,7 @@ parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "consistent"
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {
   a = "a"
@@ -100,7 +100,7 @@ exports[`classes.js - {"quoteProps":"consistent"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "consistent"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {
   a = "a"
@@ -147,7 +147,7 @@ exports[`classes.js - {"quoteProps":"preserve"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {
   a = "a"
@@ -194,7 +194,7 @@ exports[`objects.js - {"quoteProps":"as-needed"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "as-needed"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = {
   a: "a"
@@ -416,7 +416,7 @@ parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "consistent"
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = {
   a: "a"
@@ -637,7 +637,7 @@ exports[`objects.js - {"quoteProps":"consistent"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "consistent"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = {
   a: "a"
@@ -858,7 +858,7 @@ exports[`objects.js - {"quoteProps":"preserve"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = {
   a: "a"
@@ -1079,7 +1079,7 @@ exports[`with_member_expressions.js - {"quoteProps":"as-needed"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "as-needed"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const obj = {
   foo: "",
@@ -1111,7 +1111,7 @@ parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "consistent"
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const obj = {
   foo: "",
@@ -1142,7 +1142,7 @@ exports[`with_member_expressions.js - {"quoteProps":"consistent"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "consistent"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const obj = {
   foo: "",
@@ -1173,7 +1173,7 @@ exports[`with_member_expressions.js - {"quoteProps":"preserve"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const obj = {
   foo: "",
@@ -1204,7 +1204,7 @@ exports[`with_numbers.js - {"quoteProps":"as-needed"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "as-needed"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 obj = {
   foo: "",
@@ -1246,7 +1246,7 @@ parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "consistent"
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 obj = {
   foo: "",
@@ -1287,7 +1287,7 @@ exports[`with_numbers.js - {"quoteProps":"consistent"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "consistent"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 obj = {
   foo: "",
@@ -1328,7 +1328,7 @@ exports[`with_numbers.js - {"quoteProps":"preserve"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 quoteProps: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 obj = {
   foo: "",

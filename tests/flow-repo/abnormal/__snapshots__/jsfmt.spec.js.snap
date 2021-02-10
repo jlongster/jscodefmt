@@ -4,7 +4,7 @@ exports[`break-continue.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo() {
     while(true) { break; }
@@ -34,7 +34,7 @@ exports[`return.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function bar(x:number) { }
 function foo() {
@@ -58,7 +58,7 @@ exports[`toplevel_throw.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 

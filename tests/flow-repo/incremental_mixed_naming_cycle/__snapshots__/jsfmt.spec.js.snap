@@ -4,7 +4,7 @@ exports[`a.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule A
@@ -34,7 +34,7 @@ exports[`b.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule B
@@ -64,7 +64,7 @@ exports[`c.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule C
@@ -94,7 +94,7 @@ exports[`d.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule D
@@ -122,7 +122,7 @@ exports[`root.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule Root

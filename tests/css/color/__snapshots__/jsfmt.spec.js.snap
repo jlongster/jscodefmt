@@ -4,7 +4,7 @@ exports[`color-adjuster.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .foo {
     color: color(red l(+ 20%));
@@ -261,7 +261,7 @@ exports[`color-level-4.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* https://www.w3.org/TR/css-color-4 */
 foo {
@@ -311,7 +311,7 @@ exports[`current-color.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .foo {
     border: 1px dashed currentColor;
@@ -331,7 +331,7 @@ exports[`functional-syntax.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .foo {
     color: rgb(255, 0, 153);
@@ -359,7 +359,7 @@ exports[`hexcolor.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .foo {
     color: #AAA;
@@ -389,7 +389,7 @@ exports[`whitespace-syntax.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .foo {
     color: rgba(51 170 51 / 0.4);

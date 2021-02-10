@@ -4,7 +4,7 @@ exports[`cunstructorType.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var d: new(x: number) => void;
 

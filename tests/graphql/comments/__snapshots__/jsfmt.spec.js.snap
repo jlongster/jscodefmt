@@ -4,7 +4,7 @@ exports[`argument_comment.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 query (
@@ -29,7 +29,7 @@ exports[`fields.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 query { 
   someField # Trailing comment
@@ -49,7 +49,7 @@ exports[`interfaces.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Type1
 implements
@@ -75,7 +75,7 @@ exports[`tokens.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # import "./claimsFragment.gql"
 

@@ -25,7 +25,7 @@ exports[`invalid-exponent.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 12.3e
 
@@ -59,7 +59,7 @@ exports[`number.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // parentheses around numeric literal should be preserved
 function test5(): string {

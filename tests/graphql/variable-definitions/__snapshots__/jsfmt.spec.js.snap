@@ -4,7 +4,7 @@ exports[`variable_definitions.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 query short($foo:ComplexType, $site   : Site =         MOBILE,     $nonNull: Int!) {
   hello

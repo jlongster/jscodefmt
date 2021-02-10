@@ -4,7 +4,7 @@ exports[`prettier-ignore.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {{! prettier-ignore }}
 <div>

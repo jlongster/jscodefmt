@@ -4,7 +4,7 @@ exports[`break.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export interface Environment1 extends GenericEnvironment<
   SomeType,
@@ -184,7 +184,7 @@ exports[`comments.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface A1  // comment
 {  foo(): bar;}
@@ -262,7 +262,7 @@ exports[`comments-declare.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare interface a // 1
   extends b  // 2
@@ -282,7 +282,7 @@ exports[`module.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare module X {
   declare interface Y { x: number; }

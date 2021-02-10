@@ -4,7 +4,7 @@ exports[`abnormal.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -110,7 +110,7 @@ exports[`abnormal_for_in.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo(x: boolean) {
   var obj = { a: 1, b: 2};
@@ -206,7 +206,7 @@ exports[`abnormal_for_of.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo(x: boolean) {
   var arr = [1, 2, 3];

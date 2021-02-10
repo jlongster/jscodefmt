@@ -5,7 +5,7 @@ exports[`dangling.ts - {"semi":false} format 1`] = `
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 Thing?.(/* dangling */);
@@ -24,7 +24,7 @@ exports[`dangling.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 Thing?.(/* dangling */);
@@ -44,7 +44,7 @@ exports[`issues.ts - {"semi":false} format 1`] = `
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function f(
   someReallyLongArgument: WithSomeLongType,
@@ -67,7 +67,7 @@ exports[`issues.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function f(
   someReallyLongArgument: WithSomeLongType,
@@ -91,7 +91,7 @@ exports[`last-arg.ts - {"semi":false} format 1`] = `
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type f1 = (
   currentRequest: {a: number},
@@ -207,7 +207,7 @@ exports[`last-arg.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type f1 = (
   currentRequest: {a: number},

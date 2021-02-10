@@ -5,7 +5,7 @@ exports[`with-pragma.html - {"requirePragma":true} format 1`] = `
 parsers: ["html"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- @prettier -->
 
@@ -25,7 +25,7 @@ exports[`without-pragma.html - {"requirePragma":true} format 1`] = `
 parsers: ["html"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
             >  666             </div>

@@ -4,7 +4,7 @@ exports[`promise.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * Here the definition of Promise<T> is routed to the class Promise

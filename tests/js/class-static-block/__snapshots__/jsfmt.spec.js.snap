@@ -25,7 +25,7 @@ exports[`class-static-block.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class C {
   static #x = 42;

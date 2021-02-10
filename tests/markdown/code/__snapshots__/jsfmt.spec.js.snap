@@ -5,7 +5,7 @@ exports[`0-indent-js.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 1
   - 2
@@ -61,7 +61,7 @@ exports[`additional-space.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. Fork the repo and create your branch from \`master\`.
 
@@ -120,7 +120,7 @@ exports[`backtick.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`\`\`\`\`\`\`\`
 
@@ -147,7 +147,7 @@ exports[`format.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`js
 const foo      = 'bar'
@@ -172,7 +172,7 @@ exports[`indent.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
     Indented Code Block
     Indented Code Block
@@ -231,7 +231,7 @@ exports[`lang.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`js
 console.log("hello world");
@@ -250,7 +250,7 @@ exports[`leading-trailing-newlines.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`
 
@@ -277,7 +277,7 @@ exports[`simple.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`
 hello world

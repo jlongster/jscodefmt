@@ -4,7 +4,7 @@ exports[`compatibility.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let tests = [
   function(x: { x: { foo: string } }, y: { x: { bar: number } }) {
@@ -74,7 +74,7 @@ exports[`conversion.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -124,7 +124,7 @@ exports[`objects.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -172,7 +172,7 @@ exports[`unaliased_assign.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * test handling of unaliased value assignment.

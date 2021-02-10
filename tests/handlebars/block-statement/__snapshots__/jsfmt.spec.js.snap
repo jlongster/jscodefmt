@@ -4,7 +4,7 @@ exports[`block-statement.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {{#block param hashKey=hashValue as |blockParam|}}
   Hello
@@ -162,7 +162,7 @@ exports[`each.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div id="comments">
   {{#each comments}}
@@ -191,7 +191,7 @@ exports[`if-else.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <h1>
 {{#if isAtWork}}
@@ -422,7 +422,7 @@ exports[`loop.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <ul>
   {{#each speakers key="@index" as |speaker|}}

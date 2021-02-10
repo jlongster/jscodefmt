@@ -4,7 +4,7 @@ exports[`destructuring.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const [one, two = null, three = null] = arr;
 a = ([s=1,]) => 1

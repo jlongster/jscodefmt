@@ -5,7 +5,7 @@ exports[`arbitrary-arguments.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 body {
   test: foo(return-list($list)...);
@@ -99,7 +99,7 @@ exports[`arbitrary-arguments.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 body {
   test: foo(return-list($list)...);
@@ -194,7 +194,7 @@ exports[`comments.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // This comment won't be included in the CSS. 
 //This comment won't be included in the CSS.
@@ -230,7 +230,7 @@ exports[`comments.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // This comment won't be included in the CSS. 
 //This comment won't be included in the CSS.
@@ -267,7 +267,7 @@ exports[`directives.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @qux .foo
 // .bar 
@@ -287,7 +287,7 @@ exports[`directives.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @qux .foo
 // .bar 
@@ -308,7 +308,7 @@ exports[`function-in-url.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @function concat($strings...) {
   $result: '';
@@ -342,7 +342,7 @@ exports[`function-in-url.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @function concat($strings...) {
   $result: '';
@@ -377,7 +377,7 @@ exports[`import_comma.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @import "rounded-corners", "text-shadow";
 
@@ -391,7 +391,7 @@ exports[`import_comma.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @import "rounded-corners", "text-shadow";
 
@@ -406,7 +406,7 @@ exports[`scss.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @media #{$g-breakpoint-tiny} {}
 .#{$fa-css-prefix}-glass:before { content: $fa-var-glass; }
@@ -2546,7 +2546,7 @@ exports[`scss.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @media #{$g-breakpoint-tiny} {}
 .#{$fa-css-prefix}-glass:before { content: $fa-var-glass; }
@@ -4687,7 +4687,7 @@ exports[`string-concatanation.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
   background-image: url($test-path + $test-path);
@@ -4713,7 +4713,7 @@ exports[`string-concatanation.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
   background-image: url($test-path + $test-path);

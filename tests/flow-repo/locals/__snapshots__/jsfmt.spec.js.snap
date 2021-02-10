@@ -4,7 +4,7 @@ exports[`lex.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function switch_scope(x: mixed) {
   let a = "";
@@ -136,7 +136,7 @@ exports[`locals.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x:string = 0;
 var x:number = 1;

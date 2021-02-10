@@ -4,7 +4,7 @@ exports[`invalid.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <img src="a"
 srcset="

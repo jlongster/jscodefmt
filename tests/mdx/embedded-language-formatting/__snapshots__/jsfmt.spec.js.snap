@@ -5,7 +5,7 @@ exports[`issue-9260.mdx - {"embeddedLanguageFormatting":"off"} format 1`] = `
 embeddedLanguageFormatting: "off"
 parsers: ["mdx"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # title
 

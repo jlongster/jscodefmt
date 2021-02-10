@@ -5,7 +5,7 @@ exports[`example-1.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {% include_relative _installations/tarball.md %}
 
@@ -40,7 +40,7 @@ exports[`example-1.md format 1`] = `
 ====================================options=====================================
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {% include_relative _installations/tarball.md %}
 

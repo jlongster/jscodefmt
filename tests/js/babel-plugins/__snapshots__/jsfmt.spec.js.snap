@@ -4,7 +4,7 @@ exports[`async-generators.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-async-generator-functions
 
@@ -28,7 +28,7 @@ exports[`bigint.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/tc39/proposal-bigint
 
@@ -307,7 +307,7 @@ exports[`class-properties.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-class-properties
 
@@ -392,7 +392,7 @@ exports[`class-static-block.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class C {
   static #x = 42;
@@ -448,7 +448,7 @@ exports[`decimal.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/11640
 
@@ -522,7 +522,7 @@ exports[`decorators.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-decorators
 
@@ -614,7 +614,7 @@ exports[`do-expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-do-expressions
 
@@ -648,7 +648,7 @@ exports[`dynamic-import.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-syntax-dynamic-import
 
@@ -694,7 +694,7 @@ exports[`export-default-from.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-export-default-from
 
@@ -713,7 +713,7 @@ exports[`export-namespace-from.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-export-namespace-from
 
@@ -749,7 +749,7 @@ exports[`flow.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-preset-flow
 
@@ -789,7 +789,7 @@ exports[`function-bind.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-function-bind
 
@@ -856,7 +856,7 @@ exports[`function-sent.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-function-sent
 
@@ -902,7 +902,7 @@ exports[`import-assertions-dynamic.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import("./foo.json", { assert: { type: "json" } });
 
@@ -930,7 +930,7 @@ exports[`import-assertions-static.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import json from "./foo.json" assert { type: "json" };
 
@@ -944,7 +944,7 @@ exports[`import-meta.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-syntax-import-meta
 
@@ -992,7 +992,7 @@ exports[`jsx.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-syntax-jsx
 
@@ -1029,7 +1029,7 @@ exports[`logical-assignment-operators.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-logical-assignment-operators
 
@@ -1071,7 +1071,7 @@ exports[`module-string-names.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import { "😄" as smile } from "./emojis.js";
 export { smile as "😄" } from "./emojis.js";
@@ -1087,7 +1087,7 @@ exports[`nullish-coalescing-operator.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-nullish-coalescing-operator
 
@@ -1105,7 +1105,7 @@ exports[`numeric-separator.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-numeric-separator
 
@@ -1189,7 +1189,7 @@ exports[`object-rest-spread.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-transform-object-rest-spread
 
@@ -1219,7 +1219,7 @@ exports[`optional-catch-binding.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-optional-catch-binding
 
@@ -1283,7 +1283,7 @@ exports[`optional-chaining.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-optional-chaining
 
@@ -1467,7 +1467,7 @@ exports[`partial-application.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-partial-application
 
@@ -1543,7 +1543,7 @@ exports[`pipeline-operator-fsharp.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-pipeline-operator
 // https://github.com/valtech-nyc/proposal-fsharp-pipelines
@@ -1640,7 +1640,7 @@ exports[`pipeline-operator-minimal.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-pipeline-operator
 // https://github.com/tc39/proposal-pipeline-operator/
@@ -1695,7 +1695,7 @@ exports[`pipeline-operator-smart.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-pipeline-operator
 // https://github.com/js-choi/proposal-smart-pipelines
@@ -1744,7 +1744,7 @@ exports[`private-fields-in-in.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/tc39/proposal-private-fields-in-in
 
@@ -1877,7 +1877,7 @@ exports[`private-methods.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-private-methods
 
@@ -1944,7 +1944,7 @@ exports[`record-tuple-record.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const record1 = #{
     a: 1,
@@ -1984,7 +1984,7 @@ exports[`record-tuple-tuple.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const tuple1 = #[1, 2, 3];
 
@@ -2020,7 +2020,7 @@ exports[`throw-expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-plugin-proposal-throw-expressions
 
@@ -2060,7 +2060,7 @@ exports[`typescript.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://babeljs.io/docs/en/babel-preset-typescript
 
@@ -2100,7 +2100,7 @@ exports[`v8intrinsic.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "babel-ts", "babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/10148
 

@@ -4,7 +4,7 @@ exports[`babel.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script type="text/babel" data-presets="react" data-type="module">
 import { h, 
@@ -40,7 +40,7 @@ exports[`legacy.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 <script>
@@ -75,7 +75,7 @@ exports[`module.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script type="module">
 import prettier from "prettier/standalone";
@@ -121,7 +121,7 @@ exports[`module-attributes.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script src="foo.wasm" type="module" withtype="webassembly"></script>
 
@@ -135,7 +135,7 @@ exports[`script.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script type="application/ld+json">
   {   "json": true }

@@ -4,7 +4,7 @@ exports[`FeedUFI.react.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * Copyright 2004-present Facebook. All Rights Reserved.
@@ -90,7 +90,7 @@ exports[`Mixin.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @providesModule Mixin */
 module.exports = {
@@ -110,7 +110,7 @@ exports[`UFILikeCount.react.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * Copyright 2004-present Facebook. All Rights Reserved.
@@ -168,7 +168,7 @@ exports[`bad_default_props.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('React');
 
@@ -246,7 +246,7 @@ exports[`classes.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('React');
 
@@ -419,7 +419,7 @@ exports[`import-react.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -469,7 +469,7 @@ exports[`new_react.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('react');
 var Mixin = require('Mixin');
@@ -546,7 +546,7 @@ exports[`propTypes.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('react');
 var PropTypes = React.PropTypes;
@@ -599,7 +599,7 @@ exports[`props.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('react');
 var TestProps = React.createClass({
@@ -664,7 +664,7 @@ exports[`props2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('react');
 var C = React.createClass({
@@ -710,7 +710,7 @@ exports[`props3.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('react');
 var TestProps = React.createClass({
@@ -828,7 +828,7 @@ exports[`props4.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -889,7 +889,7 @@ exports[`props5.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('React');
 
@@ -919,7 +919,7 @@ exports[`state.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -973,7 +973,7 @@ exports[`state2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -1019,7 +1019,7 @@ exports[`state3.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('react');
 var TestState = React.createClass({
@@ -1065,7 +1065,7 @@ exports[`state4.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('React');
 
@@ -1102,7 +1102,7 @@ exports[`state5.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var React = require('React');
 

@@ -4,7 +4,7 @@ exports[`function_as.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default (function log(){} as typeof console.log);
 

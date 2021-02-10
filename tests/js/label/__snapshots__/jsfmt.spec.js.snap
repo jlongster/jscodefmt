@@ -4,7 +4,7 @@ exports[`block-statement-and-regexp.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a : { b : 1 }/2/;
 
@@ -21,7 +21,7 @@ exports[`comment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   inf_leave: // goto emulation
@@ -50,7 +50,7 @@ exports[`empty_label.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a:;
 b

@@ -5,7 +5,7 @@ exports[`empty-front-matter-with-pragma.css - {"requirePragma":true} format 1`] 
 parsers: ["css"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 ---
@@ -32,7 +32,7 @@ exports[`empty-front-matter-without-pragma.css - {"requirePragma":true} format 1
 parsers: ["css"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 ---
@@ -53,7 +53,7 @@ exports[`front-matter-with-pragma.css - {"requirePragma":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 something
@@ -82,7 +82,7 @@ exports[`front-matter-without-pragma.css - {"requirePragma":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 something
@@ -105,7 +105,7 @@ exports[`with-pragma.css - {"requirePragma":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /** @prettier */
 
@@ -126,7 +126,7 @@ exports[`with-pragma-in-multiline.css - {"requirePragma":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * MIT LICENSE
@@ -159,7 +159,7 @@ exports[`without-pragma.css - {"requirePragma":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .class {    display: none;    }
 

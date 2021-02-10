@@ -4,7 +4,7 @@ exports[`comment.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export class ViewTokensChangedEvent {
   public readonly ranges: {
@@ -32,7 +32,7 @@ exports[`key.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const subtractDuration = moment.duration(
   subtractMap[interval][0],

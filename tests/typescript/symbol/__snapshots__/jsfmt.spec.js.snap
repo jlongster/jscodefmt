@@ -4,7 +4,7 @@ exports[`symbol.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function test(abc: Map<symbol, string>) {}
 

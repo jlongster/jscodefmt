@@ -23,7 +23,7 @@ exports[`trailing-commas.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class C {
   f(

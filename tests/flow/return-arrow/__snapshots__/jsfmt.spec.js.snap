@@ -4,7 +4,7 @@ exports[`in_object_type.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const example1 = (): ({ p: string => string }) => (0: any);
 const example2 = (): ({ p: { p: string => string } }) => (0: any);
@@ -72,7 +72,7 @@ exports[`issue-1249.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Bar = ( number | string ) => number;
 type X = (?(number, number) => number) => void;
@@ -126,7 +126,7 @@ exports[`parens.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const f1 = (): (string => string) => {};
 const f2 = (): ?(y => {a: b => c}) => (0: any);

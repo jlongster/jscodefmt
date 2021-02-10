@@ -4,7 +4,7 @@ exports[`client.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var ns = require('./namespace')
 
@@ -22,7 +22,7 @@ exports[`namespace.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /*@flow*/// import type { T } from '...'
 type T = (x:number) => void;

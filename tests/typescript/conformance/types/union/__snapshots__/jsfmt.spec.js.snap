@@ -4,7 +4,7 @@ exports[`unionTypeCallSignatures.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿var numOrDate: number | Date;
 var strOrBoolean: string | boolean;
@@ -186,7 +186,7 @@ exports[`unionTypeCallSignatures3.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿function f1(s: string) { }
 function f2(s?: string) { }
@@ -227,7 +227,7 @@ exports[`unionTypeCallSignatures4.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿type F1 = (a: string, b?: string) => void;
 type F2 = (a: string, b?: string, c?: string) => void;
@@ -289,7 +289,7 @@ exports[`unionTypeConstructSignatures.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿var numOrDate: number | Date;
 var strOrBoolean: string | boolean;
@@ -463,7 +463,7 @@ exports[`unionTypeEquivalence.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿// A | B is equivalent to A if B is a subtype of A
 class C { }
@@ -513,7 +513,7 @@ exports[`unionTypeFromArrayLiteral.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿// The resulting type an array literal expression is determined as follows:
 // If the array literal is empty, the resulting type is an array type with the element type Undefined.
@@ -579,7 +579,7 @@ exports[`unionTypeIndexSignature.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿var numOrDate: number | Date;
 var anyVar: number;
@@ -643,7 +643,7 @@ exports[`unionTypePropertyAccessibility.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class Default {
     member: string;

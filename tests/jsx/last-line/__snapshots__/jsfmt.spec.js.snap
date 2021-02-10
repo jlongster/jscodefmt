@@ -5,7 +5,7 @@ exports[`last_line.js - {"jsxBracketSameLine":false} format 1`] = `
 jsxBracketSameLine: false
 parsers: ["flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <SomeHighlyConfiguredComponent
   onEnter={this.onEnter}
@@ -38,7 +38,7 @@ exports[`last_line.js - {"jsxBracketSameLine":true} format 1`] = `
 jsxBracketSameLine: true
 parsers: ["flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <SomeHighlyConfiguredComponent
   onEnter={this.onEnter}
@@ -70,7 +70,7 @@ exports[`single_prop_multiline_string.js - {"jsxBracketSameLine":false} format 1
 jsxBracketSameLine: false
 parsers: ["flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <path d="M4.765 16.829l3.069-2.946 5.813 5.748
   11.33-11.232 3.006 3.18-14.36 14.080z" />;
@@ -101,7 +101,7 @@ exports[`single_prop_multiline_string.js - {"jsxBracketSameLine":true} format 1`
 jsxBracketSameLine: true
 parsers: ["flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <path d="M4.765 16.829l3.069-2.946 5.813 5.748
   11.33-11.232 3.006 3.18-14.36 14.080z" />;

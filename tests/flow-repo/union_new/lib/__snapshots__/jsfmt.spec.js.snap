@@ -4,7 +4,7 @@ exports[`test23_lib.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class SomeLibClass { }
 
@@ -18,7 +18,7 @@ exports[`test25_lib.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class Set<T> {
     add(x: any): Set<T>;
@@ -72,7 +72,7 @@ exports[`test32_lib.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Indirect<T> = Array<T>;
 

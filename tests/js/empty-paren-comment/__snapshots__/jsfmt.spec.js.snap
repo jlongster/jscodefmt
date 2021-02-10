@@ -4,7 +4,7 @@ exports[`class.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class x {
   /**
@@ -40,7 +40,7 @@ exports[`class-property.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class Foo {
   f(/* ... */) {}
@@ -70,7 +70,7 @@ exports[`empty_paren_comment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let f1 = (/* ... */) => {}
 (function (/* ... */) {})(/* ... */)

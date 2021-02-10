@@ -5,7 +5,7 @@ exports[`template.html - {"singleQuote":true} format 1`] = `
 parsers: ["html"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script id="entry-template" type="text/x-handlebars-template">
 <div class="entry">
@@ -45,7 +45,7 @@ exports[`template.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script id="entry-template" type="text/x-handlebars-template">
 <div class="entry">

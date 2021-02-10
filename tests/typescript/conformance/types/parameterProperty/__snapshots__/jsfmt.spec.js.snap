@@ -4,7 +4,7 @@ exports[`parameterProperty.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class c3 {
   constructor(public arg: number = 10) {

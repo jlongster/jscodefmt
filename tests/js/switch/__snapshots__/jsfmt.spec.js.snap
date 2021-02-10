@@ -4,7 +4,7 @@ exports[`comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 switch (true) {
   case true:
@@ -62,7 +62,7 @@ exports[`empty_lines.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 switch (foo) {
   case "bar":
@@ -212,7 +212,7 @@ exports[`empty_statement.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 switch (error.code) {
 	case ConfigurationEditingErrorCode.ERROR_INVALID_CONFIGURATION: {
@@ -237,7 +237,7 @@ exports[`empty_switch.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 switch (1) { default:; }
 switch (1) {}
@@ -256,7 +256,7 @@ exports[`switch.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 switch (a) {
   case 3:

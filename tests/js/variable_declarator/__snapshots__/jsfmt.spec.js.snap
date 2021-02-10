@@ -25,7 +25,7 @@ exports[`invalid-const.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo;
 
@@ -39,7 +39,7 @@ exports[`multiple.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var assert = require('assert'),
   lookup = require('../lookup');
@@ -98,7 +98,7 @@ exports[`string.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 elements[0].innerHTML = '<div></div><div></div><div></div><div></div><div></div><div></div>';
 

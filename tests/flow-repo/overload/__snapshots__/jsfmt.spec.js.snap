@@ -4,7 +4,7 @@ exports[`overload.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * tests of overload selection
@@ -118,7 +118,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo() {
   var output = new FakeUint8Array();
@@ -138,7 +138,7 @@ exports[`test2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class Foo {
   bar(x: 'hmm'): number;
@@ -164,7 +164,7 @@ exports[`test3.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // passing a union-like thing into an overload is ok
 // if overload handles each branch of union-like thing
@@ -218,7 +218,7 @@ exports[`union.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo<U> (x: $Either<Array<U>,U>): Array<U> { return []; }
 

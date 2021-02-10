@@ -4,7 +4,7 @@ exports[`abstract_class.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class AbstractRule {
     /**
@@ -32,7 +32,7 @@ exports[`after_jsx_generic.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let comp = (
   <>
@@ -94,7 +94,7 @@ exports[`declare_function.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare function fn(
   currentRequest: {a: number},
@@ -117,7 +117,7 @@ exports[`interface.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface Foo {
   bar(
@@ -185,7 +185,7 @@ exports[`issues.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Adding a comment stops the pretty printing process and everything is
 // squished in a single line afterward
@@ -263,7 +263,7 @@ exports[`jsx.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var example1 = <div>
 	https://test
@@ -285,7 +285,7 @@ exports[`location.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function x({
   x,
@@ -372,7 +372,7 @@ exports[`mapped_types.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type A = {
   // commentA
@@ -464,7 +464,7 @@ exports[`method_types.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface foo1 {
   bar3/* foo */ (/* baz */) // bat
@@ -554,7 +554,7 @@ exports[`methods.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export class Point {
 /**
@@ -660,7 +660,7 @@ exports[`type-parameters.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 functionName<A /* A comment */>();
 const a: T</* comment */> = 1;
@@ -732,7 +732,7 @@ exports[`types.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (() => {
   // swallow error and fallback to using directory as path
@@ -750,7 +750,7 @@ exports[`union.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type UploadState<E, EM, D>
   // The upload hasnt begun yet

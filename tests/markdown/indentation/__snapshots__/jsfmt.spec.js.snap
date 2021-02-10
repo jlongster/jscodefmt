@@ -6,7 +6,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - Top level list item 1 
 - Top level list item 2

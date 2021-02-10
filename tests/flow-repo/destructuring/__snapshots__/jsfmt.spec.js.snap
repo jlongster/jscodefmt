@@ -4,7 +4,7 @@ exports[`array_rest.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let xs = [0, "", true];
 let [a, ...ys] = xs;
@@ -40,7 +40,7 @@ exports[`computed.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var { ["key"]: val1 } = { key: "val" };
 (val1: void); // error: string ~> void
@@ -70,7 +70,7 @@ exports[`defaults.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -250,7 +250,7 @@ exports[`destructuring.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare var a:string;
 declare var b:string;
@@ -404,7 +404,7 @@ exports[`eager.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x;
 ({x} = null); // error, property \`x\` can not be accessed on \`null\`
@@ -420,7 +420,7 @@ exports[`poly.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -498,7 +498,7 @@ exports[`rec.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -550,7 +550,7 @@ exports[`refinement_non_termination.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -582,7 +582,7 @@ exports[`string_lit.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var { "key": val } = { key: "val" };
 (val: void); // error: string ~> void
@@ -604,7 +604,7 @@ exports[`unannotated.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 

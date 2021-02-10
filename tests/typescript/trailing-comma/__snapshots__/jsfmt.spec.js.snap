@@ -5,7 +5,7 @@ exports[`arrow-functions.tsx - {"trailingComma":"all"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const f1 = <T,>() => 1;
 const f2 = <
@@ -26,7 +26,7 @@ exports[`arrow-functions.tsx - {"trailingComma":"es5"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "es5"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const f1 = <T,>() => 1;
 const f2 = <
@@ -47,7 +47,7 @@ exports[`arrow-functions.tsx - {"trailingComma":"none"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const f1 = <T,>() => 1;
 const f2 = <
@@ -68,7 +68,7 @@ exports[`trailing.ts - {"trailingComma":"all"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export class BaseSingleLevelProfileTargeting<
 	T extends ValidSingleLevelProfileNode,
@@ -112,7 +112,7 @@ exports[`trailing.ts - {"trailingComma":"es5"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "es5"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export class BaseSingleLevelProfileTargeting<
 	T extends ValidSingleLevelProfileNode,
@@ -156,7 +156,7 @@ exports[`trailing.ts - {"trailingComma":"none"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export class BaseSingleLevelProfileTargeting<
 	T extends ValidSingleLevelProfileNode,
@@ -200,7 +200,7 @@ exports[`type-parameters.ts - {"trailingComma":"all"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var bar: Bar<
   AAAAAAA,
@@ -233,7 +233,7 @@ exports[`type-parameters.ts - {"trailingComma":"es5"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "es5"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var bar: Bar<
   AAAAAAA,
@@ -266,7 +266,7 @@ exports[`type-parameters.ts - {"trailingComma":"none"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var bar: Bar<
   AAAAAAA,

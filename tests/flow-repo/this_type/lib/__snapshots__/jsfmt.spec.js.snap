@@ -4,7 +4,7 @@ exports[`decl.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // The following declare classes use \`this\` types effectively to avoid type
 // errors in ../lib_client.js. If support for \`this\` types in declare classes

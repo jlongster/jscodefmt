@@ -4,7 +4,7 @@ exports[`class.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {}
 
@@ -36,7 +36,7 @@ exports[`function.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* TODO - we currently say that a function's statics are an AnyObjT and
  * anything goes. When we start enforcing the statics properly, we'll need to

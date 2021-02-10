@@ -4,7 +4,7 @@ exports[`global.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare global {
     interface Event {
@@ -26,7 +26,7 @@ exports[`moduleNamespace.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare module "f" {}
 
@@ -44,7 +44,7 @@ exports[`nestedNamespace.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 namespace X {
     export namespace Y {

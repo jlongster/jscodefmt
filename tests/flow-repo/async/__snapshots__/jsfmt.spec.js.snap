@@ -4,7 +4,7 @@ exports[`async.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -128,7 +128,7 @@ exports[`async_base_class.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // This is kind of weird, but it should parse. This works in babel without the
 // parens around (await promise). From the es6 and async/await specs I (nmote)
@@ -168,7 +168,7 @@ exports[`async_parse.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 async function f() {}
 async function ft<T>(a: T) {}
@@ -228,7 +228,7 @@ exports[`async_promise.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 async function f(): Promise<number> {
   return Promise.resolve(1);
@@ -246,7 +246,7 @@ exports[`async_return_void.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -286,7 +286,7 @@ exports[`async2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -420,7 +420,7 @@ exports[`async3.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -495,7 +495,7 @@ exports[`await_parse.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 async function f() { await 1; }
 async function ft<T>(a: T) { await 1; }

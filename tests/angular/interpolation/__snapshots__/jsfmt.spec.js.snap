@@ -5,7 +5,7 @@ exports[`logical-expression.ng - {"trailingComma":"none"} format 1`] = `
 parsers: ["__ng_interpolation"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
     advancedSearchService.patientInformationFieldsRow2 && advancedSearchService.patientInformationFieldsRow2.indexOf(advancedSearchService.formElementData.customFieldList[i].customFieldType) !== -1
@@ -26,7 +26,7 @@ exports[`optional-chaining.ng - {"trailingComma":"none"} format 1`] = `
 parsers: ["__ng_interpolation"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [  a?.b[c], (a?.b)[c]  ]
 
@@ -40,7 +40,7 @@ exports[`pipe-expression.ng - {"trailingComma":"none"} format 1`] = `
 parsers: ["__ng_interpolation"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
     a ? (b | c : d) : (e | f : g),
@@ -107,7 +107,7 @@ exports[`pipe-in-object.ng - {"trailingComma":"none"} format 1`] = `
 parsers: ["__ng_interpolation"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [{ AngularJS: '1.x', 'color': ('#222' | darken)}]
 

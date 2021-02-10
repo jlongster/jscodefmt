@@ -4,7 +4,7 @@ exports[`typeOperator.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let a: (keyof T)[] = ["a", "b"];
 

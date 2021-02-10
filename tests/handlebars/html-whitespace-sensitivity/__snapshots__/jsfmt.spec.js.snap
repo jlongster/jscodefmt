@@ -5,7 +5,7 @@ exports[`option.hbs - {"htmlWhitespaceSensitivity":"ignore","printWidth":40} for
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <p>Hi  {{firstName}}  {{lastName}}   , welcome!</p>
 {{#component propA}}
@@ -316,7 +316,7 @@ exports[`option.hbs - {"htmlWhitespaceSensitivity":"strict","printWidth":40} for
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <p>Hi  {{firstName}}  {{lastName}}   , welcome!</p>
 {{#component propA}}
@@ -596,7 +596,7 @@ exports[`snippet: #12 - {"htmlWhitespaceSensitivity":"strict","printWidth":40} f
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <div> </div>
 =====================================output=====================================
@@ -609,7 +609,7 @@ exports[`snippet: #13 - {"htmlWhitespaceSensitivity":"strict","printWidth":40} f
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <div>          </div>
 =====================================output=====================================
@@ -622,7 +622,7 @@ exports[`snippet: #14 - {"htmlWhitespaceSensitivity":"strict","printWidth":40} f
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <div>           </div>
 =====================================output=====================================
@@ -635,7 +635,7 @@ exports[`snippet: #15 - {"htmlWhitespaceSensitivity":"strict","printWidth":40} f
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <div>                   </div>
 =====================================output=====================================
@@ -648,7 +648,7 @@ exports[`snippet: #16 - {"htmlWhitespaceSensitivity":"strict","printWidth":40} f
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <img/> <img/>
 =====================================output=====================================
@@ -661,7 +661,7 @@ exports[`snippet: #17 - {"htmlWhitespaceSensitivity":"strict","printWidth":40} f
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <img/>          <img/>
 =====================================output=====================================
@@ -674,7 +674,7 @@ exports[`snippet: #18 - {"htmlWhitespaceSensitivity":"strict","printWidth":40} f
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <img/>           <img/>
 =====================================output=====================================
@@ -687,7 +687,7 @@ exports[`snippet: #19 - {"htmlWhitespaceSensitivity":"strict","printWidth":40} f
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <img/>                   <img/>
 =====================================output=====================================
@@ -700,7 +700,7 @@ exports[`snippet: #20 - {"htmlWhitespaceSensitivity":"strict","printWidth":40} f
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <i />   |   <i />
 =====================================output=====================================
@@ -713,7 +713,7 @@ exports[`snippet: #21 - {"htmlWhitespaceSensitivity":"strict","printWidth":40} f
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <p><span>X</span>   or   <span>Y</span></p><p>X   or   Y</p>
 =====================================output=====================================
@@ -728,7 +728,7 @@ exports[`snippet: \`U+2005\` should format like \`U+005F\` not like \`U+0020\` -
 htmlWhitespaceSensitivity: "strict"
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <!-- U+2005 -->
 <div>before<span> </span>afterafterafterafterafterafterafterafterafterafterafterafterafterafterafterafterafterafterafterafter</div>

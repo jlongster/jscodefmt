@@ -6,7 +6,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. 123
 
@@ -134,7 +134,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. 123
 
@@ -262,7 +262,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. 123
 
@@ -389,7 +389,7 @@ exports[`align.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. 123
 
@@ -517,7 +517,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ ] this is a long long long long long long long long long long long long long long paragraph.
 - [x] this is a long long long long long long long long long long long long long long paragraph.
@@ -537,7 +537,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ ] this is a long long long long long long long long long long long long long long paragraph.
 - [x] this is a long long long long long long long long long long long long long long paragraph.
@@ -557,7 +557,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ ] this is a long long long long long long long long long long long long long long paragraph.
 - [x] this is a long long long long long long long long long long long long long long paragraph.
@@ -576,7 +576,7 @@ exports[`checkbox.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ ] this is a long long long long long long long long long long long long long long paragraph.
 - [x] this is a long long long long long long long long long long long long long long paragraph.
@@ -596,7 +596,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. ol01
 
@@ -676,7 +676,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. ol01
 
@@ -756,7 +756,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. ol01
 
@@ -835,7 +835,7 @@ exports[`codeblock.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. ol01
 
@@ -915,7 +915,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * hello1
 
@@ -952,7 +952,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * hello1
 
@@ -989,7 +989,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * hello1
 
@@ -1025,7 +1025,7 @@ exports[`combined-lists.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * hello1
 
@@ -1062,7 +1062,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 5. abc
 1. def
@@ -1082,7 +1082,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 5. abc
 1. def
@@ -1102,7 +1102,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 5. abc
 1. def
@@ -1121,7 +1121,7 @@ exports[`git-diff-friendly.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 5. abc
 1. def
@@ -1141,7 +1141,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ ] a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
 
@@ -1368,7 +1368,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ ] a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
 
@@ -1595,7 +1595,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ ] a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
 
@@ -1821,7 +1821,7 @@ exports[`indent.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ ] a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
 
@@ -2048,7 +2048,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * Something
 ### Some heading
@@ -2067,7 +2067,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * Something
 ### Some heading
@@ -2086,7 +2086,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * Something
 ### Some heading
@@ -2104,7 +2104,7 @@ exports[`interrupt.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * Something
 ### Some heading
@@ -2123,7 +2123,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - a a  
    b b  
@@ -2158,7 +2158,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - a a  
    b b  
@@ -2193,7 +2193,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - a a  
    b b  
@@ -2227,7 +2227,7 @@ exports[`issue-7846.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - a a  
    b b  
@@ -2262,7 +2262,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - This is a long long long long long long long long long long long long long long paragraph.
 
@@ -2279,7 +2279,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - This is a long long long long long long long long long long long long long long paragraph.
 
@@ -2296,7 +2296,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - This is a long long long long long long long long long long long long long long paragraph.
 
@@ -2312,7 +2312,7 @@ exports[`long-paragraph.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - This is a long long long long long long long long long long long long long long paragraph.
 
@@ -2329,7 +2329,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 
@@ -2365,7 +2365,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 
@@ -2401,7 +2401,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 
@@ -2436,7 +2436,7 @@ exports[`loose.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 
@@ -2472,7 +2472,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
   456
@@ -2490,7 +2490,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
   456
@@ -2508,7 +2508,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
   456
@@ -2525,7 +2525,7 @@ exports[`multiline.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
   456
@@ -2543,7 +2543,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - Level 1
   - Level 2
@@ -2563,7 +2563,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - Level 1
   - Level 2
@@ -2583,7 +2583,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - Level 1
   - Level 2
@@ -2602,7 +2602,7 @@ exports[`nested.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - Level 1
   - Level 2
@@ -2622,7 +2622,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * parent list item parent list item parent list item parent list item parent list item parent list item
 
@@ -2664,7 +2664,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * parent list item parent list item parent list item parent list item parent list item parent list item
 
@@ -2706,7 +2706,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * parent list item parent list item parent list item parent list item parent list item parent list item
 
@@ -2747,7 +2747,7 @@ exports[`nested-checkbox.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * parent list item parent list item parent list item parent list item parent list item parent list item
 
@@ -2789,7 +2789,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # List with 1 tab indentation and \`-\`
 - Top level list item 1
@@ -2833,7 +2833,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # List with 1 tab indentation and \`-\`
 - Top level list item 1
@@ -2877,7 +2877,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # List with 1 tab indentation and \`-\`
 - Top level list item 1
@@ -2920,7 +2920,7 @@ exports[`nested-tab.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # List with 1 tab indentation and \`-\`
 - Top level list item 1
@@ -2964,7 +2964,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. 123
 1. 456
@@ -2984,7 +2984,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. 123
 1. 456
@@ -3004,7 +3004,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. 123
 1. 456
@@ -3023,7 +3023,7 @@ exports[`ordered.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. 123
 1. 456
@@ -3043,7 +3043,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 - 123
@@ -3071,7 +3071,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 - 123
@@ -3099,7 +3099,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 - 123
@@ -3126,7 +3126,7 @@ exports[`separate.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 - 123
@@ -3154,7 +3154,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 - 456
@@ -3174,7 +3174,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 - 456
@@ -3194,7 +3194,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 - 456
@@ -3213,7 +3213,7 @@ exports[`simple.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - 123
 - 456
@@ -3232,7 +3232,7 @@ exports[`snippet: empty list items (issue 4122) - {"proseWrap":"always"} format 
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1.
 2.
@@ -3252,7 +3252,7 @@ exports[`snippet: empty list items with spaces (issue 4122) - {"proseWrap":"alwa
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1. 
 2. 
@@ -3273,7 +3273,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 5. abc
 6. def
@@ -3482,7 +3482,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 5. abc
 6. def
@@ -3691,7 +3691,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 5. abc
 6. def
@@ -3899,7 +3899,7 @@ exports[`start.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 5. abc
 6. def
@@ -4108,7 +4108,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 0
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * Text
 
@@ -4168,7 +4168,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * Text
 
@@ -4228,7 +4228,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 tabWidth: 999
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * Text
 
@@ -4287,7 +4287,7 @@ exports[`tab.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * Text
 

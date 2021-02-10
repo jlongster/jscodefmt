@@ -4,7 +4,7 @@ exports[`as-expression.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = \`\${(foo + bar) as baz}\`;
 const b = \`\${(veryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryLongFoo + bar) as baz}\`;
@@ -35,7 +35,7 @@ exports[`expressions.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const bar = tag<number>\`but where will prettier wrap such a long tagged template literal? \${foo.bar.baz} long long long long long long long long long long long long long long\`;
 =====================================output=====================================

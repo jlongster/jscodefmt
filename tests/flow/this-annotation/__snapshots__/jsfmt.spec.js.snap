@@ -5,7 +5,7 @@ exports[`declare_function.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -32,7 +32,7 @@ exports[`function_declaration.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -70,7 +70,7 @@ exports[`function_type.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -108,7 +108,7 @@ exports[`line_break.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -173,7 +173,7 @@ exports[`method.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -211,7 +211,7 @@ exports[`union_type.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 

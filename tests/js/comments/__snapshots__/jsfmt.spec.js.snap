@@ -5,7 +5,7 @@ exports[`arrow.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const fn = (/*event, data*/) => doSomething();
 
@@ -23,7 +23,7 @@ exports[`arrow.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const fn = (/*event, data*/) => doSomething();
 
@@ -42,7 +42,7 @@ exports[`assignment-pattern.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const { a /* comment */ = 1 } = b;
 
@@ -67,7 +67,7 @@ exports[`assignment-pattern.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const { a /* comment */ = 1 } = b;
 
@@ -93,7 +93,7 @@ exports[`before-comma.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo = {
   a: 'a' /* comment for this line */,
@@ -117,7 +117,7 @@ exports[`before-comma.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo = {
   a: 'a' /* comment for this line */,
@@ -142,7 +142,7 @@ exports[`binary-expressions.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function addition() {
 	0
@@ -296,7 +296,7 @@ exports[`binary-expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function addition() {
 	0
@@ -451,7 +451,7 @@ exports[`binary-expressions-block-comments.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = b || /** Comment */
 c;
@@ -550,7 +550,7 @@ exports[`binary-expressions-block-comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = b || /** Comment */
 c;
@@ -650,7 +650,7 @@ exports[`binary-expressions-parens.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Math.min(
   (
@@ -681,7 +681,7 @@ exports[`binary-expressions-parens.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Math.min(
   (
@@ -713,7 +713,7 @@ exports[`binary-expressions-single-comments.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = b || // Comment
 c;
@@ -764,7 +764,7 @@ exports[`binary-expressions-single-comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = b || // Comment
 c;
@@ -816,7 +816,7 @@ exports[`blank.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // This file only
 // has comments. This comment
@@ -870,7 +870,7 @@ exports[`blank.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // This file only
 // has comments. This comment
@@ -925,7 +925,7 @@ exports[`break-continue-statements.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 for (;;) {
   break /* comment */;
@@ -959,7 +959,7 @@ exports[`break-continue-statements.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 for (;;) {
   break /* comment */;
@@ -994,7 +994,7 @@ exports[`call_comment.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 render( // Warm any cache
   <ChildUpdates renderAnchor={true} anchorClassOn={true} />,
@@ -1037,7 +1037,7 @@ exports[`call_comment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 render( // Warm any cache
   <ChildUpdates renderAnchor={true} anchorClassOn={true} />,
@@ -1081,7 +1081,7 @@ exports[`class.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #8718
 class C {
@@ -1113,7 +1113,7 @@ exports[`class.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #8718
 class C {
@@ -1146,7 +1146,7 @@ exports[`dangling.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var a = {/* dangling */};
 var b = {
@@ -1184,7 +1184,7 @@ exports[`dangling.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var a = {/* dangling */};
 var b = {
@@ -1223,7 +1223,7 @@ exports[`dangling_array.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 expect(() => {}).toTriggerReadyStateChanges([
   // Nothing.
@@ -1245,7 +1245,7 @@ exports[`dangling_array.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 expect(() => {}).toTriggerReadyStateChanges([
   // Nothing.
@@ -1268,7 +1268,7 @@ exports[`dangling_for.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 for // comment
 (;;);
@@ -1289,7 +1289,7 @@ exports[`dangling_for.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 for // comment
 (;;);
@@ -1311,7 +1311,7 @@ exports[`dynamic_imports.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import(/* Hello */ 'something')
 
@@ -1357,7 +1357,7 @@ exports[`dynamic_imports.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import(/* Hello */ 'something')
 
@@ -1404,7 +1404,7 @@ exports[`emoji.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* #2091 */
 
@@ -1426,7 +1426,7 @@ exports[`emoji.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* #2091 */
 
@@ -1449,7 +1449,7 @@ exports[`export.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export //comment
 {}
@@ -1505,7 +1505,7 @@ exports[`export.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export //comment
 {}
@@ -1562,7 +1562,7 @@ exports[`first-line.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a // comment
 b
@@ -1578,7 +1578,7 @@ exports[`first-line.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a // comment
 b
@@ -1595,7 +1595,7 @@ exports[`function-declaration.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function a(/* comment */) {} // comment
 function b() {} // comment
@@ -1729,7 +1729,7 @@ exports[`function-declaration.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function a(/* comment */) {} // comment
 function b() {} // comment
@@ -1864,7 +1864,7 @@ exports[`if.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 if (1)
 // comment
@@ -2010,7 +2010,7 @@ exports[`if.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 if (1)
 // comment
@@ -2157,7 +2157,7 @@ exports[`issue-3532.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import React from 'react';
 
@@ -2247,7 +2247,7 @@ exports[`issue-3532.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import React from 'react';
 
@@ -2338,7 +2338,7 @@ exports[`issue-7724.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo = "Bar";
 
@@ -2385,7 +2385,7 @@ exports[`issue-7724.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo = "Bar";
 
@@ -2433,7 +2433,7 @@ exports[`issues.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Does not need to break as it fits in 80 columns
 this.call(a, /* comment */ b);
@@ -2584,7 +2584,7 @@ exports[`issues.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Does not need to break as it fits in 80 columns
 this.call(a, /* comment */ b);
@@ -2736,7 +2736,7 @@ exports[`jsdoc.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /** @type {any} */
 const x = (
@@ -2799,7 +2799,7 @@ exports[`jsdoc.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /** @type {any} */
 const x = (
@@ -2863,7 +2863,7 @@ exports[`jsx.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
   {
@@ -3104,7 +3104,7 @@ exports[`jsx.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
   {
@@ -3346,7 +3346,7 @@ exports[`last-arg.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 class Foo {
@@ -3433,7 +3433,7 @@ exports[`last-arg.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 class Foo {
@@ -3521,7 +3521,7 @@ exports[`multi-comments.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #8323
 
@@ -3571,7 +3571,7 @@ exports[`multi-comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #8323
 
@@ -3622,7 +3622,7 @@ exports[`multi-comments-on-same-line.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /*========= All on same line =========*/
 a;
@@ -3814,7 +3814,7 @@ exports[`multi-comments-on-same-line.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /*========= All on same line =========*/
 a;
@@ -4007,7 +4007,7 @@ exports[`multi-comments-on-same-line-2.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* 1 */ /* 2 */ /* 3 */ a;
 a; /* 4 */ /* 5 */ /* 6 */
@@ -4023,7 +4023,7 @@ exports[`multi-comments-on-same-line-2.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* 1 */ /* 2 */ /* 3 */ a;
 a; /* 4 */ /* 5 */ /* 6 */
@@ -4040,7 +4040,7 @@ exports[`preserve-new-line-last.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function f() {
   a
@@ -4094,7 +4094,7 @@ exports[`preserve-new-line-last.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function f() {
   a
@@ -4149,7 +4149,7 @@ exports[`return-statement.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function jsx() {
   return (
@@ -4411,7 +4411,7 @@ exports[`return-statement.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function jsx() {
   return (
@@ -4674,7 +4674,7 @@ exports[`single-star-jsdoc.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /*
  * Looking good!
@@ -4746,7 +4746,7 @@ exports[`single-star-jsdoc.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /*
  * Looking good!
@@ -4819,7 +4819,7 @@ exports[`snippet: #0 - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var a = { /* comment */      
 b };
@@ -4835,7 +4835,7 @@ exports[`snippet: #0 format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var a = { /* comment */      
 b };
@@ -4852,7 +4852,7 @@ exports[`snippet: #1 - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var a = { /* comment */
 b };
@@ -4868,7 +4868,7 @@ exports[`snippet: #1 format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var a = { /* comment */
 b };
@@ -4885,7 +4885,7 @@ exports[`switch.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 switch (node && node.type) {
   case "Property":
@@ -4972,7 +4972,7 @@ exports[`switch.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 switch (node && node.type) {
   case "Property":
@@ -5060,7 +5060,7 @@ exports[`tagged-template-literal.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo\`\`; // comment
 
@@ -5101,7 +5101,7 @@ exports[`tagged-template-literal.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo\`\`; // comment
 
@@ -5143,7 +5143,7 @@ exports[`template-literal.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`
 \${a // comment
@@ -5181,7 +5181,7 @@ exports[`template-literal.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`
 \${a // comment
@@ -5220,7 +5220,7 @@ exports[`trailing_space.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/there/is-space-here->         
 
@@ -5242,7 +5242,7 @@ exports[`trailing_space.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/there/is-space-here->         
 
@@ -5265,7 +5265,7 @@ exports[`trailing-jsdocs.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const CONNECTION_STATUS = exports.CONNECTION_STATUS = {
   CLOSED: Object.freeze({ kind: 'CLOSED' }),
@@ -5326,7 +5326,7 @@ exports[`trailing-jsdocs.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const CONNECTION_STATUS = exports.CONNECTION_STATUS = {
   CLOSED: Object.freeze({ kind: 'CLOSED' }),
@@ -5388,7 +5388,7 @@ exports[`try.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Comment 1
 try { // Comment 2
@@ -5427,7 +5427,7 @@ exports[`try.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Comment 1
 try { // Comment 2
@@ -5467,7 +5467,7 @@ exports[`variable_declarator.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let obj1 = // Comment
 {
@@ -5617,7 +5617,7 @@ exports[`variable_declarator.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let obj1 = // Comment
 {
@@ -5768,7 +5768,7 @@ exports[`while.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 while(
     true
@@ -5830,7 +5830,7 @@ exports[`while.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 while(
     true

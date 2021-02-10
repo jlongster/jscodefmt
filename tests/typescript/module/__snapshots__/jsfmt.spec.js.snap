@@ -4,7 +4,7 @@ exports[`empty.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare module 'autoprefixer';
 
@@ -18,7 +18,7 @@ exports[`global.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 namespace global {}
 module global {}
@@ -38,7 +38,7 @@ exports[`keyword.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 module X {}
 
@@ -112,7 +112,7 @@ exports[`namespace_function.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 namespace X {
     declare function f();

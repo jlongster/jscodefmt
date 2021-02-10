@@ -5,7 +5,7 @@ exports[`with-pragma.vue - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- @prettier -->
 
@@ -37,7 +37,7 @@ exports[`without-pragma.vue - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 

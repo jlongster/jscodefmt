@@ -4,7 +4,7 @@ exports[`bracket_0.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function a() {
   function b() {
@@ -35,7 +35,7 @@ exports[`break-last-call.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default store => {
   return callApi(endpoint, schema).then(
@@ -161,7 +161,7 @@ exports[`break-last-member.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 SomeVeryLongUpperCaseConstant.someVeryLongCallExpression().some_very_long_member_expression
 weNeedToReachTheEightyCharacterLimitXXXXXXXXXXXXXXXXX.someNode
@@ -230,7 +230,7 @@ exports[`break-multiple.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 object.foo().bar().baz();
 
@@ -252,7 +252,7 @@ exports[`comment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function f() {
   return observableFromSubscribeFunction()
@@ -379,7 +379,7 @@ exports[`complex-args.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 client.execute(
   Post.selectAll()
@@ -399,7 +399,7 @@ exports[`computed.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 nock(/test/)
   .matchHeader('Accept', 'application/json')
@@ -423,7 +423,7 @@ exports[`computed-merge.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [].forEach(key => {
   data[key]('foo')
@@ -467,7 +467,7 @@ exports[`conditional.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (a ? b : c).d();
 
@@ -532,7 +532,7 @@ exports[`cypress.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 cy.get('option:first')
   .should('be.selected')
@@ -554,7 +554,7 @@ exports[`d3.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 d3.select('body')
   .append('circle')
@@ -597,7 +597,7 @@ exports[`first_long.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default function theFunction(action$, store) {
   return action$.ofType(THE_ACTION).switchMap(action => Observable
@@ -676,7 +676,7 @@ exports[`fluent-configuration.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 domain
     .concept('Page')
@@ -715,7 +715,7 @@ exports[`inline_merge.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Object.keys(
   availableLocales({
@@ -760,7 +760,7 @@ exports[`issue-3594.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const fetched = fetch("/foo");
 fetched
@@ -786,7 +786,7 @@ exports[`issue-3621.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const palindrome = str => {
   const s = str.toLowerCase().replace(/[\\W_]/g, '');
@@ -820,7 +820,7 @@ exports[`issue-4125.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // examples from https://github.com/prettier/prettier/issues/4125
 
@@ -1148,7 +1148,7 @@ exports[`logical.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const someLongVariableName = (idx(
   this.props,
@@ -1202,7 +1202,7 @@ exports[`multiple-members.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 if (testConfig.ENABLE_ONLINE_TESTS === "true") {
   describe("POST /users/me/pet", function() {
@@ -1296,7 +1296,7 @@ exports[`object-literal.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 of("test")
   .pipe(throwIfEmpty())
@@ -1338,7 +1338,7 @@ exports[`pr-7889.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Profile = view.with({ name: (state) => state.name }).as((props) => (
   <div>
@@ -1372,7 +1372,7 @@ exports[`short-names.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const svgJsFiles = fs
   .readdirSync(svgDir)
@@ -1392,7 +1392,7 @@ exports[`simple-args.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const fieldsToSend = _(["id", extra]).without("transition").uniq();
 
@@ -1410,7 +1410,7 @@ exports[`square_0.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const version = someLongString
   .split('jest version =')
@@ -1440,7 +1440,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 method().then(x => x)
   ["abc"](x => x)
@@ -1465,7 +1465,7 @@ exports[`this.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const sel = this.connections
   .concat(this.activities.concat(this.operators))

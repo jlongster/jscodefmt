@@ -4,7 +4,7 @@ exports[`array.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function excludeFirstFiveResults4([first, second, third, fourth, fifth, ...rest]: Result[]) {
   return rest;
@@ -29,7 +29,7 @@ exports[`object.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function StatelessFunctionalComponent4({
   isActive,

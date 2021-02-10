@@ -23,7 +23,7 @@ exports[`abstract.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract interface I {
 
@@ -39,7 +39,7 @@ exports[`abstract.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract interface I {
 
@@ -56,7 +56,7 @@ exports[`comments.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface ScreenObject {
 	// I make things weird.
@@ -76,7 +76,7 @@ exports[`comments.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface ScreenObject {
 	// I make things weird.
@@ -97,7 +97,7 @@ exports[`comments-generic.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface ReallyReallyLongName<
   TypeArgumentNumberOne,
@@ -170,7 +170,7 @@ exports[`comments-generic.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface ReallyReallyLongName<
   TypeArgumentNumberOne,
@@ -244,7 +244,7 @@ exports[`generic.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface Foo<FOOOOOOOOOOOOOOOOOOOOOOOOOO,FOOOOOOOOOOOOOOOOOOOOOOO>
   extends Foo {}
@@ -272,7 +272,7 @@ exports[`generic.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface Foo<FOOOOOOOOOOOOOOOOOOOOOOOOOO,FOOOOOOOOOOOOOOOOOOOOOOO>
   extends Foo {}
@@ -301,7 +301,7 @@ exports[`ignore.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface Interface {
   // prettier-ignore
@@ -525,7 +525,7 @@ exports[`ignore.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface Interface {
   // prettier-ignore
@@ -750,7 +750,7 @@ exports[`long-extends.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export interface I extends A, B, C {
   c: string;
@@ -808,7 +808,7 @@ exports[`long-extends.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export interface I extends A, B, C {
   c: string;
@@ -867,7 +867,7 @@ exports[`pattern-parameters.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface B {
   foo([]?): void;
@@ -889,7 +889,7 @@ exports[`pattern-parameters.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface B {
   foo([]?): void;
@@ -912,7 +912,7 @@ exports[`separator.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare module 'selenium-webdriver' {
   export const until: {
@@ -957,7 +957,7 @@ exports[`separator.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare module 'selenium-webdriver' {
   export const until: {

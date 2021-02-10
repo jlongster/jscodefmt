@@ -4,7 +4,7 @@ exports[`basics.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 {{!-- after --}}
 <span>
@@ -98,7 +98,7 @@ exports[`boss.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <p>Hi  {{firstName}}  {{lastName}}   , welcome!</p>
 {{#component propA}}
@@ -148,7 +148,7 @@ exports[`curly.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <p>Your username is @{{name}}</p>
 <p>Hi {{firstName}} {{lastName}}</p>
@@ -166,7 +166,7 @@ exports[`display-inline-block.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <button>Click here! Click here! Click here! Click here! Click here! Click here!</button>
 <button>
@@ -218,7 +218,7 @@ exports[`display-none.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 {{!-- TO FIX --}}
 <HEAD><META CHARSET="utf-8" /><TITLE>My tITlE</TITLE><META NAME="description" content="My CoNtEnT" /></HEAD>
@@ -242,7 +242,7 @@ exports[`fill.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <p>
   <img
@@ -284,7 +284,7 @@ exports[`inline-element.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 {{!-- TO FIX --}}
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce cursus massa vel augue 
@@ -359,7 +359,7 @@ exports[`non-breaking-whitespace.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <!-- normal whitespaces -->
 <span>Nihil aut odit omnis. Quam maxime est molestiae. Maxime dolorem dolores voluptas quaerat ut qui sunt vitae error.</span>
@@ -391,7 +391,7 @@ exports[`preserved-spaces-and-breaks.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <SomeComponent />
 {{name}}
@@ -481,7 +481,7 @@ exports[`punctuation.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <span>This is your name: {{name}}.</span>
 <span>This is your name: {{name}} (employee)</span>
@@ -504,7 +504,7 @@ exports[`surrounding-linebreak.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <span>123</span>
 <span>
@@ -557,7 +557,7 @@ exports[`table.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <table>
   <thead>
@@ -644,7 +644,7 @@ exports[`textarea.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 <Textarea />
 {{#if true}}
@@ -690,7 +690,7 @@ exports[`whitespace-control.hbs - {"printWidth":40} format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 40
-                                        | printWidth
+                             printWidth |
 =====================================input======================================
 {{~#if foo~}}
   abc

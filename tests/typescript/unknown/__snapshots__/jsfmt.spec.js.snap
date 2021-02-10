@@ -4,7 +4,7 @@ exports[`unknown.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type T00 = unknown;
 

@@ -5,7 +5,7 @@ exports[`basics.hbs - {"singleQuote":true} format 1`] = `
 parsers: ["glimmer"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <GlimmerComponent @progress={{aPropertyEngdingAfterEightiethColumnToHighlightAWeirdClosingParenIssue}}
 />
@@ -168,7 +168,7 @@ exports[`basics.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <GlimmerComponent @progress={{aPropertyEngdingAfterEightiethColumnToHighlightAWeirdClosingParenIssue}}
 />
@@ -332,7 +332,7 @@ exports[`element-modifier-statement.hbs - {"singleQuote":true} format 1`] = `
 parsers: ["glimmer"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div {{hello param hash=key}} {{goodbye param}}>
   Hello
@@ -408,7 +408,7 @@ exports[`element-modifier-statement.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div {{hello param hash=key}} {{goodbye param}}>
   Hello
@@ -485,7 +485,7 @@ exports[`escaped.hbs - {"singleQuote":true} format 1`] = `
 parsers: ["glimmer"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 an escaped mustache:
 \\{{my-component}}
@@ -506,7 +506,7 @@ exports[`escaped.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 an escaped mustache:
 \\{{my-component}}

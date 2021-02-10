@@ -4,7 +4,7 @@ exports[`iter.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var a = [true,false];
 function foo(x) { }

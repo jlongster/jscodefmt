@@ -5,7 +5,7 @@ exports[`generic.ts - {"trailingComma":"all"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 f1<>();
 
@@ -56,7 +56,7 @@ exports[`generic.ts - {"trailingComma":"es5"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "es5"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 f1<>();
 
@@ -106,7 +106,7 @@ exports[`generic.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 f1<>();
 
@@ -179,7 +179,7 @@ exports[`index-signature.ts - {"trailingComma":"all"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type A = { [key: string] };
 
@@ -253,7 +253,7 @@ exports[`index-signature.ts - {"trailingComma":"es5"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "es5"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type A = { [key: string] };
 
@@ -315,7 +315,7 @@ exports[`index-signature.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type A = { [key: string] };
 
@@ -396,7 +396,7 @@ exports[`jsdoc_only_types.ts - {"trailingComma":"all"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let a: *;
 function b(x: ?) {}
@@ -434,7 +434,7 @@ exports[`jsdoc_only_types.ts - {"trailingComma":"es5"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "es5"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let a: *;
 function b(x: ?) {}
@@ -462,7 +462,7 @@ exports[`jsdoc_only_types.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let a: *;
 function b(x: ?) {}

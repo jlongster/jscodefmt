@@ -4,7 +4,7 @@ exports[`symbol_entitites.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <p>I will display &euro;</p>
 <p>I will display &excl;</p>

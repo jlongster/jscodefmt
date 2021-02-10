@@ -5,7 +5,7 @@ exports[`angularjs.html - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading">Warning!</div>
 
@@ -46,7 +46,7 @@ exports[`angularjs.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading">Warning!</div>
 
@@ -160,7 +160,7 @@ exports[`angularjs.html - {"trailingComma":"none"} format 1`] = `
 parsers: ["angular"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading">Warning!</div>
 
@@ -200,7 +200,7 @@ exports[`angularjs.html format 1`] = `
 ====================================options=====================================
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading">Warning!</div>
 
@@ -241,7 +241,7 @@ exports[`attr-name.component.html - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div someDirective itemType="x"></div>
 
@@ -256,7 +256,7 @@ exports[`attr-name.component.html - {"htmlWhitespaceSensitivity":"ignore"} forma
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div someDirective itemType="x"></div>
 
@@ -288,7 +288,7 @@ exports[`attr-name.component.html - {"trailingComma":"none"} format 1`] = `
 parsers: ["angular"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div someDirective itemType="x"></div>
 
@@ -302,7 +302,7 @@ exports[`attr-name.component.html format 1`] = `
 ====================================options=====================================
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div someDirective itemType="x"></div>
 
@@ -317,7 +317,7 @@ exports[`attributes.component.html - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
     bindon-target=" a | b : c "
@@ -588,7 +588,7 @@ exports[`attributes.component.html - {"htmlWhitespaceSensitivity":"ignore"} form
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
     bindon-target=" a | b : c "
@@ -1458,7 +1458,7 @@ exports[`attributes.component.html - {"trailingComma":"none"} format 1`] = `
 parsers: ["angular"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
     bindon-target=" a | b : c "
@@ -1728,7 +1728,7 @@ exports[`attributes.component.html format 1`] = `
 ====================================options=====================================
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
     bindon-target=" a | b : c "
@@ -1999,7 +1999,7 @@ exports[`first-lf.component.html - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <textarea>{{ generatedDiscountCodes }}</textarea>
 <textarea>
@@ -2092,7 +2092,7 @@ exports[`first-lf.component.html - {"htmlWhitespaceSensitivity":"ignore"} format
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <textarea>{{ generatedDiscountCodes }}</textarea>
 <textarea>
@@ -2357,7 +2357,7 @@ exports[`first-lf.component.html - {"trailingComma":"none"} format 1`] = `
 parsers: ["angular"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <textarea>{{ generatedDiscountCodes }}</textarea>
 <textarea>
@@ -2449,7 +2449,7 @@ exports[`first-lf.component.html format 1`] = `
 ====================================options=====================================
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <textarea>{{ generatedDiscountCodes }}</textarea>
 <textarea>
@@ -2542,7 +2542,7 @@ exports[`ignore-attribute.component.html - {"bracketSpacing":false} format 1`] =
 bracketSpacing: false
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
     bindon-target=" a | b : c "
@@ -2601,7 +2601,7 @@ exports[`ignore-attribute.component.html - {"htmlWhitespaceSensitivity":"ignore"
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
     bindon-target=" a | b : c "
@@ -2742,7 +2742,7 @@ exports[`ignore-attribute.component.html - {"trailingComma":"none"} format 1`] =
 parsers: ["angular"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
     bindon-target=" a | b : c "
@@ -2800,7 +2800,7 @@ exports[`ignore-attribute.component.html format 1`] = `
 ====================================options=====================================
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
     bindon-target=" a | b : c "
@@ -2859,7 +2859,7 @@ exports[`interpolation.component.html - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>{{ a | b : c }}</div>
 <div>{{  a | pipe    }}</div>
@@ -3026,7 +3026,7 @@ exports[`interpolation.component.html - {"htmlWhitespaceSensitivity":"ignore"} f
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>{{ a | b : c }}</div>
 <div>{{  a | pipe    }}</div>
@@ -3579,7 +3579,7 @@ exports[`interpolation.component.html - {"trailingComma":"none"} format 1`] = `
 parsers: ["angular"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>{{ a | b : c }}</div>
 <div>{{  a | pipe    }}</div>
@@ -3745,7 +3745,7 @@ exports[`interpolation.component.html format 1`] = `
 ====================================options=====================================
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>{{ a | b : c }}</div>
 <div>{{  a | pipe    }}</div>
@@ -3912,7 +3912,7 @@ exports[`real-world.component.html - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- copied from: https://stackblitz.com/angular/ymdjlgmlavo -->
 
@@ -5439,7 +5439,7 @@ exports[`real-world.component.html - {"htmlWhitespaceSensitivity":"ignore"} form
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- copied from: https://stackblitz.com/angular/ymdjlgmlavo -->
 
@@ -10632,7 +10632,7 @@ exports[`real-world.component.html - {"trailingComma":"none"} format 1`] = `
 parsers: ["angular"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- copied from: https://stackblitz.com/angular/ymdjlgmlavo -->
 
@@ -12158,7 +12158,7 @@ exports[`real-world.component.html format 1`] = `
 ====================================options=====================================
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- copied from: https://stackblitz.com/angular/ymdjlgmlavo -->
 
@@ -13685,7 +13685,7 @@ exports[`tag-name.component.html - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Table></Table>
 
@@ -13700,7 +13700,7 @@ exports[`tag-name.component.html - {"htmlWhitespaceSensitivity":"ignore"} format
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Table></Table>
 
@@ -13729,7 +13729,7 @@ exports[`tag-name.component.html - {"trailingComma":"none"} format 1`] = `
 parsers: ["angular"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Table></Table>
 
@@ -13743,7 +13743,7 @@ exports[`tag-name.component.html format 1`] = `
 ====================================options=====================================
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Table></Table>
 

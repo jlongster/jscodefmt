@@ -5,7 +5,7 @@ exports[`arrow_function_expression.ts - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["typescript", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = (b?) => c;
 
@@ -20,7 +20,7 @@ exports[`arrow_function_expression.ts - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["typescript", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = (b?) => c;
 
@@ -35,7 +35,7 @@ exports[`short_body.ts - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["typescript", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const initializeSnapshotState = (
   testFile: Path,
@@ -60,7 +60,7 @@ exports[`short_body.ts - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["typescript", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const initializeSnapshotState = (
   testFile: Path,
@@ -85,7 +85,7 @@ exports[`type_params.ts - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["typescript", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <T>(a) => { }
 
@@ -100,7 +100,7 @@ exports[`type_params.ts - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["typescript", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <T>(a) => { }
 

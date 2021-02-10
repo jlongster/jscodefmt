@@ -4,7 +4,7 @@ exports[`ignore.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function a() {
   // prettier-ignore
@@ -132,7 +132,7 @@ exports[`ignore-2.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #8736
 

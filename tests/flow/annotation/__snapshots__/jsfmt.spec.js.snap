@@ -4,7 +4,7 @@ exports[`array_of_functions.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const actionArray: (() => void)[] = [];
 

@@ -5,7 +5,7 @@ exports[`snippet: cursor-1.js format 1`] = `
 cursorOffset: 27
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿(function(){return        <|>15})()
 
@@ -24,7 +24,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 27
 rangeStart: 11
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | ﻿
   2 |
@@ -52,7 +52,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 27
 rangeStart: 11
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | ﻿
   2 |
@@ -83,7 +83,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 28
 rangeStart: 12
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | ﻿
   2 |

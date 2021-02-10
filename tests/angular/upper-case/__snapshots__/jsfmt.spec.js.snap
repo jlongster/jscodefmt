@@ -4,7 +4,7 @@ exports[`upper-case-html-tag.html format 1`] = `
 ====================================options=====================================
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!doctype html><HTML></HTML>
 
@@ -18,7 +18,7 @@ exports[`upper-case-html-tag-2.html format 1`] = `
 ====================================options=====================================
 parsers: ["angular"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html><HTML>
   <body>

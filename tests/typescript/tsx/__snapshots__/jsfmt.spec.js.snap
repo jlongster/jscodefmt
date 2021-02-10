@@ -4,7 +4,7 @@ exports[`generic-component.tsx format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const c1 = <MyComponent<number> data={12} />
 
@@ -26,7 +26,7 @@ exports[`keyword.tsx format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <try />;
 <object />
@@ -42,7 +42,7 @@ exports[`member-expression.tsx format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (<a />).method();
 (<a />).property;
@@ -102,7 +102,7 @@ exports[`not-react.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /// <reference types="node" />
 
@@ -130,7 +130,7 @@ exports[`react.tsx format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const MyCoolList = ({ things }) =>
     <ul>
@@ -151,7 +151,7 @@ exports[`this.tsx format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <this.state.Component />;
 <this.Component />;
@@ -167,7 +167,7 @@ exports[`type-parameters.tsx format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const functionName1 = <T,>(arg) => false;
 const functionName2 = <T extends any>(arg) => false;
@@ -221,7 +221,7 @@ exports[`url.tsx format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const link = <a href="example.com">http://example.com</a>;
 

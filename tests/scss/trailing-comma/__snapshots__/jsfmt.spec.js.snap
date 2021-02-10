@@ -5,7 +5,7 @@ exports[`at-rules.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
 @include section-type-1(
@@ -80,7 +80,7 @@ exports[`at-rules.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
 @include section-type-1(
@@ -156,7 +156,7 @@ exports[`declaration.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
     margin: $bar,;
@@ -174,7 +174,7 @@ exports[`declaration.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
     margin: $bar,;
@@ -193,7 +193,7 @@ exports[`list.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $colors: hotpink deepskyblue firebrick,;
 $list: (a,);
@@ -298,7 +298,7 @@ exports[`list.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $colors: hotpink deepskyblue firebrick,;
 $list: (a,);
@@ -404,7 +404,7 @@ exports[`map.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $map: (
     small: 767px,
@@ -448,7 +448,7 @@ exports[`map.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $map: (
     small: 767px,
@@ -493,7 +493,7 @@ exports[`selector_list.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 asdasldaskdhjkashdahsdkjahskdjhakjsdkjahsdhkasdhkajsdhakjsdhkajsdhjkahskjdkjahsjkdjkakjsdm,
 asdasldaskdhjkashdahsdkjahskdjhakjsdkjahsdhkasdhkajsdhakjsdhkajsdhjkahskjdkjahsjkdjkakjsdm, {
@@ -524,7 +524,7 @@ exports[`selector_list.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 asdasldaskdhjkashdahsdkjahskdjhakjsdkjahsdhkasdhkajsdhakjsdhkajsdhjkahskjdkjahsjkdjkakjsdm,
 asdasldaskdhjkashdahsdkjahskdjhakjsdkjahsdhkasdhkajsdhakjsdhkajsdhjkahskjdkjahsjkdjkakjsdm, {
@@ -556,7 +556,7 @@ exports[`variable.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $test: 1,;
 $margin: 0, 2em, 0, 1.5em,;
@@ -573,7 +573,7 @@ exports[`variable.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $test: 1,;
 $margin: 0, 2em, 0, 1.5em,;

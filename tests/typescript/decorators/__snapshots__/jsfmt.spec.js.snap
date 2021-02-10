@@ -4,7 +4,7 @@ exports[`argument-list-preserve-line.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class Foo {
     constructor(
@@ -41,7 +41,7 @@ exports[`decorator-type-assertion.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @(bind as ClassDecorator)
 class Decorated {
@@ -67,7 +67,7 @@ exports[`decorators.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export class TestTextFileService {
 	constructor(
@@ -193,7 +193,7 @@ exports[`decorators-comments.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 class Foo1 {
@@ -288,7 +288,7 @@ exports[`inline-decorators.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 @d1

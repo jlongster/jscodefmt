@@ -4,7 +4,7 @@ exports[`ie-hacks.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 * html p {font-size: 5em; }
 .class {

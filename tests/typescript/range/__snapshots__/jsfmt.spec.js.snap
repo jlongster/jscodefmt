@@ -6,7 +6,7 @@ parsers: ["typescript"]
 printWidth: 80
 rangeEnd: 18
 rangeStart: 15
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | f ( );
 > 2 | export   =   f;
@@ -27,7 +27,7 @@ parsers: ["typescript"]
 printWidth: 80
 rangeEnd: 304
 rangeStart: 102
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 | class Foo {
    2 |     /** Does this key match a given MinimalKey extending object? */
@@ -67,7 +67,7 @@ parsers: ["typescript"]
 printWidth: 80
 rangeEnd: 59
 rangeStart: 29
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | export default class Test {
 > 2 |   private obj = { isTest: true }

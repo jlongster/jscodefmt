@@ -24,7 +24,7 @@ exports[`intrinsic_call.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function doSmth()     {
             %DebugPrint

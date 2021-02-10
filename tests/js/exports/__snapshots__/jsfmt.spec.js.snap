@@ -26,7 +26,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export { value1, value2 as value2_renamed, value3, value4 as value4_renamed, value5 } from "exports";
 

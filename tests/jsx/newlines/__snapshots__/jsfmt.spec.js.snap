@@ -4,7 +4,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 keep = <p>
   Welcome to the <strong>Universal React Starter-kyt</strong>.
@@ -167,7 +167,7 @@ exports[`windows.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
 Text

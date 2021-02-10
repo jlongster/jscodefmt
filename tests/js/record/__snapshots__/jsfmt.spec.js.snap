@@ -24,7 +24,7 @@ exports[`computed.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const key = "a";
 assert(#{ [key]: 1 } === #{ a: 1 })
@@ -72,7 +72,7 @@ exports[`destructuring.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const { a, b } = #{ a: 1, b: 2 };
 assert(a === 1);
@@ -124,7 +124,7 @@ exports[`invalid-record-method.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Invalid, https://github.com/babel/babel/pull/11652/
 
@@ -172,7 +172,7 @@ exports[`record.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const record1 = #{
     a: 1,
@@ -234,7 +234,7 @@ exports[`shorthand.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const url = "https://github.com/tc39/proposal-record-tuple";
 const record = #{ url }
@@ -270,7 +270,7 @@ exports[`spread.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const formData = #{ title: "Implement all the things" }
 const taskNow = #{ id: 42, status: "WIP", ...formData }
@@ -312,7 +312,7 @@ exports[`syntax.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #{}
 #{ a: 1, b: 2 }

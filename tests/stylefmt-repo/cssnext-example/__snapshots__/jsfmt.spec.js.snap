@@ -4,7 +4,7 @@ exports[`cssnext-example.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* custom properties */
 :root{--fontSize: 1rem;

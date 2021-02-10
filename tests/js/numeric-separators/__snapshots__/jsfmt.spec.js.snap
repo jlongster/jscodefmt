@@ -4,7 +4,7 @@ exports[`number.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/11854
 

@@ -4,7 +4,7 @@ exports[`newKeyword.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x: { y: new <T, U> () => [T, U] };
 

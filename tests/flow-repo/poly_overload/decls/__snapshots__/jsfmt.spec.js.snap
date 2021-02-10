@@ -4,7 +4,7 @@ exports[`typescript-deferred.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface Some<X> {}
 interface Other<X> { x: X; }

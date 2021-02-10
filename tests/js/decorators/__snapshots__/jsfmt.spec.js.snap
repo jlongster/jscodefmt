@@ -13,7 +13,7 @@ exports[`classes.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @deco class Foo {}
 
@@ -71,7 +71,7 @@ exports[`comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x = 100
 
@@ -153,7 +153,7 @@ exports[`methods.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 class Yo {
@@ -196,7 +196,7 @@ exports[`mixed.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/prettier/prettier/issues/6747
 
@@ -244,7 +244,7 @@ exports[`mobx.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import {observable} from "mobx";
 
@@ -348,7 +348,7 @@ exports[`multiline.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class Foo {
   @deco([
@@ -390,7 +390,7 @@ exports[`multiple.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const dog = {
   @readonly
@@ -445,7 +445,7 @@ exports[`parens.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class X {
   @(computed().volatile())
@@ -474,7 +474,7 @@ exports[`redux.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @connect(mapStateToProps, mapDispatchToProps)
 export class MyApp extends React.Component {}

@@ -4,7 +4,7 @@ exports[`enum.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var APIKeys = {
     AGE: 'age',
@@ -28,7 +28,7 @@ exports[`enum_client.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var APIKeys = require('./enum');
 // object that maps "AGE" to "age", "NAME" to "name"
@@ -82,7 +82,7 @@ exports[`number.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function test1(x: number): number {
   return -x;

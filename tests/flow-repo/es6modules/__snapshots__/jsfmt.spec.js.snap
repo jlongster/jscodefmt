@@ -4,7 +4,7 @@ exports[`B.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -22,7 +22,7 @@ exports[`C.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -36,7 +36,7 @@ exports[`CommonJS_Clobbering_Class.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule CommonJS_Clobbering_Class
@@ -100,7 +100,7 @@ exports[`CommonJS_Clobbering_Frozen.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule CommonJS_Clobbering_Frozen
@@ -128,7 +128,7 @@ exports[`CommonJS_Clobbering_Lit.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule CommonJS_Clobbering_Lit
@@ -164,7 +164,7 @@ exports[`CommonJS_Named.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule CommonJS_Named
@@ -196,7 +196,7 @@ exports[`ES6_Default_AnonClass1.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_Default_AnonClass1
@@ -224,7 +224,7 @@ exports[`ES6_Default_AnonClass2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_Default_AnonClass2
@@ -252,7 +252,7 @@ exports[`ES6_Default_AnonFunction1.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_Default_AnonFunction1
@@ -278,7 +278,7 @@ exports[`ES6_Default_AnonFunction2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_Default_AnonFunction2
@@ -304,7 +304,7 @@ exports[`ES6_Default_NamedClass1.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_Default_NamedClass1
@@ -342,7 +342,7 @@ exports[`ES6_Default_NamedClass2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_Default_NamedClass2
@@ -370,7 +370,7 @@ exports[`ES6_Default_NamedFunction1.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_Default_NamedFunction1
@@ -396,7 +396,7 @@ exports[`ES6_Default_NamedFunction2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_Default_NamedFunction2
@@ -422,7 +422,7 @@ exports[`ES6_DefaultAndNamed.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -442,7 +442,7 @@ exports[`ES6_ExportAllFrom_Intermediary1.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_ExportAllFrom_Intermediary1
@@ -466,7 +466,7 @@ exports[`ES6_ExportAllFrom_Intermediary2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_ExportAllFrom_Intermediary2
@@ -490,7 +490,7 @@ exports[`ES6_ExportAllFrom_Source1.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_ExportAllFrom_Source1
@@ -514,7 +514,7 @@ exports[`ES6_ExportAllFrom_Source2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_ExportAllFrom_Source2
@@ -538,7 +538,7 @@ exports[`ES6_ExportAllFromMulti.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -558,7 +558,7 @@ exports[`ES6_ExportFrom_Intermediary1.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_ExportFrom_Intermediary1
@@ -588,7 +588,7 @@ exports[`ES6_ExportFrom_Intermediary2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_ExportFrom_Intermediary2
@@ -618,7 +618,7 @@ exports[`ES6_ExportFrom_Source1.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_ExportFrom_Source1
@@ -643,7 +643,7 @@ exports[`ES6_ExportFrom_Source2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_ExportFrom_Source2
@@ -668,7 +668,7 @@ exports[`ES6_Named1.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_Named1
@@ -731,7 +731,7 @@ exports[`ES6_Named2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6_Named2
@@ -790,7 +790,7 @@ exports[`ExportType.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -808,7 +808,7 @@ exports[`ProvidesModuleA.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule A
@@ -840,7 +840,7 @@ exports[`ProvidesModuleCJSDefault.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule CJSDefault
@@ -868,7 +868,7 @@ exports[`ProvidesModuleD.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule D
@@ -888,7 +888,7 @@ exports[`ProvidesModuleES6Default.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @providesModule ES6Default
@@ -920,7 +920,7 @@ exports[`SideEffects.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -934,7 +934,7 @@ exports[`es6modules.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -1539,7 +1539,7 @@ exports[`test_imports_are_frozen.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 

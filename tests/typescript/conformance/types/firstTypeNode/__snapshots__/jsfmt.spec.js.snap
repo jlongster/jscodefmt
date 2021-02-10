@@ -4,7 +4,7 @@ exports[`firstTypeNode.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export function fooWithTypePredicate(a: any): a is number {
     return true;

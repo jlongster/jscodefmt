@@ -4,7 +4,7 @@ exports[`thisType.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class MyArray<T> extends Array<T> {
     sort(compareFn?: (a: T, b: T) => number): this;

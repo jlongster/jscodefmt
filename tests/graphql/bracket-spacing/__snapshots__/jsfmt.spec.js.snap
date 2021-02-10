@@ -5,7 +5,7 @@ exports[`bracket_spacing.graphql - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 fragment Visit on HighlightedVisit
   @argumentDefinitions(
@@ -27,7 +27,7 @@ exports[`bracket_spacing.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 fragment Visit on HighlightedVisit
   @argumentDefinitions(

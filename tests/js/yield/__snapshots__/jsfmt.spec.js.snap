@@ -4,7 +4,7 @@ exports[`arrow.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function *f() {
   (yield a => a);
@@ -26,7 +26,7 @@ exports[`conditional.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function* f1() {
   a = (yield) ? 1 : 1;
@@ -76,7 +76,7 @@ exports[`jsx.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function* f() {
   yield (<div>generator</div>)
@@ -100,7 +100,7 @@ exports[`jsx-without-parenthesis.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function* f() {
   yield <div>generator</div>

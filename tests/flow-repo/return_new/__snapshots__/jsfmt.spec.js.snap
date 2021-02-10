@@ -4,7 +4,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function Foo() { return {}; }
 var foo: number = new Foo(); // error (returns object literal above)
@@ -70,7 +70,7 @@ exports[`test2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class D {
   constructor(): { x: number }; // OK

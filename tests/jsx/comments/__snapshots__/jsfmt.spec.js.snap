@@ -5,7 +5,7 @@ exports[`eslint-disable.js - {"jsxBracketSameLine":true} format 1`] = `
 jsxBracketSameLine: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const render = items => (
   <div>{ /* eslint-disable */
@@ -42,7 +42,7 @@ exports[`in-end-tag.js - {"jsxBracketSameLine":true} format 1`] = `
 jsxBracketSameLine: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* =========== before slash =========== */
 <a><// line
@@ -160,7 +160,7 @@ exports[`in-tags.js - {"jsxBracketSameLine":true} format 1`] = `
 jsxBracketSameLine: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
   // comment
@@ -228,7 +228,7 @@ exports[`jsx-tag-comment-after-prop.js - {"jsxBracketSameLine":true} format 1`] 
 jsxBracketSameLine: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/typescript-eslint/typescript-eslint/pull/703
 
@@ -264,7 +264,7 @@ exports[`like-a-comment-in-jsx-text.js - {"jsxBracketSameLine":true} format 1`] 
 jsxBracketSameLine: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Foo
 >

@@ -18,7 +18,7 @@ exports[`invalid.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 c.foo.bar().baz ??= result.foo.bar().baz(a.baz) &&= result.baz;
 
@@ -41,7 +41,7 @@ exports[`logical-assignment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a ||= b;
 

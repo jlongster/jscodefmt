@@ -45,7 +45,7 @@ exports[`no-semi.js - {"semi":false} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a
 ;::b.c
@@ -79,7 +79,7 @@ exports[`no-semi.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a
 ;::b.c

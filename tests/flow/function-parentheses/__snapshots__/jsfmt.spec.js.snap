@@ -5,7 +5,7 @@ exports[`single.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const selectorByPath:
   Path
@@ -30,7 +30,7 @@ exports[`single.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const selectorByPath:
   Path
@@ -54,7 +54,7 @@ exports[`single.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const selectorByPath:
   Path
@@ -79,7 +79,7 @@ exports[`test.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Banana = {
   eat: string => boolean,
@@ -216,7 +216,7 @@ exports[`test.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Banana = {
   eat: string => boolean,
@@ -352,7 +352,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Banana = {
   eat: string => boolean,

@@ -4,7 +4,7 @@ exports[`custom-media-queries.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @custom-media     --small-viewport ( max-width:30em   )
 

@@ -4,7 +4,7 @@ exports[`assignment_expression.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 this.size = this._origin = this._capacity = 0;
 

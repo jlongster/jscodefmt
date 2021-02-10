@@ -4,7 +4,7 @@ exports[`html-with-js-script.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +36,7 @@ exports[`script-tag-escaping.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script>
   document.write(/* HTML */ \`

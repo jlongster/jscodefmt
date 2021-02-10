@@ -4,7 +4,7 @@ exports[`function.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 f1 = (
   a =
@@ -130,7 +130,7 @@ exports[`identifier.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const kochabCooieGameOnOboleUnweave = // ???
       annularCooeedSplicesWalksWayWay;
@@ -155,7 +155,7 @@ exports[`number.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 fnNumber =
   // Comment
@@ -251,7 +251,7 @@ exports[`string.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 fnString =
   // Comment

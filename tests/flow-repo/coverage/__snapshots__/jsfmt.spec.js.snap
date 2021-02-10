@@ -4,7 +4,7 @@ exports[`crash.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // This file triggers a violation of the "disjoint-or-nested ranges invariant"
 // that we implicitly assume in type-at-pos and coverage implementations. In
@@ -38,7 +38,7 @@ exports[`declare_module.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // check coverage of declare module
 
@@ -58,7 +58,7 @@ exports[`no_pragma.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let x = 0;
 (x: string);
@@ -74,7 +74,7 @@ exports[`non-termination.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // This file triggers a violation of the "disjoint-or-nested ranges invariant"
 // that we implicitly assume in type-at-pos and coverage implementations. In

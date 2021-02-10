@@ -5,7 +5,7 @@ exports[`multiline.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: "   
   123123123123123123123123123   
@@ -88,7 +88,7 @@ exports[`multiline.yml - {"proseWrap":"never"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: "   
   123123123123123123123123123   
@@ -165,7 +165,7 @@ exports[`multiline.yml - {"singleQuote":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: "   
   123123123123123123123123123   
@@ -253,7 +253,7 @@ exports[`multiline.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: "   
   123123123123123123123123123   
@@ -342,7 +342,7 @@ exports[`quote.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - "123"
 - '123'
@@ -373,7 +373,7 @@ exports[`quote.yml - {"proseWrap":"never"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - "123"
 - '123'
@@ -404,7 +404,7 @@ exports[`quote.yml - {"singleQuote":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - "123"
 - '123'
@@ -434,7 +434,7 @@ exports[`quote.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - "123"
 - '123'

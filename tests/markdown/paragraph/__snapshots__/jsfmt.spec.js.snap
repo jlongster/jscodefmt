@@ -5,7 +5,7 @@ exports[`cjk.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 這是一段很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長的段落
 
@@ -65,7 +65,7 @@ exports[`cjk.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 這是一段很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長的段落
 
@@ -114,7 +114,7 @@ exports[`cjk.md - {"proseWrap":"preserve"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 這是一段很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長的段落
 
@@ -165,7 +165,7 @@ exports[`inline-nodes.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 It removes all original styling[*](#styling-footnote) and ensures that all outputted code conforms to a consistent style. (See this [blog post](http://jlongster.com/A-Prettier-Formatter))
 
@@ -182,7 +182,7 @@ exports[`inline-nodes.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 It removes all original styling[*](#styling-footnote) and ensures that all outputted code conforms to a consistent style. (See this [blog post](http://jlongster.com/A-Prettier-Formatter))
 
@@ -197,7 +197,7 @@ exports[`inline-nodes.md - {"proseWrap":"preserve"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 It removes all original styling[*](#styling-footnote) and ensures that all outputted code conforms to a consistent style. (See this [blog post](http://jlongster.com/A-Prettier-Formatter))
 
@@ -212,7 +212,7 @@ exports[`lorem.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Hic dicta et recusandae incidunt. Reiciendis saepe voluptatem tempore rem aut.
 Iusto sapiente impedit. Laudantium ut id non et aperiam ab.
@@ -246,7 +246,7 @@ exports[`lorem.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Hic dicta et recusandae incidunt. Reiciendis saepe voluptatem tempore rem aut.
 Iusto sapiente impedit. Laudantium ut id non et aperiam ab.
@@ -274,7 +274,7 @@ exports[`lorem.md - {"proseWrap":"preserve"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Hic dicta et recusandae incidunt. Reiciendis saepe voluptatem tempore rem aut.
 Iusto sapiente impedit. Laudantium ut id non et aperiam ab.
@@ -307,7 +307,7 @@ exports[`simple.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 This is a long long long long long long long long long long long long long long long paragraph.
 
@@ -323,7 +323,7 @@ exports[`simple.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 This is a long long long long long long long long long long long long long long long paragraph.
 
@@ -338,7 +338,7 @@ exports[`simple.md - {"proseWrap":"preserve"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 This is a long long long long long long long long long long long long long long long paragraph.
 
@@ -353,7 +353,7 @@ exports[`special-prefix.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc - abc abc abc 
 
@@ -414,7 +414,7 @@ exports[`special-prefix.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc - abc abc abc 
 
@@ -468,7 +468,7 @@ exports[`special-prefix.md - {"proseWrap":"preserve"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc abc - abc abc abc 
 
@@ -523,7 +523,7 @@ exports[`whitespace.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- 0xA0 non-breaking whitespace -->
 
@@ -551,7 +551,7 @@ exports[`whitespace.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- 0xA0 non-breaking whitespace -->
 
@@ -578,7 +578,7 @@ exports[`whitespace.md - {"proseWrap":"preserve"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- 0xA0 non-breaking whitespace -->
 

@@ -4,7 +4,7 @@ exports[`empty-with-no-trailing-newline.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 =====================================output=====================================
@@ -16,7 +16,7 @@ exports[`empty-with-trailing-newline.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 
@@ -29,7 +29,7 @@ exports[`end-of-line-last.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a bare string to hightlight eol last handling
 

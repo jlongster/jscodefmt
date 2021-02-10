@@ -4,7 +4,7 @@ exports[`Bar.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 /* @providesModule Bar */
@@ -55,7 +55,7 @@ exports[`Foo.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 /* @providesModule Foo */
@@ -118,7 +118,7 @@ exports[`Qux.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 /* @providesModule Qux */

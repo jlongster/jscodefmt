@@ -4,7 +4,7 @@ exports[`core.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class Array<T> {
     @@iterator(): Iterator<T>;
@@ -69,7 +69,7 @@ exports[`immutable.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare module "immutable" {
   declare class Map<K,V> {

@@ -5,7 +5,7 @@ exports[`trailingComma.notjson - {"trailingComma":"all"} format 1`] = `
 parsers: ["json"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   "k1": "v1",
@@ -28,7 +28,7 @@ exports[`trailingComma.notjson - {"trailingComma":"all"} format 2`] = `
 parsers: ["json5"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   "k1": "v1",
@@ -50,7 +50,7 @@ exports[`trailingComma.notjson format 1`] = `
 ====================================options=====================================
 parsers: ["json"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   "k1": "v1",
@@ -72,7 +72,7 @@ exports[`trailingComma.notjson format 2`] = `
 ====================================options=====================================
 parsers: ["json5"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   "k1": "v1",
@@ -94,7 +94,7 @@ exports[`trailingComma.notjson format 3`] = `
 ====================================options=====================================
 parsers: ["json-stringify"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   "k1": "v1",

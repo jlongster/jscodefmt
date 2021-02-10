@@ -4,7 +4,7 @@ exports[`comment.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export function match(): string /* the matching pattern */
 a
@@ -20,7 +20,7 @@ exports[`default.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default interface Foo {
   readonly bar?: string;
@@ -38,7 +38,7 @@ exports[`export.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare module "hello" {
     export default Hello;
@@ -64,7 +64,7 @@ exports[`export-as-ns.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export * as utilities from "./utilities.js";
 
@@ -78,7 +78,7 @@ exports[`export-class.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export class A {}
 export default class B {}

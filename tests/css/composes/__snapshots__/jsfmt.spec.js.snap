@@ -4,7 +4,7 @@ exports[`composes.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .reference {
   composes: selector from "a/long/file/path/exceeding/the/maximum/length/forcing/a/line-wrap/file.css";

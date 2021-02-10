@@ -5,7 +5,7 @@ exports[`brackets.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import {
   runTaskForChanged,
@@ -39,7 +39,7 @@ exports[`brackets.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import {
   runTaskForChanged,
@@ -74,7 +74,7 @@ exports[`comments.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import { a //comment1
 //comment2
@@ -178,7 +178,7 @@ exports[`comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import { a //comment1
 //comment2
@@ -283,7 +283,7 @@ exports[`empty-import.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import { } from '@types/googlemaps';
 
@@ -297,7 +297,7 @@ exports[`empty-import.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import { } from '@types/googlemaps';
 
@@ -312,7 +312,7 @@ exports[`inline.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import somethingSuperLongsomethingSuperLong from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
 import {somethingSuperLongsomethingSuperLong1} from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
@@ -337,7 +337,7 @@ exports[`inline.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import somethingSuperLongsomethingSuperLong from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
 import {somethingSuperLongsomethingSuperLong1} from 'somethingSuperLongsomethingSuperLongsomethingSuperLong'
@@ -363,7 +363,7 @@ exports[`long-line.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import someCoolUtilWithARatherLongName from '../../../../utils/someCoolUtilWithARatherLongName';
 
@@ -377,7 +377,7 @@ exports[`long-line.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import someCoolUtilWithARatherLongName from '../../../../utils/someCoolUtilWithARatherLongName';
 
@@ -392,7 +392,7 @@ exports[`multiple_standalones.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import a, * as b from 'a';
 
@@ -406,7 +406,7 @@ exports[`multiple_standalones.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import a, * as b from 'a';
 
@@ -421,7 +421,7 @@ exports[`same-local-and-imported.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import {a} from 'a';
 import {b as b} from 'b';
@@ -439,7 +439,7 @@ exports[`same-local-and-imported.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import {a} from 'a';
 import {b as b} from 'b';

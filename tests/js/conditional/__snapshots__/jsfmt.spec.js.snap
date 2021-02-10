@@ -4,7 +4,7 @@ exports[`comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var inspect = 4 === util.inspect.length
   ? // node <= 0.8.x
@@ -225,7 +225,7 @@ exports[`new-expression.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const testConsole = new TestConsole(
   config.useStderr ? process.stderr : process.stdout
@@ -243,7 +243,7 @@ exports[`no-confusing-arrow.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // no-confusing-arrow
 var x = a => 1 ? 2 : 3;

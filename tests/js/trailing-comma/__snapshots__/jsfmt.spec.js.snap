@@ -5,7 +5,7 @@ exports[`dynamic-import.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import(
   'myreallylongdynamicallyloadedmodulenamemyreallylongdynamicallyloadedmodulename'
@@ -24,7 +24,7 @@ exports[`dynamic-import.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import(
   'myreallylongdynamicallyloadedmodulenamemyreallylongdynamicallyloadedmodulename'
@@ -42,7 +42,7 @@ exports[`dynamic-import.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import(
   'myreallylongdynamicallyloadedmodulenamemyreallylongdynamicallyloadedmodulename'
@@ -61,7 +61,7 @@ exports[`es5.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function send_single_email(
   app,
@@ -108,7 +108,7 @@ exports[`es5.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function send_single_email(
   app,
@@ -154,7 +154,7 @@ exports[`es5.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function send_single_email(
   app,
@@ -201,7 +201,7 @@ exports[`function-calls.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = (param1, param2, param3) => {}
 
@@ -254,7 +254,7 @@ exports[`function-calls.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = (param1, param2, param3) => {}
 
@@ -306,7 +306,7 @@ exports[`function-calls.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = (param1, param2, param3) => {}
 
@@ -359,7 +359,7 @@ exports[`jsx.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
   onClick={() =>
@@ -386,7 +386,7 @@ exports[`jsx.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
   onClick={() =>
@@ -412,7 +412,7 @@ exports[`jsx.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
   onClick={() =>
@@ -439,7 +439,7 @@ exports[`object.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = {
   b: true,
@@ -494,7 +494,7 @@ exports[`object.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = {
   b: true,
@@ -548,7 +548,7 @@ exports[`object.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = {
   b: true,
@@ -603,7 +603,7 @@ exports[`trailing_whitespace.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let example = [
   'FOO',
@@ -702,7 +702,7 @@ exports[`trailing_whitespace.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let example = [
   'FOO',
@@ -800,7 +800,7 @@ exports[`trailing_whitespace.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let example = [
   'FOO',

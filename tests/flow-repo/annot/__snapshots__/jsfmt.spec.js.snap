@@ -4,7 +4,7 @@ exports[`annot.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo(str:string, i:number):string {
   return str;
@@ -151,7 +151,7 @@ exports[`forward_ref.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let myClassInstance: MyClass = null; // forward ref ok, null ~> class error
 
@@ -193,7 +193,7 @@ exports[`issue-530.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo(...args: any) { }
 
@@ -211,7 +211,7 @@ exports[`leak.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /** @flow */
 
@@ -267,7 +267,7 @@ exports[`other.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class C { }
 module.exports = (C: any);
@@ -283,7 +283,7 @@ exports[`scope.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Merge<T> = (a: T, b: T) => T;
 
@@ -347,7 +347,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var C = require('./other');
 ((0: C): string);

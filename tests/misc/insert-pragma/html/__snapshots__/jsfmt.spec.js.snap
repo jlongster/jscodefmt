@@ -5,7 +5,7 @@ exports[`with-pragma.html - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- @prettier -->
 
@@ -24,7 +24,7 @@ exports[`without-pragma.html - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Hello        World
 

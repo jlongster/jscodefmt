@@ -5,7 +5,7 @@ exports[`no-semi.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export class Mutation {
   private set: NQuad[];

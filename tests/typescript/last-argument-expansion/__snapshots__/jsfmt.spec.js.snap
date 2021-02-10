@@ -4,7 +4,7 @@ exports[`break.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default class AddAssetHtmlPlugin {
   apply(compiler: WebpackCompilerType) {
@@ -42,7 +42,7 @@ exports[`edge_case.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var listener = DOM.listen(
   introCard,

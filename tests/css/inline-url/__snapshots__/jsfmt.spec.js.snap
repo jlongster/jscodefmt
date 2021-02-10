@@ -4,7 +4,7 @@ exports[`empty.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @font-face {
   src: url();
@@ -22,7 +22,7 @@ exports[`inline_url.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .stringContentIsNotModifiedEvenIfInvalid {
   background: url('@images');

@@ -4,7 +4,7 @@ exports[`indent.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 div {
   background: var(fig-light-02) url(/images/inset-shadow-east-ltr.png) 100% 0 repeat-y;
@@ -31,7 +31,7 @@ exports[`selectors.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
   ~ .Pagination-itemWrapper:not(.is-separator):not([data-priority^='#{$priority}'])

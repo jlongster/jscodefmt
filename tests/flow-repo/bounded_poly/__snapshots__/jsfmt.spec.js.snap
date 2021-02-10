@@ -4,7 +4,7 @@ exports[`scope.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo<X, Y:X>(x:X, y:Y):void { }
 foo(0, "");
@@ -26,7 +26,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo<T: number>(x: T): T {
     var _ = x * 1; // OK

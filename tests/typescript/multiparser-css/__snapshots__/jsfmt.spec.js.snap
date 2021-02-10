@@ -4,7 +4,7 @@ exports[`issue-6259.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const yesFrame = (
     ...args: Interpolation<ThemedStyledProps<{}, Theme>>[]

@@ -5,7 +5,7 @@ exports[`front-matter-json.md - {"embeddedLanguageFormatting":"off"} format 1`] 
 embeddedLanguageFormatting: "off"
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---json
 {
@@ -29,7 +29,7 @@ exports[`front-matter-json.md format 1`] = `
 ====================================options=====================================
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---json
 {
@@ -54,7 +54,7 @@ exports[`front-matter-pandoc.md - {"embeddedLanguageFormatting":"off"} format 1`
 embeddedLanguageFormatting: "off"
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---yaml
   
@@ -83,7 +83,7 @@ exports[`front-matter-pandoc.md format 1`] = `
 ====================================options=====================================
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---yaml
   
@@ -111,7 +111,7 @@ exports[`test.md - {"embeddedLanguageFormatting":"off"} format 1`] = `
 embeddedLanguageFormatting: "off"
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`js
 1 +  2
@@ -129,7 +129,7 @@ exports[`test.md format 1`] = `
 ====================================options=====================================
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`js
 1 +  2

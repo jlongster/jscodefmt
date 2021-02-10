@@ -4,7 +4,7 @@ exports[`parens.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const result = (a + b) >>> 1;
 var sizeIndex = ((index - 1) >>> level) & MASK;

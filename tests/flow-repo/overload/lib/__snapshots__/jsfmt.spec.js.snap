@@ -4,7 +4,7 @@ exports[`lib.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class FakeUint8Array {
   set(index: number, value: number): void;

@@ -4,7 +4,7 @@ exports[`as.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const name = (description as DescriptionObject).name || (description as string);
 this.isTabActionBar((e.target || e.srcElement) as HTMLElement);
@@ -120,7 +120,7 @@ exports[`assignment.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export const LOG_LEVEL = {
     EMERGENCY: 0,
@@ -192,7 +192,7 @@ exports[`assignment2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const defaultMaskGetter = $parse(attrs[directiveName]) as (
   scope: ng.IScope
@@ -262,7 +262,7 @@ exports[`export_default_as.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default (function log() {} as typeof console.log)
 
@@ -276,7 +276,7 @@ exports[`long-identifiers.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const bifornCringerMoshedPerplexSawder =
   askTrovenaBeenaDependsRowans as glimseGlyphsHazardNoopsTieTie;
@@ -314,7 +314,7 @@ exports[`return.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo() {
   return {
@@ -338,7 +338,7 @@ exports[`ternary.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo = (coooooooooooooooooooooooooooooooooooooooooooooooooooond
     ? baaaaaaaaaaaaaaaaaaaaar

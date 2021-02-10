@@ -5,7 +5,7 @@ exports[`escape.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 hello \\* world _ ~~ ya
 

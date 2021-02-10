@@ -4,7 +4,7 @@ exports[`class_with_generics.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import React from 'react';
 
@@ -37,7 +37,7 @@ exports[`constructor-field-override.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/prettier/prettier/issues/1481
 class Foo {
@@ -57,7 +57,7 @@ exports[`functions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 export function updateStoreFromURL(

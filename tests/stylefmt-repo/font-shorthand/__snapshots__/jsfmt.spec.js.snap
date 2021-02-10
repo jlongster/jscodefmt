@@ -4,7 +4,7 @@ exports[`font-shorthand.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .class {
   font: normal normal 24px/1 "myfont";font: normal normal normal 12px/20px myfont;

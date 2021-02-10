@@ -4,7 +4,7 @@ exports[`empty_generic_break.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel-flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class X {
 	a: B<> = SuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLong;
@@ -22,7 +22,7 @@ exports[`simple-types.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel-flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo1: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<bigint> = a;
 const foo2: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<1n> = a;

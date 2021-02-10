@@ -6,7 +6,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 16
 rangeStart: 8
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | a = [
   2 | ,
@@ -32,7 +32,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 26
 rangeStart: 13
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | foo = 1.0000;bar = 1.0000;baz=1.0000;
     |              ^^^^^^^^^^^^^
@@ -55,7 +55,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 45
 rangeStart: 28
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 | function a(
    2 | ){
@@ -87,7 +87,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 30
 rangeStart: 13
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | a (
   2 | );
@@ -114,7 +114,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 26
 rangeStart: 10
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |
   2 |
@@ -142,7 +142,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 48
 rangeStart: 19
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | call(1,2,3)
 > 2 | call(1,2,3)
@@ -169,7 +169,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 1
 rangeStart: 0
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | 'aaa';
     | ^
@@ -188,7 +188,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 43
 rangeStart: 16
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | function ugly ( {a=1,     b     =   2     }      ) {}
     |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -205,7 +205,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 225
 rangeStart: 222
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | function ugly ( {a=1,     b     =   2     }      ) {
   2 |   function ugly ( {a=1,     b     =   2     }      ) {
@@ -236,7 +236,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 31
 rangeStart: 17
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 | export class F {
 >  2 |   reformatThis() {
@@ -269,7 +269,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 18
 rangeStart: 17
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 | export class F {
 >  2 |   reformatThis() {
@@ -302,7 +302,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 30
 rangeStart: 16
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | export default class Foo{
     |                 ^^^^^^^^^
@@ -324,7 +324,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 30
 rangeStart: 16
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | export default function Foo(){
     |                 ^^^^^^^^^^^^^^
@@ -345,7 +345,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 28
 rangeStart: 16
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | /* */ function Foo(){
     |                 ^^^^^
@@ -368,7 +368,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 23
 rangeStart: 17
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | /* */ class Foo{
 > 2 | /**/
@@ -390,7 +390,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 42
 rangeStart: 29
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | export const Button = styled.button\`
     |                              ^^^^^^^
@@ -412,7 +412,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 155
 rangeStart: 80
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | function ugly() {
   2 |   const dictWithSeveralEntries = {
@@ -445,7 +445,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 56
 rangeStart: 45
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 | import  def , {named}  from    'x'
    2 |
@@ -478,7 +478,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 79
 rangeStart: 57
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 | import  def , {named}  from    'x'
    2 |
@@ -512,7 +512,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 108
 rangeStart: 104
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 | import  def , {named}  from    'x'
    2 |
@@ -545,7 +545,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 22
 rangeStart: 7
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
 >  1 | import  def , {named}  from    'x'
      |        ^^^^^^^^^^^^^^^
@@ -578,7 +578,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 49
 rangeStart: 30
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 | call(
    2 |   1, 2,3
@@ -623,7 +623,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 56
 rangeStart: 18
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 | call(
    2 |   1, 2,3
@@ -672,7 +672,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 37
 rangeStart: 0
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | try {
     | ^^^^^
@@ -701,7 +701,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 110
 rangeStart: 28
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | function f() {
 > 2 |   if (true) {
@@ -728,7 +728,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 37
 rangeStart: 9
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | try {
 > 2 |   if (condition) {
@@ -757,7 +757,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 37
 rangeStart: 9
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | try {
 > 2 | 1;if (condition) {
@@ -786,7 +786,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 14
 rangeStart: 11
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | const y = {a:1, b:2}
     |            ^^^
@@ -803,7 +803,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 104
 rangeStart: 53
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 |
    2 | const y =       [
@@ -842,7 +842,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 227
 rangeStart: 224
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | function ugly ( {a=1,     b     =   2     }      ) {
   2 |   function ugly ( {a=1,     b     =   2     }      ) {
@@ -873,7 +873,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 50
 rangeStart: 32
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | // Unchanged
   2 | call(
@@ -905,7 +905,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 18
 rangeStart: 0
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
 >  1 | call(
      | ^^^^^
@@ -939,7 +939,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 13
 rangeStart: 26
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | foo = 1.0000;bar = 1.0000;baz=1.0000;
     |              ^^^^^^^^^^^^^ [Reversed range]
@@ -958,7 +958,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 13
 rangeStart: 13
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | foo = 1.0000;bar = 1.0000;baz=1.0000;
     |              ^
@@ -977,7 +977,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 8
 rangeStart: 7
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 | try {}
 > 2 | catch (err) {}
@@ -996,7 +996,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 rangeEnd: 1
 rangeStart: 0
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 |  
     | ^

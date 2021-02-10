@@ -4,7 +4,7 @@ exports[`conditional.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (valid
   ? helper.responseBody(this.currentUser)
@@ -24,7 +24,7 @@ exports[`expand.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const veryVeryVeryVeryVeryVeryVeryLong = doc.expandedStates[doc.expandedStates.length - 1];
 const small = doc.expandedStates[doc.expandedStates.length - 1];
@@ -117,7 +117,7 @@ exports[`logical.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (veryLongVeryLongVeryLong || e).prop;
 

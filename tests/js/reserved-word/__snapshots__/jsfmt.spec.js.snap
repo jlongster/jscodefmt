@@ -22,7 +22,7 @@ exports[`interfaces.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface = "foo";
 interface + 3;

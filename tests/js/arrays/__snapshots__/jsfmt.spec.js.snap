@@ -4,7 +4,7 @@ exports[`empty.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = someVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeLong.Expression || [];
 const b = someVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeryVeLong.Expression || {};
@@ -22,7 +22,7 @@ exports[`holes-in-args.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 new Test()
   .test()
@@ -39,7 +39,7 @@ exports[`issue-10159.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {for (const srcPath of [src, \`\${src}.js\`, \`\${src}/index\`, \`\${src}/index.js\`]) {}}
 {for (const srcPath of [123, 123_123_123, 123_123_123_1, 13_123_3123_31_43]) {}}
@@ -75,7 +75,7 @@ exports[`last.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [,];
 [,,];
@@ -95,7 +95,7 @@ exports[`nested.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [[]];
 [[], []];
@@ -205,7 +205,7 @@ exports[`numbers-in-args.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 expect(bifornCringerMoshedPerplexSawder.getArrayOfNumbers()).toEqual(
   [1, 2, 3, 4, 5]
@@ -242,7 +242,7 @@ exports[`numbers-in-assignment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 bifornCringerMoshedPerplex.bifornCringerMoshedPerplexSawder.arrayOfNumbers = [
   1,
@@ -281,7 +281,7 @@ exports[`numbers-negative.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const numbers1 = [-2017,-506252,-744011292,-7224,-70.4,-83353.6,-708.4,-174023963.52,-40385,
 // comment1
@@ -323,7 +323,7 @@ exports[`numbers-negative-comment-after-minus.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const numbers = [-2017,-506252,-744011292,-7224,-70.4,-83353.6,-708.4,-174023963.52,-40385,-// comment1
 380014,
@@ -414,7 +414,7 @@ exports[`numbers-trailing-comma.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // --------------- print-width -------------------------------------------------
 c = [
@@ -435,7 +435,7 @@ exports[`numbers-with-holes.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const numberWithHoles1 = [
   7234932941,
@@ -504,7 +504,7 @@ exports[`numbers-with-trailing-comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function isUnusedDiagnostic(code) {
   return [
@@ -538,7 +538,7 @@ exports[`numbers-with-tricky-comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const lazyCatererNumbers =  [1, 2, 4, 7, 11, 16, 22, 29, 37, 46,
 56, 67, 79, 92, 106, 121, 137, 154, 172, 191, 211, 232, 254, 277, 301, 326, 352, 379, 407, 436, 466, /*block*/
@@ -566,7 +566,7 @@ exports[`numbers1.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const numbers1 = [
   7234932941,
@@ -699,7 +699,7 @@ exports[`numbers2.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const userIds1 = [
   7234932941,
@@ -785,7 +785,7 @@ exports[`numbers3.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let test_case = [
 	[
@@ -831,7 +831,7 @@ exports[`preserve_empty_lines.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = [
 

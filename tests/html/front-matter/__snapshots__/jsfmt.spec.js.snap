@@ -4,7 +4,7 @@ exports[`custom-parser.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---mycustomparser
   
@@ -33,7 +33,7 @@ exports[`empty.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 ---
@@ -54,7 +54,7 @@ exports[`empty2.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 ---
@@ -76,7 +76,7 @@ exports[`issue-9042.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 layout: foo
@@ -99,7 +99,7 @@ exports[`issue-9042-no-empty-line.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 layout: foo

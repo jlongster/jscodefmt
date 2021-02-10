@@ -4,7 +4,7 @@ exports[`contextualTypeWithTuple.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿// no error
 var numStrTuple: [number, string] = [5, "hello"];
@@ -66,7 +66,7 @@ exports[`indexerWithTuple.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿var strNumTuple: [string, number] = ["foo", 10]; 
 var numTupleTuple: [number, [string, number]] = [10, ["bar", 20]];
@@ -142,7 +142,7 @@ exports[`tupleElementTypes1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var [a, b]: [number, any] = [undefined, undefined];
 
@@ -156,7 +156,7 @@ exports[`tupleElementTypes2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function f([a, b]: [number, any]) { }
 
@@ -170,7 +170,7 @@ exports[`tupleElementTypes3.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var [a, b] = [0, undefined];
 
@@ -184,7 +184,7 @@ exports[`tupleElementTypes4.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function f([a, b] = [0, undefined]) { }
 
@@ -198,7 +198,7 @@ exports[`typeInferenceWithTupleType.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿function combine<T, U>(x: T, y: U): [T, U] {
     return [x, y];
@@ -257,7 +257,7 @@ exports[`wideningTuples1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@noImplicitAny: true
 declare function foo<T extends [any]>(x: T): T;
@@ -279,7 +279,7 @@ exports[`wideningTuples2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@noImplicitAny: true
 var foo: () => [any] = function bar() {
@@ -303,7 +303,7 @@ exports[`wideningTuples3.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@noImplicitAny: true
 var a: [any];
@@ -323,7 +323,7 @@ exports[`wideningTuples4.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var a: [any];
 
@@ -343,7 +343,7 @@ exports[`wideningTuples5.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@noImplicitAny: true
 var [a, b] = [undefined, null];
@@ -359,7 +359,7 @@ exports[`wideningTuples6.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var [a, b] = [undefined, null];
 a = "";
@@ -377,7 +377,7 @@ exports[`wideningTuples7.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@noImplicitAny: true
 var foo = function bar() {

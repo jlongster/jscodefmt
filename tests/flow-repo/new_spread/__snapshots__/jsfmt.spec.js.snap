@@ -4,7 +4,7 @@ exports[`type.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class T {}
 declare var x: T;
@@ -210,7 +210,7 @@ exports[`type_any.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type O1 = {...any};
 var o1: O1 = (0: mixed); // ok
@@ -248,7 +248,7 @@ exports[`type_contra.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class T {};
 
@@ -286,7 +286,7 @@ exports[`type_dict.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class T {}
 declare class U {}
@@ -374,7 +374,7 @@ exports[`type_generic.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare function spread<A,B>(a: A, b: B): {...A, ...B};
 (spread({p:0},{q:0}): {|+p:number,+q:number|}); // ok
@@ -392,7 +392,7 @@ exports[`type_instance.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {+p: string|number}
 class B extends A {p: number}
@@ -432,7 +432,7 @@ exports[`type_intersection.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class T {}
 declare class U {}
@@ -500,7 +500,7 @@ exports[`type_intersection_optional.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class T {}
 declare class U {}
@@ -642,7 +642,7 @@ exports[`type_optional.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class T {}
 declare class U {}
@@ -714,7 +714,7 @@ exports[`type_union.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class T {}
 declare var x: T;

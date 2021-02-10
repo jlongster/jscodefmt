@@ -5,7 +5,7 @@ exports[`0-indent.js - {"proseWrap":"always"} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 md\`
 This line shouldn't be indented at all in the resulting output.
@@ -59,7 +59,7 @@ exports[`codeblock.js - {"proseWrap":"always"} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 md\`
 \\\`\\\`\\\`js
@@ -90,7 +90,7 @@ exports[`escape.js - {"proseWrap":"always"} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 markdown\`
   const cssString = css\\\`
@@ -129,7 +129,7 @@ exports[`issue-5021.js - {"proseWrap":"always"} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 if (true) {
   md\`
@@ -213,7 +213,7 @@ exports[`markdown.js - {"proseWrap":"always"} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default function ReadMe() {
     return md\`
@@ -274,7 +274,7 @@ exports[`single-line.js - {"proseWrap":"always"} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 markdown\`# hello\`
 

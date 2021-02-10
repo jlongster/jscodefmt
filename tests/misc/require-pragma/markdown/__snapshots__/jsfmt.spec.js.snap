@@ -5,7 +5,7 @@ exports[`empty-front-matter-with-pragma.md - {"requirePragma":true} format 1`] =
 parsers: ["markdown"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 ---
@@ -30,7 +30,7 @@ exports[`empty-front-matter-without-pragma.md - {"requirePragma":true} format 1`
 parsers: ["markdown"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 ---
@@ -51,7 +51,7 @@ exports[`front-matter-with-pragma.md - {"requirePragma":true} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 something
@@ -78,7 +78,7 @@ exports[`front-matter-without-pragma.md - {"requirePragma":true} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 something
@@ -101,7 +101,7 @@ exports[`with-pragma.md - {"requirePragma":true} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- @prettier -->
 
@@ -120,7 +120,7 @@ exports[`with-pragma-in-multiline.md - {"requirePragma":true} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!--
   MIT LICENSE 
@@ -151,7 +151,7 @@ exports[`without-pragma.md - {"requirePragma":true} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 I     should      stay      as-is   !!
 

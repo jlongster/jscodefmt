@@ -4,7 +4,7 @@ exports[`comment_before_else.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 if (cond) {
   stuff;
@@ -42,7 +42,7 @@ exports[`else.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Both functions below should be formatted exactly the same
 
@@ -91,7 +91,7 @@ exports[`if_comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 async function f1() {
   if (untrackedChoice === 0) /* Cancel */ {
@@ -208,7 +208,7 @@ exports[`trailing_comment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 if (code === 92 /* '\\' */) {}
 if (code === 92 /* '\\' */ /* '\\' */) {}

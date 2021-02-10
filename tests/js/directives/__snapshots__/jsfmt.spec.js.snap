@@ -4,7 +4,7 @@ exports[`escaped.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Unnecessary escapes. (adapted from tests/quotes/strings.js)
 // Note that in directives, unnecessary escapes should be preserved.
@@ -86,7 +86,7 @@ exports[`issue-7346.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ('bar'); // parens should not be removed to avoid becoming a directive
 \`foo\`;
@@ -106,7 +106,7 @@ exports[`last-line-0.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 'use strict';
 =====================================output=====================================
@@ -119,7 +119,7 @@ exports[`last-line-1.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 'use strict';
 
@@ -133,7 +133,7 @@ exports[`last-line-2.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 'use strict';
 
@@ -148,7 +148,7 @@ exports[`newline.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -174,7 +174,7 @@ exports[`no-newline.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "use strict";
 a
@@ -190,7 +190,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "use strict";
 

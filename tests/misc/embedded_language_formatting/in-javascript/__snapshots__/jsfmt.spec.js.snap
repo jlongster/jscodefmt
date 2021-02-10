@@ -5,7 +5,7 @@ exports[`test.js - {"embeddedLanguageFormatting":"off"} format 1`] = `
 embeddedLanguageFormatting: "off"
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 css\`a { }\`
 
@@ -43,7 +43,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 css\`a { }\`
 

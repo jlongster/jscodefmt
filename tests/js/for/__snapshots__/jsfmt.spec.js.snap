@@ -4,7 +4,7 @@ exports[`comment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 for (x
 /*a*/
@@ -78,7 +78,7 @@ exports[`for.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 for (;;) {}
 for (var i = 0; i < 10; ++i) {}
@@ -100,7 +100,7 @@ exports[`in.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 for ((x in a);;) {}
 for (a=(a in b);;) {}
@@ -136,7 +136,7 @@ exports[`var.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 for (a in b) var c = {}; [];
 

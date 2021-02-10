@@ -4,7 +4,7 @@ exports[`argument_expansion.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const bar1 = [1,2,3].reduce((carry, value) => {
   return [...carry, value];

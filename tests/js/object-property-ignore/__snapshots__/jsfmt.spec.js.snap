@@ -5,7 +5,7 @@ exports[`ignore.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo = {
   // prettier-ignore
@@ -110,7 +110,7 @@ exports[`ignore.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo = {
   // prettier-ignore
@@ -214,7 +214,7 @@ exports[`ignore.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo = {
   // prettier-ignore
@@ -319,7 +319,7 @@ exports[`issue-5678.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #5678
 const refreshTokenPayload = {
@@ -436,7 +436,7 @@ exports[`issue-5678.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #5678
 const refreshTokenPayload = {
@@ -552,7 +552,7 @@ exports[`issue-5678.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #5678
 const refreshTokenPayload = {

@@ -4,7 +4,7 @@ exports[`flow-only.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "flow", "babel-flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 const foo6: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<empty> = a;
@@ -21,7 +21,7 @@ exports[`issue-9501.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "flow", "babel-flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const name: SomeGeneric<
   Pick<Config, "ONE_LONG_PROP" | "ANOTHER_LONG_PROP">
@@ -39,7 +39,7 @@ exports[`simple-types.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "flow", "babel-flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo1: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<any> = a;
 const foo2: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<null> = a;
@@ -96,7 +96,7 @@ exports[`template-literal-types.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "flow", "babel-flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo1: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<\`Hello, \${keyof World}\`> = a;
 
@@ -110,7 +110,7 @@ exports[`typescript-only.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "flow", "babel-flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo1: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<never> = a;
 const foo2: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<object> = a;

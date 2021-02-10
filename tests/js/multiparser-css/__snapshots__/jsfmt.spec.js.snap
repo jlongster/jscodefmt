@@ -4,7 +4,7 @@ exports[`colons-after-substitutions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Icon = styled.div\`
   flex: none;
@@ -49,7 +49,7 @@ exports[`colons-after-substitutions2.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Icon = styled.div\`
   height: 48px;
@@ -107,7 +107,7 @@ exports[`issue-2636.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export const ButtonWrapper = styled.button\`
   \${base}
@@ -149,7 +149,7 @@ exports[`issue-2883.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export const foo = css\`
 &.foo .\${bar}::before,&.foo[value="hello"] .\${bar}::before {
@@ -195,7 +195,7 @@ exports[`issue-5697.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const StyledH1 = styled.div\`
   font-size: 2.5em;
@@ -242,7 +242,7 @@ exports[`issue-5961.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Steps = styled.div\`
   @media (min-width: 1px) {
@@ -325,7 +325,7 @@ exports[`issue-6259.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export const Group = styled.div\`
   margin: 0;
@@ -367,7 +367,7 @@ exports[`issue-9072.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const style1 = css\`
   width:\${size+10}\${sizeUnit};
@@ -405,7 +405,7 @@ exports[`styled-components.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const ListItem1 = styled.li\`\`;
 
@@ -942,7 +942,7 @@ exports[`styled-components-multiple-expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Header = styled.div\`
   \${something()}
@@ -1002,7 +1002,7 @@ exports[`url.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 styled.div\`color:red;background: url(http://example.com?q=\${foo})\`
 
@@ -1019,7 +1019,7 @@ exports[`var.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Something = styled.div\`
   background: var(--\${one}); /* ... */

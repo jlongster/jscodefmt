@@ -4,7 +4,7 @@ exports[`XControllerURIBuilder.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @generated SignedSource<<13ca42bbc7fe91f15057861e18a77d88>>

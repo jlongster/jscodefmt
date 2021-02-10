@@ -4,7 +4,7 @@ exports[`abstract.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class AbstractSocket {
   createSocket?(): Promise<string>
@@ -22,7 +22,7 @@ exports[`classExpression.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x = class C {
 }
@@ -51,7 +51,7 @@ exports[`mixinAccessModifiers.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @declaration: true
 
@@ -279,7 +279,7 @@ exports[`mixinClassesAnnotated.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @declaration: true
 
@@ -414,7 +414,7 @@ exports[`mixinClassesAnonymous.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Constructor<T> = new(...args: any[]) => T;
 
@@ -555,7 +555,7 @@ exports[`mixinClassesMembers.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @declaration: true
 
@@ -767,7 +767,7 @@ exports[`nestedClassDeclaration.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // nested classes are not allowed
 

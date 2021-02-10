@@ -4,7 +4,7 @@ exports[`class_expr.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 // issue #1191
@@ -32,7 +32,7 @@ exports[`contra.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Counterexample with contravariant this type
 
@@ -160,7 +160,7 @@ exports[`export.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export class A1 {
   foo(): this { return this; }
@@ -206,7 +206,7 @@ exports[`generics.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class Generic<X> {
   clone(): Generic<X> { return this; }
@@ -241,7 +241,7 @@ exports[`import.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Check that imports are handled properly with this types
 
@@ -301,7 +301,7 @@ exports[`interface.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface I { xs: Array<this>; }
 interface J { f(): J; }
@@ -339,7 +339,7 @@ exports[`lib_client.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (new DoublyLinkedList().prev(): DoublyLinkedList);
 (new DoublyLinkedList().next(): DoublyLinkedList)
@@ -371,7 +371,7 @@ exports[`self.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {
   foo() { return this; } // return of foo is not annotated to get around
@@ -401,7 +401,7 @@ exports[`statics.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // supporting \`this\` type in statics
 
@@ -448,7 +448,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Examples without \`this\` types (compare with examples below)
 

@@ -4,7 +4,7 @@ exports[`arrow.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function f() {
   const appEntities = getAppEntities(loadObject).filter(
@@ -56,7 +56,7 @@ exports[`bitwise-flags.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const FLAG_A = 1 << 0;
 const FLAG_B = 1 << 1;
@@ -78,7 +78,7 @@ exports[`call.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (
   aaaaaaaaaaaaaaaaaaaaaaaaa &&
@@ -208,7 +208,7 @@ exports[`comment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = (
   // Comment 1
@@ -329,7 +329,7 @@ exports[`equality.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 x == y == z;
 x != y == z;
@@ -359,7 +359,7 @@ exports[`exp.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a ** b ** c;
 (a ** b) ** c;
@@ -389,7 +389,7 @@ exports[`if.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 if (this.hasPlugin("dynamicImports") && this.lookahead().type) {}
 
@@ -428,7 +428,7 @@ exports[`inline-jsx.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const user = renderedUser || <div><User name={this.state.user.name} age={this.state.user.age} /></div>;
 
@@ -466,7 +466,7 @@ exports[`inline-object-array.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 prevState = prevState || {
   catalogs: [],
@@ -660,7 +660,7 @@ exports[`jsx_parent.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
   src={
@@ -751,7 +751,7 @@ exports[`like-regexp.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 0 ? a : { b : 1 }/2;
 
@@ -765,7 +765,7 @@ exports[`math.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 x + y / z;
 x / y + z;
@@ -821,7 +821,7 @@ exports[`return.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo() {
   return this.hasPlugin("dynamicImports") && this.lookahead().type === tt.parenLeft.right;
@@ -868,7 +868,7 @@ exports[`short-right.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 this._cumulativeHeights &&
  Math.abs(
@@ -915,7 +915,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // It should always break the highest precedence operators first, and
 // break them all at the same time.
@@ -1004,7 +1004,7 @@ exports[`unary.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const anyTestFailures = !(
   aggregatedResults.numFailedTests === 0 &&

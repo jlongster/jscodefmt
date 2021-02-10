@@ -4,7 +4,7 @@ exports[`complex.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class loooooooooooooooooooong1 extends foooooooo(foooooooo(foooooooo(foooooooo(foooooooo(foooooooo(foooooooo(foooooooo()))))))) {}
 
@@ -52,7 +52,7 @@ exports[`extends.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // "ArrowFunctionExpression"
 class a1 extends (() => {}) {}

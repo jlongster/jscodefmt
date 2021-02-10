@@ -4,7 +4,7 @@ exports[`type_annotations-3.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel-flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import type { OneType } from './oneFile.js'
 /*::

@@ -5,7 +5,7 @@ exports[`with-pragma.yml - {"requirePragma":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # @prettier
 
@@ -24,7 +24,7 @@ exports[`without-pragma.yml - {"requirePragma":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 

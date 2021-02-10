@@ -4,7 +4,7 @@ exports[`import.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface I { x: number }
 export type J = I; // workaround for export interface
@@ -22,7 +22,7 @@ exports[`indexer.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -54,7 +54,7 @@ exports[`interface.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class C { x: number; }
 
@@ -94,7 +94,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface I { y: string }
 interface I_ { x: number }
@@ -158,7 +158,7 @@ exports[`test2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import type { J } from './import';
 interface K { }
@@ -200,7 +200,7 @@ exports[`test3.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface I { x: number, y : string }
 interface J { y : number }
@@ -233,7 +233,7 @@ exports[`test4.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface I { foo(x: number): void; }
 (function foo(x: number) { }: I); // error, property \`foo\` not found function

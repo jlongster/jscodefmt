@@ -5,7 +5,7 @@ exports[`non-octal-eight-and-nine.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/11852
 
@@ -31,7 +31,7 @@ exports[`non-octal-eight-and-nine.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/11852
 
@@ -58,7 +58,7 @@ exports[`strings.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
   "abc",
@@ -120,7 +120,7 @@ exports[`strings.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
   "abc",
@@ -183,7 +183,7 @@ exports[`template-literals.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo(\`a long string \${ 1 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 } with expr\`);
 
@@ -366,7 +366,7 @@ exports[`template-literals.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo(\`a long string \${ 1 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 + 2 + 3 } with expr\`);
 

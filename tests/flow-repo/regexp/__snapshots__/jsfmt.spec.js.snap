@@ -4,7 +4,7 @@ exports[`regexp.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var patt=/Hello/g
 var match:number = patt.test("Hello world!");

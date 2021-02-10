@@ -4,7 +4,7 @@ exports[`literal.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 100n
 9223372036854775807n

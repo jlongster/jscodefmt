@@ -4,7 +4,7 @@ exports[`at-media.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @media   (    max-width:600px    )      {}
 @media   (   min-width:700px) and (     orientation:    landscape){}

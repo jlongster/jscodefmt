@@ -45,7 +45,14 @@ function printWidthIndicator(printWidth, offset) {
     before = " ".repeat(offset - 1) + "|";
   }
 
-  return `${before}${" ".repeat(printWidth)}| printWidth`;
+  let text = "printWidth";
+  if (printWidth >= text.length + 2) {
+    text = `${" ".repeat(printWidth - text.length - 2)} ${text} |`;
+  } else {
+    text = `${" ".repeat(printWidth)}| ${text}`;
+  }
+
+  return `${before}${text}`;
 }
 
 function createSnapshot(

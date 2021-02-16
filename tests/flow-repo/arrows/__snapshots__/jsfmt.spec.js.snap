@@ -60,8 +60,8 @@ function selectBestEffortImageForWidth(
   //images = images.sort(function (a, b) { return a.width - b.width });
   images = images.sort((a, b) => a.width - b.width + "");
   return (
-    images.find((image) => image.width >= maxPixelWidth) ||
-    images[images.length - 1]
+    images.find((image) => image.width >= maxPixelWidth)
+    || images[images.length - 1]
   );
 }
 

@@ -1182,15 +1182,15 @@ const someLongVariableName = (
   .filter((obj) => !!obj);
 
 (
-  veryLongVeryLongVeryLong ||
-  anotherVeryLongVeryLongVeryLong ||
-  veryVeryVeryLongError
+  veryLongVeryLongVeryLong
+  || anotherVeryLongVeryLongVeryLong
+  || veryVeryVeryLongError
 ).map((tickets) => TicketRecord.createFromSomeLongString());
 
 (
-  veryLongVeryLongVeryLong ||
-  anotherVeryLongVeryLongVeryLong ||
-  veryVeryVeryLongError
+  veryLongVeryLongVeryLong
+  || anotherVeryLongVeryLongVeryLong
+  || veryVeryVeryLongError
 )
   .map((tickets) => TicketRecord.createFromSomeLongString())
   .filter((obj) => !!obj);

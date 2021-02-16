@@ -144,9 +144,9 @@ const bifornCringerMoshedPerplexSawder = // !!!
 const kochabCooieGameOnOboleUnweave = annularCooeedSplicesWalksWayWay; // ???
 
 const bifornCringerMoshedPerplexSawder = // !!!
-  glimseGlyphsHazardNoopsTieTie +
-  averredBathersBoxroomBuggyNurl -
-  anodyneCondosMalateOverateRetinol;
+  glimseGlyphsHazardNoopsTieTie
+  + averredBathersBoxroomBuggyNurl
+  - anodyneCondosMalateOverateRetinol;
 
 ================================================================================
 `;
@@ -349,18 +349,18 @@ fnString =
   "some" + "long" + "string";
 
 fnString =
-  /* inline */ "some" +
-  "long" +
-  "string" +
-  "some" +
-  "long" +
-  "string" +
-  "some" +
-  "long" +
-  "string" +
-  "some" +
-  "long" +
-  "string";
+  /* inline */ "some"
+  + "long"
+  + "string"
+  + "some"
+  + "long"
+  + "string"
+  + "some"
+  + "long"
+  + "string"
+  + "some"
+  + "long"
+  + "string";
 
 fnString = // Comment0
   // Comment1
@@ -393,18 +393,18 @@ var fnString =
   "some" + "long" + "string";
 
 var fnString =
-  /* inline */ "some" +
-  "long" +
-  "string" +
-  "some" +
-  "long" +
-  "string" +
-  "some" +
-  "long" +
-  "string" +
-  "some" +
-  "long" +
-  "string";
+  /* inline */ "some"
+  + "long"
+  + "string"
+  + "some"
+  + "long"
+  + "string"
+  + "some"
+  + "long"
+  + "string"
+  + "some"
+  + "long"
+  + "string";
 
 var fnString = // Comment0
   // Comment1

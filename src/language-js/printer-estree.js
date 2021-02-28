@@ -43,7 +43,7 @@ const {
   isCallExpression,
   isMemberExpression,
 } = require("./utils");
-const { locStart, locEnd } = require("./loc");
+const { locStart, locStartWithoutDecorator, locEnd } = require("./loc");
 
 const {
   printHtmlBinding,
@@ -125,8 +125,7 @@ function genericPrint(path, options, printPath, args) {
     // for printing the decorators.
     !(
       parentExportDecl &&
-      locStart(parentExportDecl, { ignoreDecorators: true }) >
-        locStart(node.decorators[0])
+      locStartWithoutDecorator(parentExportDecl) > locStart(node.decorators[0])
     )
   ) {
     const shouldBreak =
@@ -156,8 +155,7 @@ function genericPrint(path, options, printPath, args) {
     isNonEmptyArray(node.declaration.decorators) &&
     // Only print decorators here if they were written before the export,
     // otherwise they are printed by the node.declaration
-    locStart(node, { ignoreDecorators: true }) >
-      locStart(node.declaration.decorators[0])
+    locStartWithoutDecorator(node) > locStart(node.declaration.decorators[0])
   ) {
     // Export declarations are responsible for printing any decorators
     // that logically apply to node.declaration.

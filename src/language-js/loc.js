@@ -6,19 +6,18 @@ const { isNonEmptyArray } = require("../common/util");
  * @typedef {import("./types/estree").Node} Node
  */
 
-function locStart(node, opts) {
-  const { ignoreDecorators } = opts || {};
-
+function locStart(node) {
   // Handle nodes with decorators. They should start at the first decorator
-  if (!ignoreDecorators) {
-    const decorators =
-      (node.declaration && node.declaration.decorators) || node.decorators;
-
-    if (isNonEmptyArray(decorators)) {
-      return locStart(decorators[0]);
-    }
+  const decorators =
+    (node.declaration && node.declaration.decorators) || node.decorators;
+  if (isNonEmptyArray(decorators)) {
+    return locStartWithoutDecorator(decorators[0]);
   }
 
+  return locStartWithoutDecorator(node);
+}
+
+function locStartWithoutDecorator(node) {
   return node.range ? node.range[0] : node.start;
 }
 
@@ -56,6 +55,7 @@ function hasSameLoc(nodeA, nodeB) {
 module.exports = {
   locStart,
   locEnd,
+  locStartWithoutDecorator,
   hasSameLocStart,
   hasSameLoc,
 };

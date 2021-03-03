@@ -134,6 +134,7 @@ const parse = createParse("parse", ["jsx", "flow"]);
 const parseFlow = createParse("parse", [
   "jsx",
   ["flow", { all: true, enums: true }],
+  "flowComments",
 ]);
 const parseTypeScript = createParse(
   "parse",

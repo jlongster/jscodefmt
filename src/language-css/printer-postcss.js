@@ -83,15 +83,6 @@ function shouldPrintComma(options) {
 function genericPrint(path, options, print) {
   const node = path.getValue();
 
-  /* istanbul ignore if */
-  if (!node) {
-    return "";
-  }
-
-  if (typeof node === "string") {
-    return node;
-  }
-
   switch (node.type) {
     case "front-matter":
       return [node.raw, hardline];

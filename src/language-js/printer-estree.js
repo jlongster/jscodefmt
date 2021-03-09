@@ -141,14 +141,6 @@ function printPathNoParens(path, options, print, args) {
   const n = path.getValue();
   const semi = options.semi ? ";" : "";
 
-  if (!n) {
-    return "";
-  }
-
-  if (typeof n === "string") {
-    return n;
-  }
-
   for (const printer of [
     printLiteral,
     printHtmlBinding,

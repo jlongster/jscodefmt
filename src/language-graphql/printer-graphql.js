@@ -9,13 +9,6 @@ const { locStart, locEnd } = require("./loc");
 
 function genericPrint(path, options, print) {
   const n = path.getValue();
-  if (!n) {
-    return "";
-  }
-
-  if (typeof n === "string") {
-    return n;
-  }
 
   switch (n.kind) {
     case "Document": {

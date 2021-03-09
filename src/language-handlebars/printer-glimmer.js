@@ -39,11 +39,6 @@ const NEWLINES_TO_PRESERVE_MAX = 2;
 function print(path, options, print) {
   const n = path.getValue();
 
-  /* istanbul ignore if*/
-  if (!n) {
-    return "";
-  }
-
   if (hasPrettierIgnore(path)) {
     return options.originalText.slice(locStart(n), locEnd(n));
   }

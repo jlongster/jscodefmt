@@ -176,7 +176,10 @@ function runSpec(fixtures, parsers, options) {
       allParsers.push("babel-ts");
     }
 
-    if (parsers.includes("babel") && isTestDirectory(dirname, "js")) {
+    if (
+      parsers.includes("babel") &&
+      (isTestDirectory(dirname, "js") || isTestDirectory(dirname, "jsx"))
+    ) {
       if (!parsers.includes("espree") && !espreeDisabledTests.has(dirname)) {
         allParsers.push("espree");
       }

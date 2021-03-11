@@ -4,7 +4,7 @@ exports[`numbers.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @supports (margin: .5px ".30px" 1E+2px) {
   a {

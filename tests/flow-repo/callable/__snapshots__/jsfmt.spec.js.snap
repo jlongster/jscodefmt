@@ -4,7 +4,7 @@ exports[`optional.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type F = {
   (x: string): number;
@@ -36,7 +36,7 @@ exports[`primitives.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x = Boolean(4);
 function foo(fn:(value:any)=>boolean) { }

@@ -4,7 +4,7 @@ exports[`prettier-ignore-comment.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   # prettier-ignore

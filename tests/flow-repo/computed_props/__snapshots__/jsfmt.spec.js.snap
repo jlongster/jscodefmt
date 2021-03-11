@@ -4,7 +4,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var ColorId = {
   RED: 'R',
@@ -62,7 +62,7 @@ exports[`test2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var { ColorId, ColorNumber } = require('./test');
 var ColorIdToNumber = {
@@ -94,7 +94,7 @@ exports[`test3.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var { ColorId } = require('./test');
 var ColorIdToNumber = require('./test2');
@@ -114,7 +114,7 @@ exports[`test4.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 module.exports = 'hello';
 
@@ -128,7 +128,7 @@ exports[`test5.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var hello = require('./test4');
 var dummy = require('./test');
@@ -154,7 +154,7 @@ exports[`test6.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var o = require('./test5');
 (o.hello: 'nothing'); // oops
@@ -170,7 +170,7 @@ exports[`test7.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var obj = {x: 0, m() { return this.x }}
 var x: string = obj['m'](); // error, number ~> string

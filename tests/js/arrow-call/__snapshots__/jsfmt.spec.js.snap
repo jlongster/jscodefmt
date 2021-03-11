@@ -5,7 +5,7 @@ exports[`arrow_call.js - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const testResults = results.testResults.map(testResult =>
   formatResult(testResult, formatter, reporter)
@@ -106,7 +106,7 @@ exports[`arrow_call.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const testResults = results.testResults.map(testResult =>
   formatResult(testResult, formatter, reporter)
@@ -206,7 +206,7 @@ exports[`arrow_call.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const testResults = results.testResults.map(testResult =>
   formatResult(testResult, formatter, reporter)
@@ -327,7 +327,7 @@ exports[`class-property.js - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const composition = (ViewComponent, ContainerComponent) =>
   class extends React.Component {
@@ -358,7 +358,7 @@ exports[`class-property.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const composition = (ViewComponent, ContainerComponent) =>
   class extends React.Component {
@@ -378,7 +378,7 @@ exports[`class-property.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const composition = (ViewComponent, ContainerComponent) =>
   class extends React.Component {

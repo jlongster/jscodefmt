@@ -5,7 +5,7 @@ exports[`order.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Foo = {
   // a
@@ -41,7 +41,7 @@ exports[`order.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Foo = {
   // a

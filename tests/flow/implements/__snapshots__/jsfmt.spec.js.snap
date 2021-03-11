@@ -4,7 +4,7 @@ exports[`implements.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A implements B {}
 class A implements B, C {}

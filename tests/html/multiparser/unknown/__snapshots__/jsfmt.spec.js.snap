@@ -4,7 +4,7 @@ exports[`unknown-lang.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html lang="en">

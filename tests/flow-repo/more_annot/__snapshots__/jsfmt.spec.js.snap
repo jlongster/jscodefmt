@@ -4,7 +4,7 @@ exports[`client_object.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var o = require('./object');
 
@@ -22,7 +22,7 @@ exports[`object.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var o1 = { x: 0, y: "" };
 var o2 = { z: o1 }
@@ -52,7 +52,7 @@ exports[`proto.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function Foo() { this.x = 0; }
 Foo.prototype.m = function() { }
@@ -78,7 +78,7 @@ exports[`super.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class C { m() { } }
 class D extends C { }

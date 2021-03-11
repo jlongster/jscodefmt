@@ -22,7 +22,7 @@ exports[`destructuring.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const [a, b] = #[1, 2];
 assert(a === 1);
@@ -91,7 +91,7 @@ exports[`syntax.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #[]
 #[1, 2]
@@ -127,7 +127,7 @@ exports[`tuple.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const tuple1 = #[1, 2, 3];
 
@@ -187,7 +187,7 @@ exports[`tuple-trailing-comma.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #[1,]
 

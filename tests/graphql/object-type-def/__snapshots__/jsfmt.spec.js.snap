@@ -4,7 +4,7 @@ exports[`arguments.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Video {
   playable_url(quality: String, preferred: String): Url
@@ -22,7 +22,7 @@ exports[`directives.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type PokemonType {
   pokemon_type: String @mock(value: "Electric")
@@ -40,7 +40,7 @@ exports[`extend.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 extend type Feedback {
   custom_int: Int
@@ -58,7 +58,7 @@ exports[`implements.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type VRMConversation implements Node, Entity @foo {
   a: Int
@@ -76,7 +76,7 @@ exports[`input.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 input Params {
   app_id: ID!
@@ -96,7 +96,7 @@ exports[`object_type_def.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type FeedHomeStories {
   debug_info: String

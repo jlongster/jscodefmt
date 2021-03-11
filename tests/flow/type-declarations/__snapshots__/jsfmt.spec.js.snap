@@ -5,7 +5,7 @@ exports[`declare_export.js - {"semi":false} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare export default 5;
 
@@ -19,7 +19,7 @@ exports[`declare_export.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare export default 5;
 
@@ -34,7 +34,7 @@ exports[`declare_type.js - {"semi":false} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare type A = string;
 
@@ -48,7 +48,7 @@ exports[`declare_type.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare type A = string;
 
@@ -63,7 +63,7 @@ exports[`declare_var.js - {"semi":false} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare var bool: React$PropType$Primitive<boolean>;
 
@@ -77,7 +77,7 @@ exports[`declare_var.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare var bool: React$PropType$Primitive<boolean>;
 
@@ -92,7 +92,7 @@ exports[`long.js - {"semi":false} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export type AdamPlacementValidationSingleErrorKey =
   'SOME_FANCY_TARGETS.GLOBAL_TARGET';
@@ -123,7 +123,7 @@ exports[`long.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export type AdamPlacementValidationSingleErrorKey =
   'SOME_FANCY_TARGETS.GLOBAL_TARGET';
@@ -155,7 +155,7 @@ exports[`opaque.js - {"semi":false} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare export opaque type Foo;
 declare export opaque type Bar<T>;
@@ -195,7 +195,7 @@ exports[`opaque.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare export opaque type Foo;
 declare export opaque type Bar<T>;

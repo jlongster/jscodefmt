@@ -5,7 +5,7 @@ exports[`break.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var X = {
   perform: function<    
@@ -39,7 +39,7 @@ exports[`break.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var X = {
   perform: function<    
@@ -74,7 +74,7 @@ exports[`function-default-type-parameters.js - {"trailingComma":"all"} format 1`
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo<T: any = number>(): any {}
 
@@ -88,7 +88,7 @@ exports[`function-default-type-parameters.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo<T: any = number>(): any {}
 
@@ -103,7 +103,7 @@ exports[`generic.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const identity = <T>(t: T): T => t;
 const a = 1;
@@ -119,7 +119,7 @@ exports[`generic.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const identity = <T>(t: T): T => t;
 const a = 1;
@@ -136,7 +136,7 @@ exports[`interface.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface A { 'C': string; }
 interface B { "D": boolean; }
@@ -156,7 +156,7 @@ exports[`interface.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface A { 'C': string; }
 interface B { "D": boolean; }
@@ -177,7 +177,7 @@ exports[`nullable.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function formatEntireFile(
   fileVersion: FileVersion,
@@ -207,7 +207,7 @@ exports[`nullable.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function formatEntireFile(
   fileVersion: FileVersion,
@@ -238,7 +238,7 @@ exports[`single-identifier.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const longVariableName: Array<number> = this.foo.bar.baz.collider.body.vertices.reduce();
 
@@ -253,7 +253,7 @@ exports[`single-identifier.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const longVariableName: Array<number> = this.foo.bar.baz.collider.body.vertices.reduce();
 
@@ -269,7 +269,7 @@ exports[`trailing.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type State = {
   errors: Immutable.Map<
@@ -295,7 +295,7 @@ exports[`trailing.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type State = {
   errors: Immutable.Map<
@@ -322,7 +322,7 @@ exports[`type.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type F = <T>(T) => T;
 type G = (<A, B>(A) => B);
@@ -340,7 +340,7 @@ exports[`type.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type F = <T>(T) => T;
 type G = (<A, B>(A) => B);
@@ -359,7 +359,7 @@ exports[`union.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Foo = Promise<
   { ok: true, bar: string, baz: SomeOtherLongType } | 
@@ -379,7 +379,7 @@ exports[`union.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Foo = Promise<
   { ok: true, bar: string, baz: SomeOtherLongType } | 

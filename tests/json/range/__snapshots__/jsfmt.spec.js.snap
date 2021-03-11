@@ -6,7 +6,7 @@ parsers: ["json"]
 printWidth: 80
 rangeEnd: 4
 rangeStart: 1
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | {"a":1, "b":2}
     |  ^^^
@@ -23,7 +23,7 @@ parsers: ["json"]
 printWidth: 80
 rangeEnd: 6
 rangeStart: 5
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
 > 1 | {"a":1, "b":2}
     |      ^

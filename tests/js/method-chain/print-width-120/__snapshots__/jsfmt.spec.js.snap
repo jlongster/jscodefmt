@@ -4,7 +4,7 @@ exports[`constructor.js - {"printWidth":120} format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 120
-                                                                                                                        | printWidth
+                                                                                                             printWidth |
 =====================================input======================================
 const writer = new BufferStackItem(
   new BinaryWriter()
@@ -36,7 +36,7 @@ exports[`issue-7884.js - {"printWidth":120} format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 120
-                                                                                                                        | printWidth
+                                                                                                             printWidth |
 =====================================input======================================
     cy.get(".ready")
       .should("have.text", "READY")

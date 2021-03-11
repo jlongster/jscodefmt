@@ -4,7 +4,7 @@ exports[`CRLF.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $nice-blue: #5B83AD;
 $light-blue: $nice-blue + #111;
@@ -96,7 +96,7 @@ exports[`at-rule.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @at-root .foo
 // .bar
@@ -127,7 +127,7 @@ exports[`between-decl.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 selector {
 prop: // comment
@@ -269,7 +269,7 @@ exports[`bug.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @font-face  {
   src: url(if(
@@ -305,7 +305,7 @@ exports[`if-eslit-at-rule-decloration.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @function _normalize-include($section) {
 // Check if $section is in the $include list.
@@ -342,7 +342,7 @@ exports[`in-value.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .real-world-example {
   background: radial-gradient(
@@ -382,7 +382,7 @@ exports[`lists.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $my-list:
   'foo', // Foo
@@ -408,7 +408,7 @@ exports[`maps.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $my-map: (
   'foo': 1, // Foo
@@ -430,7 +430,7 @@ exports[`mixed.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* DO NOT ADD EXTRA CODE TO THIS FILE */
 
@@ -460,7 +460,7 @@ exports[`mixed-2.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* DO NOT ADD EXTRA CODE TO THIS FILE */
 @import "a";
@@ -484,7 +484,7 @@ exports[`mixed-block.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* DO NOT ADD EXTRA CODE TO THIS FILE */
 
@@ -514,7 +514,7 @@ exports[`prettier-ignore.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 foo {
@@ -537,7 +537,7 @@ exports[`selectors.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .powerPathNavigator .helm button.pressedButton, // comment 1
 .powerPathNavigator .helm button:active:not(.disabledButton),
@@ -676,7 +676,7 @@ exports[`trailing_star_slash.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @media (max-width: 1) {}
 a {
@@ -697,7 +697,7 @@ exports[`variable-declaration.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $var: /* comment 1 */ all /* comment 2 */ !default /* comment 3 */ ; /* comment 4 */
 

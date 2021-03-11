@@ -4,7 +4,7 @@ exports[`attributes.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <input name=address maxlength=200>
 <input name='address' maxlength='200'>
@@ -160,7 +160,7 @@ exports[`boolean.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <button type="submit">This is valid.</button>
 <button type="submit" disabled>This is valid.</button>
@@ -224,7 +224,7 @@ exports[`case-sensitive.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div CaseSensitive></div>
 
@@ -238,7 +238,7 @@ exports[`class-bem1.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div class="ProviderMeasuresContainer__heading-row
   d-flex
@@ -287,7 +287,7 @@ exports[`class-bem2.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div class="news__header widget__content">
   <div class="news__tabs">
@@ -345,7 +345,7 @@ exports[`class-leading-dashes.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <my-tag class="__prefix1__foo __prefix1__bar __prefix2__foo prefix2 prefix2--something --prefix2--something-else"></my-tag>
 
@@ -377,7 +377,7 @@ exports[`class-many-short-names.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 text-gray-light ml-1 f6 d-none d-on-nav-focus js-jump-to-badge-jump">
   Jump to
@@ -411,7 +411,7 @@ exports[`class-names.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <img class="
                      foo
@@ -570,7 +570,7 @@ exports[`class-print-width-edge.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div aria-hidden="true" class="border rounded-1 flex-shrink-0 bg-gray px-1 loooooooooooooooooooooooong">
 </div>
@@ -595,7 +595,7 @@ exports[`dobule-quotes.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <img src="test.png" alt="John 'ShotGun' Nelson">
 
@@ -609,7 +609,7 @@ exports[`duplicate.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <a href="1" href="2">123</a>
 
@@ -623,7 +623,7 @@ exports[`single-quotes.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <img src="test.png" alt='John "ShotGun" Nelson'>
 
@@ -637,7 +637,7 @@ exports[`smart-quotes.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div 
     smart-quotes='123 " 456'
@@ -659,7 +659,7 @@ exports[`srcset.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <img src="/assets/visual.png" 
 srcset="/assets/visual@0.5.png  400w, /assets/visual.png      805w" 
@@ -758,7 +758,7 @@ exports[`style.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div style="
 
@@ -898,7 +898,7 @@ exports[`without-quotes.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <p title=Title>String</p>
 

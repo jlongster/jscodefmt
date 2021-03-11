@@ -4,7 +4,7 @@ exports[`document.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # prettier-ignore
 ---
@@ -29,7 +29,7 @@ exports[`leading-comment.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abc:     123
 # prettier-ignore
@@ -47,7 +47,7 @@ exports[`middle-comment.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abc:  !!str #   hello
    123
@@ -69,7 +69,7 @@ exports[`trailing-comma.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
   # prettier-ignore
@@ -99,7 +99,7 @@ exports[`trailing-comment.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abc:     123 # hello
 # prettier-ignore

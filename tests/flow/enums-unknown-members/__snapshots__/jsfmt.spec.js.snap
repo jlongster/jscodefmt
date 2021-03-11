@@ -5,7 +5,7 @@ exports[`enum-unknown-members.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -32,7 +32,7 @@ exports[`enum-unknown-members-empty.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 

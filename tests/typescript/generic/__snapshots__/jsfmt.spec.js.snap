@@ -4,7 +4,7 @@ exports[`arrow-return-type.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export const getVehicleDescriptor = async (
   vehicleId: string
@@ -132,7 +132,7 @@ exports[`issue-6899.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const getUnusedAuthorizationHoldDocuments = async (): Promise<DocumentData[]> => {}
 
@@ -164,7 +164,7 @@ exports[`object-method.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default {
   load<K, T>(k: K, t: T) {

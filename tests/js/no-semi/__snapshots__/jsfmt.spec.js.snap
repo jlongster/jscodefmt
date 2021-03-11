@@ -27,7 +27,7 @@ exports[`class.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // TODO: upgrade parser
 // class A {
@@ -273,7 +273,7 @@ exports[`class.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // TODO: upgrade parser
 // class A {
@@ -520,7 +520,7 @@ exports[`comments.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let error = new Error(response.statusText);
 // comment
@@ -554,7 +554,7 @@ exports[`comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let error = new Error(response.statusText);
 // comment
@@ -589,7 +589,7 @@ exports[`issue2006.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 switch (n) {
   case 11:
@@ -617,7 +617,7 @@ exports[`issue2006.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 switch (n) {
   case 11:
@@ -646,7 +646,7 @@ exports[`no-semi.js - {"semi":false} format 1`] = `
 parsers: ["babel", "flow"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 // with preexisting semi
@@ -829,7 +829,7 @@ exports[`no-semi.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 // with preexisting semi

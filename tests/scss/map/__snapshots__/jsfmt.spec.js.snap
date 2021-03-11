@@ -5,7 +5,7 @@ exports[`key-values.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $map: (
   ('key': 'value', 'key': 'value','key': 'value','key': 'value','key': 'value',):
@@ -89,7 +89,7 @@ exports[`key-values.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $map: (
   ('key': 'value', 'key': 'value','key': 'value','key': 'value','key': 'value',):
@@ -174,7 +174,7 @@ exports[`keys.scss - {"trailingComma":"none"} format 1`] = `
 parsers: ["scss"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $map: (
   'string': 'hello world',
@@ -219,7 +219,7 @@ exports[`keys.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 $map: (
   'string': 'hello world',

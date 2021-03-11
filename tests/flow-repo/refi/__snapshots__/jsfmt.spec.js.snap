@@ -4,7 +4,7 @@ exports[`bound.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // refinements of bound vars (closed-over locals)
 // should have the same lifetimes as heap objects.
@@ -145,7 +145,7 @@ exports[`heap.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var tests =
 [
@@ -635,7 +635,7 @@ exports[`lex.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function block_scope(x: string | number) {
   {
@@ -719,7 +719,7 @@ exports[`local.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var paths =
 [
@@ -900,7 +900,7 @@ exports[`null_tests.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var null_tests =
 [
@@ -1214,7 +1214,7 @@ exports[`switch.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 function foo(a,b,c) {
@@ -1352,7 +1352,7 @@ exports[`typeof_tests.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var null_tests =
 [
@@ -1621,7 +1621,7 @@ exports[`undef_tests.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var undef_tests =
 [
@@ -1779,7 +1779,7 @@ exports[`void_tests.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var void_tests =
 [

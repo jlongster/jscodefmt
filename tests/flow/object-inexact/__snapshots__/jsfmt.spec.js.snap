@@ -5,7 +5,7 @@ exports[`comments.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -140,7 +140,7 @@ exports[`comments.js - {"trailingComma":"es5"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "es5"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -275,7 +275,7 @@ exports[`comments.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -410,7 +410,7 @@ exports[`test.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@flow
 type T = {
@@ -523,7 +523,7 @@ exports[`test.js - {"trailingComma":"es5"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "es5"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@flow
 type T = {
@@ -636,7 +636,7 @@ exports[`test.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["flow", "babel"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@flow
 type T = {

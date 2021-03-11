@@ -15,7 +15,7 @@ exports[`keywords.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // All of these should be an error
 
@@ -118,7 +118,7 @@ exports[`keywords-2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/12356
 

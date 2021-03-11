@@ -5,7 +5,7 @@ exports[`cjk.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [這是一段很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長的段落][]
 
@@ -20,7 +20,7 @@ exports[`cjk.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [這是一段很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長的段落][]
 
@@ -35,7 +35,7 @@ exports[`collapsed.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [hello][]
 
@@ -50,7 +50,7 @@ exports[`collapsed.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [hello][]
 
@@ -65,7 +65,7 @@ exports[`definition.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [just-url]: https://example.com
 [url-with-short-title]: https://example.com "title"
@@ -99,7 +99,7 @@ exports[`definition.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [just-url]: https://example.com
 [url-with-short-title]: https://example.com "title"
@@ -127,7 +127,7 @@ exports[`full.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [hello][world]
 
@@ -142,7 +142,7 @@ exports[`full.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [hello][world]
 
@@ -157,7 +157,7 @@ exports[`shortcut.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [hello]
 
@@ -172,7 +172,7 @@ exports[`shortcut.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [hello]
 
@@ -187,7 +187,7 @@ exports[`title.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [ref]: https://example.com (bar)
 [other-ref]: https://example.com (Shakespeare's "Romeo and Juliet" is a famous play)
@@ -246,7 +246,7 @@ exports[`title.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [ref]: https://example.com (bar)
 [other-ref]: https://example.com (Shakespeare's "Romeo and Juliet" is a famous play)

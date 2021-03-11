@@ -4,7 +4,7 @@ exports[`blowup.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -117,7 +117,7 @@ exports[`fields.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class C {
     x: ?number|string;
@@ -141,7 +141,7 @@ exports[`fields2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class C { }
 
@@ -171,7 +171,7 @@ exports[`issue-17.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -213,7 +213,7 @@ exports[`issue-198.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var p = new Promise(function(resolve, reject) {
     resolve(5);
@@ -245,7 +245,7 @@ exports[`issue-256.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class Myclass {
     myfun(myarray: Array<Function | string>): any;
@@ -271,7 +271,7 @@ exports[`issue-323.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var Foo = require("./issue-323-lib");
 var foo = new Foo();
@@ -289,7 +289,7 @@ exports[`issue-323-lib.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 class Foo {}
@@ -307,7 +307,7 @@ exports[`issue-324.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 class Foo{};
@@ -335,7 +335,7 @@ exports[`issue-325.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class Tag {
     constructor() {
@@ -375,7 +375,7 @@ exports[`issue-326.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var numberAndStringArr:Array<number|string> = [1,2];
 var stringArr:Array<string> = ['a','b'];
@@ -395,7 +395,7 @@ exports[`issue-582.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /***
  * nested unions
@@ -435,7 +435,7 @@ exports[`issue-963.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /***
  * unions with embedded intersections
@@ -515,7 +515,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var C = require('test-lib');
 
@@ -565,7 +565,7 @@ exports[`test-lib.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @providesModule test-lib */
 
@@ -585,7 +585,7 @@ exports[`type-app.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @flow
@@ -625,7 +625,7 @@ exports[`union.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function bar(x: Document | string): void { }
 bar(0);
@@ -679,7 +679,7 @@ exports[`yuge.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * great big union used as type annotation will be flowed into itself.

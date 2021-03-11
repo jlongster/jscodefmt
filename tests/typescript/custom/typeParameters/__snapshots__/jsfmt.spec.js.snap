@@ -4,7 +4,7 @@ exports[`callAndConstructSignatureLong.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface Interface {
     <
@@ -42,7 +42,7 @@ exports[`functionTypeLong.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type AwkwardlyLongFunctionTypeDefinition = <
     GenericTypeNumberOne,
@@ -72,7 +72,7 @@ exports[`interfaceParamsLong.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface ReallyReallyLongName<
     TypeArgumentNumberOne, 
@@ -94,7 +94,7 @@ exports[`typeParametersLong.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type ReallyReallyReallyLongName<
     ReallyReallyReallyLongName1, ReallyReallyReallyLongName2
@@ -113,7 +113,7 @@ exports[`variables.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo: SomeThing<boolean> = func();
 const bar: SomeThing<boolean, boolean> = func();

@@ -4,7 +4,7 @@ exports[`methodSignature.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var logger: {
     log(val: any, val2: any),

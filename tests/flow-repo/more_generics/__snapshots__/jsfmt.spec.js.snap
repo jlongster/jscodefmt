@@ -4,7 +4,7 @@ exports[`poly.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var foo1 = function<T>(x:T):T { return x; }
 

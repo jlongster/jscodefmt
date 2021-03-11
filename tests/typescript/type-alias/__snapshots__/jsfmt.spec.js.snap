@@ -19,7 +19,7 @@ exports[`pattern-parameter.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type C = {
   foo([]?): void;

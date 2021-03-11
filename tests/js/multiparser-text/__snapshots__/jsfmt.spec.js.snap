@@ -4,7 +4,7 @@ exports[`text.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = {
   viewer: graphql\`

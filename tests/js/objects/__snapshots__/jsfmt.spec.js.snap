@@ -4,7 +4,7 @@ exports[`escape-sequence-key.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #6235
 const a = {
@@ -32,7 +32,7 @@ exports[`expand.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Component1 = ({ props }) => (
   <Text>Test</Text>
@@ -89,7 +89,7 @@ exports[`expression.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 () => ({}\`\`);
 ({})\`\`;
@@ -170,7 +170,7 @@ exports[`getter-setter.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ({ set x(foo) {} });
 ({ get x() { return 1 } });
@@ -227,7 +227,7 @@ exports[`invalid-accessor-generator.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Invalid, but recoverable
 // https://github.com/babel/babel/pull/11921/
@@ -271,7 +271,7 @@ exports[`invalid-setter.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ({ set x(){} });
 
@@ -285,7 +285,7 @@ exports[`method.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = { f() {} }
 
@@ -299,7 +299,7 @@ exports[`range.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 group(
   concat([
@@ -337,7 +337,7 @@ exports[`right-break.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const blablah =
   "aldkfkladfskladklsfkladklfkaldfadfkdaf" +

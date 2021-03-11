@@ -44,7 +44,7 @@ exports[`text.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo = foo\`\\u{prettier}\\u{0065}\`;
 foo = html\`\\u{prettier}\\u{0065}\`;

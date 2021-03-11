@@ -4,7 +4,7 @@ exports[`no_at_flow.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x: number = "not a number"; // No error
 

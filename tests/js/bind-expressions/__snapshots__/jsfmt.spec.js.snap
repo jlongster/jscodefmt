@@ -45,7 +45,7 @@ exports[`await.js - {"semi":false} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const doBothThings = async () => {
     const request = doAsyncThing();
@@ -65,7 +65,7 @@ exports[`await.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const doBothThings = async () => {
     const request = doAsyncThing();
@@ -122,7 +122,7 @@ exports[`bind_parens.js - {"semi":false} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (a || b)::c;
 a || (b::c);
@@ -202,7 +202,7 @@ exports[`bind_parens.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (a || b)::c;
 a || (b::c);
@@ -327,7 +327,7 @@ exports[`long_name_method.js - {"semi":false} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class X {
   constructor() {
@@ -357,7 +357,7 @@ exports[`long_name_method.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class X {
   constructor() {
@@ -432,7 +432,7 @@ exports[`method_chain.js - {"semi":false} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import {interval} from 'rxjs/observable/interval';
 import {filter} from 'rxjs/operator/filter';
@@ -478,7 +478,7 @@ exports[`method_chain.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import {interval} from 'rxjs/observable/interval';
 import {filter} from 'rxjs/operator/filter';
@@ -569,7 +569,7 @@ exports[`short_name_method.js - {"semi":false} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class X {
   constructor() {
@@ -598,7 +598,7 @@ exports[`short_name_method.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class X {
   constructor() {
@@ -664,7 +664,7 @@ exports[`unary.js - {"semi":false} format 1`] = `
 parsers: ["babel"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !x::y;
 !(x::y /* foo */);
@@ -704,7 +704,7 @@ exports[`unary.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !x::y;
 !(x::y /* foo */);

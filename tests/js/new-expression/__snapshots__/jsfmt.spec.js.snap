@@ -4,7 +4,7 @@ exports[`call.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 new (factory())()
 new factory()()
@@ -24,7 +24,7 @@ exports[`new_expression.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 new (memoize.Cache || MapCache)
 new (typeof this == "function" ? this : Dict())
@@ -54,7 +54,7 @@ exports[`with-member-expression.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function functionName() {
   // indent to make the line break

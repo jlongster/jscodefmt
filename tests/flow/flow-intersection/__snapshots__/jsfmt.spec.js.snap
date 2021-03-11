@@ -4,7 +4,7 @@ exports[`intersection.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type State = {
   sharedProperty: any;

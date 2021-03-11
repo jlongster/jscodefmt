@@ -5,7 +5,7 @@ exports[`html-template-literals.js - {"htmlWhitespaceSensitivity":"ignore"} form
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const nestedFun = /* HTML */ \`\${outerExpr(1)}
   <script>
@@ -95,7 +95,7 @@ exports[`html-template-literals.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const nestedFun = /* HTML */ \`\${outerExpr(1)}
   <script>
@@ -172,7 +172,7 @@ exports[`lit-html.js - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import { LitElement, html } from '@polymer/lit-element';
 
@@ -419,7 +419,7 @@ exports[`lit-html.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import { LitElement, html } from '@polymer/lit-element';
 

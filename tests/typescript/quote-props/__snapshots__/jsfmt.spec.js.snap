@@ -5,7 +5,7 @@ exports[`types.ts - {"quoteProps":"as-needed"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 quoteProps: "as-needed"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type T = {
   0: string;
@@ -36,7 +36,7 @@ exports[`types.ts - {"quoteProps":"consistent"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 quoteProps: "consistent"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type T = {
   0: string;
@@ -67,7 +67,7 @@ exports[`types.ts - {"quoteProps":"preserve"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 quoteProps: "preserve"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type T = {
   0: string;

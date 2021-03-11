@@ -5,7 +5,7 @@ exports[`import-export.mdx - {"semi":false} format 1`] = `
 parsers: ["mdx"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import D from 'd'
 import {A,B,C}    from "hello-world"
@@ -91,7 +91,7 @@ exports[`import-export.mdx format 1`] = `
 ====================================options=====================================
 parsers: ["mdx"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import D from 'd'
 import {A,B,C}    from "hello-world"
@@ -178,7 +178,7 @@ exports[`inline-html.mdx - {"semi":false} format 1`] = `
 parsers: ["mdx"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 This is an example of a component _being used in some italic markdown with some <Bolded />, 
 and as you can see_ once you close the italics, it will break incorrectly when prettier formats it.
@@ -206,7 +206,7 @@ exports[`inline-html.mdx format 1`] = `
 ====================================options=====================================
 parsers: ["mdx"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 This is an example of a component _being used in some italic markdown with some <Bolded />, 
 and as you can see_ once you close the italics, it will break incorrectly when prettier formats it.
@@ -235,7 +235,7 @@ exports[`jsx.mdx - {"semi":false} format 1`] = `
 parsers: ["mdx"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Heading hi='there'>Hello, world!
 </Heading>
@@ -323,7 +323,7 @@ exports[`jsx.mdx format 1`] = `
 ====================================options=====================================
 parsers: ["mdx"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Heading hi='there'>Hello, world!
 </Heading>
@@ -412,7 +412,7 @@ exports[`jsx-codeblock.mdx - {"semi":false} format 1`] = `
 parsers: ["mdx"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`jsx
 <div>foo</div>
@@ -440,7 +440,7 @@ exports[`jsx-codeblock.mdx format 1`] = `
 ====================================options=====================================
 parsers: ["mdx"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`jsx
 <div>foo</div>
@@ -469,7 +469,7 @@ exports[`levels.mdx - {"semi":false} format 1`] = `
 parsers: ["mdx"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import     {     Foo,  Bar } from     './Fixture'
 
@@ -524,7 +524,7 @@ exports[`levels.mdx format 1`] = `
 ====================================options=====================================
 parsers: ["mdx"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import     {     Foo,  Bar } from     './Fixture'
 
@@ -580,7 +580,7 @@ exports[`mixed.mdx - {"semi":false} format 1`] = `
 parsers: ["mdx"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import     {     Baz } from     './Fixture'
 import { Buz  }   from './Fixture'
@@ -670,7 +670,7 @@ exports[`mixed.mdx format 1`] = `
 ====================================options=====================================
 parsers: ["mdx"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import     {     Baz } from     './Fixture'
 import { Buz  }   from './Fixture'

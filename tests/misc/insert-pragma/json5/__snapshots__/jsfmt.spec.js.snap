@@ -5,7 +5,7 @@ exports[`with-pragma.json5 - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["json5"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /** @format */
 
@@ -24,7 +24,7 @@ exports[`without-pragma.json5 - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["json5"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {hello:       "world"}
 

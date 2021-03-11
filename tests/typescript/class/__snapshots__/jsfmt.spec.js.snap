@@ -48,7 +48,7 @@ exports[`constructor.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class foo {
   constructor(static a: number) {}
@@ -96,7 +96,7 @@ exports[`dunder.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class F<__T> {}
 
@@ -136,7 +136,7 @@ exports[`empty-method-body.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #9324
 
@@ -168,7 +168,7 @@ exports[`extends_implements.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class Class extends AbstractClass implements Interface1, Interface2, Interface3, Interface4 {}
 
@@ -332,7 +332,7 @@ exports[`generics.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class<T> implements Map<T> {}
 
@@ -365,7 +365,7 @@ exports[`methods.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class X {
     optionalMethod?() {}
@@ -399,7 +399,7 @@ exports[`optional.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class X {
   private foo? = undefined;
@@ -427,7 +427,7 @@ exports[`quoted-property.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class User {
     "username": string;
@@ -445,7 +445,7 @@ exports[`standard_private_fields.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class Square {
     #sideLength: number;

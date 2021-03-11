@@ -6,7 +6,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const UsersList = ({ users }) => (
   <section>
@@ -84,7 +84,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const UsersList = ({ users }) => (
   <section>
@@ -162,7 +162,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const UsersList = ({ users }) => (
   <section>
@@ -240,7 +240,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const UsersList = ({ users }) => (
   <section>
@@ -318,7 +318,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Component
   propFn={
@@ -394,7 +394,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Component
   propFn={
@@ -470,7 +470,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Component
   propFn={
@@ -546,7 +546,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Component
   propFn={
@@ -622,7 +622,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // There are two ways to print ConditionalExpressions: "normal mode" and
 // "JSX mode". This is normal mode (when breaking):
@@ -921,7 +921,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // There are two ways to print ConditionalExpressions: "normal mode" and
 // "JSX mode". This is normal mode (when breaking):
@@ -1220,7 +1220,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // There are two ways to print ConditionalExpressions: "normal mode" and
 // "JSX mode". This is normal mode (when breaking):
@@ -1519,7 +1519,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // There are two ways to print ConditionalExpressions: "normal mode" and
 // "JSX mode". This is normal mode (when breaking):
@@ -1818,7 +1818,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <View
   style={
@@ -2106,7 +2106,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <View
   style={
@@ -2394,7 +2394,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <View
   style={
@@ -2682,7 +2682,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <View
   style={
@@ -2970,7 +2970,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const aDiv = (
   /* $FlowFixMe */
@@ -2994,7 +2994,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const aDiv = (
   /* $FlowFixMe */
@@ -3018,7 +3018,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const aDiv = (
   /* $FlowFixMe */
@@ -3042,7 +3042,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const aDiv = (
   /* $FlowFixMe */
@@ -3066,7 +3066,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default () => <a href="https://foo.bar?q1=foo&q2=bar" />;
 
@@ -3086,7 +3086,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default () => <a href="https://foo.bar?q1=foo&q2=bar" />;
 
@@ -3106,7 +3106,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default () => <a href="https://foo.bar?q1=foo&q2=bar" />;
 
@@ -3126,7 +3126,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default () => <a href="https://foo.bar?q1=foo&q2=bar" />;
 
@@ -3146,7 +3146,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
   {__DEV__
@@ -3228,7 +3228,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
   {__DEV__
@@ -3310,7 +3310,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
   {__DEV__
@@ -3392,7 +3392,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
   {__DEV__
@@ -3474,7 +3474,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
   {a || "b"}
@@ -3552,7 +3552,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
   {a || "b"}
@@ -3630,7 +3630,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
   {a || "b"}
@@ -3708,7 +3708,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>
   {a || "b"}
@@ -3786,7 +3786,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const tabs = [
   {
@@ -3826,7 +3826,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const tabs = [
   {
@@ -3866,7 +3866,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const tabs = [
   {
@@ -3906,7 +3906,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const tabs = [
   {
@@ -3946,7 +3946,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <td
 onClick={() => {
@@ -3990,7 +3990,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <td
 onClick={() => {
@@ -4034,7 +4034,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <td
 onClick={() => {
@@ -4078,7 +4078,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <td
 onClick={() => {
@@ -4122,7 +4122,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = [
   <path
@@ -4174,7 +4174,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = [
   <path
@@ -4226,7 +4226,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = [
   <path
@@ -4278,7 +4278,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = [
   <path
@@ -4330,7 +4330,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div id="&quot;'<>&amp;quot;" />;
 <div id='"&#39;<>&amp;quot;' />;
@@ -4420,7 +4420,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div id="&quot;'<>&amp;quot;" />;
 <div id='"&#39;<>&amp;quot;' />;
@@ -4510,7 +4510,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div id="&quot;'<>&amp;quot;" />;
 <div id='"&#39;<>&amp;quot;' />;
@@ -4600,7 +4600,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div id="&quot;'<>&amp;quot;" />;
 <div id='"&#39;<>&amp;quot;' />;
@@ -4690,7 +4690,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const NonBreakingArrowExpression = () => <div />;
 
@@ -4804,7 +4804,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const NonBreakingArrowExpression = () => <div />;
 
@@ -4918,7 +4918,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const NonBreakingArrowExpression = () => <div />;
 
@@ -5032,7 +5032,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const NonBreakingArrowExpression = () => <div />;
 
@@ -5146,7 +5146,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Foo></Foo>;
 <Bar />;
@@ -5164,7 +5164,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Foo></Foo>;
 <Bar />;
@@ -5182,7 +5182,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Foo></Foo>;
 <Bar />;
@@ -5200,7 +5200,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Foo></Foo>;
 <Bar />;
@@ -5218,7 +5218,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Labels = {
   label1: (
@@ -5258,7 +5258,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Labels = {
   label1: (
@@ -5298,7 +5298,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Labels = {
   label1: (
@@ -5338,7 +5338,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Labels = {
   label1: (
@@ -5378,7 +5378,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
   <div>
     <div>
@@ -5410,7 +5410,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
   <div>
     <div>
@@ -5442,7 +5442,7 @@ jsxSingleQuote: false
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
   <div>
     <div>
@@ -5474,7 +5474,7 @@ jsxSingleQuote: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
   <div>
     <div>

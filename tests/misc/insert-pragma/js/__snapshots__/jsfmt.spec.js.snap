@@ -5,7 +5,7 @@ exports[`empty.js - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 =====================================output=====================================
@@ -19,7 +19,7 @@ exports[`module-with-late-docblock.js - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo(bar) { 
   return bar + 3 + 4;
@@ -50,7 +50,7 @@ exports[`module-with-multiple-same-pragma.js - {"insertPragma":true} format 1`] 
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @x 1
@@ -72,7 +72,7 @@ exports[`module-with-pragma.js - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * Here lie words above pragmas
@@ -105,7 +105,7 @@ exports[`module-without-docblock.js - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo(bar) { 
   return bar + 3 + 4;
@@ -126,7 +126,7 @@ exports[`module-without-pragma.js - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * @flow
@@ -158,7 +158,7 @@ exports[`shebang-only-with-pragma.js - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/usr/bin/env node
 /** @format */
@@ -175,7 +175,7 @@ exports[`shebang-only-without-pragma.js - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/usr/bin/env node
 
@@ -191,7 +191,7 @@ exports[`shebang-with-pragma.js - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/usr/bin/env node
 /**
@@ -217,7 +217,7 @@ exports[`shebang-without-pragma.js - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/usr/bin/env node
 function test() { const answer = 42;console.log("%s is the answer to life, the universe, and everything", answer);}
@@ -239,7 +239,7 @@ exports[`trailing-spaces-first-line.js - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["flow", "babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**	
  * Copyright (c) 2015-present, Facebook, Inc.	

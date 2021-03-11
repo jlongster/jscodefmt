@@ -4,7 +4,7 @@ exports[`comments.less format 1`] = `
 ====================================options=====================================
 parsers: ["less"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // This comment won't be included in the CSS. 
 //This comment won't be included in the CSS.
@@ -40,7 +40,7 @@ exports[`function-each.less format 1`] = `
 ====================================options=====================================
 parsers: ["less"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // http://lesscss.org/functions/#list-functions-each
 
@@ -87,7 +87,7 @@ exports[`less.less format 1`] = `
 ====================================options=====================================
 parsers: ["less"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @nice-blue: #5B83AD;
 @light-blue: @nice-blue + #111;
@@ -3434,7 +3434,7 @@ exports[`quotes-in-comments.less format 1`] = `
 ====================================options=====================================
 parsers: ["less"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Animation   
 // '

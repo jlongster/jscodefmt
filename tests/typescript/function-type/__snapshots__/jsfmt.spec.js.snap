@@ -4,7 +4,7 @@ exports[`single-parameter.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type X = (options:{ a: string; b: AbstractCompositeThingamabobberFactoryProvider}) => {};
 type Y = new (options:{ a: string; b: AbstractCompositeThingamabobberFactoryProvider}) => {};
@@ -25,7 +25,7 @@ exports[`type-annotation.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo = (): () => void => (): void => null;
 const bar = (): (() => void) => (): void => null;

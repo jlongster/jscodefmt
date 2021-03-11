@@ -5,7 +5,7 @@ exports[`arrow_function_expression.js - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (a => {}).length
 typeof (() => {});
@@ -87,7 +87,7 @@ exports[`arrow_function_expression.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (a => {}).length
 typeof (() => {});
@@ -367,7 +367,7 @@ exports[`block_like.js - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = () => ({} = this);
 
@@ -382,7 +382,7 @@ exports[`block_like.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a = () => ({} = this);
 
@@ -397,7 +397,7 @@ exports[`call.js - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Seq(typeDef.interface.groups).forEach(group =>
   Seq(group.members).forEach((member, memberName) =>
@@ -1194,7 +1194,7 @@ exports[`call.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Seq(typeDef.interface.groups).forEach(group =>
   Seq(group.members).forEach((member, memberName) =>
@@ -1991,7 +1991,7 @@ exports[`comment.js - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * Curried function that ends with a BEM CSS Selector
@@ -2065,7 +2065,7 @@ exports[`comment.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * Curried function that ends with a BEM CSS Selector
@@ -3013,7 +3013,7 @@ exports[`currying.js - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const fn = b => c => d => {
   return 3;
@@ -3060,7 +3060,7 @@ exports[`currying.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const fn = b => c => d => {
   return 3;
@@ -3513,7 +3513,7 @@ exports[`long-call-no-args.js - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 veryLongCall(VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONSTANT, () => {})
 
@@ -3531,7 +3531,7 @@ exports[`long-call-no-args.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 veryLongCall(VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_VERY_LONG_CONSTANT, () => {})
 
@@ -3549,7 +3549,7 @@ exports[`long-contents.js - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo = () => {
   expect(arg1, arg2, arg3).toEqual({message: 'test', messageType: 'SMS', status: 'Unknown', created: '11/01/2017 13:36'});
@@ -3573,7 +3573,7 @@ exports[`long-contents.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo = () => {
   expect(arg1, arg2, arg3).toEqual({message: 'test', messageType: 'SMS', status: 'Unknown', created: '11/01/2017 13:36'});
@@ -3597,7 +3597,7 @@ exports[`parens.js - {"arrowParens":"always"} format 1`] = `
 arrowParens: "always"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 promise.then(
   (result) => result,
@@ -3648,7 +3648,7 @@ exports[`parens.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 promise.then(
   (result) => result,

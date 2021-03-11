@@ -4,7 +4,7 @@ exports[`vendor-prefix.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .class
 {-webkit-box-sizing:border-box;box-sizing:border-box

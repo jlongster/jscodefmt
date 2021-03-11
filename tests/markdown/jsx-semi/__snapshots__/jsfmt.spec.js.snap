@@ -6,7 +6,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`jsx
 <div>foo</div>
@@ -36,7 +36,7 @@ parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
 semi: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`jsx
 <div>foo</div>

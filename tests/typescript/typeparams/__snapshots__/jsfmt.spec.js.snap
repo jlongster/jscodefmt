@@ -4,7 +4,7 @@ exports[`class-method.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/prettier/prettier/issues/4070
 export class Thing implements OtherThing {
@@ -290,7 +290,7 @@ exports[`long-function-arg.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export const forwardS = R.curry(
   <V,T>(prop: string, reducer: ReducerFunction<V, T>, value: V, state: {[name: string]: T}) =>
@@ -332,7 +332,7 @@ exports[`tagged-template-expression.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export const RedBox = styled.div<{foo: string}>\`
   background: red;

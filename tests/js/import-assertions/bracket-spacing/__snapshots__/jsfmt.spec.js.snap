@@ -19,7 +19,7 @@ exports[`dynamic-import.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import("./foo.json", { assert: { type: "json" } });
 
@@ -46,7 +46,7 @@ exports[`empty.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export * as bar from "bar.json" assert { }
 =====================================output=====================================
@@ -74,7 +74,7 @@ exports[`re-export.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export { foo2 } from "foo.json" assert { type: "json" };
 
@@ -103,7 +103,7 @@ exports[`static-import.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import json from "./foo.json" assert { type: "json" };
 

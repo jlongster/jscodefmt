@@ -5,7 +5,7 @@ exports[`before-text.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = 
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- hello -->
 
@@ -24,7 +24,7 @@ exports[`before-text.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = 
 htmlWhitespaceSensitivity: "strict"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- hello -->
 
@@ -77,7 +77,7 @@ exports[`before-text.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- hello -->
 
@@ -96,7 +96,7 @@ exports[`bogus.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <? hello ?>
 <!- world ->
@@ -113,7 +113,7 @@ exports[`bogus.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
 htmlWhitespaceSensitivity: "strict"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <? hello ?>
 <!- world ->
@@ -160,7 +160,7 @@ exports[`bogus.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <? hello ?>
 <!- world ->
@@ -177,7 +177,7 @@ exports[`conditional.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = 
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html>
@@ -345,7 +345,7 @@ exports[`conditional.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = 
 htmlWhitespaceSensitivity: "strict"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html>
@@ -836,7 +836,7 @@ exports[`conditional.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html>
@@ -989,7 +989,7 @@ exports[`for_debugging.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] 
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html>
@@ -1036,7 +1036,7 @@ exports[`for_debugging.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] 
 htmlWhitespaceSensitivity: "strict"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html>
@@ -1173,7 +1173,7 @@ exports[`for_debugging.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html>
@@ -1220,7 +1220,7 @@ exports[`hidden.html - {"htmlWhitespaceSensitivity":"ignore"} format 1`] = `
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html>
@@ -1257,7 +1257,7 @@ exports[`hidden.html - {"htmlWhitespaceSensitivity":"strict"} format 1`] = `
 htmlWhitespaceSensitivity: "strict"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html>
@@ -1369,7 +1369,7 @@ exports[`hidden.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html>
@@ -1406,7 +1406,7 @@ exports[`surrounding-empty-line.html - {"htmlWhitespaceSensitivity":"ignore"} fo
 htmlWhitespaceSensitivity: "ignore"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <ul><!-- 123
 --><li>First</li><!-- 123
@@ -1556,7 +1556,7 @@ exports[`surrounding-empty-line.html - {"htmlWhitespaceSensitivity":"strict"} fo
 htmlWhitespaceSensitivity: "strict"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <ul><!-- 123
 --><li>First</li><!-- 123
@@ -1982,7 +1982,7 @@ exports[`surrounding-empty-line.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <ul><!-- 123
 --><li>First</li><!-- 123

@@ -18,7 +18,7 @@ exports[`dynamic-import.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import("./foo.json", { assert: { type: "json" } });
 
@@ -52,7 +52,7 @@ exports[`empty.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export * as foo from "foo.json"
 export * as bar from "bar.json" assert { }
@@ -91,7 +91,7 @@ exports[`multi-types.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import json from "./foo.json" assert { type: "json", type: "bar" };
 
@@ -105,7 +105,7 @@ exports[`not-import-assertions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import "x"
 assert ({type: 'json'});
@@ -139,7 +139,7 @@ exports[`re-export.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export { foo2 } from "foo.json" assert { type: "json" };
 export * from "foo.json" assert { type: "json" };
@@ -171,7 +171,7 @@ exports[`static-import.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import json from "./foo.json" assert { type: "json" };
 
@@ -199,7 +199,7 @@ exports[`without-from.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import "foo" assert { type: "json" }
 

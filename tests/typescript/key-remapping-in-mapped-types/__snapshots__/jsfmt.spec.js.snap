@@ -4,7 +4,7 @@ exports[`key-remapping.ts format 1`] = `
 ====================================options=====================================
 parsers: ["babel-ts", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type MappedTypeWithNewKeys<T> = {
   [K in keyof T as NewKeyType]: T[K]

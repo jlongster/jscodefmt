@@ -4,7 +4,7 @@ exports[`Fun.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 /* @providesModule Fun */
@@ -83,7 +83,7 @@ exports[`Ycombinator.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 /* @providesModule Ycombinator */

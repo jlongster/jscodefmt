@@ -4,7 +4,7 @@ exports[`combinator.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 -Option/root .public/section ~ .public/section:before {
 }
@@ -44,7 +44,7 @@ exports[`leading.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
   > * {

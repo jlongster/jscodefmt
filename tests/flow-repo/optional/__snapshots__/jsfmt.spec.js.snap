@@ -4,7 +4,7 @@ exports[`client_optional.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var qux = require('./optional');
 
@@ -22,7 +22,7 @@ exports[`default.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function f<T>(foo, bar = foo): [T, T] {
   return [foo, bar];
@@ -40,7 +40,7 @@ exports[`generic.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function x<T>(x: T = 0) {}
 
@@ -62,7 +62,7 @@ exports[`loop.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* Regression test. Improper handling of OptionalT repositioning can cause
  * reasons to grow "optional x" -> "optional optional x" -> "optional optional
@@ -86,7 +86,7 @@ exports[`maybe.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo(x?: string): ?string {
     return x;
@@ -104,7 +104,7 @@ exports[`nullable.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -214,7 +214,7 @@ exports[`optional.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function bar(x?,y?) { x * 0; }
 bar(0);
@@ -257,7 +257,7 @@ exports[`optional_param.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 function foo(x?: string): string {
@@ -351,7 +351,7 @@ exports[`optional_param2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class I<V> {
     map<M>(
@@ -375,7 +375,7 @@ exports[`optional_param3.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo(x?: number) {}
 foo(undefined); // ok
@@ -401,7 +401,7 @@ exports[`optional_param4.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 
@@ -438,7 +438,7 @@ exports[`undefined.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x;
 
@@ -468,7 +468,7 @@ exports[`undefined2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x;
 

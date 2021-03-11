@@ -4,7 +4,7 @@ exports[`escape.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div>&lt;</div>
 
@@ -18,7 +18,7 @@ exports[`nbsp.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 many_nbsp = <div>&nbsp; &nbsp; </div>
 single_nbsp = <div>&nbsp;</div>

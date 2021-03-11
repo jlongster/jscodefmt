@@ -4,7 +4,7 @@ exports[`class.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class GeneratorExamples {
   *stmt_yield(): Generator<number, void, void> {
@@ -276,7 +276,7 @@ exports[`class_failure.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // generalization of failure in class.js
 
@@ -330,7 +330,7 @@ exports[`generators.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function *stmt_yield(): Generator<number, void, void> {
   yield 0; // ok
@@ -602,7 +602,7 @@ exports[`refi.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function *a(x: {a: void | string}): Generator<void, void, void> {
   if (!x.a) return;
@@ -676,7 +676,7 @@ exports[`return.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function test1(gen: Generator<void, string, void>) {
   // You can pass whatever you like to return, it doesn't need to be related to
@@ -730,7 +730,7 @@ exports[`throw.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function *catch_return() {
   try {
@@ -792,7 +792,7 @@ exports[`variance.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare var g1: Generator<string, string, ?string>;
 var g2: Generator<?string, ?string, string> = g1;

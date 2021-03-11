@@ -4,7 +4,7 @@ exports[`loose.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 div {height: calc(-0.5 * var(ei-table-cell-padding));
   width: -webkit-calc

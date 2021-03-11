@@ -4,7 +4,7 @@ exports[`classAbstractAccessor.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 abstract class A {
@@ -31,7 +31,7 @@ exports[`classAbstractAsIdentifier.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class abstract {
     foo() { return 1; }
@@ -54,7 +54,7 @@ exports[`classAbstractAssignabilityConstructorFunction.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class A { }
 
@@ -77,7 +77,7 @@ exports[`classAbstractClinterfaceAssignability.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 var I: IConstructor;
@@ -113,7 +113,7 @@ exports[`classAbstractConstructorAssignability.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 class A {}
@@ -151,7 +151,7 @@ exports[`classAbstractCrashedOnce.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class foo {
     protected abstract test();
@@ -179,7 +179,7 @@ exports[`classAbstractExtends.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 class A {
@@ -221,7 +221,7 @@ exports[`classAbstractFactoryFunction.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 class A {}
@@ -265,7 +265,7 @@ exports[`classAbstractGeneric.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class A<T> {
     t: T;
@@ -330,7 +330,7 @@ exports[`classAbstractImportInstantiation.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 export abstract class A {}
@@ -354,7 +354,7 @@ exports[`classAbstractInAModule.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 export abstract class A {}
@@ -377,7 +377,7 @@ exports[`classAbstractInheritance.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class A {}
 
@@ -430,7 +430,7 @@ exports[`classAbstractInstantiations1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 abstract class A {}
@@ -479,7 +479,7 @@ exports[`classAbstractInstantiations2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {
 }
@@ -595,7 +595,7 @@ exports[`classAbstractMethodInNonAbstractClass.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {
     abstract foo();
@@ -620,7 +620,7 @@ exports[`classAbstractMethodWithImplementation.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class A {
     abstract foo() {}
@@ -648,7 +648,7 @@ exports[`classAbstractMixedWithModifiers.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class A {
     abstract foo_a();
@@ -689,7 +689,7 @@ exports[`classAbstractOverloads.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class A {
     abstract foo();
@@ -748,7 +748,7 @@ exports[`classAbstractOverrideWithAbstract.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {
     foo() {}
@@ -805,7 +805,7 @@ exports[`classAbstractProperties.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class A {
     abstract x : number;
@@ -842,7 +842,7 @@ exports[`classAbstractSingleLineDecl.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class A {}
 
@@ -877,7 +877,7 @@ exports[`classAbstractSuperCalls.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 class A {
@@ -954,7 +954,7 @@ exports[`classAbstractUsingAbstractMethod1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class A {
     abstract foo() : number;
@@ -1001,7 +1001,7 @@ exports[`classAbstractUsingAbstractMethods2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class A {
     abstract foo();
@@ -1066,7 +1066,7 @@ exports[`classAbstractWithInterface.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 =====================================output=====================================

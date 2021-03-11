@@ -4,7 +4,7 @@ exports[`nested-atrule.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @media (min-width: 992px){@media (max-width: 1200px) {
 .container

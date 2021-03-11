@@ -4,7 +4,7 @@ exports[`ignore.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function a() {
   // Incorrectly indented on purpose
@@ -39,7 +39,7 @@ exports[`type-cast-expression.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 transform(
   // prettier-ignore

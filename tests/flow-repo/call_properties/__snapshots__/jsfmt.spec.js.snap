@@ -4,7 +4,7 @@ exports[`A.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // You should be able to call objects with call properties
 function a(f: { (): string }, g: { (x: number): string } ): string {
@@ -76,7 +76,7 @@ exports[`B.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // You should be able to use a function as an object with a call property
 var a: { (x: number): string } = function (x: number): string { return "hi"; };
@@ -142,7 +142,7 @@ exports[`C.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // You should be able to use an object as a function
 function a(x: { (z: number): string }): (z: number) => string {
@@ -222,7 +222,7 @@ exports[`D.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Multiple call properties should also be supported
 function a(f: { (): string; (x: number): string }): string {
@@ -280,7 +280,7 @@ exports[`E.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Expecting properties that don't exist should be an error
 var a : { someProp: number } = function () {};
@@ -312,7 +312,7 @@ exports[`F.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // You should be able to use an arrow function as an object with a call property
 

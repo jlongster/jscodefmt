@@ -5,7 +5,7 @@ exports[`enum-boolean-explicit.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -30,7 +30,7 @@ exports[`enum-boolean-implicit.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -55,7 +55,7 @@ exports[`enum-comments.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 enum E1 {
   A = 0,
@@ -121,7 +121,7 @@ exports[`enum-empty.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -140,7 +140,7 @@ exports[`enum-export.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -163,7 +163,7 @@ exports[`enum-name.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -183,7 +183,7 @@ exports[`enum-no-trailing-comma.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -206,7 +206,7 @@ exports[`enum-number-explicit.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -231,7 +231,7 @@ exports[`enum-number-implicit.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -256,7 +256,7 @@ exports[`enum-string-explicit-defaulted.js - {"trailingComma":"all"} format 1`] 
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -281,7 +281,7 @@ exports[`enum-string-explicit-initialized.js - {"trailingComma":"all"} format 1`
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -306,7 +306,7 @@ exports[`enum-string-implicit-defaulted.js - {"trailingComma":"all"} format 1`] 
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -331,7 +331,7 @@ exports[`enum-string-implicit-initialized.js - {"trailingComma":"all"} format 1`
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 
@@ -356,7 +356,7 @@ exports[`enum-symbol.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["flow", "babel-flow"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @flow
 

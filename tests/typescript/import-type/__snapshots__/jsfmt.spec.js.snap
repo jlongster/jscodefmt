@@ -5,7 +5,7 @@ exports[`import-type.ts - {"singleQuote":true} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // ref: https://github.com/Microsoft/TypeScript/pull/22592
 
@@ -47,7 +47,7 @@ exports[`import-type.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // ref: https://github.com/Microsoft/TypeScript/pull/22592
 

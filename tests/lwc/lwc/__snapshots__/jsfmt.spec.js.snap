@@ -5,7 +5,7 @@ exports[`attributes.html - {"semi":false} format 1`] = `
 parsers: ["lwc"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template>
   <div
@@ -43,7 +43,7 @@ exports[`attributes.html - {"trailingComma":"none"} format 1`] = `
 parsers: ["lwc"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template>
   <div
@@ -80,7 +80,7 @@ exports[`attributes.html format 1`] = `
 ====================================options=====================================
 parsers: ["lwc"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template>
   <div

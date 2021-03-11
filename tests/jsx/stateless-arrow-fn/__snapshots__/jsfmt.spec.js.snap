@@ -4,7 +4,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const render1 = ({ styles }) => (
   <div style={styles} key="something">

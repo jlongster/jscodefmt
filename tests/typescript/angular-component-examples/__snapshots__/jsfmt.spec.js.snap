@@ -5,7 +5,7 @@ exports[`test.component.ts - {"trailingComma":"none"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @Component({
        selector: 'app-test',
@@ -51,7 +51,7 @@ exports[`test.component.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @Component({
        selector: 'app-test',

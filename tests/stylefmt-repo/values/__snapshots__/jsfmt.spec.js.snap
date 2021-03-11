@@ -4,7 +4,7 @@ exports[`values.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .class {
   background:linear-gradient(to bottom right,white,hsla(0,0%,100%,.8));

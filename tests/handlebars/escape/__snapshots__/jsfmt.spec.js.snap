@@ -4,7 +4,7 @@ exports[`html-entities.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <p>Some escaped characters: &lt; &gt; &amp;</p>
 =====================================output=====================================
@@ -16,7 +16,7 @@ exports[`mustache.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div title="foo \\{{"> \\{{ </div>
 <div class=" bar \\{{">\\{{</div>

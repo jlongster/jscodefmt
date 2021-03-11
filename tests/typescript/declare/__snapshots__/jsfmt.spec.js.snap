@@ -4,7 +4,7 @@ exports[`declare_class_fields.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class B {p: number;}
 class C extends B {declare p: 256 | 1000;}
@@ -36,7 +36,7 @@ exports[`declare_enum.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare const enum Foo {}
 declare enum Bar {}
@@ -52,7 +52,7 @@ exports[`declare_function.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare function x();
 declare function y(): void;
@@ -82,7 +82,7 @@ exports[`declare_function_with_body.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Invalid, but recoverable
 declare function foo() {}
@@ -104,7 +104,7 @@ exports[`declare_interface.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare interface Dictionary<T> {
   [index: string]: T
@@ -134,7 +134,7 @@ exports[`declare_module.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare module m {
   class C {
@@ -156,7 +156,7 @@ exports[`declare_namespace.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare namespace m {
   class C {
@@ -178,7 +178,7 @@ exports[`declare_var.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // tslint:disable-next-line:no-use-before-declare
 const hello = 5;

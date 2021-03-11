@@ -4,7 +4,7 @@ exports[`exportAsNamespace.d.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // issue: https://github.com/Microsoft/TypeScript/issues/11545
 

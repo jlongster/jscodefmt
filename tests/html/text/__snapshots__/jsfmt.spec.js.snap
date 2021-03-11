@@ -4,7 +4,7 @@ exports[`tag-should-in-fill.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <a-long-long-long-element>foo bar foo bar
   foo bar foo bar foo bar foo bar foo bar

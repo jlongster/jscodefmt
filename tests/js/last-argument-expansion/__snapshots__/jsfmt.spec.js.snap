@@ -4,7 +4,7 @@ exports[`arrow.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export default function searchUsers(action$) {
   return action$.ofType(ActionTypes.SEARCHED_USERS)
@@ -50,7 +50,7 @@ exports[`break-parent.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ({
   processors: [
@@ -114,7 +114,7 @@ exports[`edge_case.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 
@@ -251,7 +251,7 @@ exports[`empty-object.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 func(first, second, third, fourth, fifth, aReallyLongArgumentsListToForceItToBreak, {
   // comment
@@ -313,7 +313,7 @@ exports[`function-expression.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function* mySagas() {
   yield effects.takeEvery(
@@ -365,7 +365,7 @@ exports[`function-expression-issue-2239.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 someFunctionCallWithBigArgumentsAndACallback(thisArgumentIsQuiteLong, function(cool) {
   return cool
@@ -386,7 +386,7 @@ exports[`jsx.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const els = items.map(item => (
   <div className="whatever">
@@ -408,7 +408,7 @@ exports[`object.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const formatData = pipe(
   zip,
@@ -458,7 +458,7 @@ exports[`overflow.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 SuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperSuperLongCall((err, result) => {
   // comment

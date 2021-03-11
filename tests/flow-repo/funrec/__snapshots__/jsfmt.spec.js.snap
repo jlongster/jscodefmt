@@ -4,7 +4,7 @@ exports[`funrec.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function bar(x) { return x; }
 function foo() {

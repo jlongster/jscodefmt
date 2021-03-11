@@ -4,7 +4,7 @@ exports[`array.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare const array: readonly number[];
 declare const tuple: readonly [number, number];
@@ -20,7 +20,7 @@ exports[`readonly.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class Foo {
   public readonly foo = 'string';

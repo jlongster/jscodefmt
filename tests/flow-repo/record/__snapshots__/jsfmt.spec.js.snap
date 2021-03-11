@@ -4,7 +4,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Key1 = 'foo' | 'bar'; // make an enum type with known key set
 var o1: {[key: Key1]: number} = {

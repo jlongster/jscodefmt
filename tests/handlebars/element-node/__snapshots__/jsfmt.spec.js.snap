@@ -4,7 +4,7 @@ exports[`element-node.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div class="attribute" {{modifier}} {{! comment}}>
   Hello

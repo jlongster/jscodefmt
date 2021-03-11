@@ -4,7 +4,7 @@ exports[`snippet: .prettierrc in json format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {"printWidth": 100,
 "overrides": [
@@ -43,7 +43,7 @@ exports[`snippet: .prettierrc in json(empty) format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {}
 =====================================output=====================================
@@ -56,7 +56,7 @@ exports[`snippet: .prettierrc in yaml (with flowMapping) format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # comment
 printWidth: 100
@@ -80,7 +80,7 @@ exports[`snippet: .prettierrc in yaml format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # comment
 printWidth: 100
@@ -103,7 +103,7 @@ exports[`test.html format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <foo>
                  <bar/>
@@ -121,7 +121,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo(
                  'bar')
@@ -136,7 +136,7 @@ exports[`test.json format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {foo:
                  'bar'}
@@ -151,7 +151,7 @@ exports[`test.ts format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type foo =
                  'bar'
@@ -166,7 +166,7 @@ exports[`test.wxs format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var msg =
 "hello world";
@@ -185,7 +185,7 @@ exports[`test.wxss format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 view.foo {font-size: 14rpx;
 }
@@ -202,7 +202,7 @@ exports[`test.yml format 1`] = `
 ====================================options=====================================
 parsers: []
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo:
                  - 'bar'

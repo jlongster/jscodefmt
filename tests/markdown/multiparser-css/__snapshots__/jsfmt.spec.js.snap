@@ -4,7 +4,7 @@ exports[`css-comment.md format 1`] = `
 ====================================options=====================================
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`pcss
 .Avatar {

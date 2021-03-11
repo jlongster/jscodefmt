@@ -4,7 +4,7 @@ exports[`generic.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel-flow", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Theme = React.createContext<"light" | "dark">("light");
 

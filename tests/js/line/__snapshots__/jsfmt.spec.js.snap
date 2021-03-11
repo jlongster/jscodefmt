@@ -4,7 +4,7 @@ exports[`windows.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const vscode = require("vscode");
 const {getDir, getActiveFile, uint8arrayToString} = require("./utils");

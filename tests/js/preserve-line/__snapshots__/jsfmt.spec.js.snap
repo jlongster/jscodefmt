@@ -4,7 +4,7 @@ exports[`argument-list.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 longArgNamesWithComments(
 
@@ -399,7 +399,7 @@ exports[`comments.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function a() {
   const a = 5; // comment
@@ -467,7 +467,7 @@ exports[`member-chain.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 fooBar.doSomething('Hello World').doAnotherThing('Foo', { foo: bar })
 
@@ -597,7 +597,7 @@ exports[`parameter-list.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class Foo {
   constructor(

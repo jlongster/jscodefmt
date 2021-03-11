@@ -4,7 +4,7 @@ exports[`traces.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /*
  * The location marked with the FlowFixMe does not show up in the original

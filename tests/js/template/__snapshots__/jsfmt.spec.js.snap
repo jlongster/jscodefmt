@@ -4,7 +4,7 @@ exports[`arrow.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 () => a\`
 	a
@@ -30,7 +30,7 @@ exports[`call.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 insertRule(\`*, *:before, *:after {
   box-sizing: inherit;
@@ -66,7 +66,7 @@ exports[`comment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`
 (?:\${escapeChar}[\\\\S\\\\s]|(?:(?!\${// Using \`XRegExp.union\` safely rewrites backreferences in \`left\` and \`right\`.
@@ -105,7 +105,7 @@ exports[`faulty-locations.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var o = {
   [\`key\`]: () => {
@@ -145,7 +145,7 @@ exports[`graphql.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 module.exports = Relay.createContainer(
   // ...
@@ -191,7 +191,7 @@ exports[`indent.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const foo = () => {
   {
@@ -244,7 +244,7 @@ exports[`inline.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 this._pipe.write(\`\\n\\n Pattern matches \${total} \${pluralizeTest}\`);
 this._pipe.write(
@@ -315,7 +315,7 @@ exports[`parenthesis.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // "ArrowFunctionExpression"
 (() => {})\`\`;

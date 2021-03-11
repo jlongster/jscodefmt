@@ -5,7 +5,7 @@ exports[`quotes.css - {"singleQuote":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @charset "UTF-8";
 /* @charset must always have double quotes: https://www.w3.org/TR/css-syntax-3/#determine-the-fallback-encoding */
@@ -201,7 +201,7 @@ exports[`quotes.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @charset "UTF-8";
 /* @charset must always have double quotes: https://www.w3.org/TR/css-syntax-3/#determine-the-fallback-encoding */

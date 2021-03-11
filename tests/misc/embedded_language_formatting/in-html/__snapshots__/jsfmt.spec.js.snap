@@ -5,7 +5,7 @@ exports[`front-matter-toml.html - {"embeddedLanguageFormatting":"off"} format 1`
 embeddedLanguageFormatting: "off"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 +++
   
@@ -34,7 +34,7 @@ exports[`front-matter-toml.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 +++
   
@@ -64,7 +64,7 @@ exports[`front-matter-yaml.html - {"embeddedLanguageFormatting":"off"} format 1`
 embeddedLanguageFormatting: "off"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---yaml
   
@@ -93,7 +93,7 @@ exports[`front-matter-yaml.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---yaml
   
@@ -121,7 +121,7 @@ exports[`test.html - {"embeddedLanguageFormatting":"off"} format 1`] = `
 embeddedLanguageFormatting: "off"
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!doctype html>
 <head>
@@ -147,7 +147,7 @@ exports[`test.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!doctype html>
 <head>

@@ -5,7 +5,7 @@ exports[`3-style.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
@@ -31,7 +31,7 @@ exports[`3-style.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa]: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
@@ -58,7 +58,7 @@ exports[`array-key.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [1, 2, 3]: 123
 
@@ -72,7 +72,7 @@ exports[`array-key.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [1, 2, 3]: 123
 
@@ -87,7 +87,7 @@ exports[`array-value.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 123: [1, 2, 3]
 
@@ -101,7 +101,7 @@ exports[`array-value.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 123: [1, 2, 3]
 
@@ -116,7 +116,7 @@ exports[`comment.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? key
 # comment
@@ -134,7 +134,7 @@ exports[`comment.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? key
 # comment
@@ -153,7 +153,7 @@ exports[`comment-value.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 123: # hello
 
@@ -167,7 +167,7 @@ exports[`comment-value.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 123: # hello
 
@@ -182,7 +182,7 @@ exports[`common.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key1: value
 key2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
@@ -198,7 +198,7 @@ exports[`common.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key1: value
 key2: longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong
@@ -215,7 +215,7 @@ exports[`explicit-key.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? key1
 : value
@@ -236,7 +236,7 @@ exports[`explicit-key.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? key1
 : value
@@ -258,7 +258,7 @@ exports[`in-sequence.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - a: b
   c: d
@@ -274,7 +274,7 @@ exports[`in-sequence.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - a: b
   c: d
@@ -291,7 +291,7 @@ exports[`key-with-leading-comment.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? # comment
   key
@@ -309,7 +309,7 @@ exports[`key-with-leading-comment.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? # comment
   key
@@ -328,7 +328,7 @@ exports[`mapping.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key:
   key: value
@@ -344,7 +344,7 @@ exports[`mapping.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key:
   key: value
@@ -361,7 +361,7 @@ exports[`merge-twice.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .anchors:
   - &anchor1
@@ -393,7 +393,7 @@ exports[`merge-twice.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .anchors:
   - &anchor1
@@ -426,7 +426,7 @@ exports[`middle-comment.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !!map # comment
 a: 123
@@ -442,7 +442,7 @@ exports[`middle-comment.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !!map # comment
 a: 123
@@ -459,7 +459,7 @@ exports[`middle-comments.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !!map # comment 1
 # comment 2
@@ -478,7 +478,7 @@ exports[`middle-comments.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !!map # comment 1
 # comment 2
@@ -498,7 +498,7 @@ exports[`props.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- !!map &anchor
 a: 123
@@ -515,7 +515,7 @@ exports[`props.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- !!map &anchor
 a: 123
@@ -533,7 +533,7 @@ exports[`props-in-map.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: !!map &anchor
   a: 123
@@ -549,7 +549,7 @@ exports[`props-in-map.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: !!map &anchor
   a: 123
@@ -566,7 +566,7 @@ exports[`quote-key.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "a": 123
 'b': 123
@@ -582,7 +582,7 @@ exports[`quote-key.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "a": 123
 'b': 123
@@ -599,7 +599,7 @@ exports[`sequence.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key:
 - value
@@ -615,7 +615,7 @@ exports[`sequence.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key:
 - value
@@ -632,7 +632,7 @@ exports[`tag-key.yml - {"tabWidth":4} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 tabWidth: 4
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? !!tag key
 : value
@@ -647,7 +647,7 @@ exports[`tag-key.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? !!tag key
 : value

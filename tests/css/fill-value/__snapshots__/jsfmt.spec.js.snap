@@ -4,7 +4,7 @@ exports[`fill.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 div {
   border-left: 1px solid mix($warningBackgroundColors, $warningBorderColors, 50%);

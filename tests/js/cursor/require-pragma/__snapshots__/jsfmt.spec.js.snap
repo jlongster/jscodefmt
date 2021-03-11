@@ -6,7 +6,7 @@ cursorOffset: 27
 parsers: ["babel", "typescript", "flow"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (function() {return        <|> 15})()
 

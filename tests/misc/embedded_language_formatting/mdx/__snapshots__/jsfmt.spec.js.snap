@@ -5,7 +5,7 @@ exports[`import-export.mdx - {"embeddedLanguageFormatting":"off"} format 1`] = `
 embeddedLanguageFormatting: "off"
 parsers: ["mdx"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import D from 'd'
 import {A,B,C}    from "hello-world"
@@ -82,7 +82,7 @@ exports[`jsx.mdx - {"embeddedLanguageFormatting":"off"} format 1`] = `
 embeddedLanguageFormatting: "off"
 parsers: ["mdx"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <Heading hi='there'>Hello, world!
 </Heading>

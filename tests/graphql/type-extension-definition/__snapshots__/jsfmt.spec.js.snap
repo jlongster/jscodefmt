@@ -4,7 +4,7 @@ exports[`type-extendsion-syntax.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type User {
   name: String

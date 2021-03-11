@@ -5,7 +5,7 @@ exports[`does-nothing.json - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["json"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {"allOn": "Single", "Line": "example",
 "noSpace":true,

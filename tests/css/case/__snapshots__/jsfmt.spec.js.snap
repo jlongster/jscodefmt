@@ -4,7 +4,7 @@ exports[`case.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @custom-media --KeepName (MIN-WIDTH: 500PX);
 
@@ -141,7 +141,7 @@ exports[`custom-selectors.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @custom-selector :--camelCase .my-css-selector;
 

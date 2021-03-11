@@ -4,7 +4,7 @@ exports[`shorthand-with-sass-variables.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .class{border:1px  solid       $color;
 }

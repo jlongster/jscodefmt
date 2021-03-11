@@ -6,7 +6,7 @@ parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 tabWidth: 8
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`
 Mixed tabs and spaces:
@@ -72,7 +72,7 @@ exports[`indent.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`
 Mixed tabs and spaces:

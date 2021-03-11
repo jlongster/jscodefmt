@@ -5,7 +5,7 @@ exports[`custom-selector.css - {"singleQuote":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @custom-selector :--icon i[class^='icon-'], i[class*=' icon-'];
 @custom-selector :--icon i[ class ^= 'icon-' ], i[ class *= ' icon-' ];
@@ -36,7 +36,7 @@ exports[`custom-selector.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @custom-selector :--icon i[class^='icon-'], i[class*=' icon-'];
 @custom-selector :--icon i[ class ^= 'icon-' ], i[ class *= ' icon-' ];
@@ -68,7 +68,7 @@ exports[`insensitive.css - {"singleQuote":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 input[type="radio" i] {}
 img[alt~="person" i][src*="lorem" i] {}
@@ -89,7 +89,7 @@ exports[`insensitive.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 input[type="radio" i] {}
 img[alt~="person" i][src*="lorem" i] {}
@@ -111,7 +111,7 @@ exports[`namespaces.css - {"singleQuote":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @namespace foo "http://www.example.com";
 [foo|att=val] {}
@@ -137,7 +137,7 @@ exports[`namespaces.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @namespace foo "http://www.example.com";
 [foo|att=val] {}
@@ -164,7 +164,7 @@ exports[`quotes.css - {"singleQuote":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a[id=test] {}
 a[id="test"] {}
@@ -200,7 +200,7 @@ exports[`quotes.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a[id=test] {}
 a[id="test"] {}
@@ -237,7 +237,7 @@ exports[`spaces.css - {"singleQuote":true} format 1`] = `
 parsers: ["css"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [lang] {}
 [ lang] {}
@@ -478,7 +478,7 @@ exports[`spaces.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [lang] {}
 [ lang] {}

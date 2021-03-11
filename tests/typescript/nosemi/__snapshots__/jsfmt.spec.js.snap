@@ -5,7 +5,7 @@ exports[`index-signature.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class LocalStorage implements Storage {
   [index: number]: string;
@@ -26,7 +26,7 @@ exports[`interface.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface Inline { x: string }
 
@@ -60,7 +60,7 @@ exports[`type.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type A = {disabled?: boolean, error?: string}
 

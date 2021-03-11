@@ -5,7 +5,7 @@ exports[`inside-template.vue - {"vueIndentScriptAndStyle":false} format 1`] = `
 parsers: ["vue"]
 printWidth: 80
 vueIndentScriptAndStyle: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template>
     <style>
@@ -62,7 +62,7 @@ exports[`inside-template.vue - {"vueIndentScriptAndStyle":true} format 1`] = `
 parsers: ["vue"]
 printWidth: 80
 vueIndentScriptAndStyle: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template>
     <style>
@@ -119,7 +119,7 @@ exports[`vue-tag-indent.vue - {"vueIndentScriptAndStyle":false} format 1`] = `
 parsers: ["vue"]
 printWidth: 80
 vueIndentScriptAndStyle: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script>
   console.log('hello');
@@ -176,7 +176,7 @@ exports[`vue-tag-indent.vue - {"vueIndentScriptAndStyle":true} format 1`] = `
 parsers: ["vue"]
 printWidth: 80
 vueIndentScriptAndStyle: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script>
   console.log('hello');

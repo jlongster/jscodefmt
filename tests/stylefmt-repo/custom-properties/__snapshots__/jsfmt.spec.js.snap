@@ -4,7 +4,7 @@ exports[`custom-properties.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 :root{--mainColor:#123456}
 a{color:var(        --mainColor     )     ; }

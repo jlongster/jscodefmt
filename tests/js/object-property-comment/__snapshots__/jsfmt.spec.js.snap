@@ -4,7 +4,7 @@ exports[`after-key.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let a = {
    a /* comment */: () => 1

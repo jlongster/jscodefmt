@@ -4,7 +4,7 @@ exports[`indent.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo = (callNode.parent?.type === AST_NODE_TYPES.ChainExpression
   ? callNode.parent.parent

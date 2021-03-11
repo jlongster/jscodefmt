@@ -4,7 +4,7 @@ exports[`createclass-callsite.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 var React = require('react');
@@ -68,7 +68,7 @@ exports[`createclass-module.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 var React = require('react');
@@ -108,7 +108,7 @@ exports[`es6class-proptypes-callsite.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 import React from 'react';
@@ -172,7 +172,7 @@ exports[`es6class-proptypes-module.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 import React from 'react';
@@ -214,7 +214,7 @@ exports[`es6class-types-callsite.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 import React from 'react';
@@ -278,7 +278,7 @@ exports[`es6class-types-module.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 import React from 'react';

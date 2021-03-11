@@ -4,7 +4,7 @@ exports[`ClassDeclaration22.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 class C {
     "foo"();
@@ -24,7 +24,7 @@ exports[`anyIsAssignableToObject.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface P {
     p: {};
@@ -51,7 +51,7 @@ exports[`castOfAwait.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @target: es6
 async function f() {
@@ -79,7 +79,7 @@ exports[`castParentheses.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿class a {
     static b: any;
@@ -113,7 +113,7 @@ exports[`castTest.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 var x : any = 0;
@@ -185,7 +185,7 @@ exports[`checkInfiniteExpansionTermination.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Regression test for #1002
 // Before fix this code would cause infinite loop
@@ -233,7 +233,7 @@ exports[`commentInNamespaceDeclarationWithIdentifierPathName.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ﻿namespace hello.hi.world
 {
@@ -252,7 +252,7 @@ exports[`commentsInterface.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface i2 {
     foo: (/**param help*/b: number) => string;
@@ -270,7 +270,7 @@ exports[`contextualSignatureInstantiation2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // dot f g x = f(g(x))
 var dot: <T, S>(f: (_: T) => S) => <U>(g: (_: U) => T) => (_: U) => S;
@@ -295,7 +295,7 @@ exports[`declareDottedModuleName.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @declaration: true
 module M {
@@ -329,7 +329,7 @@ exports[`decrementAndIncrementOperators.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x = 0;
 
@@ -421,7 +421,7 @@ exports[`downlevelLetConst1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const
 =====================================output=====================================
@@ -443,7 +443,7 @@ exports[`errorOnInitializerInInterfaceProperty.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface Foo {
     bar: number = 5;
@@ -461,7 +461,7 @@ exports[`es5ExportDefaultClassDeclaration4.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // @target: es5
 // @module: commonjs
@@ -504,7 +504,7 @@ exports[`functionOverloadsOnGenericArity1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // overloading on arity not allowed
 interface C {
@@ -538,7 +538,7 @@ exports[`globalIsContextualKeyword.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function a() {
     let global = 1;
@@ -579,7 +579,7 @@ exports[`indexSignatureWithInitializer.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // These used to be indexers, now they are computed properties
 interface I {
@@ -606,7 +606,7 @@ exports[`mappedTypeWithCombinedTypeMappers.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Repro from #13351
 
@@ -654,7 +654,7 @@ exports[`modifiersOnInterfaceIndexSignature1.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface I {
   public [a: string]: number;
@@ -671,7 +671,7 @@ exports[`privacyGloImport.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@declaration: true
 module m1 {

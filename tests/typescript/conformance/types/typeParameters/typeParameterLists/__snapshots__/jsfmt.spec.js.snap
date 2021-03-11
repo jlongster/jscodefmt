@@ -4,7 +4,7 @@ exports[`innerTypeParameterShadowingOuterOne.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // inner type parameters shadow outer ones of the same name
 // no errors expected
@@ -72,7 +72,7 @@ exports[`innerTypeParameterShadowingOuterOne2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // inner type parameters shadow outer ones of the same name
 // no errors expected
@@ -158,7 +158,7 @@ exports[`staticMembersUsingClassTypeParameter.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // BUG 745747
 class C<T> {
@@ -200,7 +200,7 @@ exports[`typeParametersAvailableInNestedScope2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo<T, U>(x: T, y: U) {
     function bar<V>(z: V) {

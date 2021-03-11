@@ -4,7 +4,7 @@ exports[`interface_types.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type A = interface { p: string };
 type B = interface extends X { p: string };

@@ -4,7 +4,7 @@ exports[`intersection.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo(x: $All<Error,{type:number}>): number {
     return x.type;
@@ -30,7 +30,7 @@ exports[`objassign.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * Test intersection of objects flowing to spread assignment.
@@ -64,7 +64,7 @@ exports[`pred.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * Test interaction of object intersections and predicates.
@@ -129,7 +129,7 @@ exports[`test_fun.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * Tests for intersections of function types.
@@ -203,7 +203,7 @@ exports[`test_obj.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * Tests for intersections of object types

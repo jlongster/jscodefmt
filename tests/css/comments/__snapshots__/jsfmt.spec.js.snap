@@ -4,7 +4,7 @@ exports[`CRLF.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /*
  * Comment 1
@@ -54,7 +54,7 @@ exports[`at-rules.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @charset "utf-8"; /* comment 1 */
 
@@ -270,7 +270,7 @@ exports[`block.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* Kikoo */
 /**
@@ -290,7 +290,7 @@ exports[`bug.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* Catchall baseclass */
 .glyphicon {
@@ -308,7 +308,7 @@ exports[`declaration.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
     /* comment 1 */
@@ -480,7 +480,7 @@ exports[`prettier-ignore.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo {
   /* prettier-ignore */
@@ -502,7 +502,7 @@ exports[`selectors.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .powerPathNavigator .helm button.pressedButton, /* comment 1 */
 .powerPathNavigator .helm button:active:not(.disabledButton),
@@ -901,7 +901,7 @@ exports[`source-map.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .foo {
     color: red;
@@ -923,7 +923,7 @@ exports[`types.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* This is a basic comment */
 

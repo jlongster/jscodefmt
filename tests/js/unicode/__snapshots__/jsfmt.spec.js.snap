@@ -4,7 +4,7 @@ exports[`combining-characters.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const x = ["ÁÀĀÉÈĒẸE̩Ẹ́É̩Ẹ̀È̩Ẹ̄Ē̩ÍÌĪÓÒŌỌO̩Ọ́Ó̩Ọ̀Ò̩Ọ̄Ō̩ÚÙŪṢS̩áàāéèēẹe̩ẹ́é̩ẹ̀è̩ẹ̄ē̩íìīóòōọo̩ọ́ó̩ọ̀ò̩ọ̄ō̩úùū"];
 //345678901234567890123456789012345678901234567890123456789012345678901234567890
@@ -22,7 +22,7 @@ exports[`keys.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ({'この事はつもり素晴らしいことさ': '35jL9V'})
 
@@ -36,7 +36,7 @@ exports[`nbsp-jsx.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Note: there are non breaking spaces in the JSX text
 x = <p> aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa </p>;

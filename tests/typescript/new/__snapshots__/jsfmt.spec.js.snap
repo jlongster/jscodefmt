@@ -4,7 +4,7 @@ exports[`new-signature.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 interface FooConstructor {
   new (

@@ -4,7 +4,7 @@ exports[`break.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 h(f(g(() => {
   a
@@ -106,7 +106,7 @@ exports[`parent.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 runtimeAgent.getProperties(
   objectId,
@@ -136,7 +136,7 @@ exports[`react.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function helloWorld() {
   useEffect(() => {

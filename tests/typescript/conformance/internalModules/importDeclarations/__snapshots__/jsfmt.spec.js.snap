@@ -4,7 +4,7 @@ exports[`circularImportAlias.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // expected no error
 
@@ -52,7 +52,7 @@ exports[`exportImportAlias.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // expect no errors here
 
@@ -197,7 +197,7 @@ exports[`exportInterface.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export interface I {}
 =====================================output=====================================
@@ -210,7 +210,7 @@ exports[`importAliasIdentifiers.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 module moduleA {
     export class Point {
@@ -314,7 +314,7 @@ exports[`invalidImportAliasIdentifiers.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // none of these should work, since non are actually modules
 
@@ -373,7 +373,7 @@ exports[`shadowedInternalModule.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // all errors imported modules conflict with local variables
 

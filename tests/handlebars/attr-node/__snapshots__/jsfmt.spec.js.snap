@@ -4,7 +4,7 @@ exports[`attribute.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div title='
 
@@ -89,7 +89,7 @@ exports[`class-name.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div class='class and other'></div>
 <div class=' class and other '></div>
@@ -135,7 +135,7 @@ exports[`quotes.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div title="'' {{ foo }}"></div>
 <div title='"" {{ bar }}'></div>

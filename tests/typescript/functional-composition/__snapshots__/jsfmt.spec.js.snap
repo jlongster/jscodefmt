@@ -4,7 +4,7 @@ exports[`pipe-function-calls.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (() => {
 
@@ -51,7 +51,7 @@ exports[`pipe-function-calls-with-comments.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // input with some comments added to avoid reformatting
 

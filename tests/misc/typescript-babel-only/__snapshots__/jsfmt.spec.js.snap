@@ -4,7 +4,7 @@ exports[`declare-index-signature.ts format 1`] = `
 ====================================options=====================================
 parsers: ["babel-ts"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Invalid, but recoverable
 class C {
@@ -66,7 +66,7 @@ exports[`tuple-labeled-ts.ts format 1`] = `
 ====================================options=====================================
 parsers: ["babel-ts"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Invalid label 1
 type T = [x.y: A];

@@ -4,7 +4,7 @@ exports[`comment.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function foo() {
   return {
@@ -28,7 +28,7 @@ exports[`long-value.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const x = {
   "ABC": "12345678901234567890123456789012345678901234567890123456789012345678901234567890"
@@ -99,7 +99,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const a = classnames({
   "some-prop": this.state.longLongLongLongLongLongLongLongLongTooLongProp

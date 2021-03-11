@@ -4,7 +4,7 @@ exports[`mappedType.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Keys = 'option1' | 'option2';
 type Flags = { [K in Keys]: boolean };

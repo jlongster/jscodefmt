@@ -5,7 +5,7 @@ exports[`aliases-in-block-sequence.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - &a a
 - &b b
@@ -26,7 +26,7 @@ exports[`aliases-in-block-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - &a a
 - &b b
@@ -47,7 +47,7 @@ exports[`aliases-in-explicit-block-mapping.yml - {"proseWrap":"always"} format 1
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? &a a
 : &b b
@@ -65,7 +65,7 @@ exports[`aliases-in-explicit-block-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? &a a
 : &b b
@@ -83,7 +83,7 @@ exports[`allowed-characters-in-alias.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: &:@*!$"<foo>: scalar a
 b: *:@*!$"<foo>:
@@ -100,7 +100,7 @@ exports[`allowed-characters-in-alias.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: &:@*!$"<foo>: scalar a
 b: *:@*!$"<foo>:
@@ -117,7 +117,7 @@ exports[`allowed-characters-in-keys.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a!"#$%&'()*+,-./09:;<=>?@AZ[\\]^_\`az{|}~: safe
 ?foo: safe question mark
@@ -140,7 +140,7 @@ exports[`allowed-characters-in-keys.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a!"#$%&'()*+,-./09:;<=>?@AZ[\\]^_\`az{|}~: safe
 ?foo: safe question mark
@@ -163,7 +163,7 @@ exports[`allowed-characters-in-plain-scalars.yml - {"proseWrap":"always"} format
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 safe: a!"#$%&'()*+,-./09:;<=>?@AZ[\\]^_\`az{|}~
      !"#$%&'()*+,-./09:;<=>?@AZ[\\]^_\`az{|}~
@@ -186,7 +186,7 @@ exports[`allowed-characters-in-plain-scalars.yml - {"useTabs":true} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 safe: a!"#$%&'()*+,-./09:;<=>?@AZ[\\]^_\`az{|}~
      !"#$%&'()*+,-./09:;<=>?@AZ[\\]^_\`az{|}~
@@ -209,7 +209,7 @@ exports[`allowed-characters-in-quoted-mapping-key.yml - {"proseWrap":"always"} f
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "foo\\nbar:baz\\tx \\\\$%^&*()x": 23
 'x\\ny:z\\tx $%^&*()x': 24
@@ -226,7 +226,7 @@ exports[`allowed-characters-in-quoted-mapping-key.yml - {"useTabs":true} format 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "foo\\nbar:baz\\tx \\\\$%^&*()x": 23
 'x\\ny:z\\tx $%^&*()x': 24
@@ -243,7 +243,7 @@ exports[`anchor-before-zero-indented-sequence.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 seq:
@@ -265,7 +265,7 @@ exports[`anchor-before-zero-indented-sequence.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 seq:
@@ -287,7 +287,7 @@ exports[`anchor-with-unicode-character.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 - &😁 unicode anchor
@@ -304,7 +304,7 @@ exports[`anchor-with-unicode-character.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 - &😁 unicode anchor
@@ -321,7 +321,7 @@ exports[`anchors-and-tags.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
  - &a !!str a
  - !!int 2
@@ -342,7 +342,7 @@ exports[`anchors-and-tags.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
  - &a !!str a
  - !!int 2
@@ -363,7 +363,7 @@ exports[`anchors-in-mapping.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 &a a: b
 c: &d d
@@ -380,7 +380,7 @@ exports[`anchors-in-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 &a a: b
 c: &d d
@@ -397,7 +397,7 @@ exports[`anchors-with-colon-in-name.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 &a: key: &a value
 foo:
@@ -415,7 +415,7 @@ exports[`anchors-with-colon-in-name.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 &a: key: &a value
 foo:
@@ -433,7 +433,7 @@ exports[`backslashes-in-singlequotes.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 'foo: bar\\': baz'
 
@@ -448,7 +448,7 @@ exports[`backslashes-in-singlequotes.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 'foo: bar\\': baz'
 
@@ -463,7 +463,7 @@ exports[`bare-document-after-document-end-marker.yml - {"proseWrap":"always"} fo
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 scalar1
@@ -484,7 +484,7 @@ exports[`bare-document-after-document-end-marker.yml - {"useTabs":true} format 1
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 scalar1
@@ -505,7 +505,7 @@ exports[`blank-lines.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo: 1
 
@@ -542,7 +542,7 @@ exports[`blank-lines.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo: 1
 
@@ -579,7 +579,7 @@ exports[`block-mapping-with-missing-values.yml - {"proseWrap":"always"} format 1
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? a
 ? b
@@ -598,7 +598,7 @@ exports[`block-mapping-with-missing-values.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? a
 ? b
@@ -617,7 +617,7 @@ exports[`block-mapping-with-multiline-scalars.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? a
   true
@@ -638,7 +638,7 @@ exports[`block-mapping-with-multiline-scalars.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? a
   true
@@ -663,7 +663,7 @@ exports[`block-mappings-in-block-sequence.yml - {"proseWrap":"always"} format 1`
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
  - key: value
    key2: value2
@@ -683,7 +683,7 @@ exports[`block-mappings-in-block-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
  - key: value
    key2: value2
@@ -703,7 +703,7 @@ exports[`block-scalar-indicator-order.yml - {"proseWrap":"always"} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - |2-
   explicit indent and chomp
@@ -724,7 +724,7 @@ exports[`block-scalar-indicator-order.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - |2-
   explicit indent and chomp
@@ -745,7 +745,7 @@ exports[`block-scalar-keep.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- |+
  ab
@@ -768,7 +768,7 @@ exports[`block-scalar-keep.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- |+
  ab
@@ -791,7 +791,7 @@ exports[`block-scalar-strip.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 |-
  ab
@@ -811,7 +811,7 @@ exports[`block-scalar-strip.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 |-
  ab
@@ -831,7 +831,7 @@ exports[`block-sequence-in-block-mapping.yml - {"proseWrap":"always"} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key:
  - item1
@@ -850,7 +850,7 @@ exports[`block-sequence-in-block-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key:
  - item1
@@ -869,7 +869,7 @@ exports[`block-sequence-in-block-sequence.yml - {"proseWrap":"always"} format 1`
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - - s1_i1
   - s1_i2
@@ -888,7 +888,7 @@ exports[`block-sequence-in-block-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - - s1_i1
   - s1_i2
@@ -907,7 +907,7 @@ exports[`block-submapping.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo:
   bar: 1
@@ -926,7 +926,7 @@ exports[`block-submapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo:
   bar: 1
@@ -945,7 +945,7 @@ exports[`colon-in-double-quoted-string.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "foo: bar\\": baz"
 
@@ -960,7 +960,7 @@ exports[`colon-in-double-quoted-string.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "foo: bar\\": baz"
 
@@ -975,7 +975,7 @@ exports[`comment-in-flow-sequence-before-comma.yml - {"proseWrap":"always"} form
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 [ word1
@@ -998,7 +998,7 @@ exports[`comment-in-flow-sequence-before-comma.yml - {"useTabs":true} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 [ word1
@@ -1021,7 +1021,7 @@ exports[`construct-binary.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 canonical: !!binary "\\
  R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\\
@@ -1057,7 +1057,7 @@ exports[`construct-binary.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 canonical: !!binary "\\
  R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\\
@@ -1093,7 +1093,7 @@ exports[`document-start-on-last-line.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 a: b
@@ -1113,7 +1113,7 @@ exports[`document-start-on-last-line.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 a: b
@@ -1133,7 +1133,7 @@ exports[`document-with-footer.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 aaa: bbb
 ...
@@ -1149,7 +1149,7 @@ exports[`document-with-footer.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 aaa: bbb
 ...
@@ -1165,7 +1165,7 @@ exports[`empty-lines-at-end-of-document.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 :
 
@@ -1183,7 +1183,7 @@ exports[`empty-lines-at-end-of-document.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 :
 
@@ -1201,7 +1201,7 @@ exports[`empty-lines-between-mapping-elements.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1: 2
 
@@ -1221,7 +1221,7 @@ exports[`empty-lines-between-mapping-elements.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1: 2
 
@@ -1241,7 +1241,7 @@ exports[`empty-stream.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 =====================================output=====================================
@@ -1254,7 +1254,7 @@ exports[`empty-stream.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 =====================================output=====================================
@@ -1267,7 +1267,7 @@ exports[`escaped-slash-in-double-quotes.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 escaped slash: "a\\/b"
 
@@ -1282,7 +1282,7 @@ exports[`escaped-slash-in-double-quotes.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 escaped slash: "a\\/b"
 
@@ -1297,7 +1297,7 @@ exports[`explicit-non-specific-tag.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ! a
 
@@ -1312,7 +1312,7 @@ exports[`explicit-non-specific-tag.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ! a
 
@@ -1327,7 +1327,7 @@ exports[`flow-mapping.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {foo: you, bar: far}
 
@@ -1342,7 +1342,7 @@ exports[`flow-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {foo: you, bar: far}
 
@@ -1357,7 +1357,7 @@ exports[`flow-mapping-in-block-sequence.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - {a: b}
 
@@ -1372,7 +1372,7 @@ exports[`flow-mapping-in-block-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - {a: b}
 
@@ -1387,7 +1387,7 @@ exports[`flow-sequence.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [foo, bar, 42]
 
@@ -1402,7 +1402,7 @@ exports[`flow-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [foo, bar, 42]
 
@@ -1417,7 +1417,7 @@ exports[`flow-sequence-in-block-mapping.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: [b, c]
 
@@ -1432,7 +1432,7 @@ exports[`flow-sequence-in-block-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: [b, c]
 
@@ -1447,7 +1447,7 @@ exports[`flow-sequence-in-flow-mapping.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {a: [b, c], [d, e]: f}
 
@@ -1462,7 +1462,7 @@ exports[`flow-sequence-in-flow-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {a: [b, c], [d, e]: f}
 
@@ -1477,7 +1477,7 @@ exports[`flow-sequence-in-flow-sequence.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [a, [b, c]]
 
@@ -1492,7 +1492,7 @@ exports[`flow-sequence-in-flow-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [a, [b, c]]
 
@@ -1507,7 +1507,7 @@ exports[`folded-block-scalar.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >
  ab
@@ -1535,7 +1535,7 @@ exports[`folded-block-scalar.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >
  ab
@@ -1564,7 +1564,7 @@ exports[`implicit-flow-mapping-key-on-one-line.yml - {"proseWrap":"always"} form
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [flow]: block
 
@@ -1579,7 +1579,7 @@ exports[`implicit-flow-mapping-key-on-one-line.yml - {"useTabs":true} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [flow]: block
 
@@ -1594,7 +1594,7 @@ exports[`key-with-anchor-after-missing-explicit-mapping-value.yml - {"proseWrap"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 a: 1
@@ -1615,7 +1615,7 @@ exports[`key-with-anchor-after-missing-explicit-mapping-value.yml - {"useTabs":t
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 a: 1
@@ -1636,7 +1636,7 @@ exports[`literal-block-scalar.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: |
  ab
@@ -1662,7 +1662,7 @@ exports[`literal-block-scalar.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: |
  ab
@@ -1688,7 +1688,7 @@ exports[`literal-unicode.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 wanted: love ♥ and peace ☮
@@ -1705,7 +1705,7 @@ exports[`literal-unicode.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 wanted: love ♥ and peace ☮
@@ -1722,7 +1722,7 @@ exports[`lookahead-test-cases.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - bla"keks: foo
 - bla]keks: foo
@@ -1739,7 +1739,7 @@ exports[`lookahead-test-cases.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - bla"keks: foo
 - bla]keks: foo
@@ -1756,7 +1756,7 @@ exports[`mapping-key-and-flow-sequence-item-anchors.yml - {"proseWrap":"always"}
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 &mapping
@@ -1775,7 +1775,7 @@ exports[`mapping-key-and-flow-sequence-item-anchors.yml - {"useTabs":true} forma
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 &mapping
@@ -1794,7 +1794,7 @@ exports[`mixed-block-mapping-explicit-to-implicit.yml - {"proseWrap":"always"} f
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? a
 : 13
@@ -1812,7 +1812,7 @@ exports[`mixed-block-mapping-explicit-to-implicit.yml - {"useTabs":true} format 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? a
 : 13
@@ -1830,7 +1830,7 @@ exports[`mixed-block-mapping-implicit-to-explicit.yml - {"proseWrap":"always"} f
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: 4.2
 ? 23
@@ -1848,7 +1848,7 @@ exports[`mixed-block-mapping-implicit-to-explicit.yml - {"useTabs":true} format 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: 4.2
 ? 23
@@ -1866,7 +1866,7 @@ exports[`multi-level-mapping-indent.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a:
   b:
@@ -1891,7 +1891,7 @@ exports[`multi-level-mapping-indent.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a:
   b:
@@ -1916,7 +1916,7 @@ exports[`multiline-plain-scalar-with-empty-line.yml - {"proseWrap":"always"} for
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 plain: a
@@ -1938,7 +1938,7 @@ exports[`multiline-plain-scalar-with-empty-line.yml - {"useTabs":true} format 1`
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 plain: a
@@ -1961,7 +1961,7 @@ exports[`multiline-scalar-at-top-level.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a
 b  
@@ -1983,7 +1983,7 @@ exports[`multiline-scalar-at-top-level.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a
 b  
@@ -2008,7 +2008,7 @@ exports[`multiline-scalar-in-mapping.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: b
  c
@@ -2028,7 +2028,7 @@ exports[`multiline-scalar-in-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: b
  c
@@ -2050,7 +2050,7 @@ exports[`multiline-scalar-that-looks-like-a-yaml-directive.yml - {"proseWrap":"a
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 scalar
@@ -2068,7 +2068,7 @@ exports[`multiline-scalar-that-looks-like-a-yaml-directive.yml - {"useTabs":true
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 scalar
@@ -2087,7 +2087,7 @@ exports[`multiple-entry-block-sequence.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - foo
 - bar
@@ -2106,7 +2106,7 @@ exports[`multiple-entry-block-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - foo
 - bar
@@ -2125,7 +2125,7 @@ exports[`multiple-pair-block-mapping.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo: blue
 bar: arrr
@@ -2144,7 +2144,7 @@ exports[`multiple-pair-block-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo: blue
 bar: arrr
@@ -2163,7 +2163,7 @@ exports[`nested-flow-collections.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 {
@@ -2186,7 +2186,7 @@ exports[`nested-flow-collections.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 {
@@ -2209,7 +2209,7 @@ exports[`nested-flow-collections-on-one-line.yml - {"proseWrap":"always"} format
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 { a: [b, c, { d: [e, f] } ] }
@@ -2226,7 +2226,7 @@ exports[`nested-flow-collections-on-one-line.yml - {"useTabs":true} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 { a: [b, c, { d: [e, f] } ] }
@@ -2243,7 +2243,7 @@ exports[`node-anchor-and-tag-on-seperate-lines.yml - {"proseWrap":"always"} form
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key: &anchor
  !!map
@@ -2261,7 +2261,7 @@ exports[`node-anchor-and-tag-on-seperate-lines.yml - {"useTabs":true} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key: &anchor
  !!map
@@ -2279,7 +2279,7 @@ exports[`node-and-mapping-key-anchors.yml - {"proseWrap":"always"} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 top1: &node1
@@ -2322,7 +2322,7 @@ exports[`node-and-mapping-key-anchors.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 top1: &node1
@@ -2365,7 +2365,7 @@ exports[`non-specific-tags-on-scalars.yml - {"proseWrap":"always"} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - plain
 - "double quoted"
@@ -2390,7 +2390,7 @@ exports[`non-specific-tags-on-scalars.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - plain
 - "double quoted"
@@ -2415,7 +2415,7 @@ exports[`plain-mapping-key-ending-with-colon.yml - {"proseWrap":"always"} format
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 key ends with two colons::: value
@@ -2432,7 +2432,7 @@ exports[`plain-mapping-key-ending-with-colon.yml - {"useTabs":true} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 key ends with two colons::: value
@@ -2449,7 +2449,7 @@ exports[`plain-scalar-looking-like-key-comment-anchor-and-tag.yml - {"proseWrap"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 k:#foo
  &a !t s
@@ -2465,7 +2465,7 @@ exports[`plain-scalar-looking-like-key-comment-anchor-and-tag.yml - {"useTabs":t
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 k:#foo
  &a !t s
@@ -2482,7 +2482,7 @@ exports[`plain-scalar-with-backslashes.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 plain\\value\\with\\backslashes
@@ -2499,7 +2499,7 @@ exports[`plain-scalar-with-backslashes.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 plain\\value\\with\\backslashes
@@ -2516,7 +2516,7 @@ exports[`plain-url-in-flow-mapping.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - { url: http://example.org }
 
@@ -2531,7 +2531,7 @@ exports[`plain-url-in-flow-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - { url: http://example.org }
 
@@ -2546,7 +2546,7 @@ exports[`scalars-on-line.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- "quoted
 string"
@@ -2566,7 +2566,7 @@ exports[`scalars-on-line.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- "quoted
 string"
@@ -2587,7 +2587,7 @@ exports[`sequence-entry-that-looks-like-two-with-wrong-indentation.yml - {"prose
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - single multiline
  - sequence entry
@@ -2603,7 +2603,7 @@ exports[`sequence-entry-that-looks-like-two-with-wrong-indentation.yml - {"useTa
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - single multiline
  - sequence entry
@@ -2620,7 +2620,7 @@ exports[`sequence-indent.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo:
 - 42
@@ -2641,7 +2641,7 @@ exports[`sequence-indent.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo:
 - 42
@@ -2662,7 +2662,7 @@ exports[`sequence-with-same-indentation-as-parent-mapping.yml - {"proseWrap":"al
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1:
 - 2
@@ -2683,7 +2683,7 @@ exports[`sequence-with-same-indentation-as-parent-mapping.yml - {"useTabs":true}
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1:
 - 2
@@ -2704,7 +2704,7 @@ exports[`simple-mapping-indent.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo:
   bar: baz
@@ -2721,7 +2721,7 @@ exports[`simple-mapping-indent.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo:
   bar: baz
@@ -2738,7 +2738,7 @@ exports[`single-entry-block-sequence.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - foo
 
@@ -2753,7 +2753,7 @@ exports[`single-entry-block-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - foo
 
@@ -2768,7 +2768,7 @@ exports[`single-pair-block-mapping.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo: bar
 
@@ -2783,7 +2783,7 @@ exports[`single-pair-block-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo: bar
 
@@ -2798,7 +2798,7 @@ exports[`spec-example-2-1-sequence-of-scalars.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - Mark McGwire
 - Sammy Sosa
@@ -2817,7 +2817,7 @@ exports[`spec-example-2-1-sequence-of-scalars.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - Mark McGwire
 - Sammy Sosa
@@ -2836,7 +2836,7 @@ exports[`spec-example-2-2-mapping-scalars-to-scalars.yml - {"proseWrap":"always"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 hr:  65    # Home runs
 avg: 0.278 # Batting average
@@ -2855,7 +2855,7 @@ exports[`spec-example-2-2-mapping-scalars-to-scalars.yml - {"useTabs":true} form
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 hr:  65    # Home runs
 avg: 0.278 # Batting average
@@ -2874,7 +2874,7 @@ exports[`spec-example-2-3-mapping-scalars-to-sequences.yml - {"proseWrap":"alway
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 american:
   - Boston Red Sox
@@ -2903,7 +2903,7 @@ exports[`spec-example-2-3-mapping-scalars-to-sequences.yml - {"useTabs":true} fo
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 american:
   - Boston Red Sox
@@ -2932,7 +2932,7 @@ exports[`spec-example-2-4-sequence-of-mappings.yml - {"proseWrap":"always"} form
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 -
   name: Mark McGwire
@@ -2959,7 +2959,7 @@ exports[`spec-example-2-4-sequence-of-mappings.yml - {"useTabs":true} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 -
   name: Mark McGwire
@@ -2986,7 +2986,7 @@ exports[`spec-example-2-5-sequence-of-sequences.yml - {"proseWrap":"always"} for
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [name        , hr, avg  ]
 - [Mark McGwire, 65, 0.278]
@@ -3005,7 +3005,7 @@ exports[`spec-example-2-5-sequence-of-sequences.yml - {"useTabs":true} format 1`
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [name        , hr, avg  ]
 - [Mark McGwire, 65, 0.278]
@@ -3024,7 +3024,7 @@ exports[`spec-example-2-6-mapping-of-mappings.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Mark McGwire: {hr: 65, avg: 0.278}
 Sammy Sosa: {
@@ -3044,7 +3044,7 @@ exports[`spec-example-2-6-mapping-of-mappings.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Mark McGwire: {hr: 65, avg: 0.278}
 Sammy Sosa: {
@@ -3064,7 +3064,7 @@ exports[`spec-example-2-7-two-documents-in-a-stream.yml - {"proseWrap":"always"}
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Ranking of 1998 home runs
 ---
@@ -3097,7 +3097,7 @@ exports[`spec-example-2-7-two-documents-in-a-stream.yml - {"useTabs":true} forma
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Ranking of 1998 home runs
 ---
@@ -3130,7 +3130,7 @@ exports[`spec-example-2-8-play-by-play-feed-from-a-game.yml - {"proseWrap":"alwa
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 time: 20:03:20
@@ -3161,7 +3161,7 @@ exports[`spec-example-2-8-play-by-play-feed-from-a-game.yml - {"useTabs":true} f
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 time: 20:03:20
@@ -3192,7 +3192,7 @@ exports[`spec-example-2-9-single-document-with-two-comments.yml - {"proseWrap":"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 hr: # 1998 hr ranking
@@ -3221,7 +3221,7 @@ exports[`spec-example-2-9-single-document-with-two-comments.yml - {"useTabs":tru
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 hr: # 1998 hr ranking
@@ -3250,7 +3250,7 @@ exports[`spec-example-2-10-node-for-sammy-sosa-appears-twice-in-this-document.ym
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 hr:
@@ -3279,7 +3279,7 @@ exports[`spec-example-2-10-node-for-sammy-sosa-appears-twice-in-this-document.ym
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 hr:
@@ -3308,7 +3308,7 @@ exports[`spec-example-2-11-mapping-between-sequences.yml - {"proseWrap":"always"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? - Detroit Tigers
   - Chicago cubs
@@ -3335,7 +3335,7 @@ exports[`spec-example-2-11-mapping-between-sequences.yml - {"useTabs":true} form
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? - Detroit Tigers
   - Chicago cubs
@@ -3362,7 +3362,7 @@ exports[`spec-example-2-12-compact-nested-mapping.yml - {"proseWrap":"always"} f
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 # Products purchased
@@ -3391,7 +3391,7 @@ exports[`spec-example-2-12-compact-nested-mapping.yml - {"useTabs":true} format 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 # Products purchased
@@ -3420,7 +3420,7 @@ exports[`spec-example-2-13-in-literals-newlines-are-preserved.yml - {"proseWrap"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # ASCII Art
 --- |
@@ -3442,7 +3442,7 @@ exports[`spec-example-2-13-in-literals-newlines-are-preserved.yml - {"useTabs":t
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # ASCII Art
 --- |
@@ -3464,7 +3464,7 @@ exports[`spec-example-2-14-in-the-folded-scalars-newlines-become-spaces.yml - {"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- >
   Mark McGwire's
@@ -3484,7 +3484,7 @@ exports[`spec-example-2-14-in-the-folded-scalars-newlines-become-spaces.yml - {"
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- >
   Mark McGwire's
@@ -3506,7 +3506,7 @@ exports[`spec-example-2-15-folded-newlines-are-preserved-for-more-indented-and-b
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >
  Sammy Sosa completed another
@@ -3534,7 +3534,7 @@ exports[`spec-example-2-15-folded-newlines-are-preserved-for-more-indented-and-b
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >
  Sammy Sosa completed another
@@ -3563,7 +3563,7 @@ exports[`spec-example-2-16-indentation-determines-scope.yml - {"proseWrap":"alwa
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 name: Mark McGwire
 accomplishment: >
@@ -3589,7 +3589,7 @@ exports[`spec-example-2-16-indentation-determines-scope.yml - {"useTabs":true} f
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 name: Mark McGwire
 accomplishment: >
@@ -3616,7 +3616,7 @@ exports[`spec-example-2-17-quoted-scalars.yml - {"proseWrap":"always"} format 1`
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 unicode: "Sosa did fine.\\u263A"
 control: "\\b1998\\t1999\\t2000\\n"
@@ -3643,7 +3643,7 @@ exports[`spec-example-2-17-quoted-scalars.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 unicode: "Sosa did fine.\\u263A"
 control: "\\b1998\\t1999\\t2000\\n"
@@ -3670,7 +3670,7 @@ exports[`spec-example-2-18-multi-line-flow-scalars.yml - {"proseWrap":"always"} 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 plain:
   This unquoted scalar
@@ -3692,7 +3692,7 @@ exports[`spec-example-2-18-multi-line-flow-scalars.yml - {"useTabs":true} format
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 plain:
   This unquoted scalar
@@ -3716,7 +3716,7 @@ exports[`spec-example-2-23-various-explicit-tags.yml - {"proseWrap":"always"} fo
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 not-date: !!str 2002-04-28
@@ -3755,7 +3755,7 @@ exports[`spec-example-2-23-various-explicit-tags.yml - {"useTabs":true} format 1
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 not-date: !!str 2002-04-28
@@ -3794,7 +3794,7 @@ exports[`spec-example-2-24-global-tags.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG ! tag:clarkevans.com,2002:
 --- !shape
@@ -3836,7 +3836,7 @@ exports[`spec-example-2-24-global-tags.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG ! tag:clarkevans.com,2002:
 --- !shape
@@ -3878,7 +3878,7 @@ exports[`spec-example-2-25-unordered-sets.yml - {"proseWrap":"always"} format 1`
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Sets are represented as a
 # Mapping where each key is
@@ -3906,7 +3906,7 @@ exports[`spec-example-2-25-unordered-sets.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Sets are represented as a
 # Mapping where each key is
@@ -3934,7 +3934,7 @@ exports[`spec-example-2-26-ordered-mappings.yml - {"proseWrap":"always"} format 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Ordered maps are represented as
 # A sequence of mappings, with
@@ -3962,7 +3962,7 @@ exports[`spec-example-2-26-ordered-mappings.yml - {"useTabs":true} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Ordered maps are represented as
 # A sequence of mappings, with
@@ -3990,7 +3990,7 @@ exports[`spec-example-2-27-invoice.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- !<tag:clarkevans.com,2002:invoice>
 invoice: 34843
@@ -4059,7 +4059,7 @@ exports[`spec-example-2-27-invoice.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- !<tag:clarkevans.com,2002:invoice>
 invoice: 34843
@@ -4130,7 +4130,7 @@ exports[`spec-example-2-28-log-file.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 Time: 2001-11-23 15:01:42 -5
@@ -4190,7 +4190,7 @@ exports[`spec-example-2-28-log-file.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 Time: 2001-11-23 15:01:42 -5
@@ -4252,7 +4252,7 @@ exports[`spec-example-5-3-block-structure-indicators.yml - {"proseWrap":"always"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 sequence:
 - one
@@ -4278,7 +4278,7 @@ exports[`spec-example-5-3-block-structure-indicators.yml - {"useTabs":true} form
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 sequence:
 - one
@@ -4304,7 +4304,7 @@ exports[`spec-example-5-4-flow-collection-indicators.yml - {"proseWrap":"always"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 sequence: [ one, two, ]
 mapping: { sky: blue, sea: green }
@@ -4321,7 +4321,7 @@ exports[`spec-example-5-4-flow-collection-indicators.yml - {"useTabs":true} form
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 sequence: [ one, two, ]
 mapping: { sky: blue, sea: green }
@@ -4338,7 +4338,7 @@ exports[`spec-example-5-5-comment-indicator.yml - {"proseWrap":"always"} format 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Comment only.
 
@@ -4353,7 +4353,7 @@ exports[`spec-example-5-5-comment-indicator.yml - {"useTabs":true} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Comment only.
 
@@ -4368,7 +4368,7 @@ exports[`spec-example-5-6-node-property-indicators.yml - {"proseWrap":"always"} 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 anchored: !local &anchor value
 alias: *anchor
@@ -4385,7 +4385,7 @@ exports[`spec-example-5-6-node-property-indicators.yml - {"useTabs":true} format
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 anchored: !local &anchor value
 alias: *anchor
@@ -4402,7 +4402,7 @@ exports[`spec-example-5-7-block-scalar-indicators.yml - {"proseWrap":"always"} f
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 literal: |
   some
@@ -4426,7 +4426,7 @@ exports[`spec-example-5-7-block-scalar-indicators.yml - {"useTabs":true} format 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 literal: |
   some
@@ -4451,7 +4451,7 @@ exports[`spec-example-5-8-quoted-scalar-indicators.yml - {"proseWrap":"always"} 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 single: 'text'
 double: "text"
@@ -4468,7 +4468,7 @@ exports[`spec-example-5-8-quoted-scalar-indicators.yml - {"useTabs":true} format
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 single: 'text'
 double: "text"
@@ -4485,7 +4485,7 @@ exports[`spec-example-5-9-directive-indicator.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %YAML 1.2
 --- text
@@ -4503,7 +4503,7 @@ exports[`spec-example-5-9-directive-indicator.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %YAML 1.2
 --- text
@@ -4521,7 +4521,7 @@ exports[`spec-example-5-12-tabs-and-spaces.yml - {"proseWrap":"always"} format 1
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Tabs and spaces
 quoted: "Quoted 	"
@@ -4546,7 +4546,7 @@ exports[`spec-example-5-12-tabs-and-spaces.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Tabs and spaces
 quoted: "Quoted 	"
@@ -4571,7 +4571,7 @@ exports[`spec-example-6-1-indentation-spaces.yml - {"proseWrap":"always"} format
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
   # Leading comment line spaces are
    # neither content nor indentation.
@@ -4609,7 +4609,7 @@ exports[`spec-example-6-1-indentation-spaces.yml - {"useTabs":true} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
   # Leading comment line spaces are
    # neither content nor indentation.
@@ -4647,7 +4647,7 @@ exports[`spec-example-6-2-indentation-indicators.yml - {"proseWrap":"always"} fo
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? a
 : -	b
@@ -4668,7 +4668,7 @@ exports[`spec-example-6-2-indentation-indicators.yml - {"useTabs":true} format 1
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? a
 : -	b
@@ -4689,7 +4689,7 @@ exports[`spec-example-6-3-separation-spaces.yml - {"proseWrap":"always"} format 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - foo:	 bar
 - - baz
@@ -4708,7 +4708,7 @@ exports[`spec-example-6-3-separation-spaces.yml - {"useTabs":true} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - foo:	 bar
 - - baz
@@ -4727,7 +4727,7 @@ exports[`spec-example-6-4-line-prefixes.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 plain: text
   lines
@@ -4752,7 +4752,7 @@ exports[`spec-example-6-4-line-prefixes.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 plain: text
   lines
@@ -4779,7 +4779,7 @@ exports[`spec-example-6-5-empty-lines.yml - {"proseWrap":"always"} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Folding:
   "Empty line
@@ -4805,7 +4805,7 @@ exports[`spec-example-6-5-empty-lines.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Folding:
   "Empty line
@@ -4831,7 +4831,7 @@ exports[`spec-example-6-6-line-folding.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >-
   trimmed
@@ -4857,7 +4857,7 @@ exports[`spec-example-6-6-line-folding.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >-
   trimmed
@@ -4884,7 +4884,7 @@ exports[`spec-example-6-7-block-folding.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >
   foo 
@@ -4909,7 +4909,7 @@ exports[`spec-example-6-7-block-folding.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >
   foo 
@@ -4934,7 +4934,7 @@ exports[`spec-example-6-8-flow-folding.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "
   foo 
@@ -4961,7 +4961,7 @@ exports[`spec-example-6-8-flow-folding.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "
   foo 
@@ -4988,7 +4988,7 @@ exports[`spec-example-6-9-separated-comment.yml - {"proseWrap":"always"} format 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key:    # Comment
   value
@@ -5005,7 +5005,7 @@ exports[`spec-example-6-9-separated-comment.yml - {"useTabs":true} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key:    # Comment
   value
@@ -5022,7 +5022,7 @@ exports[`spec-example-6-10-comment-lines.yml - {"proseWrap":"always"} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
   # Comment
    
@@ -5040,7 +5040,7 @@ exports[`spec-example-6-10-comment-lines.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
   # Comment
    
@@ -5058,7 +5058,7 @@ exports[`spec-example-6-11-multi-line-comments.yml - {"proseWrap":"always"} form
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key:    # Comment
         # lines
@@ -5079,7 +5079,7 @@ exports[`spec-example-6-11-multi-line-comments.yml - {"useTabs":true} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 key:    # Comment
         # lines
@@ -5100,7 +5100,7 @@ exports[`spec-example-6-12-separation-spaces.yml - {"proseWrap":"always"} format
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 { first: Sammy, last: Sosa }:
 # Statistics:
@@ -5125,7 +5125,7 @@ exports[`spec-example-6-12-separation-spaces.yml - {"useTabs":true} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 { first: Sammy, last: Sosa }:
 # Statistics:
@@ -5150,7 +5150,7 @@ exports[`spec-example-6-13-reserved-directives.yml - {"proseWrap":"always"} form
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %FOO  bar baz # Should be ignored
               # with a warning.
@@ -5170,7 +5170,7 @@ exports[`spec-example-6-13-reserved-directives.yml - {"useTabs":true} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %FOO  bar baz # Should be ignored
               # with a warning.
@@ -5190,7 +5190,7 @@ exports[`spec-example-6-14-yaml-directive.yml - {"proseWrap":"always"} format 1`
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %YAML 1.3 # Attempt parsing
           # with a warning
@@ -5211,7 +5211,7 @@ exports[`spec-example-6-14-yaml-directive.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %YAML 1.3 # Attempt parsing
           # with a warning
@@ -5232,7 +5232,7 @@ exports[`spec-example-6-16-tag-directive.yml - {"proseWrap":"always"} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !yaml! tag:yaml.org,2002:
 ---
@@ -5251,7 +5251,7 @@ exports[`spec-example-6-16-tag-directive.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !yaml! tag:yaml.org,2002:
 ---
@@ -5270,7 +5270,7 @@ exports[`spec-example-6-18-primary-tag-handle.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Private
 !foo "bar"
@@ -5297,7 +5297,7 @@ exports[`spec-example-6-18-primary-tag-handle.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Private
 !foo "bar"
@@ -5324,7 +5324,7 @@ exports[`spec-example-6-19-secondary-tag-handle.yml - {"proseWrap":"always"} for
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !! tag:example.com,2000:app/
 ---
@@ -5343,7 +5343,7 @@ exports[`spec-example-6-19-secondary-tag-handle.yml - {"useTabs":true} format 1`
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !! tag:example.com,2000:app/
 ---
@@ -5362,7 +5362,7 @@ exports[`spec-example-6-20-tag-handles.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !e! tag:example.com,2000:app/
 ---
@@ -5381,7 +5381,7 @@ exports[`spec-example-6-20-tag-handles.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !e! tag:example.com,2000:app/
 ---
@@ -5400,7 +5400,7 @@ exports[`spec-example-6-21-local-tag-prefix.yml - {"proseWrap":"always"} format 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !m! !my-
 --- # Bulb here
@@ -5427,7 +5427,7 @@ exports[`spec-example-6-21-local-tag-prefix.yml - {"useTabs":true} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !m! !my-
 --- # Bulb here
@@ -5454,7 +5454,7 @@ exports[`spec-example-6-22-global-tag-prefix.yml - {"proseWrap":"always"} format
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !e! tag:example.com,2000:app/
 ---
@@ -5473,7 +5473,7 @@ exports[`spec-example-6-22-global-tag-prefix.yml - {"useTabs":true} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !e! tag:example.com,2000:app/
 ---
@@ -5492,7 +5492,7 @@ exports[`spec-example-6-23-node-properties.yml - {"proseWrap":"always"} format 1
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !!str &a1 "foo":
   !!str bar
@@ -5510,7 +5510,7 @@ exports[`spec-example-6-23-node-properties.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !!str &a1 "foo":
   !!str bar
@@ -5528,7 +5528,7 @@ exports[`spec-example-6-24-verbatim-tags.yml - {"proseWrap":"always"} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !<tag:yaml.org,2002:str> foo :
   !<!bar> baz
@@ -5544,7 +5544,7 @@ exports[`spec-example-6-24-verbatim-tags.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !<tag:yaml.org,2002:str> foo :
   !<!bar> baz
@@ -5560,7 +5560,7 @@ exports[`spec-example-6-26-tag-shorthands.yml - {"proseWrap":"always"} format 1`
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !e! tag:example.com,2000:app/
 ---
@@ -5583,7 +5583,7 @@ exports[`spec-example-6-26-tag-shorthands.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %TAG !e! tag:example.com,2000:app/
 ---
@@ -5606,7 +5606,7 @@ exports[`spec-example-6-28-non-specific-tags.yml - {"proseWrap":"always"} format
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Assuming conventional resolution:
 - "12"
@@ -5627,7 +5627,7 @@ exports[`spec-example-6-28-non-specific-tags.yml - {"useTabs":true} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Assuming conventional resolution:
 - "12"
@@ -5648,7 +5648,7 @@ exports[`spec-example-6-29-node-anchors.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 First occurrence: &anchor Value
 Second occurrence: *anchor
@@ -5665,7 +5665,7 @@ exports[`spec-example-6-29-node-anchors.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 First occurrence: &anchor Value
 Second occurrence: *anchor
@@ -5682,7 +5682,7 @@ exports[`spec-example-7-1-alias-nodes.yml - {"proseWrap":"always"} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 First occurrence: &anchor Foo
 Second occurrence: *anchor
@@ -5703,7 +5703,7 @@ exports[`spec-example-7-1-alias-nodes.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 First occurrence: &anchor Foo
 Second occurrence: *anchor
@@ -5724,7 +5724,7 @@ exports[`spec-example-7-2-empty-content.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   foo : !!str,
@@ -5742,7 +5742,7 @@ exports[`spec-example-7-2-empty-content.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   foo : !!str,
@@ -5760,7 +5760,7 @@ exports[`spec-example-7-3-completely-empty-flow-nodes.yml - {"proseWrap":"always
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   ? foo :,
@@ -5778,7 +5778,7 @@ exports[`spec-example-7-3-completely-empty-flow-nodes.yml - {"useTabs":true} for
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
   ? foo :,
@@ -5796,7 +5796,7 @@ exports[`spec-example-7-4-double-quoted-implicit-keys.yml - {"proseWrap":"always
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "implicit block key" : [
   "implicit flow key" : value,
@@ -5813,7 +5813,7 @@ exports[`spec-example-7-4-double-quoted-implicit-keys.yml - {"useTabs":true} for
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "implicit block key" : [
   "implicit flow key" : value,
@@ -5830,7 +5830,7 @@ exports[`spec-example-7-5-double-quoted-line-breaks.yml - {"proseWrap":"always"}
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "folded 
 to a space,	
@@ -5852,7 +5852,7 @@ exports[`spec-example-7-5-double-quoted-line-breaks.yml - {"useTabs":true} forma
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "folded 
 to a space,	
@@ -5875,7 +5875,7 @@ exports[`spec-example-7-6-double-quoted-lines.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 " 1st non-empty
 
@@ -5895,7 +5895,7 @@ exports[`spec-example-7-6-double-quoted-lines.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 " 1st non-empty
 
@@ -5916,7 +5916,7 @@ exports[`spec-example-7-7-single-quoted-characters.yml - {"proseWrap":"always"} 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 'here''s to "quotes"'
 
@@ -5931,7 +5931,7 @@ exports[`spec-example-7-7-single-quoted-characters.yml - {"useTabs":true} format
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 'here''s to "quotes"'
 
@@ -5946,7 +5946,7 @@ exports[`spec-example-7-8-single-quoted-implicit-keys.yml - {"proseWrap":"always
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 'implicit block key' : [
   'implicit flow key' : value,
@@ -5963,7 +5963,7 @@ exports[`spec-example-7-8-single-quoted-implicit-keys.yml - {"useTabs":true} for
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 'implicit block key' : [
   'implicit flow key' : value,
@@ -5980,7 +5980,7 @@ exports[`spec-example-7-9-single-quoted-lines.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ' 1st non-empty
 
@@ -6000,7 +6000,7 @@ exports[`spec-example-7-9-single-quoted-lines.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ' 1st non-empty
 
@@ -6021,7 +6021,7 @@ exports[`spec-example-7-10-plain-characters.yml - {"proseWrap":"always"} format 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Outside flow collection:
 - ::vector
@@ -6054,7 +6054,7 @@ exports[`spec-example-7-10-plain-characters.yml - {"useTabs":true} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Outside flow collection:
 - ::vector
@@ -6087,7 +6087,7 @@ exports[`spec-example-7-11-plain-implicit-keys.yml - {"proseWrap":"always"} form
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 implicit block key : [
   implicit flow key : value,
@@ -6104,7 +6104,7 @@ exports[`spec-example-7-11-plain-implicit-keys.yml - {"useTabs":true} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 implicit block key : [
   implicit flow key : value,
@@ -6121,7 +6121,7 @@ exports[`spec-example-7-12-plain-lines.yml - {"proseWrap":"always"} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1st non-empty
 
@@ -6141,7 +6141,7 @@ exports[`spec-example-7-12-plain-lines.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1st non-empty
 
@@ -6162,7 +6162,7 @@ exports[`spec-example-7-13-flow-sequence.yml - {"proseWrap":"always"} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ one, two, ]
 - [three ,four]
@@ -6179,7 +6179,7 @@ exports[`spec-example-7-13-flow-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ one, two, ]
 - [three ,four]
@@ -6196,7 +6196,7 @@ exports[`spec-example-7-14-flow-sequence-entries.yml - {"proseWrap":"always"} fo
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
 "double
@@ -6218,7 +6218,7 @@ exports[`spec-example-7-14-flow-sequence-entries.yml - {"useTabs":true} format 1
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
 "double
@@ -6249,7 +6249,7 @@ exports[`spec-example-7-15-flow-mappings.yml - {"proseWrap":"always"} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - { one : two , three: four , }
 - {five: six,seven : eight}
@@ -6266,7 +6266,7 @@ exports[`spec-example-7-15-flow-mappings.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - { one : two , three: four , }
 - {five: six,seven : eight}
@@ -6283,7 +6283,7 @@ exports[`spec-example-7-16-flow-mapping-entries.yml - {"proseWrap":"always"} for
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
 ? explicit: entry,
@@ -6302,7 +6302,7 @@ exports[`spec-example-7-16-flow-mapping-entries.yml - {"useTabs":true} format 1`
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
 ? explicit: entry,
@@ -6321,7 +6321,7 @@ exports[`spec-example-7-17-flow-mapping-separate-values.yml - {"proseWrap":"alwa
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
 unquoted : "separate",
@@ -6341,7 +6341,7 @@ exports[`spec-example-7-17-flow-mapping-separate-values.yml - {"useTabs":true} f
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
 unquoted : "separate",
@@ -6361,7 +6361,7 @@ exports[`spec-example-7-18-flow-mapping-adjacent-values.yml - {"proseWrap":"alwa
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
 "adjacent":value,
@@ -6380,7 +6380,7 @@ exports[`spec-example-7-18-flow-mapping-adjacent-values.yml - {"useTabs":true} f
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {
 "adjacent":value,
@@ -6399,7 +6399,7 @@ exports[`spec-example-7-19-single-pair-flow-mappings.yml - {"proseWrap":"always"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
 foo: bar
@@ -6416,7 +6416,7 @@ exports[`spec-example-7-19-single-pair-flow-mappings.yml - {"useTabs":true} form
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
 foo: bar
@@ -6433,7 +6433,7 @@ exports[`spec-example-7-20-single-pair-explicit-entry.yml - {"proseWrap":"always
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
 ? foo
@@ -6451,7 +6451,7 @@ exports[`spec-example-7-20-single-pair-explicit-entry.yml - {"useTabs":true} for
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 [
 ? foo
@@ -6471,7 +6471,7 @@ exports[`spec-example-7-21-single-pair-implicit-entries.yml - {"proseWrap":"alwa
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ YAML : separate ]
 - [ : empty key entry ]
@@ -6490,7 +6490,7 @@ exports[`spec-example-7-21-single-pair-implicit-entries.yml - {"useTabs":true} f
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ YAML : separate ]
 - [ : empty key entry ]
@@ -6509,7 +6509,7 @@ exports[`spec-example-7-23-flow-content.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ a, b ]
 - { a: b }
@@ -6532,7 +6532,7 @@ exports[`spec-example-7-23-flow-content.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [ a, b ]
 - { a: b }
@@ -6555,7 +6555,7 @@ exports[`spec-example-7-24-flow-nodes.yml - {"proseWrap":"always"} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - !!str "a"
 - 'b'
@@ -6578,7 +6578,7 @@ exports[`spec-example-7-24-flow-nodes.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - !!str "a"
 - 'b'
@@ -6601,7 +6601,7 @@ exports[`spec-example-8-1-block-scalar-header.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - | # Empty header↓
  literal
@@ -6632,7 +6632,7 @@ exports[`spec-example-8-1-block-scalar-header.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - | # Empty header↓
  literal
@@ -6663,7 +6663,7 @@ exports[`spec-example-8-2-block-indentation-indicator.yml - {"proseWrap":"always
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - |
  detected
@@ -6698,7 +6698,7 @@ exports[`spec-example-8-2-block-indentation-indicator.yml - {"useTabs":true} for
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - |
  detected
@@ -6733,7 +6733,7 @@ exports[`spec-example-8-4-chomping-final-line-break.yml - {"proseWrap":"always"}
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 strip: |-
   text
@@ -6758,7 +6758,7 @@ exports[`spec-example-8-4-chomping-final-line-break.yml - {"useTabs":true} forma
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 strip: |-
   text
@@ -6783,7 +6783,7 @@ exports[`spec-example-8-5-chomping-trailing-lines.yml - {"proseWrap":"always"} f
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
  # Strip
   # Comments:
@@ -6833,7 +6833,7 @@ exports[`spec-example-8-5-chomping-trailing-lines.yml - {"useTabs":true} format 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
  # Strip
   # Comments:
@@ -6883,7 +6883,7 @@ exports[`spec-example-8-6-empty-scalar-chomping.yml - {"proseWrap":"always"} for
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 strip: >-
 
@@ -6908,7 +6908,7 @@ exports[`spec-example-8-6-empty-scalar-chomping.yml - {"useTabs":true} format 1`
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 strip: >-
 
@@ -6933,7 +6933,7 @@ exports[`spec-example-8-7-literal-scalar.yml - {"proseWrap":"always"} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 |
  literal
@@ -6954,7 +6954,7 @@ exports[`spec-example-8-7-literal-scalar.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 |
  literal
@@ -6975,7 +6975,7 @@ exports[`spec-example-8-8-literal-content.yml - {"proseWrap":"always"} format 1`
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 |
  
@@ -7006,7 +7006,7 @@ exports[`spec-example-8-8-literal-content.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 |
  
@@ -7037,7 +7037,7 @@ exports[`spec-example-8-9-folded-scalar.yml - {"proseWrap":"always"} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >
  folded
@@ -7057,7 +7057,7 @@ exports[`spec-example-8-9-folded-scalar.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >
  folded
@@ -7078,7 +7078,7 @@ exports[`spec-example-8-10-folded-lines-8-13-final-empty-lines.yml - {"proseWrap
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >
 
@@ -7120,7 +7120,7 @@ exports[`spec-example-8-10-folded-lines-8-13-final-empty-lines.yml - {"useTabs":
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 >
 
@@ -7165,7 +7165,7 @@ exports[`spec-example-8-14-block-sequence.yml - {"proseWrap":"always"} format 1`
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 block sequence:
   - one
@@ -7184,7 +7184,7 @@ exports[`spec-example-8-14-block-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 block sequence:
   - one
@@ -7203,7 +7203,7 @@ exports[`spec-example-8-15-block-sequence-entry-types.yml - {"proseWrap":"always
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - # Empty
 - |
@@ -7228,7 +7228,7 @@ exports[`spec-example-8-15-block-sequence-entry-types.yml - {"useTabs":true} for
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - # Empty
 - |
@@ -7253,7 +7253,7 @@ exports[`spec-example-8-16-block-mappings.yml - {"proseWrap":"always"} format 1`
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 block mapping:
  key: value
@@ -7270,7 +7270,7 @@ exports[`spec-example-8-16-block-mappings.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 block mapping:
  key: value
@@ -7287,7 +7287,7 @@ exports[`spec-example-8-17-explicit-block-mapping-entries.yml - {"proseWrap":"al
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? explicit key # Empty value
 ? |
@@ -7310,7 +7310,7 @@ exports[`spec-example-8-17-explicit-block-mapping-entries.yml - {"useTabs":true}
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? explicit key # Empty value
 ? |
@@ -7333,7 +7333,7 @@ exports[`spec-example-8-18-implicit-block-mapping-entries.yml - {"proseWrap":"al
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 plain key: in-line value
 : # Both empty
@@ -7354,7 +7354,7 @@ exports[`spec-example-8-18-implicit-block-mapping-entries.yml - {"useTabs":true}
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 plain key: in-line value
 : # Both empty
@@ -7375,7 +7375,7 @@ exports[`spec-example-8-19-compact-block-mappings.yml - {"proseWrap":"always"} f
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - sun: yellow
 - ? earth: blue
@@ -7394,7 +7394,7 @@ exports[`spec-example-8-19-compact-block-mappings.yml - {"useTabs":true} format 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - sun: yellow
 - ? earth: blue
@@ -7413,7 +7413,7 @@ exports[`spec-example-8-20-block-node-types.yml - {"proseWrap":"always"} format 
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 -
   "flow in block"
@@ -7437,7 +7437,7 @@ exports[`spec-example-8-20-block-node-types.yml - {"useTabs":true} format 1`] = 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 -
   "flow in block"
@@ -7461,7 +7461,7 @@ exports[`spec-example-8-21-block-scalar-nodes.yml - {"proseWrap":"always"} forma
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 literal: |2
   value
@@ -7484,7 +7484,7 @@ exports[`spec-example-8-21-block-scalar-nodes.yml - {"useTabs":true} format 1`] 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 literal: |2
   value
@@ -7507,7 +7507,7 @@ exports[`spec-example-8-22-block-collection-nodes.yml - {"proseWrap":"always"} f
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 sequence: !!seq
 - entry
@@ -7532,7 +7532,7 @@ exports[`spec-example-8-22-block-collection-nodes.yml - {"useTabs":true} format 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 sequence: !!seq
 - entry
@@ -7557,7 +7557,7 @@ exports[`spec-example-9-2-document-markers.yml - {"proseWrap":"always"} format 1
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %YAML 1.2
 ---
@@ -7578,7 +7578,7 @@ exports[`spec-example-9-2-document-markers.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %YAML 1.2
 ---
@@ -7599,7 +7599,7 @@ exports[`spec-example-9-3-bare-documents.yml - {"proseWrap":"always"} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Bare
 document
@@ -7625,7 +7625,7 @@ exports[`spec-example-9-3-bare-documents.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Bare
 document
@@ -7652,7 +7652,7 @@ exports[`spec-example-9-4-explicit-documents.yml - {"proseWrap":"always"} format
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 { matches
@@ -7676,7 +7676,7 @@ exports[`spec-example-9-4-explicit-documents.yml - {"useTabs":true} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 { matches
@@ -7702,7 +7702,7 @@ exports[`spec-example-9-5-directives-documents.yml - {"proseWrap":"always"} form
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %YAML 1.2
 --- |
@@ -7731,7 +7731,7 @@ exports[`spec-example-9-5-directives-documents.yml - {"useTabs":true} format 1`]
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %YAML 1.2
 --- |
@@ -7760,7 +7760,7 @@ exports[`spec-example-9-6-stream.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Document
 ---
@@ -7787,7 +7787,7 @@ exports[`spec-example-9-6-stream.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Document
 ---
@@ -7814,7 +7814,7 @@ exports[`tab-after-document-header.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---	scalar
 
@@ -7830,7 +7830,7 @@ exports[`tab-after-document-header.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---	scalar
 
@@ -7846,7 +7846,7 @@ exports[`tab-at-beginning-of-line-followed-by-a-flow-mapping.yml - {"proseWrap":
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 	{}
 
@@ -7861,7 +7861,7 @@ exports[`tab-at-beginning-of-line-followed-by-a-flow-mapping.yml - {"useTabs":tr
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 	{}
 
@@ -7876,7 +7876,7 @@ exports[`tags-for-block-objects.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo: !!seq
   - !!str a
@@ -7897,7 +7897,7 @@ exports[`tags-for-block-objects.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 foo: !!seq
   - !!str a
@@ -7918,7 +7918,7 @@ exports[`tags-for-flow-objects.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !!map {
   k: !!seq
@@ -7936,7 +7936,7 @@ exports[`tags-for-flow-objects.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !!map {
   k: !!seq
@@ -7954,7 +7954,7 @@ exports[`tags-for-root-objects.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- !!map
 ? a
@@ -7983,7 +7983,7 @@ exports[`tags-for-root-objects.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- !!map
 ? a
@@ -8013,7 +8013,7 @@ exports[`tags-in-block-sequence.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
  - !!str a
  - b
@@ -8034,7 +8034,7 @@ exports[`tags-in-block-sequence.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
  - !!str a
  - b
@@ -8055,7 +8055,7 @@ exports[`tags-in-explicit-mapping.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? !!str a
 : !!int 47
@@ -8074,7 +8074,7 @@ exports[`tags-in-explicit-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ? !!str a
 : !!int 47
@@ -8093,7 +8093,7 @@ exports[`tags-in-implicit-mapping.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !!str a: b
 c: !!int 42
@@ -8116,7 +8116,7 @@ exports[`tags-in-implicit-mapping.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 !!str a: b
 c: !!int 42
@@ -8139,7 +8139,7 @@ exports[`tags-on-empty-scalars.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - !!str
 -
@@ -8161,7 +8161,7 @@ exports[`tags-on-empty-scalars.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - !!str
 -
@@ -8183,7 +8183,7 @@ exports[`three-dashes-and-content-without-space.yml - {"proseWrap":"always"} for
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---word1
 word2
@@ -8199,7 +8199,7 @@ exports[`three-dashes-and-content-without-space.yml - {"useTabs":true} format 1`
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---word1
 word2
@@ -8216,7 +8216,7 @@ exports[`various-combinations-of-tags-and-anchors.yml - {"proseWrap":"always"} f
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 &a1
@@ -8275,7 +8275,7 @@ exports[`various-combinations-of-tags-and-anchors.yml - {"useTabs":true} format 
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 &a1
@@ -8334,7 +8334,7 @@ exports[`various-location-of-anchors-in-flow-sequence.yml - {"proseWrap":"always
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 &flowseq [
  a: b,
@@ -8354,7 +8354,7 @@ exports[`various-location-of-anchors-in-flow-sequence.yml - {"useTabs":true} for
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 &flowseq [
  a: b,
@@ -8374,7 +8374,7 @@ exports[`various-trailing-comments.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: "double
   quotes" # lala
@@ -8416,7 +8416,7 @@ exports[`various-trailing-comments.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: "double
   quotes" # lala
@@ -8460,7 +8460,7 @@ exports[`various-trailing-tabs.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: b	
 seq:	
@@ -8481,7 +8481,7 @@ exports[`various-trailing-tabs.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a: b	
 seq:	
@@ -8502,7 +8502,7 @@ exports[`whitespace-after-scalars-in-flow.yml - {"proseWrap":"always"} format 1`
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [a, b , c ]
 - { "a"  : b
@@ -8524,7 +8524,7 @@ exports[`whitespace-after-scalars-in-flow.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - [a, b , c ]
 - { "a"  : b
@@ -8546,7 +8546,7 @@ exports[`whitespace-around-colon-in-mappings.yml - {"proseWrap":"always"} format
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "top1" : 
   "key1" : &alias1 scalar1
@@ -8582,7 +8582,7 @@ exports[`whitespace-around-colon-in-mappings.yml - {"useTabs":true} format 1`] =
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 "top1" : 
   "key1" : &alias1 scalar1
@@ -8618,7 +8618,7 @@ exports[`zero-indented-block-scalar.yml - {"proseWrap":"always"} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- >
 line1
@@ -8638,7 +8638,7 @@ exports[`zero-indented-block-scalar.yml - {"useTabs":true} format 1`] = `
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- >
 line1
@@ -8660,7 +8660,7 @@ exports[`zero-indented-block-scalar-with-line-that-looks-like-a-comment.yml - {"
 parsers: ["yaml"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- >
 line1
@@ -8680,7 +8680,7 @@ exports[`zero-indented-block-scalar-with-line-that-looks-like-a-comment.yml - {"
 parsers: ["yaml"]
 printWidth: 80
 useTabs: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 --- >
 line1

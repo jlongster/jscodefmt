@@ -4,7 +4,7 @@ exports[`libB.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare function bar(x: string): void;
 

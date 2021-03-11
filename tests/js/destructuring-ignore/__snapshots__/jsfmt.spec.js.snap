@@ -5,7 +5,7 @@ exports[`ignore.js - {"trailingComma":"all"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const {
   // prettier-ignore
@@ -102,7 +102,7 @@ exports[`ignore.js - {"trailingComma":"none"} format 1`] = `
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const {
   // prettier-ignore
@@ -198,7 +198,7 @@ exports[`ignore.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const {
   // prettier-ignore

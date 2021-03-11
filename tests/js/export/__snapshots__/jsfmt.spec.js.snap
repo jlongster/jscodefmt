@@ -5,7 +5,7 @@ exports[`bracket.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const {  runTaskForChanged,
   description,
@@ -59,7 +59,7 @@ exports[`bracket.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const {  runTaskForChanged,
   description,
@@ -114,7 +114,7 @@ exports[`empty.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export {};
 export {} from ".";
@@ -130,7 +130,7 @@ exports[`empty.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export {};
 export {} from ".";
@@ -147,7 +147,7 @@ exports[`same-local-and-exported.js - {"bracketSpacing":false} format 1`] = `
 bracketSpacing: false
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export {a} from 'a';
 export {b as b} from 'b';
@@ -165,7 +165,7 @@ exports[`same-local-and-exported.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export {a} from 'a';
 export {b as b} from 'b';

@@ -5,7 +5,7 @@ exports[`no-trailing-comma-after-rest.ts - {"trailingComma":"all"} format 1`] = 
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type ValidateArgs = [
 	{
@@ -34,7 +34,7 @@ exports[`no-trailing-comma-after-rest.ts - {"trailingComma":"none"} format 1`] =
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type ValidateArgs = [
 	{
@@ -62,7 +62,7 @@ exports[`no-trailing-comma-after-rest.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type ValidateArgs = [
 	{
@@ -91,7 +91,7 @@ exports[`trailing-comma.ts - {"trailingComma":"all"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export interface ShopQueryResult {
   chic: boolean;
@@ -132,7 +132,7 @@ exports[`trailing-comma.ts - {"trailingComma":"none"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export interface ShopQueryResult {
   chic: boolean;
@@ -172,7 +172,7 @@ exports[`trailing-comma.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export interface ShopQueryResult {
   chic: boolean;
@@ -213,7 +213,7 @@ exports[`tuple.ts - {"trailingComma":"all"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 export type SCMRawResource = [
@@ -243,7 +243,7 @@ exports[`tuple.ts - {"trailingComma":"none"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 export type SCMRawResource = [
@@ -272,7 +272,7 @@ exports[`tuple.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 export type SCMRawResource = [
@@ -302,7 +302,7 @@ exports[`tuple-labeled.ts - {"trailingComma":"all"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/11754
 
@@ -345,7 +345,7 @@ exports[`tuple-labeled.ts - {"trailingComma":"none"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/11754
 
@@ -387,7 +387,7 @@ exports[`tuple-labeled.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/11754
 
@@ -430,7 +430,7 @@ exports[`tuple-rest-not-last.ts - {"trailingComma":"all"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/11753
 
@@ -449,7 +449,7 @@ exports[`tuple-rest-not-last.ts - {"trailingComma":"none"} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 trailingComma: "none"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/11753
 
@@ -467,7 +467,7 @@ exports[`tuple-rest-not-last.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/babel/babel/pull/11753
 

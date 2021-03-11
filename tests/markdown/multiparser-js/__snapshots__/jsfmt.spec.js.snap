@@ -5,7 +5,7 @@ exports[`9734.md - {"trailingComma":"all"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Markdown
 
@@ -117,7 +117,7 @@ exports[`jsx-comment.md - {"trailingComma":"all"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`\`\`jsx
 const Foo = () => {
@@ -154,7 +154,7 @@ exports[`meta-in-code-block.md - {"trailingComma":"all"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ## plain js block
 
@@ -213,7 +213,7 @@ exports[`trailing-comma.md - {"trailingComma":"all"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 trailingComma: "all"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ### Some heading
 

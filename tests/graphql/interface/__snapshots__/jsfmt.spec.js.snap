@@ -4,7 +4,7 @@ exports[`interface.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # https://github.com/graphql/graphql-spec/blob/master/spec/Section%203%20--%20Type%20System.md#interfaces
 
@@ -96,7 +96,7 @@ exports[`object_type_def.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Artist implements Node & Entity {
   # The ID of an object
@@ -151,7 +151,7 @@ exports[`object_type_def_mixed_syntax.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type MixedArtist implements Node, Entity & Releasable {
   # The ID of an object
@@ -206,7 +206,7 @@ exports[`object_type_def_old_syntax.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type OldArtist implements Node, Entity {
   # The ID of an object
@@ -261,7 +261,7 @@ exports[`separator-detection.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type Type1 implements A, B, C, D
 # {&&&&&&&&

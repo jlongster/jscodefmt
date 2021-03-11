@@ -4,7 +4,7 @@ exports[`index.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const assertString = (x: any): asserts x => {
   console.assert(typeof x === 'string');

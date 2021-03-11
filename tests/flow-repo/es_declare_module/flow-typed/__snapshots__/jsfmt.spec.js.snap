@@ -4,7 +4,7 @@ exports[`declares.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare module "CJS_Named" {
   declare var num1: number;

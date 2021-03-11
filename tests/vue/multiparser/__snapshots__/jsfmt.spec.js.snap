@@ -4,7 +4,7 @@ exports[`lang-jsx.vue format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script lang="jsx">
 export default {
@@ -39,7 +39,7 @@ exports[`lang-ts.vue format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template>
   <div>{{foo}}</div>
@@ -74,7 +74,7 @@ exports[`lang-tsx.vue format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <script lang="tsx">
 import {VNode} from "vue"
@@ -106,7 +106,7 @@ exports[`snippet: empty format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <custom lang="markdown"></custom>
 =====================================output=====================================
@@ -119,7 +119,7 @@ exports[`snippet: new line format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <custom lang="markdown">
  
@@ -134,7 +134,7 @@ exports[`snippet: non-space format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <custom lang="markdown">
    
@@ -149,7 +149,7 @@ exports[`snippet: spaces format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <custom lang="markdown">   </custom>
 =====================================output=====================================
@@ -162,7 +162,7 @@ exports[`template-bind.vue format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template>
     <div v-bind:id=" 'list-'   +  id "></div>
@@ -193,7 +193,7 @@ exports[`template-class.vue format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template>
   <h2
@@ -224,7 +224,7 @@ exports[`void-element.vue format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <custom lang="markdown" />
 
@@ -238,7 +238,7 @@ exports[`vue-component.vue format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template >
   <h1 >{{greeting}}     world</h1 >

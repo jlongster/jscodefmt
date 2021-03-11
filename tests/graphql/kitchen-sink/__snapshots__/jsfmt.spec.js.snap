@@ -4,7 +4,7 @@ exports[`kitchen_sink.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Copyright (c) 2015-present, Facebook, Inc.
 #
@@ -137,7 +137,7 @@ exports[`schema_kitchen_sink.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 # Copyright (c) 2015-present, Facebook, Inc.
 #

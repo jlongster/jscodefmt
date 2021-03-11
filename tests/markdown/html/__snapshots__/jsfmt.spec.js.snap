@@ -5,7 +5,7 @@ exports[`beginning-tag-after-a-list-item.md - {"proseWrap":"always"} format 1`] 
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - A list item.
 <details><summary>Summary</summary>
@@ -54,7 +54,7 @@ exports[`blank-line-between-htmls.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!--lint disable no-html-->
 <p align="center"><img src="logo/vertical.png" alt="labelify" height="150px"></p>
@@ -73,7 +73,7 @@ exports[`multiline.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1.  Some test text, the goal is to have the html table below nested within this number. When formating on save Prettier will continue to add an indent each time pushing the table further and further out of sync. 
 
@@ -132,7 +132,7 @@ exports[`multiline-with-trailing-space.md - {"proseWrap":"always"} format 1`] = 
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 1.  Some test text, the goal is to have the html table below nested within this number. When formating on save Prettier will continue to add an indent each time pushing the table further and further out of sync. 
 
@@ -191,7 +191,7 @@ exports[`simple.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!-- hello world -->
 

@@ -4,7 +4,7 @@ exports[`anyAsConstructor.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // any is considered an untyped function call
 // can be called except with type arguments which is an error
@@ -36,7 +36,7 @@ exports[`anyAsFunctionCall.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // any is considered an untyped function call
 // can be called except with type arguments which is an error
@@ -62,7 +62,7 @@ exports[`anyAsGenericFunctionCall.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // any is considered an untyped function call
 // can be called except with type arguments which is an error
@@ -98,7 +98,7 @@ exports[`anyPropertyAccess.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var x: any;
 var a = x.foo;

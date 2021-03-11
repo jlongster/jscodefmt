@@ -18,7 +18,7 @@ exports[`default-escaped.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // export asyn\\u{63} from "async";
 export n\\u{63} from "async";

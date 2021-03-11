@@ -4,7 +4,7 @@ exports[`number_constants.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var a: number = Number.MAX_SAFE_INTEGER;
 var b: string = Number.MAX_SAFE_INTEGER;

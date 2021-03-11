@@ -4,7 +4,7 @@ exports[`postcss-mixins.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
     @mixin $(theme)-colors;
@@ -80,7 +80,7 @@ exports[`postcss-nested.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .phone {
     &_title {
@@ -120,7 +120,7 @@ exports[`postcss-nested-props.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .funky {
     font: {
@@ -158,7 +158,7 @@ exports[`postcss-nesting.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 a {
   order: 1;
@@ -585,7 +585,7 @@ exports[`postcss-simple-vars.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 background-color: $$(style)Color;
 background-color: $$(style)Color Color122;

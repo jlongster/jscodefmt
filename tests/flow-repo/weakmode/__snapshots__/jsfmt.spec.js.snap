@@ -4,7 +4,7 @@ exports[`should_fail_without_weak.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow */
 // This should fail without weak mode, because of the glaring type error.
@@ -36,7 +36,7 @@ exports[`should_pass_with_weak.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow weak */
 // This should fail without weak mode, because of the glaring type error.

@@ -4,7 +4,7 @@ exports[`const.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const x = 0;
 
@@ -70,7 +70,7 @@ exports[`rebinding.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* @flow
  * test errors on illegal rebinding/reassignment
@@ -476,7 +476,7 @@ exports[`scope.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function block_scope() {
   let a: number = 0;
@@ -710,7 +710,7 @@ exports[`tdz.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /** @flow */
 

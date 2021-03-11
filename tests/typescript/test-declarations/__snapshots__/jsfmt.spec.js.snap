@@ -5,7 +5,7 @@ exports[`test_declarations.ts - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 test("does something really long and complicated so I have to write a very long name for the test", <T>(done) => {
   console.log("hello!");
@@ -23,7 +23,7 @@ exports[`test_declarations.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 test("does something really long and complicated so I have to write a very long name for the test", <T>(done) => {
   console.log("hello!");

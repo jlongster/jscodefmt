@@ -4,7 +4,7 @@ exports[`gen_big_disjoint_union.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // perf test for big disjoint union with 1000 cases
 type TAction =
@@ -8024,7 +8024,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type A = {a: number};
 type B = {b: number};

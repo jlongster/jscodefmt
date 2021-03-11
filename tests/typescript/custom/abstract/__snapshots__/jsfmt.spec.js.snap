@@ -4,7 +4,7 @@ exports[`abstractNewlineHandling.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var
 abstract
@@ -52,7 +52,7 @@ exports[`abstractProperties.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class Foo {
     abstract private a: 1;
@@ -100,7 +100,7 @@ exports[`abstractPropertiesWithBreaks.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 abstract class Foo {
     abstract private foobar =

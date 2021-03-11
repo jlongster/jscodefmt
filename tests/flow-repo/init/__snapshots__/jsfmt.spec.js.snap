@@ -4,7 +4,7 @@ exports[`hoisted.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * test initialization tracking in the presence of hoisting
@@ -108,7 +108,7 @@ exports[`hoisted2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * test initialization tracking for vars
@@ -656,7 +656,7 @@ exports[`let.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * test initialization tracking for lets
@@ -986,7 +986,7 @@ exports[`nullable-init.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var o: {x: ?number} = { x: null };
 var a: Array<?number> = [null,null];

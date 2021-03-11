@@ -4,7 +4,7 @@ exports[`errors.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 if (typeof define === 'function' && define.amd) { }
 

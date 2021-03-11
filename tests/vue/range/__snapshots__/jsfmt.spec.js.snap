@@ -6,7 +6,7 @@ parsers: ["vue"]
 printWidth: 80
 rangeEnd: 145
 rangeStart: 73
-      |                                                                                | printWidth
+      |                                                                     printWidth |
 =====================================input======================================
    1 | <template>
    2 |   <p>Templates are formatted as well...

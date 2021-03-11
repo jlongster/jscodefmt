@@ -22,7 +22,7 @@ exports[`after_export.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 export @decorator class Foo {}
 
@@ -53,7 +53,7 @@ exports[`before_export.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @decorator
 export class Foo {}

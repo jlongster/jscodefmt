@@ -13,7 +13,7 @@ exports[`parserES5ForOfStatement2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@target: ES5
 for (var of X) {
@@ -39,7 +39,7 @@ exports[`parserES5ForOfStatement21.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 //@target: ES5
 for (var of of) { }
@@ -64,7 +64,7 @@ exports[`parserForInStatement2.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 for (var in X) {
 }

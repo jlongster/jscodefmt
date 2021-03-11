@@ -4,7 +4,7 @@ exports[`issue-7024.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const radioSelectedAttr =
   (isAnyValueSelected &&
@@ -25,7 +25,7 @@ exports[`logical_expression_operators.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Same operators do not require parens
 (foo && bar) && baz;

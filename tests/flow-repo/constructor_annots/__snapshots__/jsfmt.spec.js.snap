@@ -4,7 +4,7 @@ exports[`constructors.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Foo is a class-like function
 function Foo() {
@@ -62,7 +62,7 @@ exports[`test.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var Foo = require('./constructors').Foo;
 var x: string = new Foo().x; // error, found number instead of string

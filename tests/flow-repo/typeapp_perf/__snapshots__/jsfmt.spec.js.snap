@@ -4,7 +4,7 @@ exports[`test1.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* This test ensures that the code below does not take a long time to check. If
  * this test is taking a very long time to complete, there is a bug. */
@@ -56,7 +56,7 @@ exports[`test2.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /* This test ensures that the code below does not take a long time to check. If
  * this test is taking a very long time to complete, there is a bug. */

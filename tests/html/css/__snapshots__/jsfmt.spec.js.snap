@@ -4,7 +4,7 @@ exports[`empty.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <style></style>
 
@@ -18,7 +18,7 @@ exports[`less.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <style type="text/less">
   @nice-blue: #5B83AD;
@@ -64,7 +64,7 @@ exports[`postcss.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <style type="text/css">
   body { background: navy; color: yellow; }
@@ -96,7 +96,7 @@ exports[`scss.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <style type="text/x-scss">
   $font-stack:    Helvetica, sans-serif;
@@ -172,7 +172,7 @@ exports[`simple.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <!DOCTYPE html>
 <html>
@@ -219,7 +219,7 @@ exports[`single-style.html format 1`] = `
 ====================================options=====================================
 parsers: ["html"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <style>a { color: red; }</style>
 <style>

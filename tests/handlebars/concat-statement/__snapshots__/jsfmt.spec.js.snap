@@ -5,7 +5,7 @@ exports[`concat-statement.hbs - {"singleQuote":true} format 1`] = `
 parsers: ["glimmer"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div class="hello {{if goodbye true}}">
   Hello
@@ -62,7 +62,7 @@ exports[`concat-statement.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div class="hello {{if goodbye true}}">
   Hello
@@ -120,7 +120,7 @@ exports[`in-attr-node.hbs - {"singleQuote":true} format 1`] = `
 parsers: ["glimmer"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div class="a very long list of classes that exceeds {{eighty}} chars with emtpy spaces">hey</div>
 <a href="a-very-long-href-from-a-third-party-marketing-platform{{id}}longer-than-eighty-chars">Link</a>
@@ -156,7 +156,7 @@ exports[`in-attr-node.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div class="a very long list of classes that exceeds {{eighty}} chars with emtpy spaces">hey</div>
 <a href="a-very-long-href-from-a-third-party-marketing-platform{{id}}longer-than-eighty-chars">Link</a>

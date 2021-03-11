@@ -4,7 +4,7 @@ exports[`parenthesized.vue format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template>
 <span>{{(a||          b)}} {{z&&(a&&b)}}</span>
@@ -22,7 +22,7 @@ exports[`template.vue format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <template>
   <root>

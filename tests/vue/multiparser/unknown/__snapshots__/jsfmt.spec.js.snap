@@ -5,7 +5,7 @@ exports[`unknown.vue - {"embeddedLanguageFormatting":"off"} format 1`] = `
 embeddedLanguageFormatting: "off"
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <style lang="unknown">
 .prettier {
@@ -78,7 +78,7 @@ exports[`unknown.vue - {"vueIndentScriptAndStyle":true} format 1`] = `
 parsers: ["vue"]
 printWidth: 80
 vueIndentScriptAndStyle: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <style lang="unknown">
 .prettier {
@@ -150,7 +150,7 @@ exports[`unknown.vue format 1`] = `
 ====================================options=====================================
 parsers: ["vue"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <style lang="unknown">
 .prettier {

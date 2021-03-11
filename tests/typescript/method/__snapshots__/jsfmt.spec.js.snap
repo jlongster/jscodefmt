@@ -132,7 +132,7 @@ exports[`semi.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare module 'foo' {
   function foo(namespace: string): void;
@@ -158,7 +158,7 @@ exports[`type_literal_optional_method.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var v: { e?(): number };
 

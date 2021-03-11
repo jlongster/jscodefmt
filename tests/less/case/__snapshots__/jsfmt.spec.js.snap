@@ -4,7 +4,7 @@ exports[`case.less format 1`] = `
 ====================================options=====================================
 parsers: ["less"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Convention in this test file:
 // - The case should be preserved for things prefixed with "Keep".

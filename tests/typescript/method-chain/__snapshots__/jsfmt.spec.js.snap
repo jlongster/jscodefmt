@@ -4,7 +4,7 @@ exports[`comment.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript", "babel", "flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 this.firebase.object(\`/shops/\${shopLocation.shop}\`)

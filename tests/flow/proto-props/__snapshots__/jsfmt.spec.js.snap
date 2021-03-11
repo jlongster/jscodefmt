@@ -4,7 +4,7 @@ exports[`proto_props.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class A { proto: T; }
 declare class B { proto x: T; }

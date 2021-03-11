@@ -4,7 +4,7 @@ exports[`as-const.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 let x = '123' as const;
 
@@ -26,7 +26,7 @@ exports[`generic-cast.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // https://github.com/prettier/prettier/issues/4171
 function y() {
@@ -279,7 +279,7 @@ exports[`hug-args.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 postMessage(
   <IActionMessage>{
@@ -329,7 +329,7 @@ exports[`parenthesis.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <DocumentHighlightKind>(a ? b : c);
 <any>(() => {});

@@ -4,7 +4,7 @@ exports[`bug.js - {"printWidth":35} format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 35
-                                   | printWidth
+                        printWidth |
 =====================================input======================================
 const foo = {
   bar: props.bar ? props.bar : noop,

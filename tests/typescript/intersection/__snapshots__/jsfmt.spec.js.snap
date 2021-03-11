@@ -5,7 +5,7 @@ exports[`intersection-parens.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type A = (number | string) & boolean;
 type B = ((number | string)) & boolean;
@@ -103,7 +103,7 @@ exports[`intersection-parens.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 type A = (number | string) & boolean;
 type B = ((number | string)) & boolean;
@@ -202,7 +202,7 @@ exports[`type-arguments.ts - {"semi":false} format 1`] = `
 parsers: ["typescript"]
 printWidth: 80
 semi: false
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #6988
 
@@ -241,7 +241,7 @@ exports[`type-arguments.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // #6988
 

@@ -4,7 +4,7 @@ exports[`at-root.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .parent {
     @at-root {
@@ -483,7 +483,7 @@ exports[`charset.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @charset "UTF-8";
 @charset "iso-8859-15";
@@ -507,7 +507,7 @@ exports[`counter-style.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @counter-style identifier {
     system: cyclic;
@@ -621,7 +621,7 @@ exports[`custom-media.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @custom-media --small-viewport (max-width: 30em);
 @custom-media --small-viewport (max-width:30em);
@@ -757,7 +757,7 @@ exports[`custom-selector.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @custom-selector :--heading h1, h2, h3, h4, h5, h6;
 @custom-selector :--heading h1,h2,h3,h4,h5,h6;
@@ -881,7 +881,7 @@ exports[`debug.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @debug 10em + 12em;
 @debug 10em+12em;
@@ -923,7 +923,7 @@ exports[`each.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @each $animal in puma, sea-slug, egret, salamander {}
 @each $animal in puma,sea-slug,egret,salamander{}
@@ -1218,7 +1218,7 @@ exports[`extend.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .master {
     color:  black;
@@ -1476,7 +1476,7 @@ exports[`font-face.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @font-face {
     font-family: "Open Sans";
@@ -1608,7 +1608,7 @@ exports[`font-feature-values.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @font-feature-values Font One {
     @styleset {
@@ -1703,7 +1703,7 @@ exports[`for.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @for $i from 1 through 8 {}
 @for $i from 1 through 8{}
@@ -1813,7 +1813,7 @@ exports[`function.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @function func($arg, $arg1, $arg2: 10, $args...) {
     @return "Func";
@@ -1946,7 +1946,7 @@ exports[`if-else.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @if $media == phonePortrait {
     $k: .15625;
@@ -2233,7 +2233,7 @@ exports[`import.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @import url("fineprint.css") print;
 @import url("bluish.css") projection, tv;
@@ -2417,7 +2417,7 @@ exports[`include.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @include mix(1px, 2px, $arg2: 10, 2px 4px 6px);
 @include mix(1px,2px,$arg2:10,2px 4px 6px);
@@ -2639,7 +2639,7 @@ exports[`keyframes.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @keyframes identifier {
   0% {
@@ -3019,7 +3019,7 @@ exports[`media.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @media screen and (min-width: 480px) {}
 @media  screen and (min-width: 480px) {}
@@ -3351,7 +3351,7 @@ exports[`mixin.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @mixin clearfix {}
 @mixin clearfix{}
@@ -3531,7 +3531,7 @@ exports[`namespaces.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @namespace toto "http://toto.example.org";
 @namespace toto url("http://toto.example.org");
@@ -3603,7 +3603,7 @@ exports[`page.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @page {
     margin: 1cm;
@@ -3723,7 +3723,7 @@ exports[`return.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @function grid-width($n) {
     @return $n * $grid-width + ($n - 1) * $gutter-width / 10;
@@ -3909,7 +3909,7 @@ exports[`supports.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @supports (transform-origin: 5% 5%) {}
 @supports (transform-origin:5% 5%) {}
@@ -4579,7 +4579,7 @@ exports[`viewport.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @viewport {
   min-width: 640px;
@@ -4674,7 +4674,7 @@ exports[`while.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @while $i > 0 {}
 @while $i>0{}

@@ -4,7 +4,7 @@ exports[`internal_slot.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow", "babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 declare class C1 { static [[foo]]: T }
 declare class C2 { [[foo]]: T }

@@ -5,7 +5,7 @@ exports[`sub-expressions.hbs - {"singleQuote":true} format 1`] = `
 parsers: ["glimmer"]
 printWidth: 80
 singleQuote: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
   {{mustache
@@ -103,7 +103,7 @@ exports[`sub-expressions.hbs format 1`] = `
 ====================================options=====================================
 parsers: ["glimmer"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <div
   {{mustache

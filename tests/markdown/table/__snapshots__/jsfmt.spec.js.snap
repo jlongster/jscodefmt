@@ -5,7 +5,7 @@ exports[`align.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 |a|b|c|
 |:--|:-:|--:|
@@ -24,7 +24,7 @@ exports[`cjk.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 | abc | def | ghi |
 | --- | --- | --- |
@@ -43,7 +43,7 @@ exports[`emoji.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 | abc | def | ghi |
 | --- | --- | --- |
@@ -62,7 +62,7 @@ exports[`empty.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Foo | Bar
 --- | ---
@@ -83,7 +83,7 @@ exports[`escape.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 | a | b | c |
 |:--|:-:|--:|
@@ -102,7 +102,7 @@ exports[`html.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 Default | CLI Override | API Override
 --------|--------------|-------------
@@ -121,7 +121,7 @@ exports[`simple.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 | Title A | Title B | Title C |
 |---|---|---|
@@ -140,7 +140,7 @@ exports[`table.md - {"proseWrap":"always"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "always"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 - min-table
 

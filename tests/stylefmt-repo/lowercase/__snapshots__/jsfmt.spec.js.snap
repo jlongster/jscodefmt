@@ -4,7 +4,7 @@ exports[`lowercase.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @charset "UTF-8";
 

@@ -4,7 +4,7 @@ exports[`with-parameters.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %YAML 1.2
 ---
@@ -20,7 +20,7 @@ exports[`without-parameters.yml format 1`] = `
 ====================================options=====================================
 parsers: ["yaml"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 %SOMETHING
 ---

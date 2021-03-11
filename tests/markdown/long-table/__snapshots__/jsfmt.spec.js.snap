@@ -5,7 +5,7 @@ exports[`long-table.md - {"proseWrap":"never"} format 1`] = `
 parsers: ["markdown"]
 printWidth: 80
 proseWrap: "never"
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |
@@ -42,7 +42,7 @@ exports[`long-table.md format 1`] = `
 ====================================options=====================================
 parsers: ["markdown"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 | Property | Description | Type | Default |
 | -------- | ----------- | ---- | ------- |

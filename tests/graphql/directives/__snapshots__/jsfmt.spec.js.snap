@@ -4,7 +4,7 @@ exports[`directives.graphql format 1`] = `
 ====================================options=====================================
 parsers: ["graphql"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 query MyQuery @directive(
   arg: 5

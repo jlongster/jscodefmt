@@ -6,7 +6,7 @@ cursorOffset: 26
 endOfLine: "auto"
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (function(){return        <|>15})()<LF>
 
@@ -24,7 +24,7 @@ cursorOffset: 26
 endOfLine: "cr"
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (function(){return        <|>15})()<LF>
 
@@ -42,7 +42,7 @@ cursorOffset: 26
 endOfLine: "crlf"
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (function(){return        <|>15})()<LF>
 
@@ -60,7 +60,7 @@ cursorOffset: 26
 endOfLine: "lf"
 parsers: ["babel"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 (function(){return        <|>15})()<LF>
 
@@ -80,7 +80,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 26
 rangeStart: 10
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -110,7 +110,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 26
 rangeStart: 10
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -140,7 +140,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 26
 rangeStart: 10
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -170,7 +170,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 26
 rangeStart: 10
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -199,7 +199,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 26
 rangeStart: 10
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -230,7 +230,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 26
 rangeStart: 10
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -261,7 +261,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 26
 rangeStart: 10
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -292,7 +292,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 26
 rangeStart: 10
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -324,7 +324,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 27
 rangeStart: 11
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -358,7 +358,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 27
 rangeStart: 11
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -392,7 +392,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 27
 rangeStart: 11
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>
@@ -426,7 +426,7 @@ parsers: ["babel"]
 printWidth: 80
 rangeEnd: 27
 rangeStart: 11
-     |                                                                                | printWidth
+     |                                                                     printWidth |
 =====================================input======================================
   1 |<LF>
   2 |<LF>

@@ -4,7 +4,7 @@ exports[`Arrays.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 
 /* @providesModule Arrays */
@@ -93,7 +93,7 @@ exports[`numeric_elem.js format 1`] = `
 ====================================options=====================================
 parsers: ["flow"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 var arr = [];
 var day = new Date;

@@ -4,7 +4,7 @@ exports[`shebang.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/usr/bin/env node
 function a() {}
@@ -20,7 +20,7 @@ exports[`shebang-newline.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/usr/bin/env node
 
@@ -38,7 +38,7 @@ exports[`snippet: Empty file with shebang format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/usr/bin/env node
 =====================================output=====================================
@@ -51,7 +51,7 @@ exports[`snippet: Empty file with shebang format 2`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 #!/usr/bin/env node
 

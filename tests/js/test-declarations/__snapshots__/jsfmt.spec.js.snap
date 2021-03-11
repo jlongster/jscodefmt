@@ -5,7 +5,7 @@ exports[`angular_async.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 beforeEach(async(() => {
   // code
@@ -79,7 +79,7 @@ exports[`angular_async.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 beforeEach(async(() => {
   // code
@@ -154,7 +154,7 @@ exports[`angular_fakeAsync.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 beforeEach(fakeAsync(() => {
   // code
@@ -217,7 +217,7 @@ exports[`angular_fakeAsync.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 beforeEach(fakeAsync(() => {
   // code
@@ -281,7 +281,7 @@ exports[`angularjs_inject.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 beforeEach(inject(($fooService, $barService) => {
   // code
@@ -350,7 +350,7 @@ exports[`angularjs_inject.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 beforeEach(inject(($fooService, $barService) => {
   // code
@@ -420,7 +420,7 @@ exports[`jest-each.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 describe.each\`
 a|b|expected
@@ -564,7 +564,7 @@ exports[`jest-each.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 describe.each\`
 a|b|expected
@@ -709,7 +709,7 @@ exports[`jest-each-template-string.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 test.each\`
 a | b         | c
@@ -748,7 +748,7 @@ exports[`jest-each-template-string.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 test.each\`
 a | b         | c
@@ -788,7 +788,7 @@ exports[`test_declarations.js - {"arrowParens":"avoid"} format 1`] = `
 arrowParens: "avoid"
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Shouldn't break
 
@@ -1063,7 +1063,7 @@ exports[`test_declarations.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 // Shouldn't break
 

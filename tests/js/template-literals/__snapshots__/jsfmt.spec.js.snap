@@ -4,7 +4,7 @@ exports[`binary-exporessions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`111111111 222222222 333333333 444444444 555555555 666666666 777777777 \${1 |
 2}\`;
@@ -26,7 +26,7 @@ exports[`conditional-expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`111111111 222222222 333333333 444444444 555555555 666666666 777777777 \${
   1 ? 1 : 2
@@ -44,7 +44,7 @@ exports[`css-prop.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 function SomeComponent (props) {
   // Create styles as if you're calling css and the class will be applied to the component
@@ -115,7 +115,7 @@ exports[`expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const long1 = \`long \${a//comment
   .b} long longlong \${a.b.c.d.e} long longlong \${a.b.c.d.e} long longlong \${a.b.c.d.e} long long\`;
@@ -235,7 +235,7 @@ exports[`logical-expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`111111111 222222222 333333333 444444444 555555555 666666666 777777777 \${1 ??
 2}\`;
@@ -262,7 +262,7 @@ exports[`sequence-expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 \`111111111 222222222 333333333 444444444 555555555 666666666 777777777 \${(1, 2)}\`;
 
@@ -278,7 +278,7 @@ exports[`styled-components-with-expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 const Button = styled.a\`
 /* Comment */
@@ -379,7 +379,7 @@ exports[`styled-jsx.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <style jsx>{\`
 	/* a comment */
@@ -569,7 +569,7 @@ exports[`styled-jsx-with-expressions.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 <style jsx>{\`
   div {

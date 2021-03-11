@@ -5,7 +5,7 @@ exports[`format-anyway.json - {"requirePragma":true} format 1`] = `
 parsers: ["json"]
 printWidth: 80
 requirePragma: true
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 {"allOn": "Single", "Line": "example",
 "noSpace":true,

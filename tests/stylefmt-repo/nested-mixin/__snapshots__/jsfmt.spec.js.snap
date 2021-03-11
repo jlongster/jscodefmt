@@ -4,7 +4,7 @@ exports[`nested-mixin.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 @mixin test() {
   $values: blue red;

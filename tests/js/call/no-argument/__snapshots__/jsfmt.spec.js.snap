@@ -36,7 +36,7 @@ exports[`import.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 import(/* comment */)
 new import(/* comment */)
@@ -52,7 +52,7 @@ exports[`special-cases.js format 1`] = `
 ====================================options=====================================
 parsers: ["babel", "flow", "typescript"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 require(/* comment */)
 new require(/* comment */)

@@ -5,7 +5,7 @@ exports[`front-matter.css - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 ---
 something
@@ -32,7 +32,7 @@ exports[`simple.css - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 .class {    display: none;    }
 
@@ -51,7 +51,7 @@ exports[`start-with-comment.css - {"insertPragma":true} format 1`] = `
 insertPragma: true
 parsers: ["css"]
 printWidth: 80
-                                                                                | printWidth
+                                                                     printWidth |
 =====================================input======================================
 /**
  * hello world

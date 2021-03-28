@@ -49,7 +49,7 @@
     "graphql": "15.5.0",
     "html-element-attributes": "2.3.0",
     "html-styles": "1.0.0",
-    "html-tag-names": "1.1.5",
+    "html-tag-names": "2.0.0",
     "html-void-elements": "1.0.5",
     "ignore": "4.0.6",
     "jest-docblock": "26.0.0",

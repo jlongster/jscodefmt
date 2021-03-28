@@ -3039,7 +3039,6 @@ eslint-plugin-jest@24.3.2:
 
 "eslint-plugin-prettier-internal-rules@link:scripts/tools/eslint-plugin-prettier-internal-rules":
   version "0.0.0"
-  uid ""
 
 eslint-plugin-react@7.22.0:
   version "7.22.0"
@@ -3764,10 +3763,10 @@ html-styles@1.0.0:
   resolved "https://registry.yarnpkg.com/html-styles/-/html-styles-1.0.0.tgz#a18061fd651f99c6b75c45c8e0549a3bc3e01a75"
   integrity sha1-oYBh/WUfmca3XEXI4FSaO8PgGnU=
 
-html-tag-names@1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/html-tag-names/-/html-tag-names-1.1.5.tgz#f537420c16769511283f8ae1681785fbc89ee0a9"
-  integrity sha512-aI5tKwNTBzOZApHIynaAwecLBv8TlZTEy/P4Sj2SzzAhBrGuI8yGZ0UIXVPQzOHGS+to2mjb04iy6VWt/8+d8A==
+html-tag-names@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/html-tag-names/-/html-tag-names-2.0.0.tgz#14ccc211a0048c25bb3f021010c253ae250903e6"
+  integrity sha512-roAlpCr+F7H4z65Nz9IErzThUeDfdEKJlJoVF0FVFYRPMtHJk/kCaNJnVirk7QXnCqWkIDWEtB9zLHm8+m0UiA==
 
 html-void-elements@1.0.5:
   version "1.0.5"

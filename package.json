@@ -47,7 +47,7 @@
     "get-stdin": "8.0.0",
     "globby": "11.0.2",
     "graphql": "15.5.0",
-    "html-element-attributes": "2.3.0",
+    "html-element-attributes": "3.0.0",
     "html-styles": "1.0.0",
     "html-tag-names": "1.1.5",
     "html-void-elements": "1.0.5",

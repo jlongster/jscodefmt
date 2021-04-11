@@ -445,7 +445,7 @@ function printChildren(path, options, print) {
     return "";
   }
 
-  return path.map((childPath, childIndex) => {
+  return path.mapValue((value, childIndex) => {
     const printedChild = print();
 
     if (childIndex === 0 && options.htmlWhitespaceSensitivity === "ignore") {

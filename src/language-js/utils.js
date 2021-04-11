@@ -1176,14 +1176,14 @@ function getFunctionParameters(node) {
 function iterateFunctionParametersPath(path, iteratee) {
   const node = path.getValue();
   let index = 0;
-  const callback = (childPath) => iteratee(childPath, index++);
+  const callback = () => iteratee(path, index++);
   if (node.this) {
     path.call(callback, "this");
   }
   if (Array.isArray(node.parameters)) {
-    path.each(callback, "parameters");
+    path.eachValue(callback, "parameters");
   } else if (Array.isArray(node.params)) {
-    path.each(callback, "params");
+    path.eachValue(callback, "params");
   }
   if (node.rest) {
     path.call(callback, "rest");
@@ -1211,9 +1211,9 @@ function iterateCallArgumentsPath(path, iteratee) {
   const node = path.getValue();
   // See comment in `getCallArguments`
   if (node.type === "ImportExpression") {
-    path.call((sourcePath) => iteratee(sourcePath, 0), "source");
+    path.call(() => iteratee(path, 0), "source");
   } else {
-    path.each(iteratee, "arguments");
+    path.eachValue((node, index) => iteratee(path, index), "arguments");
   }
 }
 

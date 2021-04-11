@@ -436,8 +436,7 @@ function printChildren(path, options, print) {
     return [
       breakParent,
 
-      ...path.map((childPath) => {
-        const childNode = childPath.getValue();
+      ...path.mapValue((childNode) => {
         const prevBetweenLine = !childNode.prev
           ? ""
           : printBetweenLine(childNode.prev, childNode);
@@ -448,27 +447,25 @@ function printChildren(path, options, print) {
                 prevBetweenLine,
                 forceNextEmptyLine(childNode.prev) ? hardline : "",
               ],
-          printChild(childPath),
+          printChild(path),
         ];
       }, "children"),
     ];
   }
 
   const groupIds = node.children.map(() => Symbol(""));
-  return path.map((childPath, childIndex) => {
-    const childNode = childPath.getValue();
-
+  return path.mapValue((childNode, childIndex) => {
     if (isTextLikeNode(childNode)) {
       if (childNode.prev && isTextLikeNode(childNode.prev)) {
         const prevBetweenLine = printBetweenLine(childNode.prev, childNode);
         if (prevBetweenLine) {
           if (forceNextEmptyLine(childNode.prev)) {
-            return [hardline, hardline, printChild(childPath)];
+            return [hardline, hardline, printChild(path)];
           }
-          return [prevBetweenLine, printChild(childPath)];
+          return [prevBetweenLine, printChild(path)];
         }
       }
-      return printChild(childPath);
+      return printChild(path);
     }
 
     const prevParts = [];
@@ -520,7 +517,7 @@ function printChildren(path, options, print) {
       ...prevParts,
       group([
         ...leadingParts,
-        group([printChild(childPath), ...trailingParts], {
+        group([printChild(path), ...trailingParts], {
           id: groupIds[childIndex],
         }),
       ]),
@@ -664,15 +661,16 @@ function printAttributes(path, options, print) {
       ? (attribute) => ignoreAttributeData.includes(attribute.rawName)
       : () => false;
 
-  const printedAttributes = path.map((attributePath) => {
-    const attribute = attributePath.getValue();
-    return hasPrettierIgnoreAttribute(attribute)
-      ? replaceEndOfLineWith(
-          options.originalText.slice(locStart(attribute), locEnd(attribute)),
-          literalline
-        )
-      : print();
-  }, "attrs");
+  const printedAttributes = path.mapValue(
+    (attribute) =>
+      hasPrettierIgnoreAttribute(attribute)
+        ? replaceEndOfLineWith(
+            options.originalText.slice(locStart(attribute), locEnd(attribute)),
+            literalline
+          )
+        : print(),
+    "attrs"
+  );
 
   const forceNotToBreakAttrContent =
     node.type === "element" &&

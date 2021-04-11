@@ -518,15 +518,14 @@ function printDanglingComments(path, options, sameIndent, filter) {
     return "";
   }
 
-  path.each((commentPath) => {
-    const comment = commentPath.getValue();
+  path.eachValue((comment) => {
     if (
       comment &&
       !comment.leading &&
       !comment.trailing &&
       (!filter || filter(comment))
     ) {
-      parts.push(printComment(commentPath, options));
+      parts.push(printComment(path, options));
     }
   }, "comments");
 
@@ -553,12 +552,11 @@ function printCommentsSeparately(path, options) {
   const leadingParts = [];
   const trailingParts = [];
 
-  path.each((commentPath) => {
-    const comment = commentPath.getValue();
+  path.eachValue((comment) => {
     const { leading, trailing } = comment;
 
     if (leading) {
-      const contents = printLeadingComment(commentPath, options);
+      const contents = printLeadingComment(path, options);
       /* istanbul ignore next */
       if (!contents) {
         return;
@@ -574,7 +572,7 @@ function printCommentsSeparately(path, options) {
         leadingParts.push(hardline);
       }
     } else if (trailing) {
-      trailingParts.push(printTrailingComment(commentPath, options));
+      trailingParts.push(printTrailingComment(path, options));
     }
   }, "comments");
 

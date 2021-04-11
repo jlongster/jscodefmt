@@ -41,8 +41,8 @@ function printFlowMapping(path, print, options) {
 
 function printChildren(path, print, options) {
   const node = path.getValue();
-  const parts = path.map(
-    (childPath, index) => [
+  const parts = path.mapValue(
+    (child, index) => [
       print(),
       index === node.children.length - 1
         ? ""
@@ -51,7 +51,7 @@ function printChildren(path, print, options) {
             line,
             node.children[index].position.start.line !==
             node.children[index + 1].position.start.line
-              ? printNextEmptyLine(childPath, options.originalText)
+              ? printNextEmptyLine(path, options.originalText)
               : "",
           ],
     ],

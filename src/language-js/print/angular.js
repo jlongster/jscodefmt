@@ -6,7 +6,7 @@ const {
 const { hasNode, hasComment, getComments } = require("../utils");
 const { printBinaryishExpression } = require("./binaryish");
 
-/** @typedef {import("../../common/ast-path")} AstPath */
+/** @typedef {import("../types/estree").Node} Node */
 
 function printAngular(path, options, print) {
   const node = path.getValue();
@@ -24,9 +24,8 @@ function printAngular(path, options, print) {
       return group(
         join(
           [";", line],
-          path.map(
-            (childPath) =>
-              hasNgSideEffect(childPath) ? print() : ["(", print(), ")"],
+          path.mapValue(
+            (node) => (hasNgSideEffect(node) ? print() : ["(", print(), ")"]),
             "expressions"
           )
         )
@@ -36,13 +35,9 @@ function printAngular(path, options, print) {
     case "NGQuotedExpression":
       return [node.prefix, ": ", node.value.trim()];
     case "NGMicrosyntax":
-      return path.map(
-        (childPath, index) => [
-          index === 0
-            ? ""
-            : isNgForOf(childPath.getValue(), index, node)
-            ? " "
-            : [";", line],
+      return path.mapValue(
+        (child, index) => [
+          index === 0 ? "" : isNgForOf(child, index, node) ? " " : [";", line],
           print(),
         ],
         "body"
@@ -98,11 +93,11 @@ function isNgForOf(node, index, parentNode) {
 
 /** identify if an angular expression seems to have side effects */
 /**
- * @param {AstPath} path
+ * @param {Node} node
  * @returns {boolean}
  */
-function hasNgSideEffect(path) {
-  return hasNode(path.getValue(), (node) => {
+function hasNgSideEffect(node) {
+  return hasNode(node, (node) => {
     switch (node.type) {
       case undefined:
         return false;

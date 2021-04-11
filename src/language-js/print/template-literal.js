@@ -58,9 +58,7 @@ function printTemplateLiteral(path, print, options) {
 
   parts.push(lineSuffixBoundary, "`");
 
-  path.each((childPath) => {
-    const i = childPath.getName();
-
+  path.eachValue((quasi, i) => {
     parts.push(print());
 
     if (i < expressions.length) {
@@ -76,7 +74,7 @@ function printTemplateLiteral(path, print, options) {
       // expression inside at the beginning of ${ instead of the beginning
       // of the `.
       const { tabWidth } = options;
-      const quasi = childPath.getValue();
+
       const indentSize = getIndentSize(quasi.value.raw, tabWidth);
 
       let printed = expressions[i];
@@ -210,8 +208,8 @@ function printTemplateExpression(path, print) {
 }
 
 function printTemplateExpressions(path, print) {
-  return path.map(
-    (path) => printTemplateExpression(path, print),
+  return path.mapValue(
+    () => printTemplateExpression(path, print),
     "expressions"
   );
 }

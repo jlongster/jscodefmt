@@ -81,6 +81,25 @@ class AstPath {
   // callback will be called with a reference to this path object for each
   // element of the array.
   each(callback, ...names) {
+    this.eachValue((element, index, value) => {
+      callback(this, index, value);
+    }, ...names);
+  }
+
+  // Similar to AstPath.prototype.each, except that the results of the
+  // callback function invocations are stored in an array and returned at
+  // the end of the iteration.
+  map(callback, ...names) {
+    const result = [];
+    this.eachValue((element, index, value) => {
+      result[index] = callback(this, index, value);
+    }, ...names);
+    return result;
+  }
+
+  // Similar to AstPath.prototype.each, except that first argument of the
+  // callback function is value of the array
+  eachValue(callback, ...names) {
     const { stack } = this;
     const { length } = stack;
     let value = getLast(stack);
@@ -90,22 +109,22 @@ class AstPath {
       stack.push(name, value);
     }
 
-    for (let i = 0; i < value.length; ++i) {
-      stack.push(i, value[i]);
-      callback(this, i, value);
+    for (let index = 0; index < value.length; ++index) {
+      const element = value[index];
+      stack.push(index, element);
+      callback(element, index, value);
       stack.length -= 2;
     }
 
     stack.length = length;
   }
 
-  // Similar to AstPath.prototype.each, except that the results of the
-  // callback function invocations are stored in an array and returned at
-  // the end of the iteration.
-  map(callback, ...names) {
+  // Similar to AstPath.prototype.map, except that first argument of the
+  // callback function is value of the array
+  mapValue(callback, ...names) {
     const result = [];
-    this.each((path, index, value) => {
-      result[index] = callback(path, index, value);
+    this.eachValue((element, index, value) => {
+      result[index] = callback(element, index, value);
     }, ...names);
     return result;
   }

@@ -15,8 +15,8 @@ function genericPrint(path, options, print) {
         return "[]";
       }
 
-      const printed = path.map(
-        () => (path.getValue() === null ? "null" : print()),
+      const printed = path.mapValue(
+        (element) => (element === null ? "null" : print()),
         "elements"
       );
 

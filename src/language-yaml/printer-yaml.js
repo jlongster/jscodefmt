@@ -131,13 +131,9 @@ function genericPrint(path, options, print) {
         hardline,
         join(
           hardline,
-          path.map(
-            (path) => [
-              isPreviousLineEmpty(
-                options.originalText,
-                path.getValue(),
-                locStart
-              )
+          path.mapValue(
+            (node) => [
+              isPreviousLineEmpty(options.originalText, node, locStart)
                 ? hardline
                 : "",
               print(),
@@ -157,7 +153,7 @@ function printNode(node, parentNode, path, options, print) {
     case "root": {
       const { children } = node;
       const parts = [];
-      path.each((childPath, index) => {
+      path.eachValue((child, index) => {
         const document = children[index];
         const nextDocument = children[index + 1];
         if (index !== 0) {

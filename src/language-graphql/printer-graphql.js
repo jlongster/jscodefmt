@@ -20,13 +20,11 @@ function genericPrint(path, options, print) {
   switch (node.kind) {
     case "Document": {
       const parts = [];
-      path.each((pathChild, index, definitions) => {
+      path.eachValue((node, index, definitions) => {
         parts.push(print());
         if (index !== definitions.length - 1) {
           parts.push(hardline);
-          if (
-            isNextLineEmpty(options.originalText, pathChild.getValue(), locEnd)
-          ) {
+          if (isNextLineEmpty(options.originalText, node, locEnd)) {
             parts.push(hardline);
           }
         }
@@ -573,7 +571,7 @@ function printInterfaces(path, options, print) {
   const node = path.getNode();
   const parts = [];
   const { interfaces } = node;
-  const printed = path.map((node) => print(node), "interfaces");
+  const printed = path.map(print, "interfaces");
 
   for (let index = 0; index < interfaces.length; index++) {
     const interfaceNode = interfaces[index];

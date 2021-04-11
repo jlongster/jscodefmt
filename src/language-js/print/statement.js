@@ -26,9 +26,7 @@ function printStatementSequence(path, options, print, property) {
   const isClassBody = node.type === "ClassBody";
   const lastStatement = getLastStatement(node[property]);
 
-  path.each((path, index, statements) => {
-    const node = path.getValue();
-
+  path.eachValue((node, index, statements) => {
     // Skip printing EmptyStatement nodes to avoid leaving stray
     // semicolons lying around.
     if (node.type === "EmptyStatement") {

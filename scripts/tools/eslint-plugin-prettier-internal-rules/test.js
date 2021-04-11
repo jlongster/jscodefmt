@@ -166,6 +166,90 @@ test("jsx-identifier-case", {
   ],
 });
 
+test("no-ast-path-map-each", {
+  valid: [
+    "const a = array.map(() => {})",
+    "const a = array.map()",
+    "const a = array.map(...a, ...a)",
+    "const a = some.path.map(() => {}, name)",
+    "const a = path.map(print, name)",
+    "const a = path.notMap(() => {}, name)",
+    "array.each(() => {})",
+    "array.each()",
+    "array.each(...a, ...a)",
+    "some.path.each(() => {}, name)",
+    "path.notEach(() => {}, name)",
+  ],
+  invalid: [
+    {
+      code: outdent`
+        const a = path.map((childPath) => {
+          const node = childPath.getNode(); // comment
+          console.log(childPath, {childPath, node})
+        }, name)
+      `,
+      output: outdent`
+        const a = path.mapValue((node) => {
+           // comment
+          console.log(path, {childPath: path, node})
+        }, name)
+      `,
+      errors: 1,
+    },
+    {
+      code: outdent`
+        const a = path.map(() => {
+        }, name)
+      `,
+      output: outdent`
+        const a = path.mapValue(() => {
+        }, name)
+      `,
+      errors: 1,
+    },
+    {
+      code: "const a = path.map((chidPath) => {return chidPath}, name)",
+      output: "const a = path.mapValue((value) => {return path}, name)",
+      errors: 1,
+    },
+    {
+      code: "const a = path.map(fn, name)",
+      output: "const a = path.map(fn, name)",
+      errors: 1,
+    },
+    {
+      code: "const a = path.map(({x}) => {}, name)",
+      output: "const a = path.map(({x}) => {}, name)",
+      errors: 1,
+    },
+    {
+      code: "const a = path.map((...args) => {}, name)",
+      output: "const a = path.map((...args) => {}, name)",
+      errors: 1,
+    },
+    {
+      code: outdent`
+        path.each((childPath) => {
+          const node = childPath.getNode(); // comment
+          console.log(childPath, {childPath, node})
+        }, name)
+      `,
+      output: outdent`
+        path.eachValue((node) => {
+           // comment
+          console.log(path, {childPath: path, node})
+        }, name)
+      `,
+      errors: 1,
+    },
+    {
+      code: "path.each(print, name)",
+      output: "path.each(print, name)",
+      errors: 1,
+    },
+  ],
+});
+
 test("no-doc-builder-concat", {
   valid: ["notConcat([])", "concat", "[].concat([])"],
   invalid: [

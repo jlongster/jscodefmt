@@ -273,8 +273,7 @@ function printJsxChildren(
   isFacebookTranslationTag
 ) {
   const parts = [];
-  path.each((childPath, i, children) => {
-    const child = childPath.getValue();
+  path.eachValue((child, i, children) => {
     if (isLiteral(child)) {
       const text = rawText(child);
 
@@ -602,7 +601,7 @@ function printJsxOpeningElement(path, options, print) {
       "<",
       print("name"),
       print("typeParameters"),
-      indent(path.map(() => [line, print()], "attributes")),
+      indent(path.mapValue(() => [line, print()], "attributes")),
       node.selfClosing ? line : bracketSameLine ? ">" : softline,
       node.selfClosing ? "/>" : bracketSameLine ? "" : ">",
     ],

@@ -78,7 +78,7 @@
     "resolve": "1.20.0",
     "semver": "7.3.5",
     "string-width": "4.2.2",
-    "strip-ansi": "6.0.0",
+    "strip-ansi": "7.0.0",
     "typescript": "4.2.4",
     "unicode-regex": "3.0.0",
     "unified": "9.2.1",

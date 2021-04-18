@@ -37,7 +37,7 @@
     "diff": "5.0.0",
     "editorconfig": "0.15.3",
     "editorconfig-to-prettier": "0.2.0",
-    "escape-string-regexp": "4.0.0",
+    "escape-string-regexp": "5.0.0",
     "espree": "7.3.1",
     "esutils": "2.0.3",
     "fast-glob": "3.2.5",

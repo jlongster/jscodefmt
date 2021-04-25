@@ -23,7 +23,7 @@ const {
     group,
     hardlineWithoutBreakParent,
   },
-  utils: { normalizeDoc },
+  utils: { cleanDoc, getDocParts, isConcat },
   printer: { printDocToString },
 } = require("../document");
 const { replaceEndOfLineWith } = require("../common/util");
@@ -84,15 +84,18 @@ function genericPrint(path, options, print) {
         return "";
       }
       return [
-        normalizeDoc(printRoot(path, options, print)),
+        printRoot(path, options, print),
         !TRAILING_HARDLINE_NODES.has(getLastDescendantNode(node).type)
           ? hardline
           : "",
       ];
-    case "paragraph":
-      return printChildren(path, options, print, {
-        postprocessor: fill,
-      });
+    case "paragraph": {
+      const printed = cleanDoc(printChildren(path, options, print));
+      if (isConcat(printed) || printed.type === "fill") {
+        return fill(getDocParts(printed));
+      }
+      return printed;
+    }
     case "sentence":
       return printChildren(path, options, print);
     case "word": {

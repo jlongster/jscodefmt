@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`issue-9503.mdx format 1`] = `
+====================================options=====================================
+parsers: ["mdx"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<ExternalLink href="http://aws.amazon.com/codepipeline/">AWS CodePipeline</ExternalLink> is a continuous delivery and release automation service that aids smooth deployments. You can integrate 3rd party tools into any step of your release process or you can use CodePipeline as an end-to-end solution, including Ghost Inspector tests and suites.
+
+=====================================output=====================================
+<ExternalLink href="http://aws.amazon.com/codepipeline/">
+  AWS CodePipeline
+</ExternalLink> is a continuous delivery and release automation service that
+aids smooth deployments. You can integrate 3rd party tools into any step of your
+release process or you can use CodePipeline as an end-to-end solution, including
+Ghost Inspector tests and suites.
+
+================================================================================
+`;
+
+exports[`issue-9503-2.mdx format 1`] = `
+====================================options=====================================
+parsers: ["mdx"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<em>hey</em>
+
+<em>hey</em>is a continuous
+
+<em>hey</em> is a continuous
+
+
+=====================================output=====================================
+<em>hey</em>
+
+<em>hey</em>is a continuous
+
+<em>hey</em> is a continuous
+
+================================================================================
+`;

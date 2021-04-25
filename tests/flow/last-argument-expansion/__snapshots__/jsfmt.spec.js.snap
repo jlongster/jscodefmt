@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`break.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+export default class AddAssetHtmlPlugin {
+  apply(compiler: WebpackCompilerType) {
+    compiler.plugin('compilation', (compilation: WebpackCompilationType) => {
+      compilation.plugin('html-webpack-plugin-before-html', (callback: Callback<any>) => {
+        addAllAssetsToCompilation(this.assets, compilation, htmlPluginData, callback);
+      });
+    });
+  }
+}
+
+=====================================output=====================================
+export default class AddAssetHtmlPlugin {
+  apply(compiler: WebpackCompilerType) {
+    compiler.plugin("compilation", (compilation: WebpackCompilationType) => {
+      compilation.plugin(
+        "html-webpack-plugin-before-html",
+        (callback: Callback<any>) => {
+          addAllAssetsToCompilation(
+            this.assets,
+            compilation,
+            htmlPluginData,
+            callback
+          );
+        }
+      );
+    });
+  }
+}
+
+================================================================================
+`;
+
+exports[`edge_case.js format 1`] = `
+====================================options=====================================
+parsers: ["flow"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+var listener = DOM.listen(
+  introCard,
+  'click',
+  sigil,
+  (event: JavelinEvent): void =>
+    BanzaiLogger.log(
+      config,
+      {...logData, ...DataStore.get(event.getNode(sigil))},
+    ),
+);
+
+=====================================output=====================================
+var listener = DOM.listen(
+  introCard,
+  "click",
+  sigil,
+  (event: JavelinEvent): void =>
+    BanzaiLogger.log(config, {
+      ...logData,
+      ...DataStore.get(event.getNode(sigil)),
+    })
+);
+
+================================================================================
+`;

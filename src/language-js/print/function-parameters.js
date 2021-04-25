@@ -23,6 +23,8 @@ const { locEnd } = require("../loc");
 const { ArgExpansionBailout } = require("../../common/errors");
 const { printFunctionTypeParameters } = require("./misc");
 
+/** @typedef {import("../../common/ast-path")} AstPath */
+
 function printFunctionParameters(
   path,
   print,
@@ -88,7 +90,7 @@ function printFunctionParameters(
   //     }                     b,
   //   )                     ) => {
   //                         })
-  if (expandArg) {
+  if (expandArg && !isDecoratedFunction(path)) {
     if (willBreak(typeParams) || willBreak(printed)) {
       // Removing lines in this case leads to broken or ugly output
       throw new ArgExpansionBailout();
@@ -220,6 +222,51 @@ function shouldGroupFunctionParameters(functionNode, returnTypeDoc) {
   return (
     getFunctionParameters(functionNode).length === 1 &&
     (isObjectType(returnTypeNode) || willBreak(returnTypeDoc))
+  );
+}
+
+/**
+ * The "decorated function" pattern.
+ * The arrow function should be kept hugged even if its signature breaks.
+ *
+ * ```
+ * const decoratedFn = decorator(param1, param2)((
+ *   ...
+ * ) => {
+ *   ...
+ * });
+ * ```
+ * @param {AstPath} path
+ */
+function isDecoratedFunction(path) {
+  return path.match(
+    (node) =>
+      node.type === "ArrowFunctionExpression" &&
+      node.body.type === "BlockStatement",
+    (node, name) => {
+      if (
+        node.type === "CallExpression" &&
+        name === "arguments" &&
+        node.arguments.length === 1 &&
+        node.callee.type === "CallExpression"
+      ) {
+        const decorator = node.callee.callee;
+        return (
+          decorator.type === "Identifier" ||
+          (decorator.type === "MemberExpression" &&
+            !decorator.computed &&
+            decorator.object.type === "Identifier" &&
+            decorator.property.type === "Identifier")
+        );
+      }
+      return false;
+    },
+    (node, name) =>
+      (node.type === "VariableDeclarator" && name === "init") ||
+      (node.type === "ExportDefaultDeclaration" && name === "declaration"),
+    (node) =>
+      node.type !== "VariableDeclaration" ||
+      (node.kind === "const" && node.declarations.length === 1)
   );
 }
 

@@ -74,8 +74,24 @@ const categoryParsers = new Map([
   [
     "jsx",
     {
-      parsers: ["babel", "flow", "babel-flow", "typescript", "babel-ts"],
-      verifyParsers: ["babel", "flow", "babel-flow", "typescript", "babel-ts"],
+      parsers: [
+        "babel",
+        "meriyah",
+        "espree",
+        "flow",
+        "babel-flow",
+        "typescript",
+        "babel-ts",
+      ],
+      verifyParsers: [
+        "babel",
+        "meriyah",
+        "espree",
+        "flow",
+        "babel-flow",
+        "typescript",
+        "babel-ts",
+      ],
       extensions: [".js"],
     },
   ],

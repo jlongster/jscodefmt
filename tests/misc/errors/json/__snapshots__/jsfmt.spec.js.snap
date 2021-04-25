@@ -73,21 +73,21 @@ exports[`snippet: #3 [json5] format 1`] = `
 `;
 
 exports[`snippet: #4 [json] format 1`] = `
-"'ArrowFunctionExpression' is not allowed in JSON. (1:9)
-> 1 | {\\"foo\\": () => {}}
-    |         ^^^^^^^^"
+"'BigIntLiteral' is not allowed in JSON. (1:9)
+> 1 | {\\"foo\\": 1n}
+    |         ^^"
 `;
 
 exports[`snippet: #4 [json-stringify] format 1`] = `
-"'ArrowFunctionExpression' is not allowed in JSON. (1:9)
-> 1 | {\\"foo\\": () => {}}
-    |         ^^^^^^^^"
+"'BigIntLiteral' is not allowed in JSON. (1:9)
+> 1 | {\\"foo\\": 1n}
+    |         ^^"
 `;
 
 exports[`snippet: #4 [json5] format 1`] = `
-"'ArrowFunctionExpression' is not allowed in JSON. (1:9)
-> 1 | {\\"foo\\": () => {}}
-    |         ^^^^^^^^"
+"'BigIntLiteral' is not allowed in JSON. (1:9)
+> 1 | {\\"foo\\": 1n}
+    |         ^^"
 `;
 
 exports[`snippet: #5 [json] format 1`] = `
@@ -164,20 +164,20 @@ exports[`snippet: #8 [json5] format 1`] = `
 
 exports[`snippet: #9 [json] format 1`] = `
 "Computed key is not allowed in JSON. (1:3)
-> 1 | {[key()]: 1}
-    |   ^^^^^"
+> 1 | {[object.key]: 1}
+    |   ^^^^^^^^^^"
 `;
 
 exports[`snippet: #9 [json-stringify] format 1`] = `
 "Computed key is not allowed in JSON. (1:3)
-> 1 | {[key()]: 1}
-    |   ^^^^^"
+> 1 | {[object.key]: 1}
+    |   ^^^^^^^^^^"
 `;
 
 exports[`snippet: #9 [json5] format 1`] = `
 "Computed key is not allowed in JSON. (1:3)
-> 1 | {[key()]: 1}
-    |   ^^^^^"
+> 1 | {[object.key]: 1}
+    |   ^^^^^^^^^^"
 `;
 
 exports[`snippet: #10 [json] format 1`] = `
@@ -343,39 +343,39 @@ exports[`snippet: #18 [json5] format 1`] = `
 `;
 
 exports[`snippet: #19 [json] format 1`] = `
-"Operator '+' before 'CallExpression' is not allowed in JSON. (1:8)
-> 1 | {key: +foo()}
-    |        ^^^^^"
+"Operator '+' before 'MemberExpression' is not allowed in JSON. (1:8)
+> 1 | {key: +foo.bar}
+    |        ^^^^^^^"
 `;
 
 exports[`snippet: #19 [json-stringify] format 1`] = `
-"Operator '+' before 'CallExpression' is not allowed in JSON. (1:8)
-> 1 | {key: +foo()}
-    |        ^^^^^"
+"Operator '+' before 'MemberExpression' is not allowed in JSON. (1:8)
+> 1 | {key: +foo.bar}
+    |        ^^^^^^^"
 `;
 
 exports[`snippet: #19 [json5] format 1`] = `
-"Operator '+' before 'CallExpression' is not allowed in JSON. (1:8)
-> 1 | {key: +foo()}
-    |        ^^^^^"
+"Operator '+' before 'MemberExpression' is not allowed in JSON. (1:8)
+> 1 | {key: +foo.bar}
+    |        ^^^^^^^"
 `;
 
 exports[`snippet: #20 [json] format 1`] = `
 "Operator 'void' is not allowed in JSON. (1:7)
-> 1 | {key: void foo()}
-    |       ^^^^^^^^^^"
+> 1 | {key: void foo.bar}
+    |       ^^^^^^^^^^^^"
 `;
 
 exports[`snippet: #20 [json-stringify] format 1`] = `
 "Operator 'void' is not allowed in JSON. (1:7)
-> 1 | {key: void foo()}
-    |       ^^^^^^^^^^"
+> 1 | {key: void foo.bar}
+    |       ^^^^^^^^^^^^"
 `;
 
 exports[`snippet: #20 [json5] format 1`] = `
 "Operator 'void' is not allowed in JSON. (1:7)
-> 1 | {key: void foo()}
-    |       ^^^^^^^^^^"
+> 1 | {key: void foo.bar}
+    |       ^^^^^^^^^^^^"
 `;
 
 exports[`snippet: #21 [json] format 1`] = `
@@ -601,18 +601,90 @@ exports[`snippet: #32 [json5] format 1`] = `
 `;
 
 exports[`snippet: #33 [json] format 1`] = `
-"Invalid left-hand side in prefix operation (1:5)
-> 1 | ----123
-    |     ^"
+"Unexpected token '('. (1:1)
+> 1 | (1)
+    | ^"
 `;
 
 exports[`snippet: #33 [json-stringify] format 1`] = `
+"Unexpected token '('. (1:1)
+> 1 | (1)
+    | ^"
+`;
+
+exports[`snippet: #33 [json5] format 1`] = `
+"Unexpected token '('. (1:1)
+> 1 | (1)
+    | ^"
+`;
+
+exports[`snippet: #34 [json] format 1`] = `
+"Unexpected token '('. (1:2)
+> 1 | +(1)
+    |  ^"
+`;
+
+exports[`snippet: #34 [json-stringify] format 1`] = `
+"Unexpected token '('. (1:2)
+> 1 | +(1)
+    |  ^"
+`;
+
+exports[`snippet: #34 [json5] format 1`] = `
+"Unexpected token '('. (1:2)
+> 1 | +(1)
+    |  ^"
+`;
+
+exports[`snippet: #35 [json] format 1`] = `
+"Unexpected token '('. (1:1)
+> 1 | ([1,])
+    | ^"
+`;
+
+exports[`snippet: #35 [json-stringify] format 1`] = `
+"Unexpected token '('. (1:1)
+> 1 | ([1,])
+    | ^"
+`;
+
+exports[`snippet: #35 [json5] format 1`] = `
+"Unexpected token '('. (1:1)
+> 1 | ([1,])
+    | ^"
+`;
+
+exports[`snippet: #36 [json] format 1`] = `
+"Unexpected token '('. (1:5)
+> 1 | [1, (2)]
+    |     ^"
+`;
+
+exports[`snippet: #36 [json-stringify] format 1`] = `
+"Unexpected token '('. (1:5)
+> 1 | [1, (2)]
+    |     ^"
+`;
+
+exports[`snippet: #36 [json5] format 1`] = `
+"Unexpected token '('. (1:5)
+> 1 | [1, (2)]
+    |     ^"
+`;
+
+exports[`snippet: #37 [json] format 1`] = `
 "Invalid left-hand side in prefix operation (1:5)
 > 1 | ----123
     |     ^"
 `;
 
-exports[`snippet: #33 [json5] format 1`] = `
+exports[`snippet: #37 [json-stringify] format 1`] = `
+"Invalid left-hand side in prefix operation (1:5)
+> 1 | ----123
+    |     ^"
+`;
+
+exports[`snippet: #37 [json5] format 1`] = `
 "Invalid left-hand side in prefix operation (1:5)
 > 1 | ----123
     |     ^"

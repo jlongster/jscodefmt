@@ -9,14 +9,20 @@ function createJsonParse(options = {}) {
   const { allowComments = true } = options;
 
   return function parse(text /*, parsers, options*/) {
+    // @ts-ignore
+    const { parseExpression, tokTypes } = require("@babel/parser");
     let ast;
     try {
-      ast = require("@babel/parser").parseExpression(text, {
-        tokens: true,
-        ranges: true,
-      });
+      ast = parseExpression(text, { tokens: true, ranges: true });
     } catch (error) {
       throw createBabelParseError(error);
+    }
+
+    // @ts-ignore
+    for (const token of ast.tokens) {
+      if (token.type === tokTypes.parenL) {
+        throw createJsonError(token, { message: "Unexpected token '('." });
+      }
     }
 
     // @ts-ignore
@@ -31,14 +37,18 @@ function createJsonParse(options = {}) {
   };
 }
 
-function createJsonError(node, description) {
-  const [start, end] = [node.loc.start, node.loc.end].map(
+function createJsonError(nodeOrToken, description) {
+  const message =
+    typeof description === "string"
+      ? `${description} is not allowed in JSON.`
+      : description.message;
+  const [start, end] = [nodeOrToken.loc.start, nodeOrToken.loc.end].map(
     ({ line, column }) => ({
       line,
       column: column + 1,
     })
   );
-  return createError(`${description} is not allowed in JSON.`, { start, end });
+  return createError(message, { start, end });
 }
 
 function assertJsonNode(node) {

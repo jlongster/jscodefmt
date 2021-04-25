@@ -1,11 +1,12 @@
 "use strict";
 
 const prettier = require("prettier-local");
-const docBuilders = prettier.doc.builders;
-const docUtils = prettier.doc.utils;
+const docBuilders = prettier.__debug.internalDoc.builders;
+const docUtils = prettier.__debug.internalDoc.utils;
 
 const { normalizeDoc } = docUtils;
-const { group, concat, fill } = docBuilders;
+const { group, fill } = docBuilders;
+const { concat } = prettier.doc.builders;
 
 describe("normalizeDoc", () => {
   test.each([

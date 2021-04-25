@@ -6,7 +6,7 @@ const core = require("./main/core");
 const { getSupportInfo } = require("./main/support");
 const sharedUtil = require("./common/util-shared");
 const languages = require("./languages");
-const doc = require("./document");
+const doc = require("./document/doc");
 
 // Parsers are bundled as separate plugins
 const internalPlugins = languages.map(({ parsers, ...plugin }) => plugin);

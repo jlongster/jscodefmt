@@ -1,10 +1,16 @@
 "use strict";
 
 const {
-  __debug: { parse, formatAST, formatDoc, printToDoc, printDocToString },
-  doc: {
-    builders,
-    utils: { cleanDoc },
+  __debug: {
+    parse,
+    formatAST,
+    formatDoc,
+    printToDoc,
+    printDocToString,
+    internalDoc: {
+      builders,
+      utils: { cleanDoc },
+    },
   },
 } = require("prettier-local");
 const { outdent } = require("outdent");

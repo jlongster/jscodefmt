@@ -71,7 +71,11 @@ module.exports = {
     "prettier-local": "<rootDir>/tests_config/require_prettier.js",
     "prettier-standalone": "<rootDir>/tests_config/require_standalone.js",
   },
-  modulePathIgnorePatterns: ["<rootDir>/dist", "<rootDir>/website/static/lib"],
+  modulePathIgnorePatterns: [
+    "<rootDir>/dist",
+    "<rootDir>/website/static/lib",
+    "<rootDir>/website/build/prettier/lib",
+  ],
   testEnvironment: "node",
   transform,
   watchPlugins: [

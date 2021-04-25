@@ -37,26 +37,6 @@ function assertDoc(val) {
 }
 
 /**
- * @param {Doc[]} parts
- * @returns Doc
- */
-function concat(parts) {
-  if (process.env.NODE_ENV !== "production") {
-    for (const part of parts) {
-      assertDoc(part);
-    }
-  }
-
-  // We cannot do this until we change `printJSXElement` to not
-  // access the internals of a document directly.
-  // if(parts.length === 1) {
-  //   // If it's a single document, no need to concat it.
-  //   return parts[0];
-  // }
-  return { type: "concat", parts };
-}
-
-/**
  * @param {Doc} contents
  * @returns Doc
  */
@@ -211,10 +191,8 @@ const literallineWithoutBreakParent = {
 
 const line = { type: "line" };
 const softline = { type: "line", soft: true };
-// eslint-disable-next-line prettier-internal-rules/no-doc-builder-concat
-const hardline = concat([hardlineWithoutBreakParent, breakParent]);
-// eslint-disable-next-line prettier-internal-rules/no-doc-builder-concat
-const literalline = concat([literallineWithoutBreakParent, breakParent]);
+const hardline = [hardlineWithoutBreakParent, breakParent];
+const literalline = [literallineWithoutBreakParent, breakParent];
 
 const cursor = { type: "cursor", placeholder: Symbol("cursor") };
 
@@ -234,8 +212,7 @@ function join(sep, arr) {
     res.push(arr[i]);
   }
 
-  // eslint-disable-next-line prettier-internal-rules/no-doc-builder-concat
-  return concat(res);
+  return res;
 }
 
 /**
@@ -264,7 +241,6 @@ function label(label, contents) {
 }
 
 module.exports = {
-  concat,
   join,
   line,
   softline,

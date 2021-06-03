@@ -135,16 +135,16 @@ Valid options:
 | ------- | ---------------------- | ------------------------ |
 | `true`  | `--no-bracket-spacing` | `bracketSpacing: <bool>` |
 
-## JSX Brackets
+## Angle Brackets
 
-Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
+Put the `>` of a multi-line HTML-like (HTML, JSX, etc.) element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
 
 Valid options:
 
 - `true` - Example:
 
 <!-- prettier-ignore -->
-```jsx
+```html
 <button
   className="prettier-class"
   id="prettier-id"
@@ -156,7 +156,7 @@ Valid options:
 - `false` - Example:
 
 <!-- prettier-ignore -->
-```jsx
+```html
 <button
   className="prettier-class"
   id="prettier-id"
@@ -166,9 +166,9 @@ Valid options:
 </button>
 ```
 
-| Default | CLI Override              | API Override                 |
-| ------- | ------------------------- | ---------------------------- |
-| `false` | `--jsx-bracket-same-line` | `jsxBracketSameLine: <bool>` |
+| Default | CLI Override                | API Override                   |
+| ------- | --------------------------- | ------------------------------ |
+| `false` | `--angle-bracket-same-line` | `angleBracketSameLine: <bool>` |
 
 ## Arrow Function Parentheses
 

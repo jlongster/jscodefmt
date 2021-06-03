@@ -58,6 +58,9 @@ Output options:
 
 Format options:
 
+  --angle-bracket-same-line
+                           Put > on the last line instead of at a new line.
+                           Defaults to false.
   --arrow-parens <always|avoid>
                            Include parentheses around a sole arrow function parameter.
                            Defaults to always.
@@ -71,7 +74,7 @@ Format options:
   --html-whitespace-sensitivity <css|strict|ignore>
                            How to handle whitespaces in HTML.
                            Defaults to css.
-  --jsx-bracket-same-line  Put > on the last line instead of at a new line.
+  --jsx-bracket-same-line  (Deprecated) Put > on the last line instead of at a new line.
                            Defaults to false.
   --jsx-single-quote       Use single quotes in JSX.
                            Defaults to false.
@@ -223,6 +226,9 @@ Output options:
 
 Format options:
 
+  --angle-bracket-same-line
+                           Put > on the last line instead of at a new line.
+                           Defaults to false.
   --arrow-parens <always|avoid>
                            Include parentheses around a sole arrow function parameter.
                            Defaults to always.
@@ -236,7 +242,7 @@ Format options:
   --html-whitespace-sensitivity <css|strict|ignore>
                            How to handle whitespaces in HTML.
                            Defaults to css.
-  --jsx-bracket-same-line  Put > on the last line instead of at a new line.
+  --jsx-bracket-same-line  (Deprecated) Put > on the last line instead of at a new line.
                            Defaults to false.
   --jsx-single-quote       Use single quotes in JSX.
                            Defaults to false.

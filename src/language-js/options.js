@@ -32,7 +32,8 @@ module.exports = {
     category: CATEGORY_JAVASCRIPT,
     type: "boolean",
     default: false,
-    description: "Put > on the last line instead of at a new line.",
+    description:
+      "(Deprecated) Put > on the last line instead of at a new line.",
   },
   semi: {
     since: "1.0.0",

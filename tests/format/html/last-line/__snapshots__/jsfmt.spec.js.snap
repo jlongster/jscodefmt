@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`brackets-on-next-line.html - {"angleBracketSameLine":false} format 1`] = `
+====================================options=====================================
+angleBracketSameLine: false
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div
+  id="lorem-ipsum-dolor-sit-amet"
+  class="consectetur-adipisicing-elit"
+  title="amet deleniti illo aliquam dolore"
+  style="background: inherit; color: inherit;"
+>
+  <p
+    id="laboriosam-eaque-tenetur-recusandae"
+    class="error-molestiae-vero-obcaecati"
+    title="delectus velit esse exercitationem, nihil quam quibusdam"
+    style="background: inherit; color: inherit;"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. <strong>Amet deleniti illo aliquam dolore</strong> laboriosam eaque tenetur recusandae error
+    molestiae vero obcaecati delectus velit esse exercitationem, nihil quam quibusdam iure tempore!
+  </p>
+</div>
+=====================================output=====================================
+<div
+  id="lorem-ipsum-dolor-sit-amet"
+  class="consectetur-adipisicing-elit"
+  title="amet deleniti illo aliquam dolore"
+  style="background: inherit; color: inherit"
+>
+  <p
+    id="laboriosam-eaque-tenetur-recusandae"
+    class="error-molestiae-vero-obcaecati"
+    title="delectus velit esse exercitationem, nihil quam quibusdam"
+    style="background: inherit; color: inherit"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <strong>Amet deleniti illo aliquam dolore</strong> laboriosam eaque tenetur
+    recusandae error molestiae vero obcaecati delectus velit esse
+    exercitationem, nihil quam quibusdam iure tempore!
+  </p>
+</div>
+
+================================================================================
+`;
+
+exports[`brackets-on-next-line.html - {"angleBracketSameLine":true} format 1`] = `
+====================================options=====================================
+angleBracketSameLine: true
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div
+  id="lorem-ipsum-dolor-sit-amet"
+  class="consectetur-adipisicing-elit"
+  title="amet deleniti illo aliquam dolore"
+  style="background: inherit; color: inherit;"
+>
+  <p
+    id="laboriosam-eaque-tenetur-recusandae"
+    class="error-molestiae-vero-obcaecati"
+    title="delectus velit esse exercitationem, nihil quam quibusdam"
+    style="background: inherit; color: inherit;"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. <strong>Amet deleniti illo aliquam dolore</strong> laboriosam eaque tenetur recusandae error
+    molestiae vero obcaecati delectus velit esse exercitationem, nihil quam quibusdam iure tempore!
+  </p>
+</div>
+=====================================output=====================================
+<div
+  id="lorem-ipsum-dolor-sit-amet"
+  class="consectetur-adipisicing-elit"
+  title="amet deleniti illo aliquam dolore"
+  style="background: inherit; color: inherit">
+  <p
+    id="laboriosam-eaque-tenetur-recusandae"
+    class="error-molestiae-vero-obcaecati"
+    title="delectus velit esse exercitationem, nihil quam quibusdam"
+    style="background: inherit; color: inherit">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <strong>Amet deleniti illo aliquam dolore</strong> laboriosam eaque tenetur
+    recusandae error molestiae vero obcaecati delectus velit esse
+    exercitationem, nihil quam quibusdam iure tempore!
+  </p>
+</div>
+
+================================================================================
+`;
+
+exports[`brackets-on-same-line.html - {"angleBracketSameLine":false} format 1`] = `
+====================================options=====================================
+angleBracketSameLine: false
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div
+  id="lorem-ipsum-dolor-sit-amet"
+  class="consectetur-adipisicing-elit"
+  title="amet deleniti illo aliquam dolore"
+  style="background: inherit; color: inherit;">
+  <p
+    id="laboriosam-eaque-tenetur-recusandae"
+    class="error-molestiae-vero-obcaecati"
+    title="delectus velit esse exercitationem, nihil quam quibusdam"
+    style="background: inherit; color: inherit;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. <strong>Amet deleniti illo aliquam dolore</strong> laboriosam eaque tenetur recusandae error
+    molestiae vero obcaecati delectus velit esse exercitationem, nihil quam quibusdam iure tempore!
+  </p>
+</div>
+=====================================output=====================================
+<div
+  id="lorem-ipsum-dolor-sit-amet"
+  class="consectetur-adipisicing-elit"
+  title="amet deleniti illo aliquam dolore"
+  style="background: inherit; color: inherit"
+>
+  <p
+    id="laboriosam-eaque-tenetur-recusandae"
+    class="error-molestiae-vero-obcaecati"
+    title="delectus velit esse exercitationem, nihil quam quibusdam"
+    style="background: inherit; color: inherit"
+  >
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <strong>Amet deleniti illo aliquam dolore</strong> laboriosam eaque tenetur
+    recusandae error molestiae vero obcaecati delectus velit esse
+    exercitationem, nihil quam quibusdam iure tempore!
+  </p>
+</div>
+
+================================================================================
+`;
+
+exports[`brackets-on-same-line.html - {"angleBracketSameLine":true} format 1`] = `
+====================================options=====================================
+angleBracketSameLine: true
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div
+  id="lorem-ipsum-dolor-sit-amet"
+  class="consectetur-adipisicing-elit"
+  title="amet deleniti illo aliquam dolore"
+  style="background: inherit; color: inherit;">
+  <p
+    id="laboriosam-eaque-tenetur-recusandae"
+    class="error-molestiae-vero-obcaecati"
+    title="delectus velit esse exercitationem, nihil quam quibusdam"
+    style="background: inherit; color: inherit;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. <strong>Amet deleniti illo aliquam dolore</strong> laboriosam eaque tenetur recusandae error
+    molestiae vero obcaecati delectus velit esse exercitationem, nihil quam quibusdam iure tempore!
+  </p>
+</div>
+=====================================output=====================================
+<div
+  id="lorem-ipsum-dolor-sit-amet"
+  class="consectetur-adipisicing-elit"
+  title="amet deleniti illo aliquam dolore"
+  style="background: inherit; color: inherit">
+  <p
+    id="laboriosam-eaque-tenetur-recusandae"
+    class="error-molestiae-vero-obcaecati"
+    title="delectus velit esse exercitationem, nihil quam quibusdam"
+    style="background: inherit; color: inherit">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    <strong>Amet deleniti illo aliquam dolore</strong> laboriosam eaque tenetur
+    recusandae error molestiae vero obcaecati delectus velit esse
+    exercitationem, nihil quam quibusdam iure tempore!
+  </p>
+</div>
+
+================================================================================
+`;

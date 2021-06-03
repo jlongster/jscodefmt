@@ -32,4 +32,11 @@ module.exports = {
     default: false,
     description: "Indent script and style tags in Vue files.",
   },
+  angleBracketSameLine: {
+    since: "2.4.0",
+    category: CATEGORY_HTML,
+    type: "boolean",
+    default: false,
+    description: "Put > on the last line instead of at a new line.",
+  },
 };

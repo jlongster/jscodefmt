@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`angularjs.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`angularjs.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["angular"]
 printWidth: 80
                                                                                 | printWidth
@@ -276,9 +276,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`attr-name.component.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`attr-name.component.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["angular"]
 printWidth: 80
                                                                                 | printWidth
@@ -367,9 +367,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`attributes.component.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`attributes.component.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["angular"]
 printWidth: 80
                                                                                 | printWidth
@@ -2320,9 +2320,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`first-lf.component.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`first-lf.component.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["angular"]
 printWidth: 80
                                                                                 | printWidth
@@ -2956,9 +2956,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`ignore-attribute.component.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`ignore-attribute.component.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["angular"]
 printWidth: 80
                                                                                 | printWidth
@@ -3328,9 +3328,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`interpolation.component.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`interpolation.component.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["angular"]
 printWidth: 80
                                                                                 | printWidth
@@ -4548,9 +4548,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`real-world.component.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`real-world.component.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["angular"]
 printWidth: 80
                                                                                 | printWidth
@@ -15848,9 +15848,9 @@ can be found in the LICENSE file at http://angular.io/license
 ================================================================================
 `;
 
-exports[`tag-name.component.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`tag-name.component.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["angular"]
 printWidth: 80
                                                                                 | printWidth

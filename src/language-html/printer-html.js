@@ -711,7 +711,7 @@ function printAttributes(path, options, print) {
     parts.push(node.isSelfClosing ? " " : "");
   } else {
     parts.push(
-      options.angleBracketSameLine
+      options.bracketSameLine
         ? node.isSelfClosing
           ? " "
           : ""

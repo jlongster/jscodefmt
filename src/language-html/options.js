@@ -32,7 +32,7 @@ module.exports = {
     default: false,
     description: "Indent script and style tags in Vue files.",
   },
-  angleBracketSameLine: {
+  bracketSameLine: {
     since: "2.4.0",
     category: CATEGORY_HTML,
     type: "boolean",

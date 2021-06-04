@@ -135,9 +135,9 @@ Valid options:
 | ------- | ---------------------- | ------------------------ |
 | `true`  | `--no-bracket-spacing` | `bracketSpacing: <bool>` |
 
-## Angle Brackets
+## Bracket Line
 
-Put the `>` of a multi-line HTML-like (HTML, JSX, etc.) element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
+Put the `>` of a multi-line HTML (HTML, JSX, Vue, Angular) element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
 
 Valid options:
 
@@ -166,9 +166,46 @@ Valid options:
 </button>
 ```
 
-| Default | CLI Override                | API Override                   |
-| ------- | --------------------------- | ------------------------------ |
-| `false` | `--angle-bracket-same-line` | `angleBracketSameLine: <bool>` |
+| Default | CLI Override          | API Override              |
+| ------- | --------------------- | ------------------------- |
+| `false` | `--bracket-same-line` | `bracketSameLine: <bool>` |
+
+## [Deprecated] JSX Brackets
+
+_This option has been deprecated in v2.4.0, use --bracket-same-line instead_
+
+Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
+
+Valid options:
+
+- `true` - Example:
+
+<!-- prettier-ignore -->
+```jsx
+<button
+  className="prettier-class"
+  id="prettier-id"
+  onClick={this.handleClick}>
+  Click Here
+</button>
+```
+
+- `false` - Example:
+
+<!-- prettier-ignore -->
+```jsx
+<button
+  className="prettier-class"
+  id="prettier-id"
+  onClick={this.handleClick}
+>
+  Click Here
+</button>
+```
+
+| Default | CLI Override              | API Override                 |
+| ------- | ------------------------- | ---------------------------- |
+| `false` | `--jsx-bracket-same-line` | `jsxBracketSameLine: <bool>` |
 
 ## Arrow Function Parentheses
 

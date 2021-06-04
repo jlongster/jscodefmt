@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`brackets-on-next-line.html - {"angleBracketSameLine":false} format 1`] = `
+exports[`brackets-on-next-line.html - {"bracketSameLine":false} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: false
+bracketSameLine: false
 parsers: ["html"]
 printWidth: 80
                                                                                 | printWidth
@@ -46,9 +46,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`brackets-on-next-line.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`brackets-on-next-line.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["html"]
 printWidth: 80
                                                                                 | printWidth
@@ -90,9 +90,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`brackets-on-same-line.html - {"angleBracketSameLine":false} format 1`] = `
+exports[`brackets-on-same-line.html - {"bracketSameLine":false} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: false
+bracketSameLine: false
 parsers: ["html"]
 printWidth: 80
                                                                                 | printWidth
@@ -134,9 +134,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`brackets-on-same-line.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`brackets-on-same-line.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["html"]
 printWidth: 80
                                                                                 | printWidth

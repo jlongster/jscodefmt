@@ -6,11 +6,6 @@ Object {
   "definitions": Object {
     "optionsDefinition": Object {
       "properties": Object {
-        "angleBracketSameLine": Object {
-          "default": false,
-          "description": "Put > on the last line instead of at a new line.",
-          "type": "boolean",
-        },
         "arrowParens": Object {
           "default": "always",
           "description": "Include parentheses around a sole arrow function parameter.",
@@ -28,6 +23,11 @@ Object {
               ],
             },
           ],
+        },
+        "bracketSameLine": Object {
+          "default": false,
+          "description": "Put > on the last line instead of at a new line.",
+          "type": "boolean",
         },
         "bracketSpacing": Object {
           "default": true,
@@ -125,7 +125,7 @@ This option cannot be used with --range-start and --range-end.",
         },
         "jsxBracketSameLine": Object {
           "default": false,
-          "description": "(Deprecated) Put > on the last line instead of at a new line.",
+          "description": "[Deprecated in v2.4.0, use --bracket-same-line instead] Put > on the last line instead of at a new line.",
           "type": "boolean",
         },
         "jsxSingleQuote": Object {

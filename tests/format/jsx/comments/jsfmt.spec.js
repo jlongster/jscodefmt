@@ -1,5 +1,5 @@
 run_spec(__dirname, ["flow", "babel", "typescript"], {
-  angleBracketSameLine: true,
+  bracketSameLine: true,
   errors: {
     typescript: ["in-end-tag.js"],
   },

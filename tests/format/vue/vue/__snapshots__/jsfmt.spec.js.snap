@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`attributes.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`attributes.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -1462,9 +1462,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`board_card.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`board_card.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -2123,9 +2123,9 @@ export default {
 ================================================================================
 `;
 
-exports[`case-sensitive-tags.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`case-sensitive-tags.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -2198,9 +2198,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`custom-block.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`custom-block.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -2317,9 +2317,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`expression-binding.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`expression-binding.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -2606,9 +2606,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`filter.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`filter.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -2834,9 +2834,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`interpolations.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`interpolations.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -3357,9 +3357,9 @@ x => {
 ================================================================================
 `;
 
-exports[`multiple-template1.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`multiple-template1.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -3448,9 +3448,9 @@ cloned.
 ================================================================================
 `;
 
-exports[`multiple-template2.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`multiple-template2.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -3539,9 +3539,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`nested-template.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`nested-template.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -3662,9 +3662,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`one-line-template1.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`one-line-template1.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -3733,9 +3733,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`one-line-template2.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`one-line-template2.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -3812,9 +3812,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`pre-child.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`pre-child.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -4235,9 +4235,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`script_src.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`script_src.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -4302,9 +4302,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`self_closing.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`self_closing.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -4521,9 +4521,9 @@ foo();
 ================================================================================
 `;
 
-exports[`self_closing_style.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`self_closing_style.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -4612,9 +4612,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`style.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`style.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -5039,9 +5039,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`tag-name.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`tag-name.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -5114,9 +5114,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`template.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`template.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -5368,9 +5368,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`template-dom.html - {"angleBracketSameLine":true} format 1`] = `
+exports[`template-dom.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -5495,9 +5495,9 @@ new Vue({el: '#app'})
 ================================================================================
 `;
 
-exports[`template-lang.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`template-lang.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -5690,9 +5690,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`test.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`test.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth
@@ -5817,9 +5817,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`v-if.vue - {"angleBracketSameLine":true} format 1`] = `
+exports[`v-if.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["vue"]
 printWidth: 80
                                                                                 | printWidth

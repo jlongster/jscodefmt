@@ -86,10 +86,6 @@ Object {
     ],
   },
   "options": Object {
-    "angleBracketSameLine": Object {
-      "default": false,
-      "type": "boolean",
-    },
     "arrowParens": Object {
       "choices": Array [
         "always",
@@ -97,6 +93,10 @@ Object {
       ],
       "default": "always",
       "type": "choice",
+    },
+    "bracketSameLine": Object {
+      "default": false,
+      "type": "boolean",
     },
     "bracketSpacing": Object {
       "default": true,
@@ -760,15 +760,6 @@ exports[`CLI --support-info (stdout) 1`] = `
   ],
   \\"options\\": [
     {
-      \\"category\\": \\"HTML\\",
-      \\"default\\": false,
-      \\"description\\": \\"Put > on the last line instead of at a new line.\\",
-      \\"name\\": \\"angleBracketSameLine\\",
-      \\"pluginDefaults\\": {},
-      \\"since\\": \\"2.4.0\\",
-      \\"type\\": \\"boolean\\"
-    },
-    {
       \\"category\\": \\"JavaScript\\",
       \\"choices\\": [
         {
@@ -786,6 +777,15 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"pluginDefaults\\": {},
       \\"since\\": \\"1.9.0\\",
       \\"type\\": \\"choice\\"
+    },
+    {
+      \\"category\\": \\"HTML\\",
+      \\"default\\": false,
+      \\"description\\": \\"Put > on the last line instead of at a new line.\\",
+      \\"name\\": \\"bracketSameLine\\",
+      \\"pluginDefaults\\": {},
+      \\"since\\": \\"2.4.0\\",
+      \\"type\\": \\"boolean\\"
     },
     {
       \\"category\\": \\"Common\\",
@@ -896,7 +896,7 @@ exports[`CLI --support-info (stdout) 1`] = `
     {
       \\"category\\": \\"JavaScript\\",
       \\"default\\": false,
-      \\"description\\": \\"(Deprecated) Put > on the last line instead of at a new line.\\",
+      \\"description\\": \\"[Deprecated in v2.4.0, use --bracket-same-line instead] Put > on the last line instead of at a new line.\\",
       \\"name\\": \\"jsxBracketSameLine\\",
       \\"pluginDefaults\\": {},
       \\"since\\": \\"0.17.0\\",

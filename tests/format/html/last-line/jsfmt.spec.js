@@ -1,2 +1,2 @@
-run_spec(__dirname, ["html"], { angleBracketSameLine: true });
-run_spec(__dirname, ["html"], { angleBracketSameLine: false });
+run_spec(__dirname, ["html"], { bracketSameLine: true });
+run_spec(__dirname, ["html"], { bracketSameLine: false });

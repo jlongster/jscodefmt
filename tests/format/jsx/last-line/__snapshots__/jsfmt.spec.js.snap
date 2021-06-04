@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`last_line.js - {"angleBracketSameLine":false} format 1`] = `
+exports[`last_line.js - {"bracketSameLine":false} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: false
+bracketSameLine: false
 parsers: ["flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
@@ -33,9 +33,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`last_line.js - {"angleBracketSameLine":true} format 1`] = `
+exports[`last_line.js - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
@@ -130,9 +130,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`single_prop_multiline_string.js - {"angleBracketSameLine":false} format 1`] = `
+exports[`single_prop_multiline_string.js - {"bracketSameLine":false} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: false
+bracketSameLine: false
 parsers: ["flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
@@ -161,9 +161,9 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`single_prop_multiline_string.js - {"angleBracketSameLine":true} format 1`] = `
+exports[`single_prop_multiline_string.js - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
-angleBracketSameLine: true
+bracketSameLine: true
 parsers: ["flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth

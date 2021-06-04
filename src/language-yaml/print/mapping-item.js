@@ -117,7 +117,7 @@ function printMappingItem(node, parentNode, path, print, options) {
   }
   implicitMappingValueParts.push(printedValue);
   const implicitMappingValue = alignWithSpaces(
-    options.tabWidth,
+    (options.doNotIndent && isNode(value.content, ["sequence"])) ? 0 : options.tabWidth,
     implicitMappingValueParts
   );
 

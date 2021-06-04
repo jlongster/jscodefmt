@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: name
+  labels:
+    app: name
+spec:
+  selector:
+    matchLabels:
+      app: name
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: name
+    spec:
+      containers:
+        - name: main
+          image: image
+          imagePullPolicy: Always
+          env:
+            - name: VARIABLE_NAME_0
+              value: value
+            - name: VARIABLE_NAME_1
+              value: value
+          ports:
+            - containerPort: 3000
+              name: http
+          volumeMounts:
+            - name: certs
+              mountPath: /mnt/certs
+            - name: config
+              mountPath: /mnt/config
+      volumes:
+        - name: certs
+          secret:
+            secretName: secret
+        - name: config
+          configMap:
+            name: config

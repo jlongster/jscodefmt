@@ -1,0 +1,91 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`self-closing.html - {"bracketSameLine":true} format 1`] = `
+====================================options=====================================
+bracketSameLine: true
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <div id="test-id-123" class="test-class-456" title="test-title-789" data-test="test-data-111213">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      <self-closing-component id="input-id" class="input-class" title="input-title" value="input-value" />
+    </div>
+  </div>
+</body>
+</html>
+=====================================output=====================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div
+        id="test-id-123"
+        class="test-class-456"
+        title="test-title-789"
+        data-test="test-data-111213">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        <self-closing-component
+          id="input-id"
+          class="input-class"
+          title="input-title"
+          value="input-value" />
+      </div>
+    </div>
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`self-closing.vue - {"bracketSameLine":true} format 1`] = `
+====================================options=====================================
+bracketSameLine: true
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<template>
+  <div>
+     <div id="test-id-123" class="test-class-456" title="test-title-789" data-test="test-data-111213">
+       Lorem ipsum dolor sit amet consectetur adipisicing elit.
+       <self-closing-component id="input-id" class="input-class" title="input-title" value="input-value" />
+     </div>
+  </div>
+</template>
+=====================================output=====================================
+<template>
+  <div>
+    <div
+      id="test-id-123"
+      class="test-class-456"
+      title="test-title-789"
+      data-test="test-data-111213">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+      <self-closing-component
+        id="input-id"
+        class="input-class"
+        title="input-title"
+        value="input-value" />
+    </div>
+  </div>
+</template>
+
+================================================================================
+`;

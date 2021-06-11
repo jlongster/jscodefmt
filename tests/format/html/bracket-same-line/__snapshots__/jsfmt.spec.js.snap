@@ -1,5 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`html.html - {"bracketSameLine":false} format 1`] = `
+====================================options=====================================
+bracketSameLine: false
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</div>
+<div long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></div>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+<img long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"/>
+<div class="a">
+text
+</div>
+<span  class="a">
+text
+</span>
+<img class="a"/>
+
+=====================================output=====================================
+<div
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+>
+  text
+</div>
+<div
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+></div>
+<span
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+>
+  text
+</span>
+<span
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+></span>
+<img
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+/>
+<div class="a">text</div>
+<span class="a"> text </span>
+<img class="a" />
+
+================================================================================
+`;
+
 exports[`html.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
 bracketSameLine: true

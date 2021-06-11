@@ -4,7 +4,7 @@ exports[`jsx.js - {"jsxBracketSameLine":false,"bracketSameLine":true} format 1`]
 ====================================options=====================================
 bracketSameLine: true
 jsxBracketSameLine: false
-parsers: ["meriyah"]
+parsers: ["babel", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -36,7 +36,7 @@ printWidth: 80
 exports[`jsx.js - {"jsxBracketSameLine":false} format 1`] = `
 ====================================options=====================================
 jsxBracketSameLine: false
-parsers: ["meriyah"]
+parsers: ["babel", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -70,7 +70,7 @@ exports[`jsx.js - {"jsxBracketSameLine":true,"bracketSameLine":false} format 1`]
 ====================================options=====================================
 bracketSameLine: false
 jsxBracketSameLine: true
-parsers: ["meriyah"]
+parsers: ["babel", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -102,7 +102,7 @@ printWidth: 80
 exports[`jsx.js - {"jsxBracketSameLine":true} format 1`] = `
 ====================================options=====================================
 jsxBracketSameLine: true
-parsers: ["meriyah"]
+parsers: ["babel", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================

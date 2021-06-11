@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`self-closing.html - {"bracketSameLine":true} format 1`] = `
+exports[`vue.html - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
 bracketSameLine: true
 parsers: ["vue"]
@@ -16,14 +16,32 @@ printWidth: 80
   <title>Document</title>
 </head>
 <body>
-  <div>
-    <div id="test-id-123" class="test-class-456" title="test-title-789" data-test="test-data-111213">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      <self-closing-component id="input-id" class="input-class" title="input-title" value="input-value" />
-    </div>
+<template>
+  <div id="js-app">
+<div :click="long_long_long_long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</div>
+<div :click="long_long_long_long_long_long_long_long_long_long_long_long_long_long_value"></div>
+<span :click="long_long_long_long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span :long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+<img :long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"/>
+<div class="a">
+text
+</div>
+<span  class="a">
+text
+</span>
+<img class="a"/>
   </div>
+</template>
+
+<script long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">new Vue({el: '#js-app'})</script>
+<style  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">.a {color: #f00}</style>
 </body>
 </html>
+
 =====================================output=====================================
 <!DOCTYPE html>
 <html lang="en">
@@ -34,27 +52,55 @@ printWidth: 80
     <title>Document</title>
   </head>
   <body>
-    <div>
-      <div
-        id="test-id-123"
-        class="test-class-456"
-        title="test-title-789"
-        data-test="test-data-111213">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        <self-closing-component
-          id="input-id"
-          class="input-class"
-          title="input-title"
-          value="input-value" />
+    <template>
+      <div id="js-app">
+        <div
+          :click="
+            long_long_long_long_long_long_long_long_long_long_long_long_long_long_value
+          ">
+          text
+        </div>
+        <div
+          :click="
+            long_long_long_long_long_long_long_long_long_long_long_long_long_long_value
+          "></div>
+        <span
+          :click="
+            long_long_long_long_long_long_long_long_long_long_long_long_long_long_value
+          ">
+          text
+        </span>
+        <span
+          :long_long_attribute="
+            long_long_long_long_long_long_long_long_long_long_long_value
+          "></span>
+        <img
+          :long_long_attribute="
+            long_long_long_long_long_long_long_long_long_long_long_value
+          " />
+        <div class="a">text</div>
+        <span class="a"> text </span>
+        <img class="a" />
       </div>
-    </div>
+    </template>
+
+    <script
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+      new Vue({ el: "#js-app" });
+    </script>
+    <style
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+      .a {
+        color: #f00;
+      }
+    </style>
   </body>
 </html>
 
 ================================================================================
 `;
 
-exports[`self-closing.vue - {"bracketSameLine":true} format 1`] = `
+exports[`vue.vue - {"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
 bracketSameLine: true
 parsers: ["vue"]
@@ -63,29 +109,65 @@ printWidth: 80
 =====================================input======================================
 <template>
   <div>
-     <div id="test-id-123" class="test-class-456" title="test-title-789" data-test="test-data-111213">
-       Lorem ipsum dolor sit amet consectetur adipisicing elit.
-       <self-closing-component id="input-id" class="input-class" title="input-title" value="input-value" />
-     </div>
+<div :long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</div>
+<div v-on:long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></div>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+<img long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"/>
+<div class="a">
+text
+</div>
+<span  class="a">
+text
+</span>
+<img class="a"/>
   </div>
 </template>
+
+<script long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">export default {}</script>
+<style  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">.a {color: #f00}</style>
+
 =====================================output=====================================
 <template>
   <div>
     <div
-      id="test-id-123"
-      class="test-class-456"
-      title="test-title-789"
-      data-test="test-data-111213">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-      <self-closing-component
-        id="input-id"
-        class="input-class"
-        title="input-title"
-        value="input-value" />
+      :long_long_attribute="
+        long_long_long_long_long_long_long_long_long_long_long_value
+      ">
+      text
     </div>
+    <div
+      v-on:long_long_attribute="
+        long_long_long_long_long_long_long_long_long_long_long_value
+      "></div>
+    <span
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+      text
+    </span>
+    <span
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+    <img
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value" />
+    <div class="a">text</div>
+    <span class="a"> text </span>
+    <img class="a" />
   </div>
 </template>
+
+<script
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+export default {};
+</script>
+<style
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+.a {
+  color: #f00;
+}
+</style>
 
 ================================================================================
 `;

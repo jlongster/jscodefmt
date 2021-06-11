@@ -48,7 +48,7 @@ conforms to a consistent style. (See this [blog post](http://jlongster.com/A-Pre
   + [Quotes](#quotes)
   + [Trailing Commas](#trailing-commas)
   + [Bracket Spacing](#bracket-spacing)
-  + [Bracket Line](#bracket-line)
+  + [JSX Brackets](#jsx-brackets)
   + [Range](#range)
   + [Parser](#parser)
   + [Filepath](#filepath)
@@ -623,12 +623,12 @@ Default | CLI Override | API Override
 --------|--------------|-------------
 `true` | `--no-bracket-spacing` | `bracketSpacing: <bool>`
 
-### Bracket Line
-Put the `>` of a multi-line HTML (HTML, JSX, Vue, Angular) element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
+### JSX Brackets
+Put the `>` of a multi-line JSX element at the end of the last line instead of being alone on the next line (does not apply to self closing elements).
 
 Default | CLI Override | API Override
 --------|--------------|-------------
-`false` | `--bracket-same-line` | `bracketSameLine: <bool>`
+`false` | `--jsx-bracket-same-line` | `jsxBracketSameLine: <bool>`
 
 ### Range
 Format only a segment of a file.

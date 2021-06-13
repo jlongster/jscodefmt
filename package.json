@@ -66,7 +66,7 @@
     "outdent": "0.8.0",
     "parse-srcset": "ikatyang/parse-srcset#54eb9c1cb21db5c62b4d0e275d7249516df6f0ee",
     "please-upgrade-node": "3.2.0",
-    "postcss": "8.2.7",
+    "postcss": "8.3.2",
     "postcss-less": "4.0.1",
     "postcss-media-query-parser": "0.2.3",
     "postcss-scss": "3.0.5",

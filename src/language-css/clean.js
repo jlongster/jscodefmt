@@ -93,6 +93,9 @@ function clean(ast, newObj, parent) {
   if (ast.type === "value-number") {
     newObj.unit = newObj.unit.toLowerCase();
   }
+  if (ast.type === "value-unknown") {
+    newObj.value = newObj.value.replace(/;$/g, "");
+  }
 
   if (
     (ast.type === "media-feature" ||

@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`less-syntax.less [scss] format 1`] = `
+"CssSyntaxError: Unknown word (1:4)
+> 1 | a {.bordered();}
+    |    ^
+  2 |"
+`;

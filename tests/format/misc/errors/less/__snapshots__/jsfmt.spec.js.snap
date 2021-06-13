@@ -28,3 +28,10 @@ exports[`open-sigle-quote.less [less] format 1`] = `
   3 | }
   4 |"
 `;
+
+exports[`scss-syntax.scss [less] format 1`] = `
+"CssSyntaxError: Unknown word (1:15)
+> 1 | a {content: #{$foo}}
+    |               ^
+  2 |"
+`;

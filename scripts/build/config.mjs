@@ -7,7 +7,6 @@ import path from "node:path";
  * @property {string?} name - name for the UMD bundle (for plugins, it'll be `prettierPlugins.${name}`)
  * @property {'node' | 'universal'} target - should generate a CJS only for node or universal bundle
  * @property {'core' | 'plugin'} type - it's a plugin bundle or core part of prettier
- * @property {'rollup' | 'webpack'} [bundler='rollup'] - define which bundler to use
  * @property {CommonJSConfig} [commonjs={}] - options for `rollup-plugin-commonjs`
  * @property {string[]} external - array of paths that should not be included in the final bundle
  * @property {Object.<string, string | {code: string}>} replaceModule - module replacement path or code
@@ -60,29 +59,20 @@ const parsers = [
   },
   {
     input: "src/language-css/parser-postcss.js",
-    // postcss has dependency cycles that don't work with rollup
-    bundler: "webpack",
     terserOptions: {
-      // prevent terser generate extra .LICENSE file
-      extractComments: false,
-      terserOptions: {
-        // prevent U+FFFE in the output
-        output: {
-          ascii_only: true,
-        },
-        mangle: {
-          // postcss need keep_fnames when minify
-          keep_fnames: true,
-          // we don't transform class anymore, so we need keep_classnames too
-          keep_classnames: true,
-        },
+      mangle: {
+        // postcss need keep_fnames when minify
+        keep_fnames: true,
+        // we don't transform class anymore, so we need keep_classnames too
+        keep_classnames: true,
       },
     },
-  },
-  {
-    input: "dist/parser-postcss.js",
-    output: "esm/parser-postcss.mjs",
-    format: "esm",
+    replace: {
+      // `colorette`
+      '"NO_COLOR" in process.env': "true",
+    },
+    // TODO[@fisker]: Enable minify
+    minify: false,
   },
   {
     input: "src/language-graphql/parser-graphql.js",

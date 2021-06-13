@@ -222,9 +222,9 @@ Valid options:
 - `"typescript"` (via [@typescript-eslint/typescript-estree](https://github.com/typescript-eslint/typescript-eslint)) _First available in v1.4.0_
 - `"espree"` (via [espree](https://github.com/eslint/espree)) _First available in v2.2.0_
 - `"meriyah"` (via [meriyah](https://github.com/meriyah/meriyah)) _First available in v2.2.0_
-- `"css"` (via [postcss-scss](https://github.com/postcss/postcss-scss) and [postcss-less](https://github.com/shellscape/postcss-less), autodetects which to use) _First available in v1.7.1_
-- `"scss"` (same parsers as `"css"`, prefers postcss-scss) _First available in v1.7.1_
-- `"less"` (same parsers as `"css"`, prefers postcss-less) _First available in v1.7.1_
+- `"css"` (via [postcss](https://github.com/postcss/postcss)) _First available in v1.7.1_
+- `"scss"` (via [postcss-scss](https://github.com/postcss/postcss-scss)) _First available in v1.7.1_
+- `"less"` (via [postcss-less](https://github.com/shellscape/postcss-less) _First available in v1.7.1_
 - `"json"` (via [@babel/parser parseExpression](https://babeljs.io/docs/en/next/babel-parser.html#babelparserparseexpressioncode-options)) _First available in v1.5.0_
 - `"json5"` (same parser as `"json"`, but outputs as [json5](https://json5.org/)) _First available in v1.13.0_
 - `"json-stringify"` (same parser as `"json"`, but outputs like `JSON.stringify`) _First available in v1.13.0_

@@ -1,28 +1,63 @@
 "use strict";
 
 const lineColumnToIndex = require("../utils/line-column-to-index");
-const { getLast, skipEverythingButNewLine } = require("../common/util");
+const {
+  getLast,
+  skipEverythingButNewLine,
+  isNonEmptyArray,
+} = require("../common/util");
 
 function calculateLocStart(node, text) {
+  // `postcss>=8`
+  if (
+    node.source &&
+    node.source.start &&
+    typeof node.source.start.offset === "number"
+  ) {
+    return node.source.start.offset;
+  }
+
   // value-* nodes have this
   if (typeof node.sourceIndex === "number") {
     return node.sourceIndex;
   }
 
-  return node.source ? lineColumnToIndex(node.source.start, text) - 1 : null;
+  if (node.source && node.source.start) {
+    return lineColumnToIndex(node.source.start, text);
+  }
+
+  /* istanbul ignore next */
+  // eslint-disable-next-line no-console
+  console.log(node);
+  /* istanbul ignore next */
+  throw new Error("Can not locate node.");
 }
 
 function calculateLocEnd(node, text) {
   if (node.type === "css-comment" && node.inline) {
     return skipEverythingButNewLine(text, node.source.startOffset);
   }
-  const endNode = node.nodes && getLast(node.nodes);
-  if (endNode && node.source && !node.source.end) {
-    node = endNode;
+
+  // `postcss>=8`
+  if (
+    node.source &&
+    node.source.end &&
+    typeof node.source.end.offset === "number"
+  ) {
+    // https://github.com/postcss/postcss/issues/1450
+    return node.source.end.offset + 1;
   }
-  if (node.source && node.source.end) {
-    return lineColumnToIndex(node.source.end, text);
+
+  if (node.source) {
+    if (node.source.end) {
+      return lineColumnToIndex(node.source.end, text);
+    }
+
+    if (isNonEmptyArray(node.nodes)) {
+      return calculateLocEnd(getLast(node.nodes), text);
+    }
   }
+
   return null;
 }
 

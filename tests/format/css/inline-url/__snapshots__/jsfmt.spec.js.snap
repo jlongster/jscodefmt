@@ -107,7 +107,7 @@ printWidth: 80
 
 .validUnquotedUrlsThatAreParsedBySass {
   background: url($foo);
-  background: url($foo + $bar);
+  background: url($foo+$bar);
   background: url($foo*3);
   background: url($foo/$bar);
 }

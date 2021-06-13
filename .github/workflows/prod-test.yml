@@ -5,6 +5,7 @@ on:
     branches:
       - main
       - patch-release
+      - next
   pull_request:
 
 jobs:

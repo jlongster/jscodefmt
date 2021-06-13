@@ -301,6 +301,35 @@ printWidth: 80
 ================================================================================
 `;
 
+exports[`custom-properties.scss format 1`] = `
+====================================options=====================================
+parsers: ["scss"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+/* custom properties set & @apply rule */
+:root {
+    /* comments 192 */ --centered /* comments 193 */ : /* comments 194 */ {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    };
+}
+
+=====================================output=====================================
+/* custom properties set & @apply rule */
+:root {
+  /* comments 192 */
+  --centered/* comments 193 */ : /* comments 194 */ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  };
+}
+
+================================================================================
+`;
+
 exports[`if-eslit-at-rule-decloration.scss format 1`] = `
 ====================================options=====================================
 parsers: ["scss"]

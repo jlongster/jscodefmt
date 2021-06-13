@@ -1,7 +1,5 @@
 import path from "node:path";
-import fs from "node:fs";
 import { rollup } from "rollup";
-import webpack from "webpack";
 import { nodeResolve as rollupPluginNodeResolve } from "@rollup/plugin-node-resolve";
 import rollupPluginAlias from "@rollup/plugin-alias";
 import rollupPluginCommonjs from "@rollup/plugin-commonjs";
@@ -10,7 +8,6 @@ import rollupPluginJson from "@rollup/plugin-json";
 import rollupPluginReplace from "@rollup/plugin-replace";
 import { terser as rollupPluginTerser } from "rollup-plugin-terser";
 import { babel as rollupPluginBabel } from "@rollup/plugin-babel";
-import WebpackPluginTerser from "terser-webpack-plugin";
 import createEsmUtils from "esm-utils";
 import builtinModules from "builtin-modules";
 import rollupPluginExecutable from "./rollup-plugins/executable.mjs";
@@ -43,28 +40,37 @@ const entries = [
     find: "@glimmer/syntax",
     replacement: require.resolve("@glimmer/syntax"),
   },
+  // https://github.com/rollup/plugins/issues/670
+  {
+    find: "is-core-module",
+    replacement: require.resolve("is-core-module"),
+  },
+  {
+    find: "yaml/util",
+    replacement: require.resolve("yaml/util"),
+  },
+  // `postcss-less`
+  {
+    find: "postcss/lib/input",
+    replacement: require.resolve("postcss/lib/input"),
+  },
+  {
+    find: "postcss/lib/parser",
+    replacement: require.resolve("postcss/lib/parser"),
+  },
+  {
+    find: "postcss/lib/comment",
+    replacement: require.resolve("postcss/lib/comment"),
+  },
+  {
+    find: "postcss/lib/stringifier",
+    replacement: require.resolve("postcss/lib/stringifier"),
+  },
+  {
+    find: "postcss/lib/tokenize",
+    replacement: require.resolve("postcss/lib/tokenize"),
+  },
 ];
-
-function webpackNativeShims(config, modules) {
-  if (!config.resolve) {
-    config.resolve = {};
-  }
-  const { resolve } = config;
-  resolve.alias = resolve.alias || {};
-  resolve.fallback = resolve.fallback || {};
-  for (const module of modules) {
-    if (module in resolve.alias || module in resolve.fallback) {
-      throw new Error(`fallback/alias for "${module}" already exists.`);
-    }
-    const file = path.join(__dirname, `shims/${module}.mjs`);
-    if (fs.existsSync(file)) {
-      resolve.alias[module] = file;
-    } else {
-      resolve.fallback[module] = false;
-    }
-  }
-  return config;
-}
 
 function getBabelConfig(bundle) {
   const config = {
@@ -248,7 +254,7 @@ function getRollupOutputOptions(bundle, buildOptions) {
   if (bundle.target === "node") {
     options.format = "cjs";
   } else if (bundle.target === "universal") {
-    if (!bundle.format && bundle.bundler !== "webpack") {
+    if (!bundle.format) {
       return [
         {
           ...options,
@@ -264,85 +270,10 @@ function getRollupOutputOptions(bundle, buildOptions) {
     options.format = bundle.format;
   }
 
-  if (buildOptions.playground && bundle.bundler !== "webpack") {
+  if (buildOptions.playground) {
     return { skipped: true };
   }
   return [options];
-}
-
-function getWebpackConfig(bundle) {
-  if (bundle.type !== "plugin" || bundle.target !== "universal") {
-    throw new Error("Must use rollup for this bundle");
-  }
-
-  const root = path.resolve(__dirname, "..", "..");
-  const config = {
-    mode: "production",
-    performance: { hints: false },
-    entry: path.resolve(root, bundle.input),
-    module: {
-      rules: [
-        {
-          test: /\.js$/,
-          use: {
-            loader: "babel-loader",
-            options: getBabelConfig(bundle),
-          },
-        },
-      ],
-    },
-    output: {
-      path: path.resolve(root, "dist"),
-      filename: bundle.output,
-      library: {
-        type: "umd",
-        name: bundle.name.split("."),
-      },
-      // https://github.com/webpack/webpack/issues/6642
-      globalObject: 'new Function("return this")()',
-    },
-    optimization: {},
-    resolve: {
-      // Webpack@5 can't resolve "postcss/lib/parser" and "postcss/lib/stringifier"" imported by `postcss-scss`
-      // Ignore `exports` field to fix bundle script
-      exportsFields: [],
-    },
-  };
-
-  if (bundle.terserOptions) {
-    config.optimization.minimizer = [
-      new WebpackPluginTerser(bundle.terserOptions),
-    ];
-  }
-  // config.optimization.minimize = false;
-
-  return webpackNativeShims(config, ["os", "path", "util", "url", "fs"]);
-}
-
-function runWebpack(config) {
-  return new Promise((resolve, reject) => {
-    webpack(config, (error, stats) => {
-      if (error) {
-        reject(error);
-        return;
-      }
-
-      if (stats.hasErrors()) {
-        const { errors } = stats.toJson();
-        const error = new Error(errors[0].message);
-        error.errors = errors;
-        reject(error);
-        return;
-      }
-
-      if (stats.hasWarnings()) {
-        const { warnings } = stats.toJson();
-        console.warn(warnings);
-      }
-
-      resolve();
-    });
-  });
 }
 
 async function createBundle(bundle, cache, options) {
@@ -366,12 +297,8 @@ async function createBundle(bundle, cache, options) {
     return { cached: true };
   }
 
-  if (bundle.bundler === "webpack") {
-    await runWebpack(getWebpackConfig(bundle));
-  } else {
-    const result = await rollup(inputOptions);
-    await Promise.all(outputOptions.map((option) => result.write(option)));
-  }
+  const result = await rollup(inputOptions);
+  await Promise.all(outputOptions.map((option) => result.write(option)));
 
   return { bundled: true };
 }

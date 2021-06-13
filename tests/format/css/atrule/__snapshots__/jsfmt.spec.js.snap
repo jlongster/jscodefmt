@@ -1173,28 +1173,23 @@ h3
 @each $animal in ((puma), (sea-slug), (egret), (salamander)) {
 }
 @each $animal, $color, $cursor in (puma, black, default),
-  (sea-slug, blue, pointer), (egret, white, move)
-{
+  (sea-slug, blue, pointer), (egret, white, move) {
 }
 @each $animal, $color, $cursor in (puma, black, default),
-  (sea-slug, blue, pointer), (egret, white, move)
-{
+  (sea-slug, blue, pointer), (egret, white, move) {
 }
 @each $animal, $color, $cursor in (puma, black, default),
-  (sea-slug, blue, pointer), (egret, white, move)
-{
+  (sea-slug, blue, pointer), (egret, white, move) {
 }
 @each $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
     in puma,
-  sea-slug, egret, salamander
-{
+  sea-slug, egret, salamander {
 }
 @each $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var,
   $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var1,
   $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var-2
     in (puma, black, default),
-  (sea-slug, blue, pointer), (egret, white, move)
-{
+  (sea-slug, blue, pointer), (egret, white, move) {
 }
 @each $element, $size in (h1: 20px, h2: 16px, h3: 14px) {
 }
@@ -1765,45 +1760,41 @@ through
 @for $i from 1 through 8 {
 }
 @for $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
-  from 1
-  through 5
-{
+  from 1 through 5 {
 }
-@for $i
-  from $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var1
-  through 5
-{
+@for $i from
+  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var1
+  through 5 {
 }
-@for $i
-  from 1
-  through $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var-2
-{
+@for $i from 1 through
+  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var-2 {
 }
 @for $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
-  from $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var1
-  through $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var-2
-{
+  from
+  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var1
+  through
+  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var-2 {
 }
 @for $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
-  from $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var1
-  end $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var-2
-{
+  from
+  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var1
+  end
+  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var-2 {
 }
 @for $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
-  from ($var1 + $var1)
-  through ($var-2 + $var-2)
-{
+  from ($var1 + $var1) through ($var-2 + $var-2) {
 }
 @for $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
-  from (
+  from
+  (
     $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var1 +
       $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var1
   )
-  through (
+  through
+  (
     $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var-2 +
       $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var-2
-  )
-{
+  ) {
 }
 
 ================================================================================
@@ -2133,7 +2124,7 @@ p {
     color: red;
   } @else if $type == monster {
     color: green;
-  } @else {
+  } @else  {
     color: black;
   }
   @if $type == ocean {
@@ -2157,64 +2148,36 @@ p {
   @if $type == ocean {
   } @else if $type == matador {
   }
-  @if $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-variables ==
-    $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-variables
-  {
+  @if $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-variables
+    ==
+    $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-variables {
     color: blue;
   } @else if
-    $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-variables ==
     $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-variables
-  {
+    ==
+    $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-variables {
     color: red;
   } @else if
-    $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-variables ==
     $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-variables
-  {
+    ==
+    $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-variables {
     color: green;
-  } @else {
+  } @else  {
     color: black;
   }
   @if $very-very-very-long-var == 0 and $very-very-very-long-var == 0 {
   }
-  @if $very-very-very-very-very-very-long-var ==
-    0 and
-    $very-very-very-long-var ==
-    0
-  {
+  @if $very-very-very-very-very-very-long-var == 0 and $very-very-very-long-var
+    == 0 {
   }
-  @if $very-very-very-very-very-very-very-very-very-very-very-long-var ==
-    0 and
-    $very-very-very-very-very-very-very-very-very-very-very-long-var ==
-    0
-  {
+  @if $very-very-very-very-very-very-very-very-very-very-very-long-var == 0 and
+    $very-very-very-very-very-very-very-very-very-very-very-long-var == 0 {
   }
-  @if $base-font-size !=
-    16px or
-    $base-line-height !=
-    24px or
-    $base-unit !=
-    "em" or
-    $h1-font-size !=
-    2 *
-    $base-font-size or
-    $h2-font-size !=
-    1.5 *
-    $base-font-size or
-    $h3-font-size !=
-    1.17 *
-    $base-font-size or
-    $h4-font-size !=
-    1 *
-    $base-font-size or
-    $h5-font-size !=
-    0.83 *
-    $base-font-size or
-    $h6-font-size !=
-    0.67 *
-    $base-font-size or
-    $indent-amount !=
-    40px
-  {
+  @if $base-font-size != 16px or $base-line-height != 24px or $base-unit != "em"
+    or $h1-font-size != 2 * $base-font-size or $h2-font-size != 1.5 *
+    $base-font-size or $h3-font-size != 1.17 * $base-font-size or $h4-font-size
+    != 1 * $base-font-size or $h5-font-size != 0.83 * $base-font-size or
+    $h6-font-size != 0.67 * $base-font-size or $indent-amount != 40px {
   }
   @if (str-slice($item, 0, 1) == ":") {
   }
@@ -2222,7 +2185,7 @@ p {
   }
   @if ($type == ocean) {
   } @else if ($type == matador) {
-  } @else {
+  } @else  {
   }
 }
 
@@ -2582,22 +2545,19 @@ a {
 
 a {
   @include section-type-1(
-    $header: (
-      margin: 0 0 $margin-base,
-      text-align: left,
-    ),
+    $header: (margin: 0 0 $margin-base, text-align: left),
     $decoration: (
       type: base,
       margin: 0 auto -1px 0,
       primary-color: $brand-primary,
-      secondary-color: $gray-light,
+      secondary-color: $gray-light
     ),
     $title: (
       margin: 0 0 $margin-small,
       color: false,
       font-size: $font-size-h3,
       font-weight: false,
-      line-height: $line-height-h3,
+      line-height: $line-height-h3
     )
   );
 }
@@ -2605,19 +2565,14 @@ a {
 a {
   @include item-spotlight-properties-transition(
     "-title",
-    (
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15),
-    )
+    (box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15))
   );
 }
 
 a {
   @include item-spotlight-properties-transition(
     "-title",
-    (
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15),
-      border-color: $brand-primary,
-    )
+    (box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15), border-color: $brand-primary)
   );
 }
 
@@ -2627,7 +2582,7 @@ a {
     (
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15),
       border-color:
-        $very-very-very-very-very-very-very-very-very-very-very-very-very-long-value,
+        $very-very-very-very-very-very-very-very-very-very-very-very-very-long-value
     )
   );
 }
@@ -4818,17 +4773,15 @@ $i
 }
 @while ($i > 0) {
 }
-@while $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var >
-  1
-{
+@while $very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
+  > 1 {
 }
 @while 1 >
-  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
-{
+  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var {
 }
-@while $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var >
-  $other-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
-{
+@while $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
+  >
+  $other-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var {
 }
 @while (($i) > (0)) {
 }
@@ -4852,12 +4805,13 @@ $i
 ) {
 }
 @while (
-  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var >
-    1
+  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
+    > 1
 ) {
 }
 @while (
-  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var >
+  $very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
+    >
     $other-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-very-long-var
 ) {
 }

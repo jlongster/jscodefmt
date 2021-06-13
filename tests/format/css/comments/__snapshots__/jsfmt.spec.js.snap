@@ -304,6 +304,44 @@ printWidth: 80
 ================================================================================
 `;
 
+exports[`custom-properties.css format 1`] = `
+====================================options=====================================
+parsers: ["css"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+   /* comment 1 */
+       :root {
+  /* comment 2 */
+  --prop : {
+  /* comment 3 */
+color/* comment 4 */: /* comment 5 */#fff/* comment 6 */;/* comment 7 */
+  /* comment 8 */
+font-size: 12px;
+  /* comment 9 */
+  };
+  /* comment 10 */
+}
+     /* comment 11 */
+
+=====================================output=====================================
+/* comment 1 */
+:root {
+  /* comment 2 */
+  --prop: {
+    /* comment 3 */
+    color/* comment 4 */: /* comment 5 */ #fff /* comment 6 */; /* comment 7 */
+    /* comment 8 */
+    font-size: 12px;
+    /* comment 9 */
+  };
+  /* comment 10 */
+}
+/* comment 11 */
+
+================================================================================
+`;
+
 exports[`declaration.css format 1`] = `
 ====================================options=====================================
 parsers: ["css"]
@@ -887,11 +925,11 @@ article /* comment 168 */ :--heading /* comment 169 */ + /* comment 170 */ p /* 
 /* custom properties set & @apply rule */
 :root {
   /* comments 192 */
-  --centered /* comments 193 */ : /* comments 194 */ {
+  --centered/* comments 193 */ : /* comments 194 */ {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+  };
 }
 
 ================================================================================

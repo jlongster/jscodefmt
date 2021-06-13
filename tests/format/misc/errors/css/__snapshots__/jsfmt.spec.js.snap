@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`less-syntax.css [css] format 1`] = `
+"CssSyntaxError: Unknown word (1:4)
+> 1 | a {.bordered();}
+    |    ^
+  2 |"
+`;
+
+exports[`scss-syntax.css [css] format 1`] = `
+"CssSyntaxError: Unknown word (1:15)
+> 1 | a {content: #{$foo}}
+    |               ^
+  2 |"
+`;

@@ -46,4 +46,12 @@ module.exports = {
       },
     ],
   },
+  bracketSameLine: {
+    since: "2.4.0",
+    category: CATEGORY_COMMON,
+    type: "boolean",
+    default: false,
+    description:
+      "Put > of opening tags on the last line instead of on a new line.",
+  },
 };

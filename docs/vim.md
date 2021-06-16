@@ -122,6 +122,129 @@ Update your `coc-settings.json` for languages that you want format on save.
 
 [coc-prettier](https://github.com/neoclide/coc-prettier) have same configurations of [prettier-vscode](https://github.com/prettier/prettier-vscode), open `coc-settings.json` by `:CocConfig` to get autocompletion support.
 
+## [Neovim native LSP](https://neovim.io/doc/lsp/)
+
+Neovim provides built-in support for the Language Server Protocol starting
+with version `0.5`. For use with Prettier, a generic and extensible language
+server called [efm-langserver](https://github.com/mattn/efm-langserver) can be
+used to configure prettier formatting using the native LSP.
+
+### Install EFM
+
+This example uses homebrew but other methods exist.
+
+``` sh
+brew install efm-langserver
+```
+
+### Setup native LSP
+
+Configure with the help of [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+and your plugin manager of choice, this example using [vim-plug](https://github.com/junegunn/vim-plug).
+
+``` vim
+Plug 'neovim/nvim-lspconfig'
+```
+
+Below is the minimal setup required for EFM only. For more information
+regarding the Neovim native LSP see [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+and the official [Neovim LSP documentation](https://neovim.io/doc/user/lsp.html).
+The below configuration supports both manual formatting key bindings as well
+as auto-formatting on save.
+
+Setup is declared as part of the `init.vim` file but can also be referenced
+in an `init.lua`, see the referenced docs directly above for more.
+
+Example `init.vim` setup:
+
+``` vim
+lua << EOF
+local nvim_lsp = require('lspconfig')
+
+local on_attach = function(client, bufnr)
+    local function keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+    local function option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+    -- Set some key bindings conditional on server capabilities
+    if client.resolved_capabilities.document_formatting then
+        keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+        -- Auto-format document prior to saving should be synchronous to
+        -- finish update before save. Timeout is set to 500 milliseconds
+        --- for now to leave enough time for updating.
+        vim.api.nvim_exec([[
+            augroup formatting
+                autocmd!
+                autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 500)
+            augroup END
+        ]], true)
+    elseif client.resolved_capabilities.document_range_formatting then
+        keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    end
+end
+
+-- Ignore formatting for js and ts because it
+-- conflicts with prettier which is preferred
+nvim_lsp['tsserver'].setup {
+    on_attach = function(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        on_attach(client, bufnr)
+    end
+}
+
+-- General purpose language server
+nvim_lsp['efm'].setup {
+    -- See the
+    on_attach = on_attach,
+    init_options = {documentFormatting = true}
+}
+EOF
+```
+
+### Example `config.yaml` file
+
+See the expected location of [config.yaml](https://github.com/mattn/efm-langserver#example-for-configyaml)
+in the official docs but for UNIX systems the config should be placed at
+`$HOME/.config/efm-langserver/config.yaml`.
+
+The below example includes JavaScript/TypeScript with React JSX setup only and
+implies prettier is globally installed. The prettier path is specified relative
+to the prettier config files in your local project, typically meaning
+`./node_modules/.bin/prettier` is the path for your project version.
+
+``` yaml
+version: 2
+log-file: /tmp/efm.log
+log-level: 1
+root-markers:
+  - .git/
+
+tools:
+  prettier: &prettier
+    format-command: 'prettier --stdin-filepath ${INPUT}'
+    format-stdin: true
+
+  javascript:
+    - <<: *prettier
+
+  javascriptreact:
+    - <<: *prettier
+
+  javascript.jsx:
+    - <<: *prettier
+
+  typescript:
+    - <<: *prettier
+
+  typescriptreact:
+    - <<: *prettier
+
+  typescript.tsx:
+    - <<: *prettier
+```
+
+The above `log-file` location (eg. `/tmp/efm.log`) can be monitored if
+anything fails to work as expected.
+
 ## Running manually
 
 If you want something really bare-bones, you can create a custom key binding. In this example, `gp` (mnemonic: "get pretty") is used to run prettier (with options) in the currently active buffer:

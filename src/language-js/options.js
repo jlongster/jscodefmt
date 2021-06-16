@@ -32,8 +32,8 @@ module.exports = {
     category: CATEGORY_JAVASCRIPT,
     type: "boolean",
     default: false,
-    description:
-      "[Deprecated in v2.4.0, use --bracket-same-line instead] Put > on the last line instead of at a new line.",
+    description: "Put > on the last line instead of at a new line.",
+    deprecated: true,
   },
   semi: {
     since: "1.0.0",

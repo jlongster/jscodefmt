@@ -60,7 +60,7 @@ exports[`show external options with \`--help\` 1`] = `
 - First value
 + Second value
 
-@@ -22,18 +22,20 @@
+@@ -22,16 +22,18 @@
                              Control how Prettier formats quoted code embedded in the file.
                              Defaults to auto.
     --end-of-line <lf|crlf|cr|auto>
@@ -71,8 +71,6 @@ exports[`show external options with \`--help\` 1`] = `
     --html-whitespace-sensitivity <css|strict|ignore>
                              How to handle whitespaces in HTML.
                              Defaults to css.
-    --jsx-bracket-same-line  [Deprecated in v2.4.0, use --bracket-same-line instead] Put > on the last line instead of at a new line.
-                             Defaults to false.
     --jsx-single-quote       Use single quotes in JSX.
                              Defaults to false.
 -   --parser <flow|babel|babel-flow|babel-ts|typescript|espree|meriyah|css|less|scss|json|json5|json-stringify|graphql|markdown|mdx|vue|yaml|glimmer|html|angular|lwc>

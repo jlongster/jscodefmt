@@ -26,7 +26,7 @@ Object {
         },
         "bracketSameLine": Object {
           "default": false,
-          "description": "Put > on the last line instead of at a new line.",
+          "description": "Put > of opening tags on the last line instead of on a new line.",
           "type": "boolean",
         },
         "bracketSpacing": Object {
@@ -121,11 +121,6 @@ This option cannot be used with --range-start and --range-end.",
         "insertPragma": Object {
           "default": false,
           "description": "Insert @format pragma into file's first docblock comment.",
-          "type": "boolean",
-        },
-        "jsxBracketSameLine": Object {
-          "default": false,
-          "description": "[Deprecated in v2.4.0, use --bracket-same-line instead] Put > on the last line instead of at a new line.",
           "type": "boolean",
         },
         "jsxSingleQuote": Object {

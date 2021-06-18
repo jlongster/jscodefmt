@@ -23,7 +23,7 @@ exports[`show detailed usage with --help bracket-same-line (stderr) 1`] = `""`;
 exports[`show detailed usage with --help bracket-same-line (stdout) 1`] = `
 "--bracket-same-line
 
-  Put > on the last line instead of at a new line.
+  Put > of opening tags on the last line instead of on a new line.
 
 Default: false
 "
@@ -257,19 +257,6 @@ Default: false
 `;
 
 exports[`show detailed usage with --help insert-pragma (write) 1`] = `Array []`;
-
-exports[`show detailed usage with --help jsx-bracket-same-line (stderr) 1`] = `""`;
-
-exports[`show detailed usage with --help jsx-bracket-same-line (stdout) 1`] = `
-"--jsx-bracket-same-line
-
-  [Deprecated in v2.4.0, use --bracket-same-line instead] Put > on the last line instead of at a new line.
-
-Default: false
-"
-`;
-
-exports[`show detailed usage with --help jsx-bracket-same-line (write) 1`] = `Array []`;
 
 exports[`show detailed usage with --help jsx-single-quote (stderr) 1`] = `""`;
 

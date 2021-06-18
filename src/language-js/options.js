@@ -33,7 +33,7 @@ module.exports = {
     category: CATEGORY_JAVASCRIPT,
     type: "boolean",
     description: "Put > on the last line instead of at a new line.",
-    deprecated: "2.4.0"
+    deprecated: "2.4.0",
   },
   semi: {
     since: "1.0.0",

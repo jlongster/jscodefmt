@@ -250,8 +250,10 @@ angular.module("foo").directive("formIsolator", () => {
   this.initialValues =
     undefined;
 
-const extraRendererAttrs = ((attrs.rendererAttrs &&
-  this.utils.safeParseJsonString(attrs.rendererAttrs)) ||
+const extraRendererAttrs = ((
+  attrs.rendererAttrs &&
+  this.utils.safeParseJsonString(attrs.rendererAttrs)
+) ||
   Object.create(null)) as FieldService.RendererAttributes;
 
 const annotate = (angular.injector as any).$$annotate as (

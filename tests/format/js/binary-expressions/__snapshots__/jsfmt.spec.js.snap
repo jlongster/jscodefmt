@@ -447,11 +447,13 @@ const user = renderedUser || (
 
 const user2 =
   renderedUser ||
-  (shouldRenderUser && (
-    <div>
-      <User name={this.state.user.name} age={this.state.user.age} />
-    </div>
-  ));
+  (
+    shouldRenderUser && (
+      <div>
+        <User name={this.state.user.name} age={this.state.user.age} />
+      </div>
+    )
+  );
 
 const avatar = hasAvatar && <Gravatar user={author} size={size} />;
 
@@ -578,13 +580,15 @@ prevState = prevState ||
 
 prevState =
   prevState ||
-  (defaultState && {
-    catalogs: [],
-    loadState: LOADED,
-    opened: false,
-    searchQuery: "",
-    selectedCatalog: null,
-  });
+  (
+    defaultState && {
+      catalogs: [],
+      loadState: LOADED,
+      opened: false,
+      searchQuery: "",
+      selectedCatalog: null,
+    }
+  );
 
 prevState = prevState ||
   (useDefault && defaultState) || {
@@ -604,12 +608,14 @@ this.steps = steps || [
 
 this.steps =
   steps ||
-  (checkStep && [
-    {
-      name: "mock-module",
-      path: "/nux/mock-module",
-    },
-  ]);
+  (
+    checkStep && [
+      {
+        name: "mock-module",
+        path: "/nux/mock-module",
+      },
+    ]
+  );
 
 this.steps = (steps && checkStep) || [
   {

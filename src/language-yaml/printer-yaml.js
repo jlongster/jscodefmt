@@ -114,7 +114,7 @@ function genericPrint(path, options, print) {
   if (hasTrailingComment(node) && !isNode(node, ["document", "documentHead"])) {
     parts.push(
       lineSuffix([
-        node.type === "mappingValue" && !node.content ? "" : " ",
+        " ".repeat(options.commentSpacesFromContent),
         parentNode.type === "mappingKey" &&
         path.getParentNode(2).type === "mapping" &&
         isInlineNode(node)
@@ -167,7 +167,7 @@ function printNode(node, parentNode, path, options, print) {
         if (shouldPrintDocumentEndMarker(document, nextDocument)) {
           parts.push(hardline, "...");
           if (hasTrailingComment(document)) {
-            parts.push(" ", print("trailingComment"));
+            parts.push(" ".repeat(options.commentSpacesFromContent), print("trailingComment"));
           }
         } else if (nextDocument && !hasTrailingComment(nextDocument.head)) {
           parts.push(hardline, "---");
@@ -199,7 +199,7 @@ function printNode(node, parentNode, path, options, print) {
         }
 
         if (hasTrailingComment(node.head)) {
-          parts.push(["---", " ", print(["head", "trailingComment"])]);
+          parts.push(["---", " ".repeat(options.commentSpacesFromContent), print(["head", "trailingComment"])]);
         } else {
           parts.push("---");
         }

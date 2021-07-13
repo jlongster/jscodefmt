@@ -48,7 +48,7 @@ function printMappingItem(node, parentNode, path, print, options) {
 
   const printedValue = print("value");
   if (isEmptyMappingKey) {
-    return [": ", alignWithSpaces(2, printedValue)];
+    return [":" + (value.content ? " " : ""), alignWithSpaces(2, printedValue)];
   }
 
   // force explicit Key
@@ -77,6 +77,7 @@ function printMappingItem(node, parentNode, path, print, options) {
     !hasEndComments(key) &&
     !hasLeadingComments(value.content) &&
     !hasMiddleComments(value.content) &&
+    !hasTrailingComment(value) &&
     !hasEndComments(value) &&
     isAbsolutelyPrintedAsSingleLineNode(value.content, options)
   ) {

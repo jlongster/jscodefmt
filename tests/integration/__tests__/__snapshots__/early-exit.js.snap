@@ -62,6 +62,9 @@ Format options:
                            Include parentheses around a sole arrow function parameter.
                            Defaults to always.
   --no-bracket-spacing     Do not print spaces between brackets.
+  --comment-spaces-from-content <int>
+                           Amount of spaces between content and inline comments
+                           Defaults to 1.
   --embedded-language-formatting <auto|off>
                            Control how Prettier formats quoted code embedded in the file.
                            Defaults to auto.
@@ -227,6 +230,9 @@ Format options:
                            Include parentheses around a sole arrow function parameter.
                            Defaults to always.
   --no-bracket-spacing     Do not print spaces between brackets.
+  --comment-spaces-from-content <int>
+                           Amount of spaces between content and inline comments
+                           Defaults to 1.
   --embedded-language-formatting <auto|off>
                            Control how Prettier formats quoted code embedded in the file.
                            Defaults to auto.

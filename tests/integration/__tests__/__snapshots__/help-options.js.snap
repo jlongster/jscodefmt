@@ -56,6 +56,19 @@ Default: true
 
 exports[`show detailed usage with --help color (write) 1`] = `Array []`;
 
+exports[`show detailed usage with --help comment-spaces-from-content (stderr) 1`] = `""`;
+
+exports[`show detailed usage with --help comment-spaces-from-content (stdout) 1`] = `
+"--comment-spaces-from-content <int>
+
+  Amount of spaces between content and inline comments
+
+Default: 1
+"
+`;
+
+exports[`show detailed usage with --help comment-spaces-from-content (write) 1`] = `Array []`;
+
 exports[`show detailed usage with --help config (stderr) 1`] = `""`;
 
 exports[`show detailed usage with --help config (stdout) 1`] = `

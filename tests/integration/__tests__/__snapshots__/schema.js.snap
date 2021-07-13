@@ -29,6 +29,11 @@ Object {
           "description": "Print spaces between brackets.",
           "type": "boolean",
         },
+        "commentSpacesFromContent": Object {
+          "default": 1,
+          "description": "Amount of spaces between content and inline comments",
+          "type": "integer",
+        },
         "cursorOffset": Object {
           "default": -1,
           "description": "Print (to stderr) where a cursor at the given position would move to after formatting.

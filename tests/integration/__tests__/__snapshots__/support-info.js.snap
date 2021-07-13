@@ -98,6 +98,11 @@ Object {
       "default": true,
       "type": "boolean",
     },
+    "commentSpacesFromContent": Object {
+      "default": 1,
+      "range": undefined,
+      "type": "int",
+    },
     "cursorOffset": Object {
       "default": -1,
       "range": Object {
@@ -782,6 +787,15 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"pluginDefaults\\": {},
       \\"since\\": \\"0.0.0\\",
       \\"type\\": \\"boolean\\"
+    },
+    {
+      \\"category\\": \\"YAML\\",
+      \\"default\\": 1,
+      \\"description\\": \\"Amount of spaces between content and inline comments\\",
+      \\"name\\": \\"commentSpacesFromContent\\",
+      \\"pluginDefaults\\": {},
+      \\"since\\": \\"2.4.0\\",
+      \\"type\\": \\"int\\"
     },
     {
       \\"category\\": \\"Special\\",

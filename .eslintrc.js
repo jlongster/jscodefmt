@@ -102,6 +102,7 @@ module.exports = {
         allows: ["dotAll"],
       },
     ],
+    "regexp/no-unused-capturing-group": "error",
     "regexp/no-useless-flag": "error",
     "unicorn/better-regex": "error",
     "unicorn/explicit-length-check": "error",

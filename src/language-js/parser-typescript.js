@@ -63,9 +63,9 @@ function parse(text, parsers, opts) {
 function isProbablyJsx(text) {
   return new RegExp(
     [
-      "(^[^\"'`]*</)", // Contains "</" when probably not in a string
+      "(?:^[^\"'`]*</)", // Contains "</" when probably not in a string
       "|",
-      "(^[^/]{2}.*/>)", // Contains "/>" on line not starting with "//"
+      "(?:^[^/]{2}.*/>)", // Contains "/>" on line not starting with "//"
     ].join(""),
     "m"
   ).test(text);

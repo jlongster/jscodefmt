@@ -387,7 +387,7 @@ function shouldPrintDocumentHeadEndMarker(
      * preserve the first document head end marker
      */
     (root.children[0] === document &&
-      /---(\s|$)/.test(
+      /---(?:\s|$)/.test(
         options.originalText.slice(locStart(document), locStart(document) + 4)
       )) ||
     /**

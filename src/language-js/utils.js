@@ -475,7 +475,7 @@ function isSimpleType(node) {
   return false;
 }
 
-const unitTestRe = /^(skip|[fx]?(it|describe|test))$/;
+const unitTestRe = /^(?:skip|[fx]?(?:it|describe|test))$/;
 
 /**
  * @param {{callee: MemberExpression | OptionalMemberExpression}} node
@@ -497,7 +497,7 @@ function isSkipOrOnlyBlock(node) {
  * @returns {boolean}
  */
 function isUnitTestSetUp(node) {
-  const unitTestSetUpRe = /^(before|after)(Each|All)$/;
+  const unitTestSetUpRe = /^(?:before|after)(?:Each|All)$/;
   return (
     node.callee.type === "Identifier" &&
     unitTestSetUpRe.test(node.callee.name) &&
@@ -717,7 +717,7 @@ function isStringPropSafeToUnquote(node, options) {
 
 // Matches “simple” numbers like `123` and `2.5` but not `1_000`, `1e+100` or `0b10`.
 function isSimpleNumber(numberString) {
-  return /^(\d+|\d+\.\d+)$/.test(numberString);
+  return /^(?:\d+|\d+\.\d+)$/.test(numberString);
 }
 
 /**
@@ -736,7 +736,7 @@ function isJestEachTemplateLiteral(node, parentNode) {
    *
    * Ref: https://github.com/facebook/jest/pull/6102
    */
-  const jestEachTriggerRegex = /^[fx]?(describe|it|test)$/;
+  const jestEachTriggerRegex = /^[fx]?(?:describe|it|test)$/;
   return (
     parentNode.type === "TaggedTemplateExpression" &&
     parentNode.quasi === node &&

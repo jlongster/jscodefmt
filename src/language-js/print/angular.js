@@ -54,7 +54,7 @@ function printAngular(path, options, print) {
         "body"
       );
     case "NGMicrosyntaxKey":
-      return /^[$_a-z][\w$]*(-[$_a-z][\w$])*$/i.test(node.name)
+      return /^[$_a-z][\w$]*(?:-[$_a-z][\w$])*$/i.test(node.name)
         ? node.name
         : JSON.stringify(node.name);
     case "NGMicrosyntaxExpression":

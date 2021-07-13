@@ -37,7 +37,7 @@ function clean(ast, newObj, parent) {
       delete newObj.text;
 
       // standalone pragma
-      if (/^\*\s*@(format|prettier)\s*$/.test(ast.text)) {
+      if (/^\*\s*@(?:format|prettier)\s*$/.test(ast.text)) {
         return null;
       }
     }

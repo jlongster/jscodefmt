@@ -123,6 +123,23 @@ function parseValueNode(valueNode, options) {
       parenGroupStack.pop();
       parenGroup = getLast(parenGroupStack);
     } else if (node.type === "comma") {
+      if (commaGroup.groups.length > 1) {
+        for (const group of commaGroup.groups) {
+          // if css interpolation
+          if (
+            group.value &&
+            typeof group.value === "string" &&
+            group.value.includes("#{")
+          ) {
+            commaGroup.groups = [
+              stringifyNode({
+                groups: commaGroup.groups,
+              }).trim(),
+            ];
+            break;
+          }
+        }
+      }
       parenGroup.groups.push(commaGroup);
       commaGroup = {
         groups: [],

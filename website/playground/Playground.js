@@ -58,6 +58,7 @@ class Playground extends React.Component {
       props.availableOptions,
       ENABLED_OPTIONS
     );
+    this.defaultOptions = defaultOptions;
 
     const options = Object.assign(defaultOptions, original.options);
 
@@ -70,30 +71,6 @@ class Playground extends React.Component {
     const selection = {};
 
     this.state = { content, options, selection };
-
-    this.handleOptionValueChange = this.handleOptionValueChange.bind(this);
-
-    this.setContent = (content) => this.setState({ content });
-    this.clearContent = this.setContent.bind(this, "");
-    this.resetOptions = () => this.setState({ options: defaultOptions });
-    this.setSelection = (selection) => this.setState({ selection });
-    this.setSelectionAsRange = () => {
-      const { selection, content, options } = this.state;
-      const { head, anchor } = selection;
-      const range = [head, anchor].map(
-        ({ ch, line }) =>
-          content.split("\n").slice(0, line).join("\n").length +
-          ch +
-          (line ? 1 : 0)
-      );
-      const [rangeStart, rangeEnd] = range.sort((a, b) => a - b);
-      const updatedOptions = { ...options, rangeStart, rangeEnd };
-      if (rangeStart === rangeEnd) {
-        delete updatedOptions.rangeStart;
-        delete updatedOptions.rangeEnd;
-      }
-      this.setState({ options: updatedOptions });
-    };
 
     this.enabledOptions = orderOptions(props.availableOptions, ENABLED_OPTIONS);
     this.rangeStartOption = props.availableOptions.find(
@@ -160,6 +137,7 @@ class Playground extends React.Component {
   render() {
     const { worker, version } = this.props;
     const { content, options } = this.state;
+    const handleOptionValueChange = this.handleOptionValueChange.bind(this);
 
     // TODO: remove this when v2.3.0 is released
     const [major, minor] = version.split(".", 2).map(Number);
@@ -194,7 +172,7 @@ class Playground extends React.Component {
                         categories={CATEGORIES_ORDER}
                         availableOptions={this.enabledOptions}
                         optionValues={options}
-                        onOptionValueChange={this.handleOptionValueChange}
+                        onOptionValueChange={handleOptionValueChange}
                       />
                       <SidebarCategory title="Range">
                         <label>
@@ -208,7 +186,7 @@ class Playground extends React.Component {
                               ? options.rangeStart
                               : ""
                           }
-                          onChange={this.handleOptionValueChange}
+                          onChange={handleOptionValueChange}
                         />
                         <Option
                           option={this.rangeEndOption}
@@ -218,10 +196,10 @@ class Playground extends React.Component {
                               : ""
                           }
                           overrideMax={content.length}
-                          onChange={this.handleOptionValueChange}
+                          onChange={handleOptionValueChange}
                         />
 
-                        <Button onClick={this.setSelectionAsRange}>
+                        <Button onClick={() => this.setSelectionAsRange()}>
                           Set selected text as range
                         </Button>
                       </SidebarCategory>
@@ -267,7 +245,7 @@ class Playground extends React.Component {
                         )}
                       </SidebarCategory>
                       <div className="sub-options">
-                        <Button onClick={this.resetOptions}>
+                        <Button onClick={() => this.resetOptions()}>
                           Reset to defaults
                         </Button>
                       </div>
@@ -281,8 +259,10 @@ class Playground extends React.Component {
                           codeSample={getCodeSample(options.parser)}
                           overlayStart={options.rangeStart}
                           overlayEnd={options.rangeEnd}
-                          onChange={this.setContent}
-                          onSelectionChange={this.setSelection}
+                          onChange={(content) => this.setContent(content)}
+                          onSelectionChange={(selection) =>
+                            this.setSelection(selection)
+                          }
                         />
                       ) : null}
                       {editorState.showAst ? (
@@ -321,7 +301,7 @@ class Playground extends React.Component {
                       <Button onClick={editorState.toggleSidebar}>
                         {editorState.showSidebar ? "Hide" : "Show"} options
                       </Button>
-                      <Button onClick={this.clearContent}>Clear</Button>
+                      <Button onClick={() => this.clearContent()}>Clear</Button>
                       <ClipboardButton
                         copy={JSON.stringify(
                           // Remove `parser` since people usually paste this
@@ -373,6 +353,40 @@ class Playground extends React.Component {
         )}
       </EditorState>
     );
+  }
+
+  setContent(content) {
+    this.setState({ content });
+  }
+
+  clearContent() {
+    this.setContent("");
+  }
+
+  resetOptions() {
+    this.setState({ options: this.defaultOptions });
+  }
+
+  setSelection(selection) {
+    this.setState({ selection });
+  }
+
+  setSelectionAsRange() {
+    const { selection, content, options } = this.state;
+    const { head, anchor } = selection;
+    const range = [head, anchor].map(
+      ({ ch, line }) =>
+        content.split("\n").slice(0, line).join("\n").length +
+        ch +
+        (line ? 1 : 0)
+    );
+    const [rangeStart, rangeEnd] = range.sort((a, b) => a - b);
+    const updatedOptions = { ...options, rangeStart, rangeEnd };
+    if (rangeStart === rangeEnd) {
+      delete updatedOptions.rangeStart;
+      delete updatedOptions.rangeEnd;
+    }
+    this.setState({ options: updatedOptions });
   }
 }
 

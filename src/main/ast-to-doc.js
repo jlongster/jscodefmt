@@ -37,7 +37,7 @@ function printAstToDoc(ast, options, alignmentSize = 0) {
   }
 
   const cache = new Map();
-  const path = new AstPath(ast);
+  const path = new AstPath(ast, mainPrint);
 
   let doc = mainPrint();
 
@@ -52,6 +52,10 @@ function printAstToDoc(ast, options, alignmentSize = 0) {
   return doc;
 
   function mainPrint(selector, args) {
+    if (process.env.NODE_ENV !== "production" && selector === path) {
+      throw new Error("Do not pass `path` to `print` function!");
+    }
+
     if (selector === undefined || selector === path) {
       return mainPrintInternal(args);
     }

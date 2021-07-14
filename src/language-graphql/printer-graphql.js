@@ -576,7 +576,7 @@ function printInterfaces(path, options, print) {
   const node = path.getNode();
   const parts = [];
   const { interfaces } = node;
-  const printed = path.map((node) => print(node), "interfaces");
+  const printed = path.map(print, "interfaces");
 
   for (let index = 0; index < interfaces.length; index++) {
     const interfaceNode = interfaces[index];

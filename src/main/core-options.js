@@ -180,8 +180,6 @@ const options = {
       Overrides default behavior when plugins are searched relatively to the location of Prettier.
       Multiple values are accepted.
     `,
-    exception: (value) =>
-      typeof value === "string" || typeof value === "object",
     cliName: "plugin-search-dir",
     cliCategory: CATEGORY_CONFIG,
   },

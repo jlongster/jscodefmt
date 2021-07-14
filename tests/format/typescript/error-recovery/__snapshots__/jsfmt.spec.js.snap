@@ -218,10 +218,9 @@ type TooLong = {
   ]: string;
 };
 type TooLong81 = {
-  [
-    loooooooooooooooooooooooooong: string,
-    loooooooooooooooooong: string,
-  ]: string;
+  [loooooooooooooooooooooooooong: string, loooooooooooooooooong: string]: (
+    string
+  );
 };
 type TooLong80 = {
   [loooooooooooooooooooooooooong: string, looooooooooooooooong: string]: string;
@@ -230,7 +229,9 @@ type TooLong80 = {
 // note lack of trailing comma in the index signature
 type TooLongSingleParam = {
   [
-    looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong: string
+    looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong: (
+      string
+    )
   ]: string;
 };
 
@@ -292,10 +293,9 @@ type TooLong = {
   ]: string;
 };
 type TooLong81 = {
-  [
-    loooooooooooooooooooooooooong: string,
-    loooooooooooooooooong: string,
-  ]: string;
+  [loooooooooooooooooooooooooong: string, loooooooooooooooooong: string]: (
+    string
+  );
 };
 type TooLong80 = {
   [loooooooooooooooooooooooooong: string, looooooooooooooooong: string]: string;
@@ -304,7 +304,9 @@ type TooLong80 = {
 // note lack of trailing comma in the index signature
 type TooLongSingleParam = {
   [
-    looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong: string
+    looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong: (
+      string
+    )
   ]: string;
 };
 
@@ -354,10 +356,9 @@ type TooLong = {
   ]: string;
 };
 type TooLong81 = {
-  [
-    loooooooooooooooooooooooooong: string,
-    loooooooooooooooooong: string,
-  ]: string;
+  [loooooooooooooooooooooooooong: string, loooooooooooooooooong: string]: (
+    string
+  );
 };
 type TooLong80 = {
   [loooooooooooooooooooooooooong: string, looooooooooooooooong: string]: string;
@@ -366,7 +367,9 @@ type TooLong80 = {
 // note lack of trailing comma in the index signature
 type TooLongSingleParam = {
   [
-    looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong: string
+    looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooong: (
+      string
+    )
   ]: string;
 };
 

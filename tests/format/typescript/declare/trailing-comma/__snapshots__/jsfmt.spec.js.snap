@@ -13,7 +13,9 @@ declare function foo(...long_long_long_long_long_long_long_long_long_long_long_l
 =====================================output=====================================
 declare function foo(...args: any[]);
 declare function foo(
-  ...long_long_long_long_long_long_long_long_long_long_long_long_long_long_long_args: any[]
+  ...long_long_long_long_long_long_long_long_long_long_long_long_long_long_long_args: (
+    any[]
+  )
 );
 
 ================================================================================
@@ -32,7 +34,9 @@ declare function foo(...long_long_long_long_long_long_long_long_long_long_long_l
 =====================================output=====================================
 declare function foo(...args: any[]);
 declare function foo(
-  ...long_long_long_long_long_long_long_long_long_long_long_long_long_long_long_args: any[]
+  ...long_long_long_long_long_long_long_long_long_long_long_long_long_long_long_args: (
+    any[]
+  )
 );
 
 ================================================================================
@@ -51,7 +55,9 @@ declare function foo(...long_long_long_long_long_long_long_long_long_long_long_l
 =====================================output=====================================
 declare function foo(...args: any[]);
 declare function foo(
-  ...long_long_long_long_long_long_long_long_long_long_long_long_long_long_long_args: any[]
+  ...long_long_long_long_long_long_long_long_long_long_long_long_long_long_long_args: (
+    any[]
+  )
 );
 
 ================================================================================

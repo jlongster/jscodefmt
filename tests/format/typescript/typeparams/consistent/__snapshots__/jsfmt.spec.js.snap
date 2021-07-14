@@ -11,10 +11,12 @@ const foo6: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 const foo7: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<mixed> = a;
 
 =====================================output=====================================
-const foo6: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<empty> =
-  a;
-const foo7: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<mixed> =
-  a;
+const foo6: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<empty>
+) = a;
+const foo7: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<mixed>
+) = a;
 
 ================================================================================
 `;
@@ -56,30 +58,42 @@ const foo11: Foooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 const foo12: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<0xDeeD_Beefn> = a;
 
 =====================================output=====================================
-const foo1: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<any> =
-  a;
-const foo2: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<null> =
-  a;
-const foo3: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<this> =
-  a;
-const foo4: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<void> =
-  a;
-const foo5: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<true> =
-  a;
-const foo6: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<false> =
-  a;
-const foo7: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<symbol> =
-  a;
-const foo8: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<true> =
-  a;
-const foo9: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<"STRING"> =
-  a;
-const foo10: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<0> =
-  a;
-const foo11: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<0xdeed_beef> =
-  a;
-const foo12: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<0xdeed_beefn> =
-  a;
+const foo1: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<any>
+) = a;
+const foo2: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<null>
+) = a;
+const foo3: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<this>
+) = a;
+const foo4: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<void>
+) = a;
+const foo5: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<true>
+) = a;
+const foo6: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<false>
+) = a;
+const foo7: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<symbol>
+) = a;
+const foo8: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<true>
+) = a;
+const foo9: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<"STRING">
+) = a;
+const foo10: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<0>
+) = a;
+const foo11: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<0xdeed_beef>
+) = a;
+const foo12: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<0xdeed_beefn>
+) = a;
 
 ================================================================================
 `;
@@ -107,8 +121,9 @@ printWidth: 80
 const foo1: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<\`Hello, \${keyof World}\`> = a;
 
 =====================================output=====================================
-const foo1: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<\`Hello, \${keyof World}\`> =
-  a;
+const foo1: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<\`Hello, \${keyof World}\`>
+) = a;
 
 ================================================================================
 `;
@@ -125,14 +140,18 @@ const foo3: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
 const foo4: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<unknown> = a;
 
 =====================================output=====================================
-const foo1: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<never> =
-  a;
-const foo2: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<object> =
-  a;
-const foo3: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<undefined> =
-  a;
-const foo4: Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<unknown> =
-  a;
+const foo1: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<never>
+) = a;
+const foo2: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<object>
+) = a;
+const foo3: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<undefined>
+) = a;
+const foo4: (
+  Fooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo<unknown>
+) = a;
 
 ================================================================================
 `;

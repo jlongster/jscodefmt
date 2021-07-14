@@ -13,6 +13,7 @@ const {
     conditionalGroup,
     ifBreak,
   },
+  utils: { canBreak },
 } = require("../../document");
 const {
   isLiteral,
@@ -508,8 +509,17 @@ function printTypescript(path, options, print) {
         print("typeName"),
         printTypeParameters(path, options, print, "typeParameters"),
       ];
-    case "TSTypeAnnotation":
-      return print("typeAnnotation");
+    case "TSTypeAnnotation": {
+      const typeAnnotationDoc = print("typeAnnotation");
+      return canBreak(typeAnnotationDoc)
+        ? typeAnnotationDoc
+        : group([
+            ifBreak("("),
+            indent([softline, typeAnnotationDoc]),
+            softline,
+            ifBreak(")"),
+          ]);
+    }
     case "TSEmptyBodyFunctionExpression":
       return printMethodInternal(path, options, print);
 

@@ -18,6 +18,7 @@ const {
   hasComment,
   isSignedNumericLiteral,
   isObjectProperty,
+  isFunctionOrArrowExpression,
 } = require("../utils");
 const { shouldInlineLogicalExpression } = require("./binaryish");
 const { printCallExpression } = require("./call-expression");
@@ -54,8 +55,9 @@ function printAssignment(
       ]);
     }
 
-    case "break-lhs":
+    case "break-lhs": {
       return group([leftDoc, operator, " ", group(rightDoc)]);
+    }
 
     // Parts of assignment chains aren't wrapped in groups.
     // Once one of them breaks, the chain breaks too.
@@ -140,7 +142,8 @@ function chooseLayout(path, options, print, leftDoc, rightPropertyName) {
   if (
     isComplexDestructuring(node) ||
     isComplexTypeAliasParams(node) ||
-    hasComplexTypeAnnotation(node)
+    hasComplexTypeAnnotation(node) ||
+    (getTypeAnnotation(node) && isFunctionOrArrowExpression(rightNode))
   ) {
     return "break-lhs";
   }
@@ -273,17 +276,23 @@ function isTypeAlias(node) {
   return node.type === "TSTypeAliasDeclaration" || node.type === "TypeAlias";
 }
 
-function hasComplexTypeAnnotation(node) {
+function getTypeAnnotation(node) {
   if (node.type !== "VariableDeclarator") {
-    return false;
+    return;
   }
   const { typeAnnotation } = node.id;
   if (!typeAnnotation || !typeAnnotation.typeAnnotation) {
+    return;
+  }
+  return typeAnnotation.typeAnnotation;
+}
+
+function hasComplexTypeAnnotation(node) {
+  const typeAnnotation = getTypeAnnotation(node);
+  if (!typeAnnotation) {
     return false;
   }
-  const typeParams = getTypeParametersFromTypeReference(
-    typeAnnotation.typeAnnotation
-  );
+  const typeParams = getTypeParametersFromTypeReference(typeAnnotation);
   return (
     isNonEmptyArray(typeParams) &&
     typeParams.length > 1 &&

@@ -40,6 +40,7 @@ function getMarkdownSyntax(options) {
     case "flow":
     case "espree":
     case "meriyah":
+    case "doc-explorer":
       return "jsx";
     case "babel-ts":
     case "typescript":

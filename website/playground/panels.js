@@ -19,11 +19,18 @@ class CodeMirrorPanel extends React.Component {
     delete options.rulerColor;
     delete options.value;
     delete options.onChange;
+    delete options.onFormat;
 
     options.rulers = [makeRuler(this.props)];
 
     if (options.foldGutter) {
       options.gutters = ["CodeMirror-linenumbers", "CodeMirror-foldgutter"];
+    }
+
+    if (this.props.onFormat) {
+      options.extraKeys = {
+        "Shift-Alt-F": this.handleFormat.bind(this),
+      };
     }
 
     this._codeMirror = CodeMirror.fromTextArea(
@@ -110,6 +117,17 @@ class CodeMirrorPanel extends React.Component {
     if (this.props.onSelectionChange) {
       this.props.onSelectionChange(change.ranges[0]);
     }
+  }
+
+  handleFormat() {
+    const result = this.props.onFormat();
+    if (!result) {
+      return;
+    }
+    Promise.resolve(result).then(({ value, cursor }) => {
+      this.props.onChange(value);
+      this._codeMirror.setCursor(cursor);
+    });
   }
 
   render() {

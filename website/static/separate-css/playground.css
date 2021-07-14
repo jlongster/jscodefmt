@@ -258,7 +258,7 @@ input[type="number"] {
   border-color: #c8e1ff;
 }
 
-.btn:hover {
+.btn:hover:enabled {
   background-color: #e6ebf1;
   background-image: linear-gradient(to bottom, #f0f3f6, #dce3ec);
   border-color: #afb1b2;
@@ -269,6 +269,10 @@ input[type="number"] {
   background-image: none;
   border-color: #afb1b2;
   box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+}
+
+.btn:disabled {
+  color: #afb1b2;
 }
 
 .tooltip {

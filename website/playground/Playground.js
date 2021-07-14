@@ -79,14 +79,10 @@ class Playground extends React.Component {
     this.setSelection = (selection) => this.setState({ selection });
     this.setSelectionAsRange = () => {
       const { selection, content, options } = this.state;
-      const { head, anchor } = selection;
-      const range = [head, anchor].map(
-        ({ ch, line }) =>
-          content.split("\n").slice(0, line).join("\n").length +
-          ch +
-          (line ? 1 : 0)
+      const [rangeStart, rangeEnd] = util.convertSelectionToRange(
+        selection,
+        content
       );
-      const [rangeStart, rangeEnd] = range.sort((a, b) => a - b);
       const updatedOptions = { ...options, rangeStart, rangeEnd };
       if (rangeStart === rangeEnd) {
         delete updatedOptions.rangeStart;
@@ -102,6 +98,8 @@ class Playground extends React.Component {
     this.rangeEndOption = props.availableOptions.find(
       (opt) => opt.name === "rangeEnd"
     );
+
+    this.handleInputPanelFormat = this.handleInputPanelFormat.bind(this);
   }
 
   componentDidUpdate(_, prevState) {
@@ -155,6 +153,30 @@ class Playground extends React.Component {
       cliOptions,
       full,
     });
+  }
+
+  handleInputPanelFormat() {
+    if (this.state.options.parser !== "doc-explorer") {
+      return;
+    }
+
+    const { content, selection } = this.state;
+
+    return this.props.worker
+      .format(content, {
+        parser: "__js_expression",
+        cursorOffset: util.convertSelectionToRange(selection, content)[0],
+      })
+      .then(({ error, formatted, cursorOffset }) => {
+        if (error) {
+          return;
+        }
+
+        return {
+          value: formatted,
+          cursor: util.convertOffsetToPosition(cursorOffset, formatted),
+        };
+      });
   }
 
   render() {
@@ -258,9 +280,10 @@ class Playground extends React.Component {
                           checked={editorState.showSecondFormat}
                           onChange={editorState.toggleSecondFormat}
                         />
-                        {editorState.showDoc && debug.doc && (
+                        {editorState.showDoc && (
                           <ClipboardButton
                             copy={() => this.getMarkdown({ doc: debug.doc })}
+                            disabled={!debug.doc}
                           >
                             Copy doc
                           </ClipboardButton>
@@ -283,6 +306,7 @@ class Playground extends React.Component {
                           overlayEnd={options.rangeEnd}
                           onChange={this.setContent}
                           onSelectionChange={this.setSelection}
+                          onFormat={this.handleInputPanelFormat}
                         />
                       ) : null}
                       {editorState.showAst ? (

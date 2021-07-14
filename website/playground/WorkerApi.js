@@ -32,7 +32,7 @@ export default function (source) {
     getMetadata() {
       return postMessage({ type: "meta" });
     },
-    format(code, options, debug) {
+    format(code, options, debug = {}) {
       return postMessage({ type: "format", code, options, debug });
     },
     postMessage,

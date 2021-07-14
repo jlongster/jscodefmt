@@ -9,10 +9,11 @@ const sharedUtil = require("./common/util-shared");
 const plugins = require("./common/load-plugins");
 const config = require("./config/resolve-config");
 const doc = require("./document");
+const optionsArgumentIndex = require("./options-argument-index.evaluate");
 
 function _withPlugins(
   fn,
-  optsArgIdx = 1 // Usually `opts` is the 2nd argument
+  optsArgIdx = optionsArgumentIndex // Usually `opts` is the 2nd argument
 ) {
   return (...args) => {
     const opts = args[optsArgIdx] || {};

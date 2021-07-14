@@ -7,10 +7,11 @@ const { getSupportInfo } = require("./main/support");
 const sharedUtil = require("./common/util-shared");
 const languages = require("./languages");
 const doc = require("./document");
+const optionsArgumentIndex = require("./options-argument-index.evaluate");
 
 function withPlugins(
   fn,
-  optsArgIdx = 1 // Usually `opts` is the 2nd argument
+  optsArgIdx = optionsArgumentIndex // Usually `opts` is the 2nd argument
 ) {
   return (...args) => {
     const opts = args[optsArgIdx] || {};

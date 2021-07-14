@@ -3,7 +3,8 @@
 const getLast = require("../utils/get-last");
 const {
   printNumber,
-  printString,
+  getPreferredQuote,
+  makeString,
   hasNewline,
   isFrontMatterNode,
   isNextLineEmpty,
@@ -1034,6 +1035,18 @@ const ADJUST_NUMBERS_REGEX = new RegExp(
 
 function adjustStrings(value, options) {
   return value.replace(STRING_REGEX, (match) => printString(match, options));
+}
+
+function printString(raw, options) {
+  // `rawContent` is the string exactly like it appeared in the input source
+  // code, without its enclosing quotes.
+  const rawContent = raw.slice(1, -1);
+
+  const enclosingQuote = options.__isInHtmlAttribute
+    ? "'"
+    : getPreferredQuote(raw, options.singleQuote ? "'" : '"');
+
+  return makeString(rawContent, enclosingQuote, false);
 }
 
 function quoteAttributeValue(value, options) {

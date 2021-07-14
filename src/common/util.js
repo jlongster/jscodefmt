@@ -401,16 +401,7 @@ function printString(raw, options) {
   // is enclosed with `enclosingQuote`, but it isn't. The string could contain
   // unnecessary escapes (such as in `"\'"`). Always using `makeString` makes
   // sure that we consistently output the minimum amount of escaped quotes.
-  return makeString(
-    rawContent,
-    enclosingQuote,
-    !(
-      options.parser === "css" ||
-      options.parser === "less" ||
-      options.parser === "scss" ||
-      options.__embeddedInHtml
-    )
-  );
+  return makeString(rawContent, enclosingQuote, !options.__embeddedInHtml);
 }
 
 /**

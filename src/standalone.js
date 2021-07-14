@@ -14,6 +14,7 @@ function withPlugins(
 ) {
   return (...args) => {
     const opts = args[optsArgIdx] || {};
+
     const plugins = opts.plugins || [];
 
     args[optsArgIdx] = {

@@ -1,0 +1,32 @@
+name: Code Style
+
+on:
+  - pull_request_target
+
+jobs:
+  fix:
+    name: Fix Code Style
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.3.2
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2.1.1
+
+      - name: Install Dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Fix Code Style
+        run: yarn fix
+
+      - name: Commit Changes
+        uses: stefanzweifel/git-auto-commit-action@v2.3.0
+        with:
+          commit_message: Fix code style ${{ github.event.pull_request.head.sha }}
+          branch: ${{ github.event.pull_request.head.ref }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -21,7 +21,7 @@ const {
     literalline,
     softline,
   },
-  utils: { mapDoc, cleanDoc, getDocParts, isConcat, replaceEndOfLineWith },
+  utils: { mapDoc, cleanDoc, getDocParts, isConcat, replaceTextEndOfLine },
 } = require("../document");
 const { isNonEmptyArray } = require("../common/util");
 const printFrontMatter = require("../utils/front-matter/print");
@@ -227,7 +227,7 @@ function genericPrint(path, options, print) {
 
   switch (node.type) {
     case "front-matter":
-      return replaceEndOfLineWith(node.raw, literalline);
+      return replaceTextEndOfLine(node.raw);
     case "root":
       if (options.__onHtmlRoot) {
         options.__onHtmlRoot(node);
@@ -240,7 +240,7 @@ function genericPrint(path, options, print) {
         return [
           printOpeningTagPrefix(node, options),
           group(printOpeningTag(path, options, print)),
-          ...replaceEndOfLineWith(getNodeContent(node, options), literalline),
+          ...replaceTextEndOfLine(getNodeContent(node, options)),
           ...printClosingTag(node, options),
           printClosingTagSuffix(node, options),
         ];
@@ -364,7 +364,7 @@ function genericPrint(path, options, print) {
           ? node.value.replace(trailingNewlineRegex, "")
           : node.value;
         return [
-          ...replaceEndOfLineWith(value, literalline),
+          ...replaceTextEndOfLine(value),
           hasTrailingNewline ? hardline : "",
         ];
       }
@@ -392,8 +392,7 @@ function genericPrint(path, options, print) {
     case "comment": {
       return [
         printOpeningTagPrefix(node, options),
-
-        ...replaceEndOfLineWith(
+        ...replaceTextEndOfLine(
           options.originalText.slice(locStart(node), locEnd(node)),
           literalline
         ),
@@ -414,11 +413,10 @@ function genericPrint(path, options, print) {
         "=",
         quote,
 
-        ...replaceEndOfLineWith(
+        ...replaceTextEndOfLine(
           quote === '"'
             ? value.replace(/"/g, "&quot;")
-            : value.replace(/'/g, "&apos;"),
-          literalline
+            : value.replace(/'/g, "&apos;")
         ),
         quote,
       ];
@@ -534,7 +532,7 @@ function printChildren(path, options, print) {
     if (hasPrettierIgnore(child)) {
       return [
         printOpeningTagPrefix(child, options),
-        ...replaceEndOfLineWith(
+        ...replaceTextEndOfLine(
           options.originalText.slice(
             locStart(child) +
               (child.prev && needsToBorrowNextOpeningTagStartMarker(child.prev)
@@ -544,8 +542,7 @@ function printChildren(path, options, print) {
               (child.next && needsToBorrowPrevClosingTagEndMarker(child.next)
                 ? printClosingTagEndMarker(child, options).length
                 : 0)
-          ),
-          literalline
+          )
         ),
         printClosingTagSuffix(child, options),
       ];
@@ -667,9 +664,8 @@ function printAttributes(path, options, print) {
   const printedAttributes = path.map((attributePath) => {
     const attribute = attributePath.getValue();
     return hasPrettierIgnoreAttribute(attribute)
-      ? replaceEndOfLineWith(
-          options.originalText.slice(locStart(attribute), locEnd(attribute)),
-          literalline
+      ? replaceTextEndOfLine(
+          options.originalText.slice(locStart(attribute), locEnd(attribute))
         )
       : print();
   }, "attrs");
@@ -955,8 +951,8 @@ function printClosingTagEndMarker(node, options) {
 function getTextValueParts(node, value = node.value) {
   return node.parent.isWhitespaceSensitive
     ? node.parent.isIndentationSensitive
-      ? replaceEndOfLineWith(value, literalline)
-      : replaceEndOfLineWith(
+      ? replaceTextEndOfLine(value)
+      : replaceTextEndOfLine(
           dedentString(htmlTrimPreserveIndentation(value)),
           hardline
         )
@@ -1141,7 +1137,7 @@ function printEmbeddedAttributeValue(node, originalTextToDoc, options) {
       const parts = [];
       for (const [index, part] of value.split(interpolationRegex).entries()) {
         if (index % 2 === 0) {
-          parts.push(replaceEndOfLineWith(part, literalline));
+          parts.push(replaceTextEndOfLine(part));
         } else {
           try {
             parts.push(
@@ -1159,7 +1155,7 @@ function printEmbeddedAttributeValue(node, originalTextToDoc, options) {
               ])
             );
           } catch {
-            parts.push("{{", replaceEndOfLineWith(part, literalline), "}}");
+            parts.push("{{", replaceTextEndOfLine(part), "}}");
           }
         }
       }

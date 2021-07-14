@@ -387,17 +387,17 @@ function normalizeDoc(doc) {
   });
 }
 
-function replaceNewlinesWithLiterallines(doc) {
+function replaceEndOfLine(doc) {
   return mapDoc(doc, (currentDoc) =>
     typeof currentDoc === "string" && currentDoc.includes("\n")
-      ? join(literalline, currentDoc.split("\n"))
+      ? replaceTextEndOfLine(currentDoc)
       : currentDoc
   );
 }
 
 // This function need return array
 // TODO: remove `.parts` when we remove `docBuilders.concat()`
-function replaceEndOfLineWith(text, replacement) {
+function replaceTextEndOfLine(text, replacement = literalline) {
   return join(replacement, text.split("\n")).parts;
 }
 
@@ -414,6 +414,6 @@ module.exports = {
   normalizeParts,
   normalizeDoc,
   cleanDoc,
-  replaceEndOfLineWith,
-  replaceNewlinesWithLiterallines,
+  replaceTextEndOfLine,
+  replaceEndOfLine,
 };

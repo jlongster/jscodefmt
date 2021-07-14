@@ -3,7 +3,7 @@
 const { hasNewline } = require("../../common/util");
 const {
   builders: { join, hardline },
-  utils: { replaceNewlinesWithLiterallines },
+  utils: { replaceTextEndOfLine },
 } = require("../../document");
 
 const { isLineComment, isBlockComment } = require("../utils");
@@ -41,7 +41,7 @@ function printComment(commentPath, options) {
       options.originalText.slice(commentEnd - 3, commentEnd) === "*-/";
     return [
       "/*",
-      replaceNewlinesWithLiterallines(comment.value),
+      replaceTextEndOfLine(comment.value),
       isInsideFlowComment ? "*-/" : "*/",
     ];
   }

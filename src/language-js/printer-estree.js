@@ -7,7 +7,7 @@ const { printDanglingComments } = require("../main/comments");
 const { hasNewline } = require("../common/util");
 const {
   builders: { join, line, hardline, softline, group, indent },
-  utils: { replaceNewlinesWithLiterallines },
+  utils: { replaceTextEndOfLine },
 } = require("../document");
 const embed = require("./embed");
 const clean = require("./clean");
@@ -718,7 +718,7 @@ function printPathNoParens(path, options, print, args) {
     case "ClassPrivateProperty":
       return printClassProperty(path, options, print);
     case "TemplateElement":
-      return replaceNewlinesWithLiterallines(node.value.raw);
+      return replaceTextEndOfLine(node.value.raw);
     case "TemplateLiteral":
       return printTemplateLiteral(path, print, options);
     case "TaggedTemplateExpression":

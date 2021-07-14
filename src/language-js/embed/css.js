@@ -3,7 +3,7 @@
 const { isNonEmptyArray } = require("../../common/util");
 const {
   builders: { indent, hardline, softline },
-  utils: { mapDoc, replaceNewlinesWithLiterallines, cleanDoc },
+  utils: { mapDoc, replaceEndOfLine, cleanDoc },
 } = require("../../document");
 const { printTemplateExpressions } = require("../print/template-literal");
 
@@ -66,7 +66,7 @@ function replacePlaceholders(quasisDoc, expressionDocs) {
     return doc.split(/@prettier-placeholder-(\d+)-id/).map((component, idx) => {
       // The placeholder is always at odd indices
       if (idx % 2 === 0) {
-        return replaceNewlinesWithLiterallines(component);
+        return replaceEndOfLine(component);
       }
 
       // The component will always be a number at odd index

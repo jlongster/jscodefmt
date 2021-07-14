@@ -13,7 +13,7 @@ const {
     lineSuffix,
     literalline,
   },
-  utils: { getDocParts, replaceEndOfLineWith },
+  utils: { getDocParts, replaceTextEndOfLine },
 } = require("../document");
 const { isPreviousLineEmpty } = require("../common/util");
 const { insertPragma, isPragma } = require("./pragma");
@@ -100,7 +100,7 @@ function genericPrint(path, options, print) {
   const parentNode = path.getParentNode();
   if (hasPrettierIgnore(path)) {
     parts.push(
-      replaceEndOfLineWith(
+      replaceTextEndOfLine(
         options.originalText
           .slice(node.position.start.offset, node.position.end.offset)
           .trimEnd(),

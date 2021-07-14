@@ -140,8 +140,15 @@ function conditionalGroup(states, opts) {
  */
 function fill(parts) {
   if (process.env.NODE_ENV !== "production") {
-    for (const part of parts) {
+    for (const [index, part] of parts.entries()) {
       assertDoc(part);
+      if (index % 2 === 1 && part.type !== "line") {
+        const type = part.type || (Array.isArray(part) ? "array" : "string");
+        console.log(parts);
+        throw new Error(
+          `elements with odd indices expected to be line breaks, got "${type}".`
+        );
+      }
     }
   }
 

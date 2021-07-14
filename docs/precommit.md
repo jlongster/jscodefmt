@@ -3,7 +3,7 @@ id: precommit
 title: Pre-commit Hook
 ---
 
-You can use Prettier with a pre-commit tool. This can re-format your files that are marked as “staged” via `git add` before you commit.
+You can use Prettier with a pre-commit tool. This can re-format your files that are marked as “staged” via `git add` before you commit. Use with caution as partially staged files (ex: files where `git add -i` was used to stage a subset of the changes) will not be supported by this approach.
 
 ## Option 1. [lint-staged](https://github.com/okonet/lint-staged)
 

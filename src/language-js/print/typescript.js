@@ -20,6 +20,7 @@ const {
   shouldPrintComma,
   isCallExpression,
   isMemberExpression,
+  danglingCommentMarkerForReadonlyMappedType,
 } = require("../utils");
 const { locStart, locEnd } = require("../loc");
 
@@ -297,6 +298,12 @@ function printTypescript(path, options, print) {
         locStart(node),
         locEnd(node)
       );
+      const printedLeadingCommentsForReadonly = printDanglingComments(
+        path,
+        options,
+        /* sameIndent */ true,
+        ({ marker }) => marker === danglingCommentMarkerForReadonlyMappedType
+      );
       return group(
         [
           "{",
@@ -304,6 +311,8 @@ function printTypescript(path, options, print) {
             options.bracketSpacing ? line : softline,
             node.readonly
               ? [
+                  printedLeadingCommentsForReadonly,
+                  printedLeadingCommentsForReadonly && hardline,
                   getTypeScriptMappedTypeModifier(node.readonly, "readonly"),
                   " ",
                 ]
@@ -317,7 +326,12 @@ function printTypescript(path, options, print) {
             print("typeAnnotation"),
             ifBreak(semi),
           ]),
-          printDanglingComments(path, options, /* sameIndent */ true),
+          printDanglingComments(
+            path,
+            options,
+            /* sameIndent */ true,
+            ({ marker }) => !marker
+          ),
           options.bracketSpacing ? line : softline,
           "}",
         ],

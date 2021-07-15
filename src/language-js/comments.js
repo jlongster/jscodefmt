@@ -25,6 +25,7 @@ const {
   isCallExpression,
   isMemberExpression,
   isObjectProperty,
+  danglingCommentMarkerForReadonlyMappedType,
 } = require("./utils");
 const { locStart, locEnd } = require("./loc");
 
@@ -65,6 +66,7 @@ function handleOwnLineComment(context) {
     handleAssignmentPatternComments,
     handleMethodNameComments,
     handleLabeledStatementComments,
+    handleOwnLineMappedTypesComments,
   ].some((fn) => fn(context));
 }
 
@@ -328,6 +330,26 @@ function handleMemberExpressionComments({
     return true;
   }
 
+  return false;
+}
+
+/**
+ * @param {CommentContext} context
+ * @return {boolean}
+ */
+function handleOwnLineMappedTypesComments({ enclosingNode, comment, text }) {
+  if (
+    enclosingNode &&
+    enclosingNode.type === "TSMappedType" &&
+    isCommentBeforeMappedTypeReadonly(enclosingNode, text, comment)
+  ) {
+    addDanglingComment(
+      enclosingNode,
+      comment,
+      danglingCommentMarkerForReadonlyMappedType
+    );
+    return true;
+  }
   return false;
 }
 
@@ -968,6 +990,57 @@ function willPrintOwnComments(path /*, options */) {
       parent.type === "UnionTypeAnnotation" ||
       parent.type === "TSUnionType")
   );
+}
+
+/**
+ * Checks if a comment is before `readonly` for Mapped Types.
+ *   type Foo = {
+ *     // comment
+ *     readonly [key in Foo]: Bar;
+ *   };
+ * @param {any} enclosingNode
+ * @param {CommentContext["text"]} text
+ * @param {CommentContext["comment"]} comment
+ * @returns {boolean}
+ */
+function isCommentBeforeMappedTypeReadonly(enclosingNode, text, comment) {
+  if (!enclosingNode.readonly) {
+    return false;
+  }
+  const nextIndexOfComment = getNextNonSpaceNonCommentCharacterIndex(
+    text,
+    comment,
+    locEnd
+  );
+  if (!nextIndexOfComment) {
+    return false;
+  }
+  const isReadonlyString =
+    enclosingNode.readonly === "+" || enclosingNode.readonly === "-";
+  const readonlyStartIndex = isReadonlyString
+    ? getNextNonSpaceNonCommentCharacterIndexWithStartIndex(
+        text,
+        nextIndexOfComment + 1
+      )
+    : nextIndexOfComment;
+  if (!readonlyStartIndex) {
+    return false;
+  }
+  const READONLY_KEYWORD = "readonly";
+  const readonlyEndIndex = readonlyStartIndex + READONLY_KEYWORD.length;
+  const maybeReadonlyString = text.slice(readonlyStartIndex, readonlyEndIndex);
+  if (maybeReadonlyString !== READONLY_KEYWORD) {
+    return false;
+  }
+  const afterReadonlyIndex =
+    getNextNonSpaceNonCommentCharacterIndexWithStartIndex(
+      text,
+      readonlyEndIndex
+    );
+  if (!afterReadonlyIndex) {
+    return false;
+  }
+  return text[afterReadonlyIndex] === "[";
 }
 
 module.exports = {

@@ -1305,6 +1305,9 @@ function isObjectProperty(node) {
   );
 }
 
+const danglingCommentMarkerForReadonlyMappedType =
+  "danglingCommentMarkerForReadonlyMappedType";
+
 module.exports = {
   getFunctionParameters,
   iterateFunctionParametersPath,
@@ -1368,4 +1371,5 @@ module.exports = {
   hasComment,
   getComments,
   CommentCheckFlags,
+  danglingCommentMarkerForReadonlyMappedType,
 };

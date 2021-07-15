@@ -94,6 +94,10 @@ Object {
       "default": "always",
       "type": "choice",
     },
+    "bracketSameLine": Object {
+      "default": false,
+      "type": "boolean",
+    },
     "bracketSpacing": Object {
       "default": true,
       "type": "boolean",
@@ -139,10 +143,6 @@ Object {
       "type": "choice",
     },
     "insertPragma": Object {
-      "default": false,
-      "type": "boolean",
-    },
-    "jsxBracketSameLine": Object {
       "default": false,
       "type": "boolean",
     },
@@ -775,6 +775,15 @@ exports[`CLI --support-info (stdout) 1`] = `
     },
     {
       \\"category\\": \\"Common\\",
+      \\"default\\": false,
+      \\"description\\": \\"Put > of opening tags on the last line instead of on a new line.\\",
+      \\"name\\": \\"bracketSameLine\\",
+      \\"pluginDefaults\\": {},
+      \\"since\\": \\"2.4.0\\",
+      \\"type\\": \\"boolean\\"
+    },
+    {
+      \\"category\\": \\"Common\\",
       \\"default\\": true,
       \\"description\\": \\"Print spaces between brackets.\\",
       \\"name\\": \\"bracketSpacing\\",
@@ -877,15 +886,6 @@ exports[`CLI --support-info (stdout) 1`] = `
       \\"name\\": \\"insertPragma\\",
       \\"pluginDefaults\\": {},
       \\"since\\": \\"1.8.0\\",
-      \\"type\\": \\"boolean\\"
-    },
-    {
-      \\"category\\": \\"JavaScript\\",
-      \\"default\\": false,
-      \\"description\\": \\"Put > on the last line instead of at a new line.\\",
-      \\"name\\": \\"jsxBracketSameLine\\",
-      \\"pluginDefaults\\": {},
-      \\"since\\": \\"0.17.0\\",
       \\"type\\": \\"boolean\\"
     },
     {

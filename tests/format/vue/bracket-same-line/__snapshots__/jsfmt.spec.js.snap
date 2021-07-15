@@ -1,0 +1,359 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`vue.html - {"bracketSameLine":false} format 1`] = `
+====================================options=====================================
+bracketSameLine: false
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<template>
+  <div id="js-app">
+<div :click="long_long_long_long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</div>
+<div :click="long_long_long_long_long_long_long_long_long_long_long_long_long_long_value"></div>
+<span :click="long_long_long_long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span :long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+<img :long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"/>
+<div class="a">
+text
+</div>
+<span  class="a">
+text
+</span>
+<img class="a"/>
+  </div>
+</template>
+
+<script long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">new Vue({el: '#js-app'})</script>
+<style  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">.a {color: #f00}</style>
+</body>
+</html>
+
+=====================================output=====================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <template>
+      <div id="js-app">
+        <div
+          :click="
+            long_long_long_long_long_long_long_long_long_long_long_long_long_long_value
+          "
+        >
+          text
+        </div>
+        <div
+          :click="
+            long_long_long_long_long_long_long_long_long_long_long_long_long_long_value
+          "
+        ></div>
+        <span
+          :click="
+            long_long_long_long_long_long_long_long_long_long_long_long_long_long_value
+          "
+        >
+          text
+        </span>
+        <span
+          :long_long_attribute="
+            long_long_long_long_long_long_long_long_long_long_long_value
+          "
+        ></span>
+        <img
+          :long_long_attribute="
+            long_long_long_long_long_long_long_long_long_long_long_value
+          "
+        />
+        <div class="a">text</div>
+        <span class="a"> text </span>
+        <img class="a" />
+      </div>
+    </template>
+
+    <script
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+    >
+      new Vue({ el: "#js-app" });
+    </script>
+    <style
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+    >
+      .a {
+        color: #f00;
+      }
+    </style>
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`vue.html - {"bracketSameLine":true} format 1`] = `
+====================================options=====================================
+bracketSameLine: true
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+<template>
+  <div id="js-app">
+<div :click="long_long_long_long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</div>
+<div :click="long_long_long_long_long_long_long_long_long_long_long_long_long_long_value"></div>
+<span :click="long_long_long_long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span :long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+<img :long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"/>
+<div class="a">
+text
+</div>
+<span  class="a">
+text
+</span>
+<img class="a"/>
+  </div>
+</template>
+
+<script long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">new Vue({el: '#js-app'})</script>
+<style  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">.a {color: #f00}</style>
+</body>
+</html>
+
+=====================================output=====================================
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <template>
+      <div id="js-app">
+        <div
+          :click="
+            long_long_long_long_long_long_long_long_long_long_long_long_long_long_value
+          ">
+          text
+        </div>
+        <div
+          :click="
+            long_long_long_long_long_long_long_long_long_long_long_long_long_long_value
+          "></div>
+        <span
+          :click="
+            long_long_long_long_long_long_long_long_long_long_long_long_long_long_value
+          ">
+          text
+        </span>
+        <span
+          :long_long_attribute="
+            long_long_long_long_long_long_long_long_long_long_long_value
+          "></span>
+        <img
+          :long_long_attribute="
+            long_long_long_long_long_long_long_long_long_long_long_value
+          " />
+        <div class="a">text</div>
+        <span class="a"> text </span>
+        <img class="a" />
+      </div>
+    </template>
+
+    <script
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+      new Vue({ el: "#js-app" });
+    </script>
+    <style
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+      .a {
+        color: #f00;
+      }
+    </style>
+  </body>
+</html>
+
+================================================================================
+`;
+
+exports[`vue.vue - {"bracketSameLine":false} format 1`] = `
+====================================options=====================================
+bracketSameLine: false
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<template>
+  <div>
+<div :long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</div>
+<div v-on:long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></div>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+<img long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"/>
+<div class="a">
+text
+</div>
+<span  class="a">
+text
+</span>
+<img class="a"/>
+  </div>
+</template>
+
+<script long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">export default {}</script>
+<style  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">.a {color: #f00}</style>
+
+=====================================output=====================================
+<template>
+  <div>
+    <div
+      :long_long_attribute="
+        long_long_long_long_long_long_long_long_long_long_long_value
+      "
+    >
+      text
+    </div>
+    <div
+      v-on:long_long_attribute="
+        long_long_long_long_long_long_long_long_long_long_long_value
+      "
+    ></div>
+    <span
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+    >
+      text
+    </span>
+    <span
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+    ></span>
+    <img
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+    />
+    <div class="a">text</div>
+    <span class="a"> text </span>
+    <img class="a" />
+  </div>
+</template>
+
+<script
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+>
+export default {};
+</script>
+<style
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+>
+.a {
+  color: #f00;
+}
+</style>
+
+================================================================================
+`;
+
+exports[`vue.vue - {"bracketSameLine":true} format 1`] = `
+====================================options=====================================
+bracketSameLine: true
+parsers: ["vue"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<template>
+  <div>
+<div :long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</div>
+<div v-on:long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></div>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+<img long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"/>
+<div class="a">
+text
+</div>
+<span  class="a">
+text
+</span>
+<img class="a"/>
+  </div>
+</template>
+
+<script long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">export default {}</script>
+<style  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">.a {color: #f00}</style>
+
+=====================================output=====================================
+<template>
+  <div>
+    <div
+      :long_long_attribute="
+        long_long_long_long_long_long_long_long_long_long_long_value
+      ">
+      text
+    </div>
+    <div
+      v-on:long_long_attribute="
+        long_long_long_long_long_long_long_long_long_long_long_value
+      "></div>
+    <span
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+      text
+    </span>
+    <span
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+    <img
+      long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value" />
+    <div class="a">text</div>
+    <span class="a"> text </span>
+    <img class="a" />
+  </div>
+</template>
+
+<script
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+export default {};
+</script>
+<style
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+.a {
+  color: #f00;
+}
+</style>
+
+================================================================================
+`;

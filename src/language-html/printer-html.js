@@ -710,7 +710,15 @@ function printAttributes(path, options, print) {
   ) {
     parts.push(node.isSelfClosing ? " " : "");
   } else {
-    parts.push(node.isSelfClosing ? line : softline);
+    parts.push(
+      options.bracketSameLine
+        ? node.isSelfClosing
+          ? " "
+          : ""
+        : node.isSelfClosing
+        ? line
+        : softline
+    );
   }
 
   return parts;

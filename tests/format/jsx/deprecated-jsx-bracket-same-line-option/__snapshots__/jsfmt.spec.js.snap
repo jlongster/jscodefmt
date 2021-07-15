@@ -1,42 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`last_line.js - {"bracketSameLine":false} format 1`] = `
-====================================options=====================================
-bracketSameLine: false
-parsers: ["flow", "typescript"]
-printWidth: 80
-                                                                                | printWidth
-=====================================input======================================
-<SomeHighlyConfiguredComponent
-  onEnter={this.onEnter}
-  onLeave={this.onLeave}
-  onChange={this.onChange}
-  initialValue={this.state.initialValue}
-  ignoreStuff={true}
->
-  <div>and the children go here</div>
-  <div>and here too</div>
-</SomeHighlyConfiguredComponent>
-
-=====================================output=====================================
-<SomeHighlyConfiguredComponent
-  onEnter={this.onEnter}
-  onLeave={this.onLeave}
-  onChange={this.onChange}
-  initialValue={this.state.initialValue}
-  ignoreStuff={true}
->
-  <div>and the children go here</div>
-  <div>and here too</div>
-</SomeHighlyConfiguredComponent>;
-
-================================================================================
-`;
-
-exports[`last_line.js - {"bracketSameLine":true} format 1`] = `
+exports[`jsx.js - {"jsxBracketSameLine":false,"bracketSameLine":true} format 1`] = `
 ====================================options=====================================
 bracketSameLine: true
-parsers: ["flow", "typescript"]
+jsxBracketSameLine: false
+parsers: ["babel", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
@@ -65,63 +33,100 @@ printWidth: 80
 ================================================================================
 `;
 
-exports[`single_prop_multiline_string.js - {"bracketSameLine":false} format 1`] = `
+exports[`jsx.js - {"jsxBracketSameLine":false} format 1`] = `
 ====================================options=====================================
-bracketSameLine: false
-parsers: ["flow", "typescript"]
+jsxBracketSameLine: false
+parsers: ["babel", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
-<path d="M4.765 16.829l3.069-2.946 5.813 5.748
-  11.33-11.232 3.006 3.18-14.36 14.080z" />;
-
-<Component text="Text
-  with
-  newlines">Content</Component>;
+<SomeHighlyConfiguredComponent
+  onEnter={this.onEnter}
+  onLeave={this.onLeave}
+  onChange={this.onChange}
+  initialValue={this.state.initialValue}
+  ignoreStuff={true}
+>
+  <div>and the children go here</div>
+  <div>and here too</div>
+</SomeHighlyConfiguredComponent>
 
 =====================================output=====================================
-<path
-  d="M4.765 16.829l3.069-2.946 5.813 5.748
-  11.33-11.232 3.006 3.18-14.36 14.080z"
-/>;
-
-<Component
-  text="Text
-  with
-  newlines"
+<SomeHighlyConfiguredComponent
+  onEnter={this.onEnter}
+  onLeave={this.onLeave}
+  onChange={this.onChange}
+  initialValue={this.state.initialValue}
+  ignoreStuff={true}
 >
-  Content
-</Component>;
+  <div>and the children go here</div>
+  <div>and here too</div>
+</SomeHighlyConfiguredComponent>;
 
 ================================================================================
 `;
 
-exports[`single_prop_multiline_string.js - {"bracketSameLine":true} format 1`] = `
+exports[`jsx.js - {"jsxBracketSameLine":true,"bracketSameLine":false} format 1`] = `
 ====================================options=====================================
-bracketSameLine: true
-parsers: ["flow", "typescript"]
+bracketSameLine: false
+jsxBracketSameLine: true
+parsers: ["babel", "flow", "typescript"]
 printWidth: 80
                                                                                 | printWidth
 =====================================input======================================
-<path d="M4.765 16.829l3.069-2.946 5.813 5.748
-  11.33-11.232 3.006 3.18-14.36 14.080z" />;
-
-<Component text="Text
-  with
-  newlines">Content</Component>;
+<SomeHighlyConfiguredComponent
+  onEnter={this.onEnter}
+  onLeave={this.onLeave}
+  onChange={this.onChange}
+  initialValue={this.state.initialValue}
+  ignoreStuff={true}
+>
+  <div>and the children go here</div>
+  <div>and here too</div>
+</SomeHighlyConfiguredComponent>
 
 =====================================output=====================================
-<path
-  d="M4.765 16.829l3.069-2.946 5.813 5.748
-  11.33-11.232 3.006 3.18-14.36 14.080z"
-/>;
+<SomeHighlyConfiguredComponent
+  onEnter={this.onEnter}
+  onLeave={this.onLeave}
+  onChange={this.onChange}
+  initialValue={this.state.initialValue}
+  ignoreStuff={true}>
+  <div>and the children go here</div>
+  <div>and here too</div>
+</SomeHighlyConfiguredComponent>;
 
-<Component
-  text="Text
-  with
-  newlines">
-  Content
-</Component>;
+================================================================================
+`;
+
+exports[`jsx.js - {"jsxBracketSameLine":true} format 1`] = `
+====================================options=====================================
+jsxBracketSameLine: true
+parsers: ["babel", "flow", "typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<SomeHighlyConfiguredComponent
+  onEnter={this.onEnter}
+  onLeave={this.onLeave}
+  onChange={this.onChange}
+  initialValue={this.state.initialValue}
+  ignoreStuff={true}
+>
+  <div>and the children go here</div>
+  <div>and here too</div>
+</SomeHighlyConfiguredComponent>
+
+=====================================output=====================================
+<SomeHighlyConfiguredComponent
+  onEnter={this.onEnter}
+  onLeave={this.onLeave}
+  onChange={this.onChange}
+  initialValue={this.state.initialValue}
+  ignoreStuff={true}>
+  <div>and the children go here</div>
+  <div>and here too</div>
+</SomeHighlyConfiguredComponent>;
 
 ================================================================================
 `;

@@ -1,9 +1,12 @@
 "use strict";
 
+const commonOptions = require("../common/common-options");
+
 const CATEGORY_HTML = "HTML";
 
 // format based on https://github.com/prettier/prettier/blob/main/src/main/core-options.js
 module.exports = {
+  bracketSameLine: commonOptions.bracketSameLine,
   htmlWhitespaceSensitivity: {
     since: "1.15.0",
     category: CATEGORY_HTML,

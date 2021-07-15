@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`angularjs.html - {"bracketSameLine":false} format 1`] = `
+====================================options=====================================
+bracketSameLine: false
+parsers: ["angular"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading"
+    bindon-target=" a | b : c "
+    (event)="  foo == $event  "
+    *ngIf=" something?true:false    " [(ngModel)]="canSave">Warning!</div>
+<span ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading"
+    bindon-target=" a | b : c "
+    (event)="  foo == $event  "
+    *ngIf=" something?true:false    " [(ngModel)]="canSave">Warning!</span>
+<img ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading"
+    bindon-target=" a | b : c "
+    (event)="  foo == $event  "
+    *ngIf=" something?true:false    " [(ngModel)]="canSave"/>
+<script long-attribute="long_long_long_long_long_long_long_long_long_long_long_long_long_value">alert(1)</script>
+<div (event)="  foo == $event  ">Warning!</div>
+<span (event)="  foo == $event  ">Warning!</span>
+<img (event)="  foo == $event  "/>
+<script>alert(1)</script>
+
+=====================================output=====================================
+<div
+  ng-if="$ctrl.shouldShowWarning && !$ctrl.loading"
+  bindon-target="a | b: c"
+  (event)="(foo == $event)"
+  *ngIf="something ? true : false"
+  [(ngModel)]="canSave"
+>
+  Warning!
+</div>
+<span
+  ng-if="$ctrl.shouldShowWarning && !$ctrl.loading"
+  bindon-target="a | b: c"
+  (event)="(foo == $event)"
+  *ngIf="something ? true : false"
+  [(ngModel)]="canSave"
+  >Warning!</span
+>
+<img
+  ng-if="$ctrl.shouldShowWarning && !$ctrl.loading"
+  bindon-target="a | b: c"
+  (event)="(foo == $event)"
+  *ngIf="something ? true : false"
+  [(ngModel)]="canSave"
+/>
+<script
+  long-attribute="long_long_long_long_long_long_long_long_long_long_long_long_long_value"
+>
+  alert(1);
+</script>
+<div (event)="(foo == $event)">Warning!</div>
+<span (event)="(foo == $event)">Warning!</span>
+<img (event)="(foo == $event)" />
+<script>
+  alert(1);
+</script>
+
+================================================================================
+`;
+
+exports[`angularjs.html - {"bracketSameLine":true} format 1`] = `
+====================================options=====================================
+bracketSameLine: true
+parsers: ["angular"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading"
+    bindon-target=" a | b : c "
+    (event)="  foo == $event  "
+    *ngIf=" something?true:false    " [(ngModel)]="canSave">Warning!</div>
+<span ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading"
+    bindon-target=" a | b : c "
+    (event)="  foo == $event  "
+    *ngIf=" something?true:false    " [(ngModel)]="canSave">Warning!</span>
+<img ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading"
+    bindon-target=" a | b : c "
+    (event)="  foo == $event  "
+    *ngIf=" something?true:false    " [(ngModel)]="canSave"/>
+<script long-attribute="long_long_long_long_long_long_long_long_long_long_long_long_long_value">alert(1)</script>
+<div (event)="  foo == $event  ">Warning!</div>
+<span (event)="  foo == $event  ">Warning!</span>
+<img (event)="  foo == $event  "/>
+<script>alert(1)</script>
+
+=====================================output=====================================
+<div
+  ng-if="$ctrl.shouldShowWarning && !$ctrl.loading"
+  bindon-target="a | b: c"
+  (event)="(foo == $event)"
+  *ngIf="something ? true : false"
+  [(ngModel)]="canSave">
+  Warning!
+</div>
+<span
+  ng-if="$ctrl.shouldShowWarning && !$ctrl.loading"
+  bindon-target="a | b: c"
+  (event)="(foo == $event)"
+  *ngIf="something ? true : false"
+  [(ngModel)]="canSave"
+  >Warning!</span
+>
+<img
+  ng-if="$ctrl.shouldShowWarning && !$ctrl.loading"
+  bindon-target="a | b: c"
+  (event)="(foo == $event)"
+  *ngIf="something ? true : false"
+  [(ngModel)]="canSave" />
+<script
+  long-attribute="long_long_long_long_long_long_long_long_long_long_long_long_long_value">
+  alert(1);
+</script>
+<div (event)="(foo == $event)">Warning!</div>
+<span (event)="(foo == $event)">Warning!</span>
+<img (event)="(foo == $event)" />
+<script>
+  alert(1);
+</script>
+
+================================================================================
+`;

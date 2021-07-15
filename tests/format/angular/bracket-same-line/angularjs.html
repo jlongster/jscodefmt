@@ -1,0 +1,17 @@
+<div ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading"
+    bindon-target=" a | b : c "
+    (event)="  foo == $event  "
+    *ngIf=" something?true:false    " [(ngModel)]="canSave">Warning!</div>
+<span ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading"
+    bindon-target=" a | b : c "
+    (event)="  foo == $event  "
+    *ngIf=" something?true:false    " [(ngModel)]="canSave">Warning!</span>
+<img ng-if="$ctrl .shouldShowWarning&&!$ctrl.loading"
+    bindon-target=" a | b : c "
+    (event)="  foo == $event  "
+    *ngIf=" something?true:false    " [(ngModel)]="canSave"/>
+<script long-attribute="long_long_long_long_long_long_long_long_long_long_long_long_long_value">alert(1)</script>
+<div (event)="  foo == $event  ">Warning!</div>
+<span (event)="  foo == $event  ">Warning!</span>
+<img (event)="  foo == $event  "/>
+<script>alert(1)</script>

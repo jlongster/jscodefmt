@@ -1,0 +1,275 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`block.html - {"bracketSameLine":false} format 1`] = `
+====================================options=====================================
+bracketSameLine: false
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</div>
+<div long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></div>
+<div class="a">
+text
+</div>
+<div class="a">text</div>
+
+=====================================output=====================================
+<div
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+>
+  text
+</div>
+<div
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+></div>
+<div class="a">text</div>
+<div class="a">text</div>
+
+================================================================================
+`;
+
+exports[`block.html - {"bracketSameLine":true} format 1`] = `
+====================================options=====================================
+bracketSameLine: true
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<div long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</div>
+<div long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></div>
+<div class="a">
+text
+</div>
+<div class="a">text</div>
+
+=====================================output=====================================
+<div
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+  text
+</div>
+<div
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></div>
+<div class="a">text</div>
+<div class="a">text</div>
+
+================================================================================
+`;
+
+exports[`embed.html - {"bracketSameLine":false} format 1`] = `
+====================================options=====================================
+bracketSameLine: false
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+alert(1)</script>
+<style long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+.a{color: #f00}</style>
+<script>
+alert(1)</script>
+<style>
+.a{color: #f00}</style>
+
+=====================================output=====================================
+<script
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+>
+  alert(1);
+</script>
+<style
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+>
+  .a {
+    color: #f00;
+  }
+</style>
+<script>
+  alert(1);
+</script>
+<style>
+  .a {
+    color: #f00;
+  }
+</style>
+
+================================================================================
+`;
+
+exports[`embed.html - {"bracketSameLine":true} format 1`] = `
+====================================options=====================================
+bracketSameLine: true
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<script long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+alert(1)</script>
+<style long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+.a{color: #f00}</style>
+<script>
+alert(1)</script>
+<style>
+.a{color: #f00}</style>
+
+=====================================output=====================================
+<script
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+  alert(1);
+</script>
+<style
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+  .a {
+    color: #f00;
+  }
+</style>
+<script>
+  alert(1);
+</script>
+<style>
+  .a {
+    color: #f00;
+  }
+</style>
+
+================================================================================
+`;
+
+exports[`inline.html - {"bracketSameLine":false} format 1`] = `
+====================================options=====================================
+bracketSameLine: false
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+<span  class="a">text</span>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span  class="a">text</span><span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span  class="a">text</span><span  class="a">text</span><span  class="a">text</span><span  class="a">text</span><span  class="a">text</span>
+
+=====================================output=====================================
+<span
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+>
+  text
+</span>
+<span
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+></span>
+<span class="a">text</span>
+<span
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+>
+  text
+</span>
+<span class="a">text</span
+><span
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+>
+  text
+</span>
+<span class="a">text</span><span class="a">text</span><span class="a">text</span
+><span class="a">text</span><span class="a">text</span>
+
+================================================================================
+`;
+
+exports[`inline.html - {"bracketSameLine":true} format 1`] = `
+====================================options=====================================
+bracketSameLine: true
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+<span  class="a">text</span>
+<span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span  class="a">text</span><span long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+text
+</span>
+<span  class="a">text</span><span  class="a">text</span><span  class="a">text</span><span  class="a">text</span><span  class="a">text</span>
+
+=====================================output=====================================
+<span
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+  text
+</span>
+<span
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"></span>
+<span class="a">text</span>
+<span
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+  text
+</span>
+<span class="a">text</span
+><span
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value">
+  text
+</span>
+<span class="a">text</span><span class="a">text</span><span class="a">text</span
+><span class="a">text</span><span class="a">text</span>
+
+================================================================================
+`;
+
+exports[`void-elements.html - {"bracketSameLine":false} format 1`] = `
+====================================options=====================================
+bracketSameLine: false
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<img long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value" src="./1.jpg"/>
+<img src="./1.jpg"/><img src="./1.jpg"/><img src="./1.jpg"/><img src="./1.jpg"/><img src="./1.jpg"/>
+
+=====================================output=====================================
+<img
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+  src="./1.jpg"
+/>
+<img src="./1.jpg" /><img src="./1.jpg" /><img src="./1.jpg" /><img
+  src="./1.jpg"
+/><img src="./1.jpg" />
+
+================================================================================
+`;
+
+exports[`void-elements.html - {"bracketSameLine":true} format 1`] = `
+====================================options=====================================
+bracketSameLine: true
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<img long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value" src="./1.jpg"/>
+<img src="./1.jpg"/><img src="./1.jpg"/><img src="./1.jpg"/><img src="./1.jpg"/><img src="./1.jpg"/>
+
+=====================================output=====================================
+<img
+  long_long_attribute="long_long_long_long_long_long_long_long_long_long_long_value"
+  src="./1.jpg" />
+<img src="./1.jpg" /><img src="./1.jpg" /><img src="./1.jpg" /><img
+  src="./1.jpg" /><img src="./1.jpg" />
+
+================================================================================
+`;

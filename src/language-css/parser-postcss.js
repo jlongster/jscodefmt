@@ -454,7 +454,7 @@ function parseNestedCSS(node, options) {
 
       // only css support custom-selector
       if (options.parser === "css" && node.name === "custom-selector") {
-        const customSelector = node.params.match(/:--\S+?\s+/)[0].trim();
+        const customSelector = node.params.match(/:--\S+\s+/)[0].trim();
         node.customSelector = customSelector;
         node.selector = parseSelector(
           node.params.slice(customSelector.length).trim()
@@ -551,7 +551,7 @@ function parseNestedCSS(node, options) {
         ].includes(name)
       ) {
         // Remove unnecessary spaces in SCSS variable arguments
-        params = params.replace(/(\$\S+?)\s+?\.{3}/, "$1...");
+        params = params.replace(/(\$\S+)\s+\.{3}/, "$1...");
         // Remove unnecessary spaces before SCSS control, mixin and function directives
         params = params.replace(/^(?!if)(\S+)\s+\(/, "$1(");
 

@@ -103,6 +103,7 @@ module.exports = {
       },
     ],
     "regexp/no-useless-flag": "error",
+    "regexp/no-useless-lazy": "error",
     "unicorn/better-regex": "error",
     "unicorn/explicit-length-check": "error",
     "unicorn/new-for-builtins": "error",

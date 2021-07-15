@@ -11,3 +11,7 @@
 /website/build/
 /website/static/playground.js
 /website/static/lib/
+
+# This is temporal, will be removed when ESLint supports Top-Level await.
+# https://github.com/eslint/eslint/issues/14632
+/scripts/generate-changelog.mjs

@@ -4,32 +4,13 @@ import path from "node:path";
 import fs from "node:fs";
 import { outdent } from "outdent";
 import createEsmUtils from "esm-utils";
+import { CHANGELOG_CATEGORIES } from "./utils/changelog-categories.mjs";
 
 const { __dirname } = createEsmUtils(import.meta);
 const CHANGELOG_DIR = "changelog_unreleased";
 const TEMPLATE_FILE = "TEMPLATE.md";
 const BLOG_POST_INTRO_TEMPLATE_FILE = "BLOG_POST_INTRO_TEMPLATE.md";
 const BLOG_POST_INTRO_FILE = "blog-post-intro.md";
-const CHANGELOG_CATEGORIES = [
-  "angular",
-  "api",
-  "cli",
-  "css",
-  "flow",
-  "graphql",
-  "handlebars",
-  "html",
-  "javascript",
-  "json",
-  "less",
-  "lwc",
-  "markdown",
-  "mdx",
-  "scss",
-  "typescript",
-  "vue",
-  "yaml",
-];
 const CHANGELOG_ROOT = path.join(__dirname, `../${CHANGELOG_DIR}`);
 const showErrorMessage = (message) => {
   console.error(message);

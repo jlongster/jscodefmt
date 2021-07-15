@@ -1,4 +1,4 @@
 overrides:
-  - files: "**/*.{js,mjs}"
+  - files: "**/*.{js}"
     options:
       parser: meriyah

@@ -251,7 +251,7 @@ function embed(path, print, textToDoc, options) {
   if (node.type === "javascript") {
     return textToDoc(node.javaScriptText, { ...options, parser: "babel" });
   }
-  return false;
+  return null;
 }
 ```
 

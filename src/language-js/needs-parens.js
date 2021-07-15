@@ -499,7 +499,13 @@ function needsParens(path, options) {
             (param) =>
               param.typeAnnotation &&
               param.typeAnnotation.type === "NullableTypeAnnotation"
-          ))
+          )) ||
+        // If the return type is a nullable arrow function, then we need a paren
+        // otherwise the inner => can be assumed to be for the outer one.
+        (parent.type === "NullableTypeAnnotation" &&
+          path.getParentNode(1).type === "TypeAnnotation" &&
+          path.getParentNode(2).type === "ArrowFunctionExpression" &&
+          path.getParentNode(2).returnType === path.getParentNode(1))
       );
     }
 

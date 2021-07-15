@@ -45,6 +45,7 @@ const {
   isVueSfcBindingsAttribute,
   isScriptLikeTag,
   isTextLikeNode,
+  isWhitespaceSensitiveNode,
   preferHardlineAsLeadingSpaces,
   shouldNotPrintClosingTag,
   shouldPreserveContent,
@@ -710,7 +711,13 @@ function printAttributes(path, options, print) {
   ) {
     parts.push(node.isSelfClosing ? " " : "");
   } else {
-    parts.push(node.isSelfClosing ? line : softline);
+    const sensitiveEnd = node.isSelfClosing ? line : softline;
+    const insensitiveEnd = node.isSelfClosing ? " " : "";
+    parts.push(
+      options.jsxBracketSameLine && !isWhitespaceSensitiveNode(node)
+        ? insensitiveEnd
+        : sensitiveEnd
+    );
   }
 
   return parts;

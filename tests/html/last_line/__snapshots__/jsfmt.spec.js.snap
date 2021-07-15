@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`last_line.html - {"jsxBracketSameLine":false} format 1`] = `
+====================================options=====================================
+jsxBracketSameLine: false
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<article
+  id="electriccars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars">...</article>
+<span
+id="electriccars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars">...</span>
+
+=====================================output=====================================
+<article
+  id="electriccars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars"
+>
+  ...
+</article>
+<span
+  id="electriccars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars"
+  >...</span
+>
+
+================================================================================
+`;
+
+exports[`last_line.html - {"jsxBracketSameLine":true} format 1`] = `
+====================================options=====================================
+jsxBracketSameLine: true
+parsers: ["html"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+<article
+  id="electriccars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars">...</article>
+<span
+id="electriccars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars">...</span>
+
+=====================================output=====================================
+<article
+  id="electriccars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars">
+  ...
+</article>
+<span
+  id="electriccars"
+  data-columns="3"
+  data-index-number="12314"
+  data-parent="cars"
+  >...</span
+>
+
+================================================================================
+`;

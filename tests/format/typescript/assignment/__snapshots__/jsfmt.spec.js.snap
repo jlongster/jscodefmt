@@ -299,6 +299,30 @@ const map: Map<Function, Foo<S>> = new Map();
 ================================================================================
 `;
 
+exports[`issue-11037.ts format 1`] = `
+====================================options=====================================
+parsers: ["typescript"]
+printWidth: 80
+                                                                                | printWidth
+=====================================input======================================
+const [resolvedHexVersionId, setResolvedHexVersionId] =
+  useState<HexVersionId | undefined>();
+const [options, setOptions] =
+  useState<ParameterOptions | null | undefined>(initialOptions);
+const [resolvedSessionEditable, setResolvedSessionEditable] =
+  useState<boolean>(false);
+
+=====================================output=====================================
+const [resolvedHexVersionId, setResolvedHexVersionId] =
+  useState<HexVersionId | undefined>();
+const [options, setOptions] =
+  useState<ParameterOptions | null | undefined>(initialOptions);
+const [resolvedSessionEditable, setResolvedSessionEditable] =
+  useState<boolean>(false);
+
+================================================================================
+`;
+
 exports[`lone-arg.ts format 1`] = `
 ====================================options=====================================
 parsers: ["typescript"]

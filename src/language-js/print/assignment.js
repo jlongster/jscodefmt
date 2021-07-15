@@ -428,10 +428,11 @@ function isCallExpressionWithComplexTypeArguments(node, print) {
     if (typeArgs.length === 1) {
       const firstArg = typeArgs[0];
       if (
-        firstArg.type === "TSUnionType" ||
-        firstArg.type === "UnionTypeAnnotation" ||
-        firstArg.type === "TSIntersectionType" ||
-        firstArg.type === "IntersectionTypeAnnotation"
+        (firstArg.type === "TSUnionType" ||
+          firstArg.type === "UnionTypeAnnotation" ||
+          firstArg.type === "TSIntersectionType" ||
+          firstArg.type === "IntersectionTypeAnnotation") &&
+        !firstArg.types.some(isNullOrUndefinedType)
       ) {
         return true;
       }
@@ -444,6 +445,17 @@ function isCallExpressionWithComplexTypeArguments(node, print) {
     }
   }
   return false;
+}
+
+function isNullOrUndefinedType(node) {
+  return (
+    node.type === "TSUndefinedKeyword" ||
+    node.type === "TSNullKeyword" ||
+    node.type === "NullLiteralTypeAnnotation" ||
+    (node.type === "GenericTypeAnnotation" &&
+      node.id.type === "Identifier" &&
+      node.id.name === "undefined")
+  );
 }
 
 function getTypeArgumentsFromCallExpression(node) {

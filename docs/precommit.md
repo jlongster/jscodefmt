@@ -12,7 +12,7 @@ You can use Prettier with a pre-commit tool. This can re-format your files that 
 _Make sure Prettier is installed and is in your [`devDependencies`](https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file) before you proceed._
 
 ```bash
-npx mrm lint-staged
+npx mrm@2 lint-staged
 ```
 
 This will install [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged), then add a configuration to the project’s `package.json` that will automatically format supported files in a pre-commit hook.

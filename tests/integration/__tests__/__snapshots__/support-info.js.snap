@@ -742,7 +742,8 @@ exports[`CLI --support-info (stdout) 1`] = `
         \\".clang-tidy\\",
         \\".gemrc\\",
         \\"glide.lock\\",
-        \\".prettierrc\\"
+        \\".prettierrc\\",
+        \\".stylelintrc\\"
       ],
       \\"linguistLanguageId\\": 407,
       \\"name\\": \\"YAML\\",

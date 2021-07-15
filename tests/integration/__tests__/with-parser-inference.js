@@ -28,6 +28,18 @@ describe("infers parser from filename", () => {
     ).toEqual("{}\n");
   });
 
+  test("json from .stylelintrc", () => {
+    expect(
+      prettier.format("  {   }  ", { filepath: "x/y/.stylelintrc" })
+    ).toEqual("{}\n");
+  });
+
+  test("yaml from .stylelintrc", () => {
+    expect(
+      prettier.format("  extends:    ''  ", { filepath: "x/y/.stylelintrc" })
+    ).toEqual('extends: ""\n');
+  });
+
   test("babel from Jakefile", () => {
     expect(
       prettier.format("let foo = ( x = 1 ) => x", { filepath: "x/y/Jakefile" })
